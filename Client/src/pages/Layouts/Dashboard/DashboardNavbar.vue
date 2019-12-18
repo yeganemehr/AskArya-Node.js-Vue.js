@@ -56,7 +56,6 @@ import { BaseNav, Modal } from '@/components';
 import { ZoomCenterTransition } from 'vue2-transitions';
 import backend from '../../../backend';
 
-
 export default {
   components: {
     // SidebarToggleButton,
@@ -145,10 +144,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .navbar-nav li a {
-  font-size: 1em;
-  color: #000000;
-  font-size: 1.15em;
-  text-align: right;
+  font-size: 1em !important;
+  color: #000 !important;
+  font-size: 1.15em !important;
+  text-align: right !important;
 }
 
 .navbar-collapse .navbar-nav .nav-link a {
@@ -156,8 +155,8 @@ export default {
 }
 
 .navbar-nav li {
-  color: rgb(29, 29, 29);
-  width: 100%;
+  color: rgb(29, 29, 29) !important;
+  width: 100% !important;
 }
 
 .border-bottom {
@@ -165,20 +164,20 @@ export default {
 }
 
 .logout-button {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  font-family: IranSansBold;
+  padding-top: 1em !important;
+  padding-bottom: 1em !important;
+  font-family: IranSansBold !important;
 }
 
 .navbar .navbar-brand {
-  color: #000000;
-  font-family: IranSansBold;
+  color: #000 !important;
+  font-family: IranSansBold !important;
 }
 
 .dropdown-item.active {
-  color: rgb(255, 0, 98);
-  font-family: IranSansBold;
-  text-decoration: none;
+  color: rgb(255, 0, 98) !important;
+  font-family: IranSansBold !important;
+  text-decoration: none !important;
   background-color: transparent !important;
 }
 
@@ -188,26 +187,26 @@ export default {
 }
 
 .rtl .dropdown-toggle:after {
-  margin-right: 0.255em;
-  margin-left: 0;
-  display: none;
+  margin-right: 0.255em !important;
+  margin-left: 0 !important;
+  display: none !important;
 }
 
 ///////////////////////////
 
 .top-navbar {
-  top: 0px;
+  top: 0px !important;
 }
 
 .dropdown-menu {
   &.dropdown-navbar {
     &::before {
-      left: 29px;
-      right: auto;
+      left: 29px !important;
+      right: auto !important;
     }
     .dropdown-item {
-      color: #9a9a9a;
-      background-color: transparent;
+      color: #9a9a9a !important;
+      background-color: transparent !important;
     }
   }
 }

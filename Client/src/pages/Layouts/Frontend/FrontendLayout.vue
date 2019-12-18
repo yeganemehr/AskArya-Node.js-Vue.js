@@ -222,11 +222,13 @@
         </footer>
         <footer class="copyright text-center">
           <div class="container">
-            <!-- &copy;  -->
-            طراحی و تولید شده توسط
-            <router-link to="/terms">اسک آریا</router-link>، با افتخار در ایران
-            <i class="tim-icons icon-heart-2"></i>
-            سال ١٣٩۸
+            <p class="copyright-text">
+              <!-- &copy;  -->
+              طراحی و تولید شده توسط
+              <router-link to="/terms">اسک آریا</router-link>، با افتخار در ایران
+              <i class="tim-icons icon-heart-2"></i>
+              سال ١٣٩۸
+            </p>
           </div>
         </footer>
       </div>
@@ -376,7 +378,7 @@ export default {
 
 .go-to-top:hover {
   background-color: #555; /* Add a dark-grey background on hover */
-  color: white;
+  color: white !important;
 }
 
 .dropdown-menu .dropdown-item:hover {
@@ -406,32 +408,30 @@ export default {
     padding: 0.3em; /* Some padding */
     font-size: 1.6em; /* Increase font size */
     background-color: rgba(0, 0, 0, 0.02); /* Set a background color */
-    color: rgba(15, 15, 15, 0.13);
+    color: rgba(15, 15, 15, 0.13) !important;
   }
+}
+
+.navbar-collapse .navbar-nav .nav-link {
+  color: #000;
 }
 
 .dropdown-item.active {
-  color: rgb(255, 0, 98);
+  color: rgb(255, 0, 98) !important;
   background-color: transparent !important;
 }
 
-@media (min-width: 768px) and (max-width: 1000px) {
-  // .ipad-fix {
-  //   width: 100% !important;
-  // }
+.user-item {
+  padding-right: 2em !important;
+}
 
-  .user-item {
-    padding-right: 2em !important;
-  }
-
-  .dropdown-toggle[aria-expanded='true']:after {
-    display: none;
-  }
+.dropdown-toggle[aria-expanded='true']:after {
+  display: none !important;
 }
 
 @media (min-width: 990px) and (max-width: 1050px) {
   .navbar-collapse .navbar-nav .nav-link {
-    font-size: 1.2em !important;
+    font-size: 1em !important;
   }
   .navbar-nav li {
     font-size: 0.9em !important;
@@ -439,22 +439,22 @@ export default {
 }
 
 .dropdown-toggle[aria-expanded='true']:after {
-  display: none;
+  display: none !important;
 }
 
 .profile-link-text {
   p,
   .fas {
     font-size: 0.9em;
-    color: rgb(20, 20, 20);
+    color: rgb(20, 20, 20) !important;
   }
 }
 .navbar-nav li i {
-  color: rgb(0, 0, 0);
-  font-size: 1em;
-  margin-right: 10px;
-  margin-left: 4px;
-  align-content: right;
+  // color: rgb(0, 0, 0) !important;
+  font-size: 1em !important;
+  margin-right: 10px !important;
+  margin-left: 4px !important;
+  align-content: right !important;
 }
 .i-custom {
   margin-right: 8px !important;
@@ -465,14 +465,21 @@ export default {
 }
 
 .navbar-collapse .navbar-nav .nav-link {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .navbar-nav li {
-  font-size: 1.2em;
-  padding: 0 10px;
-  color: rgb(0, 0, 0);
+  font-size: 1.2em !important;
+  // color: rgb(0, 0, 0) !important;
+}
+
+@media only screen and (min-width: 1150px) {
+  .navbar-nav li {
+    font-size: 1.2em !important;
+    padding: 0 20px !important;
+    // color: rgb(0, 0, 0) !important;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -497,42 +504,48 @@ export default {
 }
 
 .btn {
-  font-weight: inherit;
+  font-weight: inherit !important;
 }
+
 .text-danger {
   font-family: IranSansBold !important;
   font-size: 0.95em !important;
 }
 p,
 .copyright {
-  font-size: 0.85rem;
+  font-size: 0.85rem !important;
 }
 
 .content-custom {
-  background-color: #ffffff;
-  background-attachment: fixed;
+  background-color: #ffffff !important;
+  background-attachment: fixed !important;
 }
 
 .usertitle {
-  color: #0f7bf7;
-  font-size: 1.1rem;
-  font-family: IranSansBold;
-}
-
-.navbar-collapse .navbar-nav .nav-link {
-  color: rgb(29, 29, 29);
+  color: #0f7bf7 !important;
+  font-size: 1.1rem !important;
+  font-family: IranSansBold !important;
 }
 
 .navbar-collapse .navbar-nav .nav-link .dropdown-item {
   font-size: 0.85em !important;
-  color: rgb(49, 49, 49);
-  border-bottom: 1px solid #fcfcfc;
+  border-bottom: 1px solid #fcfcfc !important;
+}
+
+@media (min-width: 992px) {
+  .dropdown-menu .dropdown-item {
+    color: black !important;
+  }
 }
 
 .navbar-collapse .navbar-nav .nav-link-exit .dropdown-item {
   color: rgb(49, 49, 49);
   border-bottom: 1px solid #fcfcfc00 !important;
 }
+
+// .navbar-collapse .navbar-nav .nav-link-exit:hover {
+//   background-color: red !important;
+// }
 
 @media (min-width: 768px) {
   .navbar-nav {
@@ -548,80 +561,91 @@ p,
   .active
   a
   .sidebar-normal {
-  font-family: IranSansBold;
-  font-size: 1.1rem;
-  color: white;
+  font-family: IranSansBold !important;
+  font-size: 1.1rem !important;
+  color: white !important;
 }
 
 .navbar.auth-navbar {
-  top: 0;
-  background-color: #fff;
-  font-family: IranSans;
+  top: 0 !important;
+  background-color: #fff !important;
+  font-family: IranSans !important;
 }
 
 $scaleSize: 0.8;
 @keyframes zoomIn8 {
   from {
     opacity: 0;
-    transform: scale3d($scaleSize, $scaleSize, $scaleSize);
+    transform: scale3d($scaleSize, $scaleSize, $scaleSize) !important;
   }
   100% {
-    opacity: 1;
+    opacity: 1 !important;
   }
 }
 
 .wrapper-full-page .zoomIn {
-  animation-name: zoomIn8;
+  animation-name: zoomIn8 !important;
 }
 
 @keyframes zoomOut8 {
   from {
-    opacity: 1;
+    opacity: 1 !important;
   }
   to {
     opacity: 0;
-    transform: scale3d($scaleSize, $scaleSize, $scaleSize);
+    transform: scale3d($scaleSize, $scaleSize, $scaleSize) !important;
   }
 }
 
 .wrapper-full-page .zoomOut {
-  animation-name: zoomOut8;
+  animation-name: zoomOut8 !important;
 }
 
 .footer-bottom {
-  background: #212942;
-  padding: 25px 0;
+  background: #212942 !important;
+  padding: 25px 0 !important;
   color: #fff !important;
-  line-height: 2;
-  clear: both;
+  line-height: 2 !important;
+  clear: both !important;
 
   .fadeline3 {
-    background-color: #777777c2;
+    background-color: #777777c2 !important;
   }
 
   .title {
-    font-size: 1.3em;
-    font-family: IranSansBold;
+    font-size: 1.3em !important;
+    font-family: IranSansBold !important;
   }
   ul {
-    list-style: none;
-    padding: 0 0;
+    list-style: none !important;
+    padding: 0 0 !important;
   }
   a {
     color: #fff !important;
+    font-family: IranSans !important;
   }
   .telegram {
-    direction: ltr;
+    direction: ltr !important;
   }
   .fab {
-    font-size: 1.2em;
+    font-size: 1.2em !important;
     color: #fff !important;
   }
 }
 
 .copyright {
-  padding: 20px 0;
-  background: #1c2236;
-  color: #fff;
+  padding: 20px 0 !important;
+  background: #1c2236 !important;
+  color: #fff !important;
+}
+
+.copyright-text {
+  color: #fff !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .copyright-text {
+    font-size: 1em !important;
+  }
 }
 </style>

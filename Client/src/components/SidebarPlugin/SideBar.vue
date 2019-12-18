@@ -1,11 +1,20 @@
 <template>
   <div class="sidebar" :data="backgroundColor">
     <div class="sidebar-wrapper" ref="sidebarScrollArea">
-      <div class="logo">
+      <!-- <div class="logo">
         <a href="http://www.askarya.ir" class="simple-text logo-mini">
           <img :src="logo" alt="app-logo" />
         </a>
         <a href="http://www.askarya.ir" class="simple-text logo-normal">{{ title }}</a>
+      </div>-->
+      <div class="userSection text-center">
+        <div class="photo avatar mt-5 mb-4">
+          <img :src="userAvatar" />
+        </div>
+        <p>
+          <span class="userFullName">{{this.$root.$data.user.name}}</span>
+          <br />خوش آمدید
+        </p>
       </div>
       <slot></slot>
       <ul class="nav">
@@ -22,7 +31,10 @@
     </div>
   </div>
 </template>
+
 <script>
+import backend from '../../backend';
+
 export default {
   name: 'sidebar',
   props: {
@@ -77,6 +89,14 @@ export default {
       autoClose: this.autoClose
     };
   },
+  computed: {
+    userAvatar() {
+      return (
+        (this.$root.$data.user ? this.$root.$data.user.avatar : undefined) ||
+        '/img/default-avatar.png'
+      );
+    }
+  },
   methods: {
     minimizeSidebar() {
       if (this.$sidebar) {
@@ -91,11 +111,24 @@ export default {
   }
 };
 </script>
-<style>
-@media (min-width: 992px) {
-  .navbar-search-form-mobile,
-  .nav-mobile-menu {
-    display: none;
+
+<style lang="scss" scoped>
+.userSection {
+  padding: 2em 0 0.8em 0;
+  .userFullName {
+    font-family: IranSansBold;
+    color: #fff;
+    font-size: 1.3em !important;
   }
 }
+.avatar {
+  width: 5em !important;
+  height: 5em !important;
+}
+// @media (min-width: 992px) {
+//   .navbar-search-form-mobile,
+//   .nav-mobile-menu {
+//     display: none;
+//   }
+// }
 </style>

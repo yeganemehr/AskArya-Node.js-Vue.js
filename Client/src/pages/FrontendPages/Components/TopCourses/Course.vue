@@ -147,7 +147,7 @@ export default {
     color: rgb(66, 66, 66);
     padding-right: 0.7rem;
     font-size: 1.4em !important;
-    font-family: IranSansBold;
+    font-family: IranSansBold !important;
   }
 
   .courseTimeSpan {
@@ -159,7 +159,7 @@ export default {
     color: rgb(66, 66, 66);
     padding-left: 0.7rem;
     font-size: 1.4em !important;
-    font-family: IranSansBold;
+    font-family: IranSansBold !important;
   }
 
   .unitsAvailableSpan {

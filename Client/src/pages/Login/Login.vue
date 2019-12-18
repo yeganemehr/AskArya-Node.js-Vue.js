@@ -330,7 +330,7 @@ export default {
 .googleicon {
   font-size: 2rem;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0.5em 0;
 }
 
 .icon {
@@ -350,6 +350,7 @@ export default {
 .footer-link {
   font-size: 0.9rem;
   color: rgb(92, 92, 92) !important;
+  font-family: IranSans;
 }
 
 .footer-link:hover {

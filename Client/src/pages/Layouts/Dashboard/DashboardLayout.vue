@@ -176,8 +176,8 @@ export default {
 .exitButton {
   font-size: 1em;
   color: #fff !important;
-  padding: 0;
-  margin: 0;
+  padding: 0 !important;
+  margin: 0 !important;
 
   .fas {
     color: #fff !important;
@@ -185,7 +185,7 @@ export default {
 }
 
 .line {
-  border-top: 1px solid rgba(255, 255, 255, 0.178);
+  border-top: 1px solid rgba(255, 255, 255, 0.178) !important;
 }
 
 .content {
@@ -201,19 +201,19 @@ export default {
   .active
   a
   .sidebar-normal {
-  font-family: IranSansBold;
+  font-family: IranSansBold !important;
   font-size: 1.1rem !important;
-  color: white;
+  color: white !important;
 }
 
 .rtl .sidebar .nav a {
   font-size: 0.95rem !important;
-  color: rgb(216, 216, 216);
+  color: rgb(216, 216, 216) !important;
 }
 
 .sidebar .nav li.active > a:not([data-toggle='collapse']) p {
-  font-size: 1.2rem;
-  font-family: IranSansBold;
+  font-size: 1.2rem !important;
+  font-family: IranSansBold !important;
 }
 
 .dropdown-item:hover,
@@ -224,29 +224,29 @@ export default {
 $scaleSize: 0.95;
 @keyframes zoomIn95 {
   from {
-    opacity: 0;
+    opacity: 0 !important;
     transform: scale3d($scaleSize, $scaleSize, $scaleSize);
   }
   to {
-    opacity: 1;
+    opacity: 1 !important;
   }
 }
 
 .main-panel .zoomIn {
-  animation-name: zoomIn95;
+  animation-name: zoomIn95 !important;
 }
 
 @keyframes zoomOut95 {
   from {
-    opacity: 1;
+    opacity: 1 !important;
   }
   to {
     opacity: 0;
-    transform: scale3d($scaleSize, $scaleSize, $scaleSize);
+    transform: scale3d($scaleSize, $scaleSize, $scaleSize) !important;
   }
 }
 
 .main-panel .zoomOut {
-  animation-name: zoomOut95;
+  animation-name: zoomOut95 !important;
 }
 </style>

@@ -26,17 +26,17 @@ export default {};
   justify-content: center;
   align-items: center;
   // background: #fff;
-  padding: 9px 10px;
-  margin: 0 20%;
+  padding: 9px 10px !important;
+  margin: 0 20% !important;
   // -webkit-border-radius: 3px;
   // border-radius: 3px;
   position: relative;
-  font-family: IranSansBold;
-  font-size: 1.1em;
+  font-family: IranSansBold !important;
+  font-size: 1.1em !important;
 
   @media (max-width: 760px) {
-    margin: 0 6%;
-    font-size: 0.8rem;
+    margin: 0 6% !important;
+    font-size: 0.8rem !important;
   }
 
   a {

@@ -141,35 +141,35 @@ export default {
 
 <style lang="scss" scoped>
 .white-content .card:not(.card-white) {
-  border-radius: 20px;
-  background: #e7e7e7ec;
-  border: 0;
-  position: relative;
-  width: 100%;
-  -webkit-box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20px !important;
+  background: #e7e7e7ec !important;
+  border: 0 !important;
+  position: relative !important;
+  width: 100% !important;
+  -webkit-box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1) !important;
 }
 .top-section-header {
-  font-size: 1.3em;
-  color: rgb(216, 216, 216);
-  font-family: IranSansBold;
+  font-size: 1.3em !important;
+  color: rgb(216, 216, 216) !important;
+  font-family: IranSansBold !important;
 }
 
 .fadeline2 {
-  height: 1px;
-  margin: 40px 20% 0 20%;
+  height: 1px !important;
+  margin: 40px 20% 0 20% !important;
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0.15),
     rgba(255, 255, 255, 0)
-  );
+  ) !important;
 }
 .btn {
-  font-weight: inherit;
+  font-weight: inherit !important;
 }
 
 .blog-section {
-  margin: 3em 0 3em 0;
+  margin: 3em 0 3em 0 !important;
 }
 </style>
