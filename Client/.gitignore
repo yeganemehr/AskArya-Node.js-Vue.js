@@ -13,8 +13,7 @@ yarn-debug.log*
 yarn-error.log*
 test/unit/coverage
 .DS_Store
-public/img/*
-package-lock.json
+
 
 
 # Editor directories and files
