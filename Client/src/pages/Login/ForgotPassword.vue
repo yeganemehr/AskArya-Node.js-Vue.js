@@ -174,4 +174,12 @@ export default {
 .googleicon {
   font-size: 2rem;
 }
+
+label {
+  font-family: IranSans;
+}
+
+.white-content .card:not(.card-white).card-login .form-control {
+  color: black !important;
+}
 </style>

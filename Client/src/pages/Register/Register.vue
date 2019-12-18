@@ -341,10 +341,16 @@ export default {
   color: #3a3a3a;
 }
 
+.tc:hover {
+  color: #e14eca;
+
+  text-decoration: underline;
+}
+
 .googleicon {
   font-size: 1.2em !important;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0.5em 0;
 }
 
 .icon {
@@ -357,13 +363,18 @@ export default {
 }
 
 .google-text {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: rgb(167, 167, 167) !important;
 }
 
 .footer-link {
   font-size: 0.9rem;
   color: rgb(92, 92, 92) !important;
+  font-family: IranSans;
+}
+
+a {
+  font-family: IranSans;
 }
 
 .footer-link:hover {

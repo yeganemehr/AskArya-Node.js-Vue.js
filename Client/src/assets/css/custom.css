@@ -5,8 +5,8 @@
     url('../fonts/IRANSansWeb(FaNum).woff2') format('woff2'),
     url('../fonts/IRANSansWeb(FaNum).woff') format('woff'),
     url('../fonts/IRANSansWeb(FaNum).ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: normal !important;
+  font-style: normal !important;
 }
 
 @font-face {
@@ -16,8 +16,8 @@
     url('../fonts/IranSansBold/IranSansBold.woff2') format('woff2'),
     url('../fonts/IranSansBold/IranSansBold.woff') format('woff'),
     url('../fonts/IranSansBold/IranSansBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
+  font-weight: bold !important;
+  font-style: normal !important;
 }
 
 @font-face {
@@ -27,8 +27,8 @@
     url('../fonts/IranSansDN/IranSansDN.woff2') format('woff2'),
     url('../fonts/IranSansDN/IranSansDN.woff') format('woff'),
     url('../fonts/IranSansDN/IranSansDN.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: normal !important;
+  font-style: normal !important;
 }
 
 @font-face {
@@ -38,14 +38,14 @@
     url('../fonts/IranSansDN/IranSansDNBold.woff2') format('woff2'),
     url('../fonts/IranSansDN/IranSansDNBold.woff') format('woff'),
     url('../fonts/IranSansDN/IranSansDNBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
+  font-weight: bold !important;
+  font-style: normal !important;
 }
 
 * {
   -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
 }
 
 /*------------------------
@@ -66,9 +66,7 @@
   flex: auto !important;
 } */
 
-.white-content .full-page p {
-  font-family: IranSans !important;
-}
+
 
 .white-content .el-table table>thead>tr>th {
   font-family: IranSans !important;
@@ -86,8 +84,8 @@
 }
 
 ::selection {
-  background-color: #0ad688;
-  color: rgb(255, 255, 255);
+  background-color: #0ad688 !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .el-carousel__container {
@@ -128,4 +126,12 @@
 .has-success.form-group .form-control,
 .has-danger.form-group .form-control {
   direction: ltr !important;
+}
+
+.btn {
+  font-weight: normal !important;
+}
+
+* {
+  font-family: IranSans;
 }

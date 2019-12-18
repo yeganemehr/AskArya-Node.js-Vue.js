@@ -118,11 +118,11 @@ export default {
 }
 
 .coloredLink {
-  color: #de4dc7;
+  color: #de4dc7 !important;
 }
 
 .form-check input[type='checkbox'] + .form-check-sign::after {
-  background-color: #ff0000;
+  background-color: #ff0000 !important;
 }
 
 .form-horizontal .col-form-label,

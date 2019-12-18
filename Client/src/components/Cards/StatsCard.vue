@@ -3,7 +3,9 @@
     <div class="row">
       <div class="col-5" v-if="$slots.icon || icon">
         <div class="info-icon text-center" :class="`icon-${type}`">
-          <slot name="icon"> <i :class="icon"></i> </slot>
+          <slot name="icon">
+            <i :class="icon"></i>
+          </slot>
         </div>
       </div>
       <div class="col-7" v-if="$slots.content || title || subTitle">
@@ -39,4 +41,20 @@ export default {
   }
 };
 </script>
-<style></style>
+
+<style scoped>
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .white-content .card:not(.card-pricing).card-stats .card-category {
+    font-size: 0.9em !important;
+  }
+
+  .white-content .card:not(.card-pricing).card-stats .card-title {
+    font-size: 1.35em !important;
+  }
+
+  .card-stats .stats {
+    font-size: 0.8em !important;
+  }
+}
+</style>
+

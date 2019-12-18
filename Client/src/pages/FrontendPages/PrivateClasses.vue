@@ -250,8 +250,8 @@ ul {
   }
 
   .hover {
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
     border-radius: 5px;
     -webkit-transform: translateY(0);
     transform: translateY(0);
@@ -260,8 +260,8 @@ ul {
   .hover:hover {
     -webkit-box-shadow: 0 10px 30px -5px rgba(136, 136, 136, 0.4);
     box-shadow: 0 10px 30px -5px rgba(114, 114, 114, 0.4);
-    -webkit-transform: translateY(-10px);
-    transform: translateY(-10);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5);
     cursor: pointer;
   }
 
