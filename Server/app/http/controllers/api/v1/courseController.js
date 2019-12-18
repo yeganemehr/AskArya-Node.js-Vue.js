@@ -532,12 +532,10 @@ class courseController extends controller {
     });
     if (
       !episode ||
-      req.user.learning.indexOf(episode.course.id) == -1||
-      !req.user.admin
+    !( req.user.learning.indexOf(episode.course.id) >=0 ||  req.user.admin)
+    
     ) {
-      console.log(!episode);
-      console.log( req.user.learning.indexOf(episode.course.id) == -1);
-      console.log(!req.user.admin);
+     
       
 
       return this.failed("چنین دوره ای یافت نشد !", res, 404);
