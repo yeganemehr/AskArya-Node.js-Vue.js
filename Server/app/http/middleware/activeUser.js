@@ -8,15 +8,20 @@ class activeUser extends middleware {
 
       this.alert(req, {
         title: 'توجه کنید',
-        message:
-          'دقت کنید اکانت شما فعال نیست برای فعال کردن اکانت خود لطفا از طریق فرم ورود اقدام به ورود کنید',
+        message: 'دقت کنید اکانت شما فعال نیست برای فعال کردن اکانت خود لطفا از طریق فرم ورود اقدام به ورود کنید',
         type: 'error',
         button: 'بسیار خوب'
       });
 
       req.logout();
+      // Custom Code - Arya
       res.clearCookie('remember_token');
-      res.redirect('/');
+      req.session.destroy(function (err) {
+        res.redirect('/'); //Inside a callback… bulletproof!
+      });
+      // Custom Code End
+
+      // res.redirect('/');
     } else next();
   }
 }
