@@ -1,5 +1,5 @@
 node_modules
 .DS_Store
-public/uploads/images/*
-public/uploads/files/*
+test/public/uploads/images/*
+test/public/uploads/files/*
 .vscode

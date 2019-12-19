@@ -105,7 +105,7 @@ export default {
           this.loading = false;
           errorHandler(error.response);
         });
-      this.$router.push('/login');
+      this.$router.push(this.$route.query.backTo || 'login');
     }
   }
 };
