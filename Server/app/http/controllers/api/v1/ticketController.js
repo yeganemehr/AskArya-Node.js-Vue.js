@@ -10,6 +10,8 @@ class ticketController extends controller {
       const condition = {};
       if (!req.user.admin) {
         condition.user = req.user.id;
+        console.log(req.user.id);
+        
       }
       const tickets = await Ticket.paginate(condition, {
         page,
