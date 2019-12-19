@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 const uniqueString = require('unique-string');
 const mongoosePaginate = require('mongoose-paginate-v2');
+const Learning = require('./learning')
 
 const userSchema = Schema({
   name: {
