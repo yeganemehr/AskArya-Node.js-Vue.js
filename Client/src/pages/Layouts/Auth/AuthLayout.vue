@@ -312,6 +312,10 @@ export default {
             message: 'درخواست شما توسط سرور رد شد'
           });
         }
+        cookie.removeItem('session_askarya');
+        cookie.removeItem('remember_token');
+        localStorage.removeItem('remember_token');
+
         window.location.href = '/';
       });
     }
