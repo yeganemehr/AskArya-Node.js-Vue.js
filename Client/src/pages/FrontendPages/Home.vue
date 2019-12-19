@@ -7,23 +7,30 @@
     <div class="container pt-5 pb-4">
       <div class="top-courses-section">
         <div class="d-flex justify-content-between">
-          <p class="text-right top-section-header pt-1 pb-4">پیشنهادهای ویژه اسک آریا برای شما</p>
+          <p class="text-right top-section-header pt-1 pb-4">
+            پیشنهادهای ویژه اسک آریا برای شما
+          </p>
         </div>
         <div class="pt-2">
           <div
-            class="col-lg-3 col-md-6 col-sm-12 d-none d-md-block"
+            class="col-lg-3 col-md-6 col-sm-12"
             v-for="course in topCourses"
             v-bind:key="course.id"
           >
             <Course v-bind="course"></Course>
           </div>
-          <div class="d-md-none">
-            <el-carousel type="card" :autoplay="true" :interval="2000" arrow="always">
+          <!-- <div class="block d-md-none">
+            <el-carousel
+              type="card"
+              :autoplay="true"
+              :interval="2000"
+              arrow="always"
+            >
               <el-carousel-item v-for="course in topCourses" :key="course.id">
                 <Course v-bind="course"></Course>
               </el-carousel-item>
             </el-carousel>
-          </div>
+          </div> -->
         </div>
         <div class="text-center">
           <router-link to="allcourses">
@@ -31,7 +38,8 @@
               native-type="submit"
               type="success"
               class="btn btn-round animation-on-hover mt-4"
-            >مشاهده همه دوره ها</base-button>
+              >مشاهده همه دوره ها</base-button
+            >
           </router-link>
         </div>
       </div>
@@ -44,7 +52,7 @@
 
     <!-- Blog Section-->
     <div id="blog" class="blog-section pb-2">
-      <blog-section v-bind="{posts: topPosts}"></blog-section>
+      <blog-section v-bind="{ posts: topPosts }"></blog-section>
     </div>
 
     <!--Improvement Banner 2-->
@@ -138,7 +146,6 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
 .white-content .card:not(.card-white) {
   border-radius: 20px !important;
@@ -149,9 +156,10 @@ export default {
   -webkit-box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.4) !important;
   box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1) !important;
 }
+
 .top-section-header {
-  font-size: 1.3em !important;
-  color: rgb(216, 216, 216) !important;
+  font-size: 1.1em !important;
+  color: rgb(66, 66, 66) !important;
   font-family: IranSansBold !important;
 }
 
@@ -172,4 +180,8 @@ export default {
 .blog-section {
   margin: 3em 0 3em 0 !important;
 }
+
+// .top-courses-section {
+//   padding: 0 11% !important;
+// }
 </style>

@@ -2,7 +2,7 @@
   <card card-body-classes="table-full-width">
     <h3 slot="header" class="card-title">{{ 'وضعیت پرداخت' }}</h3>
     <div>
-      <div class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"></div>
+      <!-- <div class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"></div> -->
       <el-table :data="tableData">
         <el-table-column
           v-for="column in tableColumns"
@@ -13,12 +13,13 @@
         ></el-table-column>
       </el-table>
     </div>
+
     <div
       slot="footer"
       class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
     >
       <base-pagination
-        class="pagination-no-border text-rtl"
+        class="pagination-no-border"
         v-model="pagination.currentPage"
         :per-page="pagination.perPage"
         :total="pagination.total"

@@ -83,38 +83,38 @@ export default {
 
 <style lang="scss" scoped>
 .headerDigits {
-  padding: 0 36%;
+  padding: 0 36% !important;
 }
 
 .headerDigitsText {
-  font-size: 1.1rem;
+  font-size: 1.1rem !important;
 }
 
 .headerStyling {
-  font-size: 4em;
-  font-family: IranSansBold;
-  color: rgb(17, 207, 144);
-  padding: 0px;
-  margin: 0px;
+  font-size: 4em !important;
+  font-family: IranSansBold !important;
+  color: rgb(17, 207, 144) !important;
+  padding: 0px !important;
+  margin: 0px !important;
 }
 
 .bullet-point {
-  font-size: 2rem;
-  color: rgb(17, 207, 144);
+  font-size: 2rem !important;
+  color: rgb(17, 207, 144) !important;
 }
 
 @media only screen and (max-width: 768px) {
   .headerDigits {
-    padding: 0 5%;
+    padding: 0 5% !important;
   }
   .headerDigitsText {
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
   }
 }
 
 @media (max-width: 768px) {
   .course-section {
-    padding: 0 7%;
+    padding: 0 7% !important;
   }
 }
 </style>
