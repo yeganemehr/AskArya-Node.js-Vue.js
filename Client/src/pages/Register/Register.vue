@@ -204,7 +204,7 @@ export default {
               text: '',
               button: 'بسیار خوب'
             });
-            this.$router.push(this.$route.query.backTo || '/dashboard');
+            this.$router.push(this.$route.query.backTo || '/');
             // this.$router.push(this.$route.query.backTo || 'dashboard');
           }
         })
