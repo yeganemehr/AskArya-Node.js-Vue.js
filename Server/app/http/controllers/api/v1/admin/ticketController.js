@@ -45,6 +45,7 @@ class ticketController extends controller {
         filter.$or.push({
           user: {
             $in: users.map(user => {
+              console.log(user.id);
               return user.id;
             })
           }
