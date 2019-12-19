@@ -535,6 +535,7 @@ class courseController extends controller {
     !( req.user.learning.indexOf(episode.course.id) >=0 ||  req.user.admin)
     
     ) {
+     console.log(req.user.learning.indexOf(episode.course.id) );
      
       
 
