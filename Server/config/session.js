@@ -8,7 +8,7 @@ module.exports = {
   resave: true,
   saveUninitialized: true,
   cookie: {
-    expires: new Date(Date.now() + 1000 * 60 * 60 * 6)
+    // expires: new Date(Date.now() + 30*60*24*60*60)
   },
   store: new MongoStore({
     mongooseConnection: mongoose.connection
