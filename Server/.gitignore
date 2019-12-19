@@ -1,5 +1,6 @@
 node_modules
 .DS_Store
-test/public/uploads/images/*
-test/public/uploads/files/*
 .vscode
+
+Delete/public/uploads/images/*
+Delete/public/uploads/files/*

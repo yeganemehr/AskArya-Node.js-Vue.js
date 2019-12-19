@@ -116,7 +116,8 @@ export default {
             message: 'درخواست شما توسط سرور رد شد'
           });
         }
-        // Cookies.removeItem('session_askarya');
+        Cookies.removeItem('session_askarya');
+        Cookies.removeItem('remember_token');
         localStorage.removeItem('remember_token');
 
         window.location.href = '/';
