@@ -64,46 +64,49 @@ export default {
     BaseNav,
     Modal
   },
-  computed: {
-    routeName() {
-      const { name } = this.$route;
-      return this.capitalizeFirstLetter(name);
-    },
-    isRTL() {
-      return this.$rtl.isRTL;
-    }
-  },
   data() {
     return {
-      activeNotifications: false,
       showMenu: false,
+      activeNotifications: false,
       searchModalVisible: false,
       searchQuery: ''
     };
   },
+  computed: {
+    isAdmin() {
+      return this.$root.$data.user && this.$root.$data.user.admin;
+    }
+  },
   methods: {
-    capitalizeFirstLetter(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
-    },
-    toggleNotificationDropDown() {
-      this.activeNotifications = !this.activeNotifications;
-    },
-    closeDropDown() {
-      this.activeNotifications = false;
-    },
-    // toggleSidebar() {
-    //   this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
-    // },
-    // hideSidebar() {
-    //   this.$sidebar.displaySidebar(false);
-    // },
-    toggleMenu() {
+    toggleNavbar() {
+      document.body.classList.toggle('nav-open');
       this.showMenu = !this.showMenu;
     },
     closeMenu() {
       document.body.classList.remove('nav-open');
       this.showMenu = false;
     },
+    setPageClass() {
+      this.pageClass = `${this.$route.name}-page`.toLowerCase();
+    },
+
+    // capitalizeFirstLetter(string) {
+    //   return string.charAt(0).toUpperCase() + string.slice(1);
+    // },
+    toggleNotificationDropDown() {
+      this.activeNotifications = !this.activeNotifications;
+    },
+    closeDropDown() {
+      this.activeNotifications = false;
+    },
+
+    // toggleMenu() {
+    //   this.showMenu = !this.showMenu;
+    // },
+    // closeMenu() {
+    //   document.body.classList.remove('nav-open');
+    //   this.showMenu = false;
+    // },
     logoutListener(e) {
       e.preventDefault();
       backend.get('logout').then(response => {
@@ -132,15 +135,6 @@ export default {
       } else {
         next();
       }
-    }
-  },
-  computed: {
-    isAdmin() {
-      // console.log(
-      //   'isAdmin = ',
-      //   this.$root.$data.user && this.$root.$data.user.admin
-      // );
-      return this.$root.$data.user && this.$root.$data.user.admin;
     }
   }
 };
