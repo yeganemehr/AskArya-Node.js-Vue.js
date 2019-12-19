@@ -418,7 +418,7 @@ export default {
 // }
 
 .dropdown-menu .dropdown-item:hover {
-  background-color: rgba(222, 222, 222, 0) !important;
+  // background-color: rgba(222, 222, 222, 0) !important;
   color: #a053ee !important;
 }
 
@@ -481,7 +481,7 @@ export default {
 .profile-link-text {
   p,
   .fas {
-    font-size: 0.9em;
+    font-size: 0.95em !important;
     color: rgb(20, 20, 20) !important;
   }
 }
@@ -517,9 +517,13 @@ export default {
     // color: rgb(0, 0, 0) !important;
   }
 
-  .navbar-nav li:hover {
-    background: #dadada;
-  }
+  // .navbar-nav li:hover {
+  //   background: #dadada;
+  // }
+}
+
+.nav-item, .dropdown-item {
+  background: transparent !important;
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {

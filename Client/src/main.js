@@ -1,21 +1,19 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import RouterPrefetch from 'vue-router-prefetch'
+import RouterPrefetch from 'vue-router-prefetch';
 import DashboardPlugin from './plugins/dashboard-plugin';
 import App from './App.vue';
-
 
 // router setup
 import backend from './backend';
 import router from './routes/router';
-import './registerServiceWorker'
+import './registerServiceWorker';
 import CKEditor from '@ckeditor/ckeditor5-vue';
 import VuePlyr from 'vue-plyr';
 import NProgress from 'nprogress';
 import VueMeta from 'vue-meta';
 var VueScrollTo = require('vue-scrollto');
-import Element from 'element-ui'
-
+// import Element from 'element-ui'
 
 // plugin setup
 Vue.use(RouterPrefetch);
@@ -26,7 +24,7 @@ Vue.use(CKEditor);
 Vue.use(VuePlyr);
 Vue.use(NProgress);
 Vue.use(VueMeta);
-Vue.use(Element)
+// Vue.use(Element)
 
 import 'nprogress/nprogress.css';
 import './assets/sass/nprogress.scss';
