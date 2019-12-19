@@ -67,6 +67,16 @@ const userSchema = Schema({
 
 userSchema.plugin(mongoosePaginate);
 
+userSchema.pre('remove',async function(next){
+ const tickets=await this.model('Ticket').find({user:this._id});
+ for (let i = 0; i < tickets.length; i++) {
+   const t = tickets[i];
+   await t.remove();
+   
+ }
+
+  next();
+})
 userSchema.pre('save', function (next) {
   if (this.isModified("password")) {
     let salt = bcrypt.genSaltSync(15);

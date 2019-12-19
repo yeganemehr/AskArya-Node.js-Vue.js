@@ -66,6 +66,16 @@ ticketSchema.plugin(autoIncrement.plugin, {
   incrementBy: 1
 });
 
+ticketSchema.pre('remove',async function(next){
+  const tms=await this.model('ticketMessage').find({ticket:this._id});
+  for (let i = 0; i < tms.length; i++) {
+    const tm = tms[i];
+    await tm.remove();
+    
+  }
+
+   next();
+ })
 /* ticketSchema.pre('save', async function(next) {
   if (! this.ticket_id) {
     const count = await this.constructor.countDocuments();
