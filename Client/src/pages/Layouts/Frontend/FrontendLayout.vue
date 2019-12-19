@@ -10,7 +10,7 @@
     >
       <div slot="brand" class="navbar-wrapper">
         <router-link to="/">
-          <img src="/img/askarya-logo.png" width="110" alt="Ask Arya Logo" />
+          <img src="/img/askarya-logo.png" width="115" alt="Ask Arya Logo" />
         </router-link>
       </div>
       <ul class="navbar-nav">
@@ -31,7 +31,11 @@
         </router-link>
 
         <div class="d-md-none pr-3" v-if="this.$root.$data.user !== undefined">
-          <router-link class="row d-flex align-items-center nav-item" tag="li" to="/dashboard">
+          <router-link
+            class="row d-flex align-items-center nav-item"
+            tag="li"
+            to="/dashboard"
+          >
             <div class="photo">
               <img :src="userAvatar" />
             </div>
@@ -66,7 +70,9 @@
                         <div class="photo">
                           <img :src="userAvatar" />
                         </div>
-                        <div class="d-flex align-items-center pr-3 profile-link-text">
+                        <div
+                          class="d-flex align-items-center pr-3 profile-link-text"
+                        >
                           <p class="px-2">پروفایل من</p>
                           <i class="i-chevron fas fa-chevron-down"></i>
                         </div>
@@ -110,7 +116,10 @@
                   </li>
 
                   <li v-if="isAdmin" class="nav-link">
-                    <router-link to="/managementpage" class="nav-item dropdown-item">
+                    <router-link
+                      to="/managementpage"
+                      class="nav-item dropdown-item"
+                    >
                       <i class="fas fa-tools pl-2"></i>
                       پنل مدیریت
                     </router-link>
@@ -133,12 +142,22 @@
           <div class="row login-register-buttons" v-else>
             <div class="pr-3 register-button">
               <router-link to="/register">
-                <base-button native-type="submit" type="danger" class="btn-simple btn">ثبت نام</base-button>
+                <base-button
+                  native-type="submit"
+                  type="danger"
+                  class="btn-simple btn"
+                  >ثبت نام</base-button
+                >
               </router-link>
             </div>
             <div class="pr-3 login-button">
               <router-link to="/login">
-                <base-button native-type="submit" type="info" class="btn-simple btn">ورود کاربر</base-button>
+                <base-button
+                  native-type="submit"
+                  type="info"
+                  class="btn-simple btn"
+                  >ورود کاربر</base-button
+                >
               </router-link>
             </div>
           </div>
@@ -149,25 +168,28 @@
     <div class="wrapper wrapper-full-page">
       <div class="full-page" :class="pageClass">
         <div class="content-custom">
-          <zoom-center-transition :duration="pageTransitionDuration" mode="out-in">
+          <zoom-center-transition
+            :duration="pageTransitionDuration"
+            mode="out-in"
+          >
             <router-view></router-view>
           </zoom-center-transition>
         </div>
 
         <i
           v-scroll-to="{
-              el: '#top',
-              duration: 900,
-              easing: 'linear',
-              offset: -1000,
-              force: true,
-              cancelable: true,
-              onStart: onStart,
-              onDone: onDone,
-              onCancel: onCancel,
-              x: false,
-              y: true
-            }"
+            el: '#top',
+            duration: 900,
+            easing: 'linear',
+            offset: -1000,
+            force: true,
+            cancelable: true,
+            onStart: onStart,
+            onDone: onDone,
+            onCancel: onCancel,
+            x: false,
+            y: true
+          }"
           class="fas fa-chevron-up go-to-top"
         ></i>
 
@@ -179,9 +201,12 @@
                 <div class="col-md-5 about-us">
                   <h4 class="title text-white">درباره اسک آریا</h4>
                   <hr class="fadeline3 d-none d-md-block" />
-                  <p
-                    class="text-white"
-                  >اسک آریا یکی از پرتلاش‌ترین و بروزترین وبسایت های آموزشی در سطح ایران است که همیشه تلاش کرده تا بتواند جدیدترین و بروزترین مقالات و دوره‌های آموزشی را در اختیار علاقه‌مندان ایرانی قرار دهد.</p>
+                  <p class="text-white">
+                    اسک آریا یکی از پرتلاش‌ترین و بروزترین وبسایت های آموزشی در
+                    سطح ایران است که همیشه تلاش کرده تا بتواند جدیدترین و
+                    بروزترین مقالات و دوره‌های آموزشی را در اختیار علاقه‌مندان
+                    ایرانی قرار دهد.
+                  </p>
                 </div>
                 <div class="col-md-3 askarya-sections">
                   <hr class="fadeline3 d-md-none" />
@@ -189,7 +214,9 @@
                   <hr class="fadeline3 d-none d-md-block" />
                   <ul>
                     <li class="footer-li">
-                      <router-link to="/privateclasses">کلاس های حضوری</router-link>
+                      <router-link to="/privateclasses"
+                        >کلاس های حضوری</router-link
+                      >
                     </li>
                     <li class="footer-li">
                       <router-link to="/comingsoon">میت آپ</router-link>
@@ -206,9 +233,10 @@
                   <hr class="fadeline3 d-md-none" />
                   <h4 class="title text-white">ارتباط با ما</h4>
                   <hr class="fadeline3 d-none d-md-block" />
-                  <p
-                    class="pt-3 text-white"
-                  >شما میتوانید با استفاده از یکی از راه‌های زیر با ما ارتباط برقرار کنید:</p>
+                  <p class="pt-3 text-white">
+                    شما میتوانید با استفاده از یکی از راه‌های زیر با ما ارتباط
+                    برقرار کنید:
+                  </p>
                   <p class="telegram">
                     <a href="https://t.me/AskAryaSomething" class="li-ic">
                       شماره تلگرام:‌ 09032227796
@@ -225,7 +253,8 @@
             <p class="copyright-text">
               <!-- &copy;  -->
               طراحی و تولید شده توسط
-              <router-link to="/terms">اسک آریا</router-link>، با افتخار در ایران
+              <router-link to="/terms">اسک آریا</router-link>، با افتخار در
+              ایران
               <i class="tim-icons icon-heart-2"></i>
               سال ١٣٩۸
             </p>
@@ -258,11 +287,12 @@ export default {
       showMenu: false,
       menuTransitionDuration: 250,
       pageTransitionDuration: 200,
+      pageClass: 'login-page'
+
       // year: new Date().getFullYear(),
-      pageClass: 'login-page',
-      onStart: () => {},
-      onDone: () => {},
-      onCancel: () => {}
+      // onStart: () => {},
+      // onDone: () => {},
+      // onCancel: () => {}
     };
   },
   computed: {
@@ -276,10 +306,6 @@ export default {
       );
     },
     isAdmin() {
-      // console.log(
-      //   'isAdmin = ',
-      //   this.$root.$data.user && this.$root.$data.user.admin
-      // );
       return this.$root.$data.user && this.$root.$data.user.admin;
     }
   },
@@ -320,7 +346,7 @@ export default {
           break;
       }
       if (isActive) {
-        classes += ' text-danger';
+        classes += ' text-custom';
       }
       return classes;
     },
@@ -362,6 +388,12 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.text-custom {
+  color: #27408b !important;
+  font-size: 0.95em !important;
+  font-family: IranSansBold !important;
+}
+
 .go-to-top {
   position: fixed; /* Fixed/sticky position */
   bottom: 20px; /* Place the button at the bottom of the page */
@@ -380,6 +412,10 @@ export default {
   background-color: #555; /* Add a dark-grey background on hover */
   color: white !important;
 }
+
+// .navbar .auth-navbar .sticky-top .navbar-expand-lg .bg-custom {
+//   padding: 0 !important;
+// }
 
 .dropdown-menu .dropdown-item:hover {
   background-color: rgba(222, 222, 222, 0) !important;
@@ -464,10 +500,10 @@ export default {
   margin-right: 3px !important;
 }
 
-.navbar-collapse .navbar-nav .nav-link {
-  margin: 0 !important;
-  padding: 0 !important;
-}
+// .navbar-collapse .navbar-nav .nav-link {
+//   margin: 0 !important;
+//   padding: 0 !important;
+// }
 
 .navbar-nav li {
   font-size: 1.2em !important;
@@ -479,6 +515,10 @@ export default {
     font-size: 1.2em !important;
     padding: 0 20px !important;
     // color: rgb(0, 0, 0) !important;
+  }
+
+  .navbar-nav li:hover {
+    background: #dadada;
   }
 }
 
@@ -507,10 +547,6 @@ export default {
   font-weight: inherit !important;
 }
 
-.text-danger {
-  font-family: IranSansBold !important;
-  font-size: 0.95em !important;
-}
 p,
 .copyright {
   font-size: 0.85rem !important;

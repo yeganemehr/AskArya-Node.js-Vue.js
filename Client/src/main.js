@@ -14,7 +14,7 @@ import VuePlyr from 'vue-plyr';
 import NProgress from 'nprogress';
 import VueMeta from 'vue-meta';
 var VueScrollTo = require('vue-scrollto');
-import ElementUI from 'element-ui';
+import Element from 'element-ui'
 
 
 // plugin setup
@@ -26,7 +26,7 @@ Vue.use(CKEditor);
 Vue.use(VuePlyr);
 Vue.use(NProgress);
 Vue.use(VueMeta);
-Vue.use(ElementUI);
+Vue.use(Element)
 
 import 'nprogress/nprogress.css';
 import './assets/sass/nprogress.scss';
