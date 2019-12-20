@@ -1,6 +1,7 @@
 APPLICATION_PORT=3000
 WEBSITE_URL=http://localhost:3000
 DATABASE_URL=mongodb://askaryadbuser:junQMX8y9SXcjXsadas@askarya.ir:27017/askarya?authSource=admin
+MLAB-DATABASE_URL=mongodb://arya:password94@ds215563.mlab.com:15563/askaryadb
 
 RECAPTCHA_CLIENTKEY=6LfnnooUAAAAAHOR2G2G62aZPeq96Xqh4NArCdJA
 RECAPTCHA_SECRETKEY=6LfnnooUAAAAAPQApcaCIOS1NubgJS2_QN7Ozqj4
