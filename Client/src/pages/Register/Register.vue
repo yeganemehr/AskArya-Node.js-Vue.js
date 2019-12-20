@@ -50,14 +50,14 @@
               </router-link>
             </base-checkbox>
           </div>
-          <!-- <div class="text-center pt-3">
+          <div class="text-center pt-3">
             <a :href="googleAuthUrl">
               <h4 class="googleicon">
                 <i class="fab fa-google icon"></i>
               </h4>
             </a>
             <p class="google-text">شما میتوانید بدون ثبت نام با اکانت گوگل وارد سایت شوید.</p>
-          </div>-->
+          </div>
 
           <!-- <div class="d-flex justify-content-center py-3">
             <vue-recaptcha :sitekey="sitekey" @verify="verifyRecaptcha"></vue-recaptcha>

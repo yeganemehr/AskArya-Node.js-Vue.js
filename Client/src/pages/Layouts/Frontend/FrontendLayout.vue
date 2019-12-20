@@ -231,7 +231,7 @@
               طراحی و تولید شده توسط
               <router-link to="/terms">اسک آریا</router-link>، با افتخار در
               ایران
-              <i class="tim-icons icon-heart-2"></i>
+              <i class="tim-icons icon-heart-2 text-success"></i>
               سال ١٣٩۸
             </p>
           </div>
@@ -335,7 +335,7 @@ export default {
             message: 'درخواست شما توسط سرور رد شد'
           });
         }
-        
+
         // cookie.removeItem('session_askarya');
         // cookie.removeItem('remember_token');
         localStorage.removeItem('remember_token');
@@ -663,6 +663,11 @@ $scaleSize: 0.8;
   padding: 20px 0 !important;
   background: #1c2236 !important;
   color: #fff !important;
+}
+
+.copyright,
+a {
+  color: #50b298;
 }
 
 .copyright-text {

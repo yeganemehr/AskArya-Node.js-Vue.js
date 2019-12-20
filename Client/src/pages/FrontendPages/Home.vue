@@ -7,9 +7,7 @@
     <div class="container pt-5 pb-4">
       <div class="top-courses-section">
         <div class="d-flex justify-content-between">
-          <p class="text-right top-section-header pt-1 pb-4">
-            پیشنهادهای ویژه اسک آریا برای شما
-          </p>
+          <p class="text-right section-header pt-1 pb-4">پیشنهادهای ویژه اسک آریا برای شما</p>
         </div>
         <div class="pt-2">
           <div
@@ -30,7 +28,7 @@
                 <Course v-bind="course"></Course>
               </el-carousel-item>
             </el-carousel>
-          </div> -->
+          </div>-->
         </div>
         <div class="text-center">
           <router-link to="allcourses">
@@ -38,8 +36,7 @@
               native-type="submit"
               type="success"
               class="btn btn-round animation-on-hover mt-4"
-              >مشاهده همه دوره ها</base-button
-            >
+            >مشاهده همه دوره ها</base-button>
           </router-link>
         </div>
       </div>
@@ -157,10 +154,10 @@ export default {
   box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1) !important;
 }
 
-.top-section-header {
-  font-size: 1.1em !important;
-  color: rgb(66, 66, 66) !important;
-  font-family: IranSansBold !important;
+.section-header {
+  font-size: 16px;
+  font-family: IranSansBold;
+  margin: 0 0 7px 0;
 }
 
 .fadeline2 {
