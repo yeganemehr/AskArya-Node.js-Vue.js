@@ -124,6 +124,7 @@ export default {
 .avatar {
   width: 5em !important;
   height: 5em !important;
+  background-color: transparent !important;
 }
 // @media (min-width: 992px) {
 //   .navbar-search-form-mobile,

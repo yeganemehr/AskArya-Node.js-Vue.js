@@ -4,7 +4,7 @@
       class="fileinput-new thumbnail"
       :class="{ 'img-circle': type === 'avatar' }"
     >
-      <img :src="image" alt="preview" />
+      <!-- <img :src="image" alt="preview" /> -->
     </div>
     <div>
       <span class="btn btn-primary btn-simple btn-file">

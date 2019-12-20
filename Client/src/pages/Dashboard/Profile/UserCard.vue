@@ -58,11 +58,11 @@
             </ul>
           </div>
           <div class="row pt-3">
-            <div class="col-md-4 text-ltr">
+            <div class="col-md-5 text-ltr">
               <label class="pull-right">نام و نام خانوادگی</label>
               <base-input
                 type="text"
-                placeholder="Your Name"
+                placeholder="نام جدید خود را وارد کنید"
                 v-model="name"
                 :error="fieldErrors.name"
               ></base-input>
@@ -76,7 +76,7 @@
                 :error="fieldErrors.email"
               ></base-input>
             </div>-->
-            <div class="col-md-4 text-ltr">
+            <div class="col-md-5 text-ltr">
               <label class="pull-right">تغییر رمز عبور</label>
               <base-input
                 type="password"
@@ -85,7 +85,7 @@
                 :error="fieldErrors.password"
               ></base-input>
             </div>
-            <div class="col-md-3 pt-3">
+            <div v-if="isAdmin" class="col-md-3 pt-3">
               <image-upload type="avatar" select-text="+ آپلود عکس" @change="onAvatarChange" />
             </div>
             <div class="col-md-2 mt-3 mr-auto">
@@ -125,6 +125,9 @@ export default {
     },
     userAvatar() {
       return this.user.avatar || '/img/default-avatar.png';
+    },
+    isAdmin() {
+      return this.$root.$data.user && this.$root.$data.user.admin;
     }
   },
   methods: {
@@ -181,7 +184,7 @@ export default {
             message: `مشخصات شما با موفقیت به روز شده!`,
             icon: 'tim-icons icon-bell-55'
           });
-          // this.$router.push('/dashboard');
+          window.location.href = '/dashboard';
         })
         .catch(error => {
           this.loading = false;
