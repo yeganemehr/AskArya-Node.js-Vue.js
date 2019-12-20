@@ -98,9 +98,8 @@ export default {
               button: 'بسیار خوب'
             });
           }
-          window.location.href = '/';
           // alert("ایمیل حاوی لینک پسورد به ایمیل شما ارسال شد");
-          // this.$router.push(this.$route.query.backTo || 'dashboard');
+          this.$router.push(this.$route.query.backTo || 'login');
         })
         .catch(error => {
           this.loading = false;

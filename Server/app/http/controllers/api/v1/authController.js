@@ -17,7 +17,8 @@ class authController extends controller {
     if (!(await this.validationData(req, res))) return;
 
     passport.authenticate(
-      'local.login', {
+      'local.login',
+      {
         session: true
       },
       async (err, user) => {
@@ -25,8 +26,8 @@ class authController extends controller {
         if (!user) return this.failed('چنین کاربری وجود ندارد', res, 404);
         if (!user.active) {
           const activeCode = await ActivationCode.findOne({
-              user: user.id
-            })
+            user: user.id
+          })
             .gt('expire', new Date())
             .sort({
               createdAt: 1
@@ -43,46 +44,56 @@ class authController extends controller {
             return this.sendActivateEmail(res, user);
           }
         } else {
-          req.login(user, {
-            session: true
-          }, async err => {
-            if (err) return this.failed(err.message, res);
+          req.login(
+            user,
+            {
+              session: true
+            },
+            async err => {
+              if (err) return this.failed(err.message, res);
 
-            // create token
-            const token = jwt.sign({
-              id: user.id
-            }, config.jwt.secret_key, {
-              expiresIn: 60 * 60 * 24
-            });
-            if (req.body.remember) {
-              user.setRememberToken(res);
+              // create token
+              const token = jwt.sign(
+                {
+                  id: user.id
+                },
+                config.jwt.secret_key,
+                {
+                  expiresIn: 60 * 60 * 24
+                }
+              );
+              if (req.body.remember) {
+                user.setRememberToken(res);
+              }
+              const ip =
+                req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+              const loginLog = new Log({
+                ip: ip,
+                user: user.id,
+                type: 'login',
+                title: ` گزارش ورود به سیستم با آدرس آی پی ${ip} ثبت شده است. در صورتی که فکر میکنید این کار توسط شما انجام نشده هر چه سریع تر با مدیریت اسک آریا تماس بگیرید. `
+              });
+              await loginLog.save();
+              user = await user
+                .populate({
+                  path: 'roles',
+                  select: 'name label permissions',
+                  populate: [
+                    {
+                      path: 'permissions'
+                    }
+                  ]
+                })
+                .execPopulate();
+              return res.json({
+                data: {
+                  token,
+                  user: HomeController.filterUserData(user)
+                },
+                status: 'success'
+              });
             }
-            const ip =
-              req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-            const loginLog = new Log({
-              ip: ip,
-              user: user.id,
-              type: 'login',
-              title: ` گزارش ورود به سیستم با آدرس آی پی ${ip} ثبت شده است. در صورتی که فکر میکنید این کار توسط شما انجام نشده هر چه سریع تر با مدیریت اسک آریا تماس بگیرید. `
-            });
-            await loginLog.save();
-            user = await user
-              .populate({
-                path: 'roles',
-                select: 'name label permissions',
-                populate: [{
-                  path: 'permissions'
-                }]
-              })
-              .execPopulate();
-            return res.json({
-              data: {
-                token,
-                user: HomeController.filterUserData(user)
-              },
-              status: 'success'
-            });
-          });
+          );
         }
       }
     )(req, res);
@@ -93,7 +104,8 @@ class authController extends controller {
     // }
     if (!(await this.validationData(req, res))) return;
     passport.authenticate(
-      'local.register', {
+      'local.register',
+      {
         failWithError: true
       },
       async (err, user) => {
@@ -193,13 +205,16 @@ class authController extends controller {
       );
     }
 
-    const user = await User.findOneAndUpdate({
-      email: field.email
-    }, {
-      $set: {
-        password: req.body.password
+    const user = await User.findOneAndUpdate(
+      {
+        email: field.email
+      },
+      {
+        $set: {
+          password: req.body.password
+        }
       }
-    });
+    );
     if (!user) {
       return this.failed('اپدیت شدن انجام نشد', res, 500);
     }

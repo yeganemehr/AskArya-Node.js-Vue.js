@@ -10,7 +10,7 @@
     >
       <div slot="brand" class="navbar-wrapper">
         <router-link to="/">
-          <img src="/img/askarya-logo.png" width="115" alt="Ask Arya Logo" />
+          <img src="/img/askarya-logo.png" width="110" alt="Ask Arya Logo" />
         </router-link>
       </div>
       <ul class="navbar-nav">

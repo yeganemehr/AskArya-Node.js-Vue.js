@@ -105,8 +105,7 @@ export default {
           this.loading = false;
           errorHandler(error.response);
         });
-      // this.$router.push(this.$route.query.backTo || 'login');
-      window.location.href = '/login';
+      this.$router.push(this.$route.query.backTo || 'login');
     }
   }
 };
