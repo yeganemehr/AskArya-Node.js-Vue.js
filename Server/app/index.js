@@ -20,6 +20,9 @@ const csrf = require('csurf');
 const csrfErrorHandler = require('app/http/middleware/csrfErrorHandler');
 const activeUser = require('app/http/middleware/activeUser');
 const redirectIfAuthenticated = require('app/http/middleware/redirectIfAuthenticated');
+
+const userController = require('app/http/controllers/userController');
+
 module.exports = class Application {
   constructor() {
     this.setupExpress();
@@ -98,6 +101,8 @@ module.exports = class Application {
       redirectIfAuthenticated.handle,
       require('app/routes/web/auth')
     );
+    app.get('/user/activation/:code', userController.activation);
+
     app.use(csrfErrorHandler.handle);
 
     ///////////////////// Handle Production
