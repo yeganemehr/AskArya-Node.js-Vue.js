@@ -17,8 +17,7 @@ class authController extends controller {
     if (!(await this.validationData(req, res))) return;
 
     passport.authenticate(
-      'local.login',
-      {
+      'local.login', {
         session: true
       },
       async (err, user) => {
@@ -26,8 +25,8 @@ class authController extends controller {
         if (!user) return this.failed('چنین کاربری وجود ندارد', res, 404);
         if (!user.active) {
           const activeCode = await ActivationCode.findOne({
-            user: user.id
-          })
+              user: user.id
+            })
             .gt('expire', new Date())
             .sort({
               createdAt: 1
@@ -45,20 +44,17 @@ class authController extends controller {
           }
         } else {
           req.login(
-            user,
-            {
+            user, {
               session: true
             },
             async err => {
               if (err) return this.failed(err.message, res);
 
               // create token
-              const token = jwt.sign(
-                {
+              const token = jwt.sign({
                   id: user.id
                 },
-                config.jwt.secret_key,
-                {
+                config.jwt.secret_key, {
                   expiresIn: 60 * 60 * 24
                 }
               );
@@ -78,11 +74,9 @@ class authController extends controller {
                 .populate({
                   path: 'roles',
                   select: 'name label permissions',
-                  populate: [
-                    {
-                      path: 'permissions'
-                    }
-                  ]
+                  populate: [{
+                    path: 'permissions'
+                  }]
                 })
                 .execPopulate();
               return res.json({
@@ -104,8 +98,7 @@ class authController extends controller {
     // }
     if (!(await this.validationData(req, res))) return;
     passport.authenticate(
-      'local.register',
-      {
+      'local.register', {
         failWithError: true
       },
       async (err, user) => {
@@ -205,16 +198,13 @@ class authController extends controller {
       );
     }
 
-    const user = await User.findOneAndUpdate(
-      {
-        email: field.email
-      },
-      {
-        $set: {
-          password: req.body.password
-        }
+    const user = await User.findOneAndUpdate({
+      email: field.email
+    }, {
+      $set: {
+        password: req.body.password
       }
-    );
+    });
     if (!user) {
       return this.failed('اپدیت شدن انجام نشد', res, 500);
     }
