@@ -13,6 +13,12 @@ import VuePlyr from 'vue-plyr';
 import NProgress from 'nprogress';
 import VueMeta from 'vue-meta';
 import * as Sentry from '@sentry/browser';
+import * as Integrations from '@sentry/integrations';
+
+Sentry.init({
+  dsn: 'https://3ac34b12eab64369bd54a7b7a34424ac@sentry.io/1863990',
+  integrations: [new Integrations.Vue({ Vue, attachProps: true })]
+});
 
 var VueScrollTo = require('vue-scrollto');
 // import Element from 'element-ui'
@@ -27,11 +33,6 @@ Vue.use(VuePlyr);
 Vue.use(NProgress);
 Vue.use(VueMeta);
 // Vue.use(Element)
-
-Sentry.init({
-  dsn: 'https://3ac34b12eab64369bd54a7b7a34424ac@sentry.io/1863990',
-  integrations: [new Integrations.Vue({ Vue, attachProps: true })]
-});
 
 import 'nprogress/nprogress.css';
 import './assets/sass/nprogress.scss';
