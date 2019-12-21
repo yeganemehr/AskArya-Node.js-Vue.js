@@ -8,8 +8,7 @@ const loginController = require('app/http/controllers/auth/loginController');
 const registerController = require('app/http/controllers/auth/registerController');
 const forgotPasswordController = require('app/http/controllers/auth/forgotPasswordController');
 const resetPasswordController = require('app/http/controllers/auth/resetPasswordController');
-// const userController = require('app/http/controllers/api/v1/userController');
-
+// const userController = require('app/http/controllers/userController');
 
 // validators
 const registerValidator = require('app/http/validators/registerValidator');
@@ -19,15 +18,8 @@ const resetPasswordValidator = require('app/http/validators/resetPasswordValidat
 
 let backTo = 'dashboard';
 
-// Logout
-// router.get('/logout', (req, res) => {
-//   req.logout();
-//   res.clearCookie('remember_token');
-//   res.redirect('/');
-// });
-
 // Activation
-router.get('/user/activation/:code', userController.activation);
+// router.get('/user/activation/:code', userController.activation);
 
 // Home Routes
 router.get('/login', loginController.showLoginForm);

@@ -71,9 +71,7 @@ userSchema.plugin(mongoosePaginate);
 userSchema.pre('remove', async function (next) {
 
   //delete tickets
-  const tickets = await this.model('Ticket').find({
-    user: this._id
-  });
+  const tickets = await this.model('Ticket').find({ user: this._id });
   for (let i = 0; i < tickets.length; i++) {
     const t = tickets[i];
     await t.remove();
@@ -81,36 +79,29 @@ userSchema.pre('remove', async function (next) {
   }
 
   //delete doneEpisodes
-  const doneEpisodes = await this.model('DoneEpisode').find({
-    user: this._id
-  });
+  const doneEpisodes = await this.model('DoneEpisode').find({ user: this._id });
 
   for (let i = 0; i < doneEpisodes.length; i++) {
     const de = doneEpisodes[i];
     await de.remove();
   }
 
-  //delete activationCodes - DELETED FOR TESTING
-
-  // const activationCodes = await this.model('ActivationCode').find({ user: this._id });
-  // for (let i = 0; i < activationCodes.length; i++) {
-  //   const ac = activationCodes[i];
-  //   await ac.remove();
-  // }
+  //delete activationCodes
+  const activationCodes = await this.model('ActivationCode').find({ user: this._id });
+  for (let i = 0; i < activationCodes.length; i++) {
+    const ac = activationCodes[i];
+    await ac.remove();
+  }
 
   //delete Courses
-  const courses = await this.model('Course').find({
-    user: this._id
-  });
+  const courses = await this.model('Course').find({ user: this._id });
   for (let i = 0; i < courses.length; i++) {
     const element = courses[i];
     await element.remove();
   }
 
   //delete Learnings
-  const learnings = await this.model('Learning').find({
-    user: this._id
-  });
+  const learnings = await this.model('Learning').find({ user: this._id });
   for (let i = 0; i < learnings.length; i++) {
     const element = learnings[i];
     await element.remove();

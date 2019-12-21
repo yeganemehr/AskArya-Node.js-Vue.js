@@ -64,12 +64,12 @@ self.__precacheManifest = [
     "url": "/fonts/nucleo.b17a118e.ttf"
   },
   {
-    "revision": "eb5adaac0d814e1e8e5cbd75efb9db3e",
-    "url": "/fonts/IRANSansWeb(FaNum).eb5adaac.woff2"
-  },
-  {
     "revision": "94c311fd48c9362dea340aa3a29e3567",
     "url": "/fonts/IRANSansWeb(FaNum).94c311fd.eot"
+  },
+  {
+    "revision": "eb5adaac0d814e1e8e5cbd75efb9db3e",
+    "url": "/fonts/IRANSansWeb(FaNum).eb5adaac.woff2"
   },
   {
     "revision": "bd6f69a8db87710b2f3fcd6ef75bd3e2",
@@ -80,20 +80,16 @@ self.__precacheManifest = [
     "url": "/fonts/IRANSansWeb(FaNum).e9908f05.ttf"
   },
   {
-    "revision": "ceaf6d89af9fb96d0466b26d6f1c022a",
-    "url": "/fonts/IranSansBold.ceaf6d89.woff2"
-  },
-  {
     "revision": "4abe296380edacb9f146cd778a94f43d",
     "url": "/fonts/IranSansBold.4abe2963.eot"
   },
   {
-    "revision": "753b3827c415580e864a545d1a860a5a",
-    "url": "/fonts/IranSansBold.753b3827.woff"
+    "revision": "ceaf6d89af9fb96d0466b26d6f1c022a",
+    "url": "/fonts/IranSansBold.ceaf6d89.woff2"
   },
   {
-    "revision": "080752485b7ec8837f9a26cd7c370139",
-    "url": "/fonts/IranSansDN.08075248.eot"
+    "revision": "753b3827c415580e864a545d1a860a5a",
+    "url": "/fonts/IranSansBold.753b3827.woff"
   },
   {
     "revision": "ff320f78af3a0fd44f2ee2993559fa9f",
@@ -102,6 +98,10 @@ self.__precacheManifest = [
   {
     "revision": "435a590ebb4929cd5b2cbe07e88ae6ca",
     "url": "/fonts/IranSansDN.435a590e.woff2"
+  },
+  {
+    "revision": "080752485b7ec8837f9a26cd7c370139",
+    "url": "/fonts/IranSansDN.08075248.eot"
   },
   {
     "revision": "54e2c53a321dd90785d70ba58d68ecdf",
@@ -132,14 +132,6 @@ self.__precacheManifest = [
     "url": "/index.html"
   },
   {
-    "revision": "f53a60e3e7ae1e6786b38c4206774628",
-    "url": "/_redirects"
-  },
-  {
-    "revision": "75c72e84ea1a447250d41d43e9b87ac7",
-    "url": "/img/asc.gif"
-  },
-  {
     "revision": "c6773d7d9382db87d97995f772e5c9f7",
     "url": "/favicon.png"
   },
@@ -148,12 +140,28 @@ self.__precacheManifest = [
     "url": "/img/arya.png"
   },
   {
+    "revision": "f53a60e3e7ae1e6786b38c4206774628",
+    "url": "/_redirects"
+  },
+  {
+    "revision": "75c72e84ea1a447250d41d43e9b87ac7",
+    "url": "/img/asc.gif"
+  },
+  {
     "revision": "a355248a0d8c3656f4897b6850ef7ffd",
     "url": "/img/Ask Arya LOGO 2019 - 200x200 - OPT.png"
   },
   {
     "revision": "13bd8717e92eebaee09863b41395abdd",
     "url": "/img/askaryafavicon.png"
+  },
+  {
+    "revision": "7cbaf5f757f32260aac34f5a69ca72ba",
+    "url": "/img/askarya-logo.png"
+  },
+  {
+    "revision": "7c563729ff6b0528ae6b0eb4bd0fba9e",
+    "url": "/img/badges/3-Beginner.svg"
   },
   {
     "revision": "fd7029c65acfd2fb6b2c4a7b73acedf8",
@@ -168,20 +176,16 @@ self.__precacheManifest = [
     "url": "/img/badges/1-Novice.svg"
   },
   {
+    "revision": "aabd718037429b81dbea6b17163199f7",
+    "url": "/img/badges/6-Seasoned.svg"
+  },
+  {
     "revision": "093a20669a669e093937fa8a0e122b1e",
     "url": "/img/badges/4-Talented.svg"
   },
   {
-    "revision": "7cbaf5f757f32260aac34f5a69ca72ba",
-    "url": "/img/askarya-logo.png"
-  },
-  {
     "revision": "46d2d5abfbe9770e3285567729019e9a",
     "url": "/img/badges/5-Skilled.svg"
-  },
-  {
-    "revision": "7c563729ff6b0528ae6b0eb4bd0fba9e",
-    "url": "/img/badges/3-Beginner.svg"
   },
   {
     "revision": "0dcc31889cc74b7d2197de3d8791fde6",
@@ -192,20 +196,12 @@ self.__precacheManifest = [
     "url": "/img/bg.gif"
   },
   {
-    "revision": "927ecfd7121fd0e1b0680a459212fc28",
-    "url": "/img/badges/8-Master.svg"
+    "revision": "5a382f972d79b093248c6b99649d08a7",
+    "url": "/img/desc.gif"
   },
   {
     "revision": "5b83f5d5455d6be791088f8bd7d94c01",
     "url": "/img/default-avatar.png"
-  },
-  {
-    "revision": "aabd718037429b81dbea6b17163199f7",
-    "url": "/img/badges/6-Seasoned.svg"
-  },
-  {
-    "revision": "5a382f972d79b093248c6b99649d08a7",
-    "url": "/img/desc.gif"
   },
   {
     "revision": "c22c2743227b2c9d1196df580d019888",
@@ -220,24 +216,16 @@ self.__precacheManifest = [
     "url": "/img/frontend/aryapic-askarya.JPG"
   },
   {
-    "revision": "1e7147bf13e2febf8ad141c5a274a08c",
-    "url": "/img/frontend/discussing-icon.png"
-  },
-  {
     "revision": "1bfbfc4112a365a70fb96b8b84141ec5",
     "url": "/img/frontend/aryapilot-askarya.png"
   },
   {
+    "revision": "1e7147bf13e2febf8ad141c5a274a08c",
+    "url": "/img/frontend/discussing-icon.png"
+  },
+  {
     "revision": "40e85ef916073de8d85761d05c10c1d0",
     "url": "/img/frontend/confused-banner.svg"
-  },
-  {
-    "revision": "07d230ed6d59162714f09c810d003379",
-    "url": "/img/frontend/fastlearning-icon.png"
-  },
-  {
-    "revision": "471a597e0bdba7271196a78df24b1223",
-    "url": "/img/frontend/home-banner-blue-swirl.svg"
   },
   {
     "revision": "8a951ebacf53e659413746d7c78450ab",
@@ -248,8 +236,20 @@ self.__precacheManifest = [
     "url": "/img/frontend/loginscreenbg.svg"
   },
   {
-    "revision": "bd0758cb82a2c322fbcbea52be9c72c2",
-    "url": "/img/frontend/westminsterlondon-opt.jpeg"
+    "revision": "471a597e0bdba7271196a78df24b1223",
+    "url": "/img/frontend/home-banner-blue-swirl.svg"
+  },
+  {
+    "revision": "a0b67dd2cb146476807adbc714d27a9d",
+    "url": "/img/frontend/london-bg-1-mobile.jpg"
+  },
+  {
+    "revision": "927ecfd7121fd0e1b0680a459212fc28",
+    "url": "/img/badges/8-Master.svg"
+  },
+  {
+    "revision": "536a8c6f6564ff4eda00e22bfcf0cac9",
+    "url": "/img/frontend/success-banner.svg"
   },
   {
     "revision": "5e4acb164b41a2eba13902a33adb82a2",
@@ -260,24 +260,16 @@ self.__precacheManifest = [
     "url": "/img/GB.png"
   },
   {
-    "revision": "a0b67dd2cb146476807adbc714d27a9d",
-    "url": "/img/frontend/london-bg-1-mobile.jpg"
-  },
-  {
-    "revision": "a4700898cbe2a716cf567f2159b18511",
-    "url": "/img/placeholder.jpg"
+    "revision": "1b581e521bd0e79ea22e45b0b4df31c4",
+    "url": "/img/image_placeholder.jpg"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/robots.txt"
   },
   {
-    "revision": "1b581e521bd0e79ea22e45b0b4df31c4",
-    "url": "/img/image_placeholder.jpg"
-  },
-  {
-    "revision": "536a8c6f6564ff4eda00e22bfcf0cac9",
-    "url": "/img/frontend/success-banner.svg"
+    "revision": "07d230ed6d59162714f09c810d003379",
+    "url": "/img/frontend/fastlearning-icon.png"
   },
   {
     "revision": "52232cad2670ca756d21e52922c21a11",
@@ -286,5 +278,13 @@ self.__precacheManifest = [
   {
     "revision": "5223b42cef164013d6618c0a30ef63ee",
     "url": "/img/frontend/london-bg-opt.jpg"
+  },
+  {
+    "revision": "bd0758cb82a2c322fbcbea52be9c72c2",
+    "url": "/img/frontend/westminsterlondon-opt.jpeg"
+  },
+  {
+    "revision": "a4700898cbe2a716cf567f2159b18511",
+    "url": "/img/placeholder.jpg"
   }
 ];

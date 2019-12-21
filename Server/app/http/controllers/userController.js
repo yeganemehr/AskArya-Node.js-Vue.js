@@ -3,7 +3,6 @@ const Payment = require('app/models/payment');
 const request = require('request-promise');
 const ActivationCode = require('app/models/activationCode');
 
-
 class userController extends controller {
   async activation(req, res, next) {
     try {
