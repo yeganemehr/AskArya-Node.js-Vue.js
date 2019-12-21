@@ -20,11 +20,11 @@ const resetPasswordValidator = require('app/http/validators/resetPasswordValidat
 let backTo = 'dashboard';
 
 // Logout
-router.get('/logout', (req, res) => {
-  req.logout();
-  res.clearCookie('remember_token');
-  res.redirect('/');
-});
+// router.get('/logout', (req, res) => {
+//   req.logout();
+//   res.clearCookie('remember_token');
+//   res.redirect('/');
+// });
 
 // Activation
 router.get('/user/activation/:code', userController.activation);

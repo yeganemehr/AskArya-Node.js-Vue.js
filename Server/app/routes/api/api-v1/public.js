@@ -6,6 +6,8 @@ const CourseController = require('app/http/controllers/api/v1/courseController')
 const HomeController = require('app/http/controllers/api/v1/homeController');
 const AuthController = require('app/http/controllers/api/v1/authController');
 const BlogController = require('app/http/controllers/api/v1/blogController');
+const userController = require('app/http/controllers/userController');
+
 
 // Validator
 const loginValidator = require('app/http/validators/loginValidator');
@@ -30,6 +32,9 @@ router.post(
   resetPasswordValidator.handle(),
   AuthController.resetPasswordProccess
 );
+
+// Activation
+router.get('/user/activation/:code', userController.activation);
 
 router.get('/blog/:slug', BlogController.bySlug);
 
