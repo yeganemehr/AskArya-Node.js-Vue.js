@@ -8,6 +8,7 @@ const loginController = require('app/http/controllers/auth/loginController');
 const registerController = require('app/http/controllers/auth/registerController');
 const forgotPasswordController = require('app/http/controllers/auth/forgotPasswordController');
 const resetPasswordController = require('app/http/controllers/auth/resetPasswordController');
+const userController = require('app/http/controllers/userController');
 
 // validators
 const registerValidator = require('app/http/validators/registerValidator');
@@ -15,7 +16,10 @@ const loginValidator = require('app/http/validators/loginValidator');
 const forgotPasswordValidator = require('app/http/validators/forgotPasswordValidator');
 const resetPasswordValidator = require('app/http/validators/resetPasswordValidator');
 
-let backTo = "dashboard";
+let backTo = 'dashboard';
+
+// Activation
+router.get('/user/activation/:code', userController.activation);
 
 // Home Routes
 router.get('/login', loginController.showLoginForm);
@@ -42,17 +46,16 @@ router.post(
   resetPasswordController.resetPasswordProccess
 );
 
-router.get(
-  '/google',
-  (req, res, next) => {
-    if (req.query.hasOwnProperty("backTo")) {
-      backTo = req.query.backTo;
-    } else {
-      backTo = "dashboard";
-    }
-    return passport.authenticate('google', { scope: ['profile', 'email'] })(req, res, next);
-  },
-);
+router.get('/google', (req, res, next) => {
+  if (req.query.hasOwnProperty('backTo')) {
+    backTo = req.query.backTo;
+  } else {
+    backTo = 'dashboard';
+  }
+  return passport.authenticate('google', {
+    scope: ['profile', 'email']
+  })(req, res, next);
+});
 router.get(
   '/google/callback',
   passport.authenticate('google', {
