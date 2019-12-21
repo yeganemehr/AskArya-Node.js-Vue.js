@@ -8,7 +8,6 @@ const loginController = require('app/http/controllers/auth/loginController');
 const registerController = require('app/http/controllers/auth/registerController');
 const forgotPasswordController = require('app/http/controllers/auth/forgotPasswordController');
 const resetPasswordController = require('app/http/controllers/auth/resetPasswordController');
-// const userController = require('app/http/controllers/userController');
 
 // validators
 const registerValidator = require('app/http/validators/registerValidator');
@@ -17,9 +16,6 @@ const forgotPasswordValidator = require('app/http/validators/forgotPasswordValid
 const resetPasswordValidator = require('app/http/validators/resetPasswordValidator');
 
 let backTo = 'dashboard';
-
-// Activation
-// router.get('/user/activation/:code', userController.activation);
 
 // Home Routes
 router.get('/login', loginController.showLoginForm);
