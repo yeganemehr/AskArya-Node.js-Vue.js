@@ -10,6 +10,7 @@ const forgotPasswordController = require('app/http/controllers/auth/forgotPasswo
 const resetPasswordController = require('app/http/controllers/auth/resetPasswordController');
 const userController = require('app/http/controllers/userController');
 
+
 // validators
 const registerValidator = require('app/http/validators/registerValidator');
 const loginValidator = require('app/http/validators/loginValidator');
@@ -17,6 +18,13 @@ const forgotPasswordValidator = require('app/http/validators/forgotPasswordValid
 const resetPasswordValidator = require('app/http/validators/resetPasswordValidator');
 
 let backTo = 'dashboard';
+
+// Logout
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.clearCookie('remember_token');
+  res.redirect('/');
+});
 
 // Activation
 router.get('/user/activation/:code', userController.activation);
