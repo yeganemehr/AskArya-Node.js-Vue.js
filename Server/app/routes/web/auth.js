@@ -8,7 +8,7 @@ const loginController = require('app/http/controllers/auth/loginController');
 const registerController = require('app/http/controllers/auth/registerController');
 const forgotPasswordController = require('app/http/controllers/auth/forgotPasswordController');
 const resetPasswordController = require('app/http/controllers/auth/resetPasswordController');
-const userController = require('app/http/controllers/api/v1/userController');
+// const userController = require('app/http/controllers/api/v1/userController');
 
 
 // validators
