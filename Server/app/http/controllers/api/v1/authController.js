@@ -170,9 +170,11 @@ class authController extends controller {
       from: '"اسک آریا 👻" <info@askarya.ir>',
       to: `${newPasswordReset.email}`,
       subject: 'ریست کردن پسورد',
-      html: `<h2>ریست کردن پسورد</h2>
+      html: `<div dir="rtl">
+      <h2>ریست کردن پسورد</h2>
              <p>برای ریست کردن پسورد بر روی لینک زیر کلیک کنید</p>
-             <a href="${config.siteurl}/auth/password/reset/${newPasswordReset.token}">ریست کردن</a>`
+             <a href="${config.siteurl}/auth/password/reset/${newPasswordReset.token}">ریست کردن</a>
+             </div`
     };
 
     mail.sendMail(mailOptions, err => {

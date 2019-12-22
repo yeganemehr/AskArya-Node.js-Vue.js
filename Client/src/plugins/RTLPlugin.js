@@ -11,7 +11,7 @@ export default {
           return document.body.classList;
         },
         enableRTL() {
-          import('@/assets/sass/vendor/bootstrap-rtl.scss')
+          import('@/assets/sass/vendor/bootstrap-rtl.scss');
           this.isRTL = true;
           this.getDocClasses().add('rtl');
           this.getDocClasses().add('menu-on-right');
@@ -26,9 +26,7 @@ export default {
         toggleBootstrapRTL(value) {
           for (let i = 0; i < document.styleSheets.length; i++) {
             let styleSheet = document.styleSheets[i];
-            let {
-              href
-            } = styleSheet;
+            let { href } = styleSheet;
             if (href && href.endsWith('bootstrap-rtl.css')) {
               styleSheet.disabled = !value;
             }
