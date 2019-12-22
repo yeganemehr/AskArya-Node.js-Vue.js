@@ -75,7 +75,7 @@ export default {};
 
 <style lang="scss" scoped>
 .image {
-  width: 440px !important;
+  width: 400px !important;
   padding-top: 3em;
   padding-bottom: 2em;
 }
@@ -105,11 +105,9 @@ export default {};
   }
 
   .btn {
-    font-weight: inherit;
-    border-radius: 30px;
-    padding: 13px 23px !important;
-    font-size: 1.1em;
-    font-family: IranSansBold;
+    border-radius: 20px !important;
+    font-size: 1.2em;
+    // padding: 13px 23px !important;
   }
 }
 

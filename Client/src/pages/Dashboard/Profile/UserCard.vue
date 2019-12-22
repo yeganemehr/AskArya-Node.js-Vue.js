@@ -85,7 +85,7 @@
                 :error="fieldErrors.password"
               ></base-input>
             </div>
-            <div v-if="isAdmin" class="col-md-3 pt-3">
+            <div v-if="isAdmin" class="col-md-3">
               <image-upload type="avatar" select-text="+ آپلود عکس" @change="onAvatarChange" />
             </div>
             <div class="col-md-2 mt-3 mr-auto">

@@ -4,7 +4,7 @@
     <h4 class="text-center course-title pt-3">{{ title }}</h4>
     <hr class="fadeline" />
     <div class="bottom-section">
-      <div class="CourseCard__course__info d-flex justify-content-between text-center pt-1">
+      <div class="CourseCard__course__info d-flex justify-content-between text-center pt-2">
         <div>
           <p class="courseTime">
             {{ minutes }}
@@ -123,13 +123,13 @@ export default {
 .CourseCard {
   background-color: #f7f7f7;
   border-radius: 15px;
-  box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.15);
 
   .course-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-family: IranSansBold;
     color: #333333;
   }
@@ -144,7 +144,7 @@ export default {
   }
 
   .courseTime {
-    color: rgb(66, 66, 66);
+    color: rgb(53, 53, 53);
     padding-right: 0.7rem;
     font-size: 1.4em !important;
     font-family: IranSansBold !important;
@@ -152,11 +152,11 @@ export default {
 
   .courseTimeSpan {
     font-size: 0.73rem;
-    color: #696969;
+    color: #00000049;
   }
 
   .unitsAvailable {
-    color: rgb(66, 66, 66);
+    color: rgb(53, 53, 53);
     padding-left: 0.7rem;
     font-size: 1.4em !important;
     font-family: IranSansBold !important;
@@ -164,7 +164,7 @@ export default {
 
   .unitsAvailableSpan {
     font-size: 0.73rem;
-    color: #696969;
+    color: #00000049;
   }
 
   .bottom-section {
@@ -187,7 +187,8 @@ export default {
 
   .oldPrice {
     font-size: 0.8rem;
-    color: rgb(83, 83, 83);
+    font-family: IranSansBold !important;
+    color: rgba(0, 0, 0, 0.295);
     text-decoration: line-through;
     margin: 0;
     padding: 0;
@@ -205,11 +206,11 @@ export default {
 
 .hover:hover,
 .hover:focus {
-  -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0.65);
-  box-shadow: 40px rgba(121, 121, 121, 0.65);
+  -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0.5) !important;
+  box-shadow: 40px rgba(121, 121, 121, 0.5) !important;
   transition: transform 0.8s !important;
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
   cursor: pointer;
 
   .buyCourseTitle {
@@ -236,7 +237,7 @@ export default {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   .CourseCard .course-title {
-    font-size: 1em !important;
+    font-size: 0.9em !important;
   }
 
   .CourseCard .pricehighlight {
@@ -247,24 +248,24 @@ export default {
     font-size: 0.8em;
   }
 
-  .CourseCard .courseTime[data-v-81edaea2] {
+  .CourseCard .courseTime {
     font-size: 1.1em;
   }
 
-  .CourseCard .unitsAvailable[data-v-81edaea2] {
+  .CourseCard .unitsAvailable {
     font-size: 1.1em;
   }
 
-  .CourseCard .buyCourseTitle[data-v-81edaea2] {
+  .CourseCard .buyCourseTitle {
     font-size: 1em;
   }
 }
 
 @media (max-width: 768px) {
-  .CourseCard {
-    -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0) !important;
-    box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0) !important;
-  }
+  // .CourseCard {
+  //   -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0) !important;
+  //   box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0) !important;
+  // }
 
   .CourseCard__course__info {
     margin: 0 14%;
@@ -279,7 +280,7 @@ export default {
   }
 
   .course-title {
-    font-size: 0.92rem;
+    font-size: 0.9rem;
   }
 
   .courseTimeSpan,

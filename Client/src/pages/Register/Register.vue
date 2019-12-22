@@ -3,7 +3,7 @@
     <div class="col-lg-3 col-md-12 col-sm-12 register-section d-flex align-items-center">
       <div class="container register-boxes">
         <form @submit="checkForm" id="register-form">
-          <h1 class="register-title text-primary pb-2">ثبت نام</h1>
+          <h1 class="register-title text-primary pb-4">ثبت نام</h1>
           <div class="row">
             <div class="col-12">
               <base-input
@@ -50,14 +50,15 @@
               </router-link>
             </base-checkbox>
           </div>
-          <div class="text-center pt-3">
+
+          <!-- <div class="text-center pt-3">
             <a :href="googleAuthUrl">
               <h4 class="googleicon">
                 <i class="fab fa-google icon"></i>
               </h4>
             </a>
             <p class="google-text">شما میتوانید بدون ثبت نام با اکانت گوگل وارد سایت شوید.</p>
-          </div>
+          </div>-->
 
           <!-- <div class="d-flex justify-content-center py-3">
             <vue-recaptcha :sitekey="sitekey" @verify="verifyRecaptcha"></vue-recaptcha>
@@ -72,11 +73,15 @@
             nativeType="submit"
             type="primary"
             :loading="loading"
-            round
             block
             size="lg"
             class="mt-4 animation-on-hover"
           >ثبت نام</base-button>
+          <a :href="googleAuthUrl">
+            <base-button block type="primary" class="btn-simple animation-on-hover">
+              <i class="fab fa-google icon"></i>
+            </base-button>
+          </a>
         </form>
       </div>
     </div>
@@ -203,8 +208,8 @@ export default {
               text: '',
               button: 'بسیار خوب'
             });
-            this.$router.push(this.$route.query.backTo || '/');
-            // this.$router.push(this.$route.query.backTo || 'dashboard');
+            // this.$router.push(this.$route.query.backTo || '/');
+            this.$router.push(this.$route.query.backTo || '/dashboard');
           }
         })
         .catch(error => {
@@ -316,7 +321,7 @@ export default {
 .googleicon {
   font-size: 1.2em !important;
   margin: 0;
-  padding: 0 0 0.5em 0;
+  padding: 0 0 0.3em 0;
 }
 
 .icon {

@@ -99,12 +99,13 @@ export default {
             });
           }
           // alert("ایمیل حاوی لینک پسورد به ایمیل شما ارسال شد");
-          this.$router.push(this.$route.query.backTo || 'login');
+          // this.$router.push(this.$route.query.backTo || 'login');
         })
         .catch(error => {
           this.loading = false;
           errorHandler(error.response);
         });
+      window.location.href = '/login';
     }
   }
 };

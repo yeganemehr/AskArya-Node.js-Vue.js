@@ -181,4 +181,10 @@ export default {
 // .top-courses-section {
 //   padding: 0 11% !important;
 // }
+
+@media (max-width: 680px) {
+  .top-courses-section {
+    padding: 0 10% !important;
+  }
+}
 </style>

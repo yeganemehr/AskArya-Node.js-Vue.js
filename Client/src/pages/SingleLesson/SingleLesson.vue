@@ -146,7 +146,12 @@
         >"تا زمانی که متوقف نشوید، مهم نیست که چقدر آهسته حرکت می کنید."</p>
       </div>
     </div>
-    <modal ref="buymodal" v-bind:centered="true" footerClasses="justify-content-center" type="notice">
+    <modal
+      ref="buymodal"
+      v-bind:centered="true"
+      footerClasses="justify-content-center"
+      type="notice"
+    >
       <h5 slot="header" class="modal-title">
         خرید دوره:
         <span class="course-title-modal text-danger">{{ course.title }}</span>

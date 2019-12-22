@@ -3,7 +3,7 @@
     <div class="col-lg-3 col-md-12 col-sm-12 login-section d-flex align-items-center">
       <div class="container login-boxes">
         <form @submit="checkForm">
-          <h1 class="login-title text-primary pb-2">ورود</h1>
+          <h1 class="login-title text-primary pb-4">ورود</h1>
           <div class="row">
             <div class="col-12">
               <base-input
@@ -28,7 +28,7 @@
               ></base-input>
             </div>
           </div>
-          <div class="text-right">
+          <div class="text-right pb-3">
             <base-checkbox
               class="pb-3"
               name="remember"
@@ -39,14 +39,14 @@
             </base-checkbox>
           </div>
 
-          <div class="text-center pb-2">
+          <!-- <div class="text-center pb-2">
             <a :href="googleAuthUrl">
               <h4 class="googleicon">
                 <i class="fab fa-google icon"></i>
               </h4>
             </a>
             <p class="google-text">شما میتوانید با اکانت گوگل وارد سایت شوید</p>
-          </div>
+          </div>-->
           <!-- <div class="py-2 d-flex justify-content-center">
             <vue-recaptcha :sitekey="sitekey" @verify="verifyRecaptcha"></vue-recaptcha>
           </div>-->
@@ -61,22 +61,26 @@
             <base-button
               type="primary"
               nativeType="submit"
-              class="mb-2 animation-on-hover"
+              class="animation-on-hover"
               size="lg"
               :loading="loading"
               block
             >ورود</base-button>
-            <div class="pt-2 text-center">
-              <h6>
-                <router-link to="/forgotpassword" class="footer-link">رمز عبور را فراموش کرده ام</router-link>
-              </h6>
-              <!-- <div class="pull-left">
-                <h6>
-                  <router-link class="footer-link" :to="registerUrl">فرم عضویت</router-link>
-                </h6>
-              </div>-->
-            </div>
           </div>
+
+          <a :href="googleAuthUrl">
+            <base-button block type="primary" class="btn-simple animation-on-hover">
+              <i class="fab fa-google icon"></i>
+            </base-button>
+          </a>
+
+          <h6 class="pull-left pt-3">
+            <router-link class="footer-link" :to="registerUrl">فرم عضویت</router-link>
+          </h6>
+
+          <h6 class="pull-right pt-3">
+            <router-link to="/forgotpassword" class="footer-link">رمز عبور را فراموش کرده ام</router-link>
+          </h6>
         </form>
       </div>
     </div>
@@ -272,7 +276,7 @@ export default {
 .login-title {
   font-size: 2.8em;
   font-family: IranSansBold;
-  // color: #080768 !important;
+  // color: #0c1968 !important;
   text-align: center;
 }
 
@@ -292,14 +296,8 @@ export default {
   color: #fff !important;
 }
 
-.googleicon {
-  font-size: 2rem;
-  margin: 0;
-  padding: 0 0 0.5em 0;
-}
-
 .icon {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #d557d9 !important;
 }
 
@@ -314,13 +312,13 @@ export default {
 
 .footer-link {
   font-size: 0.9rem;
-  color: rgb(92, 92, 92) !important;
+  color: rgba(0, 0, 0, 0.4) !important;
   font-family: IranSans;
 }
 
 .footer-link:hover {
   color: #cc51e1 !important;
-  font-family: IranSansBold;
+  // font-family: IranSansBold;
 }
 
 @media screen and (max-width: 767px) {

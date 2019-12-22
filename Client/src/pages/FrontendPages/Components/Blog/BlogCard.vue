@@ -52,31 +52,31 @@ export default {
 }
 
 .home-blog h3 {
-  font-size: 1rem;
-  font-family: IranSansBold;
-  color: #333333;
+  font-size: 0.9rem !important;
+  font-family: IranSansBold !important;
+  color: #333333 !important;
 }
 
 .blogBox {
-  border-radius: 10px;
+  border-radius: 10px !important;
 }
 
 .home-blog .card-img-top {
-  border-radius: 15px 15px 0 0;
+  border-radius: 15px 15px 0 0 !important;
 }
 
 .card-body {
-  background: rgb(241, 241, 241);
-  border-radius: 0 0 15px 15px;
+  background: rgb(241, 241, 241) !important;
+  border-radius: 0 0 15px 15px !important;
 }
 
 .home-blog .card:hover {
-  -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0.5);
-  box-shadow: 40px rgba(121, 121, 121, 0.5);
-  transition: transform 0.8s;
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
-  cursor: pointer;
+  -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0.5) !important;
+  box-shadow: 40px rgba(121, 121, 121, 0.5) !important;
+  transition: transform 0.8s !important;
+  -webkit-transform: translateY(-4px) !important;
+  transform: translateY(-4px) !important;
+  cursor: pointer !important;
 }
 
 .home-blog .card-title {
@@ -85,7 +85,7 @@ export default {
   font-family: IranSansBold;
 
   @media (max-width: 680px) {
-    font-size: 1.1em;
+    font-size: 1em;
   }
 }
 
@@ -139,7 +139,7 @@ export default {
   padding: 1em 1.2em 0 1.2em;
 
   .card-footer-text {
-    color: #646464 !important;
+    color: #00000049 !important;
     font-size: 0.95em;
   }
 }
