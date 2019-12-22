@@ -139,7 +139,7 @@ export default {
   padding: 1em 1.2em 0 1.2em;
 
   .card-footer-text {
-    color: #00000049 !important;
+    color: #00000059 !important;
     font-size: 0.95em;
   }
 }

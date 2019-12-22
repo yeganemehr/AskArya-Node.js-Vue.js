@@ -47,6 +47,7 @@
 </template>
 <script>
 import backend from '../../backend';
+import Swal from 'sweetalert';
 
 export default {
   data() {

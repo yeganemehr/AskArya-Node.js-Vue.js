@@ -12,13 +12,6 @@ import CKEditor from '@ckeditor/ckeditor5-vue';
 import VuePlyr from 'vue-plyr';
 import NProgress from 'nprogress';
 import VueMeta from 'vue-meta';
-import * as Sentry from '@sentry/browser';
-import * as Integrations from '@sentry/integrations';
-
-Sentry.init({
-  dsn: 'https://3ac34b12eab64369bd54a7b7a34424ac@sentry.io/1863990',
-  integrations: [new Integrations.Vue({ Vue, attachProps: true })]
-});
 
 var VueScrollTo = require('vue-scrollto');
 

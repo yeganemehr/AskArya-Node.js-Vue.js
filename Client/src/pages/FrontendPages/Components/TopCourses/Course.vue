@@ -152,7 +152,7 @@ export default {
 
   .courseTimeSpan {
     font-size: 0.73rem;
-    color: #00000049;
+    color: #00000059;
   }
 
   .unitsAvailable {
@@ -164,7 +164,7 @@ export default {
 
   .unitsAvailableSpan {
     font-size: 0.73rem;
-    color: #00000049;
+    color: #00000059;
   }
 
   .bottom-section {
