@@ -241,11 +241,12 @@ class authController extends controller {
       from: '"اسک آریا" <info@askarya.ir>', // sender address
       to: `${user.email}`, // list of receivers
       subject: 'فعال سازی اکانت اسک آریا', // Subject line
-      html: `
-                      <h2>فعال سازی اکانت اسک آریا</h2>
-                      <p>برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
-                      <a href="${config.siteurl}/user/activation/${newActiveCode.code}">فعال سازی</a>
-                  ` // html body
+      html: ` <div dir="rtl">
+               <h2>فعال سازی اکانت اسک آریا</h2>
+               <p>برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
+               <a href="${config.siteurl}/user/activation/${newActiveCode.code}">فعال سازی</a>
+              </div>`
+      // html body
     };
 
     mail.sendMail(mailOptions, (err, info) => {

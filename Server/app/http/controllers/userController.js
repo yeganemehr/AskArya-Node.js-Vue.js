@@ -7,8 +7,8 @@ class userController extends controller {
   async activation(req, res, next) {
     try {
       let activationCode = await ActivationCode.findOne({
-          code: req.params.code
-        })
+        code: req.params.code
+      })
         .populate('user')
         .exec();
 
@@ -63,16 +63,19 @@ class userController extends controller {
   async history(req, res, next) {
     try {
       let page = req.query.page || 1;
-      let payments = await Payment.paginate({
-        user: req.user.id
-      }, {
-        page,
-        sort: {
-          createdAt: -1
+      let payments = await Payment.paginate(
+        {
+          user: req.user.id
         },
-        limit: 20,
-        populate: 'course'
-      });
+        {
+          page,
+          sort: {
+            createdAt: -1
+          },
+          limit: 20,
+          populate: 'course'
+        }
+      );
 
       res.render('home/panel/history', {
         title: 'پرداختی ها',
@@ -204,9 +207,9 @@ class userController extends controller {
               return res.redirect('/user/panel/vip');
             }
 
-            let vipTime = req.user.isVip() ?
-              new Date(req.user.vipTime) :
-              new Date();
+            let vipTime = req.user.isVip()
+              ? new Date(req.user.vipTime)
+              : new Date();
             vipTime.setMonth(vipTime.getMonth() + time);
 
             req.user.set({
