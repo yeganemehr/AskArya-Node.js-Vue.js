@@ -368,6 +368,11 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+
+.router-link-active {
+  color: red !important;
+}
+
 .text-custom {
   color: #27408b !important;
   font-size: 0.95em !important;

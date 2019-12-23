@@ -203,13 +203,14 @@ export default {
   a
   .sidebar-normal {
   font-family: IranSansBold !important;
-  font-size: 1.1rem !important;
+  font-size: 1rem !important;
   color: white !important;
 }
 
 .rtl .sidebar .nav a {
-  font-size: 0.95rem !important;
-  color: rgb(216, 216, 216) !important;
+  font-size: 1rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-family: IranSans !important;
 }
 
 .sidebar .nav li.active > a:not([data-toggle='collapse']) p {
