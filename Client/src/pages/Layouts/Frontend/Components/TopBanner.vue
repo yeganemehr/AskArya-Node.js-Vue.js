@@ -3,7 +3,8 @@
     <div class="banner-box d-block text-center">
       <div class="banner-card">
         <router-link to="/allcourses">
-          <i class="fas bell fa-bell"></i>آیندت رو بساز! تخفیف 25٪ ویژه شروع زمستان.
+          <i class="fas bell fa-bell"></i>آیندت رو بساز! تخفیف 20٪ ویژه شروع
+          زمستان.
         </router-link>
       </div>
     </div>

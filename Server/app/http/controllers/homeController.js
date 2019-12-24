@@ -7,8 +7,8 @@ const striptags = require('striptags');
 class homeController extends controller {
   async index(req, res) {
     let courses = await Course.find({
-        lang: req.getLocale()
-      })
+      lang: req.getLocale()
+    })
       .sort({
         createdAt: 1
       })

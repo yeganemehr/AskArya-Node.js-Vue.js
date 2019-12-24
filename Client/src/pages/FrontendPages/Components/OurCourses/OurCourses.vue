@@ -2,13 +2,19 @@
   <div class="bg pb-5">
     <div class="container">
       <h2 class="text-center title pt-5">آموزش های غیر حضوری</h2>
-      <p v-if="courses.length" class="card-category py-3 text-right">{{ totalItems }} دوره</p>
+      <p v-if="courses.length" class="card-category py-3 text-right">
+        {{ totalItems }} دوره
+      </p>
       <!-- <p
         v-if="courses.length"
         class="card-category py-3"
       >Showing {{ from + 1 }} to {{ to }} of {{ totalItems }} entries</p>-->
       <div class="row course-section">
-        <div class="col-lg-3 col-md-6 mb-2" v-for="course in courses" v-bind:key="course.id">
+        <div
+          class="col-lg-3 col-md-6 mb-2"
+          v-for="course in courses"
+          v-bind:key="course.id"
+        >
           <Course v-bind="course"></Course>
         </div>
       </div>
@@ -82,7 +88,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .title {

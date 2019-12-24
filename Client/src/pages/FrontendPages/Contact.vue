@@ -2,20 +2,24 @@
   <div class="background">
     <div class="container">
       <h1 class="title text-center pt-5">تماس با ما</h1>
-      <p class="subtitle text-center">راه ارتباطی ما فقط از این سه طریق می باشد.</p>
+      <p class="subtitle text-center">
+        راه ارتباطی ما فقط از این سه طریق می باشد
+      </p>
 
       <div class="iconSection">
         <p>
-          <a href="https://t.me/AskAryaSomething" class="li-ic">AskAryaSomething@</a>
+          <a href="https://t.me/AskAryaSomething" class="li-ic"
+            >AskAryaSomething@</a
+          >
           <i class="fab fa-telegram pr-4 icon"></i>
-        </p>
-        <p class="pt-1">
-          <a href="tel:+989032227796" class="fb-ic">09032227796</a>
-          <i class="fa fa-phone pr-4 icon"></i>
         </p>
         <p class="pt-1">
           <a href="mailto:info@askarya.ir" class="fb-ic">info@askarya.ir</a>
           <i class="fa fa-envelope pr-4 icon"></i>
+        </p>
+        <p class="pt-1">
+          <a href="tel:+989032227796" class="fb-ic">09032227796</a>
+          <i class="fa fa-phone pl-4 icon phone-icon"></i>
         </p>
       </div>
     </div>
@@ -65,7 +69,6 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
 .background {
   background: url(/img/frontend/SVG-Background-4.svg) no-repeat;
@@ -99,6 +102,11 @@ export default {
   text-align: left;
 }
 
+.phone-icon {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
 .iconSection a:hover {
   color: rgb(251, 255, 0) !important;
 }
@@ -107,7 +115,7 @@ export default {
   .background {
     background: url(/img/frontend/SVG-Background-4.svg) no-repeat;
     background-size: cover;
-    background-position: center bottom;
+    background-position: bottom;
     height: 100vh;
     position: inherit;
   }
@@ -118,17 +126,17 @@ export default {
     text-align: left;
   }
   .subtitle {
-    font-size: 0.9rem;
-    color: rgb(218, 218, 218) !important;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8) !important;
   }
 }
 
-@media (max-width: 550px) {
-  .iconSection a,
-  .iconSection i,
-  .iconSection p {
-    font-size: 1.2em;
-    text-align: left;
-  }
-}
+// @media (max-width: 550px) {
+//   .iconSection a,
+//   .iconSection i,
+//   .iconSection p {
+//     font-size: 1.2em;
+//     text-align: left;
+//   }
+// }
 </style>

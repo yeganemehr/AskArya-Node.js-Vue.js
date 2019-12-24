@@ -31,7 +31,11 @@
         </router-link>
 
         <div class="d-md-none pr-3" v-if="this.$root.$data.user !== undefined">
-          <router-link class="row d-flex align-items-center nav-item" tag="li" to="/dashboard">
+          <router-link
+            class="row d-flex align-items-center nav-item"
+            tag="li"
+            to="/dashboard"
+          >
             <div class="photo">
               <img :src="userAvatar" />
             </div>
@@ -66,7 +70,9 @@
                         <div class="photo">
                           <img :src="userAvatar" />
                         </div>
-                        <div class="d-flex align-items-center pr-3 profile-link-text">
+                        <div
+                          class="d-flex align-items-center pr-3 profile-link-text"
+                        >
                           <p class="px-2">پروفایل من</p>
                           <i class="i-chevron fas fa-chevron-down"></i>
                         </div>
@@ -110,7 +116,10 @@
                   </li>
 
                   <li v-if="isAdmin" class="nav-link">
-                    <router-link to="/managementpage" class="nav-item dropdown-item">
+                    <router-link
+                      to="/managementpage"
+                      class="nav-item dropdown-item"
+                    >
                       <i class="fas fa-tools pl-2"></i>
                       پنل مدیریت
                     </router-link>
@@ -133,12 +142,22 @@
           <div class="row login-register-buttons" v-else>
             <div class="pr-3 register-button">
               <router-link to="/register">
-                <base-button native-type="submit" type="danger" class="btn-simple btn">ثبت نام</base-button>
+                <base-button
+                  native-type="submit"
+                  type="danger"
+                  class="btn-simple btn"
+                  >ثبت نام</base-button
+                >
               </router-link>
             </div>
             <div class="pr-3 login-button">
               <router-link to="/login">
-                <base-button native-type="submit" type="info" class="btn-simple btn">ورود کاربر</base-button>
+                <base-button
+                  native-type="submit"
+                  type="info"
+                  class="btn-simple btn"
+                  >ورود کاربر</base-button
+                >
               </router-link>
             </div>
           </div>
@@ -149,7 +168,10 @@
     <div class="wrapper wrapper-full-page">
       <div class="full-page" :class="pageClass">
         <div class="content-custom">
-          <zoom-center-transition :duration="pageTransitionDuration" mode="out-in">
+          <zoom-center-transition
+            :duration="pageTransitionDuration"
+            mode="out-in"
+          >
             <router-view></router-view>
           </zoom-center-transition>
         </div>
@@ -192,7 +214,9 @@
                   <hr class="fadeline3 d-none d-md-block" />
                   <ul>
                     <li class="footer-li">
-                      <router-link to="/privateclasses">کلاس های حضوری</router-link>
+                      <router-link to="/privateclasses"
+                        >کلاس های حضوری</router-link
+                      >
                     </li>
                     <li class="footer-li">
                       <router-link to="/comingsoon">میت آپ</router-link>
@@ -231,7 +255,7 @@
               طراحی و تولید شده توسط
               <router-link to="/terms">اسک آریا</router-link>، با افتخار در
               ایران
-              <i class="tim-icons icon-heart-2 text-success"></i>
+              <i class="tim-icons icon-heart-2 text-primary"></i>
               سال ١٣٩۸
             </p>
           </div>
@@ -368,13 +392,12 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-
 .router-link-active {
-  color: red !important;
+  color: #cd57e0 !important;
 }
 
 .text-custom {
-  color: #27408b !important;
+  color: #cd57e0 !important;
   font-size: 0.95em !important;
   font-family: IranSansBold !important;
 }
@@ -672,7 +695,7 @@ $scaleSize: 0.8;
 
 .copyright,
 a {
-  color: #50b298;
+  color: #cd57e0;
 }
 
 .copyright-text {

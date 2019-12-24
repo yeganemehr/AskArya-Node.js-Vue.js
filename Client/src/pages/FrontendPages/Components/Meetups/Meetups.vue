@@ -6,22 +6,45 @@
           <h3 class="subheading2">Interested in Taking Part in Our Meetups?</h3>
 
           <p>
-            Getting together with real language learners in real life makes powerful things happen. Ask Arya’s Meetups bring like-minded language learners together, to further enhance their language skills utilising real world scenarios.
-            <br>
-            <br>Our Meetups are designed to enhance your conversational skills, by creating opportunities for all interested learners to take part in these face-to-face Meetups.
-            <br>
-            <br>Given that language learners in Iran, do not have the opportunity to practice the theory they have learnt at their language institutions, we at Ask Arya create natural and native like environments, so that you can effectively practice the theory you have learnt with real English speaking natives.
-            <br>
-            <br>Ask Arya, conducts English language training for students of all levels - Basic, Elementary, Intermediate, and Advanced. In these Meetups, all four language skills (listening, speaking, reading, and writing) are taught by our Native English instructors. Our Meetups consist of a small group of 5, 10 or 15 students, depending on the location of the Meetup.
+            Getting together with real language learners in real life makes
+            powerful things happen. Ask Arya’s Meetups bring like-minded
+            language learners together, to further enhance their language skills
+            utilising real world scenarios.
+            <br />
+            <br />Our Meetups are designed to enhance your conversational
+            skills, by creating opportunities for all interested learners to
+            take part in these face-to-face Meetups.
+            <br />
+            <br />Given that language learners in Iran, do not have the
+            opportunity to practice the theory they have learnt at their
+            language institutions, we at Ask Arya create natural and native like
+            environments, so that you can effectively practice the theory you
+            have learnt with real English speaking natives.
+            <br />
+            <br />Ask Arya, conducts English language training for students of
+            all levels - Basic, Elementary, Intermediate, and Advanced. In these
+            Meetups, all four language skills (listening, speaking, reading, and
+            writing) are taught by our Native English instructors. Our Meetups
+            consist of a small group of 5, 10 or 15 students, depending on the
+            location of the Meetup.
           </p>
-          <br>
-          <br>
-          <h3 class="subheading2">Why Should You Participate in Our Meetups?</h3>
+          <br />
+          <br />
+          <h3 class="subheading2">
+            Why Should You Participate in Our Meetups?
+          </h3>
 
           <p>
-            Many people aspire to have the ability to communicate with English speakers, and therefore, they sign up and attend language institutes in the hope of learning how to speak English correctly. However, when faced with English speaking tourists, they do not posses the confidence or the ability, to communicate what they have learnt in theory properly.
-            <br>
-            <br>In our Meetups, our Native English speakers will simulate real world scenarios, so that you can practice your speaking skills confidently under the correct supervision of a Native.
+            Many people aspire to have the ability to communicate with English
+            speakers, and therefore, they sign up and attend language institutes
+            in the hope of learning how to speak English correctly. However,
+            when faced with English speaking tourists, they do not posses the
+            confidence or the ability, to communicate what they have learnt in
+            theory properly.
+            <br />
+            <br />In our Meetups, our Native English speakers will simulate real
+            world scenarios, so that you can practice your speaking skills
+            confidently under the correct supervision of a Native.
           </p>
         </div>
 

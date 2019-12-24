@@ -44,12 +44,11 @@ class forgotPasswordController extends controller {
       from: '"اسک آریا 👻" <info@askarya.ir>', // sender address
       to: `${newPasswordReset.email}`, // list of receivers
       subject: 'ریست کردن پسورد', // Subject line
-      html: `
+      html: `<div dir="rtl"> 
                 <h2>ریست کردن پسورد</h2>
                 <p>برای ریست کردن پسورد بر روی لینک زیر کلیک کنید</p>
-                <a href="${config.siteurl}/auth/password/reset/${
-        newPasswordReset.token
-      }">ریست کردن</a>
+                <a href="${config.siteurl}/auth/password/reset/${newPasswordReset.token}">ریست کردن</a>
+                </div>
             ` // html body
     };
 

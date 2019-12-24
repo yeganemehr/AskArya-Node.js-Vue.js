@@ -2,7 +2,9 @@
   <div class="home-blog pt-5">
     <div class="container">
       <h2 class="section-header text-right">آخرین مقالات</h2>
-      <p class="subtitle text-right">مقالات به‌روز و کاربردی برای افزایش سطح دانش شما</p>
+      <p class="subtitle text-right">
+        مقالات به‌روز و کاربردی برای افزایش سطح دانش شما
+      </p>
       <div class="row mt-5">
         <div
           class="col-lg-3 col-md-6 col-sm-12 blog-section"
@@ -58,12 +60,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .blog-section {
-//   padding: 0 3%;
-// }
 @media (max-width: 680px) {
   .blog-section {
-    padding: 0 18% !important;
+    padding: 0 15% !important;
   }
 }
 
@@ -75,7 +74,6 @@ export default {
 
 .subtitle {
   font-size: 0.95rem;
-  color: rgb(150, 150, 150) !important;
+  color: rgba(0, 0, 0, 0.3) !important;
 }
 </style>
-

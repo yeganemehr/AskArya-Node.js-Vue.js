@@ -4,10 +4,13 @@
       <div class="row d-flex align-items-center">
         <div class="col-md-6">
           <div class="hero-text-section">
-            <h1 class="hero-title text-right">سریع ترین راه آموزش زبان انگلیسی.</h1>
-            <p
-              class="text-right hero-subtitle py-1"
-            >ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان برای شما در موثر ترین و کوتاه ترین زمان ممکن صورت گیرد.</p>
+            <h1 class="hero-title text-right">
+              سریع ترین راه آموزش زبان انگلیسی.
+            </h1>
+            <p class="text-right hero-subtitle py-1">
+              ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان برای
+              شما در موثر ترین و کوتاه ترین زمان ممکن صورت گیرد.
+            </p>
 
             <div class="py-2 row button-section">
               <router-link to="dashboard">
@@ -15,7 +18,8 @@
                   native-type="submit"
                   type="warning"
                   class="btn animation-on-hover"
-                >ورود به پنل کاربری</base-button>
+                  >ورود به پنل کاربری</base-button
+                >
               </router-link>
 
               <div class="pr-3">
@@ -24,7 +28,8 @@
                     native-type="submit"
                     type="primary"
                     class="btn animation-on-hover"
-                  >مشاهده همه دوره ها</base-button>
+                    >مشاهده همه دوره ها</base-button
+                  >
                 </router-link>
               </div>
             </div>
@@ -42,9 +47,10 @@
 
     <div class="hero-text-section-s container d-md-none px-4">
       <h1 class="hero-title text-right">سریع ترین راه آموزش زبان انگلیسی.</h1>
-      <p
-        class="text-right hero-subtitle pb-3"
-      >ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان برای شما در موثر ترین و کوتاه ترین زمان ممکن صورت گیرد.</p>
+      <p class="text-right hero-subtitle pb-3">
+        ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان برای شما
+        در موثر ترین و کوتاه ترین زمان ممکن صورت گیرد.
+      </p>
 
       <div class="pt-3 row text-right">
         <router-link to="dashboard">
@@ -52,7 +58,8 @@
             native-type="submit"
             type="warning"
             class="btn animation-on-hover"
-          >ورود به پنل کاربری</base-button>
+            >ورود به پنل کاربری</base-button
+          >
         </router-link>
 
         <div class="pr-3">
@@ -61,7 +68,8 @@
               native-type="submit"
               type="primary"
               class="btn animation-on-hover"
-            >مشاهده همه دوره ها</base-button>
+              >مشاهده همه دوره ها</base-button
+            >
           </router-link>
         </div>
       </div>
@@ -82,7 +90,9 @@ export default {};
 
 .hero-content-homepage {
   background-color: #6e72fc;
-  background: linear-gradient(315deg, #ad1debee 0%, #6e73fce7 84%, #ad1deb75);
+  background: linear-gradient(90deg, #ad1debee 0%, #6e73fce7 84%, #ad1deb75);
+  background: linear-gradient(90deg, #d15eeeb6 0%, #6e73fce7 84%);
+
   background-color: #6e72fc;
   background-size: cover;
   background-position: bottom;
@@ -94,18 +104,18 @@ export default {};
     line-height: inherit;
     font-family: IranSansBold !important;
     color: #fff !important;
-    // text-shadow: 2px 2px #300a3f27;
+    text-shadow: 2px 2px #5256c94d;
   }
 
   .hero-subtitle {
     font-size: 1.2em;
     line-height: 1.7em;
     font-family: IranSans;
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: rgba(255, 255, 255, 0.685) !important;
   }
 
   .btn {
-    border-radius: 20px !important;
+    border-radius: 10px !important;
     font-size: 1.2em;
     // padding: 13px 23px !important;
   }
@@ -185,7 +195,7 @@ export default {};
       font-weight: inherit;
       border-radius: 30px;
       padding: 14px 15px;
-      font-size: 0.9em;
+      font-size: 1em;
       font-family: IranSansBold;
       margin-bottom: 2.5em;
     }

@@ -1,6 +1,8 @@
 <template>
   <div class="container py-5">
-    <div class="d-flex justify-content-around d-flex align-items-center text-center headerDigits">
+    <div
+      class="d-flex justify-content-around d-flex align-items-center text-center headerDigits"
+    >
       <div>
         <h2 class="headerStyling">{{ total }}</h2>
         <p>دوره</p>
@@ -17,9 +19,9 @@
       </div>
     </div>
 
-    <h3
-      class="headerDigitsText text-danger text-center py-4 text-rtl"
-    >محتوای جدید هر هفته اضافه می شود!</h3>
+    <h3 class="headerDigitsText text-danger text-center py-3 text-rtl">
+      محتوای جدید هر هفته اضافه می شود!
+    </h3>
 
     <div class="row">
       <div
@@ -129,7 +131,8 @@ export default {
 }
 
 .headerDigitsText {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-family: IranSansBold;
 }
 
 .bullet-point {
@@ -139,7 +142,8 @@ export default {
 
 @media only screen and (max-width: 768px) {
   .headerDigits {
-    padding: 0 5%;
+    font-size: 1rem;
+    padding: 0 12% !important;
   }
   .headerDigitsText {
     font-size: 0.9rem;

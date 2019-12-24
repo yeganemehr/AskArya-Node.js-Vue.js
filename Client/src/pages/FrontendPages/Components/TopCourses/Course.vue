@@ -1,10 +1,16 @@
 <template>
   <div class="CourseCard hover mb-4" @click="onClick">
-    <img class="CourseCard__courseimage" alt="askarya-coursecard-image" :src="thumb" />
-    <h4 class="text-center course-title pt-3">{{ title }}</h4>
+    <img
+      class="CourseCard__courseimage"
+      alt="askarya-coursecard-image"
+      :src="thumb"
+    />
+    <h4 class="course-title text-center pt-3">{{ title }}</h4>
     <hr class="fadeline" />
     <div class="bottom-section">
-      <div class="CourseCard__course__info d-flex justify-content-between text-center pt-2">
+      <div
+        class="CourseCard__course__info d-flex justify-content-between text-center pt-1"
+      >
         <div>
           <p class="courseTime">
             {{ minutes }}
@@ -20,22 +26,26 @@
           </p>
         </div>
       </div>
-      <hr class="fadeline" v-if="! purchased" />
-      <div class="px-4 price-section text-center" v-if="! purchased">
+      <hr class="fadeline" v-if="!purchased" />
+      <div class="px-4 price-section text-center" v-if="!purchased">
         <div class="row">
-          <div class="col-12 text-center pricehighlight" v-if="isVip">اعضای ویژه</div>
-          <div class="col-12 text-center pricehighlight" v-else-if="isFree">رایگان</div>
-          <div class="col-6" v-if="! isVip && ! isFree">
+          <div class="col-12 text-center pricehighlight" v-if="isVip">
+            اعضای ویژه
+          </div>
+          <div class="col-12 text-center pricehighlight" v-else-if="isFree">
+            رایگان
+          </div>
+          <div class="col-6" v-if="!isVip && !isFree">
             <p class="oldPrice" v-if="oldPrice > 0">{{ formatedOldPrice }}</p>
           </div>
-          <div class="col-6 text-center" v-if="! isVip && ! isFree">
+          <div class="col-6 text-center" v-if="!isVip && !isFree">
             <p class="pricehighlight">{{ formatedPrice }}</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="buyCourse text-center" v-if="! purchased">
+    <div class="buyCourse text-center" v-if="!purchased">
       <hr class="fadeline" />
       <p class="buyCourseTitle py-2">تهیه دوره‌</p>
     </div>
@@ -118,7 +128,6 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
 .CourseCard {
   background-color: #f7f7f7;
@@ -131,7 +140,7 @@ export default {
   .course-title {
     font-size: 0.9rem;
     font-family: IranSansBold;
-    color: #333333;
+    color: #272727;
   }
 
   .CourseCard__courseimage {
@@ -145,7 +154,7 @@ export default {
 
   .courseTime {
     color: rgb(53, 53, 53);
-    padding-right: 0.7rem;
+    padding-right: 0.5rem;
     font-size: 1.4em !important;
     font-family: IranSansBold !important;
   }
@@ -157,7 +166,7 @@ export default {
 
   .unitsAvailable {
     color: rgb(53, 53, 53);
-    padding-left: 0.7rem;
+    padding-left: 0.5rem;
     font-size: 1.4em !important;
     font-family: IranSansBold !important;
   }

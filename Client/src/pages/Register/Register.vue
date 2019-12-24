@@ -1,6 +1,8 @@
 <template>
   <div class="full-height">
-    <div class="col-lg-3 col-md-12 col-sm-12 register-section d-flex align-items-center">
+    <div
+      class="col-lg-3 col-md-12 col-sm-12 register-section d-flex align-items-center"
+    >
       <div class="container register-boxes">
         <form @submit="checkForm" id="register-form">
           <h1 class="register-title text-primary pb-4">ثبت نام</h1>
@@ -42,7 +44,10 @@
             <base-checkbox
               v-model="terms"
               class="pb-3"
-              :class="{'has-danger': fieldErrors.terms !== undefined, 'terms-checkbox': true}"
+              :class="{
+                'has-danger': fieldErrors.terms !== undefined,
+                'terms-checkbox': true
+              }"
             >
               <router-link class="tc" to="/terms">
                 <!-- <i class="fas fa-info-circle pl-1"></i> -->
@@ -64,7 +69,9 @@
             <vue-recaptcha :sitekey="sitekey" @verify="verifyRecaptcha"></vue-recaptcha>
           </div>-->
           <div class="text-right pt-2" v-if="formErrors.length">
-            <p class="pb-1 text-danger font-weight-bold">لطفا اشتباهات زیر را تصحیح کنید:</p>
+            <p class="pb-1 text-danger font-weight-bold">
+              لطفا اشتباهات زیر را تصحیح کنید:
+            </p>
             <ul>
               <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
             </ul>
@@ -76,9 +83,14 @@
             block
             size="lg"
             class="mt-4 animation-on-hover"
-          >ثبت نام</base-button>
+            >ثبت نام</base-button
+          >
           <a :href="googleAuthUrl">
-            <base-button block type="primary" class="btn-simple animation-on-hover">
+            <base-button
+              block
+              type="primary"
+              class="btn-simple animation-on-hover"
+            >
               <i class="fab fa-google icon"></i>
             </base-button>
           </a>
@@ -93,7 +105,9 @@
             src="/img/frontend/loginscreenbg.svg"
             alt="Picture of our fearless leader 2"
           />
-          <h1 class="new-content-title pt-5">محتوای جدید هر هفته اضافه می شود!</h1>
+          <h1 class="new-content-title pt-5">
+            محتوای جدید هر هفته اضافه می شود!
+          </h1>
         </div>
       </div>
     </div>
@@ -330,7 +344,7 @@ export default {
 }
 
 .icon:hover {
-  color: #00ffaa !important;
+  color: #d957b2 !important;
 }
 
 .google-text {

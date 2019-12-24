@@ -3,9 +3,13 @@
     <router-link :to="`/blog/${slug}`">
       <div class="card">
         <img class="card-img-top" :src="image" :alt="name" />
-        <div class="category">{{ categories.length ? categories[categories.length - 1].name : "" }}</div>
+        <div class="category">
+          {{ categories.length ? categories[categories.length - 1].name : '' }}
+        </div>
         <div class="card-body">
-          <h3 class="card-title text-center" :class="isLtr ? 'title-ltr' : ''">{{ name }}</h3>
+          <h3 class="card-title text-center" :class="isLtr ? 'title-ltr' : ''">
+            {{ name }}
+          </h3>
           <div class="d-flex justify-content-between card-footer">
             <span class="card-footer-text">
               {{ views }}

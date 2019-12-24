@@ -1,6 +1,8 @@
 <template>
   <div class="full-height">
-    <div class="col-lg-3 col-md-12 col-sm-12 login-section d-flex align-items-center">
+    <div
+      class="col-lg-3 col-md-12 col-sm-12 login-section d-flex align-items-center"
+    >
       <div class="container login-boxes">
         <form @submit="checkForm">
           <h1 class="login-title text-primary pb-4">ورود</h1>
@@ -33,7 +35,11 @@
               class="pb-3"
               name="remember"
               :checked="remember"
-              @input="() => {remember = !remember;}"
+              @input="
+                () => {
+                  remember = !remember;
+                }
+              "
             >
               <p>یادآوری ورود</p>
             </base-checkbox>
@@ -51,7 +57,9 @@
             <vue-recaptcha :sitekey="sitekey" @verify="verifyRecaptcha"></vue-recaptcha>
           </div>-->
           <div class="text-right pt-2" v-if="formErrors.length">
-            <p class="pb-1 text-danger font-weight-bold">لطفا اشتباهات زیر را تصحیح کنید:</p>
+            <p class="pb-1 text-danger font-weight-bold">
+              لطفا اشتباهات زیر را تصحیح کنید:
+            </p>
             <ul>
               <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
             </ul>
@@ -65,21 +73,30 @@
               size="lg"
               :loading="loading"
               block
-            >ورود</base-button>
+              >ورود</base-button
+            >
           </div>
 
           <a :href="googleAuthUrl">
-            <base-button block type="primary" class="btn-simple animation-on-hover">
+            <base-button
+              block
+              type="primary"
+              class="btn-simple animation-on-hover"
+            >
               <i class="fab fa-google icon"></i>
             </base-button>
           </a>
 
           <h6 class="pull-left pt-3">
-            <router-link class="footer-link" :to="registerUrl">فرم عضویت</router-link>
+            <router-link class="footer-link" :to="registerUrl"
+              >فرم عضویت</router-link
+            >
           </h6>
 
           <h6 class="pull-right pt-3">
-            <router-link to="/forgotpassword" class="footer-link">رمز عبور را فراموش کرده ام</router-link>
+            <router-link to="/forgotpassword" class="footer-link"
+              >رمز عبور را فراموش کرده ام</router-link
+            >
           </h6>
         </form>
       </div>
@@ -92,7 +109,9 @@
             src="/img/frontend/loginscreenbg.svg"
             alt="Picture of our fearless leader 2"
           />
-          <h1 class="new-content-title pt-5">محتوای جدید هر هفته اضافه می شود!</h1>
+          <h1 class="new-content-title pt-5">
+            محتوای جدید هر هفته اضافه می شود!
+          </h1>
         </div>
       </div>
     </div>
@@ -276,7 +295,6 @@ export default {
 .login-title {
   font-size: 2.8em;
   font-family: IranSansBold;
-  // color: #0c1968 !important;
   text-align: center;
 }
 
@@ -302,7 +320,7 @@ export default {
 }
 
 .icon:hover {
-  color: #00ffaa !important;
+  color: #d957b2 !important;
 }
 
 .google-text {

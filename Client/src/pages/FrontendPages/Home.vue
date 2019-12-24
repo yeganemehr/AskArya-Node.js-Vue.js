@@ -7,7 +7,9 @@
     <div class="container pt-5 pb-4">
       <div class="top-courses-section">
         <div class="d-flex justify-content-between">
-          <p class="text-right section-header pt-1 pb-4">پیشنهادهای ویژه اسک آریا برای شما</p>
+          <p class="text-right section-header pb-2">
+            پیشنهادهای ویژه اسک آریا برای شما
+          </p>
         </div>
         <div class="pt-2">
           <div
@@ -36,7 +38,8 @@
               native-type="submit"
               type="success"
               class="btn btn-round animation-on-hover mt-4"
-            >مشاهده همه دوره ها</base-button>
+              >مشاهده همه دوره ها</base-button
+            >
           </router-link>
         </div>
       </div>
@@ -156,8 +159,8 @@ export default {
 
 .section-header {
   font-size: 16px;
-  font-family: IranSansBold;
-  margin: 0 0 7px 0;
+  font-family: IranSansBold !important;
+  color: rgba(0, 0, 0, 0.3) !important;
 }
 
 .fadeline2 {
@@ -184,7 +187,12 @@ export default {
 
 @media (max-width: 680px) {
   .top-courses-section {
-    padding: 0 10% !important;
+    padding: 0 8% !important;
+  }
+  .section-header {
+    font-size: 13px;
+    font-family: IranSansBold !important;
+    color: rgba(0, 0, 0, 0.3) !important;
   }
 }
 </style>

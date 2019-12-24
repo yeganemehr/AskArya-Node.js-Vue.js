@@ -15,7 +15,7 @@
     </div>
     <div class="container">
       <div class="main-blog-section">
-        <h3 class="post-title">{{post.name}}</h3>
+        <h3 class="post-title">{{ post.name }}</h3>
         <div class="row">
           <div class="main-blog-text col-lg-9 col-md-12">
             <div v-html="post.content"></div>

@@ -24,7 +24,12 @@
               </div>
               <div class="pricing-action">
                 <router-link to="contact">
-                  <base-button native-type="submit" class="btn btn-info animation-on-hover">ثبت نام</base-button>
+                  <base-button
+                    block
+                    native-type="submit"
+                    class="btn btn-info animation-on-hover"
+                    >ثبت نام</base-button
+                  >
                 </router-link>
               </div>
             </div>
@@ -53,7 +58,12 @@
               </div>
               <div class="pricing-action">
                 <router-link to="contact">
-                  <base-button native-type="submit" class="btn btn-info animation-on-hover">ثبت نام</base-button>
+                  <base-button
+                    block
+                    native-type="submit"
+                    class="btn btn-info animation-on-hover"
+                    >ثبت نام</base-button
+                  >
                 </router-link>
               </div>
             </div>
@@ -86,7 +96,12 @@
               </div>
               <div class="pricing-action">
                 <router-link to="contact">
-                  <base-button native-type="submit" class="btn btn-info animation-on-hover">ثبت نام</base-button>
+                  <base-button
+                    block
+                    native-type="submit"
+                    class="btn btn-info animation-on-hover"
+                    >ثبت نام</base-button
+                  >
                 </router-link>
               </div>
             </div>
@@ -271,7 +286,7 @@ ul {
   }
   .smalltext {
     font-size: 15px;
-    color: #696969;
+    color: rgba(105, 105, 105, 0.404);
   }
   .bg-gold {
     background-color: #ffd700 !important;
