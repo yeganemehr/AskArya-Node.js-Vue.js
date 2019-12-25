@@ -1,9 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
-const {
-  styles
-} = require('@ckeditor/ckeditor5-dev-utils');
+const { styles } = require('@ckeditor/ckeditor5-dev-utils');
 
 function resolveSrc(_path) {
   return path.join(__dirname, _path);
@@ -21,6 +19,11 @@ module.exports = {
         src: resolveSrc('src'),
         assets: resolveSrc('src/assets'),
         'chart.js': 'chart.js/dist/Chart.js'
+      }
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'all'
       }
     },
 
@@ -42,7 +45,7 @@ module.exports = {
   },
 
   pwa: {
-    name: 'Ask Arya Website',
+    name: 'Ask Arya',
     themeColor: '#344675',
     msTileColor: '#344675',
     appleMobileWebAppCapable: 'yes',

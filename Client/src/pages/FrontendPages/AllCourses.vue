@@ -23,9 +23,9 @@
       محتوای جدید هر هفته اضافه می شود!
     </h3>
 
-    <div class="row">
+    <div class="row course-section">
       <div
-        class="col-lg-3 col-md-6 col-sm-12 course-section"
+        class="col-lg-3 col-md-6 col-sm-12 "
         v-for="course in courses"
         v-bind:key="course.id"
       >
@@ -116,13 +116,7 @@ export default {
 <style lang="scss" scoped>
 @media (max-width: 768px) {
   .course-section {
-    padding: 0 4%;
-  }
-}
-
-@media (max-width: 468px) {
-  .course-section {
-    padding: 0 14%;
+    padding: 0 14% !important;
   }
 }
 

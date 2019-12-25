@@ -142,7 +142,7 @@ export default {
   position: -webkit-sticky;
   position: sticky;
   margin-top: 1em;
-  top: 7em;
+  top: 6em;
   padding: 0 1.2em;
 }
 
