@@ -5,7 +5,9 @@
     </div>
     <div class="mt-5">
       <card card-body-classes="table-full-width">
-        <div class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap">
+        <div
+          class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
+        >
           <el-select
             class="select-primary mb-3 pagination-select"
             v-model="pagination.perPage"
@@ -71,9 +73,10 @@
           class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
         >
           <div class>
-            <p
-              class="card-category"
-            >Showing {{ from + 1 }} to {{ to }} of {{ pagination.total }} entries</p>
+            <p class="card-category">
+              Showing {{ from + 1 }} to {{ to }} of
+              {{ pagination.total }} entries
+            </p>
           </div>
           <base-pagination
             :value="pagination.currentPage"
@@ -86,7 +89,11 @@
       </card>
     </div>
     <div class="pt-2">
-      <CreateEditUser v-bind="user" @reset="reset" @user="userActionListener"></CreateEditUser>
+      <CreateEditUser
+        v-bind="user"
+        @reset="reset"
+        @user="userActionListener"
+      ></CreateEditUser>
     </div>
   </section>
 </template>
@@ -134,17 +141,17 @@ export default {
         {
           prop: 'name',
           label: 'Name',
-          minWidth: 170
+          minWidth: 150
         },
         {
           prop: 'email',
           label: 'Email',
-          minWidth: 210
+          minWidth: 190
         },
         {
           prop: 'datejoined',
           label: 'Joined On',
-          minWidth: 100
+          minWidth: 80
         },
         {
           prop: 'amountspent',

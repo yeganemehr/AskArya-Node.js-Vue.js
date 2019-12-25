@@ -1,8 +1,8 @@
 <template>
   <card card-body-classes="table-full-width">
     <h3 slot="header" class="card-title">{{ 'وضعیت پرداخت' }}</h3>
-    <div>
-      <!-- <div class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"></div> -->
+    <!-- <div class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"></div> -->
+    <div class="containeer">
       <el-table :data="tableData">
         <el-table-column
           v-for="column in tableColumns"
@@ -105,22 +105,23 @@ export default {
         {
           prop: 'product',
           label: 'محصول',
-          minWidth: 150
+          minWidth: 100
         },
         {
           prop: 'date',
-          label: 'تاریخ پرداخت',
-          minWidth: 105
+          // label: 'تاریخ پرداخت',
+          label: 'تاریخ',
+          minWidth: 55
         },
         {
           prop: 'price',
           label: 'مبلغ کل',
-          minWidth: 85
+          minWidth: 45
         },
         {
           prop: 'status',
           label: 'وضعیت پرداخت',
-          minWidth: 105
+          minWidth: 70
         }
       ],
       searchedData: [],
@@ -177,4 +178,3 @@ export default {
   font-family: IranSansBold;
 }
 </style>
-

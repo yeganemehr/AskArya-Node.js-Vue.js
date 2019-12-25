@@ -10,7 +10,11 @@
     </div>
 
     <!-- Stats Cards Section -->
-    <div class="col-lg-4 col-md-4 ml-auto mr-auto" v-for="card in statsCards" :key="card.title">
+    <div
+      class="col-lg-4 col-md-4 ml-auto mr-auto"
+      v-for="card in statsCards"
+      :key="card.title"
+    >
       <stats-card
         :title="card.title"
         :sub-title="card.subTitle"
