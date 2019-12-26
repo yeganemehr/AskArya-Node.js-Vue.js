@@ -66,25 +66,25 @@
   flex: auto !important;
 } */
 
-.white-content .el-table table > thead > tr > th {
+.white-content .el-table table>thead>tr>th {
   font-family: IranSans !important;
 }
 
-.el-table th > .cell {
+.el-table th>.cell {
   font-family: IranSansBold !important;
 }
 
-.white-content .el-table table > tbody > tr > td {
+.white-content .el-table table>tbody>tr>td {
   text-align: right !important;
 }
 
 @media (max-width: 680px) {
-  .white-content .el-table table > thead > tr > th {
+  .white-content .el-table table>thead>tr>th {
     font-size: 10px !important;
-    font-family: IranSansBold !important;
+    /* font-family: IranSansBold !important; */
   }
 
-  .white-content .el-table table > tbody > tr > td {
+  .white-content .el-table table>tbody>tr>td {
     text-align: right !important;
     font-size: 0.8em !important;
   }

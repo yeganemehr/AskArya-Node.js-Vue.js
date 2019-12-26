@@ -111,7 +111,7 @@ export default {};
     font-size: 1.2em;
     line-height: 1.7em;
     font-family: IranSans;
-    color: rgba(255, 255, 255, 0.685) !important;
+    color: rgba(255, 255, 255, 0.938) !important;
   }
 
   .btn {

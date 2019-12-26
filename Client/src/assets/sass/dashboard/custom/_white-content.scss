@@ -76,6 +76,7 @@
   @include form-control-placeholder(rgba($black, 0.4), 1);
 
   .has-danger {
+
     .form-control,
     .input-group-prepend .input-group-text {
       border-color: $danger-states;
@@ -98,9 +99,10 @@
 
   .form-group.no-border,
   .input-group.no-border {
+
     .form-control,
-    .form-control + .input-group-prepend .input-group-text,
-    .form-control + .input-group-append .input-group-text,
+    .form-control+.input-group-prepend .input-group-text,
+    .form-control+.input-group-append .input-group-text,
     .input-group-prepend .input-group-text,
     .input-group-append .input-group-text {
       background-color: $opacity-gray-3;
@@ -114,8 +116,9 @@
 
     .form-control {
       &:focus {
-        & + .input-group-prepend .input-group-text,
-        & + .input-group-append .input-group-text {
+
+        &+.input-group-prepend .input-group-text,
+        &+.input-group-append .input-group-text {
           background-color: $transparent-bg;
         }
       }
@@ -123,6 +126,7 @@
   }
 
   .input-group[disabled] {
+
     .input-group-prepend .input-group-text,
     .input-group-append .input-group-text {
       background-color: $black;
@@ -137,6 +141,7 @@
   }
 
   .input-group-focus {
+
     .input-group-prepend .input-group-text,
     .input-group-append .input-group-text,
     .form-control {
@@ -144,6 +149,7 @@
     }
 
     &.no-border {
+
       .input-group-prepend .input-group-text,
       .input-group-append .input-group-text {
         background-color: $opacity-gray-5;
@@ -172,6 +178,7 @@
   }
 
   .btn.btn-link {
+
     &:hover,
     &:active,
     &:focus {
@@ -192,6 +199,7 @@
   }
 
   .card:not(.card-white) {
+
     &.card-pricing,
     &.card-login,
     &.card-register {
@@ -208,9 +216,10 @@
 
       .form-group.no-border,
       .input-group.no-border {
+
         .form-control,
-        .form-control + .input-group-prepend .input-group-text,
-        .form-control + .input-group-append .input-group-text {
+        .form-control+.input-group-prepend .input-group-text,
+        .form-control+.input-group-append .input-group-text {
           background-color: lighten($black, 1%);
 
           &:focus,
@@ -222,8 +231,9 @@
 
         .form-control {
           &:focus {
-            & + .input-group-prepend .input-group-text,
-            & + .input-group-append .input-group-text {
+
+            &+.input-group-prepend .input-group-text,
+            &+.input-group-append .input-group-text {
               background-color: lighten($black, 2%);
             }
           }
@@ -243,6 +253,7 @@
       }
 
       .input-group-focus {
+
         .input-group-prepend .input-group-text,
         .input-group-append .input-group-text,
         .form-control {
@@ -279,6 +290,7 @@
     }
 
     .card-body {
+
       .card-category,
       .card-description {
         color: $black-states;
@@ -357,22 +369,31 @@
   }
 
   .table {
-    > tbody > tr > td {
+    >tbody>tr>td {
       color: rgba($black, 0.7) !important;
+
     }
 
-    > thead > tr > th,
-    > tbody > tr > th,
-    > tfoot > tr > th,
-    > thead > tr > td,
-    > tbody > tr > td,
-    > tfoot > tr > td {
+    >thead>tr>th,
+    >tbody>tr>th,
+    >tfoot>tr>th {
+      border-color: rgba($black, 0.2);
+      padding: 12px 7px;
+      vertical-align: middle;
+      font-family: IranSansBold !important;
+    }
+
+
+
+    >thead>tr>td,
+    >tbody>tr>td,
+    >tfoot>tr>td {
       border-color: rgba($black, 0.2);
       padding: 12px 7px;
       vertical-align: middle;
     }
 
-    > thead > tr > th,
+    >thead>tr>th,
     button.btn-neutral.btn-link {
       color: rgba($black, 0.7);
     }
@@ -528,7 +549,7 @@
     }
   }
 
-  .card-timeline .timeline > li.timeline-inverted > .timeline-panel {
+  .card-timeline .timeline>li.timeline-inverted>.timeline-panel {
     background: $white;
 
     .timeline-body p {
