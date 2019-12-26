@@ -51,9 +51,9 @@
       border: none;
     }
 
-    >.nav,
+    > .nav,
     .user .info {
-      [data-toggle='collapse']~div>ul>li>a {
+      [data-toggle='collapse'] ~ div > ul > li > a {
         span {
           display: inline-block;
           @extend .animation-transition-general;
@@ -95,15 +95,14 @@
       }
     }
 
-    [data-toggle='collapse']~div>ul>li:hover>a {
-
+    [data-toggle='collapse'] ~ div > ul > li:hover > a {
       .sidebar-mini-icon,
       .sidebar-normal {
         color: $white;
       }
     }
 
-    .nav [data-toggle='collapse']~div>ul>li>a .sidebar-mini-icon {
+    .nav [data-toggle='collapse'] ~ div > ul > li > a .sidebar-mini-icon {
       opacity: 0;
     }
   }
@@ -142,16 +141,16 @@
     }
 
     li {
-      >a+div .nav {
+      > a + div .nav {
         margin-top: 5px;
 
-        li>a {
+        li > a {
           margin-top: 0px;
           padding: 8px 8px;
         }
       }
 
-      >a {
+      > a {
         margin: 10px 15px 0;
         border-radius: $btn-round-radius;
         // font-weight: $font-weight-normal;
@@ -162,29 +161,28 @@
         // text-transform: uppercase;
         cursor: pointer;
         font-size: 1.2em;
-        padding: 0.8em 8px 1.4em 8px;
-        // line-height: $line-height-lg;
+        padding: 4px 8px;
+        line-height: $line-height-lg;
       }
 
-      &:first-child>a {
+      &:first-child > a {
         margin: 0 15px;
       }
 
-      &:hover:not(.active)>a,
-      &:focus:not(.active)>a {
-
+      &:hover:not(.active) > a,
+      &:focus:not(.active) > a {
         p,
         i {
           color: $white;
         }
       }
 
-      &:hover:not(.active)>a i,
-      &:focus:not(.active)>a i {
+      &:hover:not(.active) > a i,
+      &:focus:not(.active) > a i {
         color: $white;
       }
 
-      &.active>a:not([data-toggle='collapse']) {
+      &.active > a:not([data-toggle='collapse']) {
         background: transparent;
 
         i,
@@ -208,7 +206,7 @@
         // }
       }
 
-      &.active>a[data-toggle='collapse'] {
+      &.active > a[data-toggle='collapse'] {
         background: transparent;
         box-shadow: none;
         color: $white;
@@ -217,7 +215,7 @@
           color: $white;
         }
 
-        &+div .nav .active a {
+        & + div .nav .active a {
           box-shadow: none;
 
           .sidebar-mini-icon,
@@ -253,10 +251,10 @@
 
     p {
       margin: 0;
-      // line-height: 30px;
+      line-height: 30px;
       position: relative;
       display: block;
-      // height: auto;
+      height: auto;
       white-space: nowrap;
       @extend .animation-transition-general;
     }
@@ -458,11 +456,11 @@
     }
 
     .info {
-      >a {
+      > a {
         display: block;
         line-height: 18px;
 
-        >span {
+        > span {
           @extend .animation-transition-general;
           display: block;
           position: relative;
@@ -500,13 +498,12 @@
 
 .off-canvas-sidebar {
   .nav {
-
-    >li>a,
-    >li>a:hover {
+    > li > a,
+    > li > a:hover {
       color: $white;
     }
 
-    >li>a:focus {
+    > li > a:focus {
       background: rgba(200, 200, 200, 0.2);
     }
   }
@@ -546,12 +543,12 @@
     border-top-color: $vue;
   }
 
-  >.content {
+  > .content {
     padding: 80px 30px 30px 280px;
     min-height: calc(100vh - 70px);
   }
 
-  >.navbar {
+  > .navbar {
     margin-bottom: 0;
   }
 
@@ -561,7 +558,6 @@
 }
 
 .perfect-scrollbar-on {
-
   .sidebar,
   .main-panel {
     height: 100%;
@@ -575,12 +571,14 @@
   padding-bottom: 45px;
   background: #141e30;
   /* fallback for old browsers */
-  background: -webkit-gradient(linear,
-      left top,
-      right top,
-      from(#0c2646),
-      color-stop(60%, #204065),
-      to(#2a5788));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#0c2646),
+    color-stop(60%, #204065),
+    to(#2a5788)
+  );
   background: linear-gradient(to right, #0c2646 0%, #204065 60%, #2a5788 100%);
   position: relative;
   overflow: hidden;
@@ -712,7 +710,6 @@
 }
 
 @include media-breakpoint-up(lg) {
-
   .sidebar,
   .main-panel,
   .sidebar-wrapper {
@@ -755,17 +752,23 @@
       }
 
       .sidebar-wrapper {
-
-        >.nav [data-toggle='collapse']~div>ul>li>a .sidebar-normal,
-        .user .info [data-toggle='collapse']~div>ul>li>a .sidebar-normal,
-        .user .info>a>span,
-        >.nav li>a p {
+        > .nav [data-toggle='collapse'] ~ div > ul > li > a .sidebar-normal,
+        .user
+          .info
+          [data-toggle='collapse']
+          ~ div
+          > ul
+          > li
+          > a
+          .sidebar-normal,
+        .user .info > a > span,
+        > .nav li > a p {
           @include transform-translate-x(-25px);
           opacity: 0;
         }
       }
 
-      .nav [data-toggle='collapse']~div>ul>li>a .sidebar-mini-icon {
+      .nav [data-toggle='collapse'] ~ div > ul > li > a .sidebar-mini-icon {
         opacity: 1;
       }
     }
@@ -787,22 +790,29 @@
       .sidebar-wrapper {
         width: $sidebar-width;
 
-        >.nav li>a p,
-        >.nav [data-toggle='collapse']~div>ul>li>a .sidebar-normal,
-        .user .info [data-toggle='collapse']~div>ul>li>a .sidebar-normal,
-        .user .info>a>span {
+        > .nav li > a p,
+        > .nav [data-toggle='collapse'] ~ div > ul > li > a .sidebar-normal,
+        .user
+          .info
+          [data-toggle='collapse']
+          ~ div
+          > ul
+          > li
+          > a
+          .sidebar-normal,
+        .user .info > a > span {
           @include transform-translate-x(0px);
           opacity: 1;
         }
       }
 
-      .nav [data-toggle='collapse']~div>ul>li>a .sidebar-mini-icon {
+      .nav [data-toggle='collapse'] ~ div > ul > li > a .sidebar-mini-icon {
         opacity: 0;
       }
     }
 
     .main-panel {
-      >.content {
+      > .content {
         padding-left: 130px;
       }
     }
@@ -931,7 +941,7 @@
     transform: translate3d(0px, 0, 0);
   }
 
-  .sidebar-mini .sidebar .sidebar-wrapper>.nav li>a p {
+  .sidebar-mini .sidebar .sidebar-wrapper > .nav li > a p {
     opacity: 1;
   }
 
