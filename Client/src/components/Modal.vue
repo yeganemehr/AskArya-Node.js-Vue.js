@@ -30,11 +30,7 @@
             modalContentClasses
           ]"
         >
-          <div
-            class="modal-header"
-            :class="[headerClasses]"
-            v-if="$slots.header"
-          >
+          <div class="modal-header" :class="[headerClasses]" v-if="$slots.header">
             <slot name="header"></slot>
             <slot name="close-button">
               <button

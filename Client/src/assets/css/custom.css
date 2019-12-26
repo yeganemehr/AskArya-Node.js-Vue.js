@@ -90,6 +90,10 @@
   }
 }
 
+.modal-content .modal-header button {
+  left: 27px !important;
+}
+
 ::selection {
   background-color: #0ad688 !important;
   color: rgb(255, 255, 255) !important;

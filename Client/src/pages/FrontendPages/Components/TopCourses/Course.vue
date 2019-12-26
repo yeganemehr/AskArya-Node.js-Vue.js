@@ -1,16 +1,10 @@
 <template>
   <div class="CourseCard hover mb-4" @click="onClick">
-    <img
-      class="CourseCard__courseimage"
-      alt="askarya-coursecard-image"
-      :src="thumb"
-    />
+    <img class="CourseCard__courseimage" alt="askarya-coursecard-image" :src="thumb" />
     <h4 class="course-title text-center pt-3">{{ title }}</h4>
     <hr class="fadeline" />
     <div class="bottom-section">
-      <div
-        class="CourseCard__course__info d-flex justify-content-between text-center pt-1"
-      >
+      <div class="CourseCard__course__info d-flex justify-content-between text-center pt-1">
         <div>
           <p class="courseTime">
             {{ minutes }}
@@ -29,12 +23,8 @@
       <hr class="fadeline" v-if="!purchased" />
       <div class="px-4 price-section text-center" v-if="!purchased">
         <div class="row">
-          <div class="col-12 text-center pricehighlight" v-if="isVip">
-            اعضای ویژه
-          </div>
-          <div class="col-12 text-center pricehighlight" v-else-if="isFree">
-            رایگان
-          </div>
+          <div class="col-12 text-center pricehighlight" v-if="isVip">اعضای ویژه</div>
+          <div class="col-12 text-center pricehighlight" v-else-if="isFree">رایگان</div>
           <div class="col-6" v-if="!isVip && !isFree">
             <p class="oldPrice" v-if="oldPrice > 0">{{ formatedOldPrice }}</p>
           </div>
@@ -132,10 +122,10 @@ export default {
 .CourseCard {
   background-color: #f7f7f7;
   border-radius: 15px;
-  box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.15);
-  -o-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
+  -webkit-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
+  -o-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
 
   .course-title {
     font-size: 0.9rem;
@@ -217,9 +207,9 @@ export default {
 .hover:focus {
   -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0.5) !important;
   box-shadow: 40px rgba(121, 121, 121, 0.5) !important;
-  transition: transform 0.8s !important;
-  -webkit-transform: translateY(-4px);
-  transform: translateY(-4px);
+  // transition: transform 0.8s !important;
+  // -webkit-transform: translateY(-4px);
+  // transform: translateY(-4px);
   cursor: pointer;
 
   .buyCourseTitle {

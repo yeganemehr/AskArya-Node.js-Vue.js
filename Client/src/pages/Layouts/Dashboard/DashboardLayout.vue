@@ -209,7 +209,7 @@ export default {
 
 .rtl .sidebar .nav a {
   font-size: 1rem !important;
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   font-family: IranSans !important;
 }
 

@@ -154,16 +154,16 @@
       >a {
         margin: 10px 15px 0;
         border-radius: $btn-round-radius;
-        font-weight: $font-weight-normal;
+        // font-weight: $font-weight-normal;
         color: $white;
         display: block;
         text-decoration: none;
         position: relative;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         cursor: pointer;
-        font-size: 1.1em;
-        padding: 4px 8px;
-        line-height: $line-height-lg;
+        font-size: 1.2em;
+        padding: 0.8em 8px 1.4em 8px;
+        // line-height: $line-height-lg;
       }
 
       &:first-child>a {
@@ -193,7 +193,7 @@
         }
 
         p {
-          font-family: IranSansBold;
+          font-family: IranSansBold !important;
         }
 
         // &:before {
@@ -223,7 +223,7 @@
           .sidebar-mini-icon,
           .sidebar-normal {
             color: $white;
-            font-weight: $font-weight-normal;
+            // font-weight: $font-weight-normal;
           }
 
           // &:before {
@@ -253,10 +253,10 @@
 
     p {
       margin: 0;
-      line-height: 30px;
+      // line-height: 30px;
       position: relative;
       display: block;
-      height: auto;
+      // height: auto;
       white-space: nowrap;
       @extend .animation-transition-general;
     }
@@ -722,7 +722,7 @@
     transition-duration: 0.2s, 0.2s, 0.35s;
     -webkit-transition-timing-function: linear, linear, ease;
     transition-timing-function: linear, linear, ease;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch !important;
   }
 
   .sidebar-mini {
