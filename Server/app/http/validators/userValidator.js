@@ -57,9 +57,9 @@ class userValidator extends validator {
       .isEmpty()
       .withMessage('فیلد کلمه عبور نمیتواند خالی بماند')
       .isLength({
-        min: 8
+        min: 6
       })
-      .withMessage('کلمه عبور نمیتواند کمتر از 8 کاراکتر باشد'),
+      .withMessage('کلمه عبور نمیتواند کمتر از 6 کاراکتر باشد'),
 
       check('vipTime').custom(async (value, {
         req

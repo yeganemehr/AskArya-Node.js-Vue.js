@@ -190,7 +190,7 @@ export default {
 }
 
 .content {
-  background-color: #f5f4f4 !important;
+  background-color: #f2f3f5 !important;
   min-height: 80vh !important;
 }
 .sidebar
