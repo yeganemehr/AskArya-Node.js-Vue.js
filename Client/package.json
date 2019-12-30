@@ -37,7 +37,7 @@
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
     "ckeditor5-direction": "^1.0.1",
-    "d3": "^5.14.2",
+    "d3": "^5.15.0",
     "datamaps": "^0.5.9",
     "element-ui": "^2.13.0",
     "es6-promise": "^4.2.8",
