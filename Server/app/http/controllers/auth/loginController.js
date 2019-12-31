@@ -59,7 +59,7 @@ class loginController extends controller {
           await newActiveCode.save();
 
           let mailOptions = {
-            from: '"اسک آریا" <info@askarya.ir>', // sender address
+            from: '"اسک آریا" <info@ask-arya.com>', // sender address
             to: `${user.email}`, // list of receivers
             subject: 'فعال سازی اکانت اسک آریا', // Subject line
             html: `

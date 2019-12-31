@@ -167,7 +167,7 @@ class authController extends controller {
     await newPasswordReset.save();
 
     const mailOptions = {
-      from: '"اسک آریا 👻" <info@askarya.ir>',
+      from: '"اسک آریا 👻" <info@ask-arya.com>',
       to: `${newPasswordReset.email}`,
       subject: 'ریست کردن پسورد',
       html: `<div dir="rtl">
@@ -238,7 +238,7 @@ class authController extends controller {
     await newActiveCode.save();
 
     const mailOptions = {
-      from: '"اسک آریا" <info@askarya.ir>', // sender address
+      from: '"اسک آریا" <info@ask-arya.com>', // sender address
       to: `${user.email}`, // list of receivers
       subject: 'فعال سازی اکانت اسک آریا', // Subject line
       html: ` <div dir="rtl">

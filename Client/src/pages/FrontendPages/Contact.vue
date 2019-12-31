@@ -14,7 +14,7 @@
           <i class="fab fa-telegram pr-4 icon"></i>
         </p>
         <p class="pt-1">
-          <a href="mailto:info@askarya.ir" class="fb-ic">info@askarya.ir</a>
+          <a href="mailto:info@ask-arya.com" class="fb-ic">info@ask-arya.com</a>
           <i class="fa fa-envelope pr-4 icon"></i>
         </p>
         <p class="pt-1">
@@ -45,12 +45,12 @@ export default {
       { property: 'og:type', content: 'website' },
       {
         property: 'og:url',
-        content: 'https://www.askarya.ir/'
+        content: 'https://www.ask-arya.com/'
       },
       {
         property: 'og:image',
         content:
-          'https://www.askarya.ir/img/Ask Arya LOGO 2019 - 200x200 - OPT.png'
+          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png'
       },
       {
         property: 'og:description',
@@ -64,7 +64,7 @@ export default {
           'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
       }
     ],
-    link: [{ rel: 'canonical', href: 'https://www.askarya.ir/' }]
+    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }]
   }
 };
 </script>

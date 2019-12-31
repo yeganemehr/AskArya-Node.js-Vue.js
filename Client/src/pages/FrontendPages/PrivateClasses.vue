@@ -130,12 +130,12 @@ export default {
       { property: 'og:type', content: 'website' },
       {
         property: 'og:url',
-        content: 'https://www.askarya.ir/'
+        content: 'https://www.ask-arya.com/'
       },
       {
         property: 'og:image',
         content:
-          'https://www.askarya.ir/img/Ask Arya LOGO 2019 - 200x200 - OPT.png'
+          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png'
       },
       {
         property: 'og:description',
@@ -149,7 +149,7 @@ export default {
           'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
       }
     ],
-    link: [{ rel: 'canonical', href: 'https://www.askarya.ir/' }]
+    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }]
   }
 };
 </script>

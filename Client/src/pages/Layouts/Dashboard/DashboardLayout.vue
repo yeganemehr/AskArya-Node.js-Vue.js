@@ -12,17 +12,33 @@
             path: '/dashboard'
           }"
         ></sidebar-item>
-        <sidebar-item :link="{ name: 'همه دوره‌ها', path: '/courses', icon: 'fas fa-university' }"></sidebar-item>
         <sidebar-item
-          :link="{ name: 'در حال یادگیری', path: '/mycourses', icon: 'fas fa-graduation-cap' }"
+          :link="{
+            name: 'همه دوره‌ها',
+            path: '/courses',
+            icon: 'fas fa-university'
+          }"
+        ></sidebar-item>
+        <sidebar-item
+          :link="{
+            name: 'در حال یادگیری',
+            path: '/mycourses',
+            icon: 'fas fa-graduation-cap'
+          }"
         ></sidebar-item>
         <!-- <sidebar-item :link="{ name: 'امتحان ها', path: '/quizzes', icon: 'far fa-check-square' }"></sidebar-item> -->
 
-        <sidebar-item :link="{ name: 'پشتیبانی', path: '/tickets', icon: 'fas fa-headset' }"></sidebar-item>
+        <sidebar-item
+          :link="{ name: 'پشتیبانی', path: '/tickets', icon: 'fas fa-headset' }"
+        ></sidebar-item>
 
         <sidebar-item
           v-if="isAdmin"
-          :link="{ name: 'پنل مدیریت', path: '/managementpage', icon: 'fas fa-tools' }"
+          :link="{
+            name: 'پنل مدیریت',
+            path: '/managementpage',
+            icon: 'fas fa-tools'
+          }"
         ></sidebar-item>
 
         <hr class="line mt-4" />
@@ -33,14 +49,18 @@
             class="nav-item dropdown-item exitButton"
             to="#"
             @click.native="logoutListener"
-          >خروج</router-link>
+            >خروج</router-link
+          >
         </div>
       </template>
     </side-bar>
     <div class="main-panel" :data="sidebarBackground">
       <dashboard-navbar></dashboard-navbar>
       <router-view name="header"></router-view>
-      <div :class="{ content: !$route.meta.hideContent }" @click="toggleSidebar">
+      <div
+        :class="{ content: !$route.meta.hideContent }"
+        @click="toggleSidebar"
+      >
         <zoom-center-transition :duration="200" mode="out-in">
           <!-- your content here -->
           <router-view></router-view>
@@ -150,12 +170,12 @@ export default {
       { property: 'og:type', content: 'website' },
       {
         property: 'og:url',
-        content: 'https://www.askarya.ir/'
+        content: 'https://www.ask-arya.com/'
       },
       {
         property: 'og:image',
         content:
-          'https://www.askarya.ir/img/Ask Arya LOGO 2019 - 200x200 - OPT.png'
+          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png'
       },
       {
         property: 'og:description',
@@ -169,7 +189,7 @@ export default {
           'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
       }
     ],
-    link: [{ rel: 'canonical', href: 'https://www.askarya.ir/' }]
+    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }]
   }
 };
 </script>

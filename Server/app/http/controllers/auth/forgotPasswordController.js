@@ -41,7 +41,7 @@ class forgotPasswordController extends controller {
     await newPasswordReset.save();
 
     let mailOptions = {
-      from: '"اسک آریا 👻" <info@askarya.ir>', // sender address
+      from: '"اسک آریا 👻" <info@ask-arya.com>', // sender address
       to: `${newPasswordReset.email}`, // list of receivers
       subject: 'ریست کردن پسورد', // Subject line
       html: `<div dir="rtl"> 

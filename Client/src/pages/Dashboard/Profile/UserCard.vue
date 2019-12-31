@@ -11,19 +11,20 @@
         </h2>
         <p class="description">
           <i class="fas fa-check tick px-2"></i>
-          {{ user.admin ? "مدیر" : "دانشجو"}} -
-          <span
-            class="description"
-            :class="user.active ? 'tick' : 'cross'"
-          >{{ user.active ? "فعال" : "غیر فعال" }}</span>
+          {{ user.admin ? 'مدیر' : 'دانشجو' }} -
+          <span class="description" :class="user.active ? 'tick' : 'cross'">{{
+            user.active ? 'فعال' : 'غیر فعال'
+          }}</span>
         </p>
         <p class="description">
-          <i class="fas px-2" :class="isVIP ? 'fa-check tick' : 'fa-times cross'"></i>
+          <i
+            class="fas px-2"
+            :class="isVIP ? 'fa-check tick' : 'fa-times cross'"
+          ></i>
           {{ 'وضعیت عضویت ویژه' }} -
-          <span
-            class="description"
-            :class="isVIP ? 'tick' : 'cross'"
-          >{{ isVIP ? "فعال" : "غیر فعال" }}</span>
+          <span class="description" :class="isVIP ? 'tick' : 'cross'">{{
+            isVIP ? 'فعال' : 'غیر فعال'
+          }}</span>
           <!-- <span class="vip-date"> روز دیگر شارژ دارید </span> -->
         </p>
         <div class="row d-flex justify-content-center">
@@ -43,7 +44,8 @@
                 native-type="submit"
                 type="primary"
                 class="btn-fill btn btn-round"
-              >{{ 'شارژ VIP' }}</base-button>
+                >{{ 'شارژ VIP' }}</base-button
+              >
             </router-link>
           </div>
         </div>
@@ -86,10 +88,19 @@
               ></base-input>
             </div>
             <div v-if="isAdmin" class="col-md-3">
-              <image-upload type="avatar" select-text="+ آپلود عکس" @change="onAvatarChange" />
+              <image-upload
+                type="avatar"
+                select-text="+ آپلود عکس"
+                @change="onAvatarChange"
+              />
             </div>
             <div class="col-md-2 mt-3 mr-auto">
-              <base-button native-type="submit" type="info" class="btn btn-danger">ذخیره</base-button>
+              <base-button
+                native-type="submit"
+                type="info"
+                class="btn btn-danger"
+                >ذخیره</base-button
+              >
             </div>
           </div>
         </form>
@@ -197,7 +208,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .btn {
