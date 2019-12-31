@@ -73,7 +73,7 @@
               <label class="pull-right">پست الکترونیک</label>
               <base-input
                 type="email"
-                placeholder="info@askarya.ir"
+                placeholder="info@ask-arya.com"
                 v-model="email"
                 :error="fieldErrors.email"
               ></base-input>
