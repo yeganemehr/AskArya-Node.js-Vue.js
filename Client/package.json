@@ -54,7 +54,7 @@
     "raw-loader": "^4.0.0",
     "register-service-worker": "^1.6.2",
     "sweetalert": "^2.1.2",
-    "terser": "^4.6.2",
+    "terser": "^4.6.3",
     "tween.js": "^16.6.0",
     "vee-validate": "^2.2.15",
     "vue": "^2.6.11",
@@ -63,7 +63,7 @@
     "vue-meta": "^2.3.2",
     "vue-plyr": "^6.0.4",
     "vue-recaptcha": "^1.3.0",
-    "vue-router": "^3.1.3",
+    "vue-router": "^3.1.5",
     "vue-router-prefetch": "^1.6.0",
     "vue-scrollto": "^2.17.1",
     "vue2-google-maps": "^0.10.7",
@@ -72,7 +72,7 @@
     "vuex": "^3.1.2"
   },
   "devDependencies": {
-    "@babel/plugin-syntax-dynamic-import": "^7.8.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@vue/cli-plugin-babel": "^3.12.0",
     "@vue/cli-plugin-eslint": "^3.12.0",
     "@vue/cli-plugin-pwa": "^3.12.0",
@@ -81,7 +81,7 @@
     "glob-all": "^3.1.0",
     "node-sass": "^4.13.0",
     "purgecss-webpack-plugin": "^1.6.0",
-    "sass-loader": "^8.0.1",
+    "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
   },
   "postcss": {
