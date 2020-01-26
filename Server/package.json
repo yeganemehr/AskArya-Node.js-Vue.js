@@ -19,7 +19,7 @@
     "connect-roles": "^3.1.2",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
-    "csurf": "^1.10.0",
+    "csurf": "^1.11.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.0",
@@ -30,7 +30,7 @@
     "helmet": "^3.21.2",
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.3",
     "moment": "^2.24.0",
     "moment-jalaali": "^0.9.1",
     "mongoose": "^5.8.9",
@@ -48,7 +48,7 @@
     "sprintf-js": "^1.1.2",
     "striptags": "^3.1.1",
     "unique-string": "^2.0.0",
-    "validator": "^12.1.0",
+    "validator": "^12.2.0",
     "zarinpal-checkout": "^0.2.7"
   },
   "devDependencies": {
