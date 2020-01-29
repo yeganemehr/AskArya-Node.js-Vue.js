@@ -105,15 +105,14 @@ module.exports = class Application {
 
     app.use(csrfErrorHandler.handle);
 
-    ///////////////////// Handle Production
-    /////////////////////
-    // if (process.env.NODE_ENV === 'production') {
-    //   // Static Folder
-    //   app.use(express.static(path.join(__dirname, '..', 'dist/')));
-    //   // Handle SPA
-    //   app.get(/.*/, (req, res) =>
-    //     res.sendFile(path.join(__dirname, '..', 'dist/index.html'))
-    //   );
-    // }
+    //////////// Handle Production ////////////
+    if (process.env.NODE_ENV === 'production') {
+      // Static Folder
+      app.use(express.static(path.join(__dirname, '..', 'dist/')));
+      // Handle SPA
+      app.get(/.*/, (req, res) =>
+        res.sendFile(path.join(__dirname, '..', 'dist/index.html'))
+      );
+    }
   }
 };
