@@ -58,7 +58,9 @@ module.exports = {
     sourceMap: process.env.NODE_ENV !== 'production'
   },
 
-  outputDir: path.resolve(__dirname, '../server/dist'),
+  // Output directory for Node.js
+  // outputDir: path.resolve(__dirname, '../server/dist'),
+
   devServer: {
     proxy: {
       '^/api': {
