@@ -9,7 +9,6 @@ function resolveSrc(_path) {
 
 // vue.config.js
 module.exports = {
-  // the CLI tools to transpile JavaScript files in all ckeditor5-* modules.
   transpileDependencies: [/ckeditor5-[^/\\]+[/\\]src[/\\].+\.js$/],
   lintOnSave: true,
   configureWebpack: {
@@ -36,7 +35,6 @@ module.exports = {
         'process.env.NODE_ENV': JSON.stringify('production')
       }),
 
-      // CKEditor needs its own plugin to be built using webpack.
       new CKEditorWebpackPlugin({
         language: 'en'
       })
@@ -54,11 +52,10 @@ module.exports = {
   pluginOptions: {},
 
   css: {
-    /////// Enable CSS source maps.
     sourceMap: process.env.NODE_ENV !== 'production'
   },
 
-  ////// Output directory for Node.js
+  // Output directory for Node.js
   // outputDir: path.resolve(__dirname, '../server/dist'),
 
   devServer: {
@@ -78,34 +75,20 @@ module.exports = {
     }
   },
 
-  // Vue CLI would normally use its own loader to load .svg and .css files, however:
-  //	1. The icons used by CKEditor must be loaded using raw-loader,
-  //	2. The CSS used by CKEditor must be transpiled using PostCSS to load properly.
   chainWebpack: config => {
-    // (1.) To handle editor icons, get the default rule for *.svg files first:
     const svgRule = config.module.rule('svg');
 
-    // Then you can either:
-    // * clear all loaders for existing 'svg' rule:
-    //		svgRule.uses.clear();
-    // * or exclude ckeditor directory from node_modules:
     svgRule.exclude.add(
       path.join(__dirname, 'node_modules', 'ckeditor5-direction')
     );
     svgRule.exclude.add(path.join(__dirname, 'node_modules', '@ckeditor'));
 
-    // Add an entry for *.svg files belonging to CKEditor. You can either:
-    // * modify the existing 'svg' rule:
-    //		svgRule.use( 'raw-loader' ).loader( 'raw-loader' );
-    // * or add a new one:
     config.module
       .rule('cke-svg')
       .test(/ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/)
       .use('raw-loader')
       .loader('raw-loader');
 
-    // (2.) Transpile the .css files imported by the editor using PostCSS.
-    // Make sure only the CSS belonging to ckeditor5-* packages is processed this way.
     config.module
       .rule('cke-css')
       .test(/ckeditor5-[^/\\]+[/\\].+\.css$/)

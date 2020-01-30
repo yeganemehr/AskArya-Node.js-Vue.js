@@ -15,8 +15,6 @@ yarn-error.log*
 test/unit/coverage
 .DS_Store
 
-
-
 # Editor directories and files
 .idea
 *.suo
