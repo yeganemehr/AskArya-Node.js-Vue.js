@@ -54,12 +54,12 @@ module.exports = {
   pluginOptions: {},
 
   css: {
-    // Enable CSS source maps.
+    /////// Enable CSS source maps.
     sourceMap: process.env.NODE_ENV !== 'production'
   },
 
-  // Output directory for Node.js
-  outputDir: path.resolve(__dirname, '../server/dist'),
+  ////// Output directory for Node.js
+  // outputDir: path.resolve(__dirname, '../server/dist'),
 
   devServer: {
     proxy: {
