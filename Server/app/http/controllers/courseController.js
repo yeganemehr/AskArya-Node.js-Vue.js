@@ -91,7 +91,6 @@ class courseController extends controller {
       };
 
       let options = this.getUrlOption(
-        // 'https://sandbox.zarinpal.com/pg/rest/WebGate/PaymentRequest.json',
         'https://www.zarinpal.com/pg/rest/WebGate/PaymentRequest.json',
         params
       );
@@ -108,7 +107,6 @@ class courseController extends controller {
           await payment.save();
 
           res.redirect(
-            // `https://sandbox.zarinpal.com/pg/StartPay/${data.Authority}`
             `https://www.zarinpal.com/pg/StartPay/${data.Authority}`
           );
         })
@@ -146,7 +144,6 @@ class courseController extends controller {
       };
 
       let options = this.getUrlOption(
-        // 'https://sandbox.zarinpal.com/pg/rest/WebGate/PaymentVerification.json',
         'https://www.zarinpal.com/pg/rest/WebGate/PaymentVerification.json',
 
         params
