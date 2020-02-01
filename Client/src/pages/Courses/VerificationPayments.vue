@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-md-8 m-md-auto col-12 card-background card-body text-center">
+      <div
+        class="col-md-8 m-md-auto col-12 card-background card-body text-center"
+      >
         <div v-if="pymentStatus.loading">
           <h2 class="text-center my-3">
             <i class="fa fa-5x fa-spinner fa-pulse fa-fw"></i>
@@ -27,7 +29,9 @@
           </h2>
           <h3 class="mt-4 mb-3 text-danger payment-status">تراکنش ناموفق</h3>
           <p class="text-right text-rtl status-payment-text pt-5">
-            <span class="payment-error-text">تراکنش شما با موفقیت پرداخت نشد.</span>
+            <span class="payment-error-text"
+              >تراکنش شما با موفقیت پرداخت نشد.</span
+            >
             <br />
             <br />درصورتی که مبلغی از حساب بانکی شما کسر شده، توسط سیستم بانکی
             طی 48 ساعت آینده مرجوع خواهد شد.

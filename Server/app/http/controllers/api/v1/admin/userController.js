@@ -10,7 +10,8 @@ class userController extends controller {
     let filter = {};
     if (req.query.filter) {
       filter = {
-        $or: [{
+        $or: [
+          {
             name: {
               $regex: req.query.filter,
               $options: 'i'
@@ -104,13 +105,7 @@ class userController extends controller {
       });
       delete req.body.courses;
     }
-    let {
-      name,
-      email,
-      password,
-      xp,
-      active
-    } = req.body;
+    let { name, email, password, xp, active } = req.body;
 
     const newUser = new User({
       name: name,
@@ -184,12 +179,14 @@ class userController extends controller {
     }
     delete req.body.file;
     user = await User.findByIdAndUpdate(
-      req.params.id, {
+      req.params.id,
+      {
         $set: {
           ...req.body,
           ...objForUpdate
         }
-      }, {
+      },
+      {
         new: true
       }
     );

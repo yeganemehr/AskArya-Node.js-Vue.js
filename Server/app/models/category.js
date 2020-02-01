@@ -2,26 +2,29 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const mongoosePaginate = require('mongoose-paginate-v2');
 
-const categorySchema = Schema({
-  name: {
-    type: String,
-    required: true
+const categorySchema = Schema(
+  {
+    name: {
+      type: String,
+      required: true
+    },
+    slug: {
+      type: String,
+      required: true
+    },
+    parent: {
+      type: Schema.Types.ObjectId,
+      ref: 'Category',
+      default: null
+    }
   },
-  slug: {
-    type: String,
-    required: true
-  },
-  parent: {
-    type: Schema.Types.ObjectId,
-    ref: 'Category',
-    default: null
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true
+    }
   }
-}, {
-  timestamps: true,
-  toJSON: {
-    virtuals: true
-  }
-});
+);
 
 categorySchema.plugin(mongoosePaginate);
 

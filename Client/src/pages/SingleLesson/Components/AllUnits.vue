@@ -3,7 +3,7 @@
     <div
       class="col-md-9 UnitSection mb-5"
       v-if="episodes.length"
-      :style="scrollable ? {'overflow-y': 'auto'} : ''"
+      :style="scrollable ? { 'overflow-y': 'auto' } : ''"
     >
       <div
         class="UnitBox d-flex justify-content-between"
@@ -26,7 +26,9 @@
               @click="throwClickEvent"
               class="UnitName text-right"
               v-if="mustBuy(episode.type)"
-            >{{ episode.title }}</p>
+            >
+              {{ episode.title }}
+            </p>
           </div>
         </div>
         <div class="left d-flex justify-content-between">
@@ -39,7 +41,11 @@
           <div class="pl-2 d-flex align-self-center" v-if="purchased">
             <p class="detail-price-purchased">
               <i
-                :class="episode.done ? 'fas fa-eye text-success fas-2x' : 'fas fa-eye-slash text-danger fas-2x'"
+                :class="
+                  episode.done
+                    ? 'fas fa-eye text-success fas-2x'
+                    : 'fas fa-eye-slash text-danger fas-2x'
+                "
               ></i>
             </p>
           </div>

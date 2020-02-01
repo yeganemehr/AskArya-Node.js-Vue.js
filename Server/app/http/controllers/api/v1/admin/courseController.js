@@ -25,7 +25,8 @@ class courseController extends controller {
           createdAt: 1
         },
         limit: parseInt(limit, 10),
-        populate: [{
+        populate: [
+          {
             path: 'user'
           },
           {
@@ -133,12 +134,14 @@ class courseController extends controller {
     objForUpdate.slug = this.slug(req.body.title);
 
     const newCourse = await Course.findByIdAndUpdate(
-      req.params.id, {
+      req.params.id,
+      {
         $set: {
           ...req.body,
           ...objForUpdate
         }
-      }, {
+      },
+      {
         new: true
       }
     );
@@ -179,7 +182,8 @@ class courseController extends controller {
   }
   async getInsertEpisodeNumber(req, res) {
     this.isMongoId(req, req.params.course);
-    const episode = await Episode.findOne({
+    const episode = await Episode.findOne(
+      {
         course: req.params.course
       },
       'number'

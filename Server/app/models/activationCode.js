@@ -1,27 +1,30 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const User = require('./user')
+const User = require('./user');
 
-const activationCode = Schema({
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+const activationCode = Schema(
+  {
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+    },
+    code: {
+      type: String,
+      required: true
+    },
+    used: {
+      type: Boolean,
+      default: false
+    },
+    expire: {
+      type: Date,
+      required: true
+    }
   },
-  code: {
-    type: String,
-    required: true
-  },
-  used: {
-    type: Boolean,
-    default: false
-  },
-  expire: {
-    type: Date,
-    required: true
+  {
+    timestamps: true
   }
-}, {
-  timestamps: true
-});
+);
 
 module.exports = mongoose.model('ActivationCode', activationCode);

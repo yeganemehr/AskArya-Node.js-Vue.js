@@ -10,7 +10,8 @@ class ticketController extends controller {
     let filter = {};
     if (req.query.filter) {
       filter = {
-        $or: [{
+        $or: [
+          {
             title: {
               $regex: req.query.filter,
               $options: 'i'
@@ -24,8 +25,10 @@ class ticketController extends controller {
           }
         ]
       };
-      const users = await User.find({
-          $or: [{
+      const users = await User.find(
+        {
+          $or: [
+            {
               name: {
                 $regex: req.query.filter,
                 $options: 'i'
@@ -45,7 +48,6 @@ class ticketController extends controller {
         filter.$or.push({
           user: {
             $in: users.map(user => {
-            
               return user.id;
             })
           }
@@ -53,14 +55,16 @@ class ticketController extends controller {
       }
     }
     const promises = [
-      Ticket.aggregate([{
-        $group: {
-          _id: '$status',
-          count: {
-            $sum: 1
+      Ticket.aggregate([
+        {
+          $group: {
+            _id: '$status',
+            count: {
+              $sum: 1
+            }
           }
         }
-      }]).exec(),
+      ]).exec(),
       Ticket.paginate(filter, {
         page,
         sort: {
@@ -115,13 +119,7 @@ class ticketController extends controller {
     if (req.file) {
       file = this.getUrlFile(`${req.file.destination}/${req.file.filename}`);
     }
-    let {
-      title,
-      user,
-      message,
-      priority,
-      department
-    } = req.body;
+    let { title, user, message, priority, department } = req.body;
 
     const ticket = await new Ticket({
       title,
@@ -179,15 +177,19 @@ class ticketController extends controller {
     if (!ticket) {
       return this.failed('چنین تیکتی وجود ندارد.', res, 404);
     }
-    ticket = await Ticket.findByIdAndUpdate({
-      _id: req.params.ticket
-    }, {
-      $set: {
-        ...req.body
+    ticket = await Ticket.findByIdAndUpdate(
+      {
+        _id: req.params.ticket
+      },
+      {
+        $set: {
+          ...req.body
+        }
+      },
+      {
+        new: true
       }
-    }, {
-      new: true
-    });
+    );
     ticket.user = await User.findById(req.body.user);
 
     res.json({

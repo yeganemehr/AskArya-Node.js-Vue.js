@@ -1,28 +1,31 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const blogCategorySchema = Schema({
-  name: {
-    type: String,
-    unique: true,
-    required: true
+const blogCategorySchema = Schema(
+  {
+    name: {
+      type: String,
+      unique: true,
+      required: true
+    },
+    slug: {
+      type: String,
+      unique: true,
+      required: true
+    },
+    parent: {
+      type: Schema.Types.ObjectId,
+      ref: 'blogCategory',
+      default: null
+    }
   },
-  slug: {
-    type: String,
-    unique: true,
-    required: true
-  },
-  parent: {
-    type: Schema.Types.ObjectId,
-    ref: 'blogCategory',
-    default: null
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true
+    }
   }
-}, {
-  timestamps: true,
-  toJSON: {
-    virtuals: true
-  }
-});
+);
 
 blogCategorySchema.virtual('childs', {
   ref: 'Category',

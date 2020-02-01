@@ -145,7 +145,6 @@ class courseController extends controller {
 
       let options = this.getUrlOption(
         'https://www.zarinpal.com/pg/rest/WebGate/PaymentVerification.json',
-
         params
       );
 

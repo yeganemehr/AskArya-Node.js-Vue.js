@@ -10,15 +10,18 @@ class episodeController extends controller {
     try {
       const page = req.query.page || 1;
       const limit = req.query.limit || 15;
-      const episodes = await Episode.paginate({}, {
-        page,
-        sort: {
-          course: 1,
-          number: 1
-        },
-        limit: parseInt(limit, 10),
-        populate: 'course'
-      });
+      const episodes = await Episode.paginate(
+        {},
+        {
+          page,
+          sort: {
+            course: 1,
+            number: 1
+          },
+          limit: parseInt(limit, 10),
+          populate: 'course'
+        }
+      );
       const data = {
         ...episodes,
         docs: episodes.docs.map(this.filterEpisodeData)
@@ -52,16 +55,7 @@ class episodeController extends controller {
   async store(req, res, next) {
     if (!(await this.validationData(req, res))) return;
 
-    let {
-      title,
-      body,
-      type,
-      time,
-      videoUrl,
-      course,
-      number,
-      xp
-    } = req.body;
+    let { title, body, type, time, videoUrl, course, number, xp } = req.body;
     number = Math.min(await this.getLastNumber(course), number);
     let newEpisode = new Episode({
       title,
@@ -75,26 +69,30 @@ class episodeController extends controller {
     });
 
     await newEpisode.save();
-    await Episode.updateMany({
-      $and: [{
-          _id: {
-            $ne: newEpisode.id
+    await Episode.updateMany(
+      {
+        $and: [
+          {
+            _id: {
+              $ne: newEpisode.id
+            }
+          },
+          {
+            course: newEpisode.course
+          },
+          {
+            number: {
+              $gte: newEpisode.number
+            }
           }
-        },
-        {
-          course: newEpisode.course
-        },
-        {
-          number: {
-            $gte: newEpisode.number
-          }
+        ]
+      },
+      {
+        $inc: {
+          number: +1
         }
-      ]
-    }, {
-      $inc: {
-        number: +1
       }
-    });
+    );
     newEpisode.course = await Course.findById(course);
     return res.json({
       episode: this.filterEpisodeData(newEpisode),
@@ -119,74 +117,86 @@ class episodeController extends controller {
     );
     delete req.body.number;
     const newEpisode = await Episode.findByIdAndUpdate(
-      req.params.episode, {
+      req.params.episode,
+      {
         $set: {
           ...req.body,
           ...newData
         }
-      }, {
+      },
+      {
         new: true
       }
     );
     if (episode.number != newEpisode.number) {
       if (newEpisode.number > episode.number) {
-        await Episode.updateMany({
-          $and: [{
-              _id: {
-                $ne: newEpisode.id
-              }
-            },
-            {
-              course: newEpisode.course
-            },
-            {
-              $and: [{
-                  number: {
-                    $lte: newEpisode.number
-                  }
-                },
-                {
-                  number: {
-                    $gt: episode.number
-                  }
+        await Episode.updateMany(
+          {
+            $and: [
+              {
+                _id: {
+                  $ne: newEpisode.id
                 }
-              ]
+              },
+              {
+                course: newEpisode.course
+              },
+              {
+                $and: [
+                  {
+                    number: {
+                      $lte: newEpisode.number
+                    }
+                  },
+                  {
+                    number: {
+                      $gt: episode.number
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            $inc: {
+              number: -1
             }
-          ]
-        }, {
-          $inc: {
-            number: -1
           }
-        });
+        );
       } else {
-        await Episode.updateMany({
-          $and: [{
-              _id: {
-                $ne: newEpisode.id
-              }
-            },
-            {
-              course: newEpisode.course
-            },
-            {
-              $and: [{
-                  number: {
-                    $gte: newEpisode.number
-                  }
-                },
-                {
-                  number: {
-                    $lt: episode.number
-                  }
+        await Episode.updateMany(
+          {
+            $and: [
+              {
+                _id: {
+                  $ne: newEpisode.id
                 }
-              ]
+              },
+              {
+                course: newEpisode.course
+              },
+              {
+                $and: [
+                  {
+                    number: {
+                      $gte: newEpisode.number
+                    }
+                  },
+                  {
+                    number: {
+                      $lt: episode.number
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            $inc: {
+              number: 1
             }
-          ]
-        }, {
-          $inc: {
-            number: 1
           }
-        });
+        );
       }
     }
     const ctime = this.timeToSeconds(episode.course.time);
@@ -211,28 +221,37 @@ class episodeController extends controller {
       this.failed('چنین دوره ای وجود ندارد', res, 404);
       return;
     }
-    await Episode.updateMany({
-      $and: [{
-        course: episode.course
-      }, {
-        number: {
-          $gt: episode.number
+    await Episode.updateMany(
+      {
+        $and: [
+          {
+            course: episode.course
+          },
+          {
+            number: {
+              $gt: episode.number
+            }
+          }
+        ]
+      },
+      {
+        $inc: {
+          number: -1
         }
-      }]
-    }, {
-      $inc: {
-        number: -1
       }
-    });
+    );
     episode.remove();
     return res.json({
       status: 'success'
     });
   }
   async getLastNumber(course) {
-    const episode = await Episode.findOne({
-      course: course
-    }, 'number').sort({
+    const episode = await Episode.findOne(
+      {
+        course: course
+      },
+      'number'
+    ).sort({
       number: -1
     });
     let number = 1;

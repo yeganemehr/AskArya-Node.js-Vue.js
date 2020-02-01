@@ -2,21 +2,24 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const mongoosePaginate = require('mongoose-paginate-v2');
 
-const learningSchema = Schema({
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
+const learningSchema = Schema(
+  {
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    course: {
+      type: Schema.Types.ObjectId,
+      ref: 'learning'
+    }
   },
-  course: {
-    type: Schema.Types.ObjectId,
-    ref: 'learning'
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true
+    }
   }
-}, {
-  timestamps: true,
-  toJSON: {
-    virtuals: true
-  }
-});
+);
 
 learningSchema.plugin(mongoosePaginate);
 
