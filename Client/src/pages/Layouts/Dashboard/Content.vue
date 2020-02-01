@@ -14,4 +14,19 @@ export default {
   }
 };
 </script>
-<style></style>
+
+<style scoped lang="scss">
+  .white-content .card:not(.card-white) {
+  border-radius: 20px !important;
+  background: #e7e7e7ec !important;
+  border: 0 !important;
+  position: relative !important;
+  width: 100% !important;
+  -webkit-box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1) !important;
+}
+
+</style>
+
+
+</style>

@@ -12,7 +12,6 @@ module.exports = {
   transpileDependencies: [/ckeditor5-[^/\\]+[/\\]src[/\\].+\.js$/],
   lintOnSave: true,
   configureWebpack: {
-    // Set up all the aliases we use in our app.
     resolve: {
       alias: {
         src: resolveSrc('src'),
@@ -55,7 +54,7 @@ module.exports = {
     sourceMap: process.env.NODE_ENV !== 'production'
   },
 
-  // Output directory for Node.js
+  //// Output directory for Node.js
   // outputDir: path.resolve(__dirname, '../server/dist'),
 
   devServer: {

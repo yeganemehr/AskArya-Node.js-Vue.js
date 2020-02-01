@@ -41,15 +41,12 @@ import 'src/assets/sass/black-dashboard-pro.scss';
 import 'nprogress/nprogress.css';
 import './assets/sass/nprogress.scss';
 
-import store from './store';
-
 function start(data) {
   /* eslint-disable no-new */
   new Vue({
     el: '#app',
     render: h => h(App),
     router,
-    store,
     data
   });
 }

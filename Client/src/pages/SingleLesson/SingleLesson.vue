@@ -7,10 +7,7 @@
           <div class="text-center px-3 py-5">
             <h1 class="course-title">{{ title }}</h1>
             <!-- Course Image -->
-            <img
-              class="course-image rounded-circle img-fluid py-4"
-              :src="course.image"
-            />
+            <img class="course-image rounded-circle img-fluid py-4" :src="course.image" />
             <p class="episode-title" v-if="episode.id">{{ course.title }}</p>
             <div class="body pt-3" v-html="body"></div>
           </div>
@@ -29,9 +26,9 @@
               <i class="icon far fa-clock"></i>
               <h5 class="icon-data">
                 {{ episode.time ? episodeTime : courseTime }}
-                <span class="icon-text pr-1">{{
-                  episode.time ? 'زمان این درس' : 'زمان کل دوره'
-                }}</span>
+                <span
+                  class="icon-text pr-1"
+                >{{ episode.time ? "زمان این درس" : "زمان کل دوره" }}</span>
               </h5>
             </div>
 
@@ -86,22 +83,18 @@
                 تهیه دوره
               </base-button>
               <p class="text-center pay-text pt-2">
-                برای دسترسی به این درس لطفا لینک خرید را دنبال کنید.
+                برای دسترسی به این درس لطفا لینک
+                خرید را دنبال کنید.
               </p>
             </div>
             <!-- </p> -->
-            <p
-              v-else-if="type.toLowerCase() == 'vip'"
-              class="text-center pay-text"
-            >
+            <p v-else-if="type.toLowerCase() == 'vip'" class="text-center pay-text">
               <!-- <i class="fas fa-info pl-3"></i> -->
               برای دسترسی به این درس اکانت VIP تهیه کنید.
               <span class="text-center pr-3">
                 <div class="w-100 d-md-none pt-2"></div>
                 <router-link to="/courses">
-                  <base-button native-type="submit" type="info" class="btn"
-                    >تهیه عضویت ویژه</base-button
-                  >
+                  <base-button native-type="submit" type="info" class="btn">تهیه عضویت ویژه</base-button>
                 </router-link>
               </span>
             </p>
@@ -142,15 +135,15 @@
           :episodes="course.episodes"
           :scrollable="false"
           :maxepisodes="4"
-          :purchased="!notEnrolled"
+          :purchased="! notEnrolled"
           :courseDonePercentage="courseDonePercentage"
           :courseRemainPercentage="courseRemainPercentage"
           :activeEpisode="this.episode ? this.episode.id : ''"
           @buy="openBuyCourse"
         ></AllUnits>
-        <p class="quote-text text-center pb-2 d-none d-md-block">
-          "تا زمانی که متوقف نشوید، مهم نیست که چقدر آهسته حرکت می کنید."
-        </p>
+        <p
+          class="quote-text text-center pb-2 d-none d-md-block"
+        >"تا زمانی که متوقف نشوید، مهم نیست که چقدر آهسته حرکت می کنید."</p>
       </div>
     </div>
     <modal
@@ -164,13 +157,7 @@
         <span class="course-title-modal text-danger">{{ course.title }}</span>
       </h5>
       <div slog="body" class="text-right rtl">
-        <p>
-          {{
-            this.$root._data.user
-              ? 'پرداخت از درگاه بانک با استفاده از کلیه کارت‌های عضو شتاب.'
-              : 'برای ثبت نام در این دوره باید حتما به حساب کاربری اسک آریا وارد شوید.'
-          }}
-        </p>
+        <p>{{ this.$root._data.user ? "پرداخت از درگاه بانک با استفاده از کلیه کارت‌های عضو شتاب." : "برای ثبت نام در این دوره باید حتما به حساب کاربری اسک آریا وارد شوید." }}</p>
         <ul class="list-group">
           <li class="list-group-item">
             <p class="float-right text-dark course-price-title">قیمت دوره</p>
@@ -183,8 +170,7 @@
           @click="buyCourseListener"
           native-type="button"
           class="btn-block btn-success d-block w-100"
-          >{{ this.$root._data.user ? 'پرداخت از درگاه' : 'ورود' }}</base-button
-        >
+        >{{ this.$root._data.user ? "پرداخت از درگاه" : "ورود" }}</base-button>
       </div>
     </modal>
   </div>
@@ -496,6 +482,7 @@ export default {
   }
 };
 </script>
+
 
 <style lang="scss" scoped>
 .top-banner {
