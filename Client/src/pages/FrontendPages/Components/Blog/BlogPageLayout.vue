@@ -134,7 +134,8 @@ export default {
   font-size: 1.3em !important;
   line-height: 2.1em !important;
   direction: ltr !important;
-  font-family: IranSans;
+  font-family: IranSansBlog !important;
+  // font-family: IranSans;
   color: black !important;
 }
 

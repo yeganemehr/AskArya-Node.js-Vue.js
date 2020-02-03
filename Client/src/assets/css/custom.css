@@ -42,6 +42,18 @@
   font-style: normal !important;
 }
 
+@font-face {
+  font-family: 'IranSansBlog';
+  src: url('../fonts/IranSansBlog/IRANSansWeb.eot');
+  src: url('../fonts/IranSansBlog/IRANSansWeb.eot') format('embedded-opentype'),
+    url('../fonts/IranSansBlog/IRANSansWeb.woff2') format('woff2'),
+    url('../fonts/IranSansBlog/IRANSansWeb.woff') format('woff'),
+    url('../fonts/IranSansBlog/IRANSansWeb.ttf') format('truetype');
+  font-weight: normal !important;
+  font-style: normal !important;
+}
+
+
 * {
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
