@@ -1,10 +1,16 @@
 <template>
   <div class="CourseCard hover mb-4" @click="onClick">
-    <img class="CourseCard__courseimage" alt="askarya-coursecard-image" :src="thumb" />
+    <img
+      class="CourseCard__courseimage"
+      alt="askarya-coursecard-image"
+      :src="thumb"
+    />
     <h4 class="course-title text-center pt-3">{{ title }}</h4>
     <hr class="fadeline" />
     <div class="bottom-section">
-      <div class="CourseCard__course__info d-flex justify-content-between text-center pt-1">
+      <div
+        class="CourseCard__course__info d-flex justify-content-between text-center pt-1"
+      >
         <div>
           <p class="courseTime">
             {{ minutes }}
@@ -23,8 +29,12 @@
       <hr class="fadeline" v-if="!purchased" />
       <div class="px-4 price-section text-center" v-if="!purchased">
         <div class="row">
-          <div class="col-12 text-center pricehighlight" v-if="isVip">اعضای ویژه</div>
-          <div class="col-12 text-center pricehighlight" v-else-if="isFree">رایگان</div>
+          <div class="col-12 text-center pricehighlight" v-if="isVip">
+            اعضای ویژه
+          </div>
+          <div class="col-12 text-center pricehighlight" v-else-if="isFree">
+            رایگان
+          </div>
           <div class="col-6" v-if="!isVip && !isFree">
             <p class="oldPrice" v-if="oldPrice > 0">{{ formatedOldPrice }}</p>
           </div>

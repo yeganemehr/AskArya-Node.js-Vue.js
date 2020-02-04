@@ -177,7 +177,7 @@
 </template>
 <script>
 import AllUnits from './Components/AllUnits.vue';
-import CustomCard from './Components/CustomCard.vue';
+// import CustomCard from './Components/CustomCard.vue';
 import VideoButtons from './Components/VideoButtons.vue';
 import { Carousel, CarouselItem } from 'element-ui';
 
@@ -189,7 +189,7 @@ import Swal from 'sweetalert';
 export default {
   components: {
     AllUnits,
-    CustomCard,
+    // CustomCard,
     VideoButtons,
     modal: Modal,
     [Carousel.name]: Carousel,

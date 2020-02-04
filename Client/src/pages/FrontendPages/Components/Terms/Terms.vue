@@ -287,7 +287,7 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-  font-family: IranSansBold;
+  font-family: IranSansBold !important;
   font-size: 3em;
 }
 
