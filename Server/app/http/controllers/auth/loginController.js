@@ -2,7 +2,9 @@ const controller = require('app/http/controllers/controller');
 const passport = require('passport');
 const ActivationCode = require('app/models/activationCode');
 const uniqueString = require('unique-string');
-const mail = require('app/helpers/mail');
+// const mail = require('app/helpers/mail');
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 class loginController extends controller {
   showLoginForm(req, res) {
@@ -63,13 +65,13 @@ class loginController extends controller {
             to: `${user.email}`, // list of receivers
             subject: 'فعال سازی اکانت اسک آریا', // Subject line
             html: `
-                            <h2>فعال سازی اکانت اسک آریا</h2>
-                            <p>برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
-                            <a href="${config.siteurl}/user/activation/${newActiveCode.code}">فعال سازی</a>
-                        ` // html body
+                  <h2>فعال سازی اکانت اسک آریا</h2>
+                  <p>برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
+                  <a href="${config.siteurl}/user/activation/${newActiveCode.code}">فعال سازی</a>
+                  ` // html body
           };
-
-          mail.sendMail(mailOptions, (err, info) => {
+          // mail.sendMail(mailOptions, (err, info) => {
+          sgMail.send(mailOptions, function(err, info) {
             if (err) return console.log(err);
 
             console.log('Message Sent : %s', info.messageId);

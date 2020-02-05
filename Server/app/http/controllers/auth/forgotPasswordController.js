@@ -3,7 +3,10 @@ const passport = require('passport');
 const PasswordReset = require('app/models/password-reset');
 const User = require('app/models/user');
 const uniqueString = require('unique-string');
-const mail = require('app/helpers/mail');
+// const mail = require('app/helpers/mail');
+
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 class forgotPasswordController extends controller {
   showForgotPassword(req, res) {
@@ -52,7 +55,8 @@ class forgotPasswordController extends controller {
             ` // html body
     };
 
-    mail.sendMail(mailOptions, (err, info) => {
+    // mail.sendMail(mailOptions, (err, info) => {
+    sgMail.send(mailOptions, function(err, info) {
       if (err) return console.log(err);
 
       console.log('Message Sent : %s', info.messageId);
