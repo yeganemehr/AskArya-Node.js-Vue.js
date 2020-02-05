@@ -15,8 +15,7 @@ class dashboardController extends controller {
     const isVip = req.user.vipTime && new Date(req.user.vipTime) > new Date();
     if (isVip) {
       condition = {
-        $or: [
-          {
+        $or: [{
             _id: {
               $in: req.user.learning
             }
@@ -43,23 +42,20 @@ class dashboardController extends controller {
           })
         }
       }).exec(),
-      Payment.paginate(
-        {
-          user: req.user.id
+      Payment.paginate({
+        user: req.user.id
+      }, {
+        page: page,
+        sort: {
+          createdAt: -1
         },
-        {
-          page: page,
-          sort: {
-            createdAt: -1
-          },
-          limit: 3,
-          populate: {
-            path: 'course',
-            select: '_id title images thumb price vip'
-          },
-          select: '_id createdAt price payment course vip'
-        }
-      )
+        limit: 3,
+        populate: {
+          path: 'course',
+          select: '_id title images thumb price vip'
+        },
+        select: '_id createdAt price payment course vip'
+      })
     ];
 
     const results = await Promise.all(promises);
@@ -83,20 +79,16 @@ class dashboardController extends controller {
       .populate({
         path: 'roles',
         select: 'name label permissions',
-        populate: [
-          {
-            path: 'permissions'
-          }
-        ]
+        populate: [{
+          path: 'permissions'
+        }]
       })
       .populate({
         path: 'roles',
         select: 'name label permissions',
-        populate: [
-          {
-            path: 'permissions'
-          }
-        ]
+        populate: [{
+          path: 'permissions'
+        }]
       })
       .execPopulate();
 
@@ -123,23 +115,18 @@ class dashboardController extends controller {
   async logs(req, res) {
     const page = req.query.page || 1;
     const limit = req.query.limit || 2;
-    const logs = await Log.paginate(
-      {
-        user: req.user.id
+    const logs = await Log.paginate({
+      user: req.user.id
+    }, {
+      page,
+      sort: {
+        createdAt: -1
       },
-      {
-        page,
-        sort: {
-          createdAt: -1
-        },
-        limit: parseInt(limit, 10),
-        populate: [
-          {
-            path: 'user'
-          }
-        ]
-      }
-    );
+      limit: parseInt(limit, 10),
+      populate: [{
+        path: 'user'
+      }]
+    });
     const data = {
       ...logs,
       docs: logs.docs.map(this.filterLogData)
@@ -149,23 +136,20 @@ class dashboardController extends controller {
   async payments(req, res) {
     const page = req.query.page || 1;
     const limit = req.query.limit || 2;
-    const payments = await Payment.paginate(
-      {
-        user: req.user.id
+    const payments = await Payment.paginate({
+      user: req.user.id
+    }, {
+      page: page,
+      sort: {
+        createdAt: -1
       },
-      {
-        page: page,
-        sort: {
-          createdAt: -1
-        },
-        limit: limit,
-        populate: {
-          path: 'course',
-          select: '_id title images thumb price vip'
-        },
-        select: '_id createdAt price payment course vip'
-      }
-    );
+      limit: limit,
+      populate: {
+        path: 'course',
+        select: '_id title images thumb price vip'
+      },
+      select: '_id createdAt price payment course vip'
+    });
     const data = {
       ...payments
     };
@@ -217,7 +201,7 @@ class dashboardController extends controller {
       }
       const zarinpal = ZarinpalCheckout.create(
         config.service.zarinpal.merchant_id,
-        true
+        false
       );
       const response = await zarinpal.PaymentRequest({
         Amount: price,
@@ -247,13 +231,11 @@ class dashboardController extends controller {
       return this.failed('پرداخت شما با موفقیت انجام نشد', res, 500);
     }
     const payment = await Payment.findOne({
-      resnumber: req.body.authority
-    })
-      .populate([
-        {
-          path: 'user'
-        }
-      ])
+        resnumber: req.body.authority
+      })
+      .populate([{
+        path: 'user'
+      }])
       .exec();
 
     if (!payment.vip) {
@@ -265,7 +247,7 @@ class dashboardController extends controller {
     }
     const zarinpal = ZarinpalCheckout.create(
       config.service.zarinpal.merchant_id,
-      true
+      false
     );
     const response = await zarinpal.PaymentVerification({
       Amount: payment.price,
@@ -289,9 +271,9 @@ class dashboardController extends controller {
         type = '12month';
         break;
     }
-    let vipTime = (payment.user.isVip()
-      ? new Date(payment.user.vipTime)
-      : new Date()
+    let vipTime = (payment.user.isVip() ?
+      new Date(payment.user.vipTime) :
+      new Date()
     ).getTime();
     vipTime += time * 30.41 * 86400 * 1000;
     vipTime = new Date(vipTime);

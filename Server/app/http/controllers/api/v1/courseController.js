@@ -15,27 +15,23 @@ class courseController extends controller {
       const page = req.query.page || 1;
       const promises = [];
       promises.push(
-        Course.paginate(
-          {},
-          {
-            page,
-            sort: {
-              createdAt: 1
+        Course.paginate({}, {
+          page,
+          sort: {
+            createdAt: 1
+          },
+          // limit: 4,
+          populate: [{
+              path: 'categories'
             },
-            // limit: 4,
-            populate: [
-              {
-                path: 'categories'
-              },
-              {
-                path: 'user'
-              },
-              {
-                path: 'episodesCount'
-              }
-            ]
-          }
-        )
+            {
+              path: 'user'
+            },
+            {
+              path: 'episodesCount'
+            }
+          ]
+        })
       );
       promises.push(Episode.find({}, 'time').exec());
       const results = await Promise.all(promises);
@@ -86,17 +82,13 @@ class courseController extends controller {
 
   async singleCourse(req, res) {
     try {
-      const course = await Course.findOneAndUpdate(
-        {
-          slug: req.params.slug
-        },
-        {
-          $inc: {
-            viewCount: 1
-          }
+      const course = await Course.findOneAndUpdate({
+        slug: req.params.slug
+      }, {
+        $inc: {
+          viewCount: 1
         }
-      ).populate([
-        {
+      }).populate([{
           path: 'user',
           select: 'name'
         },
@@ -187,8 +179,7 @@ class courseController extends controller {
     try {
       const course = await Course.findOne({
         slug: req.params.slug
-      }).populate([
-        {
+      }).populate([{
           path: 'user',
           select: 'name'
         },
@@ -226,8 +217,7 @@ class courseController extends controller {
         data: {
           episode: await this.filterEpisodeData(episode, user),
           course: await this.filterCourseData(course, user),
-          enrolled:
-            user && (user.admin || user.checkLearning(episode.course.id)),
+          enrolled: user && (user.admin || user.checkLearning(episode.course.id)),
           enrolledCount: episode.course.usersCount
         },
         status: 'success'
@@ -292,8 +282,7 @@ class courseController extends controller {
         course: req.params.course,
         parent: null,
         approved: true
-      }).populate([
-        {
+      }).populate([{
           path: 'user',
           select: 'name'
         },
@@ -330,7 +319,7 @@ class courseController extends controller {
     }
     const zarinpal = ZarinpalCheckout.create(
       config.service.zarinpal.merchant_id,
-      true
+      false
     );
     const price = parseInt(course.price.replace(/,/g, ''), 10);
     const timeout = setTimeout(() => {
@@ -380,10 +369,9 @@ class courseController extends controller {
       return this.failed('پرداخت شما با موفقیت انجام نشد', res, 500);
     }
     const payment = await Payment.findOne({
-      resnumber: req.body.authority
-    })
-      .populate([
-        {
+        resnumber: req.body.authority
+      })
+      .populate([{
           path: 'course'
         },
         {
@@ -404,7 +392,7 @@ class courseController extends controller {
     }, 30000);
     const zarinpal = ZarinpalCheckout.create(
       config.service.zarinpal.merchant_id,
-      true
+      false
     );
     zarinpal
       .PaymentVerification({
@@ -456,8 +444,7 @@ class courseController extends controller {
     let condition = {};
     if (user.vipTime && new Date(user.vipTime) > new Date()) {
       condition = {
-        $or: [
-          {
+        $or: [{
             _id: {
               $in: user.learning
             }
@@ -480,8 +467,7 @@ class courseController extends controller {
         createdAt: 1
       },
       limit: 24,
-      populate: [
-        {
+      populate: [{
           path: 'categories'
         },
         {
@@ -519,16 +505,14 @@ class courseController extends controller {
     }
     const episode = await Episode.findById(req.params.episode).populate({
       path: 'course',
-      populate: [
-        {
-          path: 'episodes',
-          options: {
-            sort: {
-              number: 1
-            }
+      populate: [{
+        path: 'episodes',
+        options: {
+          sort: {
+            number: 1
           }
         }
-      ]
+      }]
     });
     if (
       !episode ||
@@ -556,16 +540,14 @@ class courseController extends controller {
     }
     const episode = await Episode.findById(req.params.episode).populate({
       path: 'course',
-      populate: [
-        {
-          path: 'episodes',
-          options: {
-            sort: {
-              number: 1
-            }
+      populate: [{
+        path: 'episodes',
+        options: {
+          sort: {
+            number: 1
           }
         }
-      ]
+      }]
     });
     if (
       !episode ||
