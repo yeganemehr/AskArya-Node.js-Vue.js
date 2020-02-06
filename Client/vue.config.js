@@ -58,7 +58,7 @@ module.exports = {
   },
 
   // Output directory for Node.js
-  outputDir: path.resolve(__dirname, '../server/dist'),
+  // outputDir: path.resolve(__dirname, '../server/dist'),
 
   devServer: {
     proxy: {

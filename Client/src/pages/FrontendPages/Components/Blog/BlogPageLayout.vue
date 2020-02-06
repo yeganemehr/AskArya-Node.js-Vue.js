@@ -2,7 +2,9 @@
   <div v-if="post.id">
     <div class="heading-section">
       <div class="container text-center">
-        <BlogHeader :title="post.name"></BlogHeader>
+        <h1 class="post-title-top text-center pt-2 ">{{ post.name }}</h1>
+
+        <!-- <BlogHeader :title="post.name"></BlogHeader> -->
         <img class="blog-img" :src="post.image" :alt="post.name" />
         <div class="my-4">
           <BlogInfo
@@ -34,9 +36,8 @@
 </template>
 
 <script>
-import BlogHeader from './BlogComponents/BlogHeader.vue';
+// import BlogHeader from './BlogComponents/BlogHeader.vue';
 import BlogInfo from './BlogComponents/BlogInfo.vue';
-import RelatedCards from './BlogComponents/RelatedCards.vue';
 
 import CustomCard from '../../../SingleLesson/Components/CustomCard';
 import backend from '../../../../backend';
@@ -44,7 +45,7 @@ import backend from '../../../../backend';
 export default {
   components: {
     BlogInfo,
-    BlogHeader,
+    // BlogHeader,
     CustomCard
   },
   data() {
@@ -117,6 +118,13 @@ export default {
   width: 250px;
   height: 250px;
   border-radius: 20px;
+}
+
+.post-title-top {
+  font-size: 2.2em;
+  font-family: IranSansBold;
+  line-height: inherit !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .post-title {

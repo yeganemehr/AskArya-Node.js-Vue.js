@@ -6,9 +6,7 @@ const Log = require('app/models/log');
 const User = require('app/models/user');
 const PasswordReset = require('app/models/password-reset');
 const uniqueString = require('unique-string');
-// const mail = require('app/helpers/mail');
-const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const mail = require('app/helpers/mail');
 const ActivationCode = require('app/models/activationCode');
 
 class authController extends controller {
@@ -179,8 +177,7 @@ class authController extends controller {
              </div`
     };
 
-    // mail.sendMail(mailOptions, err => {
-    sgMail.send(mailOptions, function(err, info) {
+    mail.sendMail(mailOptions, err => {
       if (err) {
         this.failed('متاسفانه امکان ارسال ایمیل وجود ندارد.', res, 500);
         // console.log(err);
@@ -252,8 +249,7 @@ class authController extends controller {
       // html body
     };
 
-    // mail.sendMail(mailOptions, (err, info) => {
-    sgMail.send(mailOptions, function(err, info) {
+    mail.sendMail(mailOptions, (err, info) => {
       if (err) {
         this.failed('متاسفانه امکان ارسال ایمیل وجود ندارد.', res, 500);
         // console.log('sendMail.err', err);
