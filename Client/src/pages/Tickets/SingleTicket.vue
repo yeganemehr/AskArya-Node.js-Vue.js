@@ -2,12 +2,12 @@
   <section class="container-fluid text-right">
     <div class="ticket-number mb-2">
       <h1>
-        #{{ticket.ticket_id}}
+        #{{ ticket.ticket_id }}
         <span class="subtitle">مشاهده تیکت</span>
       </h1>
     </div>
     <div class="my-5">
-      <h2 class="ticket-desc text-center py-3">{{ticket.title}}</h2>
+      <h2 class="ticket-desc text-center py-3">{{ ticket.title }}</h2>
       <div
         v-for="message of messages"
         :key="message.id"
@@ -16,7 +16,11 @@
       >
         <div class="ticket-meta d-flex justify-content-between row">
           <p class="ticket-user">
-            <img :src="message.user.avatar" class="user-avatar avatar" v-if="message.user.avatar" />
+            <img
+              :src="message.user.avatar"
+              class="user-avatar avatar"
+              v-if="message.user.avatar"
+            />
 
             <!-- ORIGINAL CODE <img
               :src="message.user.avatar"
@@ -25,7 +29,7 @@
               v-if="message.user.avatar"
             />-->
             <i class="pl-1 text-danger far fa-user" v-else></i>
-            {{message.user.name}}
+            {{ message.user.name }}
           </p>
 
           <p class="ticket-date">
@@ -35,7 +39,11 @@
         </div>
         <div class="w-100 d-md-none"></div>
 
-        <p class="pt-4 text-break" v-if="message.user.isAdmin" v-html="message.message"></p>
+        <p
+          class="pt-4 text-break"
+          v-if="message.user.isAdmin"
+          v-html="message.message"
+        ></p>
         <p class="pt-4 text-break" v-else>{{ message.message }}</p>
 
         <div class="text-left pt-2" v-if="isAdmin">
@@ -53,7 +61,9 @@
 
       <!--------------------------- Ticket Reply --------------------------->
       <form @submit.prevent="submitFormListener">
-        <h4 class="pt-5">{{ editingMessage ? 'ویرایش پیام' : 'پاسخی ارسال کنید!' }}</h4>
+        <h4 class="pt-5">
+          {{ editingMessage ? 'ویرایش پیام' : 'پاسخی ارسال کنید!' }}
+        </h4>
         <base-input>
           <ckeditor
             v-if="isAdmin"
@@ -62,7 +72,13 @@
             v-model="message"
             :config="ckeditor.editorConfig"
           ></ckeditor>
-          <textarea v-else class="form-control" placeholder="متن تیکت" rows="3" v-model="message"></textarea>
+          <textarea
+            v-else
+            class="form-control ticket-typing-box"
+            placeholder="متن تیکت"
+            rows="3"
+            v-model="message"
+          ></textarea>
         </base-input>
         <div class="pt-3">
           <file-upload
@@ -83,7 +99,8 @@
             type="danger"
             native-type="Submit"
             :loading="loading"
-          >{{editingMessage ? 'ویرایش' : 'ارسال'}}</base-button>
+            >{{ editingMessage ? 'ویرایش' : 'ارسال' }}</base-button
+          >
         </div>
       </form>
     </div>
@@ -419,15 +436,22 @@ export default {
 
 .ticket-desc {
   font-size: 1.4em;
-  font-family: IranSansBold;
+  // font-family: IranSansBold;
+  font-family: IranSansBlog !important;
   color: rgb(51, 51, 51) !important;
 }
+
+.ticket-typing-box {
+  font-family: IranSansBlog !important;
+}
+
 
 .card-custom {
   background-color: rgb(240, 240, 240);
   border-radius: 25px;
   padding: 2em 3em;
   border: 1px solid rgba(230, 230, 230, 0.801);
+  font-family: IranSansBlog !important;
 
   .ticket-date {
     font-family: IranSans;
@@ -510,4 +534,3 @@ export default {
   font-family: IranSans;
 }
 </style>
-

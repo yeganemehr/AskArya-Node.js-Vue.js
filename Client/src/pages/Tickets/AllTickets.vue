@@ -10,14 +10,19 @@
       </router-link>
     </div>
 
-    <!-------------- NEW TICKET DESIGN -------------->
+    <!-------------- NEW TICKET -------------->
     <div class="single-ticket-row" v-for="ticket in tickets" :key="ticket.id">
-      <div class="ticket-card d-flex justify-content-between align-items-center row">
+      <div
+        class="ticket-card d-flex justify-content-between align-items-center row"
+      >
         <div class="ticket-name">
           <h3>عنوان</h3>
-          <p
-            :title="ticket.title"
-          >{{ ticket.title.substring(0, 35) + (ticket.title.length > 35 ? ' ...' : '') }}</p>
+          <p :title="ticket.title">
+            {{
+              ticket.title.substring(0, 35) +
+                (ticket.title.length > 35 ? ' ...' : '')
+            }}
+          </p>
         </div>
 
         <div class="ticket-dept">
@@ -32,9 +37,9 @@
 
         <div class="ticket-status">
           <h3>وضعیت</h3>
-          <span
-            :class="getStatusLabelClasses(ticket.status)"
-          >{{ getStatusTranslate(ticket.status) }}</span>
+          <span :class="getStatusLabelClasses(ticket.status)">{{
+            getStatusTranslate(ticket.status)
+          }}</span>
         </div>
         <div class="w-100 d-md-none pt-3"></div>
         <div class="view-ticket">

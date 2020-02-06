@@ -210,7 +210,7 @@ export default {
 }
 
 .content {
-  background-color: #f2f3f5 !important;
+  background-color: #F5F8FA !important;
   min-height: 80vh !important;
 }
 .sidebar

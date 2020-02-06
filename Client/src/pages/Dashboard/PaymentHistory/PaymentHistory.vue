@@ -1,7 +1,6 @@
 <template>
   <card card-body-classes="table-full-width">
     <h3 slot="header" class="card-title">{{ 'وضعیت پرداخت' }}</h3>
-    <!-- <div class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"></div> -->
     <div class="containeer">
       <el-table :data="tableData">
         <el-table-column

@@ -2,7 +2,10 @@ const controller = require('app/http/controllers/controller');
 const passport = require('passport');
 const ActivationCode = require('app/models/activationCode');
 const uniqueString = require('unique-string');
-const mail = require('app/helpers/mail');
+// const mail = require('app/helpers/mail');
+
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 class loginController extends controller {
   showLoginForm(req, res) {
@@ -69,7 +72,8 @@ class loginController extends controller {
                         ` // html body
           };
 
-          mail.sendMail(mailOptions, (err, info) => {
+          sgMail.send(mailOptions, (err, info) => {
+            // mail.sendMail(mailOptions, (err, info) => {
             if (err) return console.log(err);
 
             console.log('Message Sent : %s', info.messageId);

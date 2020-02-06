@@ -6,7 +6,10 @@
         <div class="form-row">
           <div class="col-md-4">
             <label class="pull-right">عنوان</label>
-            <base-input v-model="data.title" :error="fieldErrors.title"></base-input>
+            <base-input
+              v-model="data.title"
+              :error="fieldErrors.title"
+            ></base-input>
           </div>
 
           <div class="col-md-2" v-if="isAdmin">
@@ -27,7 +30,11 @@
           <div class="col-md-2">
             <label class="pull-right">اهمیت</label>
             <base-input>
-              <select class="form-control" v-model="data.priority" :error="fieldErrors.priority">
+              <select
+                class="form-control"
+                v-model="data.priority"
+                :error="fieldErrors.priority"
+              >
                 <option selected>عادی</option>
                 <option>مهم</option>
                 <option>فوری</option>
@@ -52,7 +59,11 @@
           <div class="col-md-2" v-if="data.status">
             <label class="pull-right">وضعیت</label>
             <base-input>
-              <select class="form-control" v-model="data.status" :error="fieldErrors.status">
+              <select
+                class="form-control"
+                v-model="data.status"
+                :error="fieldErrors.status"
+              >
                 <option value="1">Open</option>
                 <option value="2">Answered</option>
                 <option value="3">In Progress</option>
@@ -63,7 +74,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12 text-right text-rtl pt-5" v-if="formErrors.length">
+          <div
+            class="col-md-12 text-right text-rtl pt-5"
+            v-if="formErrors.length"
+          >
             <b class="errors-title">لطفا اشتباهات زیر را تصحیح کنید:</b>
             <ul>
               <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
@@ -104,7 +118,8 @@
             type="danger"
             native-type="Submit"
             :loading="loading"
-          >{{ data.id ? "ویرایش" : "ارسال" }}</base-button>
+            >{{ data.id ? 'ویرایش' : 'ارسال' }}</base-button
+          >
         </div>
       </form>
     </card>
@@ -319,7 +334,8 @@ export default {
           errorHandler(error.response);
         });
       /////////////// ADDED BY ARYA
-      this.$router.push('/tickets');
+      // this.$router.push('/tickets');
+      window.location.href = '/tickets';
     },
     reset() {
       for (const key in this.data) {
@@ -408,4 +424,3 @@ export default {
 //     height: 300px !important;
 // }
 </style>
-

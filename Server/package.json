@@ -7,8 +7,8 @@
     "start": "nodemon server.js"
   },
   "author": "Arya Doroudian",
-  "license": "",
   "dependencies": {
+    "@sendgrid/mail": "^6.5.2",
     "app-module-path": "^2.2.0",
     "auto-bind": "^4.0.0",
     "bcrypt": "^3.0.8",
