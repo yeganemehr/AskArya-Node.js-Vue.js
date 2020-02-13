@@ -1,5 +1,7 @@
 node_modules
 .DS_Store
-.envDELETE
-.envDebugDELETE
-.envProductionDELETE
+.DS_*
+.env
+.envDebug
+.envProduction
+sendgrid.env

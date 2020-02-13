@@ -3,12 +3,9 @@ const passport = require('passport');
 const ActivationCode = require('app/models/activationCode');
 const uniqueString = require('unique-string');
 // const mail = require('app/helpers/mail');
-// const sgMail = require('@sendgrid/mail');
-// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-const mailgun = require('mailgun-js');
-const DOMAIN = 'https://api.mailgun.net/v3/info.ask-arya.com';
-const mg = mailgun({ apiKey: process.env.MAILGUN_API_KEY, domain: DOMAIN });
 
 class loginController extends controller {
   showLoginForm(req, res) {
@@ -36,8 +33,8 @@ class loginController extends controller {
       if (!user.active) {
         // create activationCode
         let activeCode = await ActivationCode.find({
-          user: user.id
-        })
+            user: user.id
+          })
           .gt('expire', new Date())
           .sort({
             createdAt: 1
@@ -49,8 +46,7 @@ class loginController extends controller {
         if (activeCode.length) {
           this.alertAndBack(req, res, {
             title: 'توجه کنید',
-            message:
-              'لینک فعال سازی اکانت به ایمیل شما ارسال شده برای ارسال دوباره لطفا 10 دقیقه صبر کنید و دوباره اقدام به ورود کنید تا لینک جدید به ایمیل شما ارسال شود',
+            message: 'لینک فعال سازی اکانت به ایمیل شما ارسال شده برای ارسال دوباره لطفا 10 دقیقه صبر کنید و دوباره اقدام به ورود کنید تا لینک جدید به ایمیل شما ارسال شود',
             button: 'بسیار خوب'
           });
           return;
@@ -69,14 +65,15 @@ class loginController extends controller {
             to: `${user.email}`, // list of receivers
             subject: 'فعال سازی اکانت اسک آریا', // Subject line
             html: `
-                            <h2>فعال سازی اکانت اسک آریا</h2>
-                            <p>برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
-                            <a href="${config.siteurl}/user/activation/${newActiveCode.code}">فعال سازی</a>
+                <div dir="rtl">
+                  <h2>فعال سازی اکانت اسک آریا</h2>
+                  <p>برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
+                  <a href="${config.siteurl}/user/activation/${newActiveCode.code}">فعال سازی</a>
+                </div>
                         ` // html body
           };
 
-          mg.messages().send(mailOptions, (err, info) => {
-            // sgMail.send(mailOptions, (err, info) => {
+          sgMail.send(mailOptions, (err, info) => {
             // mail.sendMail(mailOptions, (err, info) => {
             if (err) return console.log(err);
 

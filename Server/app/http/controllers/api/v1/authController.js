@@ -8,12 +8,8 @@ const PasswordReset = require('app/models/password-reset');
 const uniqueString = require('unique-string');
 const ActivationCode = require('app/models/activationCode');
 // const mail = require('app/helpers/mail');
-// const sgMail = require('@sendgrid/mail');
-// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-const mailgun = require('mailgun-js');
-const DOMAIN = 'https://api.mailgun.net/v3/info.ask-arya.com';
-const mg = mailgun({ apiKey: process.env.MAILGUN_API_KEY, domain: DOMAIN });
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 class authController extends controller {
   async login(req, res) {
@@ -23,8 +19,7 @@ class authController extends controller {
     if (!(await this.validationData(req, res))) return;
 
     passport.authenticate(
-      'local.login',
-      {
+      'local.login', {
         session: true
       },
       async (err, user) => {
@@ -32,8 +27,8 @@ class authController extends controller {
         if (!user) return this.failed('چنین کاربری وجود ندارد', res, 404);
         if (!user.active) {
           const activeCode = await ActivationCode.findOne({
-            user: user.id
-          })
+              user: user.id
+            })
             .gt('expire', new Date())
             .sort({
               createdAt: 1
@@ -51,20 +46,17 @@ class authController extends controller {
           }
         } else {
           req.login(
-            user,
-            {
+            user, {
               session: true
             },
             async err => {
               if (err) return this.failed(err.message, res);
 
               // create token
-              const token = jwt.sign(
-                {
+              const token = jwt.sign({
                   id: user.id
                 },
-                config.jwt.secret_key,
-                {
+                config.jwt.secret_key, {
                   expiresIn: 60 * 60 * 24
                 }
               );
@@ -84,11 +76,9 @@ class authController extends controller {
                 .populate({
                   path: 'roles',
                   select: 'name label permissions',
-                  populate: [
-                    {
-                      path: 'permissions'
-                    }
-                  ]
+                  populate: [{
+                    path: 'permissions'
+                  }]
                 })
                 .execPopulate();
               return res.json({
@@ -110,8 +100,7 @@ class authController extends controller {
     // }
     if (!(await this.validationData(req, res))) return;
     passport.authenticate(
-      'local.register',
-      {
+      'local.register', {
         failWithError: true
       },
       async (err, user) => {
@@ -177,14 +166,13 @@ class authController extends controller {
       to: `${newPasswordReset.email}`,
       subject: 'ریست کردن پسورد',
       html: `<div dir="rtl">
-      <h2>ریست کردن پسورد</h2>
-             <p>برای ریست کردن پسورد بر روی لینک زیر کلیک کنید</p>
-             <a href="${config.siteurl}/auth/password/reset/${newPasswordReset.token}">ریست کردن</a>
-             </div`
+        <h2>ریست کردن پسورد</h2>
+        <p>برای ریست کردن پسورد بر روی لینک زیر کلیک کنید</p>
+        <a href="${config.siteurl}/auth/password/reset/${newPasswordReset.token}">ریست کردن</a>
+      </div`
     };
 
-    mg.messages().send(mailOptions, err => {
-      // sgMail.send(mailOptions, err => {
+    sgMail.send(mailOptions, err => {
       // mail.sendMail(mailOptions, err => {
       if (err) {
         this.failed('متاسفانه امکان ارسال ایمیل وجود ندارد.', res, 500);
@@ -215,16 +203,13 @@ class authController extends controller {
       );
     }
 
-    const user = await User.findOneAndUpdate(
-      {
-        email: field.email
-      },
-      {
-        $set: {
-          password: req.body.password
-        }
+    const user = await User.findOneAndUpdate({
+      email: field.email
+    }, {
+      $set: {
+        password: req.body.password
       }
-    );
+    });
     if (!user) {
       return this.failed('اپدیت شدن انجام نشد', res, 500);
     }
@@ -257,8 +242,7 @@ class authController extends controller {
       // html body
     };
 
-    mg.messages().send(mailOptions, (err, info) => {
-      // sgMail.send(mailOptions, (err, info) => {
+    sgMail.send(mailOptions, (err, info) => {
       // mail.sendMail(mailOptions, (err, info) => {
       if (err) {
         this.failed('متاسفانه امکان ارسال ایمیل وجود ندارد.', res, 500);

@@ -4,12 +4,9 @@ const PasswordReset = require('app/models/password-reset');
 const User = require('app/models/user');
 const uniqueString = require('unique-string');
 // const mail = require('app/helpers/mail');
-// const sgMail = require('@sendgrid/mail');
-// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-const mailgun = require('mailgun-js');
-const DOMAIN = 'https://api.mailgun.net/v3/info.ask-arya.com';
-const mg = mailgun({ apiKey: process.env.MAILGUN_API_KEY, domain: DOMAIN });
 
 class forgotPasswordController extends controller {
   showForgotPassword(req, res) {
@@ -58,8 +55,7 @@ class forgotPasswordController extends controller {
             ` // html body
     };
 
-    mg.messages().send(mailOptions, (err, info) => {
-      // sgMail.send(mailOptions, (err, info) => {
+    sgMail.send(mailOptions, (err, info) => {
       // mail.sendMail(mailOptions, (err, info) => {
 
       if (err) return console.log(err);
