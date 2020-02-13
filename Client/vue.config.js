@@ -1,8 +1,7 @@
 const webpack = require('webpack');
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
-const HtmlWebpackPlugin = require('vue-html-webpack-plugin');
-const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
-
+// const PreloadWebpackPlugin = require('preload-webpack-plugin');
+// const HtmlWebpackPlugin = require('vue-html-webpack-plugin');
+// const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
 const path = require('path');
 const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
 const { styles } = require('@ckeditor/ckeditor5-dev-utils');
@@ -59,20 +58,6 @@ module.exports = {
     //   }
     // },
 
-    // module: {
-    //   rules: [
-    //     {
-    //       test: /\.css$/,
-    //       use: [
-    //         process.env.NODE_ENV !== 'production'
-    //           ? 'vue-style-loader'
-    //           : MiniCssExtractPlugin.loader,
-    //         'css-loader'
-    //       ]
-    //     }
-    //   ]
-    // },
-
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({
         maxChunks: 6
@@ -84,37 +69,27 @@ module.exports = {
 
       new CKEditorWebpackPlugin({
         language: 'en'
-      }),
+      })
 
       // new HtmlWebpackPlugin({
       //   vue: true
       // }),
-      // new PreloadWebpackPlugin({
-      //   rel: 'prefetch',
-      //   include: {
-      //     type: 'asyncChunks',
-      //     entries: ['app']
+
+      // new PreloadWebpackPlugin(),
+
+      // new HtmlCriticalWebpackPlugin({
+      //   base: path.resolve(__dirname, '../server/dist'),
+      //   src: 'index.html',
+      //   dest: 'index.html',
+      //   inline: true,
+      //   minify: true,
+      //   extract: true,
+      //   width: 375,
+      //   height: 565,
+      //   penthouse: {
+      //     blockJSRequests: false
       //   }
       // })
-      new HtmlWebpackPlugin({
-        vue: true
-      }),
-
-      new PreloadWebpackPlugin(),
-
-      new HtmlCriticalWebpackPlugin({
-        base: path.resolve(__dirname, '../server/dist'),
-        src: 'index.html',
-        dest: 'index.html',
-        inline: true,
-        minify: true,
-        extract: true,
-        width: 375,
-        height: 565,
-        penthouse: {
-          blockJSRequests: false
-        }
-      })
     ]
   },
 
