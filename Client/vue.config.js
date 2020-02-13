@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const HtmlWebpackPlugin = require('vue-html-webpack-plugin');
+const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
+
 const path = require('path');
 const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
 const { styles } = require('@ckeditor/ckeditor5-dev-utils');
@@ -22,40 +24,54 @@ module.exports = {
       }
     },
 
+    optimization: {
+      splitChunks: {
+        chunks: 'async',
+        maxAsyncRequests: 6,
+        maxInitialRequests: 4,
+        minChunks: 1,
+        minSize: 30000,
+        maxSize: 0,
+        automaticNameDelimiter: '~',
+        name: true,
+        cacheGroups: {
+          default: false,
+          common: {
+            name: `chunk-common`,
+            minChunks: 2,
+            priority: -20,
+            chunks: 'initial',
+            reuseExistingChunk: true
+          },
+          element: {
+            name: 'element',
+            test: /[\\/]node_modules[\\/]element-ui[\\/]/,
+            chunks: 'initial',
+            priority: -30
+          }
+        }
+      }
+    },
+
     // optimization: {
     //   splitChunks: {
-    //     chunks: 'async',
-    //     maxAsyncRequests: 6,
-    //     maxInitialRequests: 4,
-    //     minChunks: 1,
-    //     minSize: 30000,
-    //     maxSize: 0,
-    //     automaticNameDelimiter: '~',
-    //     name: true,
-    //     cacheGroups: {
-    //       default: false,
-    //       common: {
-    //         name: `chunk-common`,
-    //         minChunks: 2,
-    //         priority: -20,
-    //         chunks: 'initial',
-    //         reuseExistingChunk: true
-    //       },
-    //       element: {
-    //         name: 'element',
-    //         test: /[\\/]node_modules[\\/]element-ui[\\/]/,
-    //         chunks: 'initial',
-    //         priority: -30
-    //       }
-    //     }
+    //     chunks: 'all'
     //   }
     // },
 
-    optimization: {
-      splitChunks: {
-        chunks: 'all'
-      }
-    },
+    // module: {
+    //   rules: [
+    //     {
+    //       test: /\.css$/,
+    //       use: [
+    //         process.env.NODE_ENV !== 'production'
+    //           ? 'vue-style-loader'
+    //           : MiniCssExtractPlugin.loader,
+    //         'css-loader'
+    //       ]
+    //     }
+    //   ]
+    // },
 
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({
@@ -83,7 +99,22 @@ module.exports = {
       new HtmlWebpackPlugin({
         vue: true
       }),
-      new PreloadWebpackPlugin()
+
+      new PreloadWebpackPlugin(),
+
+      new HtmlCriticalWebpackPlugin({
+        base: path.resolve(__dirname, '../server/dist'),
+        src: 'index.html',
+        dest: 'index.html',
+        inline: true,
+        minify: true,
+        extract: true,
+        width: 375,
+        height: 565,
+        penthouse: {
+          blockJSRequests: false
+        }
+      })
     ]
   },
 
