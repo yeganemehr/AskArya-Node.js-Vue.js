@@ -21,6 +21,36 @@ module.exports = {
         'chart.js': 'chart.js/dist/Chart.js'
       }
     },
+
+    // optimization: {
+    //   splitChunks: {
+    //     chunks: 'async',
+    //     maxAsyncRequests: 6,
+    //     maxInitialRequests: 4,
+    //     minChunks: 1,
+    //     minSize: 30000,
+    //     maxSize: 0,
+    //     automaticNameDelimiter: '~',
+    //     name: true,
+    //     cacheGroups: {
+    //       default: false,
+    //       common: {
+    //         name: `chunk-common`,
+    //         minChunks: 2,
+    //         priority: -20,
+    //         chunks: 'initial',
+    //         reuseExistingChunk: true
+    //       },
+    //       element: {
+    //         name: 'element',
+    //         test: /[\\/]node_modules[\\/]element-ui[\\/]/,
+    //         chunks: 'initial',
+    //         priority: -30
+    //       }
+    //     }
+    //   }
+    // },
+
     optimization: {
       splitChunks: {
         chunks: 'all'
@@ -32,16 +62,28 @@ module.exports = {
         maxChunks: 6
       }),
 
-      new HtmlWebpackPlugin(),
-      new PreloadWebpackPlugin(),
-
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
       }),
 
       new CKEditorWebpackPlugin({
         language: 'en'
-      })
+      }),
+
+      // new HtmlWebpackPlugin({
+      //   vue: true
+      // }),
+      // new PreloadWebpackPlugin({
+      //   rel: 'prefetch',
+      //   include: {
+      //     type: 'asyncChunks',
+      //     entries: ['app']
+      //   }
+      // })
+      new HtmlWebpackPlugin({
+        vue: true
+      }),
+      new PreloadWebpackPlugin()
     ]
   },
 
