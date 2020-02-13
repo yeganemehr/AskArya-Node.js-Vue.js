@@ -8,9 +8,12 @@ const PasswordReset = require('app/models/password-reset');
 const uniqueString = require('unique-string');
 const ActivationCode = require('app/models/activationCode');
 // const mail = require('app/helpers/mail');
+// const sgMail = require('@sendgrid/mail');
+// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const mailgun = require('mailgun-js');
+const DOMAIN = 'https://api.mailgun.net/v3/info.ask-arya.com';
+const mg = mailgun({ apiKey: process.env.MAILGUN_API_KEY, domain: DOMAIN });
 
 class authController extends controller {
   async login(req, res) {
@@ -180,7 +183,8 @@ class authController extends controller {
              </div`
     };
 
-    sgMail.send(mailOptions, err => {
+    mg.messages().send(mailOptions, err => {
+      // sgMail.send(mailOptions, err => {
       // mail.sendMail(mailOptions, err => {
       if (err) {
         this.failed('متاسفانه امکان ارسال ایمیل وجود ندارد.', res, 500);
@@ -253,7 +257,8 @@ class authController extends controller {
       // html body
     };
 
-    sgMail.send(mailOptions, (err, info) => {
+    mg.messages().send(mailOptions, (err, info) => {
+      // sgMail.send(mailOptions, (err, info) => {
       // mail.sendMail(mailOptions, (err, info) => {
       if (err) {
         this.failed('متاسفانه امکان ارسال ایمیل وجود ندارد.', res, 500);
