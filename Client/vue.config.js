@@ -1,7 +1,10 @@
 const webpack = require('webpack');
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const path = require('path');
 const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
-const { styles } = require('@ckeditor/ckeditor5-dev-utils');
+const {
+  styles
+} = require('@ckeditor/ckeditor5-dev-utils');
 
 function resolveSrc(_path) {
   return path.join(__dirname, _path);
@@ -29,6 +32,9 @@ module.exports = {
       new webpack.optimize.LimitChunkCountPlugin({
         maxChunks: 6
       }),
+
+      new HtmlWebpackPlugin(),
+      new PreloadWebpackPlugin(),
 
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
