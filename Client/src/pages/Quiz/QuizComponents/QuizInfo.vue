@@ -34,12 +34,8 @@
 </template>
 
 <script>
-import QuizNavigation from './QuizNavigation.vue';
 
-export default {
-  components: { QuizNavigation }
-};
-</script>
+
 
 <style lang="scss" scoped>
 section {

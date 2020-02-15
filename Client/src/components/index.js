@@ -17,22 +17,15 @@ import StatsCard from './Cards/StatsCard.vue';
 import BaseNav from './Navbar/BaseNav';
 import NavbarToggleButton from './Navbar/NavbarToggleButton';
 
-import Breadcrumb from './Breadcrumb/Breadcrumb.vue';
-import BreadcrumbItem from './Breadcrumb/BreadcrumbItem.vue';
-import RouteBreadCrumb from './Breadcrumb/RouteBreadcrumb.vue';
 import ImageUpload from './ImageUpload';
-import TimeLine from './Timeline/TimeLine.vue';
-import TimeLineItem from './Timeline/TimeLineItem.vue';
 import TabPane from './Tabs/Tab.vue';
 import Tabs from './Tabs/Tabs.vue';
 import Collapse from './Collapse/Collapse.vue';
 import CollapseItem from './Collapse/CollapseItem.vue';
 import Modal from './Modal.vue';
-import Slider from './Slider.vue';
 import SimpleWizard from './Wizard/Wizard.vue';
 import WizardTab from './Wizard/WizardTab.vue';
 import LoadingPanel from './LoadingPanel.vue';
-import AsyncWorldMap from './WorldMap/AsyncWorldMap.vue';
 
 import BasePagination from './BasePagination.vue';
 
@@ -59,21 +52,14 @@ export {
   SidebarPlugin,
   BaseNav,
   NavbarToggleButton,
-  Breadcrumb,
-  BreadcrumbItem,
-  RouteBreadCrumb,
-  TimeLine,
-  TimeLineItem,
   TabPane,
   Tabs,
   Modal,
-  Slider,
   SimpleWizard,
   WizardTab,
   AnimatedNumber,
   BaseButton,
   Collapse,
   CollapseItem,
-  LoadingPanel,
-  AsyncWorldMap
+  LoadingPanel
 };

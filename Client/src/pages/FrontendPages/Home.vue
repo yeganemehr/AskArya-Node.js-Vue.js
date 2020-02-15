@@ -72,7 +72,6 @@ import HeroSection from './Components/HeroSection/HeroSection.vue';
 import FounderSection from './Components/FounderSection/FounderSection.vue';
 import Course from './Components/TopCourses/Course.vue';
 import BlogSection from './Components/Blog/BlogSection.vue';
-import OurCourses from './Components/OurCourses/OurCourses.vue';
 import ImprovementBanner1 from './Components/ImprovementBanners/ImprovementBanner1.vue';
 import ImprovementBanner2 from './Components/ImprovementBanners/ImprovementBanner2.vue';
 import { Carousel, CarouselItem } from 'element-ui';
@@ -97,7 +96,6 @@ export default {
   components: {
     HeroSection,
     FounderSection,
-    OurCourses,
     Course,
     BlogSection,
     ImprovementBanner1,
