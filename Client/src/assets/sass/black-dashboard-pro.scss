@@ -1,5 +1,4 @@
 // Core
-
 @import 'dashboard/custom/functions';
 @import '~bootstrap/scss/functions';
 
@@ -10,7 +9,6 @@
 @import '~bootstrap/scss/mixins';
 
 // Bootstrap components
-
 @import '~bootstrap/scss/root';
 @import '~bootstrap/scss/reboot';
 @import '~bootstrap/scss/type';
@@ -44,7 +42,6 @@
 @import '~bootstrap/scss/print';
 
 // Custom components
-
 @import 'dashboard/custom/reboot.scss';
 @import 'dashboard/custom/global.scss';
 @import 'dashboard/custom/utilities.scss';
@@ -68,8 +65,8 @@
 @import 'dashboard/custom/pagination.scss';
 @import 'dashboard/custom/tabs.scss';
 @import 'dashboard/custom/pills.scss';
-@import 'dashboard/custom/popover.scss';
-@import 'dashboard/custom/progress.scss';
+// @import 'dashboard/custom/popover.scss';
+// @import 'dashboard/custom/progress.scss';
 @import 'dashboard/custom/type.scss';
 @import 'dashboard/custom/tables';
 @import 'dashboard/custom/checkboxes-radio';
@@ -79,30 +76,21 @@
 @import 'dashboard/custom/rtl.scss';
 
 // Vendor / Plugins
-
 @import 'dashboard/custom/vendor/plugin-sweetalert2.scss';
 @import 'dashboard/custom/vendor/plugin-bootstrap-switch.scss';
 @import 'dashboard/custom/vendor/plugin-jasny-fileupload.scss';
 @import 'dashboard/custom/vendor/plugin-perfect-scrollbar.scss';
-@import 'dashboard/custom/vendor/plugin-card-wizard.scss';
 
 // Vendor Element UI plugins
 @import 'dashboard/custom/vendor/element-ui/plugin-tags';
 @import 'dashboard/custom/vendor/element-ui/plugin-select';
 @import 'dashboard/custom/vendor/element-ui/plugin-inputs';
 @import 'dashboard/custom/vendor/element-ui/plugin-tables';
-@import 'dashboard/custom/vendor/element-ui/plugin-datepicker';
-
-// example pages and sections
-
-@import 'dashboard/custom/example-pages.scss';
 
 // light mode
-
 @import 'dashboard/custom/white-content.scss';
 
 // Cards
-
 @import 'dashboard/custom/card';
 @import 'dashboard/custom/cards/card-chart';
 @import 'dashboard/custom/cards/card-map';
@@ -119,4 +107,3 @@
 @import 'dashboard/custom/cards/card-stats';
 @import 'dashboard/custom/cards/card-subcategories';
 @import 'dashboard/custom/cards/card-testimonials';
-@import 'dashboard/custom/cards/card-wizard';

@@ -23,8 +23,6 @@ import Tabs from './Tabs/Tabs.vue';
 import Collapse from './Collapse/Collapse.vue';
 import CollapseItem from './Collapse/CollapseItem.vue';
 import Modal from './Modal.vue';
-import SimpleWizard from './Wizard/Wizard.vue';
-import WizardTab from './Wizard/WizardTab.vue';
 import LoadingPanel from './LoadingPanel.vue';
 
 import BasePagination from './BasePagination.vue';
@@ -55,8 +53,6 @@ export {
   TabPane,
   Tabs,
   Modal,
-  SimpleWizard,
-  WizardTab,
   AnimatedNumber,
   BaseButton,
   Collapse,

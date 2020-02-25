@@ -70,14 +70,11 @@ import { BasePagination } from 'src/components';
 import backend from '../../backend';
 import moment from 'moment';
 
-import { Badge } from 'src/components';
-
 export default {
   components: {
     [Table.name]: Table,
     [TableColumn.name]: TableColumn,
-    BasePagination,
-    Badge
+    BasePagination
   },
   data() {
     return {

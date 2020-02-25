@@ -6,7 +6,8 @@
           <span class="pr-1">
             <span v-if="data.id">Edit</span>
             <span v-else>Add</span>
-          </span> Course
+          </span>
+          Course
         </h4>
         <form @submit="checkForm">
           <div>
@@ -37,10 +38,18 @@
                 ></base-input>
               </div>
               <div class="col-md-2">
-                <base-input label="Old Price" placeholder="Old Price" v-model="data.oldPrice"></base-input>
+                <base-input
+                  label="Old Price"
+                  placeholder="Old Price"
+                  v-model="data.oldPrice"
+                ></base-input>
               </div>
               <div class="col-md-2">
-                <base-input label="xP" placeholder="xP" v-model="data.xp"></base-input>
+                <base-input
+                  label="xP"
+                  placeholder="xP"
+                  v-model="data.xp"
+                ></base-input>
               </div>
 
               <div class="col-md-12 py-5">
@@ -92,7 +101,9 @@
               <div class="col-md-3 pt-4">
                 <image-upload
                   @change="onImageChange"
-                  :select-text="data.id ? 'Edit Course Image' : 'Select Course Image'"
+                  :select-text="
+                    data.id ? 'Edit Course Image' : 'Select Course Image'
+                  "
                   change-text="Edit Course Image"
                 />
               </div>
@@ -101,7 +112,9 @@
                 <div class="text-right text-rtl">
                   <b>لطفا اشتباهات زیر را تصحیح کنید:</b>
                   <ul>
-                    <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
+                    <li v-for="(error, key) in formErrors" :key="key">
+                      {{ error }}
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -118,7 +131,8 @@
                 @click="reset"
                 type="light"
                 v-if="data.id"
-              >reset</base-button>
+                >reset</base-button
+              >
             </div>
           </div>
         </form>
@@ -128,7 +142,7 @@
 </template>
 
 <script>
-import { Select, Option } from 'element-ui';
+import { Select, Option, Tag } from 'element-ui';
 import { ImageUpload, TagsInput } from 'src/components/index';
 import CKEditor from '@ckeditor/ckeditor5-vue';
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
@@ -172,6 +186,7 @@ export default {
     [Select.name]: Select,
     ImageUpload,
     TagsInput,
+    [Tag.name]: Tag,
     ckeditor: CKEditor.component
   },
   data() {

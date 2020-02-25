@@ -1,4 +1,4 @@
-@import "../../variables";
+@import '../../variables';
 
 // Element UI override
 
@@ -16,7 +16,7 @@
   border-bottom: none;
 }
 
-.el-table.el-table--enable-row-hover table.el-table__body tr:hover>td {
+.el-table.el-table--enable-row-hover table.el-table__body tr:hover > td {
   background: inherit;
 }
 

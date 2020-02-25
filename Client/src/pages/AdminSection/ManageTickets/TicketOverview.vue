@@ -43,7 +43,9 @@
 
       <!-------------- NEW TICKET DESIGN -------------->
       <div class="single-ticket-row" v-for="ticket in tickets" :key="ticket.id">
-        <div class="ticket-card d-flex justify-content-between align-items-center row text-right">
+        <div
+          class="ticket-card d-flex justify-content-between align-items-center row text-right"
+        >
           <div class="ticket-id">
             <h3>#</h3>
             <p>{{ ticket.ticket_id }}</p>
@@ -58,9 +60,12 @@
 
           <div class="ticket-title">
             <h3>عنوان</h3>
-            <p
-              :title="ticket.title"
-            >{{ ticket.title.substring(0, 35) + (ticket.title.length > 35 ? ' ...' : '') }}</p>
+            <p :title="ticket.title">
+              {{
+                ticket.title.substring(0, 35) +
+                  (ticket.title.length > 35 ? ' ...' : '')
+              }}
+            </p>
           </div>
 
           <div class="w-100 d-md-none pt-3"></div>
@@ -82,9 +87,9 @@
           <div class="w-100 d-md-none pt-4"></div>
           <div class="ticket-status">
             <h3>وضعیت</h3>
-            <span
-              :class="getStatusLabelClasses(ticket.status)"
-            >{{ getStatusTranslate(ticket.status) }}</span>
+            <span :class="getStatusLabelClasses(ticket.status)">{{
+              getStatusTranslate(ticket.status)
+            }}</span>
           </div>
 
           <div class="ticket-actions">
@@ -97,7 +102,10 @@
                 size="sm"
                 icon
               >
-                <i class="pr-2" :class="ticket.isHighlight ? 'fas fa-heart' : 'far fa-heart'"></i>
+                <i
+                  class="pr-2"
+                  :class="ticket.isHighlight ? 'fas fa-heart' : 'far fa-heart'"
+                ></i>
               </base-button>
 
               <base-button
@@ -138,9 +146,9 @@
         class="col-12 pt-5 d-flex justify-content-center justify-content-sm-between flex-wrap"
       >
         <div class>
-          <p
-            class="card-category"
-          >Showing {{ from + 1 }} to {{ to }} of {{ pagination.total }} entries</p>
+          <p class="card-category">
+            Showing {{ from + 1 }} to {{ to }} of {{ pagination.total }} entries
+          </p>
         </div>
         <base-pagination
           :value="pagination.currentPage"
@@ -153,7 +161,10 @@
       <!-- </card> -->
     </div>
     <div class="pt-5">
-      <manage-ticket @ticket="ticketAddListener" v-bind="ticket"></manage-ticket>
+      <manage-ticket
+        @ticket="ticketAddListener"
+        v-bind="ticket"
+      ></manage-ticket>
     </div>
   </div>
 </template>
@@ -167,8 +178,6 @@ import Swal from 'sweetalert';
 import backend from '../../../backend';
 import moment from 'moment';
 
-import { Badge } from 'src/components';
-
 export default {
   components: {
     BasePagination,
@@ -177,8 +186,7 @@ export default {
     [Table.name]: Table,
     [TableColumn.name]: TableColumn,
     TicketData,
-    ManageTicket,
-    Badge
+    ManageTicket
   },
   computed: {
     /***

@@ -1,8 +1,18 @@
 <template>
-  <base-nav v-model="showMenu" class="navbar-absolute top-navbar" type="custom" :transparent="true">
+  <base-nav
+    v-model="showMenu"
+    class="navbar-absolute top-navbar"
+    type="custom"
+    :transparent="true"
+  >
     <ul class="navbar-nav">
       <!-- <a class="navbar-brand d-none d-md-block" href="/">اسک آریا</a> -->
-      <base-dropdown tag="li" title-tag="a" class="nav-item" menu-classes="dropdown-navbar">
+      <base-dropdown
+        tag="li"
+        title-tag="a"
+        class="nav-item"
+        menu-classes="dropdown-navbar"
+      >
         <a
           slot="title"
           href="#"
@@ -12,19 +22,27 @@
         >
           <div class="row d-flex align-items-center d-lg-none">
             <li class="nav-link border-bottom">
-              <router-link to="/home" class="nav-item dropdown-item">خانه</router-link>
+              <router-link to="/home" class="nav-item dropdown-item"
+                >خانه</router-link
+              >
             </li>
 
             <li class="nav-link border-bottom">
-              <router-link to="/dashboard" class="nav-item dropdown-item">پنل کاربری</router-link>
+              <router-link to="/dashboard" class="nav-item dropdown-item"
+                >پنل کاربری</router-link
+              >
             </li>
 
             <li class="nav-link border-bottom">
-              <router-link to="/courses" class="nav-item dropdown-item">دوره های آموزشی</router-link>
+              <router-link to="/courses" class="nav-item dropdown-item"
+                >دوره های آموزشی</router-link
+              >
             </li>
 
             <li class="nav-link border-bottom">
-              <router-link to="/mycourses" class="nav-item dropdown-item">در حال یادگیری</router-link>
+              <router-link to="/mycourses" class="nav-item dropdown-item"
+                >در حال یادگیری</router-link
+              >
             </li>
 
             <!-- <li class="nav-link border-bottom">
@@ -32,16 +50,22 @@
             </li>-->
 
             <li class="nav-link border-bottom">
-              <router-link to="/tickets" class="nav-item dropdown-item">پشتیبانی</router-link>
+              <router-link to="/tickets" class="nav-item dropdown-item"
+                >پشتیبانی</router-link
+              >
             </li>
 
             <li v-if="isAdmin" class="nav-link border-bottom">
-              <router-link to="/managementpage" class="nav-item dropdown-item">پنل مدیریت</router-link>
+              <router-link to="/managementpage" class="nav-item dropdown-item"
+                >پنل مدیریت</router-link
+              >
             </li>
 
             <!-- LOGOUT BUTTON -->
             <li class="logout-button text-right">
-              <router-link to="#" @click.native="logoutListener">خروج</router-link>
+              <router-link to="#" @click.native="logoutListener"
+                >خروج</router-link
+              >
             </li>
           </div>
         </a>
@@ -50,19 +74,12 @@
   </base-nav>
 </template>
 <script>
-import { CollapseTransition } from 'vue2-transitions';
-import { BaseNav, Modal } from '@/components';
-// import SidebarToggleButton from './SidebarToggleButton';
-import { ZoomCenterTransition } from 'vue2-transitions';
+import { BaseNav } from '@/components';
 import backend from '../../../backend';
 
 export default {
   components: {
-    // SidebarToggleButton,
-    CollapseTransition,
-    ZoomCenterTransition,
-    BaseNav,
-    Modal
+    BaseNav
   },
   data() {
     return {

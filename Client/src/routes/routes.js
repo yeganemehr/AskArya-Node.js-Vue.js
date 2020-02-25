@@ -13,10 +13,10 @@ const Dashboard = () =>
   );
 
 const Courses = () =>
-  import( /* webpackChunkName: "extra" */ 'src/pages/Courses/Courses.vue');
+  import(/* webpackChunkName: "extra" */ 'src/pages/Courses/Courses.vue');
 
 const MyCourses = () =>
-  import( /* webpackChunkName: "extra" */ 'src/pages/MyCourses/MyCourses.vue');
+  import(/* webpackChunkName: "extra" */ 'src/pages/MyCourses/MyCourses.vue');
 
 const SingleLesson = () =>
   import(
@@ -37,16 +37,16 @@ const QuizInformationPage = () =>
   );
 
 const SingleQuizLayout = () =>
-  import( /* webpackChunkName: "extra" */ 'src/pages/Quiz/SingleQuizLayout.vue');
+  import(/* webpackChunkName: "extra" */ 'src/pages/Quiz/SingleQuizLayout.vue');
 
 const GradeSheet = () =>
-  import( /* webpackChunkName: "extra" */ 'src/pages/Quiz/GradeSheet.vue');
+  import(/* webpackChunkName: "extra" */ 'src/pages/Quiz/GradeSheet.vue');
 
 const AllQuizzes = () =>
-  import( /* webpackChunkName: "extra" */ 'src/pages/Quiz/AllQuizzes.vue');
+  import(/* webpackChunkName: "extra" */ 'src/pages/Quiz/AllQuizzes.vue');
 
 const Points = () =>
-  import( /* webpackChunkName: "extra" */ 'src/pages/Points/Points.vue');
+  import(/* webpackChunkName: "extra" */ 'src/pages/Points/Points.vue');
 
 const ManagementPage = () =>
   import(
@@ -67,7 +67,7 @@ const EpisodeOverview = () =>
   );
 
 const SingleTicket = () =>
-  import( /* webpackChunkName: "extra" */ 'src/pages/Tickets/SingleTicket.vue');
+  import(/* webpackChunkName: "extra" */ 'src/pages/Tickets/SingleTicket.vue');
 
 const TicketOverview = () =>
   import(
@@ -76,10 +76,10 @@ const TicketOverview = () =>
   );
 
 const AllTickets = () =>
-  import( /* webpackChunkName: "extra" */ 'src/pages/Tickets/AllTickets.vue');
+  import(/* webpackChunkName: "extra" */ 'src/pages/Tickets/AllTickets.vue');
 
 const CreateTicket = () =>
-  import( /* webpackChunkName: "extra" */ 'src/pages/Tickets/CreateTicket.vue');
+  import(/* webpackChunkName: "extra" */ 'src/pages/Tickets/CreateTicket.vue');
 
 const ManageUsers = () =>
   import(
@@ -103,7 +103,7 @@ const QuizOverview = () =>
 ///////////////////////////// FRONTEND PAGES /////////////////////////
 
 const Home = () =>
-  import( /* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Home.vue');
+  import(/* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Home.vue');
 
 const PrivateClasses = () =>
   import(
@@ -124,7 +124,7 @@ const ComingSoon = () =>
   );
 
 const Contact = () =>
-  import( /* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Contact.vue');
+  import(/* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Contact.vue');
 
 const BlogPageLayout = () =>
   import(
@@ -142,16 +142,20 @@ const Terms = () =>
 //////////////////////////////// PAGES ///////////////////////////////
 
 const Login = () =>
-  import( /* webpackChunkName: "pages" */ 'src/pages/Login/Login.vue');
+  import(/* webpackChunkName: "pages" */ 'src/pages/AuthPages/Login.vue');
 
 const Register = () =>
-  import( /* webpackChunkName: "pages" */ 'src/pages/Register/Register.vue');
+  import(/* webpackChunkName: "pages" */ 'src/pages/AuthPages/Register.vue');
 
 const ForgotPassword = () =>
-  import( /* webpackChunkName: "pages" */ 'src/pages/Login/ForgotPassword.vue');
+  import(
+    /* webpackChunkName: "pages" */ 'src/pages/AuthPages/ForgotPassword.vue'
+  );
 
 const ResetPassword = () =>
-  import( /* webpackChunkName: "pages" */ 'src/pages/Login/ResetPassword.vue');
+  import(
+    /* webpackChunkName: "pages" */ 'src/pages/AuthPages/ResetPassword.vue'
+  );
 
 // const Lock = () =>
 //   import( /* webpackChunkName: "pages" */ 'src/pages/Layouts/Lock/Lock.vue');
@@ -168,7 +172,8 @@ const NotFoundPage = () =>
 let frontendpages = {
   path: '/',
   component: FrontendLayout,
-  children: [{
+  children: [
+    {
       path: '/',
       name: 'Frontend',
       component: Home
@@ -232,7 +237,8 @@ let frontendpages = {
   ]
 };
 
-const routes = [{
+const routes = [
+  {
     path: '/home',
     redirect: '/'
   },
@@ -246,7 +252,8 @@ const routes = [{
     meta: {
       auth: true
     },
-    children: [{
+    children: [
+      {
         path: 'dashboard',
         name: 'Dashboard',
         components: {
@@ -381,7 +388,8 @@ const routes = [{
   {
     path: '/',
     component: FrontendLayout,
-    children: [{
+    children: [
+      {
         path: 'courses/:slug',
         name: 'Single Course Guest',
         components: {
@@ -421,12 +429,14 @@ const routes = [{
   {
     path: '/',
     component: AuthLayout,
-    children: [{
-      path: '*',
-      components: {
-        default: NotFound
+    children: [
+      {
+        path: '*',
+        components: {
+          default: NotFound
+        }
       }
-    }]
+    ]
   },
   {
     path: '*',

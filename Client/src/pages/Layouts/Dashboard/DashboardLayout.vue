@@ -93,17 +93,12 @@ function hasElement(className) {
 
 import DashboardNavbar from './DashboardNavbar.vue';
 import ContentFooter from './ContentFooter.vue';
-import DashboardContent from './Content.vue';
-import SidebarFixedToggleButton from './SidebarFixedToggleButton.vue';
-import { SlideYDownTransition, ZoomCenterTransition } from 'vue2-transitions';
+import { ZoomCenterTransition } from 'vue2-transitions';
 
 export default {
   components: {
     DashboardNavbar,
     ContentFooter,
-    SidebarFixedToggleButton,
-    DashboardContent,
-    SlideYDownTransition,
     ZoomCenterTransition
   },
   data() {
@@ -210,7 +205,7 @@ export default {
 }
 
 .content {
-  background-color: #F5F8FA !important;
+  background-color: #f5f8fa !important;
   min-height: 80vh !important;
 }
 .sidebar
