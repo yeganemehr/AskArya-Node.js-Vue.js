@@ -6,7 +6,6 @@ const uniqueString = require('unique-string');
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-
 class loginController extends controller {
   showLoginForm(req, res) {
     const title = 'صفحه ورود';
@@ -33,8 +32,8 @@ class loginController extends controller {
       if (!user.active) {
         // create activationCode
         let activeCode = await ActivationCode.find({
-            user: user.id
-          })
+          user: user.id
+        })
           .gt('expire', new Date())
           .sort({
             createdAt: 1
@@ -46,7 +45,8 @@ class loginController extends controller {
         if (activeCode.length) {
           this.alertAndBack(req, res, {
             title: 'توجه کنید',
-            message: 'لینک فعال سازی اکانت به ایمیل شما ارسال شده برای ارسال دوباره لطفا 10 دقیقه صبر کنید و دوباره اقدام به ورود کنید تا لینک جدید به ایمیل شما ارسال شود',
+            message:
+              'لینک فعال سازی اکانت به ایمیل شما ارسال شده برای ارسال دوباره لطفا 10 دقیقه صبر کنید و دوباره اقدام به ورود کنید تا لینک جدید به ایمیل شما ارسال شود',
             button: 'بسیار خوب'
           });
           return;
@@ -76,16 +76,13 @@ class loginController extends controller {
           sgMail.send(mailOptions, (err, info) => {
             // mail.sendMail(mailOptions, (err, info) => {
             if (err) return console.log(err);
-
             console.log('Message Sent : %s', info.messageId);
-
             this.alert(req, {
               title: 'دقت کنید',
               message: 'ایمیل حاوی لینک فعال سازی به ایمیل شما ارسال شد',
               type: 'success',
               button: 'بسیار خوب'
             });
-
             return res.redirect('/');
           });
           return;

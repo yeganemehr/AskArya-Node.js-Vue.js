@@ -8,10 +8,10 @@
               <h4 class="title text-white">درباره اسک آریا</h4>
               <hr class="fadeline3 d-none d-md-block" />
               <p class="text-white">
-                اسک آریا یکی از پرتلاش‌ترین و بروزترین وبسایت های آموزشی در
-                سطح ایران است که همیشه تلاش کرده تا بتواند جدیدترین و
-                بروزترین مقالات و دوره‌های آموزشی را در اختیار علاقه‌مندان
-                ایرانی قرار دهد.
+                اسک آریا یکی از پرتلاش‌ترین و بروزترین وبسایت های آموزشی در سطح
+                ایران است که همیشه تلاش کرده تا بتواند جدیدترین و بروزترین
+                مقالات و دوره‌های آموزشی را در اختیار علاقه‌مندان ایرانی قرار
+                دهد.
               </p>
             </div>
             <div class="col-md-2 askarya-sections">
@@ -57,8 +57,7 @@
         <p class="copyright-text">
           <!-- &copy;  -->
           طراحی و تولید شده توسط
-          <router-link to="/terms">اسک آریا</router-link>، با افتخار در
-          ایران
+          <router-link to="/terms">اسک آریا</router-link>، با افتخار در ایران
           <i class="tim-icons icon-heart-2 text-primary"></i>
           سال ١٣٩۸
         </p>
@@ -66,7 +65,6 @@
     </footer>
   </div>
 </template>
-
 
 <style lang="scss" scoped>
 .footer-bottom {
@@ -113,7 +111,7 @@ a {
 }
 @media only screen and (max-width: 678px) {
   .copyright-text {
-    font-size: 0.9em !important;
+    font-size: 0.8em !important;
   }
 }
 </style>
