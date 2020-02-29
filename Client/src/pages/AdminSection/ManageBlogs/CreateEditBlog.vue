@@ -6,7 +6,8 @@
           <span class="pr-1">
             <span v-if="data.id">Edit</span>
             <span v-else>Add</span>
-          </span> Blog
+          </span>
+          Blog
         </h4>
         <form @submit="submitFormListener">
           <div>
@@ -21,7 +22,9 @@
                     />
                     <image-upload
                       @change="onImageChange"
-                      :select-text="data.id ? 'Edit Blog Image' : 'Select Blog Image'"
+                      :select-text="
+                        data.id ? 'Edit Blog Image' : 'Select Blog Image'
+                      "
                       class="pt-2 d-block"
                     />
                   </div>
@@ -70,7 +73,10 @@
                   </div>
                   <div class="col-md-5">
                     <h4 class="lead">Categories</h4>
-                    <tags-input v-model="data.categories" placeholder="Add new Category"></tags-input>
+                    <tags-input
+                      v-model="data.categories"
+                      placeholder="Add new Category"
+                    ></tags-input>
                   </div>
                 </div>
                 <div class="row">
@@ -78,7 +84,9 @@
                     <div class="text-right text-rtl">
                       <b>لطفا اشتباهات زیر را تصحیح کنید:</b>
                       <ul>
-                        <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
+                        <li v-for="(error, key) in formErrors" :key="key">
+                          {{ error }}
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -86,7 +94,12 @@
               </div>
             </div>
             <div class="mt-5 pull-right">
-              <base-button class="px-5" native-type="submit" :loading="loading" type="primary">
+              <base-button
+                class="px-5"
+                native-type="submit"
+                :loading="loading"
+                type="primary"
+              >
                 <span v-if="data.id">Edit</span>
                 <span v-else>Create</span>
                 <span class="pl-1">Blog</span>
@@ -97,7 +110,8 @@
                 type="default"
                 v-if="data.id"
                 @click="reset"
-              >reset</base-button>
+                >reset</base-button
+              >
             </div>
           </div>
         </form>
@@ -206,15 +220,34 @@ export default {
                 label: 'Grey'
               },
               {
-                color: 'hsl(0, 0%, 90%)',
-                label: 'Light grey'
+                color: 'hsl(0, 0%, 100%)',
+                label: 'White'
+                // hasBorder: true
               },
               {
-                color: 'hsl(0, 0%, 100%)',
-                label: 'White',
-                hasBorder: true
+                color: '#e14eca',
+                label: 'Custom 1'
+              },
+              {
+                color: '#00f2c3',
+                label: 'Custom 2'
+              },
+              {
+                color: '#1d8cf8',
+                label: 'Custom 3'
+              },
+              {
+                color: '#ff8d72',
+                label: 'Custom 4'
+              },
+              {
+                color: '#fd5d93',
+                label: 'Custom 5'
+              },
+              {
+                color: '#42b883',
+                label: 'Custom 6'
               }
-
               // ...
             ]
           },
@@ -227,6 +260,30 @@ export default {
               {
                 color: 'hsl(30, 75%, 60%)',
                 label: 'Orangeee'
+              },
+              {
+                color: '#e14eca',
+                label: 'Custom 1'
+              },
+              {
+                color: '#00f2c3',
+                label: 'Custom 2'
+              },
+              {
+                color: '#1d8cf8',
+                label: 'Custom 3'
+              },
+              {
+                color: '#ff8d72',
+                label: 'Custom 4'
+              },
+              {
+                color: '#fd5d93',
+                label: 'Custom 5'
+              },
+              {
+                color: '#42b883',
+                label: 'Custom 6'
               }
             ]
           },

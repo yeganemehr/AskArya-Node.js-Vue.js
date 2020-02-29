@@ -1,6 +1,8 @@
 <template>
   <section>
-    <h1 slot="header" class="card-title text-danger text-right pb-5">ارسال تیکت</h1>
+    <h1 slot="header" class="card-title text-danger text-right pb-5">
+      ارسال تیکت
+    </h1>
     <manage-ticket @ticket="ticketAddListener"></manage-ticket>
   </section>
 </template>
@@ -22,4 +24,3 @@ h1 {
   font-family: IranSansBold;
 }
 </style>
-

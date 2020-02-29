@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper" :class="{ 'nav-open': $sidebar.showSidebar }">
-    <div class="container text-center">
+    <div class="container text-right">
       <notifications></notifications>
     </div>
     <side-bar :background-color="sidebarBackground">
@@ -75,25 +75,24 @@
 import backend from '../../../backend';
 import PerfectScrollbar from 'perfect-scrollbar';
 import 'perfect-scrollbar/css/perfect-scrollbar.css';
+import DashboardNavbar from './DashboardNavbar.vue';
+import ContentFooter from './ContentFooter.vue';
+import { ZoomCenterTransition } from 'vue2-transitions';
 
 function hasElement(className) {
   return document.getElementsByClassName(className).length > 0;
 }
 
-// function initScrollbar(className) {
-//   if (hasElement(className)) {
-//     new PerfectScrollbar(`.${className}`);
-//   } else {
-//     // try to init it later in case this component is loaded async
-//     setTimeout(() => {
-//       initScrollbar(className);
-//     }, 100);
-//   }
-// }
-
-import DashboardNavbar from './DashboardNavbar.vue';
-import ContentFooter from './ContentFooter.vue';
-import { ZoomCenterTransition } from 'vue2-transitions';
+function initScrollbar(className) {
+  if (hasElement(className)) {
+    new PerfectScrollbar(`.${className}`);
+  } else {
+    // try to init it later in case this component is loaded async
+    setTimeout(() => {
+      initScrollbar(className);
+    }, 100);
+  }
+}
 
 export default {
   components: {
@@ -141,10 +140,6 @@ export default {
   },
   computed: {
     isAdmin() {
-      // console.log(
-      //   'isAdmin = ',
-      //   this.$root.$data.user && this.$root.$data.user.admin
-      // );
       return this.$root.$data.user && this.$root.$data.user.admin;
     }
   },
@@ -188,6 +183,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .exitButton {
   font-size: 1em;

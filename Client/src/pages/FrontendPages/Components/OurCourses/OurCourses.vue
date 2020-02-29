@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import Course from '../TopCourses/Course.vue';
+import Course from '../CourseCard/Course.vue';
 import { BasePagination } from 'src/components';
 import backend from '../../../../backend';
 

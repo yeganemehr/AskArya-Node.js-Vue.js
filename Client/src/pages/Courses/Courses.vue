@@ -1,6 +1,8 @@
 <template>
   <div class="container pb-5 mb-5">
-    <div class="d-flex justify-content-around d-flex align-items-center text-center headerDigits">
+    <div
+      class="d-flex justify-content-around d-flex align-items-center text-center headerDigits"
+    >
       <div>
         <h2 class="headerStyling">{{ total }}</h2>
         <p>دوره</p>
@@ -17,9 +19,9 @@
       </div>
     </div>
 
-    <h3
-      class="headerDigitsText text-danger text-center py-4 text-rtl"
-    >محتوای جدید هر هفته اضافه می شود!</h3>
+    <h3 class="headerDigitsText text-danger text-center py-4 text-rtl">
+      محتوای جدید هر هفته اضافه می شود!
+    </h3>
 
     <div class="row">
       <!-- Courses  -->
@@ -40,7 +42,7 @@
 </template>
 
 <script>
-import Course from '../FrontendPages/Components/TopCourses/Course.vue';
+import Course from '../FrontendPages/Components/CourseCard/Course.vue';
 
 import backend from '../../backend';
 import Vip from './Vip.vue';

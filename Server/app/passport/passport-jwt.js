@@ -7,7 +7,8 @@ const JWTStrategy = passportJWT.Strategy;
 
 passport.use(
   'jwt',
-  new JWTStrategy({
+  new JWTStrategy(
+    {
       jwtFromRequest: ExtractJWT.fromExtractors([
         ExtractJWT.fromUrlQueryParameter('api_token')
       ]),

@@ -6,7 +6,8 @@
           <span class="pr-1">
             <span v-if="data.id">Edit</span>
             <span v-else>Add</span>
-          </span> Episode
+          </span>
+          Episode
         </h4>
         <form @submit="submitFormListener">
           <div>
@@ -104,12 +105,19 @@
               <div class="text-right text-rtl">
                 <b>لطفا اشتباهات زیر را تصحیح کنید:</b>
                 <ul>
-                  <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
+                  <li v-for="(error, key) in formErrors" :key="key">
+                    {{ error }}
+                  </li>
                 </ul>
               </div>
             </div>
             <div class="mt-5 pull-right">
-              <base-button class="px-5" native-type="submit" type="primary" :loading="loading">
+              <base-button
+                class="px-5"
+                native-type="submit"
+                type="primary"
+                :loading="loading"
+              >
                 <span v-if="data.id">Edit</span>
                 <span v-else>Create</span>
                 <span class="ml-1">Episode</span>
@@ -120,7 +128,8 @@
                 @click="reset"
                 type="default"
                 v-if="data.id"
-              >reset</base-button>
+                >reset</base-button
+              >
             </div>
           </div>
         </form>
@@ -202,6 +211,89 @@ export default {
           ],
           fontSize: {
             options: [9, 11, 13, 'default', 17, 19, 21]
+          },
+
+          fontColor: {
+            colors: [
+              {
+                color: 'hsl(0, 0%, 0%)',
+                label: 'Black'
+              },
+              {
+                color: 'hsl(0, 0%, 30%)',
+                label: 'Dim grey'
+              },
+              {
+                color: 'hsl(0, 0%, 60%)',
+                label: 'Grey'
+              },
+              {
+                color: 'hsl(0, 0%, 100%)',
+                label: 'White'
+                // hasBorder: true
+              },
+              {
+                color: '#e14eca',
+                label: 'Custom 1'
+              },
+              {
+                color: '#00f2c3',
+                label: 'Custom 2'
+              },
+              {
+                color: '#1d8cf8',
+                label: 'Custom 3'
+              },
+              {
+                color: '#ff8d72',
+                label: 'Custom 4'
+              },
+              {
+                color: '#fd5d93',
+                label: 'Custom 5'
+              },
+              {
+                color: '#42b883',
+                label: 'Custom 6'
+              }
+              // ...
+            ]
+          },
+          fontBackgroundColor: {
+            colors: [
+              {
+                color: 'hsl(0, 75%, 60%)',
+                label: 'Red'
+              },
+              {
+                color: 'hsl(30, 75%, 60%)',
+                label: 'Orangeee'
+              },
+              {
+                color: '#e14eca',
+                label: 'Custom 1'
+              },
+              {
+                color: '#00f2c3',
+                label: 'Custom 2'
+              },
+              {
+                color: '#1d8cf8',
+                label: 'Custom 3'
+              },
+              {
+                color: '#ff8d72',
+                label: 'Custom 4'
+              },
+              {
+                color: '#fd5d93',
+                label: 'Custom 5'
+              },
+              {
+                color: '#42b883',
+                label: 'Custom 6'
+              }
+            ]
           },
           toolbar: [
             'heading',
@@ -460,4 +552,3 @@ export default {
 // 	}
 // }
 </style>
-

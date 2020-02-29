@@ -215,11 +215,11 @@ export default {
 
 .hover:hover,
 .hover:focus {
-  -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0.5) !important;
-  box-shadow: 40px rgba(121, 121, 121, 0.5) !important;
-  // transition: transform 0.8s !important;
-  // -webkit-transform: translateY(-4px);
-  // transform: translateY(-4px);
+  -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0.4) !important;
+  box-shadow: 40px rgba(121, 121, 121, 0.4) !important;
+  transition: transform 0.7s !important;
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
   cursor: pointer;
 
   .buyCourseTitle {

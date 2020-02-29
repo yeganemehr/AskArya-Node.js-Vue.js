@@ -8,17 +8,24 @@
             <h1 class="course-title">{{ title }}</h1>
             <p class="episode-title" v-if="episode.id">{{ course.title }}</p>
             <!-- Course Image -->
-            <img class="course-image rounded-circle img-fluid py-4" :src="course.image" />
+            <img
+              class="course-image rounded-circle img-fluid py-4"
+              :src="course.image"
+            />
           </div>
 
           <div class="body text-center container pt-3 px-5" v-html="body"></div>
           <!-- COURSE INFORMATION -->
-          <div class="container pt-5 text-center d-flex justify-content-between">
+          <div
+            class="container pt-5 text-center d-flex justify-content-between"
+          >
             <!-- COURSE CREATED AT -->
             <div class="col">
               <h5 class="icon-data">
                 <i class="pl-1 icon far fa-calendar-alt"></i>
-                <span class="icon-text pr-1 d-none d-md-block">ایجاد شده در</span>
+                <span class="icon-text pr-1 d-none d-md-block"
+                  >ایجاد شده در</span
+                >
                 {{ getEpisodeCreateDate() }}
               </h5>
             </div>
@@ -27,9 +34,9 @@
             <div class="col">
               <h5 class="icon-data">
                 <i class="pl-1 icon far fa-clock"></i>
-                <span
-                  class="icon-text pr-1 d-none d-md-block"
-                >{{ episode.time ? "زمان این درس" : "زمان کل دوره" }}</span>
+                <span class="icon-text pr-1 d-none d-md-block">{{
+                  episode.time ? 'زمان این درس' : 'زمان کل دوره'
+                }}</span>
                 {{ episode.time ? episodeTime : courseTime }}
               </h5>
             </div>
@@ -38,7 +45,9 @@
             <div class="col" v-if="notEnrolled">
               <h5 class="icon-data">
                 <i class="pl-1 icon fas fa-users"></i>
-                <span class="icon-text pr-1 d-none d-md-block">تعداد شرکت کنندگان</span>
+                <span class="icon-text pr-1 d-none d-md-block"
+                  >تعداد شرکت کنندگان</span
+                >
                 {{ enrolledCount }}
               </h5>
             </div>
@@ -73,18 +82,15 @@
           >
             <p v-if="type == 'paid'" class="pay-text text-danger">
               <i class="fas fa-info pl-3 pay-icon"></i>
-              برای دسترسی به این درس لطفا لینک
-              خرید را دنبال کنید.
-              <span
-                class="text-right"
-                v-if="notEnrolled && type == 'paid'"
-              >
+              برای دسترسی به این درس لطفا لینک خرید را دنبال کنید.
+              <span class="text-right" v-if="notEnrolled && type == 'paid'">
                 <span class="pr-2">
                   <base-button
                     @click="openBuyCourse"
                     native-type="button"
                     class="btn-fill btn-danger btn btn-sm"
-                  >تهیه درس غیرحضوری</base-button>
+                    >تهیه درس غیرحضوری</base-button
+                  >
                 </span>
               </span>
             </p>
@@ -93,7 +99,12 @@
               برای دسترسی به این درس اکانت VIP تهیه کنید.
               <span class="pr-2">
                 <router-link to="/courses">
-                  <base-button native-type="submit" type="danger" class="btn btn-sm">تهیه عضویت ویژه</base-button>
+                  <base-button
+                    native-type="submit"
+                    type="danger"
+                    class="btn btn-sm"
+                    >تهیه عضویت ویژه</base-button
+                  >
                 </router-link>
               </span>
             </p>
@@ -124,12 +135,12 @@
             :episodes="course.episodes"
             :scrollable="false"
             :maxepisodes="4"
-            :purchased="! notEnrolled"
+            :purchased="!notEnrolled"
             @buy="openBuyCourse"
           ></AllUnits>
-          <p
-            class="quote-text text-center pb-2 d-none d-md-block"
-          >"تا زمانی که متوقف نشوید، مهم نیست که چقدر آهسته حرکت می کنید."</p>
+          <p class="quote-text text-center pb-2 d-none d-md-block">
+            "تا زمانی که متوقف نشوید، مهم نیست که چقدر آهسته حرکت می کنید."
+          </p>
         </div>
 
         <!-- <div class="row pt-4">
@@ -139,7 +150,12 @@
         </div>-->
       </div>
     </div>
-    <modal ref="buymodal" centered="true" footerClasses="justify-content-center" type="notice">
+    <modal
+      ref="buymodal"
+      centered="true"
+      footerClasses="justify-content-center"
+      type="notice"
+    >
       <h5 slot="header" class="modal-title">
         خرید دوره:
         <span class="font-weight-bold text-danger">{{ course.title }}</span>
@@ -158,7 +174,8 @@
           @click="buyCourseListener"
           native-type="button"
           class="btn-block btn-success d-block w-100"
-        >پرداخت از درگاه</base-button>
+          >پرداخت از درگاه</base-button
+        >
       </div>
     </modal>
   </div>
@@ -323,7 +340,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .swal-text-center {

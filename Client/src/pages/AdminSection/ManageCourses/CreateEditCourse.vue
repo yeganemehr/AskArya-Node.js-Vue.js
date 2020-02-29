@@ -228,6 +228,89 @@ export default {
           fontSize: {
             options: [9, 11, 13, 'default', 17, 19, 21]
           },
+
+          fontColor: {
+            colors: [
+              {
+                color: 'hsl(0, 0%, 0%)',
+                label: 'Black'
+              },
+              {
+                color: 'hsl(0, 0%, 30%)',
+                label: 'Dim grey'
+              },
+              {
+                color: 'hsl(0, 0%, 60%)',
+                label: 'Grey'
+              },
+              {
+                color: 'hsl(0, 0%, 100%)',
+                label: 'White'
+                // hasBorder: true
+              },
+              {
+                color: '#e14eca',
+                label: 'Custom 1'
+              },
+              {
+                color: '#00f2c3',
+                label: 'Custom 2'
+              },
+              {
+                color: '#1d8cf8',
+                label: 'Custom 3'
+              },
+              {
+                color: '#ff8d72',
+                label: 'Custom 4'
+              },
+              {
+                color: '#fd5d93',
+                label: 'Custom 5'
+              },
+              {
+                color: '#42b883',
+                label: 'Custom 6'
+              }
+              // ...
+            ]
+          },
+          fontBackgroundColor: {
+            colors: [
+              {
+                color: 'hsl(0, 75%, 60%)',
+                label: 'Red'
+              },
+              {
+                color: 'hsl(30, 75%, 60%)',
+                label: 'Orangeee'
+              },
+              {
+                color: '#e14eca',
+                label: 'Custom 1'
+              },
+              {
+                color: '#00f2c3',
+                label: 'Custom 2'
+              },
+              {
+                color: '#1d8cf8',
+                label: 'Custom 3'
+              },
+              {
+                color: '#ff8d72',
+                label: 'Custom 4'
+              },
+              {
+                color: '#fd5d93',
+                label: 'Custom 5'
+              },
+              {
+                color: '#42b883',
+                label: 'Custom 6'
+              }
+            ]
+          },
           toolbar: [
             'heading',
             '|',

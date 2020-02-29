@@ -87,13 +87,13 @@
             </base-button>
           </a>
 
-          <h6 class="pull-left pt-3">
+          <!-- <h6 class="pull-left pt-3">
             <router-link class="footer-link" :to="registerUrl"
               >فرم عضویت</router-link
             >
-          </h6>
+          </h6> -->
 
-          <h6 class="pull-right pt-3">
+          <h6 class="text-center mt-4">
             <router-link to="/forgotpassword" class="footer-link"
               >رمز عبور را فراموش کرده ام</router-link
             >
@@ -329,9 +329,9 @@ export default {
 }
 
 .footer-link {
-  font-size: 0.9rem;
-  color: rgba(0, 0, 0, 0.4) !important;
-  font-family: IranSans;
+  font-size: 0.9rem !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+  font-family: IranSans !important;
 }
 
 .footer-link:hover {

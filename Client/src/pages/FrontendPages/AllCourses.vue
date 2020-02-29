@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import Course from '../FrontendPages/Components/TopCourses/Course.vue';
+import Course from '../FrontendPages/Components/CourseCard/Course.vue';
 
 import backend from '../../backend';
 export default {

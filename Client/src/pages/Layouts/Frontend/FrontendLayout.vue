@@ -7,7 +7,10 @@
     <div class="wrapper wrapper-full-page">
       <div class="full-page" :class="pageClass">
         <div class="content-custom">
-          <zoom-center-transition :duration="pageTransitionDuration" mode="out-in">
+          <zoom-center-transition
+            :duration="pageTransitionDuration"
+            mode="out-in"
+          >
             <router-view></router-view>
           </zoom-center-transition>
         </div>
@@ -48,7 +51,6 @@ export default {
 };
 </script>
 
-
 <style scoped lang="scss">
 .go-to-top {
   position: fixed;
@@ -65,8 +67,8 @@ export default {
 }
 @media (max-width: 768px) {
   .go-to-top {
-    bottom: 20px;
-    left: 20px;
+    bottom: 25px;
+    left: 25px;
     z-index: 99;
     padding: 0.3em;
     font-size: 1.6em;
