@@ -29,14 +29,21 @@
     </a>
 
     <collapse-transition>
-      <div v-if="$slots.default || this.isMenu" v-show="!collapsed" class="collapse show">
+      <div
+        v-if="$slots.default || this.isMenu"
+        v-show="!collapsed"
+        class="collapse show"
+      >
         <ul class="nav">
           <slot></slot>
         </ul>
       </div>
     </collapse-transition>
 
-    <slot name="title" v-if="children.length === 0 && !$slots.default && link.path">
+    <slot
+      name="title"
+      v-if="children.length === 0 && !$slots.default && link.path"
+    >
       <component
         :to="link.path"
         @click.native="linkClick"
