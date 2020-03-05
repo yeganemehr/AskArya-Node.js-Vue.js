@@ -34,7 +34,6 @@
     z-index: 1050;
   }
 
-
   &.navbar-transparent {
     background: transparent !important;
   }
@@ -63,7 +62,6 @@
           color: $black;
         }
       }
-
     }
 
     .navbar-text,
@@ -78,7 +76,6 @@
     .form-control::placeholder {
       color: $dark-gray !important;
     }
-
   }
 
   &.bg-dark {
@@ -89,7 +86,6 @@
     background: #f8f8f8 !important;
     box-shadow: 0 4px 2px -2px rgba(153, 153, 153, 0.5) !important;
   }
-
 
   &.bg-primary {
     background-color: $primary !important;
@@ -113,8 +109,8 @@
 
   .navbar-brand {
     position: relative;
-    padding-top: .3125rem;
-    padding-bottom: .3125rem;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
     color: $white;
     margin-left: 17px;
     text-transform: uppercase;
@@ -126,7 +122,6 @@
     outline: none;
     margin-right: auto !important;
   }
-
 }
 
 .navbar-minimize-fixed {
@@ -193,7 +188,6 @@
     }
 
     .navbar-nav {
-
       .btn {
         margin-left: -3px;
         display: flex;
@@ -253,7 +247,6 @@
 
     .dropdown.show .dropdown-menu {
       display: block;
-
     }
 
     .dropdown .dropdown-menu {
@@ -306,17 +299,17 @@
         // border-radius: 50%;
       }
 
-      &+.navbar-toggler-bar {
+      & + .navbar-toggler-bar {
         margin-top: 7px;
       }
 
-      &+.navbar-toggler-bar.navbar-kebab {
+      & + .navbar-toggler-bar.navbar-kebab {
         margin-top: 0px;
       }
 
       &.bar2 {
         width: 17px;
-        transition: width .2s linear;
+        transition: width 0.2s linear;
       }
     }
 
@@ -400,14 +393,12 @@
 
   .navbar-nav {
     .nav-link {
-
       i.fa,
       i.tim-icons {
-        opacity: .5;
+        opacity: 0.5;
       }
     }
   }
-
 }
 
 @include media-breakpoint-up(lg) {
@@ -417,7 +408,6 @@
 
   .navbar .navbar-toggle {
     display: none;
-
   }
 
   .navbar-nav {
@@ -442,7 +432,6 @@
     padding-right: $list-inline-padding;
     padding-left: $list-inline-padding;
   }
-
 }
 
 @include media-breakpoint-down(xs) {
@@ -450,11 +439,9 @@
     margin-left: 0;
     margin-right: 0;
   }
-
 }
 
-@include media-breakpoint-between (md, lg) {
-
+@include media-breakpoint-between(md, lg) {
   .bar1,
   .bar2,
   .bar3 {
@@ -526,7 +513,7 @@
 
   .navbar .navbar-toggler-bar.bar2 {
     width: 17px;
-    transition: width .2s linear;
+    transition: width 0.2s linear;
   }
 
   .navbar .navbar-toggler-bar {
@@ -538,7 +525,7 @@
     background: $white;
   }
 
-  .navbar .navbar-toggler-bar+.navbar-toggler-bar {
+  .navbar .navbar-toggler-bar + .navbar-toggler-bar {
     margin-top: 7px;
   }
 

@@ -34,7 +34,7 @@ module.exports = class Application {
   setupExpress() {
     const server = http.createServer(app);
     server.listen(config.port, () =>
-      console.log(`Listening on port ${config.port}`)
+      console.log(`Listening on Port ${config.port}`)
     );
   }
 

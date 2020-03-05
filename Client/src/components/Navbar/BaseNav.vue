@@ -52,7 +52,7 @@ export default {
     },
     expand: {
       type: String,
-      default: 'lg',
+      default: 'md',
       description: 'Breakpoint where nav should expand'
     },
     menuClasses: {

@@ -1,162 +1,160 @@
 <template>
-  <div>
-    <base-nav
-      v-model="showMenu"
-      type="custom"
-      :transparent="false"
-      menu-classes
-      class="auth-navbar sticky-top"
-    >
-      <div slot="brand" class="navbar-wrapper">
-        <router-link to="/">
-          <img src="/img/askarya-logo.png" width="110" alt="Ask Arya Logo" />
+  <base-nav
+    v-model="showMenu"
+    type="custom"
+    :transparent="false"
+    menu-classes
+    class="auth-navbar sticky-top"
+  >
+    <div slot="brand" class="navbar-wrapper">
+      <router-link to="/">
+        <img src="/img/askarya-logo.png" width="110" alt="Ask Arya Logo" />
+      </router-link>
+    </div>
+    <ul class="navbar-nav">
+      <router-link class="nav-item" tag="li" to="/">
+        <a :class="getNavClass('home')">{{ 'خانه' }}</a>
+      </router-link>
+
+      <router-link class="nav-item" tag="li" to="/allcourses">
+        <a :class="getNavClass('allcourses')">{{ 'دوره‌ های غیر حضوری' }}</a>
+      </router-link>
+
+      <router-link class="nav-item" tag="li" to="/privateclasses">
+        <a :class="getNavClass('privateclasses')">{{ 'کلاس های حضوری' }}</a>
+      </router-link>
+
+      <router-link class="nav-item" tag="li" to="/contact">
+        <a :class="getNavClass('contact')">{{ 'تماس با ما' }}</a>
+      </router-link>
+
+      <div class="d-md-none pr-3" v-if="this.$root.$data.user !== undefined">
+        <router-link
+          class="row d-flex align-items-center nav-item"
+          tag="li"
+          to="/dashboard"
+        >
+          <div class="photo">
+            <img :src="userAvatar" />
+          </div>
+          <div class="pr-3">
+            <a :class="getNavClass('profile')">{{ 'پروفایل من' }}</a>
+          </div>
         </router-link>
       </div>
-      <ul class="navbar-nav">
-        <router-link class="nav-item" tag="li" to="/">
-          <a :class="getNavClass('home')">{{ 'خانه' }}</a>
-        </router-link>
+    </ul>
 
-        <router-link class="nav-item" tag="li" to="/allcourses">
-          <a :class="getNavClass('allcourses')">{{ 'دوره‌ های غیر حضوری' }}</a>
-        </router-link>
-
-        <router-link class="nav-item" tag="li" to="/privateclasses">
-          <a :class="getNavClass('privateclasses')">{{ 'کلاس های حضوری' }}</a>
-        </router-link>
-
-        <router-link class="nav-item" tag="li" to="/contact">
-          <a :class="getNavClass('contact')">{{ 'تماس با ما' }}</a>
-        </router-link>
-
-        <div class="d-md-none pr-3" v-if="this.$root.$data.user !== undefined">
-          <router-link
-            class="row d-flex align-items-center nav-item"
-            tag="li"
-            to="/dashboard"
-          >
-            <div class="photo">
-              <img :src="userAvatar" />
-            </div>
-            <div class="pr-3">
-              <a :class="getNavClass('profile')">{{ 'پروفایل من' }}</a>
-            </div>
-          </router-link>
-        </div>
-      </ul>
-
-      <ul class="navbar-nav mr-auto ipad-fix">
-        <div class="row">
-          <div v-if="this.$root.$data.user !== undefined">
-            <div class="row">
-              <ul class="navbar-nav text-right">
-                <!-- <ul class="navbar-nav text-right" :class="$rtl.isRTL ? 'mr-auto' : 'ml-auto'"> -->
-                <base-dropdown
-                  tag="li"
-                  title-tag="a"
-                  class="nav-item"
-                  menu-classes="dropdown-navbar"
+    <ul class="navbar-nav mr-auto ipad-fix">
+      <div class="row">
+        <div v-if="this.$root.$data.user !== undefined">
+          <div class="row">
+            <ul class="navbar-nav text-right">
+              <!-- <ul class="navbar-nav text-right" :class="$rtl.isRTL ? 'mr-auto' : 'ml-auto'"> -->
+              <base-dropdown
+                tag="li"
+                title-tag="a"
+                class="nav-item"
+                menu-classes="dropdown-navbar"
+              >
+                <a
+                  slot="title"
+                  href="#"
+                  class="dropdown-toggle nav-link"
+                  data-toggle="dropdown"
+                  aria-expanded="true"
                 >
-                  <a
-                    slot="title"
-                    href="#"
-                    class="dropdown-toggle nav-link"
-                    data-toggle="dropdown"
-                    aria-expanded="true"
-                  >
-                    <div class="user-item d-none d-md-block">
-                      <div class="row pl-4">
-                        <div class="photo">
-                          <img :src="userAvatar" />
-                        </div>
-                        <div
-                          class="d-flex align-items-center pr-3 profile-link-text"
-                        >
-                          <p class="px-2">پروفایل من</p>
-                          <i class="i-chevron fas fa-chevron-down"></i>
-                        </div>
+                  <div class="user-item d-none d-md-block">
+                    <div class="row pl-4">
+                      <div class="photo">
+                        <img :src="userAvatar" />
+                      </div>
+                      <div
+                        class="d-flex align-items-center pr-3 profile-link-text"
+                      >
+                        <p class="px-2">پروفایل من</p>
+                        <i class="i-chevron fas fa-chevron-down"></i>
                       </div>
                     </div>
-                  </a>
+                  </div>
+                </a>
 
-                  <li class="nav-link">
-                    <router-link to="/dashboard" class="nav-item dropdown-item">
-                      <i class="far fa-user pl-2"></i>
-                      پنل کاربری
-                    </router-link>
-                  </li>
+                <li class="nav-link">
+                  <router-link to="/dashboard" class="nav-item dropdown-item">
+                    <i class="far fa-user pl-2"></i>
+                    پنل کاربری
+                  </router-link>
+                </li>
 
-                  <li class="nav-link">
-                    <router-link to="/courses" class="nav-item dropdown-item">
-                      <i class="fas fa-university pl-2"></i>
-                      دوره های آموزشی
-                    </router-link>
-                  </li>
+                <li class="nav-link">
+                  <router-link to="/courses" class="nav-item dropdown-item">
+                    <i class="fas fa-university pl-2"></i>
+                    دوره های آموزشی
+                  </router-link>
+                </li>
 
-                  <li class="nav-link">
-                    <router-link to="/mycourses" class="nav-item dropdown-item">
-                      <i class="i-custom fas fa-graduation-cap pl-2"></i>
-                      در حال یادگیری
-                    </router-link>
-                  </li>
+                <li class="nav-link">
+                  <router-link to="/mycourses" class="nav-item dropdown-item">
+                    <i class="i-custom fas fa-graduation-cap pl-2"></i>
+                    در حال یادگیری
+                  </router-link>
+                </li>
 
-                  <li class="nav-link">
-                    <router-link to="/tickets" class="nav-item dropdown-item">
-                      <i class="fas fa-headset pl-2"></i>
-                      پشتیبانی
-                    </router-link>
-                  </li>
+                <li class="nav-link">
+                  <router-link to="/tickets" class="nav-item dropdown-item">
+                    <i class="fas fa-headset pl-2"></i>
+                    پشتیبانی
+                  </router-link>
+                </li>
 
-                  <li v-if="isAdmin" class="nav-link">
-                    <router-link
-                      to="/managementpage"
-                      class="nav-item dropdown-item"
-                    >
-                      <i class="fas fa-tools pl-2"></i>
-                      پنل مدیریت
-                    </router-link>
-                  </li>
+                <li v-if="isAdmin" class="nav-link">
+                  <router-link
+                    to="/managementpage"
+                    class="nav-item dropdown-item"
+                  >
+                    <i class="fas fa-tools pl-2"></i>
+                    پنل مدیریت
+                  </router-link>
+                </li>
 
-                  <li class="nav-link nav-link-exit">
-                    <router-link
-                      class="nav-item dropdown-item"
-                      to="#"
-                      @click.native="logoutListener"
-                    >
-                      <i class="fas fa-sign-out-alt pl-2"></i>
-                      خروج
-                    </router-link>
-                  </li>
-                </base-dropdown>
-              </ul>
-            </div>
-          </div>
-          <div class="row login-register-buttons" v-else>
-            <div class="pr-3 register-button">
-              <router-link to="/register">
-                <base-button
-                  native-type="submit"
-                  type="danger"
-                  class="btn-simple btn"
-                  >ثبت نام</base-button
-                >
-              </router-link>
-            </div>
-            <div class="pr-3 login-button">
-              <router-link to="/login">
-                <base-button
-                  native-type="submit"
-                  type="info"
-                  class="btn-simple btn"
-                  >ورود کاربر</base-button
-                >
-              </router-link>
-            </div>
+                <li class="nav-link nav-link-exit">
+                  <router-link
+                    class="nav-item dropdown-item"
+                    to="#"
+                    @click.native="logoutListener"
+                  >
+                    <i class="fas fa-sign-out-alt pl-2"></i>
+                    خروج
+                  </router-link>
+                </li>
+              </base-dropdown>
+            </ul>
           </div>
         </div>
-      </ul>
-    </base-nav>
-  </div>
+        <div class="row login-register-buttons" v-else>
+          <div class="pr-3 register-button">
+            <router-link to="/register">
+              <base-button
+                native-type="submit"
+                type="danger"
+                class="btn-simple btn"
+                >ثبت نام</base-button
+              >
+            </router-link>
+          </div>
+          <div class="pr-3 login-button">
+            <router-link to="/login">
+              <base-button
+                native-type="submit"
+                type="info"
+                class="btn-simple btn"
+                >ورود کاربر</base-button
+              >
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </ul>
+  </base-nav>
 </template>
 
 <script>
