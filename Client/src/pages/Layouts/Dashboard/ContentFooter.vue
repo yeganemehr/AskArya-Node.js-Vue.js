@@ -7,9 +7,16 @@
         طراحی و تولید شده توسط
         <router-link to="/terms">اسک آریا</router-link>، با افتخار در ایران
         <i class="tim-icons icon-heart-2"></i>
-        سال ١٣٩۸
+        سال ١٣٩۹
       </div>
     </footer>
   </section>
 </template>
-<script>
+
+<style lang="scss" scoped>
+@media only screen and (max-width: 678px) {
+  .copyright {
+    font-size: 0.8em !important;
+  }
+}
+</style>

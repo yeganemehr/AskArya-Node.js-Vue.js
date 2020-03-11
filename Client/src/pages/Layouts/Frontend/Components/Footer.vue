@@ -59,7 +59,7 @@
           طراحی و تولید شده توسط
           <router-link to="/terms">اسک آریا</router-link>، با افتخار در ایران
           <i class="tim-icons icon-heart-2 text-primary"></i>
-          سال ١٣٩۸
+          سال ١٣٩۹
         </p>
       </div>
     </footer>

@@ -330,7 +330,7 @@ class courseController extends controller {
     }
     const zarinpal = ZarinpalCheckout.create(
       config.service.zarinpal.merchant_id,
-      false
+      true
     );
     const price = parseInt(course.price.replace(/,/g, ''), 10);
     const timeout = setTimeout(() => {
@@ -404,7 +404,7 @@ class courseController extends controller {
     }, 30000);
     const zarinpal = ZarinpalCheckout.create(
       config.service.zarinpal.merchant_id,
-      false
+      true
     );
     zarinpal
       .PaymentVerification({
