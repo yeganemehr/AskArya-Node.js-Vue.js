@@ -5,7 +5,7 @@
       <div class="text-right" v-if="logs.length">
         <div class="Message pt-4" v-for="log of logs" :key="log.id">
           <p class="text-justify">
-            <i :class="'fas ' +  getLogIcon(log.type) + ' iconSize'"></i>
+            <i :class="'fas ' + getLogIcon(log.type) + ' iconSize'"></i>
             {{ getJalaliDate(log.createdAt) }} -
             {{ log.title }}
           </p>
