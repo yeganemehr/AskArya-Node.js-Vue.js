@@ -3,8 +3,6 @@
     <div class="heading-section">
       <div class="container text-center">
         <h1 class="post-title-top text-center pt-2 ">{{ post.name }}</h1>
-
-        <!-- <BlogHeader :title="post.name"></BlogHeader> -->
         <img class="blog-img" :src="post.image" :alt="post.name" />
         <div class="my-4">
           <BlogInfo
@@ -19,40 +17,37 @@
       <div class="main-blog-section">
         <h3 class="post-title">{{ post.name }}</h3>
         <div class="row">
-          <div class="main-blog-text col-lg-9 col-md-12">
-            <div v-html="post.content"></div>
-          </div>
-
-          <div class="sticky col-lg-3 col-md-12">
+          <!-- <div class="sticky col-lg-3 col-md-12">
             <custom-card :class="sticky" />
+          </div> -->
+          <div class="main-blog-text px-5">
+            <div v-html="post.content"></div>
           </div>
         </div>
       </div>
     </div>
-    <div>
+    <!-- <div>
       <custom-card :class="SmallDevices" />
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-// import BlogHeader from './BlogComponents/BlogHeader.vue';
 import BlogInfo from './BlogComponents/BlogInfo.vue';
+// import CustomCard from '../../../SingleLesson/Components/CustomCard';
 
-import CustomCard from '../../../SingleLesson/Components/CustomCard';
 import backend from '../../../../backend';
 
 export default {
   components: {
-    BlogInfo,
-    // BlogHeader,
-    CustomCard
+    BlogInfo
+    // CustomCard
   },
   data() {
     return {
-      post: {},
-      sticky: 'sticky',
-      SmallDevices: 'small-devices'
+      post: {}
+      // sticky: 'sticky',
+      // SmallDevices: 'small-devices'
     };
   },
   methods: {

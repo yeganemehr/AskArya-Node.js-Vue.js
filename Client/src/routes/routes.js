@@ -123,6 +123,11 @@ const ComingSoon = () =>
     'src/pages/FrontendPages/ComingSoon.vue'
   );
 
+const Articles = () =>
+  import(
+    /* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Articles.vue'
+  );
+
 const Contact = () =>
   import(/* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Contact.vue');
 
@@ -193,6 +198,11 @@ let frontendpages = {
       path: '/comingsoon',
       name: 'ComingSoon',
       component: ComingSoon
+    },
+    {
+      path: '/articles',
+      name: 'Articles',
+      component: Articles
     },
     {
       path: '/contact',

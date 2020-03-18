@@ -125,15 +125,13 @@ export default {
           alert.verticalAlign === this.verticalAlign
         );
       });
-      let sameAlertsCount = 1;
-      let currentIndex = sameAlerts.findIndex(
-        n => n.timestamp === this.timestamp
-      );
+      let sameAlertsCount = 1
+      let currentIndex = sameAlerts.findIndex(n => n.timestamp === this.timestamp)
       if (this.$notifications.settings.overlap) {
         sameAlertsCount = 1;
       }
       if (currentIndex !== -1) {
-        sameAlertsCount = currentIndex + 1;
+        sameAlertsCount = currentIndex + 1
       }
       let pixels = (sameAlertsCount - 1) * alertHeight + initialMargin;
       let styles = {};

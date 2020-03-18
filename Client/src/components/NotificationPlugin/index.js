@@ -5,9 +5,9 @@ const NotificationStore = {
   settings: {
     overlap: false,
     verticalAlign: 'top',
-    horizontalAlign: 'left',
+    horizontalAlign: 'right',
     type: 'info',
-    timeout: 8000,
+    timeout: 5000,
     closeOnClick: true,
     showClose: true,
     order: 'reverse' // normal | reverse (When reverse, each notification will be added on top)
@@ -31,9 +31,9 @@ const NotificationStore = {
     );
     notification = Object.assign({}, this.settings, notification);
     if (this.settings.order === 'reverse') {
-      this.state.unshift(notification);
+      this.state.unshift(notification)
     } else {
-      this.state.push(notification);
+      this.state.push(notification)
     }
   },
   notify(notification) {

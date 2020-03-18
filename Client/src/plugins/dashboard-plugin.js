@@ -4,11 +4,10 @@ import Notifications from 'src/components/NotificationPlugin';
 import VeeValidate from 'vee-validate';
 import GlobalComponents from './globalComponents';
 import GlobalDirectives from './globalDirectives';
-// Sidebar on the right. Used as a local plugin in DashboardLayout.vue
 import SideBar from 'src/components/SidebarPlugin';
 import RTLPlugin from './RTLPlugin';
 
-// element ui language configuration
+// Element ui language configuration
 import lang from 'element-ui/lib/locale/lang/en';
 import locale from 'element-ui/lib/locale';
 locale.use(lang);
@@ -26,9 +25,7 @@ export default {
     Vue.use(RTLPlugin);
     Vue.use(SideBar);
     Vue.use(Notifications);
-    Vue.use(VeeValidate, {
-      fieldsBagName: 'veeFields'
-    });
+    Vue.use(VeeValidate, { fieldsBagName: 'veeFields' });
     Vue.use(require('jalali-moment'));
   }
 };

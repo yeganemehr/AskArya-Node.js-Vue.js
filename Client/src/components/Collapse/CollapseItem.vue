@@ -27,17 +27,17 @@
   </div>
 </template>
 <script>
-import { CollapseTransition } from 'vue2-transitions';
+import { CollapseTransition } from "vue2-transitions";
 
 export default {
-  name: 'collapse-item',
+  name: "collapse-item",
   components: {
     CollapseTransition
   },
   props: {
     title: {
       type: String,
-      default: ''
+      default: ""
     },
     id: String
   },

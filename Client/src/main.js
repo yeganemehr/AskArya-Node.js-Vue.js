@@ -37,11 +37,6 @@ Vue.use(VuePlyr);
 Vue.use(NProgress);
 Vue.use(VueMeta);
 
-// element ui language configuration
-import lang from 'element-ui/lib/locale/lang/en';
-import locale from 'element-ui/lib/locale';
-locale.use(lang);
-
 import 'src/assets/sass/black-dashboard-pro.scss';
 import 'nprogress/nprogress.css';
 import './assets/sass/nprogress.scss';

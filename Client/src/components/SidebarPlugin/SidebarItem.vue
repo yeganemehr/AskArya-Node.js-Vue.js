@@ -15,16 +15,12 @@
       <template v-if="addLink">
         <span class="sidebar-mini-icon">{{ linkPrefix }}</span>
         <span class="sidebar-normal">
-          {{ link.name }}
-          <b class="caret"></b>
+          {{ link.name }} <b class="caret"></b>
         </span>
       </template>
       <template v-else>
         <i :class="link.icon"></i>
-        <p>
-          {{ link.name }}
-          <b class="caret"></b>
-        </p>
+        <p>{{ link.name }} <b class="caret"></b></p>
       </template>
     </a>
 

@@ -8,7 +8,9 @@
   >
     <span class="progress-badge" v-if="label">{{ label }}</span>
     <div class="progress">
-      <span class="progress-value" v-if="showValue && valuePosition === 'left'">{{ value }}%</span>
+      <span class="progress-value" v-if="showValue && valuePosition === 'left'"
+        >{{ value }}%</span
+      >
       <div
         class="progress-bar"
         :class="computedClasses"
@@ -19,7 +21,11 @@
         :style="`width: ${value}%;`"
       >
         <slot>
-          <span v-if="showValue && valuePosition === 'right'" class="progress-value">{{ value }}%</span>
+          <span
+            v-if="showValue && valuePosition === 'right'"
+            class="progress-value"
+            >{{ value }}%</span
+          >
         </slot>
       </div>
     </div>

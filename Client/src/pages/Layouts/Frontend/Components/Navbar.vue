@@ -24,6 +24,10 @@
         <a :class="getNavClass('privateclasses')">{{ 'کلاس های حضوری' }}</a>
       </router-link>
 
+      <!-- <router-link class="nav-item" tag="li" to="/articles">
+        <a :class="getNavClass('articles')">{{ 'مقالات' }}</a>
+      </router-link> -->
+
       <router-link class="nav-item" tag="li" to="/contact">
         <a :class="getNavClass('contact')">{{ 'تماس با ما' }}</a>
       </router-link>
@@ -159,10 +163,14 @@
 
 <script>
 import { BaseNav } from 'src/components';
+import { CollapseTransition } from 'vue2-transitions';
+
 import backend from '../../../../backend';
+
 export default {
   components: {
-    BaseNav
+    BaseNav,
+    CollapseTransition
   },
   props: {
     backgroundColor: {
@@ -174,8 +182,7 @@ export default {
     return {
       showMenu: false,
       menuTransitionDuration: 250,
-      pageTransitionDuration: 200,
-      pageClass: 'login-page'
+      pageTransitionDuration: 200
     };
   },
   computed: {
@@ -193,17 +200,6 @@ export default {
     }
   },
   methods: {
-    toggleNavbar() {
-      document.body.classList.toggle('nav-open');
-      this.showMenu = !this.showMenu;
-    },
-    closeMenu() {
-      document.body.classList.remove('nav-open');
-      this.showMenu = false;
-    },
-    setPageClass() {
-      this.pageClass = `${this.$route.name}-page`.toLowerCase();
-    },
     getNavClass(nav) {
       let classes = 'nav-link';
       let isActive = false;
@@ -217,6 +213,9 @@ export default {
         case 'allcourses':
           isActive = this.$route.name == 'AllCourses';
           break;
+        case 'articles':
+          isActive = this.$route.name == 'Articles';
+          break;
         case 'contact':
           isActive = this.$route.name == 'Contact';
           break;
@@ -228,6 +227,20 @@ export default {
         classes += ' text-custom';
       }
       return classes;
+    },
+    toggleNavbar() {
+      document.body.classList.toggle('nav-open');
+      this.showMenu = !this.showMenu;
+    },
+    toggleMenu() {
+      this.showMenu = !this.showMenu;
+    },
+    closeMenu() {
+      document.body.classList.remove('nav-open');
+      this.showMenu = false;
+    },
+    setPageClass() {
+      this.pageClass = `${this.$route.name}-page`.toLowerCase();
     },
     logoutListener(e) {
       e.preventDefault();
