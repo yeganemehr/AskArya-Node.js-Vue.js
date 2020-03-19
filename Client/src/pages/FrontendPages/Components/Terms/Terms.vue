@@ -2,17 +2,15 @@
   <section class="container text-center py-5">
     <div class="top-section">
       <h1 class="title text-danger">قوانین و مقررات سایت</h1>
-      <p class="text-muted pb-5">
+      <p class="header-subtitle pb-5">
         در این صفحه شرایط استفاده از وبسایت اسک آریا را مشاهده میکنید
       </p>
     </div>
+    <h3 class="notice text-right text-danger container py-3">
+      <span> <i class="fas fa-info-circle pl-3"></i> </span>لطفا شرایط زیر را با
+      دقت مطالعه کنید
+    </h3>
     <div class="main-section px-4 text-right">
-      <div class="notice">
-        <h3 class="notice text-danger container py-5">
-          <span> <i class="fas fa-info-circle pl-3"></i> </span>لطفا شرایط زیر
-          را با دقت مطالعه کنید
-        </h3>
-      </div>
       <p class="pb-2 bold">به اسک آریا خوش آمدید.</p>
       <p class="pb-5">
         هر سرویس دهنده‌ای در دنیای واقعی و مجازی بر پایه یک سری قوانین و مقررات
@@ -291,16 +289,18 @@ export default {
   font-size: 3em;
 }
 
-p {
+.header-subtitle {
+  font-size: 1.1em !important;
+  color: rgb(136, 136, 136) !important;
+}
+
+p,
+li {
   font-size: 1.2em;
 }
 
-li {
-  font-size: 1.1em;
-}
-
 .notice {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-family: IranSansBold;
 }
 
@@ -311,5 +311,20 @@ li {
 
 .bold {
   font-family: IranSansBold;
+}
+
+@media screen and (max-width: 767px) {
+  .title {
+    font-size: 2.6em;
+  }
+
+  .header-subtitle {
+    font-size: 0.9em !important;
+    padding: 0 2em !important;
+  }
+
+  .notice {
+    font-size: 1.1em !important;
+  }
 }
 </style>

@@ -62,7 +62,7 @@ export default {
 <style lang="scss" scoped>
 @media (max-width: 680px) {
   .blog-section {
-    padding: 0 15% !important;
+    padding: 0 14% !important;
   }
 }
 

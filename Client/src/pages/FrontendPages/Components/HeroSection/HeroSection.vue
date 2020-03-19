@@ -18,8 +18,10 @@
                   native-type="submit"
                   type="warning"
                   class="btn animation-on-hover"
-                  >ورود به پنل کاربری</base-button
                 >
+                  <i class="far fa-user pl-3"></i>
+                  ورود به پنل کاربری
+                </base-button>
               </router-link>
 
               <div class="pr-3">
@@ -28,8 +30,8 @@
                     native-type="submit"
                     type="primary"
                     class="btn animation-on-hover"
-                    >مشاهده همه دوره ها</base-button
-                  >
+                    >مشاهده همه دوره ها
+                  </base-button>
                 </router-link>
               </div>
             </div>
@@ -58,7 +60,9 @@
             native-type="submit"
             type="warning"
             class="btn animation-on-hover"
-            >ورود به پنل کاربری</base-button
+          >
+            <i class="far fa-user pl-3"></i>
+            ورود به پنل کاربری</base-button
           >
         </router-link>
 
@@ -117,7 +121,6 @@ export default {};
   .btn {
     border-radius: 10px !important;
     font-size: 1.2em;
-    // padding: 13px 23px !important;
   }
 }
 
@@ -194,8 +197,8 @@ export default {};
     .btn {
       font-weight: inherit;
       border-radius: 30px;
-      padding: 14px 15px;
-      font-size: 1em;
+      padding: 14px 12px;
+      font-size: 1.1em;
       font-family: IranSansBold;
       margin-bottom: 2.5em;
     }

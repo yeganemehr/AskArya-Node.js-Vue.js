@@ -184,7 +184,7 @@ export default {
 
 @media (max-width: 680px) {
   .top-courses-section {
-    padding: 0 8% !important;
+    padding: 0 7% !important;
   }
   .section-header {
     font-size: 13px;
