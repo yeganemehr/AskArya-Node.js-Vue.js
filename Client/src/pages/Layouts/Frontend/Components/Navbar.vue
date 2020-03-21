@@ -16,16 +16,13 @@
       <router-link class="nav-item d-none d-md-block" tag="li" to="/">
         <a :class="getNavClass('home')">{{ 'خانه' }}</a>
       </router-link>
+
       <li class="nav-item d-md-none ">
         <a class="nav-link" href="/">خانه</a>
       </li>
 
       <!-- All Courses -->
-      <router-link
-        class="nav-item  d-none d-md-block"
-        tag="li"
-        to="/allcourses"
-      >
+      <router-link class="nav-item d-none d-md-block" tag="li" to="allcourses">
         <a :class="getNavClass('allcourses')">{{ 'دوره‌ های غیر حضوری' }}</a>
       </router-link>
       <li class="nav-item d-md-none">
@@ -40,7 +37,7 @@
       >
         <a :class="getNavClass('privateclasses')">{{ 'کلاس های حضوری' }}</a>
       </router-link>
-      <li class="nav-item  d-md-none">
+      <li class="nav-item d-md-none">
         <a class="nav-link" href="/privateclasses">کلاس های حضوری</a>
       </li>
 

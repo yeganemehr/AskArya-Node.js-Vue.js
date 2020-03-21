@@ -21,44 +21,64 @@
           aria-expanded="true"
         >
           <div class="row d-flex align-items-center d-lg-none">
-            <li class="nav-link border-bottom">
+            <!-- Home -->
+            <li class="nav-link border-bottom d-none d-md-block">
               <router-link to="/home" class="nav-item dropdown-item"
                 >خانه</router-link
               >
             </li>
+            <li class="nav-item border-bottom d-md-none">
+              <a class="nav-link" href="/home">خانه</a>
+            </li>
 
-            <li class="nav-link border-bottom">
+            <!-- Dashboard -->
+            <li class="nav-link border-bottom d-none d-md-block">
               <router-link to="/dashboard" class="nav-item dropdown-item"
                 >پنل کاربری</router-link
               >
             </li>
+            <li class="nav-item border-bottom d-md-none">
+              <a class="nav-link" href="/dashboard">پنل کاربری</a>
+            </li>
 
-            <li class="nav-link border-bottom">
+            <!-- Our Courses -->
+            <li class="nav-link border-bottom d-none d-md-block">
               <router-link to="/courses" class="nav-item dropdown-item"
                 >دوره های آموزشی</router-link
               >
             </li>
+            <li class="nav-item border-bottom d-md-none">
+              <a class="nav-link" href="/courses">دوره های آموزشی</a>
+            </li>
 
-            <li class="nav-link border-bottom">
+            <!-- My Courses -->
+            <li class="nav-link border-bottom d-none d-md-block">
               <router-link to="/mycourses" class="nav-item dropdown-item"
                 >در حال یادگیری</router-link
               >
             </li>
+            <li class="nav-item border-bottom d-md-none">
+              <a class="nav-link" href="/mycourses">در حال یادگیری</a>
+            </li>
 
-            <!-- <li class="nav-link border-bottom">
-              <router-link to="/quizzes" class="nav-item dropdown-item">امتحان ها</router-link>
-            </li>-->
-
-            <li class="nav-link border-bottom">
+            <!-- Tickets -->
+            <li class="nav-link border-bottom d-none d-md-block">
               <router-link to="/tickets" class="nav-item dropdown-item"
                 >پشتیبانی</router-link
               >
             </li>
+            <li class="nav-item border-bottom d-md-none">
+              <a class="nav-link" href="/tickets">پشتیبانی</a>
+            </li>
 
-            <li v-if="isAdmin" class="nav-link border-bottom">
+            <!-- Admin Page -->
+            <li v-if="isAdmin" class="nav-link border-bottom d-none d-md-block">
               <router-link to="/managementpage" class="nav-item dropdown-item"
                 >پنل مدیریت</router-link
               >
+            </li>
+            <li v-if="isAdmin" class="nav-item border-bottom d-md-none">
+              <a class="nav-link" href="/managementpage">پنل مدیریت</a>
             </li>
 
             <!-- LOGOUT BUTTON -->

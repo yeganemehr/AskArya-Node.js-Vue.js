@@ -96,11 +96,12 @@
   </div>
 </template>
 <script>
-// import VueRecaptcha from 'vue-recaptcha';
 import backend from '../../backend';
-// import config from '../../config';
 import { BaseCheckbox } from 'src/components';
 import Swal from 'sweetalert';
+
+// import config from '../../config';
+// import VueRecaptcha from 'vue-recaptcha';
 
 export default {
   components: {
@@ -116,9 +117,9 @@ export default {
       formErrors: [],
       loading: false,
       terms: false,
-      // sitekey: config.recaptcha.sitekey,
-      // recaptcha: '',
       googleAuthUrl: '/auth/google'
+      // sitekey: config.recaptcha.sitekey,
+      // recaptcha: ''
     };
   },
   methods: {
@@ -228,7 +229,7 @@ export default {
 
 <style lang="scss" scoped>
 .auth-section {
-  min-height: 85vh;
+  min-height: 75vh;
   background-color: #a961f4;
 }
 
@@ -276,6 +277,4 @@ export default {
 .footer-link:hover {
   color: #cc51e1 !important;
 }
-
-
 </style>
