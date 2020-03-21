@@ -35,7 +35,11 @@
         </router-link>
 
         <div class="d-md-none pr-3" v-if="this.$root.$data.user !== undefined">
-          <router-link class="row d-flex align-items-center nav-item" tag="li" to="/dashboard">
+          <router-link
+            class="row d-flex align-items-center nav-item"
+            tag="li"
+            to="/dashboard"
+          >
             <div class="photo">
               <img :src="userAvatar" />
             </div>
@@ -50,7 +54,10 @@
         <div class="row">
           <div v-if="this.$root.$data.user !== undefined">
             <div class="row">
-              <ul class="navbar-nav text-right" :class="$rtl.isRTL ? 'mr-auto' : 'ml-auto'">
+              <ul
+                class="navbar-nav text-right"
+                :class="$rtl.isRTL ? 'mr-auto' : 'ml-auto'"
+              >
                 <base-dropdown
                   tag="li"
                   :menu-on-right="!$rtl.isRTL"
@@ -70,7 +77,9 @@
                         <div class="photo">
                           <img :src="userAvatar" />
                         </div>
-                        <div class="d-flex align-items-center pr-3 profile-link-text">
+                        <div
+                          class="d-flex align-items-center pr-3 profile-link-text"
+                        >
                           <p class="px-2">پروفایل من</p>
                           <i class="i-chevron fas fa-chevron-down"></i>
                         </div>
@@ -114,7 +123,10 @@
                   </li>
 
                   <li v-if="isAdmin" class="nav-link">
-                    <router-link to="/managementpage" class="nav-item dropdown-item">
+                    <router-link
+                      to="/managementpage"
+                      class="nav-item dropdown-item"
+                    >
                       <i class="fas fa-tools pl-2"></i>
                       پنل مدیریت
                     </router-link>
@@ -125,7 +137,8 @@
                       class="nav-item dropdown-item"
                       to="#"
                       @click.native="logoutListener"
-                    >خروج</router-link>
+                      >خروج</router-link
+                    >
                   </li>
                 </base-dropdown>
               </ul>
@@ -134,12 +147,22 @@
           <div class="row login-register-buttons" v-else>
             <div class="pr-3">
               <router-link to="/register">
-                <base-button native-type="submit" type="info" class="btn-simple btn">عضویت</base-button>
+                <base-button
+                  native-type="submit"
+                  type="info"
+                  class="btn-simple btn"
+                  >عضویت</base-button
+                >
               </router-link>
             </div>
             <div class="pr-3">
               <router-link to="/login">
-                <base-button native-type="submit" type="danger" class="btn-simple btn">ورود کاربر</base-button>
+                <base-button
+                  native-type="submit"
+                  type="danger"
+                  class="btn-simple btn"
+                  >ورود کاربر</base-button
+                >
               </router-link>
             </div>
           </div>
@@ -150,7 +173,10 @@
     <div class="wrapper wrapper-full-page">
       <div class="full-page" :class="pageClass">
         <div class="content-custom">
-          <zoom-center-transition :duration="pageTransitionDuration" mode="out-in">
+          <zoom-center-transition
+            :duration="pageTransitionDuration"
+            mode="out-in"
+          >
             <router-view></router-view>
           </zoom-center-transition>
         </div>
@@ -163,9 +189,12 @@
                 <div class="col-md-5 about-us">
                   <h4 class="title text-white">درباره اسک آریا</h4>
                   <hr class="fadeline3 d-none d-md-block" />
-                  <p
-                    class="text-white"
-                  >اسک آریا یکی از پرتلاش‌ترین و بروزترین وبسایت های آموزشی در سطح ایران است که همیشه تلاش کرده تا بتواند جدیدترین و بروزترین مقالات و دوره‌های آموزشی را در اختیار علاقه‌مندان ایرانی قرار دهد.</p>
+                  <p class="text-white">
+                    اسک آریا یکی از پرتلاش‌ترین و بروزترین وبسایت های آموزشی در
+                    سطح ایران است که همیشه تلاش کرده تا بتواند جدیدترین و
+                    بروزترین مقالات و دوره‌های آموزشی را در اختیار علاقه‌مندان
+                    ایرانی قرار دهد.
+                  </p>
                 </div>
                 <div class="col-md-3 askarya-sections">
                   <hr class="fadeline3 d-md-none" />
@@ -173,7 +202,9 @@
                   <hr class="fadeline3 d-none d-md-block" />
                   <ul>
                     <li class="footer-li">
-                      <router-link to="/privateclasses">کلاس های حضوری</router-link>
+                      <router-link to="/privateclasses"
+                        >کلاس های حضوری</router-link
+                      >
                     </li>
                     <li class="footer-li">
                       <router-link to="/comingsoon">میت آپ</router-link>
@@ -190,9 +221,10 @@
                   <hr class="fadeline3 d-md-none" />
                   <h4 class="title text-white">ارتباط با ما</h4>
                   <hr class="fadeline3 d-none d-md-block" />
-                  <p
-                    class="pt-3 text-white"
-                  >شما میتوانید با استفاده از یکی از راه‌های زیر با ما ارتباط برقرار کنید:</p>
+                  <p class="pt-3 text-white">
+                    شما میتوانید با استفاده از یکی از راه‌های زیر با ما ارتباط
+                    برقرار کنید:
+                  </p>
                   <p class="telegram">
                     <a href="https://t.me/AskAryaSomething" class="li-ic">
                       شماره تلگرام:‌ 09032227796
@@ -312,8 +344,6 @@ export default {
             message: 'درخواست شما توسط سرور رد شد'
           });
         }
-        // cookie.removeItem('session_askarya');
-        // cookie.removeItem('remember_token');
         localStorage.removeItem('remember_token');
         window.location.href = '/';
       });

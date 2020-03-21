@@ -11,12 +11,16 @@
         <!-- <p
           class="px-3 my-auto vip-desc text-center py-3 text-black"
         >با خریداری این پنل شما میتوانید به ویدیوهای ویژه سایت به مدت یک ماه بطور کامل دسترسی داشته باشید.</p>-->
-        <p
-          class="my-auto vip-desc text-center py-3 text-black"
-        >با خریداری این پنل کاربری شما میتوانید به ویدیوهای ویژه سایت به بطور کامل دسترسی داشته باشید.</p>
+        <p class="my-auto vip-desc text-center py-3 text-black">
+          با خریداری این پنل کاربری شما میتوانید به ویدیوهای ویژه سایت به بطور
+          کامل دسترسی داشته باشید.
+        </p>
       </div>
       <div class="col-md-2 dropdown-prices my-auto">
-        <base-dropdown title="عضویت" title-classes="btn btn-default animation-on-hover px-5">
+        <base-dropdown
+          title="عضویت"
+          title-classes="btn btn-default animation-on-hover px-5"
+        >
           <a class="dropdown-item" href="#" @click.prevent="payment">
             ماهانه -
             <span>39</span> هزار تومان
@@ -114,7 +118,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 @media (max-width: 680px) {

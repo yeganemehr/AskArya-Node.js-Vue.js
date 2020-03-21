@@ -30,24 +30,6 @@ const VerificationPayments = () =>
     'src/pages/Courses/VerificationPayments.vue'
   );
 
-const QuizInformationPage = () =>
-  import(
-    /* webpackChunkName: "extra" */
-    'src/pages/Quiz/QuizInformationPage.vue'
-  );
-
-const SingleQuizLayout = () =>
-  import(/* webpackChunkName: "extra" */ 'src/pages/Quiz/SingleQuizLayout.vue');
-
-const GradeSheet = () =>
-  import(/* webpackChunkName: "extra" */ 'src/pages/Quiz/GradeSheet.vue');
-
-const AllQuizzes = () =>
-  import(/* webpackChunkName: "extra" */ 'src/pages/Quiz/AllQuizzes.vue');
-
-const Points = () =>
-  import(/* webpackChunkName: "extra" */ 'src/pages/Points/Points.vue');
-
 const ManagementPage = () =>
   import(
     /* webpackChunkName: "extra" */
@@ -91,12 +73,6 @@ const BlogOverview = () =>
   import(
     /* webpackChunkName: "extra" */
     'src/pages/AdminSection/ManageBlogs/BlogOverview.vue'
-  );
-
-const QuizOverview = () =>
-  import(
-    /* webpackChunkName: "extra" */
-    'src/pages/AdminSection/ManageQuizzes/QuizOverview.vue'
   );
 
 //////////////////////////////////////////////////////////////////////
@@ -298,28 +274,6 @@ const routes = [
       //     default: SingleLesson
       //   }
       // },
-      // {
-      //   path: 'singlequizlayout',
-      //   name: 'Single Quiz',
-      //   components: {
-      //     default: SingleQuizLayout
-      //   }
-      // },
-
-      // {
-      //   path: 'gradesheet',
-      //   name: 'Grade Sheet',
-      //   components: {
-      //     default: GradeSheet
-      //   }
-      // },
-      {
-        path: 'quizzes',
-        name: 'AllQuizzes',
-        components: {
-          default: AllQuizzes
-        }
-      },
       {
         path: 'courseoverview',
         name: 'CourseOverview',
@@ -384,14 +338,6 @@ const routes = [
         components: {
           default: CreateTicket
         }
-      },
-
-      {
-        path: 'points',
-        name: 'Points',
-        components: {
-          default: Points
-        }
       }
     ]
   },
@@ -411,27 +357,6 @@ const routes = [
         name: 'Single Lesson',
         components: {
           default: SingleLesson
-        }
-      },
-      {
-        path: 'quizinformation',
-        name: 'Quiz Information Page',
-        components: {
-          default: QuizInformationPage
-        }
-      },
-      {
-        path: 'singlequizlayout',
-        name: 'Single Quiz',
-        components: {
-          default: SingleQuizLayout
-        }
-      },
-      {
-        path: 'gradesheet',
-        name: 'Grade Sheet',
-        components: {
-          default: GradeSheet
         }
       }
     ]

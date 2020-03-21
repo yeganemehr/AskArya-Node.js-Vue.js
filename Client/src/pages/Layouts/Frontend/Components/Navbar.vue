@@ -162,28 +162,15 @@
 </template>
 
 <script>
-import { BaseNav } from 'src/components';
 import { CollapseTransition } from 'vue2-transitions';
+import { BaseNav } from 'src/components';
 
 import backend from '../../../../backend';
 
 export default {
   components: {
-    BaseNav,
-    CollapseTransition
-  },
-  props: {
-    backgroundColor: {
-      type: String,
-      default: 'black'
-    }
-  },
-  data() {
-    return {
-      showMenu: false,
-      menuTransitionDuration: 250,
-      pageTransitionDuration: 200
-    };
+    CollapseTransition,
+    BaseNav
   },
   computed: {
     title() {
@@ -198,6 +185,13 @@ export default {
     isAdmin() {
       return this.$root.$data.user && this.$root.$data.user.admin;
     }
+  },
+  data() {
+    return {
+      showMenu: false,
+      menuTransitionDuration: 250,
+      pageTransitionDuration: 200
+    };
   },
   methods: {
     getNavClass(nav) {
@@ -238,9 +232,6 @@ export default {
     closeMenu() {
       document.body.classList.remove('nav-open');
       this.showMenu = false;
-    },
-    setPageClass() {
-      this.pageClass = `${this.$route.name}-page`.toLowerCase();
     },
     logoutListener(e) {
       e.preventDefault();
