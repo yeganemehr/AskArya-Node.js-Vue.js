@@ -12,49 +12,25 @@
       </router-link>
     </div>
     <ul class="navbar-nav">
-      <!-- Home -->
-      <router-link class="nav-item d-none d-md-block" tag="li" to="/">
+      <router-link class="nav-item" tag="li" to="/">
         <a :class="getNavClass('home')">{{ 'خانه' }}</a>
       </router-link>
-      <li class="nav-item d-md-none ">
-        <a class="nav-link" href="/">خانه</a>
-      </li>
 
-      <!-- All Courses -->
-      <router-link
-        class="nav-item  d-none d-md-block"
-        tag="li"
-        to="/allcourses"
-      >
+      <router-link class="nav-item" tag="li" to="/allcourses">
         <a :class="getNavClass('allcourses')">{{ 'دوره‌ های غیر حضوری' }}</a>
       </router-link>
-      <li class="nav-item d-md-none">
-        <a class="nav-link" href="/allcourses">دوره‌ های غیر حضوری</a>
-      </li>
 
-      <!-- Private Classes -->
-      <router-link
-        class="nav-item d-none d-md-block"
-        tag="li"
-        to="/privateclasses"
-      >
+      <router-link class="nav-item" tag="li" to="/privateclasses">
         <a :class="getNavClass('privateclasses')">{{ 'کلاس های حضوری' }}</a>
       </router-link>
-      <li class="nav-item  d-md-none">
-        <a class="nav-link" href="/privateclasses">کلاس های حضوری</a>
-      </li>
 
       <!-- <router-link class="nav-item" tag="li" to="/articles">
         <a :class="getNavClass('articles')">{{ 'مقالات' }}</a>
       </router-link> -->
 
-      <!-- Contact Us -->
-      <router-link class="nav-item d-none d-md-block" tag="li" to="/contact">
+      <router-link class="nav-item" tag="li" to="/contact">
         <a :class="getNavClass('contact')">{{ 'تماس با ما' }}</a>
       </router-link>
-      <li class="nav-item  d-md-none">
-        <a class="nav-link" href="/contact">تماس با ما</a>
-      </li>
 
       <div class="d-md-none pr-3" v-if="this.$root.$data.user !== undefined">
         <router-link
@@ -159,8 +135,7 @@
           </div>
         </div>
         <div class="row login-register-buttons" v-else>
-          <!-- Register Button -->
-          <div class="pr-3 register-button d-none d-md-block">
+          <div class="pr-3 register-button">
             <router-link to="/register">
               <base-button
                 native-type="submit"
@@ -170,19 +145,7 @@
               >
             </router-link>
           </div>
-          <div class="pr-3 register-button d-md-none">
-            <a href="/register">
-              <base-button
-                native-type="submit"
-                type="danger"
-                class="btn-simple btn"
-                >ثبت نام</base-button
-              >
-            </a>
-          </div>
-
-          <!-- Login Button -->
-          <div class="pr-3 login-button d-none d-md-block">
+          <div class="pr-3 login-button">
             <router-link to="/login">
               <base-button
                 native-type="submit"
@@ -191,16 +154,6 @@
                 >ورود کاربر</base-button
               >
             </router-link>
-          </div>
-          <div class="pr-3 login-button d-md-none">
-            <a href="/login">
-              <base-button
-                native-type="submit"
-                type="info"
-                class="btn-simple btn"
-                >ورود کاربر</base-button
-              >
-            </a>
           </div>
         </div>
       </div>
