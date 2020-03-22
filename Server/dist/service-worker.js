@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.c1af21594e31976ee90c0cc7ddf4d52c.js"
+  "/precache-manifest.8928d012d71f4c3ab103ebe72b0b1a21.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "askarya"});

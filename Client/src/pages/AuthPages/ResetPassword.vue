@@ -1,56 +1,50 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-md-9 ml-auto mr-auto pt-5">
+  <div class="auth-section d-flex align-items-center">
+    <div class="container">
+      <card class="shadow">
         <form @submit="checkForm">
-          <card class="card-login">
-            <template slot="header">
-              <h2 class="card-title text-center py-1 px-4 text-danger">
-                بازیابی پسورد
-              </h2>
-            </template>
-            <div class="pt-4">
-              <label class="pull-right">پست الکترونیک</label>
-              <base-input
-                placeholder="پست الکترونیک"
-                autocomplete="username"
-                v-model="email"
-                :required="true"
-                :error="fieldErrors.email"
-              ></base-input>
-            </div>
-            <div class="pt-4">
-              <label class="pull-right">کلمه عبور جدید</label>
-              <base-input
-                type="password"
-                v-model="password"
-                :required="true"
-                :error="fieldErrors.password"
-              ></base-input>
-            </div>
+          <h1 class="auth-title text-primary py-4">بازیابی پسورد</h1>
+          <div class="pt-4">
+            <label class="pull-right">پست الکترونیک</label>
+            <base-input
+              placeholder="پست الکترونیک"
+              autocomplete="username"
+              v-model="email"
+              :required="true"
+              :error="fieldErrors.email"
+            ></base-input>
+          </div>
+          <div class="pt-4">
+            <label class="pull-right">کلمه عبور جدید</label>
+            <base-input
+              type="password"
+              v-model="password"
+              :required="true"
+              :error="fieldErrors.password"
+            ></base-input>
+          </div>
 
-            <div class="text-right" v-if="formErrors.length">
-              <b>لطفا اشتباهات زیر را تصحیح کنید:</b>
-              <ul>
-                <li v-for="(error, key) in formErrors" :key="key">
-                  {{ error }}
-                </li>
-              </ul>
-            </div>
-            <div slot="footer">
-              <base-button
-                type="primary"
-                nativeType="submit"
-                class="mb-3"
-                size="lg"
-                :loading="loading"
-                block
-                >بازیابی پسورد</base-button
-              >
-            </div>
-          </card>
+          <div class="text-right" v-if="formErrors.length">
+            <b>لطفا اشتباهات زیر را تصحیح کنید:</b>
+            <ul>
+              <li v-for="(error, key) in formErrors" :key="key">
+                {{ error }}
+              </li>
+            </ul>
+          </div>
+          <div slot="footer">
+            <base-button
+              type="primary"
+              nativeType="submit"
+              class="mb-3"
+              size="lg"
+              :loading="loading"
+              block
+              >بازیابی پسورد</base-button
+            >
+          </div>
         </form>
-      </div>
+      </card>
     </div>
   </div>
 </template>
@@ -64,7 +58,7 @@ export default {
       email: null,
       password: null,
       formErrors: [],
-      loading: false
+      loading: false,
     };
   },
   methods: {
@@ -85,7 +79,7 @@ export default {
       if (haveError) {
         return;
       }
-      const errorHandler = response => {
+      const errorHandler = (response) => {
         if (response && response.data && response.data.status === 'error') {
           this.formErrors = Array.isArray(response.data.data)
             ? response.data.data
@@ -97,48 +91,41 @@ export default {
       backend
         .post('password/reset/' + this.$route.params.token, {
           email: this.email,
-          password: this.password
+          password: this.password,
         })
-        .then(response => {
+        .then((response) => {
           this.loading = false;
           if (response.data.status === 'error') {
             errorHandler(response);
             return;
           }
         })
-        .catch(error => {
+        .catch((error) => {
           this.loading = false;
           errorHandler(error.response);
         });
       window.location.href = '/login';
       // this.$router.push(this.$route.query.backTo || 'login');
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
+.auth-section {
+  height: 90vh;
+  background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
+}
+
 .card {
-  background: rgb(241, 241, 241) !important;
-  min-height: 100vh;
+  width: 400px !important;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.card-title {
-  font-family: IranSansBold !important;
-}
-
-.white-content .card:not(.card-white) label:not(.btn) {
-  color: #344675 !important;
-  font-size: 0.9rem;
-}
-
-.login-card {
-  padding-top: 20%;
-}
-.navbar-nav .nav-item p {
-  line-height: inherit;
-  margin-left: 5px;
-}
-.googleicon {
-  font-size: 2rem;
+.auth-title {
+  font-size: 2.4em;
+  font-family: IranSansBold;
+  text-align: center;
+  margin: 0;
 }
 </style>

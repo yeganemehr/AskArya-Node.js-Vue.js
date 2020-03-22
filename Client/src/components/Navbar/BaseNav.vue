@@ -43,29 +43,29 @@ export default {
       type: Boolean,
       default: false,
       description:
-        'Whether navbar menu is shown (valid for viewports < specified by `expand` prop)'
+        'Whether navbar menu is shown (valid for viewports < specified by `expand` prop)',
     },
     transparent: {
       type: Boolean,
       default: false,
-      description: 'Whether navbar is transparent'
+      description: 'Whether navbar is transparent',
     },
     expand: {
       type: String,
       default: 'md',
-      description: 'Breakpoint where nav should expand'
+      description: 'Breakpoint where nav should expand',
     },
     menuClasses: {
       type: [String, Object, Array],
       default: '',
       description:
-        'Navbar menu (items) classes. Can be used to align menu items to the right/left'
+        'Navbar menu (items) classes. Can be used to align menu items to the right/left',
     },
     containerClasses: {
       type: [String, Object, Array],
       default: 'container-fluid',
       description:
-        'Container classes. Can be used to control container classes (contains both navbar brand and menu items)'
+        'Container classes. Can be used to control container classes (contains both navbar brand and menu items)',
     },
     type: {
       type: String,
@@ -79,22 +79,22 @@ export default {
           'white',
           'primary',
           'info',
-          'vue'
+          'vue',
         ].includes(value);
       },
-      description: 'Navbar color type'
-    }
+      description: 'Navbar color type',
+    },
   },
   model: {
     prop: 'show',
-    event: 'change'
+    event: 'change',
   },
   components: {
-    CollapseTransition
+    CollapseTransition,
   },
   data() {
     return {
-      transitionFinished: true
+      transitionFinished: true,
     };
   },
   computed: {
@@ -102,7 +102,7 @@ export default {
       let color = `bg-${this.type}`;
       let classes = [
         { 'navbar-transparent': !this.show && this.transparent },
-        { [`navbar-expand-${this.expand}`]: this.expand }
+        { [`navbar-expand-${this.expand}`]: this.expand },
       ];
       if (this.position) {
         classes.push(`navbar-${this.position}`);
@@ -118,7 +118,7 @@ export default {
     },
     hasMenu() {
       return this.$slots.default;
-    }
+    },
   },
   methods: {
     toggleMenu() {
@@ -129,8 +129,8 @@ export default {
     },
     onTransitionEnd() {
       this.transitionFinished = true;
-    }
-  }
+    },
+  },
 };
 </script>
 <style></style>

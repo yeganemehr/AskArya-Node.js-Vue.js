@@ -17,7 +17,7 @@
         <a :class="getNavClass('home')">{{ 'خانه' }}</a>
       </router-link>
 
-      <li class="nav-item d-md-none ">
+      <li class="nav-item d-md-none">
         <a class="nav-link" href="/">خانه</a>
       </li>
 
@@ -49,7 +49,7 @@
       <router-link class="nav-item d-none d-md-block" tag="li" to="/contact">
         <a :class="getNavClass('contact')">{{ 'تماس با ما' }}</a>
       </router-link>
-      <li class="nav-item  d-md-none">
+      <li class="nav-item d-md-none">
         <a class="nav-link" href="/contact">تماس با ما</a>
       </li>
 
@@ -214,7 +214,7 @@ import backend from '../../../../backend';
 export default {
   components: {
     CollapseTransition,
-    BaseNav
+    BaseNav,
   },
   computed: {
     title() {
@@ -228,13 +228,13 @@ export default {
     },
     isAdmin() {
       return this.$root.$data.user && this.$root.$data.user.admin;
-    }
+    },
   },
   data() {
     return {
       showMenu: false,
       menuTransitionDuration: 250,
-      pageTransitionDuration: 200
+      pageTransitionDuration: 200,
     };
   },
   methods: {
@@ -279,17 +279,17 @@ export default {
     },
     logoutListener(e) {
       e.preventDefault();
-      backend.get('logout').then(response => {
+      backend.get('logout').then((response) => {
         if (response.data.status !== 'success') {
           return this.$notify({
             type: 'danger',
-            message: 'درخواست شما توسط سرور رد شد'
+            message: 'درخواست شما توسط سرور رد شد',
           });
         }
         localStorage.removeItem('remember_token');
         window.location.href = '/';
       });
-    }
+    },
   },
   beforeDestroy() {
     this.closeMenu();
@@ -311,8 +311,8 @@ export default {
   watch: {
     $route() {
       this.setPageClass();
-    }
-  }
+    },
+  },
 };
 </script>
 

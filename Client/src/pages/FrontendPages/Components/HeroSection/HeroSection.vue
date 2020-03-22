@@ -108,7 +108,7 @@ export default {};
     line-height: inherit;
     font-family: IranSansBold !important;
     color: #fff !important;
-    text-shadow: 2px 2px #5256c94d;
+    text-shadow: 2px 2px #5256c91f;
   }
 
   .hero-subtitle {
@@ -151,6 +151,7 @@ export default {};
     font-size: 2em;
     padding-top: 30px;
     line-height: inherit;
+    margin: 0;
   }
 
   .hero-subtitle {
@@ -186,6 +187,7 @@ export default {};
       color: #fff !important;
       text-align: right !important;
       padding-top: 0.5em;
+      margin: 0 0 15px 0;
     }
 
     .hero-subtitle {

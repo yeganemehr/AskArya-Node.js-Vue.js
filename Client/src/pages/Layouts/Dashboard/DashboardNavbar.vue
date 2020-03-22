@@ -99,20 +99,20 @@ import backend from '../../../backend';
 
 export default {
   components: {
-    BaseNav
+    BaseNav,
   },
   data() {
     return {
       showMenu: false,
       activeNotifications: false,
       searchModalVisible: false,
-      searchQuery: ''
+      searchQuery: '',
     };
   },
   computed: {
     isAdmin() {
       return this.$root.$data.user && this.$root.$data.user.admin;
-    }
+    },
   },
   methods: {
     toggleNavbar() {
@@ -146,11 +146,11 @@ export default {
     // },
     logoutListener(e) {
       e.preventDefault();
-      backend.get('logout').then(response => {
+      backend.get('logout').then((response) => {
         if (response.data.status !== 'success') {
           return this.$notify({
             type: 'danger',
-            message: 'درخواست شما توسط سرور رد شد'
+            message: 'درخواست شما توسط سرور رد شد',
           });
         }
         // cookie.removeItem('session_askarya');
@@ -172,8 +172,8 @@ export default {
       } else {
         next();
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

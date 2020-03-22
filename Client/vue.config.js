@@ -19,8 +19,8 @@ module.exports = {
       alias: {
         src: resolveSrc('src'),
         assets: resolveSrc('src/assets'),
-        'chart.js': 'chart.js/dist/Chart.js'
-      }
+        'chart.js': 'chart.js/dist/Chart.js',
+      },
     },
 
     optimization: {
@@ -40,16 +40,16 @@ module.exports = {
             minChunks: 2,
             priority: -20,
             chunks: 'initial',
-            reuseExistingChunk: true
+            reuseExistingChunk: true,
           },
           element: {
             name: 'element',
             test: /[\\/]node_modules[\\/]element-ui[\\/]/,
             chunks: 'initial',
-            priority: -30
-          }
-        }
-      }
+            priority: -30,
+          },
+        },
+      },
     },
 
     // optimization: {
@@ -60,16 +60,16 @@ module.exports = {
 
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({
-        maxChunks: 6
+        maxChunks: 6,
       }),
 
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify('production')
+        'process.env.NODE_ENV': JSON.stringify('production'),
       }),
 
       new CKEditorWebpackPlugin({
-        language: 'en'
-      })
+        language: 'en',
+      }),
 
       // new HtmlWebpackPlugin({
       //   vue: true
@@ -90,7 +90,7 @@ module.exports = {
       //     blockJSRequests: false
       //   }
       // })
-    ]
+    ],
   },
 
   pwa: {
@@ -100,14 +100,14 @@ module.exports = {
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: '#27408b',
     iconPaths: {
-      msTileImage: 'img/icons/mstile-150x150.png'
-    }
+      msTileImage: 'img/icons/mstile-150x150.png',
+    },
   },
 
   pluginOptions: {},
 
   css: {
-    sourceMap: process.env.NODE_ENV !== 'production'
+    sourceMap: process.env.NODE_ENV !== 'production',
   },
 
   // Output directory for Node.js
@@ -116,21 +116,21 @@ module.exports = {
   devServer: {
     proxy: {
       '^/api': {
-        target: 'http://localhost:3000'
+        target: 'http://localhost:3000',
       },
       '^/auth/google$': {
-        target: 'http://localhost:3000'
+        target: 'http://localhost:3000',
       },
       '^/user/activation/': {
-        target: 'http://localhost:3000'
+        target: 'http://localhost:3000',
       },
       '^/uploads': {
-        target: 'http://localhost:3000'
-      }
-    }
+        target: 'http://localhost:3000',
+      },
+    },
   },
 
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     const svgRule = config.module.rule('svg');
 
     svgRule.exclude.add(
@@ -152,10 +152,10 @@ module.exports = {
       .tap(() => {
         return styles.getPostCssConfig({
           themeImporter: {
-            themePath: require.resolve('@ckeditor/ckeditor5-theme-lark')
+            themePath: require.resolve('@ckeditor/ckeditor5-theme-lark'),
           },
-          minify: true
+          minify: true,
         });
       });
-  }
+  },
 };

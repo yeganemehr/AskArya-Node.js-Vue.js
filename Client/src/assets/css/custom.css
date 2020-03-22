@@ -21,28 +21,6 @@
 }
 
 @font-face {
-  font-family: 'IranSansDN';
-  src: url('../fonts/IranSansDN/IranSansDN.eot');
-  src: url('../fonts/IranSansDN/IranSansDN.eot') format('embedded-opentype'),
-    url('../fonts/IranSansDN/IranSansDN.woff2') format('woff2'),
-    url('../fonts/IranSansDN/IranSansDN.woff') format('woff'),
-    url('../fonts/IranSansDN/IranSansDN.ttf') format('truetype');
-  font-weight: normal !important;
-  font-style: normal !important;
-}
-
-@font-face {
-  font-family: 'IranSansDNBold';
-  src: url('../fonts/IranSansDN/IranSansDNBold.eot');
-  src: url('../fonts/IranSansDN/IranSansDNBold.eot') format('embedded-opentype'),
-    url('../fonts/IranSansDN/IranSansDNBold.woff2') format('woff2'),
-    url('../fonts/IranSansDN/IranSansDNBold.woff') format('woff'),
-    url('../fonts/IranSansDN/IranSansDNBold.ttf') format('truetype');
-  font-weight: bold !important;
-  font-style: normal !important;
-}
-
-@font-face {
   font-family: 'IranSansBlog';
   src: url('../fonts/IranSansBlog/IRANSansWeb.eot');
   src: url('../fonts/IranSansBlog/IRANSansWeb.eot') format('embedded-opentype'),

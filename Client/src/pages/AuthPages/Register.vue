@@ -1,7 +1,7 @@
 <template>
   <div class="auth-section d-flex align-items-center">
-    <div class="container auth-box px-3">
-      <card>
+    <div class="container">
+      <card class="shadow">
         <form @submit="checkForm" id="register-form">
           <h1 class="auth-title text-primary py-4">ثبت نام</h1>
           <div class="row">
@@ -231,12 +231,12 @@ export default {
 
 <style lang="scss" scoped>
 .auth-section {
-  min-height: 90vh;
-  background-color: #a961f4;
+  height: 90vh;
+  background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
 }
 
-.auth-box {
-  max-width: 400px;
+.card {
+  width: 400px !important;
   margin-right: auto;
   margin-left: auto;
 }

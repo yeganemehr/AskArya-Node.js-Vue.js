@@ -7,7 +7,10 @@
           <div class="text-center px-3 py-5">
             <h1 class="course-title">{{ title }}</h1>
             <!-- Course Image -->
-            <img class="course-image rounded-circle img-fluid py-4" :src="course.image" />
+            <img
+              class="course-image rounded-circle img-fluid py-4"
+              :src="course.image"
+            />
             <p class="episode-title" v-if="episode.id">{{ course.title }}</p>
             <div class="body pt-3" v-html="body"></div>
           </div>
@@ -26,9 +29,9 @@
               <i class="icon far fa-clock"></i>
               <h5 class="icon-data">
                 {{ episode.time ? episodeTime : courseTime }}
-                <span
-                  class="icon-text pr-1"
-                >{{ episode.time ? "زمان این درس" : "زمان کل دوره" }}</span>
+                <span class="icon-text pr-1">{{
+                  episode.time ? 'زمان این درس' : 'زمان کل دوره'
+                }}</span>
               </h5>
             </div>
 
@@ -83,18 +86,22 @@
                 تهیه دوره
               </base-button>
               <p class="text-center pay-text pt-2">
-                برای دسترسی به این درس لطفا لینک
-                خرید را دنبال کنید.
+                برای دسترسی به این درس لطفا لینک خرید را دنبال کنید.
               </p>
             </div>
             <!-- </p> -->
-            <p v-else-if="type.toLowerCase() == 'vip'" class="text-center pay-text">
+            <p
+              v-else-if="type.toLowerCase() == 'vip'"
+              class="text-center pay-text"
+            >
               <!-- <i class="fas fa-info pl-3"></i> -->
               برای دسترسی به این درس اکانت VIP تهیه کنید.
               <span class="text-center pr-3">
                 <div class="w-100 d-md-none pt-2"></div>
                 <router-link to="/courses">
-                  <base-button native-type="submit" type="info" class="btn">تهیه عضویت ویژه</base-button>
+                  <base-button native-type="submit" type="info" class="btn"
+                    >تهیه عضویت ویژه</base-button
+                  >
                 </router-link>
               </span>
             </p>
@@ -135,15 +142,15 @@
           :episodes="course.episodes"
           :scrollable="false"
           :maxepisodes="4"
-          :purchased="! notEnrolled"
+          :purchased="!notEnrolled"
           :courseDonePercentage="courseDonePercentage"
           :courseRemainPercentage="courseRemainPercentage"
           :activeEpisode="this.episode ? this.episode.id : ''"
           @buy="openBuyCourse"
         ></AllUnits>
-        <p
-          class="quote-text text-center pb-2 d-none d-md-block"
-        >"تا زمانی که متوقف نشوید، مهم نیست که چقدر آهسته حرکت می کنید."</p>
+        <p class="quote-text text-center pb-2 d-none d-md-block">
+          "تا زمانی که متوقف نشوید، مهم نیست که چقدر آهسته حرکت می کنید."
+        </p>
       </div>
     </div>
     <modal
@@ -157,7 +164,13 @@
         <span class="course-title-modal text-danger">{{ course.title }}</span>
       </h5>
       <div slog="body" class="text-right rtl">
-        <p>{{ this.$root._data.user ? "پرداخت از درگاه بانک با استفاده از کلیه کارت‌های عضو شتاب." : "برای ثبت نام در این دوره باید حتما به حساب کاربری اسک آریا وارد شوید." }}</p>
+        <p>
+          {{
+            this.$root._data.user
+              ? 'پرداخت از درگاه بانک با استفاده از کلیه کارت‌های عضو شتاب.'
+              : 'برای ثبت نام در این دوره باید حتما به حساب کاربری اسک آریا وارد شوید.'
+          }}
+        </p>
         <ul class="list-group">
           <li class="list-group-item">
             <p class="float-right text-dark course-price-title">قیمت دوره</p>
@@ -170,7 +183,8 @@
           @click="buyCourseListener"
           native-type="button"
           class="btn-block btn-success d-block w-100"
-        >{{ this.$root._data.user ? "پرداخت از درگاه" : "ورود" }}</base-button>
+          >{{ this.$root._data.user ? 'پرداخت از درگاه' : 'ورود' }}</base-button
+        >
       </div>
     </modal>
   </div>
@@ -193,7 +207,7 @@ export default {
     VideoButtons,
     modal: Modal,
     [Carousel.name]: Carousel,
-    [CarouselItem.name]: CarouselItem
+    [CarouselItem.name]: CarouselItem,
   },
   data() {
     return {
@@ -208,12 +222,12 @@ export default {
         categories: [],
         user: {
           id: '',
-          name: ''
+          name: '',
         },
         episodes: [],
         price: '',
         createdAt: '',
-        download: ''
+        download: '',
       },
       episode: {
         id: '',
@@ -226,7 +240,7 @@ export default {
         time: '',
         downloadCount: 0,
         viewCount: 0,
-        commentCount: 0
+        commentCount: 0,
       },
       id: '',
       title: '',
@@ -244,7 +258,7 @@ export default {
       canMarkAsDone: false,
       loadingMarkAsDone: false,
       courseDonePercentage: 0,
-      courseRemainPercentage: 0
+      courseRemainPercentage: 0,
     };
   },
   methods: {
@@ -255,7 +269,7 @@ export default {
             `courses/${this.$route.params.course}/unit-${this.$route.params.unit}`
           )
           .then(
-            response => {
+            (response) => {
               this.episode = response.data.data.episode;
               this.course = response.data.data.course;
               this.notEnrolled = !response.data.data.enrolled;
@@ -294,7 +308,7 @@ export default {
               this.courseDonePercentage = this.course.done;
               this.courseRemainPercentage = (100 - this.course.done).toFixed(2);
             },
-            err => {
+            (err) => {
               this.loadingNext = false;
               this.loadingPrev = false;
               this.loadingMarkAsDone = false;
@@ -303,7 +317,7 @@ export default {
       } else {
         this.canMarkAsDone = false;
         backend.get(`courses/${this.$route.params.slug}`).then(
-          response => {
+          (response) => {
             this.course = response.data.data.course;
             this.notEnrolled = !response.data.data.enrolled;
             // console.log('this.notEnrolled', this.notEnrolled);
@@ -325,7 +339,7 @@ export default {
             this.courseDonePercentage = this.course.done;
             this.courseRemainPercentage = (100 - this.course.done).toFixed(2);
           },
-          err => {
+          (err) => {
             this.loadingNext = false;
             this.loadingPrev = false;
             this.loadingMarkAsDone = false;
@@ -360,19 +374,19 @@ export default {
       e.target.innerHTML = `<i class="fas fa-spinner fa-spin"></i>`;
       if (this.$root._data.user) {
         backend.post(`courses/${this.course.id}/buy`).then(
-          response => {
+          (response) => {
             e.target.disabled = false;
             window.location.href = response.data.redirect;
             e.target.innerHTML = `پرداخت از درگاه`;
           },
-          response => {
+          (response) => {
             e.target.disabled = false;
             e.target.innerHTML = `پرداخت از درگاه`;
             Swal({
               icon: 'error',
               title: 'خطا',
               className: 'swal-text-center',
-              text: `ارتباط با سامانه به خوبی برقرار نشد. لطفا اینترنت خود را بررسی کنید.`
+              text: `ارتباط با سامانه به خوبی برقرار نشد. لطفا اینترنت خود را بررسی کنید.`,
             });
           }
         );
@@ -381,7 +395,7 @@ export default {
         setTimeout(() => {
           this.$router.push({
             name: 'Login',
-            query: { backTo: encodeURI(`courses/${this.course.slug}`) }
+            query: { backTo: encodeURI(`courses/${this.course.slug}`) },
           });
         }, 100);
       }
@@ -433,7 +447,7 @@ export default {
           }`
         )
         .then(
-          response => {
+          (response) => {
             this.courseDonePercentage = response.data.done;
             this.courseRemainPercentage = (100 - response.data.done).toFixed(2);
             this.loadingMarkAsDone = false;
@@ -446,16 +460,16 @@ export default {
               }
             }
           },
-          err => {
+          (err) => {
             this.loadingMarkAsDone = false;
             this.$notify({
               type: 'danger',
               message: 'ارتباط با سرور بدرستی برقرار نشد.',
-              icon: 'tim-icons icon-bell-55'
+              icon: 'tim-icons icon-bell-55',
             });
           }
         );
-    }
+    },
   },
   computed: {
     episodeTime() {
@@ -467,22 +481,21 @@ export default {
         seconds += time.timeToSeconds(episode.time);
       }
       return time.secondsToTime(seconds);
-    }
+    },
   },
   mounted() {
     this.dataLoad();
   },
   watch: {
-    '$route.params.unit': function() {
+    '$route.params.unit': function () {
       this.dataLoad();
     },
-    '$route.params.slug': function() {
+    '$route.params.slug': function () {
       this.dataLoad();
-    }
-  }
+    },
+  },
 };
 </script>
-
 
 <style lang="scss" scoped>
 .top-banner {
@@ -503,7 +516,7 @@ export default {
 }
 
 .course-title-modal {
-  font-family: IranSansDNBold;
+  font-family: IranSansBold;
 }
 
 .course-price-title {

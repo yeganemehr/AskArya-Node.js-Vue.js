@@ -2,7 +2,7 @@
   <div v-if="post.id">
     <div class="heading-section">
       <div class="container text-center">
-        <h1 class="post-title-top text-center pt-2 ">{{ post.name }}</h1>
+        <h1 class="post-title-top text-center pt-2">{{ post.name }}</h1>
         <img class="blog-img" :src="post.image" :alt="post.name" />
         <div class="my-4">
           <BlogInfo
@@ -20,7 +20,7 @@
           <!-- <div class="sticky col-lg-3 col-md-12">
             <custom-card :class="sticky" />
           </div> -->
-          <div class="main-blog-text px-5">
+          <div class="main-blog-text">
             <div v-html="post.content"></div>
           </div>
         </div>
@@ -40,22 +40,22 @@ import backend from '../../../../backend';
 
 export default {
   components: {
-    BlogInfo
+    BlogInfo,
     // CustomCard
   },
   data() {
     return {
-      post: {}
+      post: {},
       // sticky: 'sticky',
       // SmallDevices: 'small-devices'
     };
   },
   methods: {
     dataLoad() {
-      backend.get(`blog/${this.$route.params.slug}`).then(response => {
+      backend.get(`blog/${this.$route.params.slug}`).then((response) => {
         this.post = response.data.post;
       });
-    }
+    },
   },
   mounted() {
     this.dataLoad();
@@ -66,7 +66,7 @@ export default {
     titleTemplate: 'کلاس های خصوصی | اسک آریا',
     htmlAttrs: {
       lang: 'fa',
-      amp: true
+      amp: true,
     },
 
     meta: [
@@ -76,26 +76,26 @@ export default {
       { property: 'og:type', content: 'website' },
       {
         property: 'og:url',
-        content: 'https://www.ask-arya.com/'
+        content: 'https://www.ask-arya.com/',
       },
       {
         property: 'og:image',
-        content: 'https://www.ask-arya.com/img/askarya-logo.png'
+        content: 'https://www.ask-arya.com/img/askarya-logo.png',
       },
       {
         property: 'og:description',
         content:
-          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
       },
       { itemprop: 'name', content: 'اسک آریا' },
       {
         itemprop: 'description',
         content:
-          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
-      }
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
+      },
     ],
-    link: [{ rel: 'canonical', href: 'https:/www.ask-arya.com/' }]
-  }
+    link: [{ rel: 'canonical', href: 'https:/www.ask-arya.com/' }],
+  },
 };
 </script>
 
@@ -134,11 +134,11 @@ export default {
 
 .main-blog-text {
   padding: 4%;
+  margin: 0 10%;
   font-size: 1.3em !important;
   line-height: 2.1em !important;
   direction: ltr !important;
   font-family: IranSansBlog !important;
-  // font-family: IranSans;
   color: black !important;
 }
 

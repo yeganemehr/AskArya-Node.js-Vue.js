@@ -260,13 +260,13 @@ export default {
   components: {
     BaseNav,
     ZoomCenterTransition,
-    TopBanner
+    TopBanner,
   },
   props: {
     backgroundColor: {
       type: String,
-      default: 'black'
-    }
+      default: 'black',
+    },
   },
   data() {
     return {
@@ -274,7 +274,7 @@ export default {
       menuTransitionDuration: 250,
       pageTransitionDuration: 200,
       year: new Date().getFullYear(),
-      pageClass: 'login-page'
+      pageClass: 'login-page',
     };
   },
   computed: {
@@ -293,7 +293,7 @@ export default {
       //   this.$root.$data.user && this.$root.$data.user.admin
       // );
       return this.$root.$data.user && this.$root.$data.user.admin;
-    }
+    },
   },
   methods: {
     toggleNavbar() {
@@ -337,17 +337,17 @@ export default {
     },
     logoutListener(e) {
       e.preventDefault();
-      backend.get('logout').then(response => {
+      backend.get('logout').then((response) => {
         if (response.data.status !== 'success') {
           return this.$notify({
             type: 'danger',
-            message: 'درخواست شما توسط سرور رد شد'
+            message: 'درخواست شما توسط سرور رد شد',
           });
         }
         localStorage.removeItem('remember_token');
         window.location.href = '/';
       });
-    }
+    },
   },
   beforeDestroy() {
     this.closeMenu();
@@ -369,8 +369,8 @@ export default {
   watch: {
     $route() {
       this.setPageClass();
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped lang="scss">
