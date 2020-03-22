@@ -187,7 +187,7 @@ import VideoButtons from './Components/VideoButtons.vue';
 import moment from 'jalali-moment';
 import backend from '../../backend';
 import time from '../../util/time';
-import { Modal } from 'src/components/index';
+import { Modal } from 'src/components';
 import Swal from 'sweetalert';
 
 export default {
@@ -195,7 +195,7 @@ export default {
     AllUnits,
     CustomCard,
     VideoButtons,
-    modal: Modal
+    Modal,
   },
   data() {
     return {
@@ -210,12 +210,12 @@ export default {
         categories: [],
         user: {
           id: '',
-          name: ''
+          name: '',
         },
         episodes: [],
         price: '',
         createdAt: '',
-        download: ''
+        download: '',
       },
       episode: {
         id: '',
@@ -228,14 +228,14 @@ export default {
         time: '',
         downloadCount: 0,
         viewCount: 0,
-        commentCount: 0
+        commentCount: 0,
       },
       id: '',
       title: '',
       type: '',
       body: '',
       download: '',
-      canClose: true
+      canClose: true,
     };
   },
   methods: {
@@ -245,7 +245,7 @@ export default {
           .get(
             `courses/${this.$route.params.course}/unit-${this.$route.params.unit}`
           )
-          .then(response => {
+          .then((response) => {
             this.episode = response.data.data.episode;
             this.course = response.data.data.course;
             this.notEnrolled = !response.data.data.enrolled;
@@ -260,7 +260,7 @@ export default {
             }
           });
       } else {
-        backend.get(`courses/${this.$route.params.slug}`).then(response => {
+        backend.get(`courses/${this.$route.params.slug}`).then((response) => {
           this.course = response.data.data.course;
           this.notEnrolled = !response.data.data.enrolled;
           this.enrolledCount = response.data.data.enrolledCount;
@@ -297,23 +297,23 @@ export default {
       e.target.disabled = true;
       e.target.innerHTML = `<i class="fas fa-spinner fa-spin"></i>`;
       backend.post(`courses/${this.course.id}/buy`).then(
-        response => {
+        (response) => {
           e.target.disabled = false;
           window.location.href = response.data.redirect;
           e.target.innerHTML = `پرداخت از درگاه`;
         },
-        response => {
+        (response) => {
           e.target.disabled = false;
           e.target.innerHTML = `پرداخت از درگاه`;
           Swal({
             icon: 'error',
             title: 'خطا',
             className: 'swal-text-center',
-            text: `ارتباط با سامانه به خوبی برقرار نشد. لطفا اینترنت خود را بررسی کنید.`
+            text: `ارتباط با سامانه به خوبی برقرار نشد. لطفا اینترنت خود را بررسی کنید.`,
           });
         }
       );
-    }
+    },
   },
   computed: {
     episodeTime() {
@@ -325,19 +325,19 @@ export default {
         seconds += time.timeToSeconds(episode.time);
       }
       return time.secondsToTime(seconds);
-    }
+    },
   },
   mounted() {
     this.dataLoad();
   },
   watch: {
-    '$route.params.unit': function() {
+    '$route.params.unit': function () {
       this.dataLoad();
     },
-    '$route.params.slug': function() {
+    '$route.params.slug': function () {
       this.dataLoad();
-    }
-  }
+    },
+  },
 };
 </script>
 

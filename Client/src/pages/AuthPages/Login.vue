@@ -1,6 +1,6 @@
 <template>
-  <div class="auth-section d-flex align-items-center">
-    <div class="container px-3">
+  <section class="auth-section d-flex align-items-center">
+    <div class="container">
       <card class="shadow">
         <form @submit="checkForm">
           <h1 class="auth-title text-primary py-4">ورود</h1>
@@ -99,7 +99,7 @@
         </form>
       </card>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -230,7 +230,7 @@ export default {
 }
 
 .card {
-  width: 400px !important;
+  width: 330px !important;
   margin-right: auto;
   margin-left: auto;
 }

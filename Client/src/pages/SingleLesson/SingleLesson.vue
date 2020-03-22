@@ -191,21 +191,19 @@
 </template>
 <script>
 import AllUnits from './Components/AllUnits.vue';
-// import CustomCard from './Components/CustomCard.vue';
 import VideoButtons from './Components/VideoButtons.vue';
 import { Carousel, CarouselItem } from 'element-ui';
 
 import moment from 'jalali-moment';
 import backend from '../../backend';
 import time from '../../util/time';
-import { Modal } from 'src/components/index';
+import { Modal } from 'src/components';
 import Swal from 'sweetalert';
 export default {
   components: {
     AllUnits,
-    // CustomCard,
     VideoButtons,
-    modal: Modal,
+    Modal,
     [Carousel.name]: Carousel,
     [CarouselItem.name]: CarouselItem,
   },

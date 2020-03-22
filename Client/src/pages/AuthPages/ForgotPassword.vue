@@ -115,7 +115,7 @@ export default {
 }
 
 .card {
-  width: 400px !important;
+  width: 330px !important;
   margin-right: auto;
   margin-left: auto;
 }
