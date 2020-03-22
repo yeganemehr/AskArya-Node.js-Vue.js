@@ -1,27 +1,27 @@
 <template>
-  <div class="container text-ltr">
-    <div class="row text-center d-flex justify-content-center">
-      <div class="col-md-2 col-sm-12 pb-3">
+  <div class="container-fluid text-ltr">
+    <div class="row text-center">
+      <div class="col pb-3">
         <h2 class="headerStyling1">{{ openTickets }}</h2>
         <p class="subheader">Open</p>
       </div>
 
-      <div class="col-md-2 col-sm-12 pb-3">
+      <div class="col pb-3">
         <h2 class="headerStyling3">{{ answeredTickets }}</h2>
         <p class="subheader">Answered</p>
       </div>
 
-      <div class="col-md-2 col-sm-12 pb-3">
+      <div class="col pb-3">
         <h2 class="headerStyling2">{{ inprogressTickets }}</h2>
         <p class="subheader">In Progress</p>
       </div>
 
-      <div class="col-md-2 col-sm-12 pb-3">
+      <div class="col pb-3">
         <h2 class="headerStyling4">{{ onHoldTickets }}</h2>
         <p class="subheader">On Hold</p>
       </div>
 
-      <div class="col-md-2 col-sm-12 pb-3">
+      <div class="col pb-3">
         <h2 class="headerStyling5">{{ closedTickets }}</h2>
         <p class="subheader">Closed</p>
       </div>
@@ -34,25 +34,25 @@ export default {
   props: {
     openTickets: {
       type: Number,
-      default: 0
+      default: 0,
     },
     answeredTickets: {
       type: Number,
-      default: 0
+      default: 0,
     },
     inprogressTickets: {
       type: Number,
-      default: 0
+      default: 0,
     },
     onHoldTickets: {
       type: Number,
-      default: 0
+      default: 0,
     },
     closedTickets: {
       type: Number,
-      default: 0
-    }
-  }
+      default: 0,
+    },
+  },
 };
 </script>
 
@@ -94,14 +94,15 @@ export default {
 
 .subheader {
   font-size: 0.8rem;
-  color: rgb(48, 48, 48);
+  color: rgb(82, 82, 82);
   padding-top: 8px;
 }
 
-// @media (max-width: 800px) {
-//   .stat-cards {
-//     padding: 0 01%;
-//   }
-// }
+@media (max-width: 767px) {
+  .subheader {
+    font-size: 0.5rem;
+    color: rgb(129, 129, 129);
+    padding-top: 8px;
+  }
+}
 </style>
-

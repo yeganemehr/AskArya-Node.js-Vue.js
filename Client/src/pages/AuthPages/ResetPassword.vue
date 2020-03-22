@@ -5,7 +5,9 @@
         <form @submit="checkForm">
           <card class="card-login">
             <template slot="header">
-              <h2 class="card-title text-center py-1 px-4 text-danger">بازیابی پسورد</h2>
+              <h2 class="card-title text-center py-1 px-4 text-danger">
+                بازیابی پسورد
+              </h2>
             </template>
             <div class="pt-4">
               <label class="pull-right">پست الکترونیک</label>
@@ -30,7 +32,9 @@
             <div class="text-right" v-if="formErrors.length">
               <b>لطفا اشتباهات زیر را تصحیح کنید:</b>
               <ul>
-                <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
+                <li v-for="(error, key) in formErrors" :key="key">
+                  {{ error }}
+                </li>
               </ul>
             </div>
             <div slot="footer">
@@ -41,7 +45,8 @@
                 size="lg"
                 :loading="loading"
                 block
-              >بازیابی پسورد</base-button>
+                >بازیابی پسورد</base-button
+              >
             </div>
           </card>
         </form>
@@ -114,6 +119,7 @@ export default {
 <style scoped>
 .card {
   background: rgb(241, 241, 241) !important;
+  min-height: 100vh;
 }
 
 .card-title {

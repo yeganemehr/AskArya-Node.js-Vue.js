@@ -1,17 +1,20 @@
 <template>
   <section>
     <div>
-      <h2 class="text-center">Blogs Overview</h2>
-      <p class="text-center">
-        Here is a list of all active courses on this site
-        <a href="/" target="_blank">ALL Blogs</a>
-      </p>
+      <h2 class="text-center">
+        Courses Overview
+        <h5 class="pt-2">
+          <a href="/" target="_blank">All Blogs</a>
+        </h5>
+      </h2>
     </div>
     <div class="mt-5">
       <div>
         <card card-body-classes="table-full-width">
           <div>
-            <div class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap">
+            <div
+              class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
+            >
               <el-select
                 class="select-primary mb-3 pagination-select"
                 v-model="pagination.perPage"
@@ -65,9 +68,10 @@
             class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
           >
             <div class>
-              <p
-                class="card-category"
-              >Showing {{ from + 1 }} to {{ to }} of {{ pagination.total }} entries</p>
+              <p class="card-category">
+                Showing {{ from + 1 }} to {{ to }} of
+                {{ pagination.total }} entries
+              </p>
             </div>
             <base-pagination
               :value="pagination.currentPage"
@@ -81,7 +85,11 @@
       </div>
     </div>
     <div class="pt-3">
-      <CreateEditBlog v-bind="post" @reset="reset" @post="postActionListener"></CreateEditBlog>
+      <CreateEditBlog
+        v-bind="post"
+        @reset="reset"
+        @post="postActionListener"
+      ></CreateEditBlog>
     </div>
   </section>
 </template>
@@ -100,7 +108,7 @@ export default {
     [Select.name]: Select,
     [Option.name]: Option,
     [Table.name]: Table,
-    [TableColumn.name]: TableColumn
+    [TableColumn.name]: TableColumn,
   },
   computed: {
     to() {
@@ -111,7 +119,7 @@ export default {
     },
     from() {
       return this.pagination.perPage * (this.pagination.currentPage - 1);
-    }
+    },
   },
   data() {
     return {
@@ -120,28 +128,28 @@ export default {
         currentPage: 1,
         perPageOptions: [5, 10, 15, 25],
         total: 0,
-        pages: 0
+        pages: 0,
       },
       tableColumns: [
         {
           prop: 'name',
           label: 'Blog Name',
-          minWidth: 200
+          minWidth: 200,
         },
         {
           prop: 'views',
           label: 'Blog Views',
-          minWidth: 100
+          minWidth: 100,
         },
         {
           prop: 'createdAt',
           label: 'Publish date',
-          minWidth: 100
-        }
+          minWidth: 100,
+        },
       ],
       tableData: [],
       post: {},
-      searchQuery: ''
+      searchQuery: '',
     };
   },
   methods: {
@@ -151,8 +159,8 @@ export default {
       if (this.searchQuery) {
         uri += '&filter=' + this.searchQuery;
       }
-      backend.get(uri).then(response => {
-        this.tableData = response.data.docs.map(row => {
+      backend.get(uri).then((response) => {
+        this.tableData = response.data.docs.map((row) => {
           row.createdAt = moment(row.createdAt)
             .locale('fa')
             .format('YYYY/MM/DD');
@@ -172,7 +180,7 @@ export default {
         className: 'text-ltr',
         buttons: false,
         timer: 1900,
-        confirmButtonClass: 'btn btn-info btn-fill'
+        confirmButtonClass: 'btn btn-info btn-fill',
       });
       this.post = row;
     },
@@ -186,10 +194,10 @@ export default {
           cancel: 'cancel',
           catch: {
             text: 'Yes, delete it!',
-            value: true
-          }
-        }
-      }).then(result => {
+            value: true,
+          },
+        },
+      }).then((result) => {
         if (!result) return;
         this.deleteRow(row);
       });
@@ -197,17 +205,17 @@ export default {
     deleteRow(row) {
       backend
         .post(`/admin/blog/posts/${row.id}/delete`)
-        .then(response => {
+        .then((response) => {
           if (response.data.status === 'error') {
             this.$notify({
               type: 'error',
               message: 'درخواست شما توسط سرور رد شد.',
-              icon: 'tim-icons icon-bell-55'
+              icon: 'tim-icons icon-bell-55',
             });
             return;
           }
           let indexToDelete = this.tableData.findIndex(
-            tableRow => tableRow.id === row.id
+            (tableRow) => tableRow.id === row.id
           );
           if (indexToDelete >= 0) {
             this.tableData.splice(indexToDelete, 1);
@@ -216,15 +224,15 @@ export default {
             title: 'Deleted!',
             className: 'text-ltr',
             text: `You deleted ${row.title}`,
-            icon: 'success'
+            icon: 'success',
           });
         })
-        .catch(error => {
+        .catch((error) => {
           this.$notify({
             type: 'error',
             message:
               'در حال حاظر سرور پاسخ درخواست شما را بدرستی ارسال نمیکند.',
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
         });
     },
@@ -253,12 +261,12 @@ export default {
       } else {
         this.tableData.push(post);
       }
-    }
+    },
   },
 
   mounted() {
     this.dataLoad(1);
-  }
+  },
 };
 </script>
 <style>

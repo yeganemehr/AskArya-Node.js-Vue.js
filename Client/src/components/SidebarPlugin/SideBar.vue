@@ -45,22 +45,22 @@ export default {
     title: {
       type: String,
       default: 'Ask Arya',
-      description: 'Sidebar title'
+      description: 'Sidebar title',
     },
     shortTitle: {
       type: String,
       default: 'AA',
-      description: 'Sidebar short title'
+      description: 'Sidebar short title',
     },
     logo: {
       type: String,
       default: 'img/icon-vue.png',
-      description: 'Sidebar app logo'
+      description: 'Sidebar app logo',
     },
     backgroundColor: {
       type: String,
       default: 'vue',
-      validator: value => {
+      validator: (value) => {
         let acceptedValues = [
           '',
           'vue',
@@ -68,29 +68,29 @@ export default {
           'green',
           'orange',
           'red',
-          'primary'
+          'primary',
         ];
         return acceptedValues.indexOf(value) !== -1;
       },
       description:
-        'Sidebar background color (vue|blue|green|orange|red|primary)'
+        'Sidebar background color (vue|blue|green|orange|red|primary)',
     },
     sidebarLinks: {
       type: Array,
       default: () => [],
       description:
-        "List of sidebar links as an array if you don't want to use components for these."
+        "List of sidebar links as an array if you don't want to use components for these.",
     },
     autoClose: {
       type: Boolean,
       default: true,
       description:
-        'Whether sidebar should autoclose on mobile when clicking an item'
-    }
+        'Whether sidebar should autoclose on mobile when clicking an item',
+    },
   },
   provide() {
     return {
-      autoClose: this.autoClose
+      autoClose: this.autoClose,
     };
   },
   computed: {
@@ -99,20 +99,20 @@ export default {
         (this.$root.$data.user ? this.$root.$data.user.avatar : undefined) ||
         '/img/default-avatar.png'
       );
-    }
+    },
   },
   methods: {
     minimizeSidebar() {
       if (this.$sidebar) {
         this.$sidebar.toggleMinimize();
       }
-    }
+    },
   },
   beforeDestroy() {
     if (this.$sidebar.showSidebar) {
       this.$sidebar.showSidebar = false;
     }
-  }
+  },
 };
 </script>
 

@@ -1,20 +1,21 @@
 <template>
   <section>
     <div>
-      <h2 class="text-center">Courses Overview</h2>
-      <p class="text-center">
-        Here is a list of all active courses on this site
-        <a
-          href="/courses"
-          target="_blank"
-        >ALL COURSES</a>
-      </p>
+      <h2 class="text-center">
+        Courses Overview
+        <h5 class="pt-2">
+          <a href="/courses" target="_blank">ALL COURSES</a>
+        </h5>
+      </h2>
     </div>
     <div class="mt-5">
       <div>
-        <card card-body-classes="table-full-width">
+        <!-- <card card-body-classes="table-full-width"> -->
+        <card>
           <div>
-            <div class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap">
+            <div
+              class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
+            >
               <el-select
                 class="select-primary mb-3 pagination-select"
                 v-model="pagination.perPage"
@@ -68,9 +69,10 @@
             class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
           >
             <div class>
-              <p
-                class="card-category"
-              >Showing {{ from + 1 }} to {{ to }} of {{ pagination.total }} entries</p>
+              <p class="card-category">
+                Showing {{ from + 1 }} to {{ to }} of
+                {{ pagination.total }} entries
+              </p>
             </div>
             <base-pagination
               v-model="pagination.currentPage"
@@ -85,7 +87,11 @@
       </div>
     </div>
     <div class="pt-3">
-      <CreateEditCourse v-bind="course" @course="courseActionListener" @reset="reset"></CreateEditCourse>
+      <CreateEditCourse
+        v-bind="course"
+        @course="courseActionListener"
+        @reset="reset"
+      ></CreateEditCourse>
     </div>
   </section>
 </template>
@@ -103,7 +109,7 @@ export default {
     [Select.name]: Select,
     [Option.name]: Option,
     [Table.name]: Table,
-    [TableColumn.name]: TableColumn
+    [TableColumn.name]: TableColumn,
   },
   computed: {
     to() {
@@ -114,7 +120,7 @@ export default {
     },
     from() {
       return this.pagination.perPage * (this.pagination.currentPage - 1);
-    }
+    },
   },
   data() {
     return {
@@ -123,14 +129,14 @@ export default {
         currentPage: 1,
         perPageOptions: [3, 5, 10, 15, 20],
         total: 0,
-        pages: 0
+        pages: 0,
       },
       propsToSearch: ['courseName', 'comments', 'courseUsers', 'courseType'],
       tableColumns: [
         {
           prop: 'title',
           label: 'Course Name',
-          minWidth: 170
+          minWidth: 170,
         },
         // {
         //   prop: 'comments',
@@ -140,18 +146,18 @@ export default {
         {
           prop: 'users',
           label: 'Course Users',
-          minWidth: 80
+          minWidth: 80,
         },
         {
           prop: 'type',
           label: 'Course Type',
-          minWidth: 80
-        }
+          minWidth: 80,
+        },
       ],
       tableData: [],
       searchedData: [],
       fuseSearch: null,
-      course: undefined
+      course: undefined,
     };
   },
   methods: {
@@ -160,7 +166,7 @@ export default {
         .get(
           '/admin/courses?page=' + page + '&limit=' + this.pagination.perPage
         )
-        .then(response => {
+        .then((response) => {
           this.tableData = response.data.docs;
           this.pagination.currentPage = parseInt(response.data.page, 10);
           this.pagination.pages = response.data.totalPages;
@@ -175,7 +181,7 @@ export default {
         className: 'text-ltr',
         buttons: false,
         timer: 1900,
-        confirmButtonClass: 'btn btn-info btn-fill'
+        confirmButtonClass: 'btn btn-info btn-fill',
       });
       this.course = row;
     },
@@ -189,10 +195,10 @@ export default {
           cancel: 'Cancel',
           catch: {
             text: 'Yes, delete it',
-            value: true
-          }
-        }
-      }).then(result => {
+            value: true,
+          },
+        },
+      }).then((result) => {
         if (!result) return;
         this.deleteRow(row);
       });
@@ -200,17 +206,17 @@ export default {
     deleteRow(row) {
       backend
         .post(`/admin/courses/${row.id}/delete`)
-        .then(response => {
+        .then((response) => {
           if (response.data.status === 'error') {
             this.$notify({
               type: 'danger',
               message: 'درخواست شما توسط سرور رد شد.',
-              icon: 'tim-icons icon-bell-55'
+              icon: 'tim-icons icon-bell-55',
             });
             return;
           }
           const indexToDelete = this.tableData.findIndex(
-            tableRow => tableRow.id === row.id
+            (tableRow) => tableRow.id === row.id
           );
           if (indexToDelete >= 0) {
             this.tableData.splice(indexToDelete, 1);
@@ -219,15 +225,15 @@ export default {
             title: 'Deleted!',
             className: 'text-ltr',
             text: `You deleted ${row.title}`,
-            icon: 'success'
+            icon: 'success',
           });
         })
-        .catch(error => {
+        .catch((error) => {
           this.$notify({
             type: 'danger',
             message:
               'در حال حاظر سرور پاسخ درخواست شما را بدرستی ارسال نمیکند.',
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
         });
     },
@@ -253,15 +259,15 @@ export default {
     },
     reset() {
       this.course = undefined;
-    }
+    },
   },
   mounted() {
     this.dataLoad(1);
   },
-  watch: {}
+  watch: {},
 };
 </script>
-<style>
+<style lang="scss" scoped>
 .pagination-select,
 .search-input {
   width: 200px;

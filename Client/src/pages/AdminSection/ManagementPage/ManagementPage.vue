@@ -21,10 +21,6 @@
       <router-link to="/ticketoverview">
         <base-button size="lg" type="info">Tickets</base-button>
       </router-link>
-
-      <router-link to="/quizoverview">
-        <base-button size="lg" type="info">Quizzes</base-button>
-      </router-link>
     </div>
   </section>
 </template>
@@ -46,4 +42,3 @@ export default {};
   }
 }
 </style>
-

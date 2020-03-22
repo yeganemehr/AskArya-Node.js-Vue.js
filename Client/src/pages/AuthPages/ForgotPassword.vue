@@ -6,10 +6,12 @@
           <form @submit="checkForm">
             <card class="card-login">
               <template slot="header">
-                <h2 class="card-title text-center py-1 px-4 text-danger">بازیابی پسورد</h2>
-                <p
-                  class="container pt-3 text-center"
-                >با استفاده از این فرم میتوانید پسورد خود را بازیابی کنید</p>
+                <h2 class="card-title text-center py-1 px-4 text-danger">
+                  بازیابی پسورد
+                </h2>
+                <p class="container pt-3 text-center">
+                  با استفاده از این فرم میتوانید پسورد خود را بازیابی کنید
+                </p>
               </template>
               <div class="pt-4">
                 <label class="pull-right">پست الکترونیک</label>
@@ -25,7 +27,9 @@
               <div class="text-right" v-if="formErrors.length">
                 <b>لطفا اشتباهات زیر را تصحیح کنید:</b>
                 <ul>
-                  <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
+                  <li v-for="(error, key) in formErrors" :key="key">
+                    {{ error }}
+                  </li>
                 </ul>
               </div>
               <div slot="footer">
@@ -36,7 +40,8 @@
                   size="lg"
                   :loading="loading"
                   block
-                >بازیابی پسورد</base-button>
+                  >بازیابی پسورد</base-button
+                >
               </div>
             </card>
           </form>
@@ -120,7 +125,7 @@ export default {
   background: url(/img/frontend/SVG-Background-4.svg) no-repeat;
   background-size: cover;
   background-position: top;
-  min-height: 70vh;
+  min-height: 100vh;
 }
 
 .card {

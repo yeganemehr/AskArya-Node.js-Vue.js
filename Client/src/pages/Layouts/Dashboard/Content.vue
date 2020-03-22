@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .white-content .card:not(.card-white) {
+.white-content .card:not(.card-white) {
   border-radius: 15px !important;
   background: #e7e7e7ec !important;
   border: 0 !important;
@@ -25,5 +25,4 @@ export default {
   -webkit-box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.4) !important;
   box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1) !important;
 }
-
 </style>

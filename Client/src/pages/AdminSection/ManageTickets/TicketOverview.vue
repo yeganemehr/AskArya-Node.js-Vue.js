@@ -1,5 +1,6 @@
 <template>
   <div class="container-fluid">
+    <h2 class="text-center pb-2">Manage Tickets</h2>
     <ticket-data
       :openTickets="openTickets"
       :answeredTickets="answeredTickets"
@@ -7,8 +8,6 @@
       :onHoldTickets="onHoldTickets"
       :closedTickets="closedTickets"
     ></ticket-data>
-
-    <h2 class="text-center pt-5">Manage Tickets</h2>
     <div class="mt-5">
       <!-- <card card-body-classes="table-full-width"> -->
       <div class="d-flex justify-content-between mb-5">
@@ -63,7 +62,7 @@
             <p :title="ticket.title">
               {{
                 ticket.title.substring(0, 35) +
-                  (ticket.title.length > 35 ? ' ...' : '')
+                (ticket.title.length > 35 ? ' ...' : '')
               }}
             </p>
           </div>
@@ -186,7 +185,7 @@ export default {
     [Table.name]: Table,
     [TableColumn.name]: TableColumn,
     TicketData,
-    ManageTicket
+    ManageTicket,
   },
   computed: {
     /***
@@ -207,7 +206,7 @@ export default {
     },
     from() {
       return this.pagination.perPage * (this.pagination.currentPage - 1);
-    }
+    },
   },
   data() {
     return {
@@ -216,7 +215,7 @@ export default {
         currentPage: 1,
         perPageOptions: [5, 10, 15, 20, 30, 50],
         total: 0,
-        pages: 0
+        pages: 0,
       },
       searchQuery: '',
       propsToSearch: [
@@ -226,7 +225,7 @@ export default {
         'email',
         'department',
         'priority',
-        'date'
+        'date',
       ],
       tickets: [],
       searchedData: [],
@@ -237,13 +236,13 @@ export default {
       onHoldTickets: 0,
       closedTickets: 0,
       ticket: undefined,
-      tableKey: 0
+      tableKey: 0,
     };
   },
   methods: {
     handleHighlight(ticket) {
       backend.post(`admin/tickets/${ticket.id}/highlight`).then(
-        response => {
+        (response) => {
           ticket.isHighlight = !ticket.isHighlight;
           Swal({
             title: `You ${
@@ -256,15 +255,15 @@ export default {
             //   ticket.isHighlight ? 'hightlighted' : 'removed hightlight of'
             // }  ${ticket.ticket_id}: ${ticket.title}`,
             icon: 'danger',
-            className: 'text-ltr'
+            className: 'text-ltr',
           });
         },
-        err => {
+        (err) => {
           Swal({
             title: `Cannot connect to Server !`,
             className: 'text-ltr',
             text: 'Please check your conection and try again',
-            icon: 'error'
+            icon: 'error',
           });
         }
       );
@@ -273,7 +272,7 @@ export default {
       swal({
         title: `Do you want to edit ticket number: ${ticket.ticket_id}?`,
         // title: `Do you want to edit Ticket: ${ticket.ticket_id}: ${ticket.title}?`,
-        className: 'text-ltr'
+        className: 'text-ltr',
       });
       this.ticket = ticket;
     },
@@ -287,10 +286,10 @@ export default {
           cancel: 'cancel',
           catch: {
             text: 'Yes, delete it!',
-            value: true
-          }
-        }
-      }).then(result => {
+            value: true,
+          },
+        },
+      }).then((result) => {
         if (!result) return;
         this.deleteRow(ticket);
       });
@@ -298,17 +297,17 @@ export default {
     deleteRow(ticket) {
       backend
         .post(`/admin/tickets/${ticket.id}/delete`)
-        .then(response => {
+        .then((response) => {
           if (response.data.status === 'error') {
             this.$notify({
               type: 'error',
               message: 'درخواست شما توسط سرور رد شد.',
-              icon: 'tim-icons icon-bell-55'
+              icon: 'tim-icons icon-bell-55',
             });
             return;
           }
           let indexToDelete = this.tickets.findIndex(
-            tableRow => tableRow.id === ticket.id
+            (tableRow) => tableRow.id === ticket.id
           );
           if (indexToDelete >= 0) {
             this.tickets.splice(indexToDelete, 1);
@@ -317,30 +316,30 @@ export default {
             title: 'Deleted!',
             className: 'text-ltr',
             text: `You deleted ${ticket.title}`,
-            icon: 'success'
+            icon: 'success',
           });
           this.pagination.total--;
         })
-        .catch(error => {
+        .catch((error) => {
           this.$notify({
             type: 'error',
             message:
               'در حال حاظر سرور پاسخ درخواست شما را بدرستی ارسال نمیکند.',
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
         });
     },
     dataLoad(page) {
       const query = {
         page: page,
-        limit: this.pagination.perPage
+        limit: this.pagination.perPage,
       };
       if (this.searchQuery) {
         query.filter = this.searchQuery;
       }
       backend
         .get('/admin/tickets' + this.encodeQueryData(query))
-        .then(response => {
+        .then((response) => {
           this.pagination.currentPage = parseInt(response.data.page, 10);
           this.pagination.pages = response.data.totalPages;
           this.pagination.total = response.data.totalDocs;
@@ -477,10 +476,10 @@ export default {
           cancel: 'cancel',
           catch: {
             text: 'Yes, do it!',
-            value: true
-          }
-        }
-      }).then(result => {
+            value: true,
+          },
+        },
+      }).then((result) => {
         if (!result) return;
         this.markAsInProgress(ticket);
       });
@@ -488,14 +487,14 @@ export default {
     markAsInProgress(ticket) {
       backend
         .post(`/admin/tickets/${ticket.id}/edit`, {
-          status: 3
+          status: 3,
         })
-        .then(response => {
+        .then((response) => {
           if (response.data.status === 'error') {
             this.$notify({
               type: 'error',
               message: 'درخواست شما توسط سرور رد شد.',
-              icon: 'tim-icons icon-bell-55'
+              icon: 'tim-icons icon-bell-55',
             });
             return;
           }
@@ -508,22 +507,22 @@ export default {
           Swal({
             title: 'Success !',
             className: 'text-ltr',
-            icon: 'success'
+            icon: 'success',
           });
         })
-        .catch(error => {
+        .catch((error) => {
           this.$notify({
             type: 'error',
             message:
               'در حال حاظر سرور پاسخ درخواست شما را بدرستی ارسال نمیکند.',
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
         });
-    }
+    },
   },
   mounted() {
     this.dataLoad(1);
-  }
+  },
 };
 </script>
 
