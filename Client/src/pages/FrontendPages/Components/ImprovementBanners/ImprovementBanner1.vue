@@ -1,7 +1,7 @@
 <template>
-  <section class="bg">
-    <div class="container">
-      <div class="text-section">
+  <section class="container">
+    <div class="bg">
+      <div class="text-section px-4">
         <h2 class="pb-5">آیا تغییرات مورد نظر را در خودتان نمیبینید؟</h2>
         <p class="main-text">
           یک چند ماهی هست که کلاس های زبانت رو شروع کردی. خب تا یک جاهایی خوب
@@ -18,7 +18,7 @@
           کلافه کننده ای هست و بیشتر از آن نا امید کننده.
         </p>
 
-        <div class="text-left">
+        <div class="text-left mt-4">
           <base-button
             v-scroll-to="{
               el: '#element',
@@ -31,7 +31,7 @@
               onDone: onDone,
               onCancel: onCancel,
               x: false,
-              y: true
+              y: true,
             }"
             native-type="submit"
             type="success"
@@ -52,9 +52,9 @@ export default {
     return {
       onStart: () => {},
       onDone: () => {},
-      onCancel: () => {}
+      onCancel: () => {},
     };
-  }
+  },
 };
 </script>
 
@@ -65,6 +65,11 @@ export default {
     url(/img/frontend/confused-banner.svg) no-repeat;
   background-position: bottom left;
   background-size: cover;
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 p {
@@ -73,7 +78,7 @@ p {
 
 .text-section {
   text-align: right;
-  padding: 4em 0em 4em 0;
+  padding: 4em 0em 3em 0;
 
   h2 {
     font-size: 2em;
