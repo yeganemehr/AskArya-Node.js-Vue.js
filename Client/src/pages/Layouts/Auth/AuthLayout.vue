@@ -304,9 +304,7 @@ export default {
       document.body.classList.remove('nav-open');
       this.showMenu = false;
     },
-    setPageClass() {
-      this.pageClass = `${this.$route.name}-page`.toLowerCase();
-    },
+
     getNavClass(nav) {
       let classes = 'nav-link';
       let isActive = false;
@@ -362,14 +360,6 @@ export default {
     } else {
       next();
     }
-  },
-  mounted() {
-    this.setPageClass();
-  },
-  watch: {
-    $route() {
-      this.setPageClass();
-    },
   },
 };
 </script>

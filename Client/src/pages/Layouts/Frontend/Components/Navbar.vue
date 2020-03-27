@@ -206,14 +206,14 @@
 </template>
 
 <script>
-import { CollapseTransition } from 'vue2-transitions';
+// import { CollapseTransition } from 'vue2-transitions';
 import { BaseNav } from 'src/components';
 
 import backend from '../../../../backend';
 
 export default {
   components: {
-    CollapseTransition,
+    // CollapseTransition,
     BaseNav,
   },
   computed: {
@@ -305,14 +305,6 @@ export default {
       next();
     }
   },
-  mounted() {
-    this.setPageClass();
-  },
-  watch: {
-    $route() {
-      this.setPageClass();
-    },
-  },
 };
 </script>
 
@@ -333,7 +325,7 @@ export default {
   }
   .navbar-nav li {
     padding: 7px 0 !important;
-    border-bottom: 1px solid #c7c7c765 !important;
+    border-bottom: 1px solid #e4e4e463 !important;
     font-size: 1em !important;
   }
   .login-register-buttons {
@@ -392,7 +384,6 @@ export default {
   .navbar-nav li {
     font-size: 1.2em !important;
     padding: 0 20px !important;
-    // color: rgb(0, 0, 0) !important;
   }
 }
 .nav-item,
@@ -445,9 +436,7 @@ p,
   color: rgb(49, 49, 49);
   border-bottom: 1px solid #fcfcfc00 !important;
 }
-// .navbar-collapse .navbar-nav .nav-link-exit:hover {
-//   background-color: red !important;
-// }
+
 @media (min-width: 768px) {
   .navbar-nav {
     float: none !important;

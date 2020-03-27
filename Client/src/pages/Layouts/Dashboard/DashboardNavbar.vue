@@ -123,13 +123,6 @@ export default {
       document.body.classList.remove('nav-open');
       this.showMenu = false;
     },
-    setPageClass() {
-      this.pageClass = `${this.$route.name}-page`.toLowerCase();
-    },
-
-    // capitalizeFirstLetter(string) {
-    //   return string.charAt(0).toUpperCase() + string.slice(1);
-    // },
     toggleNotificationDropDown() {
       this.activeNotifications = !this.activeNotifications;
     },

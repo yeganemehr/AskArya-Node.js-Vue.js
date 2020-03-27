@@ -33,26 +33,24 @@ import moment from 'jalali-moment';
 export default {
   props: ['slug', 'image', 'tags', 'categories', 'name', 'createdAt', 'views'],
   computed: {
-    publishedAt: function() {
-      return moment(this.createdAt)
-        .locale('fa')
-        .format('YYYY-MM-DD');
+    publishedAt: function () {
+      return moment(this.createdAt).locale('fa').format('YYYY-MM-DD');
     },
-    isLtr: function() {
+    isLtr: function () {
       const regex = /[\u0590-\u083F]|[\u08A0-\u08FF]|[\uFB1D-\uFDFF]|[\uFE70-\uFEFF]/gm;
       return !regex.test(this.name.trim());
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
 .home-blog .card {
   border-radius: 15px !important;
   background: transparent;
-  box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.2) !important;
-  -moz-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.2) !important;
-  -webkit-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.2) !important;
-  -o-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 8px 16px 4px rgba(41, 41, 41, 0.2) !important;
+  -moz-box-shadow: 0 8px 16px 4px rgba(41, 41, 41, 0.2) !important;
+  -webkit-box-shadow: 0 8px 16px 4px rgba(41, 41, 41, 0.2) !important;
+  -o-box-shadow: 0 8px 16px 4px rgba(41, 41, 41, 0.2) !important;
 }
 
 .home-blog h3 {

@@ -35,7 +35,7 @@ export default {
 
     htmlAttrs: {
       lang: 'fa',
-      amp: true
+      amp: true,
     },
 
     meta: [
@@ -45,27 +45,27 @@ export default {
       { property: 'og:type', content: 'website' },
       {
         property: 'og:url',
-        content: 'https://www.ask-arya.com/'
+        content: 'https://www.ask-arya.com/',
       },
       {
         property: 'og:image',
         content:
-          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png'
+          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png',
       },
       {
         property: 'og:description',
         content:
-          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
       },
       { itemprop: 'name', content: 'اسک آریا' },
       {
         itemprop: 'description',
         content:
-          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
-      }
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
+      },
     ],
-    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }]
-  }
+    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }],
+  },
 };
 </script>
 
@@ -113,11 +113,8 @@ export default {
 
 @media (max-width: 768px) {
   .background {
-    background: url(/img/frontend/SVG-Background-4.svg) no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    height: 100vh;
-    position: inherit;
+    background: linear-gradient(225deg, #d223e9f6, #5c6bf7f1);
+    height: 80vh;
   }
   .iconSection a,
   .iconSection i,

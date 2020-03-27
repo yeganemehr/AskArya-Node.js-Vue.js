@@ -26,7 +26,7 @@
             onDone: onDone,
             onCancel: onCancel,
             x: false,
-            y: true
+            y: true,
           }"
           class="fas fa-chevron-up go-to-top"
         ></i>
@@ -46,8 +46,8 @@ export default {
     TopBanner,
     Navbar,
     ZoomCenterTransition,
-    Footer
-  }
+    Footer,
+  },
 };
 </script>
 
@@ -63,7 +63,11 @@ export default {
   padding: 10px;
   border-radius: 5px;
   font-size: 2em;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.fa-chevron-up:before {
+  content: '\f077';
+  color: white;
 }
 @media (max-width: 768px) {
   .go-to-top {
@@ -71,7 +75,7 @@ export default {
     left: 25px;
     z-index: 99;
     padding: 0.3em;
-    font-size: 1.6em;
+    font-size: 1.7em;
     background-color: rgba(0, 0, 0, 0.02);
     color: rgba(15, 15, 15, 0.13) !important;
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="CourseCard hover mb-4" @click="onClick">
+  <div class="CourseCard shadow hover mb-4" @click="onClick">
     <img
       class="CourseCard__courseimage"
       alt="askarya-coursecard-image"
@@ -69,7 +69,7 @@ export default {
     'user',
     'episodes',
     'purchased',
-    'tags'
+    'tags',
   ],
   methods: {
     onClick() {
@@ -83,12 +83,12 @@ export default {
           title: 'وضعیت دوره: در حال برگزاری',
           className: 'text-rtl',
           icon: 'info',
-          button: 'بسیار خوب'
+          button: 'بسیار خوب',
         });
       } else {
         this.$router.push('courses/' + this.slug);
       }
-    }
+    },
   },
   computed: {
     date() {
@@ -123,8 +123,8 @@ export default {
     },
     isFree() {
       return this.type.toLowerCase() === 'free';
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -132,10 +132,10 @@ export default {
 .CourseCard {
   background-color: #f7f7f7;
   border-radius: 15px;
-  box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
-  -moz-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
-  -webkit-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
-  -o-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
+  // box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
+  // -moz-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
+  // -webkit-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
+  // -o-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
 
   .course-title {
     font-size: 0.9rem;

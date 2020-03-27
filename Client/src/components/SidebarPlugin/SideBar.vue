@@ -1,13 +1,12 @@
 <template>
   <div class="sidebar" :data="backgroundColor">
     <div class="sidebar-wrapper" ref="sidebarScrollArea">
-      <!-- <div class="logo">
-        <a href="http://www.ask-arya.com" class="simple-text logo-mini">
-          <img :src="logo" alt="app-logo" />
-        </a>
-        <a href="http://www.ask-arya.com" class="simple-text logo-normal">{{ title }}</a>
-      </div>-->
       <div class="userSection text-center">
+        <!-- <div class="top-logo mr-auto ml-auto">
+          <a href="http://www.ask-arya.com">
+            <img src="/img/askarya-logo.png" alt="ask-arya logo" />
+          </a>
+        </div> -->
         <div class="photo avatar mt-5 mb-4">
           <img :src="userAvatar" />
         </div>
@@ -117,6 +116,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.top-logo {
+  width: 110px;
+}
+
 .userSection {
   padding: 2em 0 0.8em 0;
   .userFullName {
@@ -130,10 +133,4 @@ export default {
   height: 5em !important;
   background-color: transparent !important;
 }
-// @media (min-width: 992px) {
-//   .navbar-search-form-mobile,
-//   .nav-mobile-menu {
-//     display: none;
-//   }
-// }
 </style>
