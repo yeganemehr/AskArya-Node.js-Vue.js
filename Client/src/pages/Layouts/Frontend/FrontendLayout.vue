@@ -79,6 +79,11 @@ export default {
     background-color: rgba(0, 0, 0, 0.02);
     color: rgba(15, 15, 15, 0.13) !important;
   }
+
+  .fa-chevron-up:before {
+    content: '\f077';
+    color: rgb(209, 209, 209);
+  }
 }
 .btn {
   font-weight: inherit !important;
