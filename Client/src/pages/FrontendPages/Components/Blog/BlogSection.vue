@@ -52,19 +52,19 @@ import BlogCard from './BlogCard.vue';
 export default {
   props: ['posts'],
   components: {
-    BlogCard
+    BlogCard,
     // Carousel,
     // Slide
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-@media (max-width: 680px) {
-  .blog-section {
-    padding: 0 14% !important;
-  }
-}
+// @media (max-width: 680px) {
+//   .blog-section {
+//     padding: 0 14% !important;
+//   }
+// }
 
 .section-header {
   font-size: 1.6em;

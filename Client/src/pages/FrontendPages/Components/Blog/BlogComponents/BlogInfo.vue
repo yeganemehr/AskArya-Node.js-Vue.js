@@ -23,10 +23,9 @@
         <p class="info-items post-categories d-flex align-items-center">
           <i class="icon fas fa-bullseye pl-2"></i>
           دسته بندی ها:
-          <span
-            v-for="category of categories"
-            :key="category"
-          >{{category.name}}</span>
+          <span v-for="category of categories" :key="category">{{
+            category.name
+          }}</span>
         </p>
       </div>
     </div>
@@ -39,11 +38,9 @@ export default {
   props: ['name', 'createdAt', 'categories'],
   methods: {
     dateFormated() {
-      return moment(this.createdAt)
-        .locale('fa')
-        .format('D MMMM YYYY');
-    }
-  }
+      return moment(this.createdAt).locale('fa').format('D MMMM YYYY');
+    },
+  },
 };
 </script>
 

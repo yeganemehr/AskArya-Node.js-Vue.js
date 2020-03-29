@@ -38,7 +38,9 @@
               native-type="submit"
               type="success"
               class="btn btn-round animation-on-hover mt-4"
-              >مشاهده همه دوره ها</base-button
+            >
+              <i class="fas fa-graduation-cap ml-2"></i>
+              مشاهده همه دوره ها</base-button
             >
           </router-link>
         </div>
@@ -77,17 +79,17 @@ import ImprovementBanner2 from './Components/ImprovementBanners/ImprovementBanne
 import { Carousel, CarouselItem } from 'element-ui';
 
 export default {
-  data: function() {
+  data: function () {
     return {
       topCourses: [],
-      topPosts: []
+      topPosts: [],
     };
   },
   methods: {
     dataLoad() {
       this.topCourses = this.$root.$data.topCourses;
       this.topPosts = this.$root.$data.topPosts;
-    }
+    },
   },
   mounted() {
     this.dataLoad();
@@ -101,7 +103,7 @@ export default {
     ImprovementBanner1,
     ImprovementBanner2,
     [Carousel.name]: Carousel,
-    [CarouselItem.name]: CarouselItem
+    [CarouselItem.name]: CarouselItem,
   },
 
   metaInfo: {
@@ -109,7 +111,7 @@ export default {
     titleTemplate: 'اسک آریا | آموزش زبان انگلیسی',
     htmlAttrs: {
       lang: 'fa',
-      amp: true
+      amp: true,
     },
 
     meta: [
@@ -119,27 +121,27 @@ export default {
       { property: 'og:type', content: 'website' },
       {
         property: 'og:url',
-        content: 'https://www.ask-arya.com/'
+        content: 'https://www.ask-arya.com/',
       },
       {
         property: 'og:image',
         content:
-          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png'
+          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png',
       },
       {
         property: 'og:description',
         content:
-          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
       },
       { itemprop: 'name', content: 'اسک آریا' },
       {
         itemprop: 'description',
         content:
-          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
-      }
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
+      },
     ],
-    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }]
-  }
+    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }],
+  },
 };
 </script>
 
@@ -178,14 +180,10 @@ export default {
   margin: 3em 0 3em 0 !important;
 }
 
-// .top-courses-section {
-//   padding: 0 11% !important;
-// }
-
 @media (max-width: 680px) {
-  .top-courses-section {
-    padding: 0 7% !important;
-  }
+  // .top-courses-section {
+  //   padding: 0 7% !important;
+  // }
   .section-header {
     font-size: 13px;
     font-family: IranSansBold !important;

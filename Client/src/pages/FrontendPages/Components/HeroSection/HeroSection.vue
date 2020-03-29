@@ -30,7 +30,9 @@
                     native-type="submit"
                     type="primary"
                     class="btn animation-on-hover"
-                    >مشاهده همه دوره ها
+                  >
+                    <i class="fas fa-graduation-cap ml-2"></i>
+                    مشاهده همه دوره ها
                   </base-button>
                 </router-link>
               </div>
@@ -72,7 +74,9 @@
               native-type="submit"
               type="primary"
               class="btn animation-on-hover"
-              >مشاهده همه دوره ها</base-button
+            >
+              <i class="fas fa-graduation-cap ml-2"></i>
+              مشاهده همه دوره ها</base-button
             >
           </router-link>
         </div>

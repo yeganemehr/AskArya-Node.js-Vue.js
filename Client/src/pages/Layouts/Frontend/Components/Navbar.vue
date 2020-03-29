@@ -96,7 +96,7 @@
                       <div
                         class="d-flex align-items-center pr-3 profile-link-text"
                       >
-                        <p class="px-2">پروفایل من</p>
+                        <p class="px-1">پروفایل من</p>
                         <i class="i-chevron fas fa-chevron-down"></i>
                       </div>
                     </div>

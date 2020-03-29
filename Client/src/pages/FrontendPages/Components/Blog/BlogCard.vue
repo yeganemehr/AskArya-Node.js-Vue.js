@@ -7,7 +7,7 @@
           {{ categories.length ? categories[categories.length - 1].name : '' }}
         </div>
         <div class="card-body">
-          <h3 class="card-title text-center" :class="isLtr ? 'title-ltr' : ''">
+          <h3 class="card-title" :class="isLtr ? 'title-ltr' : ''">
             {{ name }}
           </h3>
           <div class="d-flex justify-content-between card-footer">
@@ -45,7 +45,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .home-blog .card {
-  border-radius: 15px !important;
+  border-radius: 10px !important;
   background: transparent;
   box-shadow: 0 8px 16px 4px rgba(41, 41, 41, 0.2) !important;
   -moz-box-shadow: 0 8px 16px 4px rgba(41, 41, 41, 0.2) !important;
@@ -53,10 +53,11 @@ export default {
   -o-box-shadow: 0 8px 16px 4px rgba(41, 41, 41, 0.2) !important;
 }
 
-.home-blog h3 {
-  font-size: 0.9rem !important;
-  font-family: IranSansBold !important;
-  color: #333333 !important;
+.home-blog .card-title {
+  color: #292929;
+  font-size: 15px !important;
+  font-family: IranSansBold;
+  text-align: center !important;
 }
 
 .blogBox {
@@ -64,7 +65,7 @@ export default {
 }
 
 .home-blog .card-img-top {
-  border-radius: 15px 15px 0 0 !important;
+  border-radius: 10px 10px 0 0 !important;
 }
 
 .card-body {
@@ -79,31 +80,6 @@ export default {
   -webkit-transform: translateY(-4px) !important;
   transform: translateY(-4px) !important;
   cursor: pointer !important;
-}
-
-.home-blog .card-title {
-  color: #292929;
-  font-size: 1.15em;
-  font-family: IranSansBold;
-
-  @media (max-width: 680px) {
-    font-size: 1em;
-  }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .home-blog .card-title {
-    font-size: 0.87em !important;
-  }
-
-  .card .card-footer .card-footer-text {
-    font-size: 0.9em !important;
-  }
-
-  .category,
-  .card-category {
-    font-size: 0.75em;
-  }
 }
 
 .home-blog .category {
@@ -131,10 +107,6 @@ export default {
   color: #00b35f !important;
 }
 
-// .title-ltr {
-//   direction: ltr;
-// }
-
 .card .card-footer {
   background-color: transparent;
   border-top: 1px solid rgba(158, 158, 158, 0.1);
@@ -143,6 +115,21 @@ export default {
   .card-footer-text {
     color: #00000059 !important;
     font-size: 0.95em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home-blog .card-title {
+    font-size: 1.1em !important;
+  }
+
+  .card .card-footer .card-footer-text {
+    font-size: 1em !important;
+  }
+
+  .category,
+  .card-category {
+    font-size: 1em;
   }
 }
 </style>
