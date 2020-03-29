@@ -6,12 +6,10 @@
     <!-- Top Courses Section -->
     <div class="container pt-5 pb-4">
       <div class="top-courses-section">
-        <div class="d-flex justify-content-between">
-          <p class="text-right section-header pb-2">
-            پیشنهادهای ویژه اسک آریا برای شما
-          </p>
-        </div>
-        <div class="pt-2">
+        <p class="section-header pb-3">
+          پیشنهادهای ویژه اسک آریا برای شما
+        </p>
+        <div class="row pt-2">
           <div
             class="col-lg-3 col-md-6 col-sm-12"
             v-for="course in topCourses"
@@ -157,9 +155,10 @@ export default {
 }
 
 .section-header {
-  font-size: 16px;
+  font-size: 15px;
   font-family: IranSansBold !important;
-  color: rgba(0, 0, 0, 0.3) !important;
+  color: rgba(0, 0, 0, 0.699) !important;
+  text-align: right !important;
 }
 
 .fadeline2 {

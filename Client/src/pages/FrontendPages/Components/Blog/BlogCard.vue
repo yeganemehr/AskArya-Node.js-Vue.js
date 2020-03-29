@@ -46,11 +46,12 @@ export default {
 <style lang="scss" scoped>
 .home-blog .card {
   border-radius: 10px !important;
-  background: transparent;
-  box-shadow: 0 8px 16px 4px rgba(41, 41, 41, 0.2) !important;
-  -moz-box-shadow: 0 8px 16px 4px rgba(41, 41, 41, 0.2) !important;
-  -webkit-box-shadow: 0 8px 16px 4px rgba(41, 41, 41, 0.2) !important;
-  -o-box-shadow: 0 8px 16px 4px rgba(41, 41, 41, 0.2) !important;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
+  background: #f1f1f1 !important;
+}
+
+.card-body {
+  border-radius: 0 0 15px 15px !important;
 }
 
 .home-blog .card-title {
@@ -68,14 +69,8 @@ export default {
   border-radius: 10px 10px 0 0 !important;
 }
 
-.card-body {
-  background: rgb(241, 241, 241) !important;
-  border-radius: 0 0 15px 15px !important;
-}
-
 .home-blog .card:hover {
-  -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0.5) !important;
-  box-shadow: 40px rgba(121, 121, 121, 0.5) !important;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   transition: transform 0.8s !important;
   -webkit-transform: translateY(-4px) !important;
   transform: translateY(-4px) !important;
@@ -90,7 +85,8 @@ export default {
   padding: 4px 10px;
   color: rgb(53, 53, 53) !important;
   background: rgb(241, 241, 241) !important;
-  font-family: IranSans;
+  font-family: IranSans !important;
+  font-size: 1em !important;
   text-align: center !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -108,7 +104,7 @@ export default {
 }
 
 .card .card-footer {
-  background-color: transparent;
+  background-color: #f1f1f1 !important;
   border-top: 1px solid rgba(158, 158, 158, 0.1);
   padding: 1em 1.2em 0 1.2em;
 
@@ -120,7 +116,9 @@ export default {
 
 @media only screen and (max-width: 768px) {
   .home-blog .card-title {
-    font-size: 1.1em !important;
+    font-size: 1.15em !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
   }
 
   .card .card-footer .card-footer-text {

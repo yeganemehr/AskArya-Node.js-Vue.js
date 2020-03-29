@@ -1,15 +1,11 @@
 <template>
-  <div class="CourseCard shadow hover mb-4" @click="onClick">
-    <img
-      class="CourseCard__courseimage"
-      alt="askarya-coursecard-image"
-      :src="thumb"
-    />
-    <h4 class="course-title text-center pt-3">{{ title }}</h4>
-    <hr class="fadeline" />
+  <div class="CourseCard hover mb-4" @click="onClick">
+    <img class="Course_Image" alt="askarya-coursecard-image" :src="thumb" />
     <div class="bottom-section">
+      <h4 class="course-title text-center pt-3">{{ title }}</h4>
+      <hr class="fadeline" />
       <div
-        class="CourseCard__course__info d-flex justify-content-between text-center pt-1"
+        class="CourseInfoSection d-flex justify-content-between text-center pt-1"
       >
         <div>
           <p class="courseTime">
@@ -47,7 +43,7 @@
 
     <div class="buyCourse text-center" v-if="!purchased">
       <hr class="fadeline" />
-      <p class="buyCourseTitle py-2">تهیه دوره‌</p>
+      <p class="buyCourseTitle">تهیه دوره‌</p>
     </div>
   </div>
 </template>
@@ -130,30 +126,33 @@ export default {
 
 <style lang="scss" scoped>
 .CourseCard {
-  background-color: #f1f1f1;
+  background-color: #f7f7f7;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.02);
-  // box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
-  // -moz-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
-  // -webkit-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
-  // -o-box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.075);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
+
   .course-title {
     font-size: 0.9rem;
     font-family: IranSansBold;
     color: #272727;
   }
 
-  .CourseCard__courseimage {
+  .Course_Image {
     border-radius: 10px 10px 0 0 !important;
     width: 100% !important;
   }
 
-  .CourseCard__course__info {
+  .bottom-section {
+    padding: 0;
+    margin: 0;
+    // border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .CourseInfoSection {
     margin: 0 14%;
   }
 
   .courseTime {
-    color: rgb(41, 41, 41);
+    color: rgb(85, 85, 85);
     padding-right: 0.5rem;
     font-size: 1.4em !important;
     font-family: IranSansBold !important;
@@ -165,7 +164,7 @@ export default {
   }
 
   .unitsAvailable {
-    color: rgb(41, 41, 41);
+    color: rgb(85, 85, 85);
     padding-left: 0.5rem;
     font-size: 1.4em !important;
     font-family: IranSansBold !important;
@@ -176,16 +175,13 @@ export default {
     color: #00000059;
   }
 
-  .bottom-section {
-    padding: 0;
-    margin: 0;
-  }
-
   .buyCourseTitle {
     font-size: 1rem;
     color: rgb(86, 173, 223);
     background: #ebebeb;
     margin-bottom: auto;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
@@ -208,22 +204,17 @@ export default {
   }
 
   .fadeline {
-    border-top: 2px solid rgba(207, 207, 207, 0.2);
+    border-top: 2px solid rgba(207, 207, 207, 0.3);
     margin: 0;
   }
 }
 
-.price-section {
-  padding: 0.8em 0;
-}
-
 .hover:hover,
 .hover:focus {
-  -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0.4) !important;
-  box-shadow: 40px rgba(121, 121, 121, 0.4) !important;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   transition: transform 0.7s !important;
-  -webkit-transform: translateY(-4px);
-  transform: translateY(-4px);
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
   cursor: pointer;
 
   .buyCourseTitle {
@@ -238,6 +229,10 @@ export default {
   }
 }
 
+.price-section {
+  padding: 0.8em 0;
+}
+
 @media (max-width: 1200px) {
   .pricehighlight {
     font-size: 0.75rem;
@@ -248,21 +243,21 @@ export default {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
+  .course-title {
+    font-size: 1rem !important;
+  }
+
   .CourseCard__course__info {
-    margin: 0 14%;
+    margin: 0 14% !important;
   }
 
   .pricehighlight {
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
   }
 
   .oldPrice {
-    font-size: 0.8rem;
-  }
-
-  .course-title {
-    font-size: 1rem;
+    font-size: 0.8rem !important;
   }
 
   .courseTimeSpan,
@@ -276,38 +271,12 @@ export default {
   }
 }
 
-@media (max-width: 480px) {
-  .pricehighlight {
-    font-size: 0.75rem;
-  }
-  .course-title {
-    font-size: 0.83rem;
-  }
-}
-
-// @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-//   .CourseCard .course-title {
-//     font-size: 0.9em !important;
+// @media (max-width: 480px) {
+//   .pricehighlight {
+//     font-size: 0.75rem;
 //   }
-
-//   .CourseCard .pricehighlight {
-//     font-size: 0.8em;
-//   }
-
-//   .CourseCard .oldPrice {
-//     font-size: 0.8em;
-//   }
-
-//   .CourseCard .courseTime {
-//     font-size: 1.1em;
-//   }
-
-//   .CourseCard .unitsAvailable {
-//     font-size: 1.1em;
-//   }
-
-//   .CourseCard .buyCourseTitle {
-//     font-size: 1em;
+//   .course-title {
+//     font-size: 0.83rem;
 //   }
 // }
 </style>

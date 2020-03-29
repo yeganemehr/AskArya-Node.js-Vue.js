@@ -250,7 +250,7 @@ export default {
     titleTemplate: 'قوانین و مقررات سایت | اسک آریا',
     htmlAttrs: {
       lang: 'fa',
-      amp: true
+      amp: true,
     },
 
     meta: [
@@ -260,26 +260,26 @@ export default {
       { property: 'og:type', content: 'website' },
       {
         property: 'og:url',
-        content: 'https://www.ask-arya.com/'
+        content: 'https://www.ask-arya.com/',
       },
       {
         property: 'og:image',
-        content: 'https://www.ask-arya.com/img/askarya-logo.png'
+        content: 'https://www.ask-arya.com/img/askarya-logo.png',
       },
       {
         property: 'og:description',
         content:
-          'ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان آموزان در موثر ترین و کوتاه ترین زمان ممکن صورت بگیرد.'
+          'ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان آموزان در موثر ترین و کوتاه ترین زمان ممکن صورت بگیرد.',
       },
       { itemprop: 'name', content: 'اسک آریا' },
       {
         itemprop: 'description',
         content:
-          'ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان آموزان در موثر ترین و کوتاه ترین زمان ممکن صورت بگیرد.'
-      }
+          'ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان آموزان در موثر ترین و کوتاه ترین زمان ممکن صورت بگیرد.',
+      },
     ],
-    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }]
-  }
+    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }],
+  },
 };
 </script>
 
@@ -313,9 +313,9 @@ li {
   font-family: IranSansBold;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .title {
-    font-size: 2.6em;
+    font-size: 2.3em;
   }
 
   .header-subtitle {

@@ -113,5 +113,9 @@ a {
   .copyright-text {
     font-size: 0.8em !important;
   }
+
+  .footer-bottom {
+    font-size: 0.93em !important;
+  }
 }
 </style>

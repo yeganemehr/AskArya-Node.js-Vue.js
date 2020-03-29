@@ -63,19 +63,19 @@
             type="warning"
             class="btn animation-on-hover"
           >
-            <i class="far fa-user pl-3"></i>
+            <i class="far fa-user pl-2"></i>
             ورود به پنل کاربری</base-button
           >
         </router-link>
 
-        <div class="pr-3">
+        <div class="pr-1">
           <router-link to="allcourses">
             <base-button
               native-type="submit"
               type="primary"
               class="btn animation-on-hover"
             >
-              <i class="fas fa-graduation-cap ml-2"></i>
+              <i class="fas fa-graduation-cap pl-2"></i>
               مشاهده همه دوره ها</base-button
             >
           </router-link>

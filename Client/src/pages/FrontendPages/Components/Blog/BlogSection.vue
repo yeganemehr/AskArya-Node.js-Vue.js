@@ -1,29 +1,28 @@
 <template>
-  <div class="home-blog pt-5">
-    <div class="container">
-      <h2 class="section-header text-right">آخرین مقالات</h2>
-      <p class="subtitle text-right">
-        مقالات به‌روز و کاربردی برای افزایش سطح دانش شما
-      </p>
-      <div class="row mt-5">
-        <div
-          class="col-lg-3 col-md-6 col-sm-12 blog-section"
-          v-for="post in posts"
-          v-bind:key="post.id"
-        >
-          <BlogCard
-            :slug="post.slug"
-            :image="post.image"
-            :name="post.name"
-            :createdAt="post.createdAt"
-            :categories="post.categories"
-            :tags="post.tags"
-            :views="post.views"
-          ></BlogCard>
-        </div>
+  <div class="home-blog container pt-5">
+    <h2 class="section-header text-right">آخرین مقالات</h2>
+    <p class="subtitle text-right mb-5">
+      مقالات به‌روز و کاربردی برای افزایش سطح دانش شما
+    </p>
+    <div class="row">
+      <div
+        class="col-lg-3 col-md-6 col-sm-12"
+        v-for="post in posts"
+        v-bind:key="post.id"
+      >
+        <BlogCard
+          :slug="post.slug"
+          :image="post.image"
+          :name="post.name"
+          :createdAt="post.createdAt"
+          :categories="post.categories"
+          :tags="post.tags"
+          :views="post.views"
+        ></BlogCard>
       </div>
+    </div>
 
-      <!-- <div class="mt-5">
+    <!-- <div class="mt-5">
         <Carousel :perPageCustom="[[0, 1], [576, 2], [768, 3], [992, 4]]">
           <slide 
               v-for="post in posts"
@@ -41,7 +40,6 @@
           </slide>
         </Carousel>
       </div>-->
-    </div>
   </div>
 </template>
 
@@ -60,12 +58,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @media (max-width: 680px) {
-//   .blog-section {
-//     padding: 0 14% !important;
-//   }
-// }
-
 .section-header {
   font-size: 1.6em;
   font-family: IranSansBold;
