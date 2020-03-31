@@ -6,14 +6,16 @@
         <h2 class="title">درصد تکمیل دوره</h2>
         <div>
           <pie-chart
-            style="height: 100%"
+            style="height: 100%;"
             :chart-data="pieChart1.chartData"
             :extra-options="pieChart1.extraOptions"
             :height="120"
             ref="chart"
             :key="done"
           ></pie-chart>
-          <p class="text-center text-white mt-3 mb-0 percent-text">{{ Number(done) }} %</p>
+          <p class="text-center text-white mt-3 mb-0 percent-text">
+            {{ Number(done) }} %
+          </p>
         </div>
       </div>
     </div>
@@ -22,9 +24,10 @@
     <div class="card card-2 text-center">
       <div class="py-3 px-3">
         <h2 class="title">يادگيری فعال</h2>
-        <p
-          class="subtitle"
-        >در حین انجام تکالیف روزمره خود زبان را بیاموزید، تا سریع تر و بهتر یاد بگیرید.</p>
+        <p class="subtitle">
+          در حین انجام تکالیف روزمره خود زبان را بیاموزید، تا سریع تر و بهتر یاد
+          بگیرید.
+        </p>
       </div>
     </div>
 
@@ -32,9 +35,10 @@
     <div class="card card-4 text-center">
       <div class="py-3 px-3">
         <h2 class="title">استاندارد های اروپا</h2>
-        <p
-          class="subtitle"
-        >سبک و متد های آموزشی اسک آریا متناسب با استاندارد های اروپا طراحی شده است.</p>
+        <p class="subtitle">
+          سبک و متد های آموزشی اسک آریا متناسب با استاندارد های اروپا طراحی شده
+          است.
+        </p>
       </div>
     </div>
 
@@ -42,9 +46,10 @@
     <div class="card card-3 text-center">
       <div class="py-3 px-3">
         <h2 class="title">یادگیری سریع</h2>
-        <p
-          class="subtitle"
-        >ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان آموزان در موثر ترین و کوتاه ترین زمان ممکن صورت بگیرد.</p>
+        <p class="subtitle">
+          ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان آموزان
+          در موثر ترین و کوتاه ترین زمان ممکن صورت بگیرد.
+        </p>
       </div>
     </div>
   </section>
@@ -56,7 +61,7 @@ import PieChart from 'src/components/Charts/PieChart';
 export default {
   props: ['enrolled', 'done', 'remain'],
   components: {
-    PieChart
+    PieChart,
   },
   data() {
     return {
@@ -70,14 +75,14 @@ export default {
               titleFontFamily: 'IranSansBold',
               backgroundColor: ['#00c09d', '#e2e2e2'],
               borderWidth: 0,
-              data: [this.done, this.remain]
-            }
-          ]
+              data: [this.done, this.remain],
+            },
+          ],
         },
         extraOptions: {
           maintainAspectRatio: false,
           legend: {
-            display: false
+            display: false,
           },
           responsive: true,
           cutoutPercentage: 70,
@@ -98,9 +103,9 @@ export default {
                 return (
                   Number(dataset.data[index]) + ' % ' + dataset.labels[index]
                 );
-              }
-            }
-          }
+              },
+            },
+          },
 
           // scales: {
           //   yAxes: [
@@ -132,18 +137,18 @@ export default {
           //     }
           //   ]
           // }
-        }
-      }
+        },
+      },
     };
   },
   watch: {
-    done: function(value, old) {
+    done: function (value, old) {
       this.pieChart1.chartData.datasets[0].data[0] = value;
     },
-    remain: function(value, old) {
+    remain: function (value, old) {
       this.pieChart1.chartData.datasets[0].data[1] = value;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -202,4 +207,3 @@ pie-chart {
   }
 }
 </style>
-

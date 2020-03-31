@@ -24,9 +24,13 @@
           v-if="canMarkAsDone"
           :class="(isDoneEpisode ? 'btn-success ' : 'btn-danger ')"
         >
-          {{ isDoneEpisode ? 'این بخش را ندیدم' : 'این بخش را دیدم'}}
+          {{ isDoneEpisode ? 'این بخش را ندیدم' : 'این بخش را دیدم' }}
           <i
-            :class="'fas fa-' + (isDoneEpisode ? 'eye-slash text-white ' : 'eye text-white ') + 'pr-2'"
+            :class="
+              'fas fa-' +
+              (isDoneEpisode ? 'eye-slash text-white ' : 'eye text-white ') +
+              'pr-2'
+            "
           ></i>
         </base-button>
       </div>
@@ -56,7 +60,7 @@ export default {
     loadingPrev: Boolean,
     isDoneEpisode: Boolean,
     canMarkAsDone: Boolean,
-    loadingMarkAsDone: Boolean
+    loadingMarkAsDone: Boolean,
   },
   methods: {
     nextEpisodeListener(e) {
@@ -67,8 +71,8 @@ export default {
     },
     markAsDoneListener(e) {
       this.$emit('markAsDone');
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -90,4 +94,3 @@ export default {
   }
 }
 </style>
-

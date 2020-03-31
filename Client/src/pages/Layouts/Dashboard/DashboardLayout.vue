@@ -9,24 +9,23 @@
           :link="{
             name: 'پنل کاربری',
             icon: 'far fa-user',
-            path: '/dashboard'
+            path: '/dashboard',
           }"
         ></sidebar-item>
         <sidebar-item
           :link="{
             name: 'همه دوره‌ها',
             path: '/courses',
-            icon: 'fas fa-university'
+            icon: 'fas fa-university',
           }"
         ></sidebar-item>
         <sidebar-item
           :link="{
             name: 'در حال یادگیری',
             path: '/mycourses',
-            icon: 'fas fa-graduation-cap'
+            icon: 'fas fa-graduation-cap',
           }"
         ></sidebar-item>
-        <!-- <sidebar-item :link="{ name: 'امتحان ها', path: '/quizzes', icon: 'far fa-check-square' }"></sidebar-item> -->
 
         <sidebar-item
           :link="{ name: 'پشتیبانی', path: '/tickets', icon: 'fas fa-headset' }"
@@ -37,7 +36,7 @@
           :link="{
             name: 'پنل مدیریت',
             path: '/managementpage',
-            icon: 'fas fa-tools'
+            icon: 'fas fa-tools',
           }"
         ></sidebar-item>
 
@@ -98,11 +97,11 @@ export default {
   components: {
     DashboardNavbar,
     ContentFooter,
-    ZoomCenterTransition
+    ZoomCenterTransition,
   },
   data() {
     return {
-      sidebarBackground: 'red' //vue|blue|orange|green|red|primary
+      sidebarBackground: 'red', //vue|blue|orange|green|red|primary
     };
   },
   methods: {
@@ -126,22 +125,22 @@ export default {
     },
     logoutListener(e) {
       e.preventDefault();
-      backend.get('logout').then(response => {
+      backend.get('logout').then((response) => {
         if (response.data.status !== 'success') {
           return this.$notify({
             type: 'danger',
-            message: 'درخواست شما توسط سرور رد شد'
+            message: 'درخواست شما توسط سرور رد شد',
           });
         }
         localStorage.removeItem('remember_token');
         window.location.href = '/';
       });
-    }
+    },
   },
   computed: {
     isAdmin() {
       return this.$root.$data.user && this.$root.$data.user.admin;
-    }
+    },
   },
 
   metaInfo: {
@@ -150,7 +149,7 @@ export default {
       'پنل کاربری | سبک آموزشی ما متناسب با استاندارهای اروپا میباشد.',
     htmlAttrs: {
       lang: 'fa',
-      amp: true
+      amp: true,
     },
 
     meta: [
@@ -160,27 +159,27 @@ export default {
       { property: 'og:type', content: 'website' },
       {
         property: 'og:url',
-        content: 'https://www.ask-arya.com/'
+        content: 'https://www.ask-arya.com/',
       },
       {
         property: 'og:image',
         content:
-          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png'
+          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png',
       },
       {
         property: 'og:description',
         content:
-          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
       },
       { itemprop: 'name', content: 'اسک آریا' },
       {
         itemprop: 'description',
         content:
-          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
-      }
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
+      },
     ],
-    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }]
-  }
+    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }],
+  },
 };
 </script>
 

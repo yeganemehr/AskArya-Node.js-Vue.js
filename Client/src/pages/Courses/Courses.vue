@@ -48,7 +48,7 @@ import backend from '../../backend';
 import Vip from './Vip.vue';
 
 export default {
-  data: function() {
+  data: function () {
     return {
       courses: [],
       page: 1,
@@ -58,12 +58,12 @@ export default {
         new Date(this.$root.$data.user.vipTime) > new Date(),
       total: 0,
       hours: 0,
-      episodes: 0
+      episodes: 0,
     };
   },
   methods: {
     dataLoad(page) {
-      backend.get('/courses?page=' + page).then(response => {
+      backend.get('/courses?page=' + page).then((response) => {
         this.courses = response.data.docs;
         this.page = response.data.page;
         this.pages = response.data.totalPages;
@@ -71,15 +71,15 @@ export default {
         this.episodes = response.data.episodes;
         this.hours = Math.ceil(response.data.seconds / 3600);
       });
-    }
+    },
   },
   mounted() {
     this.dataLoad(1);
   },
   components: {
     Vip,
-    Course
-  }
+    Course,
+  },
 };
 </script>
 

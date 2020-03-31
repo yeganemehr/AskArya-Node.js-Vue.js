@@ -6,7 +6,8 @@
           <span class="pr-1">
             <span v-if="data.id">Edit</span>
             <span v-else>Add</span>
-          </span> User
+          </span>
+          User
         </h4>
         <form @submit="checkForm" autocomplete="off">
           <div>
@@ -24,7 +25,9 @@
                     <div class="py-4">
                       <image-upload
                         @change="onImageChange"
-                        :select-text="data.id ? 'Edit User Image' : 'Set User Image'"
+                        :select-text="
+                          data.id ? 'Edit User Image' : 'Set User Image'
+                        "
                       />
                     </div>
                   </div>
@@ -98,24 +101,21 @@
                     </div>
                   </div>
 
-                  <div class="col-md-4">
-                    <base-input
-                      label="Enroll Student on ... Quiz:"
-                      placeholder="Select Quiz for student to be enrolled on..."
-                    ></base-input>
-                  </div>
-
                   <div class="col-md-12 pt-5" v-if="formErrors.length">
                     <div class="text-right text-rtl">
                       <b>لطفا اشتباهات زیر را تصحیح کنید:</b>
                       <ul>
-                        <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
+                        <li v-for="(error, key) in formErrors" :key="key">
+                          {{ error }}
+                        </li>
                       </ul>
                     </div>
                   </div>
 
                   <div class="col-md-2">
-                    <base-checkbox class="mb-3" v-model="data.active">Activate User Account</base-checkbox>
+                    <base-checkbox class="mb-3" v-model="data.active"
+                      >Activate User Account</base-checkbox
+                    >
                   </div>
 
                   <!-- User Stats  -->
@@ -164,7 +164,8 @@
                 <span class="mr-1">
                   <span v-if="data.id">Edit</span>
                   <span v-else>Create</span>
-                </span> User
+                </span>
+                User
               </base-button>
               <base-button
                 class="ml-1 px-5"
@@ -172,7 +173,8 @@
                 type="default"
                 v-if="data.id"
                 @click="reset"
-              >reset</base-button>
+                >reset</base-button
+              >
             </div>
           </div>
         </form>
@@ -199,13 +201,13 @@ export default {
     'learning',
     'vipTime',
     'vipFrom',
-    'active'
+    'active',
   ],
   components: {
     [Option.name]: Option,
     [Select.name]: Select,
     ImageUpload,
-    Autocomplete
+    Autocomplete,
   },
   data() {
     return {
@@ -221,10 +223,10 @@ export default {
         vipTime: undefined,
         vipFrom: undefined,
         course: undefined,
-        active: false
+        active: false,
       },
       fieldErrors: {},
-      formErrors: {}
+      formErrors: {},
     };
   },
   methods: {
@@ -233,7 +235,7 @@ export default {
       if (file instanceof File) {
         var reader = new FileReader();
         const that = this;
-        reader.onload = function(e) {
+        reader.onload = function (e) {
           that.data.avatar = e.target.result;
         };
         reader.readAsDataURL(file);
@@ -302,7 +304,7 @@ export default {
       if (haveError) {
         return;
       }
-      const errorHandler = response => {
+      const errorHandler = (response) => {
         if (response && response.data && response.data.status === 'error') {
           this.formErrors = Array.isArray(response.data.data)
             ? response.data.data
@@ -337,7 +339,7 @@ export default {
           vipFrom: this.data.vipFrom,
           xp: this.data.xp !== undefined ? this.data.xp : 0,
           active: this.data.active,
-          courses: courses
+          courses: courses,
         };
         if (this.data.password) {
           data.password = this.data.password;
@@ -350,7 +352,7 @@ export default {
           : '/admin/users/create';
       backend
         .post(requestUrl, data)
-        .then(response => {
+        .then((response) => {
           this.loading = false;
           if (response.data.status === 'error') {
             errorHandler(response);
@@ -361,13 +363,13 @@ export default {
             message: this.id
               ? `کاربر با موفقیت ویرایش شد.`
               : 'کاربر با موفقیت اضافه شد.',
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
           this.$emit('user', response.data.data.user);
           this.reset();
           window.location.href = '/manageusers';
         })
-        .catch(error => {
+        .catch((error) => {
           this.loading = false;
           errorHandler(error.response);
         });
@@ -382,7 +384,7 @@ export default {
           Swal({
             title: 'User purchased this course before!',
             className: 'text-ltr',
-            icon: 'error'
+            icon: 'error',
           });
           found = true;
           break;
@@ -392,7 +394,7 @@ export default {
         this.data.learning.push({
           id: item.value,
           title: item.display,
-          signupDate: new Date().toISOString()
+          signupDate: new Date().toISOString(),
         });
       }
     },
@@ -409,61 +411,60 @@ export default {
         buttons: {
           catch: {
             text: 'Yes, delete it!',
-            value: true
+            value: true,
           },
-          cancel: 'Cancel'
-        }
-      }).then(result => {
+          cancel: 'Cancel',
+        },
+      }).then((result) => {
         if (!result) return;
 
         this.data.learning.splice(index, 1);
       });
-    }
+    },
   },
   watch: {
-    id: function(newValue, oldValue) {
+    id: function (newValue, oldValue) {
       this.formErrors = [];
       this.data.id = newValue;
     },
-    name: function(newValue, oldValue) {
+    name: function (newValue, oldValue) {
       this.data.name = newValue;
     },
-    email: function(newValue, oldValue) {
+    email: function (newValue, oldValue) {
       this.data.email = newValue;
     },
-    avatar: function(newValue, oldValue) {
+    avatar: function (newValue, oldValue) {
       this.data.avatar = newValue;
     },
-    password: function(newValue, oldValue) {
+    password: function (newValue, oldValue) {
       this.data.password = newValue;
     },
-    xp: function(newValue, oldValue) {
+    xp: function (newValue, oldValue) {
       this.data.xp = newValue;
     },
-    learning: function(newValue, oldValue) {
+    learning: function (newValue, oldValue) {
       this.data.learning = newValue !== undefined ? newValue : [];
     },
-    vipTime: function(newValue, oldValue) {
+    vipTime: function (newValue, oldValue) {
       if (newValue === undefined) {
         this.data.vipTime = undefined;
         return;
       }
       this.data.vipTime = moment(newValue).format('YYYY/MM/DD');
     },
-    vipFrom: function(newValue, oldValue) {
+    vipFrom: function (newValue, oldValue) {
       if (newValue === undefined) {
         this.data.vipTime = undefined;
         return;
       }
       this.data.vipFrom = moment(newValue).format('YYYY/MM/DD');
     },
-    active: function(val, oldValue) {
+    active: function (val, oldValue) {
       this.data.active = val;
-    }
-  }
+    },
+  },
 };
 </script>
-
 
 <style lang="scss">
 .enrolled-on {

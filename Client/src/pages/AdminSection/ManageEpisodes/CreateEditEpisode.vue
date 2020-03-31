@@ -59,14 +59,6 @@
                   ></ckeditor>
                 </base-input>
               </div>
-              <div class="col-md-2">
-                <base-input
-                  label="xP Points"
-                  placeholder="xP"
-                  v-model="data.xp"
-                  :error="fieldErrors.xp"
-                ></base-input>
-              </div>
               <div class="col-md-5 pt-4">
                 <el-select
                   class="select-primary"
@@ -173,15 +165,15 @@ export default {
     'number',
     'videoUrl',
     'body',
-    'xp',
+    // 'xp',
     'type',
-    'course'
+    'course',
   ],
   components: {
     [Option.name]: Option,
     [Select.name]: Select,
     Autocomplete,
-    ckeditor: CKEditor.component
+    ckeditor: CKEditor.component,
   },
   data() {
     return {
@@ -207,93 +199,93 @@ export default {
             IndentBlock,
             HeadingButtonsUI,
             ParagraphButtonUI,
-            Direction
+            Direction,
           ],
           fontSize: {
-            options: [9, 11, 13, 'default', 17, 19, 21]
+            options: [9, 11, 13, 'default', 17, 19, 21],
           },
 
           fontColor: {
             colors: [
               {
                 color: 'hsl(0, 0%, 0%)',
-                label: 'Black'
+                label: 'Black',
               },
               {
                 color: 'hsl(0, 0%, 30%)',
-                label: 'Dim grey'
+                label: 'Dim grey',
               },
               {
                 color: 'hsl(0, 0%, 60%)',
-                label: 'Grey'
+                label: 'Grey',
               },
               {
                 color: 'hsl(0, 0%, 100%)',
-                label: 'White'
+                label: 'White',
                 // hasBorder: true
               },
               {
                 color: '#e14eca',
-                label: 'Custom 1'
+                label: 'Custom 1',
               },
               {
                 color: '#00f2c3',
-                label: 'Custom 2'
+                label: 'Custom 2',
               },
               {
                 color: '#1d8cf8',
-                label: 'Custom 3'
+                label: 'Custom 3',
               },
               {
                 color: '#ff8d72',
-                label: 'Custom 4'
+                label: 'Custom 4',
               },
               {
                 color: '#fd5d93',
-                label: 'Custom 5'
+                label: 'Custom 5',
               },
               {
                 color: '#42b883',
-                label: 'Custom 6'
-              }
+                label: 'Custom 6',
+              },
               // ...
-            ]
+            ],
           },
           fontBackgroundColor: {
             colors: [
               {
                 color: 'hsl(0, 75%, 60%)',
-                label: 'Red'
+                label: 'Red',
               },
               {
                 color: 'hsl(30, 75%, 60%)',
-                label: 'Orangeee'
+                label: 'Orangeee',
               },
               {
                 color: '#e14eca',
-                label: 'Custom 1'
+                label: 'Custom 1',
               },
               {
                 color: '#00f2c3',
-                label: 'Custom 2'
+                label: 'Custom 2',
               },
               {
                 color: '#1d8cf8',
-                label: 'Custom 3'
+                label: 'Custom 3',
               },
               {
                 color: '#ff8d72',
-                label: 'Custom 4'
+                label: 'Custom 4',
               },
               {
                 color: '#fd5d93',
-                label: 'Custom 5'
+                label: 'Custom 5',
               },
               {
                 color: '#42b883',
-                label: 'Custom 6'
-              }
-            ]
+                label: 'Custom 6',
+              },
+            ],
           },
           toolbar: [
             'heading',
@@ -319,16 +311,16 @@ export default {
             'redo',
             'fontSize',
             'fontColor',
-            'fontBackgroundColor'
-          ]
-        }
+            'fontBackgroundColor',
+          ],
+        },
       },
       selects: {
         CourseType: [
           { value: 'Paid', label: 'Paid' },
           { value: 'VIP', label: 'VIP' },
-          { value: 'Free', label: 'Free' }
-        ]
+          { value: 'Free', label: 'Free' },
+        ],
       },
       data: {
         id: undefined,
@@ -337,14 +329,14 @@ export default {
         number: 1,
         videoUrl: '',
         body: '',
-        xp: 0,
+        // xp: 0,
         type: '',
         course: '',
-        courseName: ''
+        courseName: '',
       },
       fieldErrors: {},
       formErrors: {},
-      loading: false
+      loading: false,
     };
   },
   methods: {
@@ -371,10 +363,10 @@ export default {
         this.fieldErrors.body = 'توضیحات درس مورد نیاز است.';
         haveError = true;
       }
-      if (this.data.xp < 0) {
-        this.fieldErrors.xp = 'امتیاز درس مورد نیاز است.';
-        haveError = true;
-      }
+      // if (this.data.xp < 0) {
+      //   this.fieldErrors.xp = 'امتیاز درس مورد نیاز است.';
+      //   haveError = true;
+      // }
       if (this.data.time) {
         const matches = this.data.time.match(/^(\d{2})\:(\d{2})\:(\d{2})$/);
         let message = '';
@@ -389,7 +381,7 @@ export default {
           this.$notify({
             type: 'warning',
             message: message,
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
           haveError = true;
         }
@@ -399,7 +391,7 @@ export default {
         this.$notify({
           type: 'warning',
           message: 'نوع درس مورد نیاز است.',
-          icon: 'tim-icons icon-bell-55'
+          icon: 'tim-icons icon-bell-55',
         });
         haveError = true;
       }
@@ -408,7 +400,7 @@ export default {
         this.$notify({
           type: 'warning',
           message: 'دوره درس مورد نیاز است.',
-          icon: 'tim-icons icon-bell-55'
+          icon: 'tim-icons icon-bell-55',
         });
         haveError = true;
       }
@@ -416,7 +408,7 @@ export default {
         return;
       }
       this.loading = true;
-      const errorHandler = response => {
+      const errorHandler = (response) => {
         if (response && response.data && response.data.status === 'error') {
           this.formErrors = Array.isArray(response.data.data)
             ? response.data.data
@@ -429,7 +421,7 @@ export default {
         : `admin/episodes/add`;
       backend
         .post(url, this.data)
-        .then(response => {
+        .then((response) => {
           this.loading = false;
           if (response.data.status === 'error') {
             errorHandler(response);
@@ -440,13 +432,13 @@ export default {
             message: this.id
               ? `درس با موفقیت ویرایش شد.`
               : 'درس با موفقیت اضافه شد.',
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
           this.$emit('episode', response.data.episode);
           this.reset();
           window.location.href = '/episodeoverview';
         })
-        .catch(err => {
+        .catch((err) => {
           this.loading = false;
           errorHandler(err.message);
         });
@@ -455,7 +447,7 @@ export default {
       this.data.course = item.value;
       backend
         .post(`/admin/courses/${this.data.course}/insert/episode/number`)
-        .then(response => {
+        .then((response) => {
           this.data.number = response.data.number;
         });
     },
@@ -466,7 +458,7 @@ export default {
       this.data.number = 1;
       this.data.videoUrl = '';
       this.data.body = '';
-      this.data.xp = 0;
+      // this.data.xp = 0;
       this.data.type = '';
       this.data.course = '';
       this.data.courseName = '';
@@ -477,36 +469,36 @@ export default {
     onReady(editor) {
       console.log('editor', editor);
       console.log(editor.plugins);
-    }
+    },
   },
   watch: {
-    id: function(value) {
+    id: function (value) {
       this.formErrors = {};
       this.fieldErrors = {};
       this.data.id = value;
     },
-    title: function(value) {
+    title: function (value) {
       this.data.title = value;
     },
-    time: function(value) {
+    time: function (value) {
       this.data.time = value;
     },
-    number: function(value) {
+    number: function (value) {
       this.data.number = value;
     },
-    videoUrl: function(value) {
+    videoUrl: function (value) {
       this.data.videoUrl = value;
     },
-    body: function(value) {
+    body: function (value) {
       this.data.body = value;
     },
-    xp: function(value) {
-      this.data.xp = value;
-    },
-    type: function(value) {
+    // xp: function (value) {
+    //   this.data.xp = value;
+    // },
+    type: function (value) {
       this.data.type = value;
     },
-    course: function(value) {
+    course: function (value) {
       if (value === undefined) {
         this.data.course = '';
         this.data.courseName = '';
@@ -514,8 +506,8 @@ export default {
         this.data.course = value.id;
         this.data.courseName = value.title;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

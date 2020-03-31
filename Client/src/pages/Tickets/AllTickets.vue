@@ -20,7 +20,7 @@
           <p :title="ticket.title">
             {{
               ticket.title.substring(0, 35) +
-                (ticket.title.length > 35 ? ' ...' : '')
+              (ticket.title.length > 35 ? ' ...' : '')
             }}
           </p>
         </div>
@@ -74,7 +74,7 @@ export default {
   components: {
     [Table.name]: Table,
     [TableColumn.name]: TableColumn,
-    BasePagination
+    BasePagination,
   },
   data() {
     return {
@@ -83,9 +83,9 @@ export default {
         currentPage: 1,
         perPageOptions: [5, 10, 15, 20, 30, 50],
         total: 0,
-        pages: 0
+        pages: 0,
       },
-      tickets: []
+      tickets: [],
     };
   },
   methods: {
@@ -96,14 +96,14 @@ export default {
     dataLoad(page) {
       const query = {
         page: page,
-        limit: this.pagination.perPage
+        limit: this.pagination.perPage,
       };
-      backend.get('/tickets' + this.encodeQueryData(query)).then(response => {
+      backend.get('/tickets' + this.encodeQueryData(query)).then((response) => {
         this.pagination.currentPage = parseInt(response.data.page, 10);
         this.pagination.pages = response.data.totalPages;
         this.pagination.total = response.data.totalDocs;
         this.pagination.perPage = response.data.limit;
-        this.tickets = response.data.docs.map(ticket => {
+        this.tickets = response.data.docs.map((ticket) => {
           ticket.date = this.date(ticket.date);
           return ticket;
         });
@@ -167,11 +167,11 @@ export default {
         case 5:
           return `badge badge-secondary`;
       }
-    }
+    },
   },
   mounted() {
     this.dataLoad(1);
-  }
+  },
 };
 </script>
 

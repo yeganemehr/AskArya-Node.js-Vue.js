@@ -157,76 +157,76 @@ let frontendpages = {
     {
       path: '/',
       name: 'Frontend',
-      component: Home
+      component: Home,
     },
     {
       path: '/privateclasses',
       name: 'PrivateClasses',
-      component: PrivateClasses
+      component: PrivateClasses,
     },
 
     {
       path: '/allcourses',
       name: 'AllCourses',
-      component: AllCourses
+      component: AllCourses,
     },
     {
       path: '/comingsoon',
       name: 'ComingSoon',
-      component: ComingSoon
+      component: ComingSoon,
     },
     {
       path: '/articles',
       name: 'Articles',
-      component: Articles
+      component: Articles,
     },
     {
       path: '/contact',
       name: 'Contact',
-      component: Contact
+      component: Contact,
     },
     {
       path: '/terms',
       name: 'Terms',
-      component: Terms
+      component: Terms,
     },
     {
       path: '/blog/:slug',
       name: 'BlogPageLayout',
-      component: BlogPageLayout
+      component: BlogPageLayout,
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
     },
     {
       path: '/forgotpassword',
       name: 'Forgot Password',
-      component: ForgotPassword
+      component: ForgotPassword,
     },
     {
       path: '/auth/password/reset/:token',
       name: 'Reset Password',
-      component: ResetPassword
+      component: ResetPassword,
     },
     {
       path: '/register',
       name: 'Register',
-      component: Register
-    }
+      component: Register,
+    },
     // {
     //   path: '/lock',
     //   name: 'Lock',
     //   component: Lock
     // }
-  ]
+  ],
 };
 
 const routes = [
   {
     path: '/home',
-    redirect: '/'
+    redirect: '/',
   },
   frontendpages,
   // authPages,
@@ -236,36 +236,36 @@ const routes = [
     component: DashboardLayout,
     redirect: '/dashboard',
     meta: {
-      auth: true
+      auth: true,
     },
     children: [
       {
         path: 'dashboard',
         name: 'Dashboard',
         components: {
-          default: Dashboard
-        }
+          default: Dashboard,
+        },
       },
       {
         path: 'courses',
         name: 'Courses',
         components: {
-          default: Courses
-        }
+          default: Courses,
+        },
       },
       {
         path: 'mycourses',
         name: 'My Courses',
         components: {
-          default: MyCourses
-        }
+          default: MyCourses,
+        },
       },
       {
         path: 'courses/payments/verification',
         name: 'Course Pay Verification',
         components: {
-          default: VerificationPayments
-        }
+          default: VerificationPayments,
+        },
       },
       // {
       //   path: 'courses/:course/unit-:unit',
@@ -278,68 +278,68 @@ const routes = [
         path: 'courseoverview',
         name: 'CourseOverview',
         components: {
-          default: CourseOverview
-        }
+          default: CourseOverview,
+        },
       },
       {
         path: 'episodeoverview',
         name: 'EpisodeOverview',
         components: {
-          default: EpisodeOverview
-        }
+          default: EpisodeOverview,
+        },
       },
 
       {
         path: 'managementpage',
         name: 'Management Page',
         components: {
-          default: ManagementPage
-        }
+          default: ManagementPage,
+        },
       },
 
       {
         path: 'manageusers',
         name: 'Manage Users',
         components: {
-          default: ManageUsers
-        }
+          default: ManageUsers,
+        },
       },
       {
         path: 'blogoverview',
         name: 'Blog Overview',
         components: {
-          default: BlogOverview
-        }
+          default: BlogOverview,
+        },
       },
       {
         path: 'tickets/view/:ticket',
         name: 'Single Ticket',
         components: {
-          default: SingleTicket
-        }
+          default: SingleTicket,
+        },
       },
       {
         path: 'ticketoverview',
         name: 'Ticket Overview',
         components: {
-          default: TicketOverview
-        }
+          default: TicketOverview,
+        },
       },
       {
         path: 'tickets',
         name: 'All Tickets',
         components: {
-          default: AllTickets
-        }
+          default: AllTickets,
+        },
       },
       {
         path: 'createticket',
         name: 'Create Tickets',
         components: {
-          default: CreateTicket
-        }
-      }
-    ]
+          default: CreateTicket,
+        },
+      },
+    ],
   },
   {
     path: '/',
@@ -349,17 +349,17 @@ const routes = [
         path: 'courses/:slug',
         name: 'Single Course Guest',
         components: {
-          default: SingleLesson
-        }
+          default: SingleLesson,
+        },
       },
       {
         path: 'courses/:course/unit-:unit',
         name: 'Single Lesson',
         components: {
-          default: SingleLesson
-        }
-      }
-    ]
+          default: SingleLesson,
+        },
+      },
+    ],
   },
   {
     path: '/',
@@ -368,15 +368,15 @@ const routes = [
       {
         path: '*',
         components: {
-          default: NotFound
-        }
-      }
-    ]
+          default: NotFound,
+        },
+      },
+    ],
   },
   {
     path: '*',
-    component: NotFoundPage
-  }
+    component: NotFoundPage,
+  },
 ];
 
 export default routes;

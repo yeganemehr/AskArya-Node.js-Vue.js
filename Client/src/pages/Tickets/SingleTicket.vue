@@ -146,7 +146,7 @@ import Direction from 'ckeditor5-direction/src/direction';
 export default {
   components: {
     fileUpload,
-    ImageUpload
+    ImageUpload,
   },
   data() {
     return {
@@ -185,10 +185,10 @@ export default {
             ImageCaption,
             ImageStyle,
             imageupload,
-            Direction
+            Direction,
           ],
           fontSize: {
-            options: [9, 11, 13, 'default', 17, 19, 21]
+            options: [9, 11, 13, 'default', 17, 19, 21],
           },
           toolbar: [
             'heading',
@@ -219,10 +219,10 @@ export default {
             'imageTextAlternative',
             '|',
             'imageStyle:full',
-            'imageStyle:side'
-          ]
-        }
-      }
+            'imageStyle:side',
+          ],
+        },
+      },
     };
   },
   methods: {
@@ -237,11 +237,11 @@ export default {
       client
         .get(`tickets/view/${this.$route.params.ticket}?${Date.now()}`)
         .then(
-          response => {
+          (response) => {
             this.ticket = response.data.ticket;
             this.messages = response.data.messages;
           },
-          error => {}
+          (error) => {}
         );
     },
     getDate(date) {
@@ -265,7 +265,7 @@ export default {
         data.append('file', this.file);
       } else {
         data = {
-          message: this.message
+          message: this.message,
         };
         if (!this.editingMessage) {
           data.ticket = this.ticket.id;
@@ -277,7 +277,7 @@ export default {
       } else {
         url = `tickets/reply`;
       }
-      backend.post(url, data).then(response => {
+      backend.post(url, data).then((response) => {
         if (this.editingMessage) {
           for (const item of this.messages) {
             if (item.id == this.editingMessage.id) {
@@ -289,7 +289,7 @@ export default {
         } else {
           const messages = this.messages;
           messages.push(response.data.message);
-          messages.sort(function(x, y) {
+          messages.sort(function (x, y) {
             return new Date(x.createdAt) - new Date(y.createdAt);
           });
           this.messages = messages;
@@ -315,10 +315,10 @@ export default {
           cancel: 'cancel',
           catch: {
             text: 'Yes, delete it!',
-            value: true
-          }
-        }
-      }).then(result => {
+            value: true,
+          },
+        },
+      }).then((result) => {
         if (!result) return;
         this.deleteMessage(message);
       });
@@ -326,17 +326,17 @@ export default {
     deleteMessage(message) {
       backend
         .post(`/admin/tickets/messages/${message.id}/delete`)
-        .then(response => {
+        .then((response) => {
           if (response.data.status === 'error') {
             this.$notify({
               type: 'error',
               message: 'درخواست شما توسط سرور رد شد.',
-              icon: 'tim-icons icon-bell-55'
+              icon: 'tim-icons icon-bell-55',
             });
             return;
           }
           let indexToDelete = this.messages.findIndex(
-            item => item.id == message.id
+            (item) => item.id == message.id
           );
           if (indexToDelete >= 0) {
             this.messages.splice(indexToDelete, 1);
@@ -345,14 +345,14 @@ export default {
             title: 'Deleted!',
             className: 'text-ltr',
             text: `You deleted the message`,
-            icon: 'success'
+            icon: 'success',
           });
         })
-        .catch(error => {
+        .catch((error) => {
           this.$notify({
             type: 'error',
             message: 'ارتباط با سرور بدرستی برقرار نشد',
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
         });
     },
@@ -364,27 +364,27 @@ export default {
       mainpanel.scrollTop = mainpanel.scrollHeight;
     },
     onEditorReady(editor) {
-      editor.plugins.get('FileRepository').createUploadAdapter = loader => {
+      editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
         class ImageUploadAdapter {
           constructor(loader) {
             this.loader = loader;
           }
           upload() {
-            const uploader = file => {
+            const uploader = (file) => {
               return new Promise((resolve, reject) => {
                 const data = new FormData();
                 data.append('file', file);
                 backend
                   .post('admin/blog/images/upload', data, {
                     CancelToken: source.token,
-                    onUploadProgress: progressEvent => {
+                    onUploadProgress: (progressEvent) => {
                       loader.uploadTotal = progressEvent.total;
                       loader.uploaded = progressEvent.loaded;
-                    }
+                    },
                   })
-                  .then(response => {
+                  .then((response) => {
                     resolve({
-                      default: response.data.image
+                      default: response.data.image,
                     });
                   }, reject);
               });
@@ -397,13 +397,13 @@ export default {
         }
         return new ImageUploadAdapter(loader);
       };
-    }
+    },
   },
   mounted() {
     this.dataLoad();
     if (!this.loadMessageInterval) {
       const client = axios.create({
-        baseURL: backend.defaults.baseURL
+        baseURL: backend.defaults.baseURL,
       });
       this.loadMessageInterval = setInterval(() => {
         this.dataLoad(client);
@@ -413,8 +413,8 @@ export default {
   computed: {
     isAdmin() {
       return this.$root.$data.user && this.$root.$data.user.admin;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -444,7 +444,6 @@ export default {
 .ticket-typing-box {
   font-family: IranSansBlog !important;
 }
-
 
 .card-custom {
   background-color: rgb(240, 240, 240);
