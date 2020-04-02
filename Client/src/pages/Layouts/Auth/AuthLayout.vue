@@ -464,20 +464,6 @@ p,
   border-bottom: 1px solid #fcfcfc;
 }
 
-.sidebar
-  .nav
-  li.active
-  > a[data-toggle='collapse']
-  + div
-  .nav
-  .active
-  a
-  .sidebar-normal {
-  font-family: IranSansBold;
-  font-size: 1.1rem;
-  color: white;
-}
-
 @media (max-width: 768px) {
   .navbar-nav {
     font-size: 1rem;

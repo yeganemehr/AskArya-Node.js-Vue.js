@@ -14,21 +14,23 @@
       </div>
     </div>
     <div class="container">
-      <div class="main-blog-section">
-        <h3 class="post-title">{{ post.name }}</h3>
-        <div class="row">
-          <!-- <div class="sticky col-lg-3 col-md-12">
+      <div class="d-flex justify-content-center">
+        <div class="main-blog-section">
+          <h3 class="post-title">{{ post.name }}</h3>
+          <div class="row">
+            <!-- <div class="sticky col-lg-3 col-md-12">
             <custom-card :class="sticky" />
           </div> -->
-          <div class="main-blog-text">
-            <div v-html="post.content"></div>
+            <div class="main-blog-text">
+              <div v-html="post.content"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- <div>
+      <!-- <div>
       <custom-card :class="SmallDevices" />
     </div> -->
+    </div>
   </div>
 </template>
 
@@ -134,7 +136,7 @@ export default {
 
 .main-blog-text {
   padding: 4%;
-  margin: 0 10%;
+  margin: 0 9%;
   font-size: 1.3em !important;
   line-height: 2.1em !important;
   direction: ltr !important;

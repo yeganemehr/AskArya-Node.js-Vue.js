@@ -17,12 +17,12 @@ import * as Integrations from '@sentry/integrations';
 import VueGtag from 'vue-gtag';
 
 Vue.use(VueGtag, {
-  config: { id: 'UA-156899433-1' }
+  config: { id: 'UA-156899433-1' },
 });
 
 Sentry.init({
   dsn: 'https://e46a63f841914aa59158d01f88e1cf85@sentry.io/1869694',
-  integrations: [new Integrations.Vue({ Vue, attachProps: true })]
+  integrations: [new Integrations.Vue({ Vue, attachProps: true })],
 });
 
 var VueScrollTo = require('vue-scrollto');
@@ -45,25 +45,25 @@ function start(data) {
   /* eslint-disable no-new */
   new Vue({
     el: '#app',
-    render: h => h(App),
+    render: (h) => h(App),
     router,
-    data
+    data,
   });
 }
 backend
   .get('/home')
-  .then(response => {
+  .then((response) => {
     start({
       user: response.data.user,
       topCourses: response.data.topCourses,
       topPosts: response.data.topPosts,
       seconds: response.data.seconds,
       courses: response.data.courses,
-      episodes: response.data.episodes
+      episodes: response.data.episodes,
     });
   })
   .catch(() => {
     start({
-      user: undefined
+      user: undefined,
     });
   });

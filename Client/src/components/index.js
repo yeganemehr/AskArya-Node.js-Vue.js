@@ -27,10 +27,6 @@ import LoadingPanel from './LoadingPanel.vue';
 
 import BasePagination from './BasePagination.vue';
 
-import SidebarPlugin from './SidebarPlugin';
-
-import AnimatedNumber from './AnimatedNumber';
-
 export {
   BaseCheckbox,
   IconCheckbox,
@@ -47,15 +43,13 @@ export {
   BaseTable,
   BaseDropdown,
   ImageUpload,
-  SidebarPlugin,
   BaseNav,
   NavbarToggleButton,
   TabPane,
   Tabs,
   Modal,
-  AnimatedNumber,
   BaseButton,
   Collapse,
   CollapseItem,
-  LoadingPanel
+  LoadingPanel,
 };

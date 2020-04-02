@@ -7,7 +7,7 @@
       { 'alert-with-icon': icon },
       verticalAlign,
       horizontalAlign,
-      alertType
+      alertType,
     ]"
     role="alert"
     :style="customPosition"
@@ -43,8 +43,8 @@ export default {
   components: {
     contentRender: {
       props: ['component'],
-      render: h => h(this.component)
-    }
+      render: (h) => h(this.component),
+    },
   },
   props: {
     message: String,
@@ -53,60 +53,60 @@ export default {
     verticalAlign: {
       type: String,
       default: 'top',
-      validator: value => {
+      validator: (value) => {
         let acceptedValues = ['top', 'bottom'];
         return acceptedValues.indexOf(value) !== -1;
-      }
+      },
     },
     horizontalAlign: {
       type: String,
       default: 'right',
-      validator: value => {
+      validator: (value) => {
         let acceptedValues = ['left', 'center', 'right'];
         return acceptedValues.indexOf(value) !== -1;
-      }
+      },
     },
     type: {
       type: String,
       default: 'info',
-      validator: value => {
+      validator: (value) => {
         let acceptedValues = [
           'info',
           'primary',
           'danger',
           'warning',
-          'success'
+          'success',
         ];
         return acceptedValues.indexOf(value) !== -1;
-      }
+      },
     },
     timeout: {
       type: Number,
       default: 5000,
-      validator: value => {
+      validator: (value) => {
         return value >= 0;
-      }
+      },
     },
     timestamp: {
       type: Date,
-      default: () => new Date()
+      default: () => new Date(),
     },
     component: {
-      type: [Object, Function]
+      type: [Object, Function],
     },
     showClose: {
       type: Boolean,
-      default: true
+      default: true,
     },
     closeOnClick: {
       type: Boolean,
-      default: true
+      default: true,
     },
-    clickHandler: Function
+    clickHandler: Function,
   },
   data() {
     return {
-      elmHeight: 0
+      elmHeight: 0,
     };
   },
   computed: {
@@ -119,19 +119,21 @@ export default {
     customPosition() {
       let initialMargin = 20;
       let alertHeight = this.elmHeight + 10;
-      let sameAlerts = this.$notifications.state.filter(alert => {
+      let sameAlerts = this.$notifications.state.filter((alert) => {
         return (
           alert.horizontalAlign === this.horizontalAlign &&
           alert.verticalAlign === this.verticalAlign
         );
       });
-      let sameAlertsCount = 1
-      let currentIndex = sameAlerts.findIndex(n => n.timestamp === this.timestamp)
+      let sameAlertsCount = 1;
+      let currentIndex = sameAlerts.findIndex(
+        (n) => n.timestamp === this.timestamp
+      );
       if (this.$notifications.settings.overlap) {
         sameAlertsCount = 1;
       }
       if (currentIndex !== -1) {
-        sameAlertsCount = currentIndex + 1
+        sameAlertsCount = currentIndex + 1;
       }
       let pixels = (sameAlertsCount - 1) * alertHeight + initialMargin;
       let styles = {};
@@ -141,7 +143,7 @@ export default {
         styles.bottom = `${pixels}px`;
       }
       return styles;
-    }
+    },
   },
   methods: {
     close() {
@@ -154,14 +156,14 @@ export default {
       if (this.closeOnClick) {
         this.close();
       }
-    }
+    },
   },
   mounted() {
     this.elmHeight = this.$el.clientHeight;
     if (this.timeout) {
       setTimeout(this.close, this.timeout);
     }
-  }
+  },
 };
 </script>
 <style lang="scss">

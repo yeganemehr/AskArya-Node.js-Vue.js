@@ -4,7 +4,6 @@ import Notifications from 'src/components/NotificationPlugin';
 import VeeValidate from 'vee-validate';
 import GlobalComponents from './globalComponents';
 import GlobalDirectives from './globalDirectives';
-import SideBar from 'src/components/SidebarPlugin';
 import RTLPlugin from './RTLPlugin';
 
 // Element ui language configuration
@@ -23,9 +22,8 @@ export default {
     Vue.use(GlobalComponents);
     Vue.use(GlobalDirectives);
     Vue.use(RTLPlugin);
-    Vue.use(SideBar);
     Vue.use(Notifications);
     Vue.use(VeeValidate, { fieldsBagName: 'veeFields' });
     Vue.use(require('jalali-moment'));
-  }
+  },
 };

@@ -32,29 +32,30 @@ import { Tag } from 'element-ui';
 export default {
   name: 'tags-input',
   components: {
-    [Tag.name]: Tag
+    [Tag.name]: Tag,
   },
+
   props: {
     value: {
       type: Array,
       default: () => [],
-      description: 'List of tags'
+      description: 'List of tags',
     },
     tagType: {
       type: String,
       default: 'primary',
-      description: 'Tag type (primary|danger etc)'
-    }
+      description: 'Tag type (primary|danger etc)',
+    },
   },
   model: {
     prop: 'value',
-    event: 'change'
+    event: 'change',
   },
   data() {
     return {
       dynamicTags: [],
       inputVisible: false,
-      inputValue: ''
+      inputValue: '',
     };
   },
   methods: {
@@ -80,16 +81,16 @@ export default {
     },
     onInput(evt) {
       this.$emit('input', evt.target.value);
-    }
+    },
   },
   created() {
     this.$watch(
       'value',
-      newVal => {
+      (newVal) => {
         this.dynamicTags = [...newVal];
       },
       { immediate: true }
     );
-  }
+  },
 };
 </script>

@@ -3,7 +3,6 @@
     <!-- Navbar Section -->
     <TopBanner id="top" />
     <Navbar />
-    <!-- <Sidebar /> -->
     <div class="wrapper wrapper-full-page">
       <div class="full-page" :class="pageClass">
         <div class="content-custom">
@@ -40,14 +39,12 @@
 import { ZoomCenterTransition } from 'vue2-transitions';
 import TopBanner from './Components/TopBanner.vue';
 import Navbar from './Components/Navbar.vue';
-import Sidebar from './Components/Sidebar.vue';
-
 import Footer from './Components/Footer.vue';
+
 export default {
   components: {
     TopBanner,
     Navbar,
-    Sidebar,
     ZoomCenterTransition,
     Footer,
   },
