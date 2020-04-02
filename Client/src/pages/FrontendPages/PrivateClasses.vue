@@ -224,7 +224,9 @@ ul {
   .price {
     font-size: 1.7rem;
     color: #2e2e2e;
-    font-family: IranSansBold;
+    font-family: IranSansBold !important;
+    font-weight: normal !important;
+    letter-spacing: -.03em !important;
   }
 
   .pricing-price:after {

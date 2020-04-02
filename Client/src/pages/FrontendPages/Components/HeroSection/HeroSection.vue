@@ -118,8 +118,8 @@ export default {};
   .hero-subtitle {
     font-size: 1.2em;
     line-height: 1.7em;
-    font-family: IranSans;
-    color: rgba(255, 255, 255, 0.938) !important;
+    font-family: IranSans !important;
+    color: rgba(255, 255, 255, 0.9) !important;
   }
 
   .btn {
@@ -128,57 +128,7 @@ export default {};
   }
 }
 
-@media only screen and (min-width: 1500px) {
-  .hero-content-homepage {
-    height: 48vh !important;
-  }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .hero-content-homepage .hero-title {
-    font-size: 3.8em;
-  }
-
-  .hero-content-homepage .hero-subtitle {
-    font-size: 1.2em;
-  }
-
-  .hero-content-homepage .btn {
-    padding: 13px 23px !important;
-    font-size: 1em;
-    font-family: IranSansBold;
-  }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .hero-title {
-    font-size: 2em;
-    padding-top: 30px;
-    line-height: inherit;
-    margin: 0;
-  }
-
-  .hero-subtitle {
-    padding-left: 1.1em;
-    font-size: 1.1em;
-    text-align: right !important;
-  }
-
-  .image {
-    width: 400px !important;
-    padding-top: 3em;
-    padding-bottom: 2em;
-  }
-
-  .btn {
-    padding: 8px !important;
-    margin-bottom: 40px;
-    font-size: 0.7em;
-    font-family: IranSansBold;
-  }
-}
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .hero-content-homepage {
     background: linear-gradient(225deg, #d223e9f6, #5e62dff1),
       url(/img/frontend/westminsterlondon-opt.jpeg);
@@ -203,7 +153,7 @@ export default {};
     .btn {
       font-weight: inherit;
       border-radius: 30px;
-      padding: 14px 12px;
+      padding: 12px 10px;
       font-size: 1.1em;
       font-family: IranSansBold;
       margin-bottom: 2.5em;
@@ -223,35 +173,87 @@ export default {};
   }
 }
 
-@media screen and (max-width: 330px) {
+@media only screen and (min-width: 1500px) {
   .hero-content-homepage {
-    min-height: 65vh !important;
-    background-position: top;
-    .hero-text-section {
-      position: relative;
-      top: 45%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 0 10%;
-    }
-
-    .hero-title {
-      font-size: 2.3em;
-      padding-top: 30px;
-    }
-
-    .hero-subtitle {
-      padding-left: 1.1em;
-      font-size: 1.1em;
-      text-align: right !important;
-    }
-
-    .btn {
-      padding: 14px 15px;
-      font-size: 0.7em;
-      font-family: IranSansBold;
-      margin-bottom: 2.5em;
-    }
+    height: 45vh !important;
   }
 }
+
+// @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+//   .hero-content-homepage .hero-title {
+//     font-size: 3.8em;
+//   }
+
+//   .hero-content-homepage .hero-subtitle {
+//     font-size: 1.2em;
+//   }
+
+//   .hero-content-homepage .btn {
+//     padding: 13px 23px !important;
+//     font-size: 1em;
+//     font-family: IranSansBold;
+//   }
+// }
+
+// @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+//   .hero-title {
+//     font-size: 2em;
+//     padding-top: 30px;
+//     line-height: inherit;
+//     margin: 0;
+//   }
+
+//   .hero-subtitle {
+//     padding-left: 1.1em;
+//     font-size: 1.1em;
+//     text-align: right !important;
+//   }
+
+//   .image {
+//     width: 400px !important;
+//     padding-top: 3em;
+//     padding-bottom: 2em;
+//   }
+
+//   .btn {
+//     padding: 8px !important;
+//     margin-bottom: 40px;
+//     font-size: 0.7em;
+//     font-family: IranSansBold;
+//   }
+// }
+
+
+
+// @media screen and (max-width: 330px) {
+//   .hero-content-homepage {
+//     min-height: 65vh !important;
+//     background-position: top;
+//     .hero-text-section {
+//       position: relative;
+//       top: 45%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       padding: 0 10%;
+//     }
+
+//     .hero-title {
+//       font-size: 2.3em;
+//       padding-top: 30px;
+//     }
+
+//     .hero-subtitle {
+//       padding-left: 1.1em;
+//       font-size: 1.1em;
+//       text-align: right !important;
+//     }
+
+//     .btn {
+//       padding: 14px 15px;
+//       font-size: 0.7em;
+//       font-family: IranSansBold;
+//       margin-bottom: 2.5em;
+//     }
+//   }
+// }
 </style>
