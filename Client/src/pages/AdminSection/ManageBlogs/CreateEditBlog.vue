@@ -164,7 +164,7 @@ export default {
     ImageUpload,
     TagsInput,
     ckeditor: CKEditor.component,
-    Autocomplete
+    Autocomplete,
   },
   data() {
     return {
@@ -199,93 +199,93 @@ export default {
             ImageCaption,
             ImageStyle,
             imageupload,
-            Direction
+            Direction,
           ],
           fontSize: {
-            options: [9, 11, 13, 'default', 17, 19, 21]
+            options: [9, 11, 13, 'default', 17, 19, 21],
           },
 
           fontColor: {
             colors: [
               {
                 color: 'hsl(0, 0%, 0%)',
-                label: 'Black'
+                label: 'Black',
               },
               {
                 color: 'hsl(0, 0%, 30%)',
-                label: 'Dim grey'
+                label: 'Dim grey',
               },
               {
                 color: 'hsl(0, 0%, 60%)',
-                label: 'Grey'
+                label: 'Grey',
               },
               {
                 color: 'hsl(0, 0%, 100%)',
-                label: 'White'
+                label: 'White',
                 // hasBorder: true
               },
               {
                 color: '#e14eca',
-                label: 'Custom 1'
+                label: 'Custom 1',
               },
               {
                 color: '#00f2c3',
-                label: 'Custom 2'
+                label: 'Custom 2',
               },
               {
                 color: '#1d8cf8',
-                label: 'Custom 3'
+                label: 'Custom 3',
               },
               {
                 color: '#ff8d72',
-                label: 'Custom 4'
+                label: 'Custom 4',
               },
               {
                 color: '#fd5d93',
-                label: 'Custom 5'
+                label: 'Custom 5',
               },
               {
                 color: '#42b883',
-                label: 'Custom 6'
-              }
+                label: 'Custom 6',
+              },
               // ...
-            ]
+            ],
           },
           fontBackgroundColor: {
             colors: [
               {
                 color: 'hsl(0, 75%, 60%)',
-                label: 'Red'
+                label: 'Red',
               },
               {
                 color: 'hsl(30, 75%, 60%)',
-                label: 'Orangeee'
+                label: 'Orangeee',
               },
               {
                 color: '#e14eca',
-                label: 'Custom 1'
+                label: 'Custom 1',
               },
               {
                 color: '#00f2c3',
-                label: 'Custom 2'
+                label: 'Custom 2',
               },
               {
                 color: '#1d8cf8',
-                label: 'Custom 3'
+                label: 'Custom 3',
               },
               {
                 color: '#ff8d72',
-                label: 'Custom 4'
+                label: 'Custom 4',
               },
               {
                 color: '#fd5d93',
-                label: 'Custom 5'
+                label: 'Custom 5',
               },
               {
                 color: '#42b883',
-                label: 'Custom 6'
-              }
-            ]
+                label: 'Custom 6',
+              },
+            ],
           },
 
           toolbar: [
@@ -317,9 +317,9 @@ export default {
             'imageTextAlternative',
             '|',
             'imageStyle:full',
-            'imageStyle:side'
-          ]
-        }
+            'imageStyle:side',
+          ],
+        },
       },
       data: {
         id: undefined,
@@ -329,8 +329,8 @@ export default {
         authorName: this.$root.$data.user.name,
         tags: [],
         categories: [],
-        imagepreview: ''
-      }
+        imagepreview: '',
+      },
     };
   },
   methods: {
@@ -339,7 +339,7 @@ export default {
       if (file instanceof File) {
         var reader = new FileReader();
         const that = this;
-        reader.onload = function(e) {
+        reader.onload = function (e) {
           that.data.imagepreview = e.target.result;
         };
         reader.readAsDataURL(file);
@@ -362,7 +362,7 @@ export default {
         this.$notify({
           type: 'danger',
           message: 'تگ های پست مورد نیاز است',
-          icon: 'tim-icons icon-bell-55'
+          icon: 'tim-icons icon-bell-55',
         });
         haveError = true;
       }
@@ -370,7 +370,7 @@ export default {
         this.$notify({
           type: 'danger',
           message: 'دسته بندی های پست مورد نیاز است',
-          icon: 'tim-icons icon-bell-55'
+          icon: 'tim-icons icon-bell-55',
         });
         haveError = true;
       }
@@ -392,11 +392,11 @@ export default {
           author: this.data.author,
           content: this.data.content,
           tags: this.data.tags,
-          categories: this.data.categories
+          categories: this.data.categories,
         };
       }
       this.loading = true;
-      const errorHandler = response => {
+      const errorHandler = (response) => {
         if (response && response.data && response.data.status === 'error') {
           this.formErrors = Array.isArray(response.data.data)
             ? response.data.data
@@ -409,7 +409,7 @@ export default {
         : 'admin/blog/posts/add';
       backend
         .post(requestURL, data)
-        .then(response => {
+        .then((response) => {
           this.loading = false;
           if (response.data.status === 'error') {
             errorHandler(response);
@@ -420,13 +420,13 @@ export default {
             message: this.id
               ? `پست با موفقیت ویرایش شد.`
               : 'پست با موفقیت اضافه شد.',
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
           this.$emit('post', response.data.post);
           this.reset();
           window.location.href = '/blogoverview';
         })
-        .catch(error => {
+        .catch((error) => {
           this.loading = false;
           errorHandler(error.response);
         });
@@ -448,27 +448,27 @@ export default {
       this.$emit('reset');
     },
     onEditorReady(editor) {
-      editor.plugins.get('FileRepository').createUploadAdapter = loader => {
+      editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
         class ImageUploadAdapter {
           constructor(loader) {
             this.loader = loader;
           }
           upload() {
-            const uploader = file => {
+            const uploader = (file) => {
               return new Promise((resolve, reject) => {
                 const data = new FormData();
                 data.append('file', file);
                 backend
                   .post('admin/blog/images/upload', data, {
                     CancelToken: source.token,
-                    onUploadProgress: progressEvent => {
+                    onUploadProgress: (progressEvent) => {
                       loader.uploadTotal = progressEvent.total;
                       loader.uploaded = progressEvent.loaded;
-                    }
+                    },
                   })
-                  .then(response => {
+                  .then((response) => {
                     resolve({
-                      default: response.data.image
+                      default: response.data.image,
                     });
                   }, reject);
               });
@@ -481,21 +481,21 @@ export default {
         }
         return new ImageUploadAdapter(loader);
       };
-    }
+    },
   },
   watch: {
-    id: function(newValue) {
+    id: function (newValue) {
       this.fieldErrors = {};
       this.formErrors = {};
       this.data.id = newValue;
     },
-    name: function(newValue) {
+    name: function (newValue) {
       this.data.name = newValue;
     },
-    content: function(newValue) {
+    content: function (newValue) {
       this.data.content = newValue;
     },
-    author: function(newValue) {
+    author: function (newValue) {
       if (newValue == undefined) {
         this.data.author = this.$root.$data.user.id;
         this.data.authorName = this.$root.$data.user.name;
@@ -504,16 +504,16 @@ export default {
         this.data.authorName = newValue.name;
       }
     },
-    tags: function(newValue) {
+    tags: function (newValue) {
       this.data.tags = newValue;
     },
-    categories: function(newValue) {
+    categories: function (newValue) {
       this.data.categories = newValue;
     },
-    image: function(value) {
+    image: function (value) {
       this.data.imagepreview = value;
-    }
-  }
+    },
+  },
 };
 </script>
 

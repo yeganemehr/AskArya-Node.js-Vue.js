@@ -73,86 +73,84 @@
       <div class="row">
         <div v-if="this.$root.$data.user !== undefined">
           <div class="row">
-            <ul class="navbar-nav text-right">
-              <!-- <ul class="navbar-nav text-right" :class="$rtl.isRTL ? 'mr-auto' : 'ml-auto'"> -->
-              <base-dropdown
-                tag="li"
-                title-tag="a"
-                class="nav-item"
-                menu-classes="dropdown-navbar"
+            <!-- <ul class="navbar-nav text-right" :class="$rtl.isRTL ? 'mr-auto' : 'ml-auto'"> -->
+            <base-dropdown
+              tag="li"
+              title-tag="a"
+              class="nav-item"
+              menu-classes="dropdown-navbar"
+            >
+              <a
+                slot="title"
+                href="#"
+                class="dropdown-toggle nav-link"
+                data-toggle="dropdown"
+                aria-expanded="true"
               >
-                <a
-                  slot="title"
-                  href="#"
-                  class="dropdown-toggle nav-link"
-                  data-toggle="dropdown"
-                  aria-expanded="true"
-                >
-                  <div class="user-item d-none d-md-block">
-                    <div class="row pl-4">
-                      <div class="photo">
-                        <img :src="userAvatar" />
-                      </div>
-                      <div
-                        class="d-flex align-items-center pr-3 profile-link-text"
-                      >
-                        <p class="px-1">پروفایل من</p>
-                        <i class="i-chevron fas fa-chevron-down"></i>
-                      </div>
+                <div class="user-item d-none d-md-block">
+                  <div class="row pl-4">
+                    <div class="photo avatar">
+                      <img :src="userAvatar" />
+                    </div>
+                    <div
+                      class="d-flex align-items-center pr-3 profile-link-text"
+                    >
+                      <p class="px-1">پروفایل من</p>
+                      <i class="i-chevron fas fa-chevron-down"></i>
                     </div>
                   </div>
-                </a>
+                </div>
+              </a>
 
-                <li class="nav-link">
-                  <router-link to="/dashboard" class="nav-item dropdown-item">
-                    <i class="far fa-user pl-2"></i>
-                    پنل کاربری
-                  </router-link>
-                </li>
+              <li class="nav-link">
+                <router-link to="/dashboard" class="nav-item dropdown-item">
+                  <i class="far fa-user pl-2"></i>
+                  پنل کاربری
+                </router-link>
+              </li>
 
-                <li class="nav-link">
-                  <router-link to="/courses" class="nav-item dropdown-item">
-                    <i class="fas fa-university pl-2"></i>
-                    دوره های آموزشی
-                  </router-link>
-                </li>
+              <li class="nav-link">
+                <router-link to="/courses" class="nav-item dropdown-item">
+                  <i class="fas fa-university pl-2"></i>
+                  دوره های آموزشی
+                </router-link>
+              </li>
 
-                <li class="nav-link">
+              <!-- <li class="nav-link">
                   <router-link to="/mycourses" class="nav-item dropdown-item">
                     <i class="i-custom fas fa-graduation-cap pl-2"></i>
                     در حال یادگیری
                   </router-link>
-                </li>
+                </li> -->
 
-                <li class="nav-link">
-                  <router-link to="/tickets" class="nav-item dropdown-item">
-                    <i class="fas fa-headset pl-2"></i>
-                    پشتیبانی
-                  </router-link>
-                </li>
+              <li class="nav-link">
+                <router-link to="/tickets" class="nav-item dropdown-item">
+                  <i class="fas fa-headset pl-2"></i>
+                  پشتیبانی
+                </router-link>
+              </li>
 
-                <li v-if="isAdmin" class="nav-link">
-                  <router-link
-                    to="/managementpage"
-                    class="nav-item dropdown-item"
-                  >
-                    <i class="fas fa-tools pl-2"></i>
-                    پنل مدیریت
-                  </router-link>
-                </li>
+              <li v-if="isAdmin" class="nav-link">
+                <router-link
+                  to="/managementpage"
+                  class="nav-item dropdown-item"
+                >
+                  <i class="fas fa-tools pl-2"></i>
+                  پنل مدیریت
+                </router-link>
+              </li>
 
-                <li class="nav-link nav-link-exit">
-                  <router-link
-                    class="nav-item dropdown-item"
-                    to="#"
-                    @click.native="logoutListener"
-                  >
-                    <i class="fas fa-sign-out-alt pl-2"></i>
-                    خروج
-                  </router-link>
-                </li>
-              </base-dropdown>
-            </ul>
+              <li class="nav-link nav-link-exit">
+                <router-link
+                  class="nav-item dropdown-item"
+                  to="#"
+                  @click.native="logoutListener"
+                >
+                  <i class="fas fa-sign-out-alt pl-2"></i>
+                  خروج
+                </router-link>
+              </li>
+            </base-dropdown>
           </div>
         </div>
         <div class="row login-register-buttons" v-else>
@@ -317,6 +315,7 @@ export default {
 .dropdown-menu .dropdown-item:hover {
   color: #a053ee !important;
 }
+
 @media (max-width: 768px) {
   .navbar-nav {
     font-size: 1rem !important;
@@ -330,6 +329,9 @@ export default {
   }
   .login-register-buttons {
     padding: 10px 0 !important;
+  }
+  .ipad-fix {
+    display: none !important;
   }
 }
 .navbar-collapse .navbar-nav .nav-link {
@@ -405,7 +407,7 @@ export default {
   font-size: 0.95em;
 }
 .navbar-collapse .navbar-nav .nav-link .dropdown-item {
-  font-size: 0.9em !important;
+  font-size: 0.95em !important;
 }
 .btn {
   font-weight: inherit !important;

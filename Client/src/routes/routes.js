@@ -15,9 +15,6 @@ const Dashboard = () =>
 const Courses = () =>
   import(/* webpackChunkName: "extra" */ 'src/pages/Courses/Courses.vue');
 
-const MyCourses = () =>
-  import(/* webpackChunkName: "extra" */ 'src/pages/MyCourses/MyCourses.vue');
-
 const SingleLesson = () =>
   import(
     /* webpackChunkName: "extra" */
@@ -251,13 +248,6 @@ const routes = [
         name: 'Courses',
         components: {
           default: Courses,
-        },
-      },
-      {
-        path: 'mycourses',
-        name: 'My Courses',
-        components: {
-          default: MyCourses,
         },
       },
       {

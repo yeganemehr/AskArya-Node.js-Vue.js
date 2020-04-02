@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container py-5">
     <div>
       <h2 class="text-center">
         Courses Overview

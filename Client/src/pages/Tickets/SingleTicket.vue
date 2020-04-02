@@ -1,10 +1,7 @@
 <template>
-  <section class="container-fluid text-right">
+  <section class="container pt-5 text-right">
     <div class="ticket-number mb-2">
-      <h1>
-        #{{ ticket.ticket_id }}
-        <span class="subtitle">مشاهده تیکت</span>
-      </h1>
+      <h1>#{{ ticket.ticket_id }} <span class="subtitle">مشاهده تیکت</span></h1>
     </div>
     <div class="my-5">
       <h2 class="ticket-desc text-center py-3">{{ ticket.title }}</h2>
@@ -425,13 +422,15 @@ export default {
   margin-left: 10px;
 }
 
-.ticket-number {
-  h1,
-  .subtitle {
-    font-size: 1.4em;
-    font-family: IranSans;
-    color: rgba(0, 0, 0, 0.5);
-  }
+.ticket-number h1 {
+  font-family: IranSans !important;
+  color: black !important;
+}
+
+.subtitle {
+  font-size: 0.8em !important;
+  font-family: IranSansBold !important;
+  color: rgba(0, 0, 0, 1);
 }
 
 .ticket-desc {
@@ -463,8 +462,8 @@ export default {
 
   .ticket-user {
     font-family: IranSans;
-    font-size: 1.1em;
-    color: rgba(0, 0, 0, 0.75);
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.6);
   }
 
   i {

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container py-5">
     <div>
       <h2 class="text-center">Manage Users</h2>
     </div>
@@ -113,7 +113,7 @@ export default {
     [Select.name]: Select,
     [Option.name]: Option,
     [Table.name]: Table,
-    [TableColumn.name]: TableColumn
+    [TableColumn.name]: TableColumn,
   },
   computed: {
     to() {
@@ -124,7 +124,7 @@ export default {
     },
     from() {
       return this.pagination.perPage * (this.pagination.currentPage - 1);
-    }
+    },
   },
   data() {
     return {
@@ -133,7 +133,7 @@ export default {
         currentPage: 1,
         perPageOptions: [5, 10, 15, 20, 30, 50],
         total: 0,
-        pages: 0
+        pages: 0,
       },
       searchQuery: '',
       propsToSearch: ['name', 'email'],
@@ -141,26 +141,26 @@ export default {
         {
           prop: 'name',
           label: 'Name',
-          minWidth: 150
+          minWidth: 150,
         },
         {
           prop: 'email',
           label: 'Email',
-          minWidth: 190
+          minWidth: 190,
         },
         {
           prop: 'datejoined',
           label: 'Joined On',
-          minWidth: 80
+          minWidth: 80,
         },
         {
           prop: 'amountspent',
           label: 'Spent',
-          minWidth: 90
-        }
+          minWidth: 90,
+        },
       ],
       tableData: [],
-      user: {}
+      user: {},
     };
   },
   methods: {
@@ -170,8 +170,8 @@ export default {
       if (this.searchQuery) {
         uri += '&filter=' + this.searchQuery;
       }
-      backend.get(uri).then(response => {
-        this.tableData = response.data.docs.map(user => {
+      backend.get(uri).then((response) => {
+        this.tableData = response.data.docs.map((user) => {
           user.datejoined = this.date(user.createdAt);
           return user;
         });
@@ -188,7 +188,7 @@ export default {
         className: 'text-ltr',
         buttons: false,
         timer: 900,
-        confirmButtonClass: 'btn btn-info btn-fill'
+        confirmButtonClass: 'btn btn-info btn-fill',
       });
       this.user = row;
     },
@@ -201,11 +201,11 @@ export default {
         buttons: {
           catch: {
             text: 'Yes, delete it!',
-            value: true
+            value: true,
           },
-          cancel: 'Cancel'
-        }
-      }).then(result => {
+          cancel: 'Cancel',
+        },
+      }).then((result) => {
         if (!result) return;
         this.deleteRow(row);
       });
@@ -213,17 +213,17 @@ export default {
     deleteRow(row) {
       backend
         .post(`/admin/users/${row.id}/delete`)
-        .then(response => {
+        .then((response) => {
           if (response.data.status === 'error') {
             this.$notify({
               type: 'error',
               message: 'درخواست شما توسط سرور رد شد.',
-              icon: 'tim-icons icon-bell-55'
+              icon: 'tim-icons icon-bell-55',
             });
             return;
           }
           let indexToDelete = this.tableData.findIndex(
-            tableRow => tableRow.id === row.id
+            (tableRow) => tableRow.id === row.id
           );
           if (indexToDelete >= 0) {
             this.tableData.splice(indexToDelete, 1);
@@ -232,15 +232,15 @@ export default {
             title: 'Deleted!',
             className: 'text-ltr',
             text: `You deleted ${row.title}`,
-            icon: 'success'
+            icon: 'success',
           });
         })
-        .catch(error => {
+        .catch((error) => {
           this.$notify({
             type: 'error',
             message:
               'در حال حاظر سرور پاسخ درخواست شما را بدرستی ارسال نمیکند.',
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
         });
     },
@@ -272,11 +272,11 @@ export default {
       } else {
         this.tableData.push(user);
       }
-    }
+    },
   },
   mounted() {
     this.dataLoad(1);
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container py-5">
     <div>
       <h2 class="text-center">Episode Overview</h2>
     </div>
@@ -7,7 +7,9 @@
       <div>
         <card card-body-classes="table-full-width">
           <div>
-            <div class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap">
+            <div
+              class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
+            >
               <el-select
                 class="select-primary mb-3 pagination-select"
                 v-model="pagination.perPage"
@@ -61,9 +63,10 @@
             class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
           >
             <div class>
-              <p
-                class="card-category"
-              >Showing {{ from + 1 }} to {{ to }} of {{ pagination.total }} entries</p>
+              <p class="card-category">
+                Showing {{ from + 1 }} to {{ to }} of
+                {{ pagination.total }} entries
+              </p>
             </div>
             <base-pagination
               v-model="pagination.currentPage"
@@ -78,7 +81,11 @@
       </div>
     </div>
     <div class="pt-3">
-      <CreateEditEpisode v-bind="episode" @episode="episodeActionListener" @reset="reset"></CreateEditEpisode>
+      <CreateEditEpisode
+        v-bind="episode"
+        @episode="episodeActionListener"
+        @reset="reset"
+      ></CreateEditEpisode>
     </div>
   </section>
 </template>
@@ -96,7 +103,7 @@ export default {
     [Select.name]: Select,
     [Option.name]: Option,
     [Table.name]: Table,
-    [TableColumn.name]: TableColumn
+    [TableColumn.name]: TableColumn,
   },
   computed: {
     to() {
@@ -107,7 +114,7 @@ export default {
     },
     from() {
       return this.pagination.perPage * (this.pagination.currentPage - 1);
-    }
+    },
   },
   data() {
     return {
@@ -115,39 +122,39 @@ export default {
         {
           prop: 'title',
           label: 'Episode Name',
-          minWidth: 150
+          minWidth: 150,
         },
         {
           prop: 'courseName',
           label: 'Related Course',
-          minWidth: 150
+          minWidth: 150,
         },
         {
           prop: 'number',
           label: 'Order',
-          minWidth: 70
+          minWidth: 70,
         },
         {
           prop: 'viewCount',
           label: ' Views',
-          minWidth: 70
+          minWidth: 70,
         },
         {
           prop: 'type',
           label: 'Type',
-          minWidth: 70
-        }
+          minWidth: 70,
+        },
       ],
       pagination: {
         perPage: 15,
         currentPage: 1,
         perPageOptions: [5, 10, 15, 20, 25],
         total: 0,
-        pages: 0
+        pages: 0,
       },
       tableData: [],
       searchedData: [],
-      episode: undefined
+      episode: undefined,
     };
   },
   methods: {
@@ -156,7 +163,7 @@ export default {
         .get(
           '/admin/episodes?page=' + page + '&limit=' + this.pagination.perPage
         )
-        .then(response => {
+        .then((response) => {
           this.tableData = response.data.docs;
           this.pagination.currentPage = parseInt(response.data.page, 10);
           this.pagination.pages = response.data.totalPages;
@@ -171,7 +178,7 @@ export default {
         className: 'text-ltr',
         buttons: false,
         timer: 1900,
-        confirmButtonClass: 'btn btn-info btn-fill'
+        confirmButtonClass: 'btn btn-info btn-fill',
       });
       this.episode = row;
     },
@@ -185,10 +192,10 @@ export default {
           cancel: 'cancel',
           catch: {
             text: 'Yes, delete it!',
-            value: true
-          }
-        }
-      }).then(result => {
+            value: true,
+          },
+        },
+      }).then((result) => {
         if (!result) return;
         this.deleteRow(row);
       });
@@ -196,17 +203,17 @@ export default {
     deleteRow(row) {
       backend
         .post(`/admin/episodes/${row.id}/delete`)
-        .then(response => {
+        .then((response) => {
           if (response.data.status === 'error') {
             this.$notify({
               type: 'danger',
               message: 'درخواست شما توسط سرور رد شد.',
-              icon: 'tim-icons icon-bell-55'
+              icon: 'tim-icons icon-bell-55',
             });
             return;
           }
           const indexToDelete = this.tableData.findIndex(
-            tableRow => tableRow.id === row.id
+            (tableRow) => tableRow.id === row.id
           );
           if (indexToDelete >= 0) {
             const episode = this.tableData[indexToDelete];
@@ -223,15 +230,15 @@ export default {
             title: 'Deleted!',
             className: 'text-ltr',
             text: `You deleted ${row.title}`,
-            icon: 'success'
+            icon: 'success',
           });
         })
-        .catch(error => {
+        .catch((error) => {
           this.$notify({
             type: 'danger',
             message:
               'در حال حاظر سرور پاسخ درخواست شما را بدرستی ارسال نمیکند.',
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
         });
     },
@@ -292,11 +299,11 @@ export default {
     },
     reset() {
       this.episode = undefined;
-    }
+    },
   },
   mounted() {
     this.dataLoad(1);
-  }
+  },
 };
 </script>
 <style>

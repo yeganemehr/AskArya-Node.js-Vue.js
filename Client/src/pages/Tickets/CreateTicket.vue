@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container pt-5">
     <h1 slot="header" class="card-title text-danger text-right pb-5">
       ارسال تیکت
     </h1>

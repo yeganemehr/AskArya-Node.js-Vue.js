@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container pt-5">
     <h1 class="text-center text-default">Management Page</h1>
     <div class="pt-5 text-ltr text-left d-flex justify-content-center row">
       <router-link to="/courseoverview">
