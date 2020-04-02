@@ -1,7 +1,9 @@
 <template>
+<div class="container">
+
   <div class="row">
     <!-- User Profile Section -->
-    <div class="col-lg-7 col-md-12 mb-4">
+    <div class="col-lg-7 col-md-12 my-4">
       <user-card :user="$root.$data.user"></user-card>
     </div>
     <!-- Notification Section -->
@@ -30,6 +32,8 @@
       <PaymentHistory :payments="payments"></PaymentHistory>
     </div>
   </div>
+  </div>
+
 </template>
 <script>
 import StatsCard from 'src/components/Cards/StatsCard';

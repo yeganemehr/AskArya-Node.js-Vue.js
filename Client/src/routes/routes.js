@@ -233,7 +233,7 @@ const routes = [
 
   {
     path: '/',
-    component: DashboardLayout,
+    component: FrontendLayout,
     redirect: '/dashboard',
     meta: {
       auth: true,

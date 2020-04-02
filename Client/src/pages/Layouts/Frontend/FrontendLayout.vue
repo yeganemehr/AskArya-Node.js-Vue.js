@@ -52,6 +52,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.content-custom {
+  background-color: #ffffff !important;
+  background-attachment: fixed !important;
+}
+
 .go-to-top {
   position: fixed;
   bottom: 20px;
@@ -88,10 +93,7 @@ export default {
 .btn {
   font-weight: inherit !important;
 }
-.content-custom {
-  background-color: #ffffff !important;
-  background-attachment: fixed !important;
-}
+
 $scaleSize: 0.8;
 @keyframes zoomIn8 {
   from {
