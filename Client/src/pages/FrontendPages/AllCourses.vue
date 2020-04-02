@@ -25,7 +25,7 @@
 
     <div class="row course-section">
       <div
-        class="col-lg-3 col-md-6 col-sm-12 "
+        class="col-lg-3 col-md-6 col-sm-12"
         v-for="course in courses"
         v-bind:key="course.id"
       >
@@ -40,7 +40,7 @@ import Course from '../FrontendPages/Components/CourseCard/Course.vue';
 
 import backend from '../../backend';
 export default {
-  data: function() {
+  data: function () {
     return {
       courses: [],
       page: 1,
@@ -50,12 +50,12 @@ export default {
         new Date(this.$root.$data.user.vipTime) > new Date(),
       total: 0,
       hours: 0,
-      episodes: 0
+      episodes: 0,
     };
   },
   methods: {
     dataLoad(page) {
-      backend.get('/courses?page=' + page).then(response => {
+      backend.get('/courses?page=' + page).then((response) => {
         this.courses = response.data.docs;
         this.page = response.data.page;
         this.pages = response.data.totalPages;
@@ -63,13 +63,13 @@ export default {
         this.episodes = response.data.episodes;
         this.hours = Math.ceil(response.data.seconds / 3600);
       });
-    }
+    },
   },
   mounted() {
     this.dataLoad(1);
   },
   components: {
-    Course
+    Course,
   },
   metaInfo: {
     title:
@@ -79,7 +79,7 @@ export default {
       'آموزش های غیر حضوری | سبک آموزشی ما متناسب با استاندارهای اروپا میباشد.',
     htmlAttrs: {
       lang: 'fa',
-      amp: true
+      amp: true,
     },
 
     meta: [
@@ -89,27 +89,27 @@ export default {
       { property: 'og:type', content: 'website' },
       {
         property: 'og:url',
-        content: 'https://www.ask-arya.com/'
+        content: 'https://www.ask-arya.com/',
       },
       {
         property: 'og:image',
         content:
-          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png'
+          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png',
       },
       {
         property: 'og:description',
         content:
-          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
       },
       { itemprop: 'name', content: 'اسک آریا' },
       {
         itemprop: 'description',
         content:
-          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.'
-      }
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
+      },
     ],
-    link: [{ rel: 'canonical', href: 'https:/ask-arya.com/' }]
-  }
+    link: [{ rel: 'canonical', href: 'https:/ask-arya.com/' }],
+  },
 };
 </script>
 
