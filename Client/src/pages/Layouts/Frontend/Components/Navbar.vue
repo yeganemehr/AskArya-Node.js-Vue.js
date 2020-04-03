@@ -312,12 +312,13 @@ export default {
   font-size: 0.95em !important;
   font-family: IranSansBold !important;
 }
+
 .dropdown-menu .dropdown-item:hover {
   color: #a053ee !important;
 }
 
 .dropdown-box {
-  padding-left: 4rem !important;
+  padding-left: 3.5rem !important;
 }
 
 @media (max-width: 768px) {

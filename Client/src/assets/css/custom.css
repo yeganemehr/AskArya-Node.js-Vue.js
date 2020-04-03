@@ -139,7 +139,12 @@ h6 {
 }
 
 .dropdown-menu.dropdown-navbar:before {
-  right: 48px !important;
+  right: 45px !important;
+}
+
+.dropdown-menu:before {
+  left: auto !important;
+  right: 72px !important;
 }
 
 .dropdown.show .dropdown-menu,

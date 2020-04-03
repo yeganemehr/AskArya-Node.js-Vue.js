@@ -50,7 +50,7 @@ export default {
   components: {
     BaseDropdown,
     [Select.name]: Select,
-    [Option.name]: Option
+    [Option.name]: Option,
   },
   data() {
     return {
@@ -59,25 +59,25 @@ export default {
         vip: [
           { value: 'vip1', label: 'ماهانه - 39 هزار تومان' },
           { value: 'vip2', label: '۴ ماهه - 139 هزار تومان' },
-          { value: 'vip3', label: 'یکساله - 309 هزار تومان' }
-        ]
-      }
+          { value: 'vip3', label: 'یکساله - 309 هزار تومان' },
+        ],
+      },
     };
   },
   methods: {
     payment(plan = 1) {
-      backend.post('/vip/payment', { plan }).then(response => {
+      backend.post('/vip/payment', { plan }).then((response) => {
         if (response.data.status == 'success') {
           window.location.href = response.data.redirect;
         } else {
           Swal({
             title: 'خطا',
             text: `در حال حاضر امکان ارتباط با درگاه پرداخت وجود ندارد.`,
-            icon: 'warning'
+            icon: 'warning',
           });
         }
       });
-    }
+    },
   },
   mounted() {
     if (
@@ -91,31 +91,31 @@ export default {
           title: 'تراکنش ناموفق',
           text: `تراکنش شما با موفقیت پرداخت نشد. درصورتی که مبلغی از حساب بانکی شما کسر شده، توسط سیستم بانکی طی 48 ساعت آینده مرجوع خواهد شد.`,
           icon: 'warning',
-          button: 'بسیار خوب'
+          button: 'بسیار خوب',
         });
       } else {
         backend
           .post(`vip/payment/verification`, { status, authority })
-          .then(response => {
+          .then((response) => {
             this.$root.$data.user.vipTime = response.data.vipTime;
             Swal({
               title: 'تراکنش موفق',
               text: `اکانت شما تا ${moment(response.data.vipTime)
                 .locale('fa')
                 .format('YYYY/MM/DD')} تمدید شد.`,
-              icon: 'success'
+              icon: 'success',
             });
           })
-          .catch(response => {
+          .catch((response) => {
             Swal({
               title: 'تراکنش ناموفق',
               text: `تراکنش شما با موفقیت پرداخت نشد.\nدرصورتی که مبلغی از حساب بانکی شما کسر شده، توسط سیستم بانکی طی 48 ساعت آینده مرجوع خواهد شد.`,
-              icon: 'warning'
+              icon: 'warning',
             });
           });
       }
     }
-  }
+  },
 };
 </script>
 
@@ -149,8 +149,7 @@ export default {
 .widget-vip {
   background-image: linear-gradient(270deg, #e2aa3b, #fcf6ba);
   border-radius: 15px;
-  -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0.3);
-  box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
 }
 
 .vip-title {

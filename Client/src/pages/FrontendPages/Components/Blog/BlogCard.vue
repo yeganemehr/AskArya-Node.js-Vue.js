@@ -86,7 +86,7 @@ export default {
   color: rgb(53, 53, 53) !important;
   background: rgb(241, 241, 241) !important;
   font-family: IranSans !important;
-  font-size: 1em !important;
+  font-size: 0.9em !important;
   text-align: center !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
