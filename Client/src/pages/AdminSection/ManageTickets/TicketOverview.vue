@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container py-5">
     <h2 class="text-center pb-2">Manage Tickets</h2>
     <ticket-data
       :openTickets="openTickets"

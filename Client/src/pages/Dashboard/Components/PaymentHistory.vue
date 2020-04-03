@@ -1,7 +1,14 @@
 <template>
-  <card card-body-classes="table-full-width">
-    <h1 slot="header" class="card-title">{{ 'وضعیت پرداخت' }}</h1>
-    <div class="containeer">
+  <card>
+    <div class="text-right pb-5">
+      <h1 class="card-title my-0 pb-3">تاریخچه پرداخت ها</h1>
+      <span>
+        در این بخش گزارشات پرداختی های شما لیست میشود. در صورت مشاهده هر گونه
+        مشکل از طریق تلگرام با پشتیبانی تماس بگیرید.
+      </span>
+    </div>
+
+    <div class="container">
       <el-table :data="tableData">
         <el-table-column
           v-for="column in tableColumns"
@@ -101,18 +108,17 @@ export default {
       tableColumns: [
         {
           prop: 'product',
-          label: 'محصول',
+          label: 'عنوان دوره',
           minWidth: 100,
         },
         {
           prop: 'date',
-          // label: 'تاریخ پرداخت',
-          label: 'تاریخ',
+          label: 'تاریخ پرداخت',
           minWidth: 55,
         },
         {
           prop: 'price',
-          label: 'مبلغ کل',
+          label: 'مقدار پرداختی',
           minWidth: 45,
         },
         {

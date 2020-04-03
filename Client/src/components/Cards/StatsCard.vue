@@ -26,17 +26,17 @@ import Card from './Card.vue';
 export default {
   name: 'stats-card',
   components: {
-    Card
+    Card,
   },
   props: {
     type: {
       type: String,
-      default: 'primary'
+      default: 'primary',
     },
     icon: String,
     title: String,
-    subTitle: String
-  }
+    subTitle: String,
+  },
 };
 </script>
 <style></style>

@@ -3,7 +3,17 @@
     <div class="container">
       <card class="shadow">
         <form @submit="checkForm">
-          <h1 class="auth-title text-primary py-4">ورود</h1>
+          <h1 class="auth-title text-primary pt-4 pb-3">ورود</h1>
+          <div class="class text-right pb-4">
+            اگر در اسک آریا حساب ندارید، ثبت نام کنید:
+
+            <router-link to="/register">
+              <base-button size="sm" type="success" class="animation-on-hover">
+                ایجاد حساب کاربری
+              </base-button>
+            </router-link>
+          </div>
+
           <div class="row">
             <div class="col-12">
               <base-input
@@ -28,7 +38,7 @@
               ></base-input>
             </div>
           </div>
-          <div class="text-right pb-3">
+          <div class="text-right pb-2">
             <base-checkbox
               class="pb-3"
               name="remember"
@@ -81,7 +91,8 @@
               type="primary"
               class="btn-simple animation-on-hover"
             >
-              <i class="fab fa-google icon"></i>
+              <i class="fab fa-google icon pl-4"></i>
+              ورود سریع با حساب گوگل
             </base-button>
           </a>
 
@@ -230,7 +241,7 @@ export default {
 }
 
 .card {
-  width: 330px !important;
+  width: 430px !important;
   margin-right: auto;
   margin-left: auto;
 }
@@ -272,5 +283,15 @@ export default {
 
 .footer-link:hover {
   color: #cc51e1 !important;
+}
+
+@media (max-width: 680px) {
+  .auth-section {
+    height: 100vh !important;
+  }
+
+  .card {
+    width: 330px !important;
+  }
 }
 </style>

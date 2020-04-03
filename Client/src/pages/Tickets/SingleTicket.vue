@@ -1,5 +1,5 @@
 <template>
-  <section class="container pt-5 text-right">
+  <section class="container py-5 text-right">
     <div class="ticket-number mb-2">
       <h1>#{{ ticket.ticket_id }} <span class="subtitle">مشاهده تیکت</span></h1>
     </div>
@@ -445,10 +445,10 @@ export default {
 }
 
 .card-custom {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(245, 245, 245);
   border-radius: 25px;
   padding: 2em 3em;
-  border: 1px solid rgba(230, 230, 230, 0.801);
+  border: 1px solid rgba(230, 230, 230, 0.7);
   font-family: IranSansBlog !important;
 
   .ticket-date {

@@ -35,7 +35,7 @@
         </div>
 
         <!-- My Courses Section -->
-        <div class="col-md-12 mb-4 text-center">
+        <div class="col-md-12 mb-5 text-center">
           <MyCourses></MyCourses>
         </div>
       </div>
@@ -142,10 +142,6 @@ export default {
   margin-bottom: 1.2em;
   text-align: right;
   color: #fd5d93 !important;
-}
-
-.white-content .card:not(.card-pricing).card-stats .card-title {
-  font-family: IranSansBold !important;
 }
 
 .coloredLink {

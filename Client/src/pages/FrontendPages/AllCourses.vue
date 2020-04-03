@@ -1,5 +1,6 @@
 <template>
   <div class="container py-5">
+    <!-- <h1 class="title">دوره‌ های غیر حضوری</h1> -->
     <div
       class="d-flex justify-content-around d-flex align-items-center text-center headerDigits"
     >

@@ -89,7 +89,8 @@
               type="primary"
               class="btn-simple animation-on-hover mb-4"
             >
-              <i class="fab fa-google icon"></i>
+              <i class="fab fa-google icon pl-4"></i>
+              عضویت سریع با حساب گوگل
             </base-button>
           </a>
         </form>

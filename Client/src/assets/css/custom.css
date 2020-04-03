@@ -137,3 +137,12 @@ h6 {
 .btn {
   font-weight: normal !important;
 }
+
+.dropdown-menu.dropdown-navbar:before {
+  right: 48px !important;
+}
+
+.dropdown.show .dropdown-menu,
+.navbar .dropdown.show .dropdown-menu {
+  margin-top: 9px !important;
+}

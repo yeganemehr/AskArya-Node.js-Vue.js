@@ -19,7 +19,7 @@
                   type="warning"
                   class="btn animation-on-hover"
                 >
-                  <i class="far fa-user pl-3"></i>
+                  <i class="far fa-user ml-2"></i>
                   ورود به پنل کاربری
                 </base-button>
               </router-link>
@@ -98,10 +98,7 @@ export default {};
 
 .hero-content-homepage {
   background-color: #6e72fc;
-  background: linear-gradient(90deg, #ad1debee 0%, #6e73fce7 84%, #ad1deb75);
   background: linear-gradient(90deg, #d15eeeb6 0%, #6e73fce7 84%);
-
-  background-color: #6e72fc;
   background-size: cover;
   background-position: bottom;
   min-height: 44vh !important;
@@ -124,7 +121,9 @@ export default {};
 
   .btn {
     border-radius: 10px !important;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 }
 
@@ -222,8 +221,6 @@ export default {};
 //     font-family: IranSansBold;
 //   }
 // }
-
-
 
 // @media screen and (max-width: 330px) {
 //   .hero-content-homepage {

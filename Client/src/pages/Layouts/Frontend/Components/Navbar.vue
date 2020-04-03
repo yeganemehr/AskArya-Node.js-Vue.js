@@ -53,7 +53,7 @@
         <a class="nav-link" href="/contact">تماس با ما</a>
       </li>
 
-      <div class="d-md-none pr-3" v-if="this.$root.$data.user !== undefined">
+      <div class="d-md-none" v-if="this.$root.$data.user !== undefined">
         <router-link
           class="row d-flex align-items-center nav-item"
           tag="li"
@@ -69,7 +69,7 @@
       </div>
     </ul>
 
-    <ul class="navbar-nav mr-auto ipad-fix">
+    <ul class="navbar-nav mr-auto ipad-fix dropdown-box">
       <div class="row">
         <div v-if="this.$root.$data.user !== undefined">
           <div class="row">
@@ -102,7 +102,7 @@
                 </div>
               </a>
 
-              <li class="nav-link">
+              <li class="nav-link px-2">
                 <router-link to="/dashboard" class="nav-item dropdown-item">
                   <i class="far fa-user pl-2"></i>
                   پنل کاربری
@@ -314,6 +314,10 @@ export default {
 }
 .dropdown-menu .dropdown-item:hover {
   color: #a053ee !important;
+}
+
+.dropdown-box {
+  padding-left: 4rem !important;
 }
 
 @media (max-width: 768px) {
