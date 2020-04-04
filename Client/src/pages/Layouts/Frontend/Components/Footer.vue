@@ -23,7 +23,9 @@
                   <router-link to="/privateclasses">کلاس های حضوری</router-link>
                 </li>
                 <li class="footer-li">
-                  <router-link to="/comingsoon">میت آپ</router-link>
+                  <router-link to="/allcourses"
+                    >دوره‌ های غیر حضوری</router-link
+                  >
                 </li>
                 <li class="footer-li">
                   <router-link to="/terms">قوانین و مقررات</router-link>

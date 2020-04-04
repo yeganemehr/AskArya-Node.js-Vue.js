@@ -1,5 +1,4 @@
 /* eslint-disable */
-import DashboardLayout from 'src/pages/Layouts/Dashboard/DashboardLayout.vue';
 import AuthLayout from 'src/pages/Layouts/Auth/AuthLayout.vue';
 import FrontendLayout from 'src/pages/Layouts/Frontend/FrontendLayout.vue';
 import NotFound from 'src/pages/Layouts/NotFound/NotFoundPage.vue';
@@ -90,12 +89,6 @@ const AllCourses = () =>
     'src/pages/FrontendPages/AllCourses.vue'
   );
 
-const ComingSoon = () =>
-  import(
-    /* webpackChunkName: "pages" */
-    'src/pages/FrontendPages/ComingSoon.vue'
-  );
-
 const Articles = () =>
   import(
     /* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Articles.vue'
@@ -166,11 +159,6 @@ let frontendpages = {
       path: '/allcourses',
       name: 'AllCourses',
       component: AllCourses,
-    },
-    {
-      path: '/comingsoon',
-      name: 'ComingSoon',
-      component: ComingSoon,
     },
     {
       path: '/articles',
