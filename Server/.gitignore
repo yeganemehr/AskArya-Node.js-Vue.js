@@ -5,5 +5,3 @@ node_modules
 .envDebug
 .envProduction
 sendgrid.env
-sendgrid.env
-sendgrid.env

@@ -4,15 +4,16 @@
       <card class="shadow">
         <form @submit="checkForm">
           <h1 class="auth-title text-primary pt-4 pb-3">ورود</h1>
-          <div class="class text-right pb-4">
+          <div class="class text-right">
             اگر در اسک آریا حساب ندارید، ثبت نام کنید:
-
             <router-link to="/register">
               <base-button size="sm" type="success" class="animation-on-hover">
                 ایجاد حساب کاربری
               </base-button>
             </router-link>
           </div>
+
+          <hr />
 
           <div class="row">
             <div class="col-12">

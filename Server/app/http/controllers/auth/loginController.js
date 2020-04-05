@@ -11,7 +11,7 @@ class loginController extends controller {
     const title = 'صفحه ورود';
     res.render('home/auth/login', {
       recaptcha: this.recaptcha.render(),
-      title
+      title,
     });
   }
 
@@ -32,11 +32,11 @@ class loginController extends controller {
       if (!user.active) {
         // create activationCode
         let activeCode = await ActivationCode.find({
-          user: user.id
+          user: user.id,
         })
           .gt('expire', new Date())
           .sort({
-            createdAt: 1
+            createdAt: 1,
           })
           .populate('user')
           .limit(1)
@@ -47,7 +47,7 @@ class loginController extends controller {
             title: 'توجه کنید',
             message:
               'لینک فعال سازی اکانت به ایمیل شما ارسال شده برای ارسال دوباره لطفا 10 دقیقه صبر کنید و دوباره اقدام به ورود کنید تا لینک جدید به ایمیل شما ارسال شود',
-            button: 'بسیار خوب'
+            button: 'بسیار خوب',
           });
           return;
         } else {
@@ -55,7 +55,7 @@ class loginController extends controller {
           let newActiveCode = new ActivationCode({
             user: user.id,
             code,
-            expire: Date.now() + 1000 * 60 * 10
+            expire: Date.now() + 1000 * 60 * 10,
           });
 
           await newActiveCode.save();
@@ -65,12 +65,12 @@ class loginController extends controller {
             to: `${user.email}`, // list of receivers
             subject: 'فعال سازی اکانت اسک آریا', // Subject line
             html: `
-                <div dir="rtl">
+                <div style="text-align:right;direction:rtl;">
                   <h2>فعال سازی اکانت اسک آریا</h2>
                   <p>برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
                   <a href="${config.siteurl}/user/activation/${newActiveCode.code}">فعال سازی</a>
                 </div>
-                        ` // html body
+                        `, // html body
           };
 
           sgMail.send(mailOptions, (err, info) => {
@@ -81,7 +81,7 @@ class loginController extends controller {
               title: 'دقت کنید',
               message: 'ایمیل حاوی لینک فعال سازی به ایمیل شما ارسال شد',
               type: 'success',
-              button: 'بسیار خوب'
+              button: 'بسیار خوب',
             });
             return res.redirect('/');
           });
@@ -89,7 +89,7 @@ class loginController extends controller {
         }
       }
 
-      req.logIn(user, err => {
+      req.logIn(user, (err) => {
         if (req.body.remember) {
           user.setRememberToken(res);
         }
