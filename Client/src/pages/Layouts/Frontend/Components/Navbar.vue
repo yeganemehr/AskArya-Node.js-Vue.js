@@ -22,7 +22,7 @@
       </li>
 
       <!-- All Courses -->
-      <router-link class="nav-item d-none d-md-block" tag="li" to="allcourses">
+      <router-link class="nav-item d-none d-md-block" tag="li" to="/allcourses">
         <a :class="getNavClass('allcourses')">{{ 'دوره‌ های غیر حضوری' }}</a>
       </router-link>
       <li class="nav-item d-md-none">

@@ -254,7 +254,7 @@ class courseController extends controller {
       req.pipe(reqo);
       reqo.pipe(res);
     } catch (error) {
-      this.failed(err.message, res);
+      this.failed(error.message, res);
     }
   }
   async downloadEpisode(req, res) {

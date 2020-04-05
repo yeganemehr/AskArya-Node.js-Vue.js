@@ -102,7 +102,7 @@
                   </li>
 
                   <li class="nav-link">
-                    <router-link to="/mycourses" class="nav-item dropdown-item">
+                    <router-link to="/dashboard" class="nav-item dropdown-item">
                       <i class="i-custom fas fa-graduation-cap pl-2"></i>
                       در حال یادگیری
                     </router-link>

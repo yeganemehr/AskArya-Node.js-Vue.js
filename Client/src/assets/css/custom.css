@@ -39,12 +39,18 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.swal-title,
+.swal-button {
   font-weight: normal !important;
   letter-spacing: -0.03em !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   text-rendering: optimizeLegibility !important;
+}
+
+.swal-title {
+  color: black;
 }
 
 /*------------------------

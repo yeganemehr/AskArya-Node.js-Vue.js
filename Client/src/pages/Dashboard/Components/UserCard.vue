@@ -225,6 +225,7 @@ export default {
 .title {
   font-size: 2em !important;
   font-family: IranSansBold, sans-serif !important;
+      letter-spacing: 0 !important;
 }
 
 .description {
@@ -235,6 +236,7 @@ export default {
   font-size: 1rem !important;
   font-family: Arial, Helvetica, sans-serif !important;
   font-weight: normal !important;
+    letter-spacing: 0 !important;
 }
 
 .box {

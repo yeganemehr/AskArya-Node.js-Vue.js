@@ -138,11 +138,6 @@ export default {
           label: 'Course Name',
           minWidth: 170,
         },
-        // {
-        //   prop: 'comments',
-        //   label: 'comments',
-        //   minWidth: 80
-        // },
         {
           prop: 'users',
           label: 'Course Users',
