@@ -3,9 +3,9 @@
     <div class="container">
       <card class="shadow">
         <form @submit="checkForm">
-          <h1 class="auth-title text-primary pt-4 pb-3">ورود</h1>
-          <div class="class text-right">
-            <p>اگر در اسک آریا حساب ندارید، ثبت نام کنید:</p>
+          <h1 class="auth-title text-primary py-2">ورود</h1>
+          <div class="container register-text text-center">
+            اگر در اسک آریا حساب ندارید، ثبت نام کنید:
             <router-link to="/register">
               <base-button size="sm" type="success" class="animation-on-hover">
                 ایجاد حساب کاربری
@@ -103,7 +103,7 @@
             >
           </h6> -->
 
-          <h6 class="text-center my-4">
+          <h6 class="text-center my-3">
             <router-link to="/forgotpassword" class="footer-link"
               >رمز عبور را فراموش کرده ام</router-link
             >
@@ -242,7 +242,7 @@ export default {
 }
 
 .card {
-  width: 430px !important;
+  width: 470px !important;
   margin-right: auto;
   margin-left: auto;
 }
@@ -293,6 +293,10 @@ export default {
 
   .card {
     width: 330px !important;
+  }
+
+  .register-text {
+    text-align: right !important;
   }
 }
 </style>

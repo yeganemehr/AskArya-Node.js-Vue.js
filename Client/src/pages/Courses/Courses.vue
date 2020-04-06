@@ -23,17 +23,17 @@
       محتوای جدید هر هفته اضافه می شود!
     </h3>
 
+    <!-- Courses Section -->
     <div class="row">
-      <!-- Courses  -->
       <div
-        class="col-lg-3 col-md-6 course-section"
+        class="col-lg-3 col-md-6"
         v-for="course in courses"
         v-bind:key="course.id"
       >
         <Course v-bind="course"></Course>
       </div>
 
-      <!-- VIP -->
+      <!-- VIP Section -->
       <div class="col-lg-12 my-5">
         <Vip></Vip>
       </div>
@@ -43,9 +43,9 @@
 
 <script>
 import Course from '../FrontendPages/Components/CourseCard/Course.vue';
+import Vip from './Vip.vue';
 
 import backend from '../../backend';
-import Vip from './Vip.vue';
 
 export default {
   data: function () {
@@ -76,6 +76,47 @@ export default {
   mounted() {
     this.dataLoad(1);
   },
+
+  metaInfo: {
+    title:
+      'آموزش های غیر حضوری | سبک آموزشی ما متناسب با استاندارهای اروپا میباشد.',
+
+    titleTemplate:
+      'آموزش های غیر حضوری | سبک آموزشی ما متناسب با استاندارهای اروپا میباشد.',
+    htmlAttrs: {
+      lang: 'fa',
+      amp: true,
+    },
+
+    meta: [
+      // OpenGraph data (Most widely used)
+      { property: 'og:title', content: 'اسک آریا' },
+      { property: 'og:site_name', content: 'اسک آریا' },
+      { property: 'og:type', content: 'website' },
+      {
+        property: 'og:url',
+        content: 'https://www.ask-arya.com/',
+      },
+      {
+        property: 'og:image',
+        content:
+          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png',
+      },
+      {
+        property: 'og:description',
+        content:
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
+      },
+      { itemprop: 'name', content: 'اسک آریا' },
+      {
+        itemprop: 'description',
+        content:
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
+      },
+    ],
+    link: [{ rel: 'canonical', href: 'https:/ask-arya.com/' }],
+  },
+
   components: {
     Vip,
     Course,
@@ -111,12 +152,6 @@ export default {
   }
   .headerDigitsText {
     font-size: 0.9rem !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .course-section {
-    padding: 0 7% !important;
   }
 }
 </style>

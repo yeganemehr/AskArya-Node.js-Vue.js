@@ -20,7 +20,7 @@
         </p>
 
         <div class="text-left pt-3">
-          <router-link to="allcourses">
+          <router-link to="courses">
             <base-button
               native-type="submit"
               type="warning"

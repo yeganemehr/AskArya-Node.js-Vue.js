@@ -21,12 +21,12 @@
         <a class="nav-link" href="/">خانه</a>
       </li>
 
-      <!-- All Courses -->
-      <router-link class="nav-item d-none d-md-block" tag="li" to="/allcourses">
-        <a :class="getNavClass('allcourses')">{{ 'دوره‌ های غیر حضوری' }}</a>
+      <!-- Courses -->
+      <router-link class="nav-item d-none d-md-block" tag="li" to="/courses">
+        <a :class="getNavClass('courses')">{{ 'دوره‌ های غیر حضوری' }}</a>
       </router-link>
       <li class="nav-item d-md-none">
-        <a class="nav-link" href="/allcourses">دوره‌ های غیر حضوری</a>
+        <a class="nav-link" href="/courses">دوره‌ های غیر حضوری</a>
       </li>
 
       <!-- Private Classes -->
@@ -41,10 +41,6 @@
         <a class="nav-link" href="/privateclasses">کلاس های حضوری</a>
       </li>
 
-      <!-- <router-link class="nav-item" tag="li" to="/articles">
-        <a :class="getNavClass('articles')">{{ 'مقالات' }}</a>
-      </router-link> -->
-
       <!-- Contact Us -->
       <router-link class="nav-item d-none d-md-block" tag="li" to="/contact">
         <a :class="getNavClass('contact')">{{ 'تماس با ما' }}</a>
@@ -53,25 +49,21 @@
         <a class="nav-link" href="/contact">تماس با ما</a>
       </li>
 
-      <div class="d-md-none" v-if="this.$root.$data.user !== undefined">
-        <router-link
-          class="row d-flex align-items-center nav-item"
-          tag="li"
-          to="/dashboard"
+      <!-- Dashboard -->
+      <li v-if="this.$root.$data.user !== undefined" class="nav-item d-md-none">
+        <a class="nav-link" href="/dashboard">
+          <img class="photo ml-2" :src="userAvatar" />
+          پروفایل من</a
         >
-          <div class="photo">
-            <img :src="userAvatar" />
-          </div>
+      </li>
 
-          <div class="pr-3 d-none d-md-block">
-            <a :class="getNavClass('profile')">{{ 'پروفایل من' }}</a>
-          </div>
-
-          <div class="pr-3 d-md-none">
-            <a class="nav-link" href="/dashboard"> پروفایل من</a>
-          </div>
-        </router-link>
-      </div>
+      <!-- Ticket Support -->
+      <li v-if="this.$root.$data.user !== undefined" class="nav-item d-md-none">
+        <a class="nav-link" href="/tickets">
+          <i class="fas fa-headset ml-2"></i>
+          پشتیبانی</a
+        >
+      </li>
     </ul>
 
     <ul class="navbar-nav mr-auto ipad-fix dropdown-box">
@@ -120,13 +112,6 @@
                   دوره های آموزشی
                 </router-link>
               </li>
-
-              <!-- <li class="nav-link">
-                  <router-link to="/mycourses" class="nav-item dropdown-item">
-                    <i class="i-custom fas fa-graduation-cap pl-2"></i>
-                    در حال یادگیری
-                  </router-link>
-                </li> -->
 
               <li class="nav-link">
                 <router-link to="/tickets" class="nav-item dropdown-item">
@@ -251,11 +236,8 @@ export default {
         case 'privateclasses':
           isActive = this.$route.name == 'PrivateClasses';
           break;
-        case 'allcourses':
-          isActive = this.$route.name == 'AllCourses';
-          break;
-        case 'articles':
-          isActive = this.$route.name == 'Articles';
+        case 'courses':
+          isActive = this.$route.name == 'Courses';
           break;
         case 'contact':
           isActive = this.$route.name == 'Contact';

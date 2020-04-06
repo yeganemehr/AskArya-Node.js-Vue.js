@@ -31,7 +31,7 @@
           </div>-->
         </div>
         <div class="text-center">
-          <router-link to="allcourses">
+          <router-link to="courses">
             <base-button
               native-type="submit"
               type="success"

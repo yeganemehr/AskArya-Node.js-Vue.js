@@ -17,7 +17,7 @@
     </div>
 
     <p class="no-courses-message text-right pt-3 pb-5" v-else>
-      هیچ درسی تهیه نشده است 😣
+      هیچ درسی تهیه نشده است
     </p>
   </div>
 </template>

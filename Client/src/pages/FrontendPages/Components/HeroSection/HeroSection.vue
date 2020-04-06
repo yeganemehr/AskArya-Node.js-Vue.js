@@ -25,7 +25,7 @@
               </router-link>
 
               <div class="pr-1">
-                <router-link to="allcourses">
+                <router-link to="courses">
                   <base-button
                     native-type="submit"
                     type="primary"

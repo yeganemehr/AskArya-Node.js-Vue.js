@@ -232,16 +232,6 @@ export default {
   padding: 0.8em 0;
 }
 
-@media (max-width: 1200px) {
-  .pricehighlight {
-    font-size: 0.75rem;
-  }
-
-  .oldPrice {
-    font-size: 0.7rem;
-  }
-}
-
 @media only screen and (max-width: 768px) {
   .course-title {
     font-size: 1rem !important;
@@ -268,14 +258,21 @@ export default {
   .unitsAvailable {
     font-size: 1.1rem;
   }
+
+  .buyCourseTitle {
+    font-size: 1.1em;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+  }
 }
 
-// @media (max-width: 480px) {
-//   .pricehighlight {
-//     font-size: 0.75rem;
-//   }
-//   .course-title {
-//     font-size: 0.83rem;
-//   }
-// }
+@media (max-width: 1200px) {
+  .pricehighlight {
+    font-size: 0.75rem;
+  }
+
+  .oldPrice {
+    font-size: 0.7rem;
+  }
+}
 </style>

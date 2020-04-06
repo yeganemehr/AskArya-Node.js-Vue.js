@@ -18,8 +18,8 @@
           <a :class="getNavClass('home')">{{ 'خانه' }}</a>
         </router-link>
 
-        <router-link class="nav-item" tag="li" to="/allcourses">
-          <a :class="getNavClass('allcourses')">{{ 'آموزش های غیر حضوری' }}</a>
+        <router-link class="nav-item" tag="li" to="/courses">
+          <a :class="getNavClass('courses')">{{ 'آموزش های غیر حضوری' }}</a>
         </router-link>
 
         <router-link class="nav-item" tag="li" to="/privateclasses">
@@ -308,8 +308,8 @@ export default {
         case 'privateclasses':
           isActive = this.$route.name == 'PrivateClasses';
           break;
-        case 'allcourses':
-          isActive = this.$route.name == 'AllCourses';
+        case 'courses':
+          isActive = this.$route.name == 'Courses';
           break;
         // case 'comingsoon':
         //   isActive = this.$route.name == 'ComingSoon';

@@ -1,9 +1,9 @@
 <template>
   <div class="background">
     <div class="container">
-      <h1 class="title text-center pt-5">تماس با ما</h1>
-      <p class="subtitle text-center">
-        راه ارتباطی ما فقط از این سه طریق می باشد
+      <h1 class="title text-center my-0 pt-5">تماس با ما</h1>
+      <p class="subtitle text-center pt-3">
+        راه ارتباطی ما فقط از این سه طریق می باشد.
       </p>
 
       <div class="iconSection">

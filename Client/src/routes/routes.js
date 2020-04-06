@@ -83,17 +83,6 @@ const PrivateClasses = () =>
     'src/pages/FrontendPages/PrivateClasses.vue'
   );
 
-const AllCourses = () =>
-  import(
-    /* webpackChunkName: "pages" */
-    'src/pages/FrontendPages/AllCourses.vue'
-  );
-
-const Articles = () =>
-  import(
-    /* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Articles.vue'
-  );
-
 const Contact = () =>
   import(/* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Contact.vue');
 
@@ -154,17 +143,14 @@ let frontendpages = {
       name: 'PrivateClasses',
       component: PrivateClasses,
     },
+    {
+      path: 'courses',
+      name: 'Courses',
+      components: {
+        default: Courses,
+      },
+    },
 
-    {
-      path: '/allcourses',
-      name: 'AllCourses',
-      component: AllCourses,
-    },
-    {
-      path: '/articles',
-      name: 'Articles',
-      component: Articles,
-    },
     {
       path: '/contact',
       name: 'Contact',
@@ -229,13 +215,6 @@ const routes = [
         name: 'Dashboard',
         components: {
           default: Dashboard,
-        },
-      },
-      {
-        path: 'courses',
-        name: 'Courses',
-        components: {
-          default: Courses,
         },
       },
       {

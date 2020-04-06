@@ -3,7 +3,7 @@
     <div class="container">
       <card class="shadow">
         <form @submit="checkForm" id="register-form">
-          <h1 class="auth-title text-primary py-4">ثبت نام</h1>
+          <h1 class="auth-title text-primary py-3">ثبت نام</h1>
           <div class="row">
             <div class="col-12">
               <base-input
