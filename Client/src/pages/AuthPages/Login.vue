@@ -5,7 +5,7 @@
         <form @submit="checkForm">
           <h1 class="auth-title text-primary pt-4 pb-3">ورود</h1>
           <div class="class text-right">
-            اگر در اسک آریا حساب ندارید، ثبت نام کنید:
+            <p>اگر در اسک آریا حساب ندارید، ثبت نام کنید:</p>
             <router-link to="/register">
               <base-button size="sm" type="success" class="animation-on-hover">
                 ایجاد حساب کاربری

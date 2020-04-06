@@ -35,7 +35,7 @@
         </div>
 
         <!-- My Courses Section -->
-        <div class="col-md-12 mb-3 text-center">
+        <div class="col-md-12 my-4 text-center">
           <MyCourses></MyCourses>
         </div>
 
@@ -144,10 +144,10 @@ export default {
 }
 
 .title {
-  font-size: 2em;
+  font-size: 2.2em;
   font-family: IranSansBold;
   margin-bottom: 1.2em;
-  text-align: right;
+  text-align: center;
   color: #fd5d93 !important;
 }
 

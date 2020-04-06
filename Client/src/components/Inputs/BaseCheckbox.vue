@@ -17,18 +17,18 @@
 export default {
   name: 'base-checkbox',
   model: {
-    prop: 'checked'
+    prop: 'checked',
   },
   props: {
     checked: [Array, Boolean],
     disabled: Boolean,
     inline: Boolean,
-    hasError: Boolean
+    hasError: Boolean,
   },
   data() {
     return {
       cbId: '',
-      touched: false
+      touched: false,
     };
   },
   computed: {
@@ -41,18 +41,16 @@ export default {
           this.touched = true;
         }
         this.$emit('input', check);
-      }
+      },
     },
     inlineClass() {
       if (this.inline) {
         return `form-check-inline`;
       }
-    }
+    },
   },
   created() {
-    this.cbId = Math.random()
-      .toString(16)
-      .slice(2);
-  }
+    this.cbId = Math.random().toString(16).slice(2);
+  },
 };
 </script>

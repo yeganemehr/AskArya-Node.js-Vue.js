@@ -62,8 +62,13 @@
           <div class="photo">
             <img :src="userAvatar" />
           </div>
-          <div class="pr-3">
+
+          <div class="pr-3 d-none d-md-block">
             <a :class="getNavClass('profile')">{{ 'پروفایل من' }}</a>
+          </div>
+
+          <div class="pr-3 d-md-none">
+            <a class="nav-link" href="/dashboard"> پروفایل من</a>
           </div>
         </router-link>
       </div>
@@ -335,9 +340,9 @@ export default {
   .login-register-buttons {
     padding: 10px 0 !important;
   }
-  .ipad-fix {
-    display: none !important;
-  }
+  // .ipad-fix {
+  //   display: none !important;
+  // }
 }
 .navbar-collapse .navbar-nav .nav-link {
   color: #000;

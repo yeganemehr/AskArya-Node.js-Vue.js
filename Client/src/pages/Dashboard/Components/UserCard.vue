@@ -61,7 +61,7 @@
             </ul>
           </div>
           <div class="row pt-3">
-            <div class="col-md-5 text-ltr">
+            <div class="col-md-6 text-ltr">
               <label class="pull-right">نام و نام خانوادگی</label>
               <base-input
                 type="text"
@@ -79,7 +79,7 @@
                 :error="fieldErrors.email"
               ></base-input>
             </div>-->
-            <div class="col-md-5 text-ltr">
+            <div class="col-md-6 text-ltr">
               <label class="pull-right">تغییر رمز عبور</label>
               <base-input
                 type="password"
@@ -88,19 +88,20 @@
                 :error="fieldErrors.password"
               ></base-input>
             </div>
-            <div v-if="isAdmin" class="col-md-3">
+            <div v-if="isAdmin" class="col-12">
               <image-upload
                 type="avatar"
                 select-text="+ آپلود عکس"
                 @change="onAvatarChange"
               />
             </div>
-            <div class="col-md-2 mt-3 mr-auto">
+            <div class="col-12 mr-auto">
               <base-button
+                block
                 native-type="submit"
                 type="info"
                 class="btn btn-danger"
-                >ذخیره</base-button
+                >ثبت تغییرات</base-button
               >
             </div>
           </div>
@@ -225,7 +226,7 @@ export default {
 .title {
   font-size: 2em !important;
   font-family: IranSansBold, sans-serif !important;
-      letter-spacing: 0 !important;
+  letter-spacing: 0 !important;
 }
 
 .description {
@@ -236,7 +237,7 @@ export default {
   font-size: 1rem !important;
   font-family: Arial, Helvetica, sans-serif !important;
   font-weight: normal !important;
-    letter-spacing: 0 !important;
+  letter-spacing: 0 !important;
 }
 
 .box {

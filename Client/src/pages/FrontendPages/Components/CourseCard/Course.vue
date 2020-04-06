@@ -174,12 +174,13 @@ export default {
   }
 
   .buyCourseTitle {
-    font-size: 1rem;
+    font-size: 1em;
+    font-family: IranSansBold !important;
     color: rgb(86, 173, 223);
     background: #ebebeb;
     margin-bottom: auto;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }

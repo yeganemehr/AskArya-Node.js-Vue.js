@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div class="bg">
-      <div class="text-section">
+      <div class="text-section px-4">
         <h2 class="pb-5">راه حل؟ دوره های آموزشی مجازی اسک آریا.</h2>
         <p class="main-text">
           هدف اسک آریا یاددهی درست و اصولی به زبان آموزان است، آموختن با برنامه
@@ -43,8 +43,9 @@ export default {};
 <style lang="scss" scoped>
 .bg {
   background-color: #ee8e6b;
-  background-image: linear-gradient(315deg, #ef6d89fa 0%, #ee8e6bfa 74%),
-    url(/img/frontend/london-seemless-bg.svg);
+  // background-image: linear-gradient(315deg, #ef6d89fa 0%, #ee8e6bfa 74%),
+  //   url(/img/frontend/london-seemless-bg.svg);
+  background-image: linear-gradient(315deg, #ef6d89fa 0%, #ee8e6bfa 74%);
   border-radius: 30px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
@@ -77,18 +78,6 @@ export default {};
 }
 
 @media (max-width: 680px) {
-  .container {
-    padding-right: 0;
-    padding-left: 0;
-    margin-right: 0;
-    margin-left: 0;
-  }
-
-  .bg {
-    border-radius: 0px !important;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1) !important;
-  }
-
   .text-left {
     text-align: center !important;
   }
