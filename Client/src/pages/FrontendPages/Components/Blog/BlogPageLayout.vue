@@ -2,9 +2,9 @@
   <div v-if="post.id">
     <div class="heading-section">
       <div class="container text-center">
-        <h1 class="post-title-top text-center pt-2">{{ post.name }}</h1>
+        <h1 class="post-title-top text-center">{{ post.name }}</h1>
         <img class="blog-img" :src="post.image" :alt="post.name" />
-        <div class="my-4">
+        <div class="mt-4">
           <BlogInfo
             :name="post.author.name"
             :createdAt="post.createdAt"
@@ -156,12 +156,10 @@ export default {
   display: none;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 678px) {
   .white-content .card:not(.card-white) {
     margin-top: 1em;
     background: #ffffff;
-    // -webkit-box-shadow: 0 1px 15px 0 rgba(123, 123, 123, 0);
-    // box-shadow: 0 1px 15px 0 rgba(155, 155, 155, 0);
     border-radius: 0;
     color: black !important;
   }
@@ -172,8 +170,8 @@ export default {
   }
 
   .blog-img {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
   }
 
   .main-blog-section {

@@ -74,7 +74,7 @@ input {
   font-family: IranSansBold !important;
   font-weight: normal !important;
   color: rgb(63, 63, 63) !important;
-  font-size: 1.1em !important;
+  font-size: 1em !important;
 }
 
 .white-content .el-table table > tbody > tr > td {
@@ -82,10 +82,11 @@ input {
   font-weight: normal !important;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 678px) {
   .white-content .el-table table > thead > tr > th {
     font-size: 10px !important;
     font-family: IranSansBold !important;
+    padding: 0 !important;
   }
 
   .white-content .el-table table > tbody > tr > td {

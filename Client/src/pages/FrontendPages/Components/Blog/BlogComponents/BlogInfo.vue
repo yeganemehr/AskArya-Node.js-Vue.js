@@ -1,33 +1,29 @@
 <template>
   <div class="container">
-    <div class="d-flex justify-content-center flex-wrap text-center">
-      <div class="item-section">
-        <p class="info-items d-flex align-items-center">
-          <i class="icon far fa-address-card pl-2"></i>
-          نویسنده مقاله:
-          <span>{{ name }}</span>
-        </p>
-      </div>
+    <div class="d-flex justify-content-center flex-wrap">
+      <p class="info-items d-flex align-items-center">
+        <i class="icon far fa-address-card pl-2"></i>
+        نویسنده مقاله:
+        <span>{{ name }}</span>
+      </p>
       <div class="w-100 d-md-none pt-1"></div>
 
-      <div class="item-section">
-        <p class="info-items d-flex align-items-center">
-          <i class="icon far fa-calendar-alt pl-2"></i>
-          تاریخ انتشار:
-          <span class="item-date">{{ dateFormated() }}</span>
-        </p>
-      </div>
+      <p class="info-items item-padding d-flex align-items-center">
+        <i class="icon far fa-calendar-alt pl-2"></i>
+        تاریخ انتشار:
+        <span class="item-date">{{ dateFormated() }}</span>
+      </p>
       <div class="w-100 d-md-none pt-1"></div>
 
-      <div class="item-section">
-        <p class="info-items post-categories d-flex align-items-center">
-          <i class="icon fas fa-bullseye pl-2"></i>
-          دسته بندی ها:
-          <span v-for="category of categories" :key="category">{{
-            category.name
-          }}</span>
-        </p>
-      </div>
+      <p
+        class="info-items item-padding post-categories d-flex align-items-center"
+      >
+        <i class="icon fas fa-bullseye pl-2"></i>
+        دسته بندی ها:
+        <span v-for="category of categories" :key="category">{{
+          category.name
+        }}</span>
+      </p>
     </div>
   </div>
 </template>
@@ -49,26 +45,19 @@ export default {
   padding-right: 4em;
 }
 
-@media (max-width: 680px) {
-  .item-section {
-    padding-right: 0;
-    width: 100% !important;
-  }
-}
-
 .info-items {
-  font-size: 0.9rem;
+  font-size: 1.2em !important;
   font-family: IranSansBold;
   padding-top: 3px;
 
-  color: rgb(255, 255, 255) !important;
+  color: rgba(255, 255, 255, 0.925) !important;
   .icon {
     font-size: 1.1rem;
   }
 }
 
 span {
-  font-size: 0.85rem;
+  font-size: 1em !important;
   color: rgb(255, 255, 255) !important;
   font-family: IranSans;
   padding-right: 5px;
@@ -93,6 +82,28 @@ span {
         display: none;
       }
     }
+  }
+}
+
+@media (max-width: 678px) {
+  .item-section {
+    // padding-right: 0;
+    // width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+  .info-items {
+    font-size: 1.1em !important;
+  }
+  span {
+    font-size: 1em !important;
+    padding-right: 7px !important;
+  }
+}
+
+@media (min-width: 678px) {
+  .item-padding {
+    padding-right: 2em !important;
   }
 }
 </style>

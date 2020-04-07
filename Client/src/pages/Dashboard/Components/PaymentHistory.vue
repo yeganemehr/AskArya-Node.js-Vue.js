@@ -109,22 +109,23 @@ export default {
         {
           prop: 'product',
           label: 'عنوان دوره',
-          minWidth: 100,
+          minWidth: 90,
         },
         {
           prop: 'date',
-          label: 'تاریخ پرداخت',
-          minWidth: 55,
+          label: 'تاریخ',
+          // label: 'تاریخ پرداخت',
+          minWidth: 45,
         },
         {
           prop: 'price',
           label: 'مقدار پرداختی',
-          minWidth: 45,
+          minWidth: 65,
         },
         {
           prop: 'status',
           label: 'وضعیت پرداخت',
-          minWidth: 75,
+          minWidth: 65,
         },
       ],
       searchedData: [],
@@ -182,5 +183,14 @@ export default {
   font-family: IranSansBold;
   color: #585858 !important;
   text-align: right;
+}
+span {
+  color: #525f7f96 !important;
+}
+
+@media only screen and (max-width: 678px) {
+  span {
+    font-size: 0.9em !important;
+  }
 }
 </style>

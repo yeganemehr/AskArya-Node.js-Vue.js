@@ -95,7 +95,7 @@ export default {};
 
 @media screen and (max-width: 768px) {
   .hero-content-homepage {
-    background: linear-gradient(225deg, #d223e9ef, #5e62dfea),
+    background: linear-gradient(225deg, #d223e9f5, #5e62dff3),
       url(/img/frontend/confused-banner.svg) no-repeat;
     background-position: bottom left;
     background-size: cover;
