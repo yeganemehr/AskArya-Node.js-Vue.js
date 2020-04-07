@@ -15,6 +15,7 @@ const rememberLogin = require('app/http/middleware/rememberLogin');
 const helmet = require('helmet');
 const compression = require('compression');
 const path = require('path');
+const prerender = require('prerender-node');
 
 const csrf = require('csurf');
 const csrfErrorHandler = require('app/http/middleware/csrfErrorHandler');
@@ -43,7 +44,7 @@ module.exports = class Application {
     mongoose.connect(config.database.url, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true
+      useCreateIndex: true,
     });
   }
 
@@ -55,6 +56,11 @@ module.exports = class Application {
     require('app/passport/passport-google');
     require('app/passport/passport-jwt');
 
+    // Use prerender io middleware
+    app.use(
+      require('prerender-node').set('prerenderToken', 'zXsdKaQVc6Kidw6kwePV')
+    );
+
     app.enable('trust proxy');
     app.use(helmet());
     app.use(compression());
@@ -62,14 +68,14 @@ module.exports = class Application {
     app.use(bodyParser.json());
     app.use(
       bodyParser.urlencoded({
-        extended: true
+        extended: true,
       })
     );
     app.use(methodOverride('_method'));
     app.use(validator());
     app.use(
       session({
-        ...config.session
+        ...config.session,
       })
     );
     app.use(cookieParser(config.cookie_secretkey));
