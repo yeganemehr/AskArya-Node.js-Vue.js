@@ -56,11 +56,6 @@ module.exports = class Application {
     require('app/passport/passport-google');
     require('app/passport/passport-jwt');
 
-    // Use prerender io middleware
-    app.use(
-      require('prerender-node').set('prerenderToken', 'zXsdKaQVc6Kidw6kwePV')
-    );
-
     app.enable('trust proxy');
     app.use(helmet());
     app.use(compression());
@@ -120,5 +115,10 @@ module.exports = class Application {
         res.sendFile(path.join(__dirname, '..', 'dist/index.html'))
       );
     }
+
+    // Use prerender io middleware
+    app.use(
+      require('prerender-node').set('prerenderToken', 'zXsdKaQVc6Kidw6kwePV')
+    );
   }
 };
