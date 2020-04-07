@@ -15,7 +15,7 @@ const rememberLogin = require('app/http/middleware/rememberLogin');
 const helmet = require('helmet');
 const compression = require('compression');
 const path = require('path');
-const prerender = require('prerender-node');
+// const prerender = require('prerender-node');
 
 const csrf = require('csurf');
 const csrfErrorHandler = require('app/http/middleware/csrfErrorHandler');
@@ -55,6 +55,11 @@ module.exports = class Application {
     require('app/passport/passport-local');
     require('app/passport/passport-google');
     require('app/passport/passport-jwt');
+
+    // Use prerender io middleware
+    // app.use(
+    //   require('prerender-node').set('prerenderToken', 'zXsdKaQVc6Kidw6kwePV')
+    // );
 
     app.enable('trust proxy');
     app.use(helmet());
@@ -115,10 +120,5 @@ module.exports = class Application {
         res.sendFile(path.join(__dirname, '..', 'dist/index.html'))
       );
     }
-
-    // Use prerender io middleware
-    app.use(
-      require('prerender-node').set('prerenderToken', 'zXsdKaQVc6Kidw6kwePV')
-    );
   }
 };
