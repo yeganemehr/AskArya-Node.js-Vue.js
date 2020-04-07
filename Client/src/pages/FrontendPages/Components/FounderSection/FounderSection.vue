@@ -1,5 +1,5 @@
 <template>
-  <section class="bg py-5">
+  <section class="bg py-3">
     <div class="container">
       <div class="row">
         <div class="col-md-7 text-right">
@@ -18,7 +18,7 @@
           </p>
         </div>
 
-        <div class="col-md-5 text-center">
+        <div class="col-md-5 pic text-center">
           <img
             class="rounded-circle img-fluid"
             src="img/frontend/aryapilot-askarya.png"
@@ -51,6 +51,12 @@
   font-size: 1.15em;
   line-height: 1.9em !important;
   color: rgb(0, 0, 0) !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .pic {
+    padding-top: 1.1em;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {

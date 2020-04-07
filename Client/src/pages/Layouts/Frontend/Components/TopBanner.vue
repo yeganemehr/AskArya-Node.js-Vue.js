@@ -4,7 +4,7 @@
       <div class="banner-card">
         <router-link to="/courses">
           <i class="fas bell fa-bell"></i>آیندت رو بساز! تخفیف 20٪ ویژه شروع
-          زمستان.
+          بهار.
         </router-link>
       </div>
     </div>

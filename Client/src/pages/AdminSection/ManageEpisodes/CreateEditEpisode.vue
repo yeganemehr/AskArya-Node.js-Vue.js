@@ -165,7 +165,6 @@ export default {
     'number',
     'videoUrl',
     'body',
-    // 'xp',
     'type',
     'course',
   ],
@@ -329,7 +328,6 @@ export default {
         number: 1,
         videoUrl: '',
         body: '',
-        // xp: 0,
         type: '',
         course: '',
         courseName: '',
@@ -363,10 +361,6 @@ export default {
         this.fieldErrors.body = 'توضیحات درس مورد نیاز است.';
         haveError = true;
       }
-      // if (this.data.xp < 0) {
-      //   this.fieldErrors.xp = 'امتیاز درس مورد نیاز است.';
-      //   haveError = true;
-      // }
       if (this.data.time) {
         const matches = this.data.time.match(/^(\d{2})\:(\d{2})\:(\d{2})$/);
         let message = '';
@@ -458,7 +452,6 @@ export default {
       this.data.number = 1;
       this.data.videoUrl = '';
       this.data.body = '';
-      // this.data.xp = 0;
       this.data.type = '';
       this.data.course = '';
       this.data.courseName = '';
@@ -492,9 +485,6 @@ export default {
     body: function (value) {
       this.data.body = value;
     },
-    // xp: function (value) {
-    //   this.data.xp = value;
-    // },
     type: function (value) {
       this.data.type = value;
     },

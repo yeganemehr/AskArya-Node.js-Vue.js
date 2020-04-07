@@ -1,22 +1,18 @@
 <template>
   <div class="widget-vip px-2 mb-5">
     <div class="row">
-      <div class="col-md-2">
-        <p class="px-2 my-4 vip-title">
-          <i class="fas fa-unlock pl-2 icon"></i>
-          VIP Access
-        </p>
-      </div>
-      <div class="col-md-7 my-auto">
-        <!-- <p
-          class="px-3 my-auto vip-desc text-center py-3 text-black"
-        >با خریداری این پنل شما میتوانید به ویدیوهای ویژه سایت به مدت یک ماه بطور کامل دسترسی داشته باشید.</p>-->
-        <p class="my-auto vip-desc text-center py-3 text-black">
-          با خریداری این پنل کاربری شما میتوانید به ویدیوهای ویژه سایت به بطور
-          کامل دسترسی داشته باشید.
-        </p>
-      </div>
-      <div class="col-md-2 dropdown-prices my-auto">
+      <p class="col-md-2 my-4 vip-title">
+        <i class="fas fa-unlock pl-2 icon"></i>
+        VIP Access
+      </p>
+      <p class="col-md-7 my-auto vip-desc text-center py-3 text-black">
+        با خریداری این پنل کاربری شما میتوانید به ویدیوهای ویژه سایت به بطور
+        کامل دسترسی داشته باشید.
+      </p>
+      <div
+        v-if="this.$root.$data.user !== undefined"
+        class="col-md-2 dropdown-prices my-auto"
+      >
         <base-dropdown
           title="عضویت"
           title-classes="btn btn-default animation-on-hover px-5"
@@ -130,13 +126,9 @@ export default {
   }
 }
 
-.dropdown.show .dropdown-menu {
-  border-radius: 20px !important;
-}
-
 .dropdown-menu .dropdown-item {
   color: #181818;
-  font-size: 1.1em;
+  font-size: 1em;
   font-family: IranSans;
 
   span {

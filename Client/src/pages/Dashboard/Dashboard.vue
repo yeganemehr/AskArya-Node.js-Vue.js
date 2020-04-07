@@ -1,7 +1,7 @@
 <template>
   <div class="bg">
     <div class="container pb-5">
-      <h1 class="title pt-5">پنل کاربری</h1>
+      <h1 class="title pt-4">پنل کاربری</h1>
       <div class="row">
         <!-- User Profile Section -->
         <div class="col-lg-6 col-md-12 mb-4">

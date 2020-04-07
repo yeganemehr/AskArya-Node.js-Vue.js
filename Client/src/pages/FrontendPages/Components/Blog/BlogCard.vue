@@ -116,7 +116,7 @@ export default {
 
 @media only screen and (max-width: 768px) {
   .home-blog .card-title {
-    font-size: 1.15em !important;
+    font-size: 1.2em !important;
     padding-top: 5px !important;
     padding-bottom: 5px !important;
   }
@@ -125,9 +125,8 @@ export default {
     font-size: 1em !important;
   }
 
-  .category,
-  .card-category {
-    font-size: 1em;
+  .home-blog .category {
+    font-size: 1.1em !important;
   }
 }
 </style>

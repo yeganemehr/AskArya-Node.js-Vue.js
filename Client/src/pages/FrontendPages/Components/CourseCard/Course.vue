@@ -260,7 +260,7 @@ export default {
   }
 
   .buyCourseTitle {
-    font-size: 1.1em;
+    font-size: 1.2em !important;
     padding-top: 0.8em;
     padding-bottom: 0.8em;
   }

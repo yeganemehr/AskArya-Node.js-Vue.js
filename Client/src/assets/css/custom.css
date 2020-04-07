@@ -57,6 +57,10 @@ h6,
 	base class definition
 -------------------------*/
 
+input {
+  font-family: IranSansBlog !important;
+}
+
 .white-content .el-table table > thead > tr > th {
   font-family: IranSans !important;
   font-weight: normal !important;
@@ -156,4 +160,5 @@ h6,
 .dropdown.show .dropdown-menu,
 .navbar .dropdown.show .dropdown-menu {
   margin-top: 9px !important;
+  border-radius: 10px !important;
 }

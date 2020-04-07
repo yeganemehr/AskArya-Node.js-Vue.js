@@ -11,7 +11,11 @@
     </div>
 
     <!-------------- NEW TICKET -------------->
-    <div class="single-ticket-row" v-for="ticket in tickets" :key="ticket.id">
+    <div
+      class="container single-ticket-row"
+      v-for="ticket in tickets"
+      :key="ticket.id"
+    >
       <div
         class="ticket-card d-flex justify-content-between align-items-center row"
       >

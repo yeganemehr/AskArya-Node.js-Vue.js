@@ -12,14 +12,14 @@
         <form @submit="checkForm">
           <div>
             <div class="row">
-              <div class="col-md-3 align-self-center">
+              <div class="col-md-4 align-self-center">
                 <img
                   class="img-thumbnail img-fluid rounded mx-auto d-block image-preview"
                   :src="data.imagepreview || 'img/placeholder.jpg'"
                   alt="Course Image"
                 />
               </div>
-              <div class="col-md-3">
+              <div class="col-md-4">
                 <base-input
                   label="Course Name"
                   placeholder="Course Name"
@@ -42,13 +42,6 @@
                   label="Old Price"
                   placeholder="Old Price"
                   v-model="data.oldPrice"
-                ></base-input>
-              </div>
-              <div class="col-md-2">
-                <base-input
-                  label="xP"
-                  placeholder="xP"
-                  v-model="data.xp"
                 ></base-input>
               </div>
 
@@ -178,8 +171,7 @@ export default {
     'price',
     'tags',
     'oldPrice',
-    'xp',
-    'videoUrl'
+    'videoUrl',
   ],
   components: {
     [Option.name]: Option,
@@ -187,7 +179,7 @@ export default {
     ImageUpload,
     TagsInput,
     [Tag.name]: Tag,
-    ckeditor: CKEditor.component
+    ckeditor: CKEditor.component,
   },
   data() {
     return {
@@ -197,9 +189,9 @@ export default {
         CourseType: [
           { value: 'Paid', label: 'Paid' },
           { value: 'VIP', label: 'VIP' },
-          { value: 'Free', label: 'Free' }
+          { value: 'Free', label: 'Free' },
         ],
-        multiple: 'ARS'
+        multiple: 'ARS',
       },
       ckeditor: {
         editor: ClassicEditor,
@@ -223,93 +215,93 @@ export default {
             IndentBlock,
             HeadingButtonsUI,
             ParagraphButtonUI,
-            Direction
+            Direction,
           ],
           fontSize: {
-            options: [9, 11, 13, 'default', 17, 19, 21]
+            options: [9, 11, 13, 'default', 17, 19, 21],
           },
 
           fontColor: {
             colors: [
               {
                 color: 'hsl(0, 0%, 0%)',
-                label: 'Black'
+                label: 'Black',
               },
               {
                 color: 'hsl(0, 0%, 30%)',
-                label: 'Dim grey'
+                label: 'Dim grey',
               },
               {
                 color: 'hsl(0, 0%, 60%)',
-                label: 'Grey'
+                label: 'Grey',
               },
               {
                 color: 'hsl(0, 0%, 100%)',
-                label: 'White'
+                label: 'White',
                 // hasBorder: true
               },
               {
                 color: '#e14eca',
-                label: 'Custom 1'
+                label: 'Custom 1',
               },
               {
                 color: '#00f2c3',
-                label: 'Custom 2'
+                label: 'Custom 2',
               },
               {
                 color: '#1d8cf8',
-                label: 'Custom 3'
+                label: 'Custom 3',
               },
               {
                 color: '#ff8d72',
-                label: 'Custom 4'
+                label: 'Custom 4',
               },
               {
                 color: '#fd5d93',
-                label: 'Custom 5'
+                label: 'Custom 5',
               },
               {
                 color: '#42b883',
-                label: 'Custom 6'
-              }
+                label: 'Custom 6',
+              },
               // ...
-            ]
+            ],
           },
           fontBackgroundColor: {
             colors: [
               {
                 color: 'hsl(0, 75%, 60%)',
-                label: 'Red'
+                label: 'Red',
               },
               {
                 color: 'hsl(30, 75%, 60%)',
-                label: 'Orangeee'
+                label: 'Orangeee',
               },
               {
                 color: '#e14eca',
-                label: 'Custom 1'
+                label: 'Custom 1',
               },
               {
                 color: '#00f2c3',
-                label: 'Custom 2'
+                label: 'Custom 2',
               },
               {
                 color: '#1d8cf8',
-                label: 'Custom 3'
+                label: 'Custom 3',
               },
               {
                 color: '#ff8d72',
-                label: 'Custom 4'
+                label: 'Custom 4',
               },
               {
                 color: '#fd5d93',
-                label: 'Custom 5'
+                label: 'Custom 5',
               },
               {
                 color: '#42b883',
-                label: 'Custom 6'
-              }
-            ]
+                label: 'Custom 6',
+              },
+            ],
           },
           toolbar: [
             'heading',
@@ -335,9 +327,9 @@ export default {
             'redo',
             'fontSize',
             'fontColor',
-            'fontBackgroundColor'
-          ]
-        }
+            'fontBackgroundColor',
+          ],
+        },
       },
       images: {},
       data: {
@@ -349,10 +341,9 @@ export default {
         price: 0,
         tags: [],
         oldPrice: 0,
-        xp: 0,
         imagepreview: '',
-        videoUrl: ''
-      }
+        videoUrl: '',
+      },
     };
   },
   methods: {
@@ -361,7 +352,7 @@ export default {
       if (file instanceof File) {
         var reader = new FileReader();
         const that = this;
-        reader.onload = function(e) {
+        reader.onload = function (e) {
           that.data.imagepreview = e.target.result;
         };
         reader.readAsDataURL(file);
@@ -381,7 +372,7 @@ export default {
       if (!this.data.type) {
         this.$notify({
           type: 'warning',
-          message: 'نوع دوره مشخص نشده است'
+          message: 'نوع دوره مشخص نشده است',
         });
         haveError = true;
       }
@@ -402,14 +393,14 @@ export default {
       if (!this.images instanceof File) {
         this.$notify.error({
           type: 'warning',
-          message: 'تصویر دوره مشخص نشده است'
+          message: 'تصویر دوره مشخص نشده است',
         });
         haveError = true;
       }
       if (haveError) {
         return;
       }
-      const errorHandler = response => {
+      const errorHandler = (response) => {
         if (response && response.data && response.data.status === 'error') {
           this.formErrors = Array.isArray(response.data.data)
             ? response.data.data
@@ -433,7 +424,7 @@ export default {
           : '/admin/courses/create';
       backend
         .post(requestUrl, data)
-        .then(response => {
+        .then((response) => {
           this.loading = false;
           if (response.data.status === 'error') {
             errorHandler(response);
@@ -444,13 +435,13 @@ export default {
             message: this.id
               ? `دوره با موفقیت ویرایش شد.`
               : 'دوره با موفقیت اضافه شد.',
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
           this.$emit('course', response.data.data.course);
           this.reset();
           window.location.href = '/courseoverview';
         })
-        .catch(error => {
+        .catch((error) => {
           this.loading = false;
           errorHandler(error.response);
         });
@@ -475,44 +466,41 @@ export default {
       } else if (this.price) {
         this.data.price = this.price;
       }
-    }
+    },
   },
   watch: {
-    id: function(newValue, oldValue) {
+    id: function (newValue, oldValue) {
       this.formErrors = [];
       this.data.id = newValue;
     },
-    title: function(newValue, oldValue) {
+    title: function (newValue, oldValue) {
       this.data.title = newValue;
     },
-    type: function(newValue, oldValue) {
+    type: function (newValue, oldValue) {
       this.data.type = newValue;
     },
-    body: function(newValue, oldValue) {
+    body: function (newValue, oldValue) {
       this.data.body = newValue;
     },
-    price: function(newValue, oldValue) {
+    price: function (newValue, oldValue) {
       this.data.price = newValue;
     },
-    oldPrice: function(newValue, oldValue) {
+    oldPrice: function (newValue, oldValue) {
       if (newValue === 'undefined') {
         newValue = undefined;
       }
       this.data.oldPrice = newValue || 0;
     },
-    xp: function(newValue, oldValue) {
-      this.data.xp = newValue;
-    },
-    tags: function(newValue, oldValue) {
+    tags: function (newValue, oldValue) {
       this.data.tags = newValue;
     },
-    thumb: function(value) {
+    thumb: function (value) {
       this.data.imagepreview = value;
     },
-    videoUrl: function(value) {
+    videoUrl: function (value) {
       this.data.videoUrl = value;
-    }
-  }
+    },
+  },
 };
 </script>
 

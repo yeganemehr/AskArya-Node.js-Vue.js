@@ -64,6 +64,20 @@
           پشتیبانی</a
         >
       </li>
+
+      <li v-if="isAdmin" class="nav-item d-md-none">
+        <a class="nav-link" href="/managementpage">
+          <i class="fas fa-tools ml-2"></i>
+          پنل مدیریت
+        </a>
+      </li>
+
+      <li v-if="this.$root.$data.user !== undefined" class="nav-item d-md-none">
+        <router-link class="nav-link" to="#" @click.native="logoutListener">
+          <i class="fas fa-sign-out-alt ml-2"></i>
+          خروج
+        </router-link>
+      </li>
     </ul>
 
     <ul class="navbar-nav mr-auto ipad-fix dropdown-box">

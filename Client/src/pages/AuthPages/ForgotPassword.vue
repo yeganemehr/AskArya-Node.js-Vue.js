@@ -130,4 +130,10 @@ export default {
 .subtitle {
   color: #696969f6 !important;
 }
+
+@media only screen and (max-width: 768px) {
+  .subtitle {
+    font-size: 0.9em !important;
+  }
+}
 </style>

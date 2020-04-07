@@ -95,17 +95,19 @@ export default {};
 
 @media screen and (max-width: 768px) {
   .hero-content-homepage {
-    // background: linear-gradient(225deg, #d223e9f6, #5e62dff1),
-    //   url(/img/frontend/westminsterlondon-opt.jpeg);
-    background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
+    background: linear-gradient(225deg, #d223e9ef, #5e62dfea),
+      url(/img/frontend/confused-banner.svg) no-repeat;
+    background-position: bottom left;
     background-size: cover;
-    background-position: top;
-    min-height: 45vh !important;
+    // background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
+    // background-size: cover;
+    // background-position: top;
+    min-height: 43vh !important;
 
     .hero-title {
-      font-size: 3.4em;
+      font-size: 3.6em !important;
       color: #fff !important;
-      text-shadow: 2px 2px #5256c90e;
+      text-shadow: 2px 2px #7b149b15;
       text-align: right !important;
       padding-top: 0.5em;
       margin: 0 0 15px 0;

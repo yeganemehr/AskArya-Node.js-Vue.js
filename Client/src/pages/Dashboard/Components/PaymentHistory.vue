@@ -8,7 +8,7 @@
       </span>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
       <el-table :data="tableData">
         <el-table-column
           v-for="column in tableColumns"
@@ -124,7 +124,7 @@ export default {
         {
           prop: 'status',
           label: 'وضعیت پرداخت',
-          minWidth: 70,
+          minWidth: 75,
         },
       ],
       searchedData: [],
