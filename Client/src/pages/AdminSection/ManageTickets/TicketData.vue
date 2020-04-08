@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid text-ltr">
+  <div class="container text-ltr">
     <div class="row text-center">
       <div class="col pb-3">
         <h2 class="headerStyling1">{{ openTickets }}</h2>

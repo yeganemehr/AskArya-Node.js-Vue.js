@@ -8,157 +8,159 @@
       :onHoldTickets="onHoldTickets"
       :closedTickets="closedTickets"
     ></ticket-data>
-    <div class="mt-5">
-      <!-- <card card-body-classes="table-full-width"> -->
-      <div class="d-flex justify-content-between mb-5">
-        <el-select
-          class="select-primary mb-3 pagination-select"
-          v-model="pagination.perPage"
-          placeholder="Per page"
-          @change="changeLimitListener"
-        >
-          <el-option
-            class="select-primary"
-            v-for="item in pagination.perPageOptions"
-            :key="item"
-            :label="item"
-            :value="item"
-          ></el-option>
-        </el-select>
-
-        <base-input>
-          <el-input
-            type="search"
-            class="mb-3 search-input"
-            clearable
-            prefix-icon="el-icon-search"
-            placeholder="Search records"
-            v-model="searchQuery"
-            aria-controls="datatables"
-            @change="searchTicketsListener"
-          ></el-input>
-        </base-input>
-      </div>
-
-      <!-------------- NEW TICKET DESIGN -------------->
-      <div class="single-ticket-row" v-for="ticket in tickets" :key="ticket.id">
-        <div
-          class="ticket-card d-flex justify-content-between align-items-center row text-right"
-        >
-          <div class="ticket-id">
-            <h3>#</h3>
-            <p>{{ ticket.ticket_id }}</p>
-          </div>
-
-          <div class="ticket-username">
-            <h3>نام کاربر</h3>
-            <p>{{ ticket.user.name }}</p>
-          </div>
-
-          <div class="w-100 d-md-none pt-2"></div>
-
-          <div class="ticket-title">
-            <h3>عنوان</h3>
-            <p :title="ticket.title">
-              {{
-                ticket.title.substring(0, 35) +
-                (ticket.title.length > 35 ? ' ...' : '')
-              }}
-            </p>
-          </div>
-
-          <div class="w-100 d-md-none pt-3"></div>
-          <div class="ticket-dept">
-            <h3>دپارتمان</h3>
-            <p>{{ ticket.department }}</p>
-          </div>
-
-          <div class="ticket-priority">
-            <h3>اولویت</h3>
-            <p>{{ ticket.priority }}</p>
-          </div>
-
-          <div class="ticket-date">
-            <h3>زمان</h3>
-            <p>{{ date(ticket.date) }}</p>
-          </div>
-
-          <div class="w-100 d-md-none pt-4"></div>
-          <div class="ticket-status">
-            <h3>وضعیت</h3>
-            <span :class="getStatusLabelClasses(ticket.status)">{{
-              getStatusTranslate(ticket.status)
-            }}</span>
-          </div>
-
-          <div class="ticket-actions">
-            <h3>اقدامات</h3>
-            <div class="icon-group">
-              <base-button
-                @click.native="handleHighlight(ticket)"
-                class="like btn-link"
-                type="info"
-                size="sm"
-                icon
-              >
-                <i
-                  class="pr-2"
-                  :class="ticket.isHighlight ? 'fas fa-heart' : 'far fa-heart'"
-                ></i>
-              </base-button>
-
-              <base-button
-                @click.native="handleEdit(ticket)"
-                class="edit btn-link"
-                type="warning"
-                size="sm"
-                icon
-              >
-                <i class="fas fa-pencil-alt"></i>
-              </base-button>
-
-              <base-button
-                @click.native="handleDelete(ticket)"
-                class="remove btn-link"
-                type="danger"
-                size="sm"
-                icon
-              >
-                <i class="fas fa-times"></i>
-              </base-button>
-            </div>
-          </div>
-
-          <div class="w-100 d-md-none pt-3"></div>
-          <div class="view-ticket">
-            <router-link :to="`/tickets/view/${ticket.id}`">
-              <base-button class="px-3" round type="info">
-                <i class="pl-3 fas fa-eye"></i> نمایش
-              </base-button>
-            </router-link>
-          </div>
-        </div>
-      </div>
-      <div
-        v-if="tickets.length"
-        slot="footer"
-        class="col-12 pt-5 d-flex justify-content-center justify-content-sm-between flex-wrap"
+    <!-- <card card-body-classes="table-full-width"> -->
+    <div class="container row my-5">
+      <el-select
+        class="select-primary pagination-select ml-auto"
+        v-model="pagination.perPage"
+        placeholder="Per page"
+        @change="changeLimitListener"
       >
-        <div class>
-          <p class="card-category">
-            Showing {{ from + 1 }} to {{ to }} of {{ pagination.total }} entries
+        <el-option
+          class="select-primary"
+          v-for="item in pagination.perPageOptions"
+          :key="item"
+          :label="item"
+          :value="item"
+        ></el-option>
+      </el-select>
+
+      <base-input class="mr-auto">
+        <el-input
+          type="search"
+          class="search-input"
+          clearable
+          prefix-icon="el-icon-search"
+          placeholder="Search records"
+          v-model="searchQuery"
+          aria-controls="datatables"
+          @change="searchTicketsListener"
+        ></el-input>
+      </base-input>
+    </div>
+
+    <!-------------- NEW TICKET DESIGN -------------->
+    <div
+      class="single-ticket-row container"
+      v-for="ticket in tickets"
+      :key="ticket.id"
+    >
+      <div
+        class="ticket-card d-flex justify-content-between align-items-center row text-right"
+      >
+        <div class="ticket-id">
+          <h3>#</h3>
+          <p>{{ ticket.ticket_id }}</p>
+        </div>
+
+        <div class="ticket-username">
+          <h3>نام کاربر</h3>
+          <p>{{ ticket.user.name }}</p>
+        </div>
+
+        <div class="w-100 d-md-none pt-2"></div>
+
+        <div class="ticket-title">
+          <h3>عنوان</h3>
+          <p :title="ticket.title">
+            {{
+              ticket.title.substring(0, 35) +
+              (ticket.title.length > 35 ? ' ...' : '')
+            }}
           </p>
         </div>
-        <base-pagination
-          :value="pagination.currentPage"
-          :per-page="pagination.perpage"
-          :total="pagination.total"
-          :pageCount="pagination.pages"
-          @input="changePageListener"
-        ></base-pagination>
+
+        <div class="w-100 d-md-none pt-3"></div>
+        <div class="ticket-dept">
+          <h3>دپارتمان</h3>
+          <p>{{ ticket.department }}</p>
+        </div>
+
+        <div class="ticket-priority">
+          <h3>اولویت</h3>
+          <p>{{ ticket.priority }}</p>
+        </div>
+
+        <div class="ticket-date">
+          <h3>زمان</h3>
+          <p>{{ date(ticket.date) }}</p>
+        </div>
+
+        <div class="w-100 d-md-none pt-4"></div>
+        <div class="ticket-status">
+          <h3>وضعیت</h3>
+          <span :class="getStatusLabelClasses(ticket.status)">{{
+            getStatusTranslate(ticket.status)
+          }}</span>
+        </div>
+
+        <div class="ticket-actions">
+          <h3>اقدامات</h3>
+          <div class="icon-group">
+            <base-button
+              @click.native="handleHighlight(ticket)"
+              class="like btn-link"
+              type="info"
+              size="sm"
+              icon
+            >
+              <i
+                class="pr-2"
+                :class="ticket.isHighlight ? 'fas fa-heart' : 'far fa-heart'"
+              ></i>
+            </base-button>
+
+            <base-button
+              @click.native="handleEdit(ticket)"
+              class="edit btn-link"
+              type="warning"
+              size="sm"
+              icon
+            >
+              <i class="fas fa-pencil-alt"></i>
+            </base-button>
+
+            <base-button
+              @click.native="handleDelete(ticket)"
+              class="remove btn-link"
+              type="danger"
+              size="sm"
+              icon
+            >
+              <i class="fas fa-times"></i>
+            </base-button>
+          </div>
+        </div>
+
+        <div class="w-100 d-md-none pt-3"></div>
+        <div class="view-ticket">
+          <router-link :to="`/tickets/view/${ticket.id}`">
+            <base-button class="px-3" round type="info">
+              <i class="pl-3 fas fa-eye"></i> نمایش
+            </base-button>
+          </router-link>
+        </div>
       </div>
-      <!-- </card> -->
     </div>
+    <div
+      v-if="tickets.length"
+      slot="footer"
+      class="col-12 pt-5 d-flex justify-content-center justify-content-sm-between flex-wrap"
+    >
+      <div class>
+        <p class="card-category">
+          Showing {{ from + 1 }} to {{ to }} of {{ pagination.total }} entries
+        </p>
+      </div>
+      <base-pagination
+        :value="pagination.currentPage"
+        :per-page="pagination.perpage"
+        :total="pagination.total"
+        :pageCount="pagination.pages"
+        @input="changePageListener"
+      ></base-pagination>
+    </div>
+    <!-- </card> -->
     <div class="pt-5">
       <manage-ticket
         @ticket="ticketAddListener"

@@ -166,7 +166,7 @@ export default {
     Autocomplete,
     fileUpload,
     ImageUpload,
-    ckeditor: CKEditor.component
+    ckeditor: CKEditor.component,
   },
   data() {
     return {
@@ -178,7 +178,7 @@ export default {
         priority: '',
         department: '',
         message: '',
-        file: undefined
+        file: undefined,
       },
       fieldErrors: {},
       formErrors: {},
@@ -210,93 +210,93 @@ export default {
             ImageCaption,
             ImageStyle,
             imageupload,
-            Direction
+            Direction,
           ],
           fontSize: {
-            options: [9, 11, 13, 'default', 17, 19, 21]
+            options: [9, 11, 13, 'default', 17, 19, 21],
           },
 
           fontColor: {
             colors: [
               {
                 color: 'hsl(0, 0%, 0%)',
-                label: 'Black'
+                label: 'Black',
               },
               {
                 color: 'hsl(0, 0%, 30%)',
-                label: 'Dim grey'
+                label: 'Dim grey',
               },
               {
                 color: 'hsl(0, 0%, 60%)',
-                label: 'Grey'
+                label: 'Grey',
               },
               {
                 color: 'hsl(0, 0%, 100%)',
-                label: 'White'
+                label: 'White',
                 // hasBorder: true
               },
               {
                 color: '#e14eca',
-                label: 'Custom 1'
+                label: 'Custom 1',
               },
               {
                 color: '#00f2c3',
-                label: 'Custom 2'
+                label: 'Custom 2',
               },
               {
                 color: '#1d8cf8',
-                label: 'Custom 3'
+                label: 'Custom 3',
               },
               {
                 color: '#ff8d72',
-                label: 'Custom 4'
+                label: 'Custom 4',
               },
               {
                 color: '#fd5d93',
-                label: 'Custom 5'
+                label: 'Custom 5',
               },
               {
                 color: '#42b883',
-                label: 'Custom 6'
-              }
+                label: 'Custom 6',
+              },
               // ...
-            ]
+            ],
           },
           fontBackgroundColor: {
             colors: [
               {
                 color: 'hsl(0, 75%, 60%)',
-                label: 'Red'
+                label: 'Red',
               },
               {
                 color: 'hsl(30, 75%, 60%)',
-                label: 'Orangeee'
+                label: 'Orangeee',
               },
               {
                 color: '#e14eca',
-                label: 'Custom 1'
+                label: 'Custom 1',
               },
               {
                 color: '#00f2c3',
-                label: 'Custom 2'
+                label: 'Custom 2',
               },
               {
                 color: '#1d8cf8',
-                label: 'Custom 3'
+                label: 'Custom 3',
               },
               {
                 color: '#ff8d72',
-                label: 'Custom 4'
+                label: 'Custom 4',
               },
               {
                 color: '#fd5d93',
-                label: 'Custom 5'
+                label: 'Custom 5',
               },
               {
                 color: '#42b883',
-                label: 'Custom 6'
-              }
-            ]
+                label: 'Custom 6',
+              },
+            ],
           },
           toolbar: [
             'heading',
@@ -327,10 +327,10 @@ export default {
             'imageTextAlternative',
             '|',
             'imageStyle:full',
-            'imageStyle:side'
-          ]
-        }
-      }
+            'imageStyle:side',
+          ],
+        },
+      },
     };
   },
   methods: {
@@ -380,7 +380,7 @@ export default {
         data = { ...this.data };
       }
       this.loading = true;
-      const errorHandler = response => {
+      const errorHandler = (response) => {
         if (response && response.data && response.data.status === 'error') {
           this.formErrors = Array.isArray(response.data.data)
             ? response.data.data
@@ -398,7 +398,7 @@ export default {
       }
       backend
         .post(url, data)
-        .then(response => {
+        .then((response) => {
           this.loading = false;
           if (response.data.status === 'error') {
             errorHandler(response);
@@ -407,12 +407,12 @@ export default {
           this.$notify({
             type: 'success',
             message: 'تیکت با موفقیت اضافه شد.',
-            icon: 'tim-icons icon-bell-55'
+            icon: 'tim-icons icon-bell-55',
           });
           this.$emit('ticket', response.data.ticket);
           this.reset();
         })
-        .catch(error => {
+        .catch((error) => {
           this.loading = false;
           errorHandler(error.response);
         });
@@ -426,27 +426,27 @@ export default {
       }
     },
     onEditorReady(editor) {
-      editor.plugins.get('FileRepository').createUploadAdapter = loader => {
+      editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
         class ImageUploadAdapter {
           constructor(loader) {
             this.loader = loader;
           }
           upload() {
-            const uploader = file => {
+            const uploader = (file) => {
               return new Promise((resolve, reject) => {
                 const data = new FormData();
                 data.append('file', file);
                 backend
                   .post('admin/blog/images/upload', data, {
                     CancelToken: source.token,
-                    onUploadProgress: progressEvent => {
+                    onUploadProgress: (progressEvent) => {
                       loader.uploadTotal = progressEvent.total;
                       loader.uploaded = progressEvent.loaded;
-                    }
+                    },
                   })
-                  .then(response => {
+                  .then((response) => {
                     resolve({
-                      default: response.data.image
+                      default: response.data.image,
                     });
                   }, reject);
               });
@@ -459,34 +459,34 @@ export default {
         }
         return new ImageUploadAdapter(loader);
       };
-    }
+    },
   },
   watch: {
-    id: function(value, old) {
+    id: function (value, old) {
       this.data.id = value;
     },
-    title: function(value, old) {
+    title: function (value, old) {
       this.data.title = value;
     },
-    priority: function(value, old) {
+    priority: function (value, old) {
       this.data.priority = value;
     },
-    department: function(value, old) {
+    department: function (value, old) {
       this.data.department = value;
     },
-    status: function(value, old) {
+    status: function (value, old) {
       this.data.status = value;
     },
-    user: function(value, old) {
+    user: function (value, old) {
       this.data.user = value.id;
       this.data.userName = value.name;
-    }
+    },
   },
   computed: {
     isAdmin() {
       return this.$root.$data.user && this.$root.$data.user.admin;
-    }
-  }
+    },
+  },
 };
 </script>
 
