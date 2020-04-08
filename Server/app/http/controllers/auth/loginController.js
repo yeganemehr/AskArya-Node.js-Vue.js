@@ -65,12 +65,12 @@ class loginController extends controller {
             to: `${user.email}`, // list of receivers
             subject: 'فعال سازی اکانت اسک آریا', // Subject line
             html: `
-                <div style="text-align:right;direction:rtl;">
-                  <h2>فعال سازی اکانت اسک آریا</h2>
-                  <p>برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
-                  <a href="${config.siteurl}/user/activation/${newActiveCode.code}">فعال سازی</a>
-                </div>
-                        `, // html body
+              <div dir="rtl" class="text-align:right;">
+                <h2>فعال سازی اکانت اسک آریا</h2>
+                <p>برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
+                <a href="${config.siteurl}/user/activation/${newActiveCode.code}">فعال سازی</a>
+              </div>
+                 `, // html body
           };
 
           sgMail.send(mailOptions, (err, info) => {

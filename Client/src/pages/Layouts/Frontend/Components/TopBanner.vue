@@ -2,10 +2,14 @@
   <section>
     <div class="banner-box d-block text-center">
       <div class="banner-card">
-        <router-link to="/courses">
+        <router-link class="d-none d-md-block" to="/courses">
           <i class="fas bell fa-bell"></i>آیندت رو بساز! تخفیف 20٪ ویژه شروع
           بهار.
         </router-link>
+        <a class="d-md-none" href="/courses">
+          <i class="fas bell fa-bell"></i>آیندت رو بساز! تخفیف 20٪ ویژه شروع
+          بهار.
+        </a>
       </div>
     </div>
   </section>

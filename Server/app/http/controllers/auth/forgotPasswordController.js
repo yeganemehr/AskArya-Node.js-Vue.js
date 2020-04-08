@@ -7,13 +7,12 @@ const uniqueString = require('unique-string');
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-
 class forgotPasswordController extends controller {
   showForgotPassword(req, res) {
     const title = 'فراموشی رمز عبور';
     res.render('home/auth/passwords/email', {
       recaptcha: this.recaptcha.render(),
-      title
+      title,
     });
   }
 
@@ -29,7 +28,7 @@ class forgotPasswordController extends controller {
 
   async sendResetLink(req, res, next) {
     let user = await User.findOne({
-      email: req.body.email
+      email: req.body.email,
     });
     if (!user) {
       req.flash('errors', 'چنین کاربری وجود ندارد');
@@ -38,7 +37,7 @@ class forgotPasswordController extends controller {
 
     const newPasswordReset = new PasswordReset({
       email: req.body.email,
-      token: uniqueString()
+      token: uniqueString(),
     });
 
     await newPasswordReset.save();
@@ -47,12 +46,13 @@ class forgotPasswordController extends controller {
       from: '"اسک آریا 👻" <info@ask-arya.com>', // sender address
       to: `${newPasswordReset.email}`, // list of receivers
       subject: 'ریست کردن پسورد', // Subject line
-      html: `<div dir="rtl"> 
-                <h2>ریست کردن پسورد</h2>
-                <p>برای ریست کردن پسورد بر روی لینک زیر کلیک کنید</p>
-                <a href="${config.siteurl}/auth/password/reset/${newPasswordReset.token}">ریست کردن</a>
-                </div>
-            ` // html body
+      html: `  
+            <div dir="rtl" class="text-align:right;">
+              <h2>ریست کردن پسورد</h2>
+              <p>برای ریست کردن پسورد بر روی لینک زیر کلیک کنید</p>
+              <a href="${config.siteurl}/auth/password/reset/${newPasswordReset.token}">ریست کردن</a>
+            </div>
+            `, // html body
     };
 
     sgMail.send(mailOptions, (err, info) => {
@@ -65,7 +65,7 @@ class forgotPasswordController extends controller {
       this.alert(req, {
         title: 'دقت کنید',
         message: 'ایمیل حاوی لینک پسورد به ایمیل شما ارسال شد',
-        type: 'success'
+        type: 'success',
       });
 
       return res.redirect('/');

@@ -170,8 +170,8 @@ export default {
   }
 
   .blog-img {
-    width: 300px;
-    height: 300px;
+    width: 260px;
+    height: 260px;
   }
 
   .main-blog-section {

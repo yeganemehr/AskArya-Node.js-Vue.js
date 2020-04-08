@@ -7,9 +7,13 @@
     class="auth-navbar sticky-top"
   >
     <div slot="brand" class="navbar-wrapper">
-      <router-link to="/">
+      <router-link to="/" class="d-none d-md-block">
         <img src="/img/askarya-logo.png" width="110" alt="Ask Arya Logo" />
       </router-link>
+
+      <a href="/home" class="d-md-none">
+        <img src="/img/askarya-logo.png" width="110" alt="Ask Arya Logo" />
+      </a>
     </div>
     <ul class="navbar-nav">
       <!-- Home -->
@@ -159,8 +163,8 @@
         </div>
         <div class="row login-register-buttons" v-else>
           <!-- Register Button -->
-          <div class="pr-3 register-button d-none d-md-block">
-            <router-link to="/register">
+          <div class="pr-3 auth-button-mobile">
+            <router-link class="d-none d-md-block" to="/register">
               <base-button
                 native-type="submit"
                 type="danger"
@@ -168,21 +172,16 @@
                 >ثبت نام</base-button
               >
             </router-link>
-          </div>
-          <div class="pr-3 register-button d-md-none">
-            <a href="/register">
-              <base-button
-                native-type="submit"
-                type="danger"
-                class="btn-simple btn"
+            <a class="d-md-none" href="/register">
+              <base-button native-type="submit" type="warning" class="btn px-5"
                 >ثبت نام</base-button
               >
             </a>
           </div>
 
           <!-- Login Button -->
-          <div class="pr-3 login-button d-none d-md-block">
-            <router-link to="/login">
+          <div class="pr-4 auth-button-mobile">
+            <router-link to="/login" class="d-none d-md-block">
               <base-button
                 native-type="submit"
                 type="info"
@@ -190,9 +189,7 @@
                 >ورود کاربر</base-button
               >
             </router-link>
-          </div>
-          <div class="pr-3 login-button d-md-none">
-            <a href="/login">
+            <a class="d-md-none" href="/login">
               <base-button
                 native-type="submit"
                 type="info"
@@ -334,11 +331,16 @@ export default {
     font-size: 1em !important;
   }
   .login-register-buttons {
-    padding: 10px 0 !important;
+    padding-bottom: 7px !important;
   }
+
   // .ipad-fix {
   //   display: none !important;
   // }
+
+  .auth-button-mobile {
+    font-size: 1em !important;
+  }
 }
 .navbar-collapse .navbar-nav .nav-link {
   color: #000;
