@@ -17,7 +17,7 @@ const Courses = () =>
 const SingleLesson = () =>
   import(
     /* webpackChunkName: "extra" */
-    'src/pages/SingleLesson/SingleLesson.vue'
+    'src/pages/Courses/SingleLesson.vue'
   );
 
 const VerificationPayments = () =>

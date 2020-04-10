@@ -127,13 +127,4 @@ export default {
     color: rgba(255, 255, 255, 0.8) !important;
   }
 }
-
-// @media (max-width: 550px) {
-//   .iconSection a,
-//   .iconSection i,
-//   .iconSection p {
-//     font-size: 1.2em;
-//     text-align: left;
-//   }
-// }
 </style>

@@ -1,27 +1,34 @@
 <template>
   <div class="container py-5 mb-5">
-    <div
+    <h1 class="title">دوره‌های آموزشی</h1>
+    <p class="info-text">
+      در مجموع <span class="infoStyling">{{ total }} دوره </span> با محتوای
+      <span class="infoStyling">{{ episodes }} درس </span> به مدت
+      <span class="infoStyling">{{ hours }} ساعت </span> در سایت موجود است.
+    </p>
+
+    <!-- <h3 class="headerDigitsText text-danger text-center py-4 text-rtl">
+      محتوای جدید هر هفته اضافه می شود!
+    </h3> -->
+
+    <!-- <div
       class="d-flex justify-content-around d-flex align-items-center text-center headerDigits"
     >
       <div>
-        <h2 class="headerStyling">{{ total }}</h2>
+        <span class="headerStyling">{{ total }}</span>
         <p>دوره</p>
       </div>
       <span class="bullet-point">•</span>
       <div>
-        <h2 class="headerStyling">{{ episodes }}</h2>
+        <span class="headerStyling">{{ episodes }}</span>
         <p>درس</p>
       </div>
       <span class="bullet-point">•</span>
       <div>
-        <h2 class="headerStyling">{{ hours }}</h2>
+        <span class="headerStyling">{{ hours }}</span>
         <p>ساعت</p>
       </div>
-    </div>
-
-    <h3 class="headerDigitsText text-danger text-center py-4 text-rtl">
-      محتوای جدید هر هفته اضافه می شود!
-    </h3>
+    </div> -->
 
     <!-- Courses Section -->
     <div class="row">
@@ -125,33 +132,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.headerDigits {
-  padding: 0 36% !important;
+.title {
+  font-size: 3em !important;
+  font-family: IranSansBold;
+  color: #fd5d93 !important;
+  text-align: center;
 }
 
-.headerDigitsText {
-  font-size: 1.1rem !important;
+.info-text {
+  font-size: 1.1em !important;
+  text-align: center !important;
+  margin-bottom: 4.5em !important;
+  color: #444444 !important;
 }
 
-.headerStyling {
-  font-size: 4em !important;
+.infoStyling {
+  font-size: 1.1em !important;
   font-family: IranSansBold !important;
-  color: rgb(17, 207, 144) !important;
-  padding: 0px !important;
-  margin: 0px !important;
-}
-
-.bullet-point {
-  font-size: 2rem !important;
   color: rgb(17, 207, 144) !important;
 }
 
 @media only screen and (max-width: 768px) {
-  .headerDigits {
-    padding: 0 5% !important;
+  .info-text {
+    font-size: 0.72em !important;
+    text-align: center !important;
+    margin-bottom: 5em !important;
+    color: #444444 !important;
   }
-  .headerDigitsText {
-    font-size: 0.9rem !important;
+
+  .infoStyling {
+    font-size: 1.2em !important;
+    font-family: IranSansBold !important;
+    color: rgb(17, 207, 144) !important;
   }
 }
 </style>

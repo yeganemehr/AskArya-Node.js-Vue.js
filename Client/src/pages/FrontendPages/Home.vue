@@ -6,10 +6,12 @@
     <!-- Top Courses Section -->
     <div class="container pt-5 pb-4">
       <div class="top-courses-section">
-        <p class="section-header pb-3">
-          پیشنهادهای ویژه اسک آریا برای شما
+        <h1 class="section-header text-right">دوره‌های آموزشی</h1>
+        <p class="subtitle text-right mb-4">
+          پیشنهادهای ویژه اسک آریا برای شما.
         </p>
-        <div class="row pt-2">
+
+        <div class="row pt-3">
           <div
             class="col-lg-3 col-md-6 col-sm-12"
             v-for="course in topCourses"
@@ -154,11 +156,22 @@ export default {
   box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1) !important;
 }
 
+// .subtitle {
+//   font-size: 15px;
+//   font-family: IranSansBold !important;
+//   color: rgba(0, 0, 0, 0.699) !important;
+//   text-align: right !important;
+// }
+
 .section-header {
-  font-size: 15px;
-  font-family: IranSansBold !important;
-  color: rgba(0, 0, 0, 0.699) !important;
-  text-align: right !important;
+  font-size: 1.6em;
+  font-family: IranSansBold;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.3) !important;
 }
 
 .fadeline2 {
@@ -179,14 +192,11 @@ export default {
   margin: 3em 0 3em 0 !important;
 }
 
-@media (max-width: 680px) {
-  // .top-courses-section {
-  //   padding: 0 7% !important;
-  // }
-  .section-header {
-    font-size: 13px;
-    font-family: IranSansBold !important;
-    color: rgba(0, 0, 0, 0.3) !important;
-  }
-}
+// @media (max-width: 680px) {
+//   .subtitle {
+//     font-size: 13px;
+//     font-family: IranSansBold !important;
+//     color: rgba(0, 0, 0, 0.3) !important;
+//   }
+// }
 </style>

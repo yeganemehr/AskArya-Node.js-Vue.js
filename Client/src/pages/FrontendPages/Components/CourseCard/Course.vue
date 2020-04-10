@@ -129,7 +129,7 @@ export default {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
 
   .course-title {
-    font-size: 0.9rem;
+    font-size: 1.05em !important;
     font-family: IranSansBold;
     color: #272727;
   }
@@ -142,7 +142,6 @@ export default {
   .bottom-section {
     padding: 0;
     margin: 0;
-    // border: 1px solid rgba(0, 0, 0, 0.05);
   }
 
   .CourseInfoSection {
@@ -174,13 +173,13 @@ export default {
   }
 
   .buyCourseTitle {
-    font-size: 1em;
+    font-size: 1.05em !important;
     font-family: IranSansBold !important;
     color: rgb(86, 173, 223);
     background: #ebebeb;
     margin-bottom: auto;
     padding-top: 0.7em;
-    padding-bottom: 0.7em;
+    padding-bottom: 0.9em;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
@@ -234,7 +233,7 @@ export default {
 
 @media only screen and (max-width: 768px) {
   .course-title {
-    font-size: 1rem !important;
+    font-size: 1.1em !important;
   }
 
   .CourseCard__course__info {
@@ -260,9 +259,7 @@ export default {
   }
 
   .buyCourseTitle {
-    font-size: 1.1em !important;
-    padding-top: 0.7em;
-    padding-bottom: 0.7em;
+    font-size: 1.13em !important;
   }
 }
 
