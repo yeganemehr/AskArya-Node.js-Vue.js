@@ -86,7 +86,7 @@ export default {
   color: rgb(53, 53, 53) !important;
   background: rgb(241, 241, 241) !important;
   font-family: IranSans !important;
-  font-size: 0.9em !important;
+  font-size: 1em !important;
   text-align: center !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -110,11 +110,16 @@ export default {
 
   .card-footer-text {
     color: #00000059 !important;
-    font-size: 0.95em;
+    font-size: 1em;
   }
 }
 
 @media only screen and (max-width: 768px) {
+  .blogBox {
+    margin-left: 1.5em !important;
+    margin-right: 1.5em !important;
+  }
+
   .home-blog .card-title {
     font-size: 1.2em !important;
     padding-top: 5px !important;
@@ -122,7 +127,7 @@ export default {
   }
 
   .card .card-footer .card-footer-text {
-    font-size: 1em !important;
+    font-size: 1.05em !important;
   }
 
   .home-blog .category {

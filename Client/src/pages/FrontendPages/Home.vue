@@ -166,7 +166,8 @@ export default {
 .section-header {
   font-size: 1.6em;
   font-family: IranSansBold;
-  margin: 0 0 8px 0;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 10px 0;
 }
 
 .subtitle {

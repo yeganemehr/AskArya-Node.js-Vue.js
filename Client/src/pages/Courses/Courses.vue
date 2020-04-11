@@ -140,24 +140,24 @@ export default {
 }
 
 .info-text {
-  font-size: 1.1em !important;
+  font-size: 1.13em !important;
   text-align: center !important;
   margin-bottom: 4.5em !important;
   color: #444444 !important;
 }
 
 .infoStyling {
-  font-size: 1.1em !important;
+  font-size: 1.13em !important;
   font-family: IranSansBold !important;
   color: rgb(17, 207, 144) !important;
 }
 
 @media only screen and (max-width: 768px) {
   .info-text {
-    font-size: 0.72em !important;
+    font-size: 0.9em !important;
     text-align: center !important;
     margin-bottom: 5em !important;
-    color: #444444 !important;
+    color: #5a5a5a !important;
   }
 
   .infoStyling {

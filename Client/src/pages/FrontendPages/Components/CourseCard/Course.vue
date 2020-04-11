@@ -232,6 +232,11 @@ export default {
 }
 
 @media only screen and (max-width: 768px) {
+  .CourseCard {
+    margin-left: 1.5em !important;
+    margin-right: 1.5em !important;
+  }
+
   .course-title {
     font-size: 1.1em !important;
   }

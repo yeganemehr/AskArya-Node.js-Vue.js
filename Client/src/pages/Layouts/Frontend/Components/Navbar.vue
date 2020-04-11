@@ -173,8 +173,9 @@
               >
             </router-link>
             <a class="d-md-none" href="/register">
-              <base-button native-type="submit" type="warning" class="btn px-5"
-                >ثبت نام</base-button
+              <base-button native-type="submit" type="warning" class="btn">
+                <i class="far fa-user ml-2"></i>
+                ثبت نام</base-button
               >
             </a>
           </div>
@@ -326,7 +327,7 @@ export default {
     padding: 22px 0 0 0 !important;
   }
   .navbar-nav li {
-    padding: 7px 0 !important;
+    padding: 6px 0 !important;
     border-bottom: 1px solid #e4e4e463 !important;
     font-size: 1em !important;
   }
