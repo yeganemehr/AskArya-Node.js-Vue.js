@@ -6,26 +6,26 @@ const logSchema = Schema(
   {
     user: {
       type: Schema.Types.ObjectId,
-      ref: 'User'
+      ref: 'User',
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     type: {
       type: String,
-      required: true
+      required: true,
     },
     ip: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   {
     timestamps: true,
     toJSON: {
-      virtuals: true
-    }
+      virtuals: true,
+    },
   }
 );
 

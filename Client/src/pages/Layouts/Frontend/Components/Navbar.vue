@@ -62,8 +62,21 @@
       </li>
 
       <!-- Ticket Support -->
-      <li v-if="this.$root.$data.user !== undefined" class="nav-item d-md-none">
-        <a class="nav-link" href="/tickets">
+      <li class="nav-item d-md-none">
+        <a
+          v-if="this.$root.$data.user !== undefined && !isAdmin"
+          class="nav-link"
+          href="/tickets"
+        >
+          <i class="fas fa-headset ml-2"></i>
+          پشتیبانی</a
+        >
+
+        <a
+          v-if="this.$root.$data.user !== undefined && isAdmin"
+          class="nav-link"
+          href="/ticketoverview"
+        >
           <i class="fas fa-headset ml-2"></i>
           پشتیبانی</a
         >
@@ -132,7 +145,20 @@
               </li>
 
               <li class="nav-link">
-                <router-link to="/tickets" class="nav-item dropdown-item">
+                <router-link
+                  v-if="isAdmin"
+                  to="/ticketoverview"
+                  class="nav-item dropdown-item"
+                >
+                  <i class="fas fa-headset pl-2"></i>
+                  پشتیبانی
+                </router-link>
+
+                <router-link
+                  v-else
+                  to="/tickets"
+                  class="nav-item dropdown-item"
+                >
                   <i class="fas fa-headset pl-2"></i>
                   پشتیبانی
                 </router-link>

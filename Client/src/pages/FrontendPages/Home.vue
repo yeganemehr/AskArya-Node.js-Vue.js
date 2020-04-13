@@ -156,13 +156,6 @@ export default {
   box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1) !important;
 }
 
-// .subtitle {
-//   font-size: 15px;
-//   font-family: IranSansBold !important;
-//   color: rgba(0, 0, 0, 0.699) !important;
-//   text-align: right !important;
-// }
-
 .section-header {
   font-size: 1.6em;
   font-family: IranSansBold;

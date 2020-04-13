@@ -1,9 +1,9 @@
 <template>
   <div class="card">
     <div class="container">
-      <h1 class="title pt-4">اعلانات</h1>
+      <h1 class="title pt-4 pb-1">اعلانات</h1>
       <div class="text-right" v-if="logs.length">
-        <div class="Message pt-4" v-for="log of logs" :key="log.id">
+        <div class="Message pb-4 px-1" v-for="log of logs" :key="log.id">
           <p class="text-justify">
             <i :class="'fas ' + getLogIcon(log.type) + ' iconSize'"></i>
             {{ getJalaliDate(log.createdAt) }} -
@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       pagination: {
-        perPage: 3,
+        perPage: 4,
         currentPage: 1,
         total: 0,
         pages: 0,

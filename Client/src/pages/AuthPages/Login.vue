@@ -4,7 +4,7 @@
       <card class="shadow">
         <form @submit="checkForm">
           <h1 class="auth-title text-primary py-2">ورود</h1>
-          <div class="container register-text text-center">
+          <div class="container registration-title text-center">
             اگر در اسک آریا حساب ندارید، ثبت نام کنید:
             <router-link to="/register">
               <base-button size="sm" type="success" class="animation-on-hover">
@@ -288,15 +288,16 @@ export default {
 
 @media (max-width: 680px) {
   .auth-section {
-    height: 100vh !important;
+    height: 90vh !important;
   }
 
   .card {
-    width: 330px !important;
+    width: auto !important;
   }
-
-  .register-text {
-    text-align: right !important;
+}
+@media (max-width: 320px) {
+  .registration-title {
+    font-size: 0.9em !important;
   }
 }
 </style>

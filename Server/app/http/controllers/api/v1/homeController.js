@@ -14,7 +14,7 @@ class homeController extends controller {
       .populate('episodesCount')
       .limit(4)
       .sort({
-        viewCount: 'desc'
+        viewCount: 'desc',
       })
       .exec();
     const user = req.user
@@ -24,30 +24,30 @@ class homeController extends controller {
             select: 'name label permissions',
             populate: [
               {
-                path: 'permissions'
-              }
-            ]
+                path: 'permissions',
+              },
+            ],
           })
           .execPopulate()
       : undefined;
     const topBlogPosts = Post.find()
       .limit(8)
       .sort({
-        viewCount: 'desc'
+        viewCount: 'desc',
       })
       .populate([
         {
           path: 'author',
-          select: 'id name'
+          select: 'id name',
         },
         {
           path: 'tags',
-          select: 'name slug'
+          select: 'name slug',
         },
         {
           path: 'categories',
-          select: 'name slug'
-        }
+          select: 'name slug',
+        },
       ])
       .exec();
     const results = await Promise.all([
@@ -55,7 +55,7 @@ class homeController extends controller {
       user,
       topBlogPosts,
       Episode.find({}, 'time').exec(),
-      Course.estimatedDocumentCount()
+      Course.estimatedDocumentCount(),
     ]);
     let seconds = 0;
     for (const episode of results[3]) {
@@ -68,7 +68,7 @@ class homeController extends controller {
       topPosts: results[2].map(blogController.filterData),
       seconds,
       courses: results[4],
-      episodes: results[3].length
+      episodes: results[3].length,
     });
   }
   async user(req, res) {
@@ -78,15 +78,15 @@ class homeController extends controller {
         select: 'name label permissions',
         populate: [
           {
-            path: 'permissions'
-          }
-        ]
+            path: 'permissions',
+          },
+        ],
       })
       .execPopulate();
 
     return res.json({
       data: this.filterUserData(user),
-      status: 'success'
+      status: 'success',
     });
   }
 
@@ -95,29 +95,29 @@ class homeController extends controller {
       let page = req.query.page || 1;
       let payments = await Payment.paginate(
         {
-          user: req.user.id
+          user: req.user.id,
         },
         {
           page,
           sort: {
-            createdAt: -1
+            createdAt: -1,
           },
           limit: 20,
           populate: [
             {
-              path: 'course'
+              path: 'course',
             },
             {
               path: 'user',
-              select: 'name email'
-            }
-          ]
+              select: 'name email',
+            },
+          ],
         }
       );
 
       res.json({
         data: this.filterPaymentData(payments),
-        status: 'success'
+        status: 'success',
       });
     } catch (err) {
       this.failed(err.message, res);
@@ -127,17 +127,17 @@ class homeController extends controller {
   filterPaymentData(payments) {
     return {
       ...payments,
-      docs: payments.docs.map(pay => {
+      docs: payments.docs.map((pay) => {
         return {
           payment: pay.payment,
           resnumber: pay.resnumber,
           price: pay.price,
           user: {
             name: pay.user.name,
-            email: pay.user.email
-          }
+            email: pay.user.email,
+          },
         };
-      })
+      }),
     };
   }
 
@@ -154,19 +154,19 @@ class homeController extends controller {
       lang: user.lang,
       avatar: user.avatar,
       roles: user.roles
-        ? user.roles.map(role => {
+        ? user.roles.map((role) => {
             return {
               name: role.name,
               label: role.label,
-              permissions: role.permissions.map(per => {
+              permissions: role.permissions.map((per) => {
                 return {
                   name: per.name,
-                  label: per.label
+                  label: per.label,
                 };
-              })
+              }),
             };
           })
-        : undefined
+        : undefined,
     };
   }
 }

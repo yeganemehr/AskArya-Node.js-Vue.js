@@ -18,19 +18,19 @@ class dashboardController extends controller {
         $or: [
           {
             _id: {
-              $in: req.user.learning
-            }
+              $in: req.user.learning,
+            },
           },
           {
-            type: 'VIP'
-          }
-        ]
+            type: 'VIP',
+          },
+        ],
       };
     } else {
       condition = {
         _id: {
-          $in: req.user.learning
-        }
+          $in: req.user.learning,
+        },
       };
     }
     const courses = await Course.find(condition, '_id').exec();
@@ -38,28 +38,28 @@ class dashboardController extends controller {
       Episode.countDocuments().exec(),
       Episode.countDocuments({
         course: {
-          $in: courses.map(course => {
+          $in: courses.map((course) => {
             return course.id;
-          })
-        }
+          }),
+        },
       }).exec(),
       Payment.paginate(
         {
-          user: req.user.id
+          user: req.user.id,
         },
         {
           page: page,
           sort: {
-            createdAt: -1
+            createdAt: -1,
           },
           limit: 3,
           populate: {
             path: 'course',
-            select: '_id title images thumb price vip'
+            select: '_id title images thumb price vip',
           },
-          select: '_id createdAt price payment course vip'
+          select: '_id createdAt price payment course vip',
         }
-      )
+      ),
     ];
 
     const results = await Promise.all(promises);
@@ -68,8 +68,8 @@ class dashboardController extends controller {
       courses: courses.length,
       episodes: [results[1], results[0]],
       payments: {
-        ...results[2]
-      }
+        ...results[2],
+      },
     };
     res.json(response);
   }
@@ -85,18 +85,18 @@ class dashboardController extends controller {
         select: 'name label permissions',
         populate: [
           {
-            path: 'permissions'
-          }
-        ]
+            path: 'permissions',
+          },
+        ],
       })
       .populate({
         path: 'roles',
         select: 'name label permissions',
         populate: [
           {
-            path: 'permissions'
-          }
-        ]
+            path: 'permissions',
+          },
+        ],
       })
       .execPopulate();
 
@@ -114,7 +114,7 @@ class dashboardController extends controller {
       await user.save();
       res.json({
         status: true,
-        user: HomeController.filterUserData(user)
+        user: HomeController.filterUserData(user),
       });
     } catch (err) {
       this.failed(err.message, res);
@@ -125,24 +125,24 @@ class dashboardController extends controller {
     const limit = req.query.limit || 2;
     const logs = await Log.paginate(
       {
-        user: req.user.id
+        user: req.user.id,
       },
       {
         page,
         sort: {
-          createdAt: -1
+          createdAt: -1,
         },
         limit: parseInt(limit, 10),
         populate: [
           {
-            path: 'user'
-          }
-        ]
+            path: 'user',
+          },
+        ],
       }
     );
     const data = {
       ...logs,
-      docs: logs.docs.map(this.filterLogData)
+      docs: logs.docs.map(this.filterLogData),
     };
     res.json(data);
   }
@@ -151,23 +151,23 @@ class dashboardController extends controller {
     const limit = req.query.limit || 2;
     const payments = await Payment.paginate(
       {
-        user: req.user.id
+        user: req.user.id,
       },
       {
         page: page,
         sort: {
-          createdAt: -1
+          createdAt: -1,
         },
         limit: limit,
         populate: {
           path: 'course',
-          select: '_id title images thumb price vip'
+          select: '_id title images thumb price vip',
         },
-        select: '_id createdAt price payment course vip'
+        select: '_id createdAt price payment course vip',
       }
     );
     const data = {
-      ...payments
+      ...payments,
     };
     res.json(data);
   }
@@ -180,8 +180,8 @@ class dashboardController extends controller {
       createdAt: log.createdAt,
       user: {
         id: log.user.id,
-        name: log.user.name
-      }
+        name: log.user.name,
+      },
     };
   }
   imageResize(image, size) {
@@ -222,7 +222,7 @@ class dashboardController extends controller {
       const response = await zarinpal.PaymentRequest({
         Amount: price,
         CallbackURL: `${config.siteurl}/courses`,
-        Description: `بابت افزایش اعتبار ویژه`
+        Description: `بابت افزایش اعتبار ویژه`,
       });
       if (response.status === 100) {
         const payment = new Payment({
@@ -230,12 +230,12 @@ class dashboardController extends controller {
           vip: true,
           resnumber: response.authority,
           price: price,
-          vipMonth: vipMonth
+          vipMonth: vipMonth,
         });
         await payment.save();
         return res.json({
           redirect: response.url,
-          status: 'success'
+          status: 'success',
         });
       }
     } catch (err) {
@@ -247,12 +247,12 @@ class dashboardController extends controller {
       return this.failed('پرداخت شما با موفقیت انجام نشد', res, 500);
     }
     const payment = await Payment.findOne({
-      resnumber: req.body.authority
+      resnumber: req.body.authority,
     })
       .populate([
         {
-          path: 'user'
-        }
+          path: 'user',
+        },
       ])
       .exec();
 
@@ -269,7 +269,7 @@ class dashboardController extends controller {
     );
     const response = await zarinpal.PaymentVerification({
       Amount: payment.price,
-      Authority: payment.resnumber
+      Authority: payment.resnumber,
     });
     if (response.status !== 100) {
       return this.failed('پرداخت شما با موفقیت انجام نشد', res, 500);
@@ -297,7 +297,7 @@ class dashboardController extends controller {
     vipTime = new Date(vipTime);
     payment.user.set({
       vipTime,
-      vipType: type
+      vipType: type,
     });
     await payment.user.save();
     payment.payment = true;
@@ -306,13 +306,13 @@ class dashboardController extends controller {
       ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
       user: payment.user.id,
       type: 'vip_payment',
-      title: `از پرداخت شما سپاسگزاریم، اعتبار اکانت ویژه شما تا ${time} ماه دیگر تمدید شد.`
+      title: `از پرداخت شما سپاسگزاریم، اعتبار اکانت ویژه شما تا ${time} ماه دیگر تمدید شد.`,
     });
     await paymentLog.save();
     return res.json({
       vipTime,
       message: 'پرداخت شما با موفقیت انجام شد',
-      status: true
+      status: true,
     });
   }
 }

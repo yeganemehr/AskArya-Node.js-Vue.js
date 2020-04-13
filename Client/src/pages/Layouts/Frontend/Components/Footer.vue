@@ -7,7 +7,7 @@
             <div class="col-md-5 about-us">
               <h4 class="title text-white">درباره اسک آریا</h4>
               <hr class="fadeline3 d-none d-md-block" />
-              <p class="text-white">
+              <p class="text-white custom-text">
                 اسک آریا یکی از پرتلاش‌ترین و بروزترین وبسایت های آموزشی در سطح
                 ایران است که همیشه تلاش کرده تا بتواند جدیدترین و بروزترین
                 مقالات و دوره‌های آموزشی را در اختیار علاقه‌مندان ایرانی قرار
