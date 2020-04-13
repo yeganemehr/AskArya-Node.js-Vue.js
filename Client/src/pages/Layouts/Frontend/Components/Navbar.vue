@@ -189,7 +189,7 @@
         </div>
         <div class="row login-register-buttons" v-else>
           <!-- Register Button -->
-          <div class="pr-3 auth-button-mobile">
+          <div class="auth-button-mobile">
             <router-link class="d-none d-md-block" to="/register">
               <base-button
                 native-type="submit"
@@ -207,7 +207,7 @@
           </div>
 
           <!-- Login Button -->
-          <div class="pr-4 auth-button-mobile">
+          <div class="auth-button-mobile">
             <router-link to="/login" class="d-none d-md-block">
               <base-button
                 native-type="submit"
@@ -346,29 +346,6 @@ export default {
   padding-left: 3.5rem !important;
 }
 
-@media (max-width: 768px) {
-  .navbar-nav {
-    font-size: 1rem !important;
-    color: #fff !important;
-    padding: 22px 0 0 0 !important;
-  }
-  .navbar-nav li {
-    padding: 6px 0 !important;
-    border-bottom: 1px solid #e4e4e463 !important;
-    font-size: 1em !important;
-  }
-  .login-register-buttons {
-    padding-bottom: 7px !important;
-  }
-
-  // .ipad-fix {
-  //   display: none !important;
-  // }
-
-  .auth-button-mobile {
-    font-size: 1em !important;
-  }
-}
 .navbar-collapse .navbar-nav .nav-link {
   color: #000;
   padding-left: 0 !important;
@@ -384,14 +361,7 @@ export default {
 .dropdown-toggle[aria-expanded='true']:after {
   display: none !important;
 }
-@media (min-width: 990px) and (max-width: 1050px) {
-  .navbar-collapse .navbar-nav .nav-link {
-    font-size: 1em !important;
-  }
-  .navbar-nav li {
-    font-size: 0.9em !important;
-  }
-}
+
 .dropdown-toggle[aria-expanded='true']:after {
   display: none !important;
 }
@@ -417,26 +387,12 @@ export default {
 .navbar-nav li {
   font-size: 1.2em !important;
 }
-@media only screen and (min-width: 1150px) {
-  .navbar-nav li {
-    font-size: 1.2em !important;
-    padding: 0 20px !important;
-  }
-}
+
 .nav-item,
 .dropdown-item {
   background: transparent !important;
 }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .navbar-nav li {
-    font-size: 1.2em !important;
-  }
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .navbar-nav li {
-    font-size: 0.95em !important;
-  }
-}
+
 .navbar-nav li a {
   padding: 9px 0 9px 10px !important;
   font-size: 0.95em;
@@ -464,21 +420,12 @@ p,
   font-size: 0.85em !important;
   border-bottom: 1px solid #fcfcfc !important;
 }
-@media (min-width: 992px) {
-  .dropdown-menu .dropdown-item {
-    color: black !important;
-  }
-}
+
 .navbar-collapse .navbar-nav .nav-link-exit .dropdown-item {
   color: rgb(49, 49, 49);
   border-bottom: 1px solid #fcfcfc00 !important;
 }
 
-@media (min-width: 768px) {
-  .navbar-nav {
-    float: none !important;
-  }
-}
 .sidebar
   .nav
   li.active
@@ -496,5 +443,44 @@ p,
   top: 0 !important;
   background-color: #fff !important;
   font-family: IranSans !important;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    font-size: 1rem !important;
+    color: #fff !important;
+    padding: 22px 0 0 0 !important;
+  }
+  .navbar-nav li {
+    padding: 6px 0 !important;
+    border-bottom: 1px solid #e4e4e463 !important;
+    font-size: 1em !important;
+  }
+
+  li:last-child {
+    border-bottom: 1px solid #e4e4e400 !important;
+  }
+
+  .login-register-buttons {
+    padding-bottom: 7px !important;
+  }
+
+  .auth-button-mobile {
+    font-size: 1em !important;
+    padding-right: 1em !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    float: none !important;
+  }
+}
+
+@media only screen and (min-width: 1150px) {
+  .navbar-nav li {
+    font-size: 1.2em !important;
+    padding: 0 20px !important;
+  }
 }
 </style>

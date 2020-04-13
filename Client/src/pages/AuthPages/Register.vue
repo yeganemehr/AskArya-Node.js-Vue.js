@@ -3,7 +3,7 @@
     <div class="container">
       <card class="shadow">
         <form @submit="checkForm" id="register-form">
-          <h1 class="auth-title text-primary py-2">ثبت نام</h1>
+          <h1 class="auth-title text-primary">ثبت نام</h1>
           <div class="row">
             <div class="col-12">
               <base-input
@@ -87,7 +87,7 @@
             <base-button
               block
               type="primary"
-              class="btn-simple animation-on-hover mb-4"
+              class="btn-simple animation-on-hover mb-2"
             >
               <i class="fab fa-google icon pl-4"></i>
               عضویت سریع با حساب گوگل

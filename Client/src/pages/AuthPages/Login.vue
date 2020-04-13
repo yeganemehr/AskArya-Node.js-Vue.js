@@ -3,7 +3,7 @@
     <div class="container">
       <card class="shadow">
         <form @submit="checkForm">
-          <h1 class="auth-title text-primary py-2">ورود</h1>
+          <h1 class="auth-title text-primary">ورود</h1>
           <div class="container registration-title text-center">
             اگر در اسک آریا حساب ندارید، ثبت نام کنید:
             <router-link to="/register">
@@ -103,7 +103,7 @@
             >
           </h6> -->
 
-          <h6 class="text-center my-3">
+          <h6 class="text-center mt-3">
             <router-link to="/forgotpassword" class="footer-link"
               >رمز عبور را فراموش کرده ام</router-link
             >
@@ -288,7 +288,7 @@ export default {
 
 @media (max-width: 680px) {
   .auth-section {
-    height: 90vh !important;
+    height: 100vh !important;
   }
 
   .card {
