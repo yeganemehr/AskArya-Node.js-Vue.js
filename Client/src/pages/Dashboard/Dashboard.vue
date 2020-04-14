@@ -1,15 +1,15 @@
 <template>
   <div class="bg">
     <div class="container pb-5">
-      <h1 class="title py-4 mb-0">پنل کاربری</h1>
+      <h1 class="title py-5 mb-0">پنل کاربری</h1>
       <div class="row">
         <!-- User Profile Section -->
-        <div class="col-lg-6 col-md-12 mb-4">
+        <div class="custom-margin col-lg-6 col-md-12">
           <user-card :user="$root.$data.user"></user-card>
         </div>
 
         <!-- Notification Section -->
-        <div class="d-none d-md-block col-lg-6 col-md-12 mb-4">
+        <div class="d-none d-md-block col-lg-6 col-md-12">
           <NotificationCard></NotificationCard>
         </div>
 
@@ -46,7 +46,7 @@
         </div>
 
         <!-- Notification Section -->
-        <div class="d-md-none col-lg-6 col-md-12 mb-4">
+        <div class="d-md-none col-lg-6 col-md-12">
           <NotificationCard></NotificationCard>
         </div>
       </div>
@@ -163,7 +163,7 @@ export default {
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.35),
     rgba(0, 0, 0, 0)
   );
 }
@@ -184,4 +184,10 @@ export default {
 .vip-section {
   padding-bottom: 5.6em !important;
 }
+
+// @media (max-width: 680px) {
+//   .custom-margin {
+//     margin-bottom: 0.9em !important;
+//   }
+// }
 </style>

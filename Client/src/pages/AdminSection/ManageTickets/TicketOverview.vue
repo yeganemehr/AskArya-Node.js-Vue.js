@@ -9,9 +9,9 @@
       :closedTickets="closedTickets"
     ></ticket-data>
     <!-- <card card-body-classes="table-full-width"> -->
-    <div class="container row my-5">
+    <div class="container my-5 text-center d-flex justify-content-center">
       <el-select
-        class="select-primary pagination-select ml-auto"
+        class="select-primary pagination-select"
         v-model="pagination.perPage"
         placeholder="Per page"
         @change="changeLimitListener"
@@ -25,7 +25,7 @@
         ></el-option>
       </el-select>
 
-      <base-input class="mr-auto">
+      <base-input>
         <el-input
           type="search"
           class="search-input"

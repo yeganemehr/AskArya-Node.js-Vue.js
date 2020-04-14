@@ -28,7 +28,7 @@
           }}</span>
           <!-- <span class="vip-date"> روز دیگر شارژ دارید </span> -->
         </p>
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center pb-4">
           <div class="pt-3 px-2">
             <base-button
               @click="showForm = !showForm"
@@ -212,8 +212,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn {
-  padding: 10px 15px !important;
+.box {
+  height: 92% !important;
+}
+
+.card-user .avatar {
+  width: 7em !important;
+  height: 7em !important;
 }
 
 .card-title {
@@ -229,6 +234,10 @@ export default {
   letter-spacing: 0 !important;
 }
 
+.btn {
+  padding: 10px 15px !important;
+}
+
 .description {
   font-size: 1.1em !important;
 }
@@ -240,9 +249,6 @@ export default {
   letter-spacing: 0 !important;
 }
 
-.box {
-  height: 100% !important;
-}
 .card-user {
   height: 100% !important;
   background-color: #ffffff !important;
@@ -251,14 +257,18 @@ export default {
 
 .tick {
   color: #57c09a !important;
-  /* font-weight: 600; */
 }
 .cross {
   color: #ff0000 !important;
-  /* font-weight: 600; */
 }
 .vip-date {
   font-size: 0.8rem !important;
   color: rgb(141, 141, 141) !important;
+}
+
+@media (max-width: 680px) {
+  .box {
+    height: 95% !important;
+  }
 }
 </style>

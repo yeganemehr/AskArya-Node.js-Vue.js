@@ -1,9 +1,9 @@
 <template>
   <div class="card">
     <div class="container">
-      <h1 class="title pt-4 pb-1">اعلانات</h1>
+      <h1 class="title pt-4 pb-3">اعلانات</h1>
       <div class="text-right" v-if="logs.length">
-        <div class="Message pb-4 px-1" v-for="log of logs" :key="log.id">
+        <div class="log px-2" v-for="log of logs" :key="log.id">
           <p class="text-justify">
             <i :class="'fas ' + getLogIcon(log.type) + ' iconSize'"></i>
             {{ getJalaliDate(log.createdAt) }} -
@@ -13,7 +13,7 @@
       </div>
     </div>
     <base-pagination
-      class="pagination-no-border ml-auto mt-auto px-3 text-rtl"
+      class="pagination-no-border ml-auto mt-auto px-2 text-rtl"
       v-model="pagination.currentPage"
       :value="pagination.currentPage"
       :per-page="pagination.perpage"
@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       pagination: {
-        perPage: 4,
+        perPage: 3,
         currentPage: 1,
         total: 0,
         pages: 0,
@@ -86,6 +86,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.card {
+  height: 92% !important;
+}
+
 .title {
   font-size: 1.1rem;
   font-family: IranSansBold;
@@ -93,13 +97,9 @@ export default {
   text-align: right;
 }
 
-.card {
-  height: 100%;
-  background-image: linear-gradient(#97288c, #f37335);
-}
-
-.white-content p {
-  font-size: 1em !important;
+.log {
+  font-size: 1.05em !important;
+  padding-bottom: 1.5em !important;
 }
 
 .iconSize {
@@ -125,6 +125,12 @@ export default {
         content: '\EA24';
       }
     }
+  }
+}
+
+@media (max-width: 680px) {
+  .card {
+    height: 100% !important;
   }
 }
 </style>
