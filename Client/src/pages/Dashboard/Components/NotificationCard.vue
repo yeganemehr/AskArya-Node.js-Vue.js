@@ -97,9 +97,10 @@ export default {
   text-align: right;
 }
 
-.log {
-  font-size: 1.05em !important;
+.log p {
+  font-size: 1.02em !important;
   padding-bottom: 1.5em !important;
+  color: rgb(66, 66, 66) !important;
 }
 
 .iconSize {

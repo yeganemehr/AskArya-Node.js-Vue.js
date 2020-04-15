@@ -1,7 +1,7 @@
 <template>
   <div class="bg">
     <div class="container pb-5">
-      <h1 class="title py-5 mb-0">پنل کاربری</h1>
+      <h1 class="title mb-0">پنل کاربری</h1>
       <div class="row">
         <!-- User Profile Section -->
         <div class="custom-margin col-lg-6 col-md-12">
@@ -155,6 +155,8 @@ export default {
   margin-bottom: 1.2em;
   text-align: center;
   color: #fd5d93 !important;
+  padding-bottom: 2.2rem !important;
+  padding-top: 2.2rem !important;
 }
 
 .hr {

@@ -454,7 +454,7 @@ p,
   .navbar-nav li {
     padding: 6px 0 !important;
     border-bottom: 1px solid #e4e4e463 !important;
-    font-size: 1em !important;
+    font-size: 1.1em !important;
   }
 
   li:last-child {
