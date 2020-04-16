@@ -73,18 +73,17 @@
         <div class="advice pb-4 pt-3">
           <p v-if="scorePercentage > 90">
             <i class="fas fa-info-circle ml-2"></i>
-            You are a true Ari jon connoisseur!
+            Nice! you have native-like vocab!
           </p>
 
           <p v-else-if="scorePercentage >= 50">
             <i class="fas fa-info-circle ml-2"></i>
-            You are somewhat of a Ari jon fan...
+            Good try! Try again for more improvements.
           </p>
 
           <p v-else>
             <i class="fas fa-info-circle ml-2"></i>
-            You should start loving Ari jon more and learn about his
-            awesomeness...
+            You should have a look at our vocabulary course.
           </p>
         </div>
         <div class="text-center mb-4">
@@ -111,7 +110,7 @@ export default {
       selectedAnswer: 0,
       questions: [
         {
-          question: `A male chicken is called`,
+          question: `A male chicken is called:`,
           answers: [
             {
               answer: 'a rooster',
@@ -126,7 +125,7 @@ export default {
           ],
         },
         {
-          question: `A young sheep is called`,
+          question: `A young sheep is called:`,
           answers: [
             {
               answer: 'a lamb',
@@ -142,7 +141,7 @@ export default {
         },
 
         {
-          question: `A female pig is called`,
+          question: `A female pig is called:`,
           answers: [
             {
               answer: 'a sow',
@@ -156,7 +155,6 @@ export default {
             },
           ],
         },
-
         {
           question: `A tigress is a _______ tiger.`,
           answers: [
@@ -169,6 +167,102 @@ export default {
             },
             {
               answer: 'young',
+            },
+          ],
+        },
+
+        {
+          question: `Click the best synonym for voyage:`,
+          answers: [
+            {
+              answer: 'long journey',
+              correct: true,
+            },
+            {
+              answer: 'large rock',
+            },
+            {
+              answer: 'cruise ship',
+            },
+          ],
+        },
+
+        {
+          question: `Click the best synonym for ponder:`,
+          answers: [
+            {
+              answer: 'think about',
+              correct: true,
+            },
+            {
+              answer: 'hold on',
+            },
+            {
+              answer: 'put down',
+            },
+          ],
+        },
+
+        {
+          question: ` Click the best synonym for fortunately:`,
+          answers: [
+            {
+              answer: 'luckily',
+              correct: true,
+            },
+            {
+              answer: 'strongly',
+            },
+            {
+              answer: 'badly',
+            },
+          ],
+        },
+
+        {
+          question: `Click the best synonym for vitality:`,
+          answers: [
+            {
+              answer: 'liveliness',
+              correct: true,
+            },
+            {
+              answer: 'joy',
+            },
+            {
+              answer: 'courage',
+            },
+          ],
+        },
+
+        {
+          question: `Click the best synonym for futile:`,
+          answers: [
+            {
+              answer: 'pointless',
+              correct: true,
+            },
+            {
+              answer: 'petty',
+            },
+            {
+              answer: 'animated',
+            },
+          ],
+        },
+
+        {
+          question: `Click the best synonym for dumb:`,
+          answers: [
+            {
+              answer: 'stupid',
+              correct: true,
+            },
+            {
+              answer: 'dark',
+            },
+            {
+              answer: 'old',
             },
           ],
         },
@@ -228,19 +322,20 @@ export default {
   width: 450px !important;
   margin-right: auto;
   margin-left: auto;
-  background: #1f1f1f !important;
+  background: #e9e9e9 !important;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
   font-family: sans-serif, Verdana, Tahoma !important;
-  border-left: 2.1em solid #e52e71;
+  border-left: 1.4em solid #e52e71;
   // border-top: 5px solid #e52e71;
 }
 
 .custom-btn {
   padding: 11px 20px !important;
-  background: #2e2e2e !important;
+  background: #c7c7c7 !important;
   border-radius: 20px;
+  color: #4d4d4d;
 }
 
 .header-img {
@@ -253,13 +348,13 @@ export default {
 .title {
   font-size: 1.65em !important;
   text-align: left !important;
-  color: #fff !important;
+  color: rgb(29, 29, 29) !important;
 }
 
 .results-title {
   font-size: 1.4em !important;
   text-align: center !important;
-  color: #fff !important;
+  color: rgb(29, 29, 29) !important;
 }
 
 .bold-text {
@@ -268,14 +363,14 @@ export default {
 
 .question-button {
   font-family: sans-serif, Verdana, Tahoma !important;
-  color: white !important;
-  font-size: 1.1em !important;
+  color: rgb(44, 44, 44) !important;
+  font-size: 1.15em !important;
   padding: 10px 28px !important;
   display: block !important;
   width: 100% !important;
   text-align: left !important;
-  border-radius: 15px !important;
-  background: rgb(41, 41, 41);
+  border-radius: 10px !important;
+  background: rgb(228, 228, 228);
 }
 
 .question-button:active {
@@ -285,18 +380,19 @@ export default {
 .question-button:hover {
   transform: translateY(0px);
   -webkit-transform: translateY(0px);
+  background: rgb(197, 197, 197) !important;
 }
 
 .answer-button {
   font-family: sans-serif, Verdana, Tahoma !important;
-  color: #c2c2c2 !important;
-  font-size: 1.1em !important;
+  color: #a7a7a7 !important;
+  font-size: 1.15em !important;
   padding: 10px 28px !important;
   display: block !important;
   width: 100% !important;
   text-align: left !important;
   border-radius: 15px;
-  border-color: #2b2b2b !important;
+  border-color: #dfdfdf !important;
   // background: rgba(255, 255, 255, 0.897) !important;
 }
 
@@ -304,6 +400,11 @@ export default {
   cursor: default !important;
   transform: translateY(0px);
   -webkit-transform: translateY(0px);
+}
+
+.white-content .btn:hover {
+  -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, 0), 0 1px 3px rgba(0, 0, 0, 0);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0), 0 1px 3px rgba(0, 0, 0, 0);
 }
 
 .wrong-answer {
@@ -335,12 +436,12 @@ export default {
 
 .advice p {
   font-size: 1.1em !important;
-  color: rgb(190, 190, 190) !important;
+  color: rgb(70, 70, 70) !important;
 }
 
 .grades {
   font-size: 1.7em !important;
-  color: white !important;
+  color: rgb(29, 29, 29) !important;
 }
 
 li {

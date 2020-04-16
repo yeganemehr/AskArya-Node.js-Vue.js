@@ -110,6 +110,14 @@ a {
   color: rgba(255, 255, 255, 0.6) !important;
 }
 @media only screen and (max-width: 678px) {
+  .footer-bottom .title {
+    font-size: 1.2em !important;
+  }
+  .custom-text,
+  a {
+    font-size: 1.13em !important;
+  }
+
   .copyright-text {
     font-size: 0.8em !important;
   }
