@@ -65,9 +65,9 @@ class loginController extends controller {
             to: `${user.email}`, // list of receivers
             subject: 'فعال سازی اکانت اسک آریا', // Subject line
             html: `
-              <div dir="rtl" class="text-align:right;">
-                <h2>فعال سازی اکانت اسک آریا</h2>
-                <p>برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
+            <div dir="rtl" class="text-align:right;" >
+                <h2 class="font-family:Tahoma;">فعال سازی اکانت اسک آریا</h2>
+                <p class="font-family:Tahoma;">برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
                 <a href="${config.siteurl}/user/activation/${newActiveCode.code}">فعال سازی</a>
               </div>
                  `, // html body

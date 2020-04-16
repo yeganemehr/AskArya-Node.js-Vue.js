@@ -174,8 +174,8 @@ class authController extends controller {
       subject: 'ریست کردن پسورد',
       html: `
          <div dir="rtl" class="text-align:right;">
-          <h2>ریست کردن پسورد</h2>
-          <p>برای ریست کردن پسورد بر روی لینک زیر کلیک کنید</p>
+          <h2 class="font-family:Tahoma;">ریست کردن پسورد</h2>
+          <p class="font-family:Tahoma;">برای ریست کردن پسورد بر روی لینک زیر کلیک کنید</p>
           <a href="${config.siteurl}/auth/password/reset/${newPasswordReset.token}">ریست کردن</a>
         </div`,
     };
@@ -245,9 +245,9 @@ class authController extends controller {
       from: '"اسک آریا" <info@ask-arya.com>', // sender address
       to: `${user.email}`, // list of receivers
       subject: 'فعال سازی اکانت اسک آریا', // Subject line
-      html: ` <div dir="rtl">
-               <h2>فعال سازی اکانت اسک آریا</h2>
-               <p>برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
+      html: `  <div dir="rtl" class="text-align:right;">
+               <h2 class="font-family:Tahoma;">فعال سازی اکانت اسک آریا</h2>
+               <p class="font-family:Tahoma;">برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
                <a href="${config.siteurl}/user/activation/${newActiveCode.code}">فعال سازی</a>
               </div>`,
       // html body

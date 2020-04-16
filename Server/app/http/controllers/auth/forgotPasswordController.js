@@ -47,9 +47,9 @@ class forgotPasswordController extends controller {
       to: `${newPasswordReset.email}`, // list of receivers
       subject: 'ریست کردن پسورد', // Subject line
       html: `  
-            <div dir="rtl" class="text-align:right;">
-              <h2>ریست کردن پسورد</h2>
-              <p>برای ریست کردن پسورد بر روی لینک زیر کلیک کنید</p>
+            <div dir="rtl" class="text-align:right;" >
+              <h2 class="font-family:Tahoma;">ریست کردن پسورد</h2>
+              <p class="font-family:Tahoma;">برای ریست کردن پسورد بر روی لینک زیر کلیک کنید</p>
               <a href="${config.siteurl}/auth/password/reset/${newPasswordReset.token}">ریست کردن</a>
             </div>
             `, // html body

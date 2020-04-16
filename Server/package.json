@@ -8,7 +8,7 @@
   },
   "author": "Arya Doroudian",
   "dependencies": {
-    "@sendgrid/mail": "^7.0.0",
+    "@sendgrid/mail": "^7.0.1",
     "app-module-path": "^2.2.0",
     "auto-bind": "^4.0.0",
     "bcrypt": "^4.0.1",

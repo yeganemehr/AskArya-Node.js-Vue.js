@@ -278,7 +278,7 @@ export default {
 
 .footer-link {
   font-size: 0.9rem !important;
-  color: rgba(0, 0, 0, 0.6) !important;
+  color: rgba(0, 0, 0, 0.5) !important;
   font-family: IranSans !important;
 }
 
@@ -288,7 +288,7 @@ export default {
 
 @media (max-width: 680px) {
   .auth-section {
-    height: 100vh !important;
+    height: 90vh !important;
   }
 
   .card {
