@@ -1,7 +1,9 @@
 <template>
   <div dir="ltr" class="card">
     <div class="container">
-      <h1 class="header">Ask Arya Quiz</h1>
+      <div class="header-img">
+        <img src="/img/askarya-logo.png" width="100" alt="Ask Arya Logo" />
+      </div>
       <div v-if="state == 'question'">
         <h1 class="my-4 pl-2 title">{{ question.question }}</h1>
 
@@ -48,22 +50,27 @@
             🎉 Correct, well done! 🎉
           </p>
           <p v-else class="my-3 text-lg">Wrong answer, sorry</p> -->
-          <base-button type="default" v-on:click="handleNext">
+          <base-button
+            type="default"
+            class="custom-btn"
+            v-on:click="handleNext"
+          >
             Next question
+            <i class="fas fa-caret-right pl-2"></i>
           </base-button>
         </div>
       </div>
 
       <!-- RESULTS SECTION -->
       <div v-if="state == 'results'">
-        <h1 class="my-5 pl-2 title text-center">
+        <h1 class="mt-5 results-title text-center">
           Congratulations, you completed the quiz!
         </h1>
-        <p class="my-5 py-3 grades text-center">
+        <p class="my-2 pt-3 grades text-center">
           You got <span class="bold-text"> {{ score }} </span> out of
           <span class="bold-text"> {{ questions.length }} </span>
         </p>
-        <div class="advice pl-2">
+        <div class="advice pb-4 pt-3">
           <p v-if="scorePercentage > 90">
             <i class="fas fa-info-circle ml-2"></i>
             You are a true Ari jon connoisseur!
@@ -80,12 +87,13 @@
             awesomeness...
           </p>
         </div>
-        <div class="text-center mb-3">
+        <div class="text-center mb-4">
           <base-button
             type="default"
             v-on:click="handleRestart"
-            class="btn-simple rounded mt-3"
+            class="custom-btn mt-3"
           >
+            <i class="fas fa-redo pr-2"></i>
             Restart the quiz
           </base-button>
         </div>
@@ -217,25 +225,41 @@ export default {
 
 <style lang="scss" scoped>
 .white-content .card {
-  width: 470px !important;
+  width: 450px !important;
   margin-right: auto;
   margin-left: auto;
-  background: #ffffff !important;
-  border-radius: 15px;
+  background: #1f1f1f !important;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
-  font-family: 'Comic Sans MS', Arial, Helvetica, sans-serif !important;
+  font-family: sans-serif, Verdana, Tahoma !important;
+  border-left: 2.1em solid #e52e71;
+  // border-top: 5px solid #e52e71;
 }
 
-.header {
-  font-size: 1.2em !important;
+.custom-btn {
+  padding: 11px 20px !important;
+  background: #2e2e2e !important;
+  border-radius: 20px;
+}
+
+.header-img {
   text-align: right !important;
-  color: rgb(212, 212, 212) !important;
-  padding-top: 0.8em !important;
+  padding-top: 1em !important;
+  padding-right: 0.6em !important;
+  margin-bottom: 1em !important;
 }
 
 .title {
   font-size: 1.65em !important;
+  text-align: left !important;
+  color: #fff !important;
+}
+
+.results-title {
+  font-size: 1.4em !important;
+  text-align: center !important;
+  color: #fff !important;
 }
 
 .bold-text {
@@ -243,15 +267,15 @@ export default {
 }
 
 .question-button {
-  font-family: 'Comic Sans MS', Arial, Helvetica, sans-serif !important;
-  color: black !important;
+  font-family: sans-serif, Verdana, Tahoma !important;
+  color: white !important;
   font-size: 1.1em !important;
-  padding: 14px 28px !important;
+  padding: 10px 28px !important;
   display: block !important;
   width: 100% !important;
   text-align: left !important;
   border-radius: 15px !important;
-  background: rgb(241, 241, 241) !important;
+  background: rgb(41, 41, 41);
 }
 
 .question-button:active {
@@ -264,15 +288,15 @@ export default {
 }
 
 .answer-button {
-  font-family: 'Comic Sans MS', Arial, Helvetica, sans-serif !important;
+  font-family: sans-serif, Verdana, Tahoma !important;
   color: #c2c2c2 !important;
   font-size: 1.1em !important;
-  padding: 14px 28px !important;
+  padding: 10px 28px !important;
   display: block !important;
   width: 100% !important;
   text-align: left !important;
   border-radius: 15px;
-  border-color: #e7e7e7 !important;
+  border-color: #2b2b2b !important;
   // background: rgba(255, 255, 255, 0.897) !important;
 }
 
@@ -285,7 +309,6 @@ export default {
 .wrong-answer {
   color: rgba(255, 255, 255, 0.5) !important;
   background: rgb(240, 104, 104) !important;
-  border-color: rgb(255, 114, 114) !important;
 }
 
 .wrong-answer:hover,
@@ -299,9 +322,7 @@ export default {
 
 .correct-answer {
   color: white !important;
-  font-weight: bold !important;
   background: #4ed34e !important;
-  border-color: rgb(110, 245, 93) !important;
 }
 
 .correct-answer:hover,
@@ -312,12 +333,14 @@ export default {
   background: #4ed34e !important;
 }
 
-.advice {
+.advice p {
   font-size: 1.1em !important;
+  color: rgb(190, 190, 190) !important;
 }
 
 .grades {
-  font-size: 1.5em !important;
+  font-size: 1.7em !important;
+  color: white !important;
 }
 
 li {
@@ -331,7 +354,7 @@ li {
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.08),
+    rgba(99, 99, 99, 0.3),
     rgba(0, 0, 0, 0)
   );
 }
@@ -339,6 +362,11 @@ li {
 @media (max-width: 678px) {
   .white-content .card {
     width: auto !important;
+    border-left: 1.2em solid #e52e71;
+  }
+
+  .title {
+    font-size: 1.5em !important;
   }
 }
 </style>
