@@ -327,7 +327,6 @@ export default {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
   font-family: sans-serif, Verdana, Tahoma !important;
   border-left: 1.4em solid #e52e71;
-  // border-top: 5px solid #e52e71;
 }
 
 .custom-btn {
@@ -458,13 +457,8 @@ li {
 .hr {
   margin-bottom: 2em !important;
   border: 0;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgba(99, 99, 99, 0.2),
-    rgba(0, 0, 0, 0)
-  );
+  height: 2px;
+  background-image: linear-gradient(to right, #e52e71, rgba(0, 0, 0, 0));
 }
 
 @media (max-width: 678px) {
