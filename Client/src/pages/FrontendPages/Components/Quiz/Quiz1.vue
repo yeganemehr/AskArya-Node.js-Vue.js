@@ -472,9 +472,5 @@ li {
     width: auto !important;
     border-left: 1.2em solid #e52e71;
   }
-
-  .title {
-    font-size: 1.5em !important;
-  }
 }
 </style>
