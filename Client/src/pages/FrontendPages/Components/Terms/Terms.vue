@@ -240,11 +240,20 @@
         </p>
       </div>
     </div>
+    <!--Quiz Section-->
+    <div class="container py-5">
+      <quiz1></quiz1>
+    </div>
   </section>
 </template>
 
 <script>
+import Quiz1 from '../Quiz/Quiz1';
+
 export default {
+  components: {
+    Quiz1,
+  },
   metaInfo: {
     title: 'قوانین و مقررات سایت | اسک آریا',
     titleTemplate: 'قوانین و مقررات سایت | اسک آریا',

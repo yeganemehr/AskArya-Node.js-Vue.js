@@ -144,7 +144,7 @@ export default {};
 
 @media only screen and (min-width: 1500px) {
   .hero-content-homepage {
-    height: 45vh !important;
+    height: 52vh !important;
   }
 }
 </style>

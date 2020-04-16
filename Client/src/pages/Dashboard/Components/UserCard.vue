@@ -213,7 +213,7 @@ export default {
 
 <style lang="scss" scoped>
 .box {
-  height: 92% !important;
+  height: 94% !important;
 }
 
 .card-user .avatar {

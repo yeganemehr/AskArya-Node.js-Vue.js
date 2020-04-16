@@ -4,7 +4,7 @@
       <h1 class="title pt-4 pb-3">اعلانات</h1>
       <div class="text-right" v-if="logs.length">
         <div class="log px-2" v-for="log of logs" :key="log.id">
-          <p class="text-justify">
+          <p>
             <i :class="'fas ' + getLogIcon(log.type) + ' iconSize'"></i>
             {{ getJalaliDate(log.createdAt) }} -
             {{ log.title }}
@@ -87,7 +87,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  height: 92% !important;
+  height: 94% !important;
 }
 
 .title {
@@ -98,8 +98,8 @@ export default {
 }
 
 .log p {
-  font-size: 1.02em !important;
-  padding-bottom: 1.5em !important;
+  font-size: 1em !important;
+  padding-bottom: 1.4em !important;
   color: rgb(66, 66, 66) !important;
 }
 

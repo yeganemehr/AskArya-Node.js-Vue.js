@@ -30,9 +30,9 @@
 <script>
 export default {
   props: ['total', 'hours', 'episodes'],
-  data: function() {
+  data: function () {
     return {};
-  }
+  },
 };
 </script>
 

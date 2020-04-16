@@ -4,12 +4,12 @@
       <h1 class="title mb-0">پنل کاربری</h1>
       <div class="row">
         <!-- User Profile Section -->
-        <div class="custom-margin col-lg-6 col-md-12">
+        <div class="custom-margin col-lg-7 col-md-12">
           <user-card :user="$root.$data.user"></user-card>
         </div>
 
         <!-- Notification Section -->
-        <div class="d-none d-md-block col-lg-6 col-md-12">
+        <div class="d-none d-md-block col-lg-5 col-md-12">
           <NotificationCard></NotificationCard>
         </div>
 

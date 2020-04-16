@@ -19,18 +19,6 @@
           >
             <Course v-bind="course"></Course>
           </div>
-          <!-- <div class="block d-md-none">
-            <el-carousel
-              type="card"
-              :autoplay="true"
-              :interval="2000"
-              arrow="always"
-            >
-              <el-carousel-item v-for="course in topCourses" :key="course.id">
-                <Course v-bind="course"></Course>
-              </el-carousel-item>
-            </el-carousel>
-          </div>-->
         </div>
         <div class="text-center">
           <router-link to="courses">
@@ -68,7 +56,7 @@
     </div>
 
     <!--Quiz Section-->
-    <!-- <div class="py-5">
+    <!-- <div class="container py-5">
       <quiz1></quiz1>
     </div> -->
   </div>
@@ -82,8 +70,6 @@ import BlogSection from './Components/Blog/BlogSection.vue';
 import ImprovementBanner1 from './Components/ImprovementBanners/ImprovementBanner1.vue';
 import ImprovementBanner2 from './Components/ImprovementBanners/ImprovementBanner2.vue';
 // import Quiz1 from './Components/Quiz/Quiz1.vue';
-
-// import { Carousel, CarouselItem } from 'element-ui';
 
 export default {
   data: function () {
@@ -110,8 +96,6 @@ export default {
     ImprovementBanner1,
     ImprovementBanner2,
     // Quiz1,
-    // [Carousel.name]: Carousel,
-    // [CarouselItem.name]: CarouselItem,
   },
 
   metaInfo: {
@@ -154,16 +138,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.white-content .card:not(.card-white) {
-  border-radius: 20px !important;
-  background: #e7e7e7ec !important;
-  border: 0 !important;
-  position: relative !important;
-  width: 100% !important;
-  -webkit-box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.4) !important;
-  box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1) !important;
-}
-
 .section-header {
   font-size: 1.6em;
   font-family: IranSansBold;
@@ -193,12 +167,4 @@ export default {
 .blog-section {
   margin: 3em 0 3em 0 !important;
 }
-
-// @media (max-width: 680px) {
-//   .subtitle {
-//     font-size: 13px;
-//     font-family: IranSansBold !important;
-//     color: rgba(0, 0, 0, 0.3) !important;
-//   }
-// }
 </style>
