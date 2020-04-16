@@ -2,7 +2,7 @@
   <div dir="ltr" class="card">
     <div class="container">
       <div class="header-img">
-        <img src="/img/askarya-logo.png" width="100" alt="Ask Arya Logo" />
+        <img src="/img/askarya-logo.png" width="94" alt="Ask Arya Logo" />
       </div>
       <div v-if="state == 'question'">
         <h1 class="my-4 pl-2 title">{{ question.question }}</h1>
@@ -17,7 +17,7 @@
               v-on:click="handleResponse"
               v-bind:data-id="answer.id"
             >
-              {{ answer.answer }}
+              ◯ {{ answer.answer }}
             </base-button>
           </li>
         </ul>
@@ -39,7 +39,7 @@
                   answer.id == selectedAnswer.id && !answer.correct,
               }"
             >
-              {{ answer.answer }}
+              ◯ {{ answer.answer }}
             </base-button>
           </li>
         </ul>
@@ -90,9 +90,9 @@
           <base-button
             type="default"
             v-on:click="handleRestart"
-            class="custom-btn mt-3"
+            class="custom-btn mt-3 restart-btn"
           >
-            <i class="fas fa-redo pr-2"></i>
+            <i class="fas fa-sync fa-spin mr-2"></i>
             Restart the quiz
           </base-button>
         </div>
@@ -186,7 +186,6 @@ export default {
             },
           ],
         },
-
         {
           question: `Click the best synonym for ponder:`,
           answers: [
@@ -339,14 +338,14 @@ export default {
 }
 
 .header-img {
-  text-align: right !important;
+  text-align: left !important;
   padding-top: 1em !important;
   padding-right: 0.6em !important;
   margin-bottom: 1em !important;
 }
 
 .title {
-  font-size: 1.65em !important;
+  font-size: 1.3em !important;
   text-align: left !important;
   color: rgb(29, 29, 29) !important;
 }
@@ -439,9 +438,17 @@ export default {
   color: rgb(70, 70, 70) !important;
 }
 
+.restart-btn {
+  background-color: #e52e71 !important;
+  color: white !important;
+  padding: 11px 20px !important;
+  border-radius: 20px;
+}
+
 .grades {
   font-size: 1.7em !important;
-  color: rgb(29, 29, 29) !important;
+  color: #e52e71 !important;
+  // color: rgb(29, 29, 29) !important;
 }
 
 li {
@@ -455,7 +462,7 @@ li {
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
-    rgba(99, 99, 99, 0.3),
+    rgba(99, 99, 99, 0.2),
     rgba(0, 0, 0, 0)
   );
 }
