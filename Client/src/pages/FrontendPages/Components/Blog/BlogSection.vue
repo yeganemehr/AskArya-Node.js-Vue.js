@@ -21,38 +21,16 @@
         ></BlogCard>
       </div>
     </div>
-
-    <!-- <div class="mt-5">
-        <Carousel :perPageCustom="[[0, 1], [576, 2], [768, 3], [992, 4]]">
-          <slide 
-              v-for="post in posts"
-              v-bind:key="post.id"
-              :per-page="1">
-            <BlogCard
-              :slug="post.slug"
-              :image="post.image"
-              :name="post.name"
-              :createdAt="post.createdAt"
-              :categories="post.categories"
-              :tags="post.tags"
-              :views="post.views"
-            ></BlogCard>
-          </slide>
-        </Carousel>
-      </div>-->
   </div>
 </template>
 
 <script>
 import BlogCard from './BlogCard.vue';
-// import { Carousel, Slide } from 'vue-carousel';
 
 export default {
   props: ['posts'],
   components: {
     BlogCard,
-    // Carousel,
-    // Slide
   },
 };
 </script>

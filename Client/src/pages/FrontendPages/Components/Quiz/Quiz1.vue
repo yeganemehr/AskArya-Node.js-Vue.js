@@ -458,7 +458,12 @@ li {
   margin-bottom: 2em !important;
   border: 0;
   height: 2px;
-  background-image: linear-gradient(to right, #e52e71, rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    to right,
+    #e52e71,
+    #e52e71,
+    rgba(0, 0, 0, 0)
+  );
 }
 
 @media (max-width: 678px) {

@@ -421,8 +421,16 @@ p,
   border-bottom: 1px solid #fcfcfc !important;
 }
 
+.dropdown-menu .dropdown-item {
+  color: black;
+}
+
+.navbar-collapse .navbar-nav .nav-link .dropdown-item:hover {
+  color: #ed5992 !important;
+}
+
 .navbar-collapse .navbar-nav .nav-link-exit .dropdown-item {
-  color: rgb(49, 49, 49);
+  color: rgb(49, 49, 49) !important;
   border-bottom: 1px solid #fcfcfc00 !important;
 }
 

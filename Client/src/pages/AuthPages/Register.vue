@@ -283,11 +283,21 @@ export default {
 
 @media (max-width: 680px) {
   .auth-section {
-    height: 90vh !important;
+    height: 88vh !important;
   }
 
   .card {
     width: auto !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .auth-section {
+    height: 100vh !important;
+  }
+
+  .registration-title {
+    font-size: 0.9em !important;
   }
 }
 </style>

@@ -31,7 +31,7 @@ class homeController extends controller {
           .execPopulate()
       : undefined;
     const topBlogPosts = Post.find()
-      .limit(8)
+      .limit(38)
       .sort({
         viewCount: 'desc',
       })

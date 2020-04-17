@@ -136,7 +136,7 @@ export default {
 
 .main-blog-text {
   padding: 4%;
-  margin: 0 9%;
+  margin: 0 6%;
   font-size: 1.3em !important;
   line-height: 2.1em !important;
   direction: ltr !important;
