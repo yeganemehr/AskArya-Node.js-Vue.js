@@ -283,7 +283,7 @@ export default {
 
 @media (max-width: 680px) {
   .auth-section {
-    height: 88vh !important;
+    height: 90vh !important;
   }
 
   .card {

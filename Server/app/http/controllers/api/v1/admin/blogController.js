@@ -13,41 +13,41 @@ class blogController extends controller {
       filter = {
         $or: [
           {
-            id: req.query.filter
+            id: req.query.filter,
           },
           {
             name: {
               $regex: req.query.filter,
-              $options: 'i'
-            }
-          }
-        ]
+              $options: 'i',
+            },
+          },
+        ],
       };
     }
     const posts = await blogPost.paginate(filter, {
       page,
       sort: {
-        createdAt: 1
+        createdAt: 1,
       },
       limit: parseInt(limit, 10),
       populate: [
         {
           path: 'author',
-          select: 'id name'
+          select: 'id name',
         },
         {
           path: 'tags',
-          select: 'name'
+          select: 'name',
         },
         {
           path: 'categories',
-          select: 'name'
-        }
-      ]
+          select: 'name',
+        },
+      ],
     });
     const data = {
       ...posts,
-      docs: posts.docs.map(this.filterData)
+      docs: posts.docs.map(this.filterData),
     };
     res.json(data);
   }
@@ -60,13 +60,13 @@ class blogController extends controller {
       content: post.content,
       views: post.views,
       image: post.image,
-      tags: post.tags.map(tag => tag.name),
-      categories: post.categories.map(cate => cate.name),
+      tags: post.tags.map((tag) => tag.name),
+      categories: post.categories.map((cate) => cate.name),
       author: {
         id: post.author.id,
-        name: post.author.name
+        name: post.author.name,
       },
-      createdAt: post.createdAt
+      createdAt: post.createdAt,
     };
   }
   async store(req, res) {
@@ -86,13 +86,13 @@ class blogController extends controller {
     for (const tag of tags) {
       let obj = await blogTag
         .findOne({
-          name: tag
+          name: tag,
         })
         .exec();
       if (!obj) {
         obj = new blogTag({
           name: tag.trim(),
-          slug: this.slug(tag)
+          slug: this.slug(tag),
         });
         await obj.save();
       }
@@ -102,13 +102,13 @@ class blogController extends controller {
     for (const category of categories) {
       let obj = await blogCategory
         .findOne({
-          name: category
+          name: category,
         })
         .exec();
       if (!obj) {
         obj = new blogCategory({
           name: category.trim(),
-          slug: this.slug(category)
+          slug: this.slug(category),
         });
         await obj.save();
       }
@@ -120,8 +120,8 @@ class blogController extends controller {
       image: image || null,
       author: author,
       content: content,
-      tags: tagObjects.map(tag => tag.id),
-      categories: coategoryObjects.map(category => category.id)
+      tags: tagObjects.map((tag) => tag.id),
+      categories: coategoryObjects.map((category) => category.id),
     });
     await newPost.save();
     res.json({
@@ -131,7 +131,7 @@ class blogController extends controller {
         tagObjects,
         coategoryObjects
       ),
-      status: 'success'
+      status: 'success',
     });
   }
   async update(req, res) {
@@ -157,31 +157,31 @@ class blogController extends controller {
     for (const tag of tags) {
       let obj = await blogTag
         .findOne({
-          name: tag
+          name: tag,
         })
         .exec();
       if (!obj) {
         obj = new blogTag({
           name: tag.trim(),
-          slug: this.slug(tag)
+          slug: this.slug(tag),
         });
         await obj.save();
       }
       tagObjects.push(obj);
     }
     delete req.body.tags;
-    objForUpdate.tags = tagObjects.map(tag => tag.id);
+    objForUpdate.tags = tagObjects.map((tag) => tag.id);
     const coategoryObjects = [];
     for (const category of categories) {
       let obj = await blogCategory
         .findOne({
-          name: category
+          name: category,
         })
         .exec();
       if (!obj) {
         obj = new blogCategory({
           name: category.trim(),
-          slug: this.slug(category)
+          slug: this.slug(category),
         });
         await obj.save();
       }
@@ -189,17 +189,17 @@ class blogController extends controller {
     }
     delete req.body.categories;
     objForUpdate.slug = this.slug(req.body.name);
-    objForUpdate.categories = coategoryObjects.map(category => category.id);
+    objForUpdate.categories = coategoryObjects.map((category) => category.id);
     post = await blogPost.findByIdAndUpdate(
       req.params.id,
       {
         $set: {
           ...req.body,
-          ...objForUpdate
-        }
+          ...objForUpdate,
+        },
       },
       {
-        new: true
+        new: true,
       }
     );
     res.json({
@@ -209,7 +209,7 @@ class blogController extends controller {
         tagObjects,
         coategoryObjects
       ),
-      status: 'success'
+      status: 'success',
     });
   }
   filterPostData(post, author, categories, tags) {
@@ -220,23 +220,23 @@ class blogController extends controller {
       content: post.content,
       views: post.views,
       image: post.image,
-      tags: tags.map(tag => {
+      tags: tags.map((tag) => {
         return {
           name: tag.name,
-          slug: tag.slug
+          slug: tag.slug,
         };
       }),
-      categories: categories.map(cate => {
+      categories: categories.map((cate) => {
         return {
           name: cate.name,
-          slug: cate.slug
+          slug: cate.slug,
         };
       }),
       author: {
         id: author.id,
-        name: author.name
+        name: author.name,
       },
-      createdAt: post.createdAt
+      createdAt: post.createdAt,
     };
   }
   async destroy(req, res) {
@@ -247,7 +247,7 @@ class blogController extends controller {
     }
     post.remove();
     return res.json({
-      status: 'success'
+      status: 'success',
     });
   }
   async upload(req, res) {
@@ -259,7 +259,7 @@ class blogController extends controller {
     );
     res.json({
       image: image,
-      status: 'success'
+      status: 'success',
     });
   }
   getUrlImage(dir) {

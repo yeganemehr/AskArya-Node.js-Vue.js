@@ -7,15 +7,15 @@ const striptags = require('striptags');
 class homeController extends controller {
   async index(req, res) {
     let courses = await Course.find({
-      lang: req.getLocale()
+      lang: req.getLocale(),
     })
       .sort({
-        createdAt: 1
+        createdAt: 1,
       })
-      .limit(8)
+      .limit(12)
       .exec();
     res.render('home/index', {
-      courses
+      courses,
     });
   }
 
@@ -30,7 +30,7 @@ class homeController extends controller {
 
       let newComment = new Comment({
         user: req.user.id,
-        ...req.body
+        ...req.body,
       });
 
       await newComment.save();
@@ -46,16 +46,16 @@ class homeController extends controller {
       let courses = await Course.find({})
         .populate('user')
         .sort({
-          createdAt: -1
+          createdAt: -1,
         })
         .exec();
-      courses.forEach(course => {
+      courses.forEach((course) => {
         feed.item({
           title: course.title,
           description: striptags(course.body.substr(0, 100)),
           date: course.createdAt,
           url: course.path(),
-          author: course.user.name
+          author: course.user.name,
         });
       });
 
@@ -71,19 +71,19 @@ class homeController extends controller {
       let episodes = await Episode.find({})
         .populate({
           path: 'course',
-          populate: 'user'
+          populate: 'user',
         })
         .sort({
-          createdAt: -1
+          createdAt: -1,
         })
         .exec();
-      episodes.forEach(episode => {
+      episodes.forEach((episode) => {
         feed.item({
           title: episode.title,
           description: striptags(episode.body.substr(0, 100)),
           date: episode.createdAt,
           url: episode.path(),
-          author: episode.course.user.name
+          author: episode.course.user.name,
         });
       });
 

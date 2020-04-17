@@ -14,24 +14,24 @@ class userController extends controller {
           {
             name: {
               $regex: req.query.filter,
-              $options: 'i'
-            }
+              $options: 'i',
+            },
           },
           {
             email: {
               $regex: req.query.filter,
-              $options: 'i'
-            }
-          }
-        ]
+              $options: 'i',
+            },
+          },
+        ],
       };
     }
     const users = await User.paginate(filter, {
       page,
       sort: {
-        createdAt: 1
+        createdAt: 1,
       },
-      limit: parseInt(limit, 10)
+      limit: parseInt(limit, 10),
     });
     const docs = [];
     const userIds = [];
@@ -40,14 +40,14 @@ class userController extends controller {
       userIds.push(user.id);
       userPayments[user.id] = {
         sum: 0,
-        courses: []
+        courses: [],
       };
     }
     const payments = await Payment.find({
       user: {
-        $in: userIds
+        $in: userIds,
       },
-      payment: true
+      payment: true,
     }).populate('course');
     for (const payment of payments) {
       userPayments[payment.user].sum += payment.price;
@@ -58,7 +58,7 @@ class userController extends controller {
             userPayments[payment.user].courses.push({
               id: payment.course.id,
               title: payment.course.title,
-              signupDate: payment.updatedAt
+              signupDate: payment.updatedAt,
             });
           }
           break;
@@ -70,7 +70,7 @@ class userController extends controller {
     }
     res.json({
       ...users,
-      docs: docs
+      docs: docs,
     });
   }
   filterUserData(user, payments) {
@@ -87,7 +87,7 @@ class userController extends controller {
         .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'),
       learning: payments.courses,
       xp: user.xp || 0,
-      active: user.active
+      active: user.active,
     };
   }
   async store(req, res) {
@@ -99,7 +99,7 @@ class userController extends controller {
     const courses = [];
     let learning = [];
     if (req.body.courses) {
-      learning = req.body.courses.map(course => {
+      learning = req.body.courses.map((course) => {
         courses.push(course);
         return course.id;
       });
@@ -114,7 +114,7 @@ class userController extends controller {
       xp: xp || 0,
       avatar: avatar || null,
       active: active,
-      learning
+      learning,
     });
     await newUser.save();
     let payment;
@@ -125,9 +125,9 @@ class userController extends controller {
           course: course.id,
           resnumber: ' ',
           price: 0,
-          payment: true
+          payment: true,
         });
-        await payment.save(err => {
+        await payment.save((err) => {
           if (err) {
             return this.failed(err, res, 500);
           }
@@ -138,16 +138,16 @@ class userController extends controller {
       data: {
         user: this.filterUserData(newUser, {
           sum: 0,
-          courses: courses.map(course => {
+          courses: courses.map((course) => {
             return {
               id: course.id,
               title: course.title,
-              signupDate: payment.updatedAt
+              signupDate: payment.updatedAt,
             };
-          })
-        })
+          }),
+        }),
       },
-      status: 'success'
+      status: 'success',
     });
   }
   async update(req, res, next) {
@@ -183,11 +183,11 @@ class userController extends controller {
       {
         $set: {
           ...req.body,
-          ...objForUpdate
-        }
+          ...objForUpdate,
+        },
       },
       {
-        new: true
+        new: true,
       }
     );
     if (courses) {
@@ -197,9 +197,9 @@ class userController extends controller {
           course: course.id,
           resnumber: ' ',
           price: 0,
-          payment: true
+          payment: true,
         });
-        await payment.save(err => {
+        await payment.save((err) => {
           if (err) {
             return this.failed(err, res, 500);
           }
@@ -208,11 +208,11 @@ class userController extends controller {
     }
     const userPayments = {
       sum: 0,
-      courses: []
+      courses: [],
     };
     const payments = await Payment.find({
       user: user.id,
-      payment: true
+      payment: true,
     }).populate('course');
     for (const payment of payments) {
       userPayments.sum += payment.price;
@@ -220,14 +220,14 @@ class userController extends controller {
       userPayments.courses.push({
         id: payment.course.id,
         title: payment.course.title,
-        signupDate: payment.updatedAt
+        signupDate: payment.updatedAt,
       });
     }
     return res.json({
       data: {
-        user: this.filterUserData(user, userPayments)
+        user: this.filterUserData(user, userPayments),
       },
-      status: 'success'
+      status: 'success',
     });
   }
   async destroy(req, res, next) {
@@ -244,7 +244,7 @@ class userController extends controller {
     // delete user
     user.remove();
     return res.json({
-      status: 'success'
+      status: 'success',
     });
   }
   getUrlImage(dir) {

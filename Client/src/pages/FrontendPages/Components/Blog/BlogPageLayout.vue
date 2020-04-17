@@ -16,7 +16,7 @@
     <div class="container">
       <div class="d-flex justify-content-center">
         <div class="main-blog-section">
-          <h3 class="post-title">{{ post.name }}</h3>
+          <!-- <h3 class="post-title">{{ post.name }}</h3> -->
           <div class="row">
             <!-- <div class="sticky col-lg-3 col-md-12">
             <custom-card :class="sticky" />
@@ -119,7 +119,7 @@ export default {
 
 .post-title-top {
   font-size: 2.2em;
-  font-family: IranSansBold;
+  font-family: IranSansBlog;
   line-height: inherit !important;
   color: rgb(255, 255, 255) !important;
 }
