@@ -5,27 +5,27 @@ class blogController extends controller {
   async bySlug(req, res) {
     const post = await Post.findOneAndUpdate(
       {
-        slug: req.params.slug
+        slug: req.params.slug,
       },
       {
         $inc: {
-          views: 1
-        }
+          views: 1,
+        },
       }
     )
       .populate([
         {
           path: 'author',
-          select: 'id name'
+          select: 'id name',
         },
         {
           path: 'tags',
-          select: 'name slug'
+          select: 'name slug',
         },
         {
           path: 'categories',
-          select: 'name slug'
-        }
+          select: 'name slug',
+        },
       ])
       .exec();
     if (!post) {
@@ -33,7 +33,7 @@ class blogController extends controller {
     }
     return res.json({
       post: this.filterData(post),
-      status: 'success'
+      status: 'success',
     });
   }
   filterData(post) {
@@ -46,20 +46,20 @@ class blogController extends controller {
       image: post.image,
       author: {
         id: post.author.id,
-        name: post.author.name
+        name: post.author.name,
       },
-      tags: post.tags.map(tag => {
+      tags: post.tags.map((tag) => {
         return {
           name: tag.name,
-          slug: tag.slug
+          slug: tag.slug,
         };
       }),
-      categories: post.categories.map(cat => {
+      categories: post.categories.map((cat) => {
         return {
           name: cat.name,
-          slug: cat.slug
+          slug: cat.slug,
         };
-      })
+      }),
     };
   }
 }

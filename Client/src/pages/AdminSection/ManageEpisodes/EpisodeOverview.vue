@@ -148,7 +148,7 @@ export default {
       pagination: {
         perPage: 15,
         currentPage: 1,
-        perPageOptions: [5, 10, 15, 20, 25],
+        perPageOptions: [5, 10, 15, 20, 25, 50, 75],
         total: 0,
         pages: 0,
       },
