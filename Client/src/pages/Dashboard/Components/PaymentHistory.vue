@@ -1,6 +1,6 @@
 <template>
   <card>
-    <div class="text-right pb-5">
+    <div class="text-right pt-2 pr-2 pb-5">
       <h1 class="card-title my-0 pb-3">تاریخچه پرداخت ها</h1>
       <span>
         در این بخش گزارشات پرداختی های شما لیست میشود. در صورت مشاهده هر گونه

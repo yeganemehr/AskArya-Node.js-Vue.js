@@ -9,7 +9,7 @@
       <div class="col-7" v-if="$slots.content || title || subTitle">
         <div class="numbers">
           <slot>
-            <p v-if="subTitle" class="card-category">{{ subTitle }}</p>
+            <p v-if="subTitle" class="card-category pb-2">{{ subTitle }}</p>
             <h3 v-if="title" class="card-title">{{ title }}</h3>
           </slot>
         </div>

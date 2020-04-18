@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="container">
-      <h1 class="title pt-4 pb-3">اعلانات</h1>
+      <h1 class="title pt-4 pb-3">آخرین فعالیت های شما</h1>
       <div class="text-right" v-if="logs.length">
         <div class="log px-2" v-for="log of logs" :key="log.id">
           <p>
