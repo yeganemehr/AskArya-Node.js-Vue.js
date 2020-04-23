@@ -10,8 +10,7 @@
     </div>
     <div class="mt-5">
       <div>
-        <!-- <card card-body-classes="table-full-width"> -->
-        <card>
+        <card card-body-classes="table-full-width">
           <div>
             <div
               class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
@@ -31,6 +30,7 @@
                 ></el-option>
               </el-select>
             </div>
+
             <el-table :data="tableData">
               <el-table-column
                 v-for="column in tableColumns"
@@ -39,7 +39,7 @@
                 :prop="column.prop"
                 :label="column.label"
               ></el-table-column>
-              <el-table-column :min-width="105" align="center" label="Settings">
+              <el-table-column :min-width="85" align="center" label="Settings">
                 <div slot-scope="props">
                   <base-button
                     @click.native="handleEdit(props.$index, props.row)"
@@ -136,17 +136,17 @@ export default {
         {
           prop: 'title',
           label: 'Course Name',
-          minWidth: 170,
+          minWidth: 100,
         },
         {
           prop: 'users',
-          label: 'Course Users',
-          minWidth: 80,
+          label: 'Users',
+          minWidth: 70,
         },
         {
           prop: 'type',
-          label: 'Course Type',
-          minWidth: 80,
+          label: 'Type',
+          minWidth: 70,
         },
       ],
       tableData: [],

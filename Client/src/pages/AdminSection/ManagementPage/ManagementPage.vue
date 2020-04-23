@@ -1,7 +1,7 @@
 <template>
   <section class="container pt-5">
     <h1 class="text-center text-default">Management Page</h1>
-    <div class="pt-5 text-ltr text-left d-flex justify-content-center row">
+    <div class="pt-3 text-ltr text-left d-flex justify-content-center row">
       <router-link to="/courseoverview">
         <base-button size="lg" type="info">Courses</base-button>
       </router-link>
@@ -26,7 +26,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  metaInfo: {
+    title: 'اسک آریا | پنل مدیریت',
+    titleTemplate: 'اسک آریا | پنل مدیریت',
+    htmlAttrs: {
+      lang: 'fa',
+      amp: true,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

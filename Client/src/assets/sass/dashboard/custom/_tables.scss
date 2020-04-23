@@ -1,6 +1,5 @@
 .table {
-
-  >tbody>tr>td {
+  > tbody > tr > td {
     color: rgba(255, 255, 255, 0.7) !important;
 
     .photo {
@@ -16,46 +15,39 @@
     }
   }
 
-  >tbody>tr.table-success {
-
+  > tbody > tr.table-success {
     &,
-    >td {
+    > td {
       background-color: darken($success, 10%);
     }
   }
 
-  >tbody>tr.table-info {
-
+  > tbody > tr.table-info {
     &,
-    >td {
+    > td {
       background-color: $info;
     }
   }
 
-  >tbody>tr.table-primary {
-
+  > tbody > tr.table-primary {
     &,
-    >td {
+    > td {
       background-color: $primary;
     }
   }
 
-  >tbody>tr.table-warning {
-
+  > tbody > tr.table-warning {
     &,
-    >td {
+    > td {
       background-color: $warning;
     }
   }
-
-  >tbody>tr.table-danger {
-
+  > tbody > tr.table-danger {
     &,
-    >td {
+    > td {
       background-color: $danger;
     }
   }
-
 
   .img-wrapper {
     width: 40px;
@@ -93,22 +85,22 @@
   .card-tasks .card-body & {
     margin-bottom: 0;
 
-    >thead>tr>th,
-    >tbody>tr>th,
-    >tfoot>tr>th,
-    >thead>tr>td,
-    >tbody>tr>td,
-    >tfoot>tr>td {
+    > thead > tr > th,
+    > tbody > tr > th,
+    > tfoot > tr > th,
+    > thead > tr > td,
+    > tbody > tr > td,
+    > tfoot > tr > td {
       padding-top: 5px;
       padding-bottom: 5px;
     }
   }
 
-  >thead>tr>th {
+  > thead > tr > th {
     border-bottom-width: 1px;
     font-size: 12px;
     text-transform: uppercase;
-    // font-weight: $font-weight-extra-bold;
+    font-weight: $font-weight-extra-bold;
     border: 0;
     color: rgba($white, 0.7);
   }
@@ -125,7 +117,6 @@
     }
 
     label {
-
       &:after,
       &:before {
         top: -17px;
@@ -133,13 +124,12 @@
       }
     }
   }
-
-  >thead>tr>th,
-  >tbody>tr>th,
-  >tfoot>tr>th,
-  >thead>tr>td,
-  >tbody>tr>td,
-  >tfoot>tr>td {
+  > thead > tr > th,
+  > tbody > tr > th,
+  > tfoot > tr > th,
+  > thead > tr > td,
+  > tbody > tr > td,
+  > tfoot > tr > td {
     border-color: rgba(255, 255, 255, 0.1);
     padding: 12px 7px;
     vertical-align: middle;
@@ -152,16 +142,14 @@
   .th-description {
     max-width: 150px;
   }
-
   .td-price {
     font-size: 26px;
-    // font-weight: $font-weight-light;
+    font-weight: $font-weight-light;
     margin-top: 5px;
     position: relative;
     top: 4px;
     text-align: right;
   }
-
   .td-total {
     font-weight: $font-weight-bold;
     font-size: $h5-font-size;
@@ -173,23 +161,21 @@
     margin: 0px;
   }
 
-  >tbody>tr {
+  > tbody > tr {
     position: relative;
   }
 
-  >tfoot>tr {
-    color: hsla(0, 0%, 100%, .7);
+  > tfoot > tr {
+    color: hsla(0, 0%, 100%, 0.7);
     text-transform: uppercase;
   }
-
 }
 
 .table-shopping {
-  >thead>tr>th {
+  > thead > tr > th {
     text-transform: uppercase;
   }
-
-  >tbody>tr>td {
+  > tbody > tr > td {
     font-size: $font-paragraph;
 
     b {
@@ -197,18 +183,15 @@
       margin-bottom: 5px;
     }
   }
-
   .td-name {
     font-weight: $font-weight-normal;
     font-size: 1.5em;
-
     small {
       color: $dark-gray;
       font-size: 0.75em;
       font-weight: $font-weight-light;
     }
   }
-
   .td-number {
     font-weight: $font-weight-light;
 
@@ -216,11 +199,9 @@
       padding-right: 15px;
     }
   }
-
   .td-name {
     min-width: 200px;
   }
-
   .td-number {
     text-align: right;
     min-width: 170px;
@@ -252,27 +233,24 @@
 }
 
 table.tablesorter thead tr .header {
-  background-image: url("/img/bg.gif");
+  background-image: url('/img/bg.gif');
   background-repeat: no-repeat;
   background-position: center right;
   cursor: pointer;
 }
 
 table.tablesorter thead tr .headerSortUp {
-  background-image: url("/img/asc.gif");
+  background-image: url('/img/asc.gif');
 }
-
 table.tablesorter thead tr .headerSortDown {
-  background-image: url("/img/desc.gif");
+  background-image: url('/img/desc.gif');
 }
-
 
 // datatables
 
-
 .dataTables_wrapper {
   .table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, .05);
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   .form-control-sm {

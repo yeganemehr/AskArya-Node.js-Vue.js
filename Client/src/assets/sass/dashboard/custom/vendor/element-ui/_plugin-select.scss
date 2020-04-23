@@ -1,4 +1,5 @@
 @import '../../variables';
+
 @mixin select($type, $color) {
   .select-#{$type}.el-select {
   }

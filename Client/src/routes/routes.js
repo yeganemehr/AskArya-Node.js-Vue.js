@@ -4,7 +4,6 @@ import FrontendLayout from 'src/pages/Layouts/Frontend/FrontendLayout.vue';
 import NotFound from 'src/pages/Layouts/NotFound/NotFoundPage.vue';
 
 // PAGES
-
 const Dashboard = () =>
   import(
     /* webpackChunkName: "dashboard" */
@@ -83,6 +82,9 @@ const PrivateClasses = () =>
     'src/pages/FrontendPages/PrivateClasses.vue'
   );
 
+const Quizzes = () =>
+  import(/* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Quizzes.vue');
+
 const Contact = () =>
   import(/* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Contact.vue');
 
@@ -149,6 +151,12 @@ let frontendpages = {
       components: {
         default: Courses,
       },
+    },
+
+    {
+      path: '/quizzes',
+      name: 'Quizzes',
+      component: Quizzes,
     },
 
     {

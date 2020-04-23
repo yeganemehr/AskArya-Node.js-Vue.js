@@ -109,23 +109,23 @@ export default {
         {
           prop: 'product',
           label: 'عنوان دوره',
-          minWidth: 90,
+          minWidth: 80,
         },
         {
           prop: 'date',
           label: 'تاریخ',
           // label: 'تاریخ پرداخت',
-          minWidth: 45,
+          minWidth: 40,
         },
         {
           prop: 'price',
           label: 'مقدار پرداختی',
-          minWidth: 65,
+          minWidth: 50,
         },
         {
           prop: 'status',
           label: 'وضعیت پرداخت',
-          minWidth: 65,
+          minWidth: 50,
         },
       ],
       searchedData: [],

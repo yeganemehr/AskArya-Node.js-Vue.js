@@ -140,6 +140,43 @@ export default {
   mounted() {
     this.getData();
   },
+  metaInfo: {
+    title: 'اسک آریا | پنل کاربری',
+    titleTemplate: 'اسک آریا | پنل کاربری',
+
+    htmlAttrs: {
+      lang: 'fa',
+      amp: true,
+    },
+
+    meta: [
+      // OpenGraph data (Most widely used)
+      { property: 'og:title', content: 'اسک آریا' },
+      { property: 'og:site_name', content: 'اسک آریا' },
+      { property: 'og:type', content: 'website' },
+      {
+        property: 'og:url',
+        content: 'https://www.ask-arya.com/',
+      },
+      {
+        property: 'og:image',
+        content:
+          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png',
+      },
+      {
+        property: 'og:description',
+        content:
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
+      },
+      { itemprop: 'name', content: 'اسک آریا' },
+      {
+        itemprop: 'description',
+        content:
+          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
+      },
+    ],
+    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }],
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -150,7 +187,7 @@ export default {
 }
 
 .title {
-  font-size: 2.2em;
+  font-size: 2em;
   font-family: IranSansBold;
   margin-bottom: 1.2em;
   text-align: center;

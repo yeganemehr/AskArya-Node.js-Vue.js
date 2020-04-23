@@ -27,14 +27,14 @@
             </div>
             <el-table :data="tableData">
               <el-table-column
-                align="left"
+                align="center"
                 v-for="column in tableColumns"
                 :key="column.label"
                 :min-width="column.minWidth"
                 :prop="column.prop"
                 :label="column.label"
               ></el-table-column>
-              <el-table-column :min-width="105" align="center" label="Settings">
+              <el-table-column :min-width="75" align="center" label="Settings">
                 <div slot-scope="props">
                   <base-button
                     @click.native="handleEdit(props.$index, props.row)"
@@ -122,27 +122,27 @@ export default {
         {
           prop: 'title',
           label: 'Episode Name',
-          minWidth: 150,
+          minWidth: 80,
         },
         {
           prop: 'courseName',
           label: 'Related Course',
-          minWidth: 150,
+          minWidth: 80,
         },
         {
           prop: 'number',
           label: 'Order',
-          minWidth: 70,
+          minWidth: 30,
         },
         {
           prop: 'viewCount',
           label: ' Views',
-          minWidth: 70,
+          minWidth: 30,
         },
         {
           prop: 'type',
           label: 'Type',
-          minWidth: 70,
+          minWidth: 30,
         },
       ],
       pagination: {
@@ -306,7 +306,7 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss" scoped>
 .pagination-select,
 .search-input {
   width: 200px;

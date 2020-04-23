@@ -29,9 +29,8 @@
 <script>
 export default {
   metaInfo: {
-    title: 'تماس با ما | سبک آموزشی ما متناسب با استاندارهای اروپا میباشد.',
-    titleTemplate:
-      'تماس با ما | سبک آموزشی ما متناسب با استاندارهای اروپا میباشد.',
+    title: 'اسک آریا | تماس با ما',
+    titleTemplate: 'اسک آریا | تماس با ما',
 
     htmlAttrs: {
       lang: 'fa',

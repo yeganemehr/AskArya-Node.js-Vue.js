@@ -31,8 +31,7 @@
                     type="primary"
                     class="btn animation-on-hover"
                   >
-                    <i class="fas fa-graduation-cap ml-2"></i>
-                    مشاهده همه دوره ها
+                    <i class="far fa-check-square ml-2"></i> آزمون ها
                   </base-button>
                 </router-link>
               </div>

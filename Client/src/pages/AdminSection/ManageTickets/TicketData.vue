@@ -100,7 +100,7 @@ export default {
 
 @media (max-width: 767px) {
   .subheader {
-    font-size: 0.5rem;
+    font-size: 0.5em;
     color: rgb(129, 129, 129);
     padding-top: 8px;
   }

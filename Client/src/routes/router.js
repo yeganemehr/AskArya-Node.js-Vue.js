@@ -18,7 +18,7 @@ const router = new VueRouter({
     } else {
       return { x: 0, y: 0 };
     }
-  }
+  },
 });
 router.beforeResolve((to, from, next) => {
   let needAuth = false;

@@ -34,7 +34,6 @@ export default {
   components: {
     [Tag.name]: Tag,
   },
-
   props: {
     value: {
       type: Array,

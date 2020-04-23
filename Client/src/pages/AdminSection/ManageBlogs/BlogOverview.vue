@@ -2,7 +2,7 @@
   <section class="container py-5">
     <div>
       <h2 class="text-center">
-        Courses Overview
+        Blog Overview
         <h5 class="pt-2">
           <a href="/" target="_blank">All Blogs</a>
         </h5>
@@ -38,7 +38,7 @@
                 :prop="column.prop"
                 :label="column.label"
               ></el-table-column>
-              <el-table-column :min-width="105" align="center" label="Settings">
+              <el-table-column :min-width="85" align="center" label="Settings">
                 <div slot-scope="props">
                   <base-button
                     @click.native="handleEdit(props.$index, props.row)"
@@ -134,17 +134,17 @@ export default {
         {
           prop: 'name',
           label: 'Blog Name',
-          minWidth: 200,
+          minWidth: 100,
         },
         {
           prop: 'views',
           label: 'Blog Views',
-          minWidth: 100,
+          minWidth: 70,
         },
         {
           prop: 'createdAt',
           label: 'Publish date',
-          minWidth: 100,
+          minWidth: 80,
         },
       ],
       tableData: [],

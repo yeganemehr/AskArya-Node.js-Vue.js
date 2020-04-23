@@ -1,5 +1,5 @@
 <template>
-  <div class="container py-5 mb-5">
+  <div class="container py-5">
     <h1 class="title">دوره‌های آموزشی</h1>
     <p class="info-text">
       در مجموع <span class="infoStyling">{{ total }} دوره </span> با محتوای
@@ -85,11 +85,8 @@ export default {
   },
 
   metaInfo: {
-    title:
-      'آموزش های غیر حضوری | سبک آموزشی ما متناسب با استاندارهای اروپا میباشد.',
-
-    titleTemplate:
-      'آموزش های غیر حضوری | سبک آموزشی ما متناسب با استاندارهای اروپا میباشد.',
+    title: 'اسک آریا | دوره‌های آموزشی',
+    titleTemplate: 'اسک آریا | دوره‌های آموزشی',
     htmlAttrs: {
       lang: 'fa',
       amp: true,

@@ -12,7 +12,7 @@
     <slot name="label">
       <label v-if="label"> {{ label }} {{ required ? '*' : '' }} </label>
     </slot>
-    <div class="mb-0" :class="{'input-group': hasIcon}">
+    <div class="mb-0" :class="{ 'input-group': hasIcon }">
       <slot name="addonLeft">
         <span v-if="addonLeftIcon" class="input-group-prepend">
           <div class="input-group-text"><i :class="addonLeftIcon"></i></div>
@@ -48,62 +48,56 @@ export default {
     required: Boolean,
     label: {
       type: String,
-      description: 'Input label'
+      description: 'Input label',
     },
     error: {
       type: String,
       description: 'Input error',
-      default: ''
+      default: '',
     },
     value: {
       type: [String, Number],
-      description: 'Input value'
+      description: 'Input value',
     },
     addonRightIcon: {
       type: String,
-      description: 'Input icon on the right'
+      description: 'Input icon on the right',
     },
     addonLeftIcon: {
       type: String,
-      description: 'Input icon on the left'
-    }
+      description: 'Input icon on the left',
+    },
   },
   model: {
     prop: 'value',
-    event: 'input'
+    event: 'input',
   },
   data() {
     return {
       focused: false,
-      touched: false
+      touched: false,
     };
   },
   computed: {
     hasIcon() {
-      return this.hasLeftAddon || this.hasRightAddon
+      return this.hasLeftAddon || this.hasRightAddon;
     },
     hasLeftAddon() {
       const { addonLeft } = this.$slots;
-      return (
-        addonLeft !== undefined ||
-        this.addonLeftIcon !== undefined
-      );
+      return addonLeft !== undefined || this.addonLeftIcon !== undefined;
     },
     hasRightAddon() {
       const { addonRight } = this.$slots;
-      return (
-        addonRight !== undefined ||
-        this.addonRightIcon !== undefined
-      );
+      return addonRight !== undefined || this.addonRightIcon !== undefined;
     },
     listeners() {
       return {
         ...this.$listeners,
         input: this.onInput,
         blur: this.onBlur,
-        focus: this.onFocus
+        focus: this.onFocus,
       };
-    }
+    },
   },
   methods: {
     onInput(evt) {
@@ -114,13 +108,13 @@ export default {
     },
     onFocus(evt) {
       this.focused = true;
-      this.$emit('focus', evt)
+      this.$emit('focus', evt);
     },
     onBlur(evt) {
       this.focused = false;
-      this.$emit('blur', evt)
-    }
-  }
+      this.$emit('blur', evt);
+    },
+  },
 };
 </script>
 <style></style>
