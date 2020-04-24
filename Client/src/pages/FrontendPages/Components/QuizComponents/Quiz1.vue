@@ -1,7 +1,7 @@
 <template>
   <section class="quiz-section container">
     <div class="row d-flex justify-content-between mb-3">
-      <h1 class="quiz-header text-underline font-weight-bold">
+      <h1 class="quiz-header text-underline">
         Placement Test
       </h1>
 
@@ -795,10 +795,11 @@ export default {
 .quiz-header {
   font-size: 2em !important;
   margin: 0;
-  padding: 1em !important;
+  padding: 1.3em 1em 1em 1em !important;
   color: #e52e71 !important;
   direction: rtl !important;
   font-family: sans-serif, Verdana, Tahoma !important;
+  font-weight: bolder !important;
 }
 
 .header-img {
@@ -812,9 +813,7 @@ export default {
   border-radius: 10px;
   text-align: center;
   background-color: #fff !important;
-  // border: 1px solid #e52e71;
   font-family: sans-serif, Verdana, Tahoma !important;
-  font-weight: bolder !important;
   font-size: 1.1em !important;
 
   .quiz-details-top p {
@@ -841,7 +840,7 @@ export default {
   padding: 0 1.5em;
   border-radius: 8px !important;
   overflow: hidden !important;
-  box-shadow: 0 14px 20px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 14px 20px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.15) !important;
   border-left: 1.2em solid #e52e71 !important;
   overflow: hidden !important;
   font-family: sans-serif, Verdana, Tahoma !important;
@@ -851,7 +850,6 @@ export default {
   .title {
     font-size: 1.4em !important;
     font-family: sans-serif, Verdana, Tahoma !important;
-    font-weight: bolder !important;
     color: rgb(27, 27, 27) !important;
     text-align: left !important;
     padding-top: 15px;
@@ -864,7 +862,8 @@ export default {
     padding: 10px 28px !important;
     margin-left: 1em;
     font-family: sans-serif, Verdana, Tahoma !important;
-    font-weight: bolder !important;
+    width: 100% !important;
+    margin-right: 14px !important;
   }
 
   .next-btn:hover {
@@ -899,11 +898,12 @@ export default {
   }
 
   .question-button {
-    background: rgb(233, 233, 233);
+    background: rgb(226, 226, 226);
     font-family: sans-serif, Verdana, Tahoma !important;
     color: rgb(44, 44, 44) !important;
     font-size: 1.3em !important;
-    padding: 20px 28px !important;
+    padding: 15px 28px !important;
+    margin-bottom: 10px !important;
     display: block !important;
     width: 100% !important;
     text-align: left !important;
@@ -921,11 +921,12 @@ export default {
   }
 
   .answer-button {
-    background: rgb(233, 233, 233) !important;
+    background: rgb(226, 226, 226);
     font-family: sans-serif, Verdana, Tahoma !important;
     color: #a7a7a7 !important;
     font-size: 1.3em !important;
-    padding: 20px 28px !important;
+    padding: 15px 28px !important;
+    margin-bottom: 10px !important;
     display: block !important;
     width: 100% !important;
     text-align: left !important;
@@ -1028,18 +1029,36 @@ export default {
     margin-left: auto;
   }
 
+  .quiz-details-card .quiz-details-top,
+  .quiz-section .title,
+  .quiz-section .next-btn {
+    font-weight: normal !important;
+  }
+
+  .quiz-section .title {
+    font-size: 1.3em !important;
+  }
+
   .question-button,
   .answer-button {
     width: 100% !important;
+  }
+
+  .quiz-section .question-button,
+  .quiz-section .answer-button {
+    font-size: 1em !important;
+    padding: 12px 28px !important;
   }
 
   .custom-margin {
     margin-right: 0 !important;
   }
 
-  .next-btn {
-    width: 100% !important;
-    margin-right: 14px !important;
+  .quiz-section .btn {
+    font-size: 1em !important;
+  }
+  .grades {
+    font-size: 1.8em !important;
   }
 }
 </style>

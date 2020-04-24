@@ -25,13 +25,13 @@
               </router-link>
 
               <div class="pr-1">
-                <router-link to="courses">
+                <router-link to="quizzes">
                   <base-button
                     native-type="submit"
                     type="primary"
                     class="btn animation-on-hover"
                   >
-                    <i class="far fa-check-square ml-2"></i> آزمون ها
+                    <i class="far fa-check-square ml-2"></i> آزمون های آنلاین
                   </base-button>
                 </router-link>
               </div>
