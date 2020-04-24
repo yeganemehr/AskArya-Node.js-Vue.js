@@ -1,6 +1,6 @@
 <template>
   <div class="container py-5">
-    <h1 class="title">دوره‌های آموزشی</h1>
+    <h1 class="title mb-0 pb-4">دوره‌های آموزشی</h1>
     <p class="info-text">
       در مجموع <span class="infoStyling">{{ total }} دوره </span> با محتوای
       <span class="infoStyling">{{ episodes }} درس </span> به مدت
@@ -130,7 +130,7 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-  font-size: 3em !important;
+  font-size: 2.7em !important;
   font-family: IranSansBold;
   color: #fd5d93 !important;
   text-align: center;
