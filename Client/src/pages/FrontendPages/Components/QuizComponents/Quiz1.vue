@@ -910,8 +910,16 @@ export default {
     border-radius: 10px;
   }
 
-  .question-button:active {
-    background: rgb(241, 241, 241) !important;
+  .question-button:hover,
+  .question-button:active,
+  .question-button:focus,
+  .question-button:focus-within,
+  .question-button:visited {
+    // cursor: default !important;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    background: rgb(197, 197, 197) !important;
+    border-color: rgb(197, 197, 197) !important;
   }
 
   .question-button:hover {
@@ -933,10 +941,16 @@ export default {
     border-radius: 10px;
   }
 
-  .answer-button:hover {
+  .answer-button:hover,
+  .answer-button:active,
+  .answer-button:focus,
+  .answer-button:focus-within,
+  .answer-button:visited {
     cursor: default !important;
     transform: translateY(0px);
     -webkit-transform: translateY(0px);
+    background: rgb(226, 226, 226) !important;
+    border-color: rgb(226, 226, 226) !important;
   }
 
   .white-content .btn:hover {
@@ -1014,6 +1028,7 @@ export default {
 
   .quiz-header {
     font-size: 1.8em !important;
+    font-weight: normal !important;
     text-decoration: none;
     text-align: center;
     width: 100% !important;
