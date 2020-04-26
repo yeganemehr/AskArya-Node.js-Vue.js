@@ -12,7 +12,7 @@ class homeController extends controller {
       .populate('user', 'id name')
       .populate('categories', 'name slug')
       .populate('episodesCount')
-      .limit(4)
+      .limit(22)
       .sort({
         viewCount: 'desc',
       })
@@ -31,7 +31,7 @@ class homeController extends controller {
           .execPopulate()
       : undefined;
     const topBlogPosts = Post.find()
-      .limit(12)
+      .limit(22)
       .sort({
         viewCount: 'desc',
       })

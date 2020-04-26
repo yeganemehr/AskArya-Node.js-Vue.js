@@ -12,7 +12,7 @@ class homeController extends controller {
       .sort({
         createdAt: 1,
       })
-      .limit(12)
+      .limit(4)
       .exec();
     res.render('home/index', {
       courses,
