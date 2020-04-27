@@ -3,133 +3,20 @@ import AuthLayout from 'src/pages/Layouts/Auth/AuthLayout.vue';
 import FrontendLayout from 'src/pages/Layouts/Frontend/FrontendLayout.vue';
 import NotFound from 'src/pages/Layouts/NotFound/NotFoundPage.vue';
 
-// PAGES
-const Dashboard = () =>
-  import(
-    /* webpackChunkName: "dashboard" */
-    'src/pages/Dashboard/Dashboard.vue'
-  );
-
-const Courses = () =>
-  import(/* webpackChunkName: "extra" */ 'src/pages/Courses/Courses.vue');
-
-const SingleLesson = () =>
-  import(
-    /* webpackChunkName: "extra" */
-    'src/pages/Courses/SingleLesson.vue'
-  );
-
-const VerificationPayments = () =>
-  import(
-    /* webpackChunkName: "extra" */
-    'src/pages/Courses/VerificationPayments.vue'
-  );
-
-const ManagementPage = () =>
-  import(
-    /* webpackChunkName: "extra" */
-    'src/pages/AdminSection/ManagementPage/ManagementPage.vue'
-  );
-
-const CourseOverview = () =>
-  import(
-    /* webpackChunkName: "extra" */
-    'src/pages/AdminSection/ManageCourses/CourseOverview.vue'
-  );
-
-const EpisodeOverview = () =>
-  import(
-    /* webpackChunkName: "extra" */
-    'src/pages/AdminSection/ManageEpisodes/EpisodeOverview.vue'
-  );
-
-const SingleTicket = () =>
-  import(/* webpackChunkName: "extra" */ 'src/pages/Tickets/SingleTicket.vue');
-
-const TicketOverview = () =>
-  import(
-    /* webpackChunkName: "extra" */
-    'src/pages/AdminSection/ManageTickets/TicketOverview.vue'
-  );
-
-const AllTickets = () =>
-  import(/* webpackChunkName: "extra" */ 'src/pages/Tickets/AllTickets.vue');
-
-const CreateTicket = () =>
-  import(/* webpackChunkName: "extra" */ 'src/pages/Tickets/CreateTicket.vue');
-
-const ManageUsers = () =>
-  import(
-    /* webpackChunkName: "extra" */
-    'src/pages/AdminSection/ManageUsers/ManageUsers.vue'
-  );
-
-const BlogOverview = () =>
-  import(
-    /* webpackChunkName: "extra" */
-    'src/pages/AdminSection/ManageBlogs/BlogOverview.vue'
-  );
-
-//////////////////////////////////////////////////////////////////////
-///////////////////////////// FRONTEND PAGES /////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////// FRONTEND PAGES IMPORT ////////////////////////////////////////
 
 const Home = () =>
-  import(/* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Home.vue');
-
-const PrivateClasses = () =>
-  import(
-    /* webpackChunkName: "pages" */
-    'src/pages/FrontendPages/PrivateClasses.vue'
-  );
-
-const Quizzes = () =>
-  import(/* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Quizzes.vue');
-
-const Contact = () =>
-  import(/* webpackChunkName: "pages" */ 'src/pages/FrontendPages/Contact.vue');
-
-const BlogPageLayout = () =>
-  import(
-    /* webpackChunkName: "pages" */
-    'src/pages/FrontendPages/Components/Blog/BlogPageLayout.vue'
-  );
-
-const Terms = () =>
-  import(
-    /* webpackChunkName: "pages" */
-    'src/pages/FrontendPages/Components/Terms/Terms.vue'
-  );
-
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////// PAGES ///////////////////////////////
-
-const Login = () =>
-  import(/* webpackChunkName: "pages" */ 'src/pages/AuthPages/Login.vue');
-
-const Register = () =>
-  import(/* webpackChunkName: "pages" */ 'src/pages/AuthPages/Register.vue');
-
-const ForgotPassword = () =>
-  import(
-    /* webpackChunkName: "pages" */ 'src/pages/AuthPages/ForgotPassword.vue'
-  );
-
-const ResetPassword = () =>
-  import(
-    /* webpackChunkName: "pages" */ 'src/pages/AuthPages/ResetPassword.vue'
-  );
+  import(/* webpackChunkName: "home" */ 'src/pages/FrontendPages/Home.vue');
 
 // const Lock = () =>
-//   import( /* webpackChunkName: "pages" */ 'src/pages/Layouts/Lock/Lock.vue');
+//   import( /* webpackChunkName: "lock" */ 'src/pages/Layouts/Lock/Lock.vue');
 
 const NotFoundPage = () =>
   import(
-    /* webpackChunkName: "pages" */
+    /* webpackChunkName: "notfound" */
     'src/pages/Layouts/NotFound/NotFoundPage.vue'
   );
-
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
 
 let frontendpages = {
   path: '/',
@@ -143,56 +30,82 @@ let frontendpages = {
     {
       path: '/privateclasses',
       name: 'PrivateClasses',
-      component: PrivateClasses,
+      component: () =>
+        import(
+          /* webpackChunkName: "privateclasses" */ 'src/pages/FrontendPages/PrivateClasses.vue'
+        ),
     },
     {
       path: 'courses',
       name: 'Courses',
-      components: {
-        default: Courses,
-      },
+      component: () =>
+        import(
+          /* webpackChunkName: "courses" */ 'src/pages/Courses/Courses.vue'
+        ),
     },
 
     {
       path: '/quizzes',
       name: 'Quizzes',
-      component: Quizzes,
+      component: () =>
+        import(
+          /* webpackChunkName: "quizzes" */ 'src/pages/FrontendPages/Quizzes.vue'
+        ),
     },
 
     {
       path: '/contact',
       name: 'Contact',
-      component: Contact,
+      component: () =>
+        import(
+          /* webpackChunkName: "contact" */ 'src/pages/FrontendPages/Contact.vue'
+        ),
     },
     {
       path: '/terms',
       name: 'Terms',
-      component: Terms,
+      component: () =>
+        import(
+          /* webpackChunkName: "terms" */ 'src/pages/FrontendPages/Components/Terms/Terms.vue'
+        ),
     },
     {
       path: '/blog/:slug',
       name: 'BlogPageLayout',
-      component: BlogPageLayout,
+      component: () =>
+        import(
+          /* webpackChunkName: "blogpagelayout" */ 'src/pages/FrontendPages/Components/Blog/BlogPageLayout.vue'
+        ),
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login,
+      component: () =>
+        import(/* webpackChunkName: "login" */ 'src/pages/AuthPages/Login.vue'),
     },
     {
       path: '/forgotpassword',
       name: 'Forgot Password',
-      component: ForgotPassword,
+      component: () =>
+        import(
+          /* webpackChunkName: "forgotpassword" */ 'src/pages/AuthPages/ForgotPassword.vue'
+        ),
     },
     {
       path: '/auth/password/reset/:token',
       name: 'Reset Password',
-      component: ResetPassword,
+      component: () =>
+        import(
+          /* webpackChunkName: "resetpassword" */ 'src/pages/AuthPages/ResetPassword.vue'
+        ),
     },
     {
       path: '/register',
       name: 'Register',
-      component: Register,
+      component: () =>
+        import(
+          /* webpackChunkName: "register" */ 'src/pages/AuthPages/Register.vue'
+        ),
     },
     // {
     //   path: '/lock',
@@ -208,7 +121,6 @@ const routes = [
     redirect: '/',
   },
   frontendpages,
-  // authPages,
 
   {
     path: '/',
@@ -221,88 +133,108 @@ const routes = [
       {
         path: 'dashboard',
         name: 'Dashboard',
-        components: {
-          default: Dashboard,
-        },
+        component: () =>
+          import(
+            /* webpackChunkName: "dashboard" */
+            'src/pages/Dashboard/Dashboard.vue'
+          ),
       },
+
       {
         path: 'courses/payments/verification',
         name: 'Course Pay Verification',
-        components: {
-          default: VerificationPayments,
-        },
-      },
-      // {
-      //   path: 'courses/:course/unit-:unit',
-      //   name: 'Single Lesson',
-      //   components: {
-      //     default: SingleLesson
-      //   }
-      // },
-      {
-        path: 'courseoverview',
-        name: 'CourseOverview',
-        components: {
-          default: CourseOverview,
-        },
-      },
-      {
-        path: 'episodeoverview',
-        name: 'EpisodeOverview',
-        components: {
-          default: EpisodeOverview,
-        },
+
+        component: () =>
+          import(
+            /* webpackChunkName: "verificationpayments" */
+            'src/pages/Courses/VerificationPayments.vue'
+          ),
       },
 
       {
         path: 'managementpage',
         name: 'Management Page',
-        components: {
-          default: ManagementPage,
-        },
+        component: () =>
+          import(
+            /* webpackChunkName: "managementpage" */
+            'src/pages/AdminSection/ManagementPage/ManagementPage.vue'
+          ),
+      },
+
+      {
+        path: 'courseoverview',
+        name: 'CourseOverview',
+        component: () =>
+          import(
+            /* webpackChunkName: "courseoverview" */
+            'src/pages/AdminSection/ManageCourses/CourseOverview.vue'
+          ),
+      },
+      {
+        path: 'episodeoverview',
+        name: 'EpisodeOverview',
+        component: () =>
+          import(
+            /* webpackChunkName: "episodeoverview" */
+            'src/pages/AdminSection/ManageEpisodes/EpisodeOverview.vue'
+          ),
       },
 
       {
         path: 'manageusers',
         name: 'Manage Users',
-        components: {
-          default: ManageUsers,
-        },
+        component: () =>
+          import(
+            /* webpackChunkName: "manageusers" */
+            'src/pages/AdminSection/ManageUsers/ManageUsers.vue'
+          ),
       },
+
       {
         path: 'blogoverview',
         name: 'Blog Overview',
-        components: {
-          default: BlogOverview,
-        },
+        component: () =>
+          import(
+            /* webpackChunkName: "blogoverview" */
+            'src/pages/AdminSection/ManageBlogs/BlogOverview.vue'
+          ),
       },
-      {
-        path: 'tickets/view/:ticket',
-        name: 'Single Ticket',
-        components: {
-          default: SingleTicket,
-        },
-      },
+
       {
         path: 'ticketoverview',
         name: 'Ticket Overview',
-        components: {
-          default: TicketOverview,
-        },
+        component: () =>
+          import(
+            /* webpackChunkName: "ticketoverview" */
+            'src/pages/AdminSection/ManageTickets/TicketOverview.vue'
+          ),
       },
+
+      {
+        path: 'tickets/view/:ticket',
+        name: 'Single Ticket',
+        component: () =>
+          import(
+            /* webpackChunkName: "single ticket" */
+            'src/pages/Tickets/SingleTicket.vue'
+          ),
+      },
+
       {
         path: 'tickets',
         name: 'All Tickets',
-        components: {
-          default: AllTickets,
-        },
+        component: () =>
+          import(
+            /* webpackChunkName: "alltickets" */ 'src/pages/Tickets/AllTickets.vue'
+          ),
       },
       {
         path: 'createticket',
         name: 'Create Tickets',
-        components: {
-          default: CreateTicket,
-        },
+        component: () =>
+          import(
+            /* webpackChunkName: "createticket" */ 'src/pages/Tickets/CreateTicket.vue'
+          ),
       },
     ],
   },
@@ -313,16 +245,21 @@ const routes = [
       {
         path: 'courses/:slug',
         name: 'Single Course Guest',
-        components: {
-          default: SingleLesson,
-        },
+        component: () =>
+          import(
+            /* webpackChunkName: "singlelesson" */
+            'src/pages/Courses/SingleLesson.vue'
+          ),
       },
+
       {
         path: 'courses/:course/unit-:unit',
         name: 'Single Lesson',
-        components: {
-          default: SingleLesson,
-        },
+        component: () =>
+          import(
+            /* webpackChunkName: "singlelesson" */
+            'src/pages/Courses/SingleLesson.vue'
+          ),
       },
     ],
   },
