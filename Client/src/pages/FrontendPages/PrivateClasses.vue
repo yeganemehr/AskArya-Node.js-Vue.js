@@ -4,7 +4,7 @@
       <h1 class="text-center custom-title pt-5">کلاس های خصوصی ما</h1>
       <div class="private-classes pb-4">
         <div class="row pricing">
-          <div class="col-lg-4 col-sm-12">
+          <div class="col-lg-4 col-sm-12 px-3">
             <div class="pricing-box hover">
               <div class="pricing-title bg-bronze">
                 <h3 class="text-white titleSize py-3">برنز</h3>
