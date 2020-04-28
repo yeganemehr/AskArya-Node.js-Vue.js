@@ -8,7 +8,7 @@ class resetPasswordController extends controller {
   showResetPassword(req, res) {
     const title = 'بازیابی رمز عبور';
     res.render('home/auth/passwords/reset', {
-      recaptcha: this.recaptcha.render(req, res),
+      // recaptcha: this.recaptcha.render(req, res),
       title,
       token: req.params.token
     });
