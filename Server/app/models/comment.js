@@ -6,37 +6,37 @@ const commentSchema = Schema(
   {
     user: {
       type: Schema.Types.ObjectId,
-      ref: 'User'
+      ref: 'User',
     },
     parent: {
       type: Schema.Types.ObjectId,
       ref: 'Comment',
-      default: null
+      default: null,
     },
     approved: {
       type: Boolean,
-      default: false
+      default: false,
     },
     course: {
       type: Schema.Types.ObjectId,
       ref: 'Course',
-      default: undefined
+      default: undefined,
     },
     episode: {
       type: Schema.Types.ObjectId,
       ref: 'Episode',
-      default: undefined
+      default: undefined,
     },
     comment: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   {
     timestamps: true,
     toJSON: {
-      virtuals: true
-    }
+      virtuals: true,
+    },
   }
 );
 
@@ -45,19 +45,19 @@ commentSchema.plugin(mongoosePaginate);
 commentSchema.virtual('comments', {
   ref: 'Comment',
   localField: '_id',
-  foreignField: 'parent'
+  foreignField: 'parent',
 });
 
-const commentBelong = doc => {
+const commentBelong = (doc) => {
   if (doc.course) return 'Course';
   else if (doc.episode) return 'Episode';
 };
 
 commentSchema.virtual('belongTo', {
   ref: commentBelong,
-  localField: doc => commentBelong(doc).toLowerCase(),
+  localField: (doc) => commentBelong(doc).toLowerCase(),
   foreignField: '_id',
-  justOne: true
+  justOne: true,
 });
 
 module.exports = mongoose.model('Comment', commentSchema);

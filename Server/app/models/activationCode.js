@@ -7,23 +7,23 @@ const activationCode = Schema(
     user: {
       type: Schema.Types.ObjectId,
       ref: 'User',
-      required: true
+      required: true,
     },
     code: {
       type: String,
-      required: true
+      required: true,
     },
     used: {
       type: Boolean,
-      default: false
+      default: false,
     },
     expire: {
       type: Date,
-      required: true
-    }
+      required: true,
+    },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 

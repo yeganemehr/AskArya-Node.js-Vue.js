@@ -8,82 +8,82 @@ const courseSchema = Schema(
   {
     user: {
       type: Schema.Types.ObjectId,
-      ref: 'User'
+      ref: 'User',
     },
     categories: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Category'
-      }
+        ref: 'Category',
+      },
     ],
     title: {
       type: String,
-      required: true
+      required: true,
     },
     slug: {
       type: String,
-      required: true
+      required: true,
     },
     type: {
       type: String,
-      required: true
+      required: true,
     },
     body: {
       type: String,
-      required: true
+      required: true,
     },
     price: {
       type: String,
-      required: true
+      required: true,
     },
     thumb: {
       type: String,
-      required: true
+      required: true,
     },
     videoUrl: {
       type: String,
-      required: true
+      required: true,
     },
     tags: {
       type: String,
-      required: true
+      required: true,
     },
     time: {
       type: String,
-      default: '00:00:00'
+      default: '00:00:00',
     },
     viewCount: {
       type: Number,
-      default: 0
+      default: 0,
     },
     commentCount: {
       type: Number,
-      default: 0
+      default: 0,
     },
     lang: {
       type: String,
-      default: 'en'
+      default: 'en',
     },
     xp: {
       type: Number,
-      default: 0
+      default: 0,
     },
     oldPrice: {
       type: String,
-      default: 0
-    }
+      default: 0,
+    },
   },
   {
     timestamps: true,
     toJSON: {
-      virtuals: true
-    }
+      virtuals: true,
+    },
   }
 );
 
 courseSchema.plugin(mongoosePaginate);
 
-courseSchema.methods.typeToPersian = function() {
+courseSchema.methods.typeToPersian = function () {
   switch (this.type) {
     case 'cash':
       return 'نقدی';
@@ -97,62 +97,56 @@ courseSchema.methods.typeToPersian = function() {
   }
 };
 
-courseSchema.methods.path = function() {
+courseSchema.methods.path = function () {
   return `/courses/${this.slug}`;
 };
 
-courseSchema.methods.inc = async function(field, num = 1) {
+courseSchema.methods.inc = async function (field, num = 1) {
   this[field] += num;
   await this.save();
 };
-courseSchema.methods.download = function(check, user) {
+courseSchema.methods.download = function (check, user) {
   const timestamps = new Date().getTime() + 3600 * 1000 * 12;
   const text = `aQTR@!#Fa#%!@%SDQGGASDF${this.id}${timestamps}`;
-  const hash = crypto
-    .createHash('md5')
-    .update(text)
-    .digest('hex');
+  const hash = crypto.createHash('md5').update(text).digest('hex');
   return `/courses/download/${this.id}?mac=${hash}&t=${timestamps}`;
 };
-courseSchema.methods.validateDownload = function(mac, t) {
+courseSchema.methods.validateDownload = function (mac, t) {
   const text = `aQTR@!#Fa#%!@%SDQGGASDF${this.id}${t}`;
-  const hash = crypto
-    .createHash('md5')
-    .update(text)
-    .digest('hex');
+  const hash = crypto.createHash('md5').update(text).digest('hex');
   return hash === mac;
 };
 courseSchema.virtual('episodes', {
   ref: 'Episode',
   localField: '_id',
-  foreignField: 'course'
+  foreignField: 'course',
 });
 
 courseSchema.virtual('episodesCount', {
   ref: 'Episode',
   localField: '_id',
   foreignField: 'course',
-  count: true
+  count: true,
 });
 
 courseSchema.virtual('comments', {
   ref: 'Comment',
   localField: '_id',
-  foreignField: 'course'
+  foreignField: 'course',
 });
 
 courseSchema.virtual('commentsCount', {
   ref: 'Comment',
   localField: '_id',
   foreignField: 'course',
-  count: true
+  count: true,
 });
 
 courseSchema.virtual('usersCount', {
   ref: 'User',
   localField: '_id',
   foreignField: 'learning',
-  count: true
+  count: true,
 });
 
 module.exports = mongoose.model('Course', courseSchema);

@@ -32,7 +32,7 @@ class roleController extends controller {
       let newRole = new Role({
         name,
         label,
-        permissions
+        permissions,
       });
 
       await newRole.save();
@@ -69,8 +69,8 @@ class roleController extends controller {
         $set: {
           name,
           label,
-          permissions
-        }
+          permissions,
+        },
       });
 
       return res.redirect('/admin/users/roles');

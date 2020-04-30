@@ -61,7 +61,7 @@ class episodeController extends controller {
       if (!status) return this.back(req, res);
 
       let episode = await Episode.findByIdAndUpdate(req.params.id, {
-        $set: { ...req.body }
+        $set: { ...req.body },
       });
 
       // prev course time update
@@ -97,9 +97,7 @@ class episodeController extends controller {
   }
 
   async updateCourseTime(courseId) {
-    let course = await Course.findById(courseId)
-      .populate('episodes')
-      .exec();
+    let course = await Course.findById(courseId).populate('episodes').exec();
     course.set({ time: this.getTime(course.episodes) });
     await course.save();
   }

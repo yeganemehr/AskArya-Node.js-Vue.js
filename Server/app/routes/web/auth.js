@@ -49,13 +49,13 @@ router.get('/google', (req, res, next) => {
     backTo = 'dashboard';
   }
   return passport.authenticate('google', {
-    scope: ['profile', 'email']
+    scope: ['profile', 'email'],
   })(req, res, next);
 });
 router.get(
   '/google/callback',
   passport.authenticate('google', {
-    failureRedirect: config.siteurl + '/register'
+    failureRedirect: config.siteurl + '/register',
   }),
   (req, res) => {
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
@@ -65,14 +65,14 @@ router.get(
         ip: ip,
         user: req.user.id,
         type: 'login',
-        title: ` گزارش ورود به سیستم با آدرس آی پی ${ip} ثبت شده است. در صورتی که فکر میکنید این کار توسط شما انجام نشده هر چه سریع تر با مدیریت اسک آریا تماس بگیرید. `
+        title: ` گزارش ورود به سیستم با آدرس آی پی ${ip} ثبت شده است. در صورتی که فکر میکنید این کار توسط شما انجام نشده هر چه سریع تر با مدیریت اسک آریا تماس بگیرید. `,
       });
     } else {
       loginLog = new Log({
         ip: ip,
         user: req.user.id,
         type: 'register',
-        title: `به مجموعه اسک آریا خوش آمدید.`
+        title: `به مجموعه اسک آریا خوش آمدید.`,
       });
     }
     loginLog.save();

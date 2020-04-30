@@ -41,7 +41,7 @@ module.exports = class controller {
       const errors = result.array();
       const messages = [];
 
-      errors.forEach(err => messages.push(err.msg));
+      errors.forEach((err) => messages.push(err.msg));
 
       req.flash('errors', messages);
 
@@ -69,7 +69,7 @@ module.exports = class controller {
   getTime(episodes) {
     let second = 0;
 
-    episodes.forEach(episode => {
+    episodes.forEach((episode) => {
       let time = episode.time.split(':');
       if (time.length === 2) {
         second += parseInt(time[0]) * 60;
@@ -108,7 +108,7 @@ module.exports = class controller {
       message,
       type,
       button,
-      timer
+      timer,
     });
   }
 

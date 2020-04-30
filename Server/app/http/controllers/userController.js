@@ -7,7 +7,7 @@ class userController extends controller {
   async activation(req, res, next) {
     try {
       let activationCode = await ActivationCode.findOne({
-        code: req.params.code
+        code: req.params.code,
       })
         .populate('user')
         .exec();
@@ -32,16 +32,16 @@ class userController extends controller {
 
       let user = activationCode.user;
       user.$set({
-        active: true
+        active: true,
       });
       activationCode.$set({
-        used: true
+        used: true,
       });
 
       await user.save();
       await activationCode.save();
 
-      req.logIn(user, err => {
+      req.logIn(user, (err) => {
         user.setRememberToken(res);
         return res.redirect('/dashboard');
         // return res.redirect('/dashboard?error=اکانت شما فعال شد');
@@ -53,7 +53,7 @@ class userController extends controller {
   async index(req, res, next) {
     try {
       res.render('home/panel/index', {
-        title: 'پنل کاربری'
+        title: 'پنل کاربری',
       });
     } catch (err) {
       next(err);
@@ -65,21 +65,21 @@ class userController extends controller {
       let page = req.query.page || 1;
       let payments = await Payment.paginate(
         {
-          user: req.user.id
+          user: req.user.id,
         },
         {
           page,
           sort: {
-            createdAt: -1
+            createdAt: -1,
           },
           limit: 20,
-          populate: 'course'
+          populate: 'course',
         }
       );
 
       res.render('home/panel/history', {
         title: 'پرداختی ها',
-        payments
+        payments,
       });
     } catch (err) {
       next(err);
@@ -113,7 +113,7 @@ class userController extends controller {
         Amount: price,
         CallbackURL: 'http://localhost:3000/user/panel/vip/payment/check',
         Description: `بابت افزایش اعتبار ویژه`,
-        Email: req.user.email
+        Email: req.user.email,
       };
 
       let options = this.getUrlOption(
@@ -122,12 +122,12 @@ class userController extends controller {
       );
 
       request(options)
-        .then(async data => {
+        .then(async (data) => {
           let payment = new Payment({
             user: req.user.id,
             vip: true,
             resnumber: data.Authority,
-            price: price
+            price: price,
           });
 
           await payment.save();
@@ -136,7 +136,7 @@ class userController extends controller {
             `https://sandbox.zarinpal.com/pg/StartPay/${data.Authority}`
           );
         })
-        .catch(err => res.json(err.message));
+        .catch((err) => res.json(err.message));
     } catch (err) {
       next(err);
     }
@@ -147,24 +147,24 @@ class userController extends controller {
       if (req.query.Status && req.query.Status !== 'OK')
         return this.alertAndBack(req, res, {
           title: 'دقت کنید',
-          message: 'پرداخت شما با موفقیت انجام نشد'
+          message: 'پرداخت شما با موفقیت انجام نشد',
         });
 
       let payment = await Payment.findOne({
-        resnumber: req.query.Authority
+        resnumber: req.query.Authority,
       }).exec();
 
       if (!payment.vip)
         return this.alertAndBack(req, res, {
           title: 'دقت کنید',
           message: 'این تراکنش مربوط به افزایش اعتبار اعضای ویژه نمیشود',
-          type: 'error'
+          type: 'error',
         });
 
       let params = {
         MerchantID: '55d9c87e-4e89-11e7-8857-005056a205be',
         Amount: payment.price,
-        Authority: req.query.Authority
+        Authority: req.query.Authority,
       };
 
       let options = this.getUrlOption(
@@ -173,10 +173,10 @@ class userController extends controller {
       );
 
       request(options)
-        .then(async data => {
+        .then(async (data) => {
           if (data.Status == 100) {
             payment.set({
-              payment: true
+              payment: true,
             });
 
             let time = 0,
@@ -202,7 +202,7 @@ class userController extends controller {
                 title: 'دقت کنید',
                 message: 'عملیات مورد نظر با موفقیت انجام نشد',
                 type: 'success',
-                button: 'بسیار خوب'
+                button: 'بسیار خوب',
               });
               return res.redirect('/user/panel/vip');
             }
@@ -214,7 +214,7 @@ class userController extends controller {
 
             req.user.set({
               vipTime,
-              vipType: type
+              vipType: type,
             });
             await req.user.save();
 
@@ -224,18 +224,18 @@ class userController extends controller {
               title: 'با تشکر',
               message: 'عملیات مورد نظر با موفقیت انجام شد',
               type: 'success',
-              button: 'بسیار خوب'
+              button: 'بسیار خوب',
             });
 
             res.redirect('/user/panel/vip');
           } else {
             this.alertAndBack(req, res, {
               title: 'دقت کنید',
-              message: 'پرداخت شما با موفقیت انجام نشد'
+              message: 'پرداخت شما با موفقیت انجام نشد',
             });
           }
         })
-        .catch(err => {
+        .catch((err) => {
           next(err);
         });
     } catch (err) {
@@ -249,10 +249,10 @@ class userController extends controller {
       uri: url,
       headers: {
         'cache-control': 'no-cache',
-        'content-type': 'application/json'
+        'content-type': 'application/json',
       },
       body: params,
-      json: true
+      json: true,
     };
   }
 }

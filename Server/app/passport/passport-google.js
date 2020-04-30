@@ -13,31 +13,35 @@ passport.deserializeUser(function (id, done) {
 });
 
 passport.use(
-  new googleStrategy({
+  new googleStrategy(
+    {
       clientID: config.service.google.client_key,
       clientSecret: config.service.google.secret_key,
-      callbackURL: config.service.google.callback_url
+      callbackURL: config.service.google.callback_url,
     },
     (token, refreshToken, profile, done) => {
-      User.findOne({
-        email: profile.emails[0].value
-      }, (err, user) => {
-        if (err) return done(err);
-        if (user) return done(err, user);
-
-        const newUser = new User({
-          active: true,
-          name: profile.displayName,
+      User.findOne(
+        {
           email: profile.emails[0].value,
-          password: profile.id
-        });
+        },
+        (err, user) => {
+          if (err) return done(err);
+          if (user) return done(err, user);
 
-        newUser.save(err => {
-          if (err) throw err;
-          newUser.justRegistered = true;
-          done(err, newUser);
-        });
-      });
+          const newUser = new User({
+            active: true,
+            name: profile.displayName,
+            email: profile.emails[0].value,
+            password: profile.id,
+          });
+
+          newUser.save((err) => {
+            if (err) throw err;
+            newUser.justRegistered = true;
+            done(err, newUser);
+          });
+        }
+      );
     }
   )
 );

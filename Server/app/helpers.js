@@ -1,8 +1,8 @@
-const path = require("path");
-const autoBind = require("auto-bind");
-const moment = require("moment-jalaali");
+const path = require('path');
+const autoBind = require('auto-bind');
+const moment = require('moment-jalaali');
 moment.loadPersian({
-  usePersianDigits: true
+  usePersianDigits: true,
 });
 
 module.exports = class Helpers {
@@ -10,7 +10,7 @@ module.exports = class Helpers {
     autoBind(this);
     this.req = req;
     this.res = res;
-    this.formData = req.flash("formData")[0];
+    this.formData = req.flash('formData')[0];
   }
 
   getObjects() {
@@ -20,31 +20,31 @@ module.exports = class Helpers {
       ...this.getGlobalVaribales(),
       old: this.old,
       date: this.date,
-      req: this.req
+      req: this.req,
     };
   }
 
   auth() {
     return {
       check: this.req.isAuthenticated(),
-      user: this.req.user
+      user: this.req.user,
     };
   }
 
   viewPath(dir) {
-    return path.resolve(config.layout.view_dir + "/" + dir);
+    return path.resolve(config.layout.view_dir + '/' + dir);
   }
 
   getGlobalVaribales() {
     return {
-      errors: this.req.flash("errors")
+      errors: this.req.flash('errors'),
     };
   }
 
-  old(field, defaultValue = "") {
-    return this.formData && this.formData.hasOwnProperty(field) ?
-      this.formData[field] :
-      defaultValue;
+  old(field, defaultValue = '') {
+    return this.formData && this.formData.hasOwnProperty(field)
+      ? this.formData[field]
+      : defaultValue;
   }
 
   date(time) {

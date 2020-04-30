@@ -5,21 +5,21 @@ const passwordReset = mongoose.Schema(
   {
     email: {
       type: String,
-      required: true
+      required: true,
     },
     token: {
       type: String,
-      required: true
+      required: true,
     },
     use: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   {
     timestamps: {
-      updatedAt: false
-    }
+      updatedAt: false,
+    },
   }
 );
 

@@ -6,46 +6,46 @@ const blogPostSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     slug: {
       type: String,
-      required: true
+      required: true,
     },
     views: {
       type: Number,
-      default: 0
+      default: 0,
     },
     author: {
       type: Schema.Types.ObjectId,
-      ref: 'User'
+      ref: 'User',
     },
     content: {
       type: String,
-      required: true
+      required: true,
     },
     image: {
       type: String,
-      default: null
+      default: null,
     },
     tags: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'blogTag'
-      }
+        ref: 'blogTag',
+      },
     ],
     categories: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'blogCategory'
-      }
-    ]
+        ref: 'blogCategory',
+      },
+    ],
   },
   {
     timestamps: true,
     toJSON: {
-      virtuals: true
-    }
+      virtuals: true,
+    },
   }
 );
 

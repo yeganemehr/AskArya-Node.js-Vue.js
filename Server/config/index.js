@@ -13,6 +13,6 @@ module.exports = {
   debug: true,
   siteurl: process.env.WEBSITE_URL,
   jwt: {
-    secret_key: 'fgsdget#r%!@#$qeg'
-  }
+    secret_key: 'fgsdget#r%!@#$qeg',
+  },
 };

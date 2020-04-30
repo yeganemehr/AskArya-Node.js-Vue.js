@@ -67,9 +67,9 @@ module.exports = {
         'process.env.NODE_ENV': JSON.stringify('production'),
       }),
 
-      new CKEditorWebpackPlugin({
-        language: 'en',
-      }),
+      // new CKEditorWebpackPlugin({
+      //   language: 'en',
+      // }),
 
       // new HtmlWebpackPlugin({
       //   vue: true

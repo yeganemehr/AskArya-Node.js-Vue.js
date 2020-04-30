@@ -104,7 +104,7 @@
           </h6> -->
 
           <h6 class="text-center mt-3">
-            <router-link to="/forgotpassword" class="footer-link"
+            <router-link to="/contact" class="footer-link"
               >رمز عبور را فراموش کرده ام</router-link
             >
           </h6>

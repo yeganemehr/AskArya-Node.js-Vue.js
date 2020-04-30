@@ -12,7 +12,7 @@ class permissionController extends controller {
 
       res.render('admin/permissions/index', {
         title: 'لیست اجازه دسترسی',
-        permissions
+        permissions,
       });
     } catch (err) {
       next(err);
@@ -32,7 +32,7 @@ class permissionController extends controller {
 
       let newPermission = new Permission({
         name,
-        label
+        label,
       });
 
       await newPermission.save();
@@ -66,8 +66,8 @@ class permissionController extends controller {
       await Permission.findByIdAndUpdate(req.params.id, {
         $set: {
           name,
-          label
-        }
+          label,
+        },
       });
 
       return res.redirect('/admin/users/permissions');

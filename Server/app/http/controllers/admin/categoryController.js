@@ -34,7 +34,7 @@ class categoryController extends controller {
       let newCategory = new Category({
         name,
         slug: this.slug(name),
-        parent: parent !== 'none' ? parent : null
+        parent: parent !== 'none' ? parent : null,
       });
 
       await newCategory.save();
@@ -70,8 +70,8 @@ class categoryController extends controller {
         $set: {
           name,
           slug: this.slug(name),
-          parent: parent !== 'none' ? parent : null
-        }
+          parent: parent !== 'none' ? parent : null,
+        },
       });
 
       return res.redirect('/admin/categories');
@@ -89,7 +89,7 @@ class categoryController extends controller {
         .exec();
       if (!category) this.error('چنین دسته ای وجود ندارد', 404);
 
-      category.childs.forEach(category => category.remove());
+      category.childs.forEach((category) => category.remove());
 
       // delete category
       category.remove();

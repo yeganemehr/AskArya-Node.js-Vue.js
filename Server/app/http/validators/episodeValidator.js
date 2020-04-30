@@ -8,7 +8,7 @@ class episodeValidator extends validator {
     return [
       check('title')
         .isLength({
-          min: 5
+          min: 5,
         })
         .withMessage('عنوان نمیتواند کمتر از 5 کاراکتر باشد'),
 
@@ -24,7 +24,7 @@ class episodeValidator extends validator {
 
       check('body')
         .isLength({
-          min: 20
+          min: 20,
         })
         .withMessage('متن دوره نمیتواند کمتر از 20 کاراکتر باشد'),
 
@@ -52,7 +52,7 @@ class episodeValidator extends validator {
           } else if (matches[2] > 59) {
             throw new Error('دقیقه نمیتواند مقداری بیشتراز 59 داشته باشد');
           }
-        })
+        }),
     ];
   }
 

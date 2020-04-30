@@ -14,7 +14,7 @@ class commentController extends controller {
           populate: [
             {
               path: 'user',
-              select: 'name'
+              select: 'name',
             },
             'course',
             {
@@ -22,11 +22,11 @@ class commentController extends controller {
               populate: [
                 {
                   path: 'course',
-                  select: 'slug'
-                }
-              ]
-            }
-          ]
+                  select: 'slug',
+                },
+              ],
+            },
+          ],
         }
       );
       // return res.json(comments);
@@ -48,7 +48,7 @@ class commentController extends controller {
           populate: [
             {
               path: 'user',
-              select: 'name'
+              select: 'name',
             },
             'course',
             {
@@ -56,16 +56,16 @@ class commentController extends controller {
               populate: [
                 {
                   path: 'course',
-                  select: 'slug'
-                }
-              ]
-            }
-          ]
+                  select: 'slug',
+                },
+              ],
+            },
+          ],
         }
       );
       res.render('admin/comments/approved', {
         title: 'کامنت های تایید نشده',
-        comments
+        comments,
       });
     } catch (err) {
       next(err);

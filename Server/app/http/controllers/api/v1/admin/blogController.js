@@ -29,7 +29,7 @@ class blogController extends controller {
       sort: {
         createdAt: 1,
       },
-      limit: parseInt(limit, 10),
+      limit: parseInt(limit, 24),
       populate: [
         {
           path: 'author',

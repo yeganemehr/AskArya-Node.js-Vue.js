@@ -6,23 +6,23 @@ const categorySchema = Schema(
   {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     slug: {
       type: String,
-      required: true
+      required: true,
     },
     parent: {
       type: Schema.Types.ObjectId,
       ref: 'Category',
-      default: null
-    }
+      default: null,
+    },
   },
   {
     timestamps: true,
     toJSON: {
-      virtuals: true
-    }
+      virtuals: true,
+    },
   }
 );
 
@@ -31,13 +31,13 @@ categorySchema.plugin(mongoosePaginate);
 categorySchema.virtual('childs', {
   ref: 'Category',
   localField: '_id',
-  foreignField: 'parent'
+  foreignField: 'parent',
 });
 
 categorySchema.virtual('courses', {
   ref: 'Course',
   localField: '_id',
-  foreignField: 'categories'
+  foreignField: 'categories',
 });
 
 module.exports = mongoose.model('Category', categorySchema);

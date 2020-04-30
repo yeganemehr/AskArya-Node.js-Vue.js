@@ -6,12 +6,12 @@ const apiLimiter = new RateLimit({
   windowMs: 1000 * 60 * 1,
   max: 85,
   // message : "درخواست شما زیاد بوده لطفا 1 دقیقه دیگر دوباره تلاش کنید"
-  handler: function(req, res /*next*/) {
+  handler: function (req, res /*next*/) {
     res.json({
       data: 'درخواست شما زیsاد بوده لطفا 1 دقیقه دیگر دوباره تلاش کنید',
-      status: 'error'
+      status: 'error',
     });
-  }
+  },
 });
 
 const apiv1 = require('./api-v1');

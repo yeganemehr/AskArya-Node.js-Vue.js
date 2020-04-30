@@ -6,31 +6,31 @@ const blogCategorySchema = Schema(
     name: {
       type: String,
       unique: true,
-      required: true
+      required: true,
     },
     slug: {
       type: String,
       unique: true,
-      required: true
+      required: true,
     },
     parent: {
       type: Schema.Types.ObjectId,
       ref: 'blogCategory',
-      default: null
-    }
+      default: null,
+    },
   },
   {
     timestamps: true,
     toJSON: {
-      virtuals: true
-    }
+      virtuals: true,
+    },
   }
 );
 
 blogCategorySchema.virtual('childs', {
   ref: 'Category',
   localField: '_id',
-  foreignField: 'parent'
+  foreignField: 'parent',
 });
 
 module.exports = mongoose.model('blogCategory', blogCategorySchema);

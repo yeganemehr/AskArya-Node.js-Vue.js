@@ -6,18 +6,18 @@ const learningSchema = Schema(
   {
     user: {
       type: Schema.Types.ObjectId,
-      ref: 'User'
+      ref: 'User',
     },
     course: {
       type: Schema.Types.ObjectId,
-      ref: 'learning'
-    }
+      ref: 'learning',
+    },
   },
   {
     timestamps: true,
     toJSON: {
-      virtuals: true
-    }
+      virtuals: true,
+    },
   }
 );
 

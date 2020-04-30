@@ -20,21 +20,21 @@ class courseController extends controller {
 
     if (category && category != 'all') {
       category = await Category.findOne({
-        slug: category
+        slug: category,
       });
       if (category)
         query.categories = {
-          $in: [category.id]
+          $in: [category.id],
         };
     }
 
     let courses = Course.find({
-      ...query
+      ...query,
     });
 
     if (req.query.order)
       courses.sort({
-        createdAt: -1
+        createdAt: -1,
       });
 
     courses = await courses.exec();
@@ -42,7 +42,7 @@ class courseController extends controller {
     let categories = await Category.find({});
     res.render('home/courses', {
       courses,
-      categories
+      categories,
     });
   }
 
@@ -55,7 +55,7 @@ class courseController extends controller {
         return this.alertAndBack(req, res, {
           title: 'دقت کنید',
           message: 'چنین دوره ای یافت نشد',
-          type: 'error'
+          type: 'error',
         });
       }
 
@@ -64,7 +64,7 @@ class courseController extends controller {
           title: 'دقت کنید',
           message: 'شما قبلا در این دوره ثبت نام کرده اید',
           type: 'error',
-          button: 'خیلی خوب'
+          button: 'خیلی خوب',
         });
       }
 
@@ -77,7 +77,7 @@ class courseController extends controller {
           message:
             'این دوره مخصوص اعضای ویژه یا رایگان است و قابل خریداری نیست',
           type: 'error',
-          button: 'خیلی خوب'
+          button: 'خیلی خوب',
         });
       }
 
@@ -87,7 +87,7 @@ class courseController extends controller {
         Amount: course.price,
         CallbackURL: `${config.siteurl}/courses/payment/checker`,
         Description: `بابت خرید دوره ${course.title}`,
-        Email: req.user.email
+        Email: req.user.email,
       };
 
       let options = this.getUrlOption(
@@ -96,12 +96,12 @@ class courseController extends controller {
       );
 
       request(options)
-        .then(async data => {
+        .then(async (data) => {
           let payment = new Payment({
             user: req.user.id,
             course: course.id,
             resnumber: data.Authority,
-            price: course.price
+            price: course.price,
           });
 
           await payment.save();
@@ -110,7 +110,7 @@ class courseController extends controller {
             `https://sandbox.zarinpal.com/pg/StartPay/${data.Authority}`
           );
         })
-        .catch(err => res.json(err.message));
+        .catch((err) => res.json(err.message));
     } catch (err) {
       next(err);
     }
@@ -121,11 +121,11 @@ class courseController extends controller {
       if (req.query.Status && req.query.Status !== 'OK')
         return this.alertAndBack(req, res, {
           title: 'دقت کنید',
-          message: 'پرداخت شما با موفقیت انجام نشد'
+          message: 'پرداخت شما با موفقیت انجام نشد',
         });
 
       let payment = await Payment.findOne({
-        resnumber: req.query.Authority
+        resnumber: req.query.Authority,
       })
         .populate('course')
         .exec();
@@ -134,13 +134,13 @@ class courseController extends controller {
         return this.alertAndBack(req, res, {
           title: 'دقت کنید',
           message: 'دوره ای که شما پرداخت کرده اید وجود ندارد',
-          type: 'error'
+          type: 'error',
         });
 
       let params = {
         MerchantID: '55d9c87e-4e89-11e7-8857-005056a205be',
         Amount: payment.course.price,
-        Authority: req.query.Authority
+        Authority: req.query.Authority,
       };
 
       let options = this.getUrlOption(
@@ -149,10 +149,10 @@ class courseController extends controller {
       );
 
       request(options)
-        .then(async data => {
+        .then(async (data) => {
           if (data.Status == 100) {
             payment.set({
-              payment: true
+              payment: true,
             });
             req.user.learning.push(payment.course.id);
 
@@ -163,18 +163,18 @@ class courseController extends controller {
               title: 'با تشکر',
               message: 'عملیات مورد نظر با موفقیت انجام شد',
               type: 'success',
-              button: 'بسیار خوب'
+              button: 'بسیار خوب',
             });
 
             res.redirect(payment.course.path());
           } else {
             this.alertAndBack(req, res, {
               title: 'دقت کنید',
-              message: 'پرداخت شما با موفقیت انجام نشد'
+              message: 'پرداخت شما با موفقیت انجام نشد',
             });
           }
         })
-        .catch(err => {
+        .catch((err) => {
           next(err);
         });
     } catch (err) {
@@ -185,63 +185,63 @@ class courseController extends controller {
   async single(req, res) {
     let course = await Course.findOneAndUpdate(
       {
-        slug: req.params.course
+        slug: req.params.course,
       },
       {
         $inc: {
-          viewCount: 1
-        }
+          viewCount: 1,
+        },
       }
     )
       .populate([
         {
           path: 'user',
-          select: 'name'
+          select: 'name',
         },
         {
           path: 'episodes',
           options: {
             sort: {
-              number: 1
-            }
-          }
-        }
+              number: 1,
+            },
+          },
+        },
       ])
       .populate([
         {
           path: 'comments',
           match: {
             parent: null,
-            approved: true
+            approved: true,
           },
           populate: [
             {
               path: 'user',
-              select: 'name'
+              select: 'name',
             },
             {
               path: 'comments',
               match: {
-                approved: true
+                approved: true,
               },
               populate: {
                 path: 'user',
-                select: 'name'
-              }
-            }
-          ]
-        }
+                select: 'name',
+              },
+            },
+          ],
+        },
       ]);
 
     let categories = await Category.find({
-      parent: null
+      parent: null,
     })
       .populate('childs')
       .exec();
 
     res.render('home/single-course', {
       course,
-      categories
+      categories,
     });
   }
 
@@ -284,10 +284,10 @@ class courseController extends controller {
       uri: url,
       headers: {
         'cache-control': 'no-cache',
-        'content-type': 'application/json'
+        'content-type': 'application/json',
       },
       body: params,
-      json: true
+      json: true,
     };
   }
 }

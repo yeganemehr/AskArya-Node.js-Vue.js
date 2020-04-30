@@ -75,7 +75,7 @@ class userController extends controller {
       let newUser = new User({
         name,
         email,
-        password
+        password,
       });
 
       await newUser.save();
@@ -111,8 +111,8 @@ class userController extends controller {
         $set: {
           name,
           slug: this.slug(name),
-          parent: parent !== 'none' ? parent : null
-        }
+          parent: parent !== 'none' ? parent : null,
+        },
       });
 
       return res.redirect('/admin/categories');
@@ -130,8 +130,8 @@ class userController extends controller {
         .exec();
       if (!user) this.error('چنین کاربری وجود ندارد', 404);
 
-      user.courses.forEach(course => {
-        course.episodes.forEach(episode => episode.remove());
+      user.courses.forEach((course) => {
+        course.episodes.forEach((episode) => episode.remove());
         course.remove();
       });
 

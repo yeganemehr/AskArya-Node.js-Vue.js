@@ -14,14 +14,14 @@ class courseController extends controller {
         {
           page,
           sort: {
-            createdAt: 1
+            createdAt: 1,
           },
-          limit: 15
+          limit: 15,
         }
       );
       res.render('admin/courses/index', {
         title: 'دوره ها',
-        courses
+        courses,
       });
     } catch (err) {
       next(err);
@@ -32,7 +32,7 @@ class courseController extends controller {
     let categories = await Category.find({});
 
     res.render('admin/courses/create', {
-      categories
+      categories,
     });
   }
 
@@ -58,7 +58,7 @@ class courseController extends controller {
         images,
         thumb: images[480],
         tags,
-        lang
+        lang,
       });
 
       await newCourse.save();
@@ -84,7 +84,7 @@ class courseController extends controller {
       let categories = await Category.find({});
       return res.render('admin/courses/edit', {
         course,
-        categories
+        categories,
       });
     } catch (err) {
       next(err);
@@ -114,7 +114,7 @@ class courseController extends controller {
       objForUpdate.slug = this.slug(req.body.title);
 
       await Course.findByIdAndUpdate(req.params.id, {
-        $set: { ...req.body, ...objForUpdate }
+        $set: { ...req.body, ...objForUpdate },
       });
       return res.redirect('/admin/courses');
     } catch (err) {
@@ -132,10 +132,10 @@ class courseController extends controller {
       if (!course) this.error('چنین دوره ای وجود ندارد', 404);
 
       // delete episodes
-      course.episodes.forEach(episode => episode.remove());
+      course.episodes.forEach((episode) => episode.remove());
 
       // delete Images
-      Object.values(course.images).forEach(image =>
+      Object.values(course.images).forEach((image) =>
         fs.unlinkSync(`./public${image}`)
       );
 
@@ -156,7 +156,7 @@ class courseController extends controller {
       `${image.destination}/${image.filename}`
     );
 
-    const resize = size => {
+    const resize = (size) => {
       let imageName = `${imageInfo.name}-${size}${imageInfo.ext}`;
 
       addresImages[size] = this.getUrlImage(

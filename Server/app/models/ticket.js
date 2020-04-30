@@ -11,71 +11,73 @@ const ANSWERED = 3;
 const ONHOLD = 4;
 const CLOSED = 5;
 
-const ticketSchema = Schema({
-  ticket_id: {
-    type: Number
+const ticketSchema = Schema(
+  {
+    ticket_id: {
+      type: Number,
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    answerAt: {
+      type: Date,
+      default: Date.now(),
+    },
+    department: {
+      type: String,
+      required: true,
+    },
+    priority: {
+      type: String,
+      required: true,
+    },
+    priority: {
+      type: String,
+      required: true,
+    },
+    status: {
+      type: Number,
+      default: OPEN,
+    },
+    files: {
+      type: [String],
+      default: null,
+    },
+    isHighlight: {
+      type: Boolean,
+      default: false,
+    },
   },
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  title: {
-    type: String,
-    required: true
-  },
-  answerAt: {
-    type: Date,
-    default: Date.now()
-  },
-  department: {
-    type: String,
-    required: true
-  },
-  priority: {
-    type: String,
-    required: true
-  },
-  priority: {
-    type: String,
-    required: true
-  },
-  status: {
-    type: Number,
-    default: OPEN
-  },
-  files: {
-    type: [String],
-    default: null
-  },
-  isHighlight: {
-    type: Boolean,
-    default: false
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
   }
-}, {
-  timestamps: true,
-  toJSON: {
-    virtuals: true
-  }
-});
+);
 
 ticketSchema.plugin(mongoosePaginate);
 ticketSchema.plugin(autoIncrement.plugin, {
   model: 'Ticket',
   field: 'ticket_id',
   startAt: 1,
-  incrementBy: 1
+  incrementBy: 1,
 });
 
-ticketSchema.pre('remove',async function(next){
-  const tms=await this.model('ticketMessage').find({ticket:this._id});
+ticketSchema.pre('remove', async function (next) {
+  const tms = await this.model('ticketMessage').find({ ticket: this._id });
   for (let i = 0; i < tms.length; i++) {
     const tm = tms[i];
     await tm.remove();
-    
   }
 
-   next();
- })
+  next();
+});
 /* ticketSchema.pre('save', async function(next) {
   if (! this.ticket_id) {
     const count = await this.constructor.countDocuments();

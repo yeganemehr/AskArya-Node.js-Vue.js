@@ -14,69 +14,77 @@ passport.deserializeUser(function (id, done) {
 
 passport.use(
   'local.register',
-  new localStrategy({
+  new localStrategy(
+    {
       usernameField: 'email',
       passwordField: 'password',
-      passReqToCallback: true
+      passReqToCallback: true,
     },
     (req, email, password, done) => {
-      User.findOne({
-        email: email
-      }, (err, user) => {
-        if (err) return done(err);
-        if (user)
-          return done(
-            null,
-            false,
-            req.flash('errors', 'چنین کاربری قبلا در سایت ثبت نام کرده است')
-          );
-
-        const newUser = new User({
-          name: req.body.name,
-          email,
-          password
-        });
-
-        newUser.save(err => {
-          if (err)
+      User.findOne(
+        {
+          email: email,
+        },
+        (err, user) => {
+          if (err) return done(err);
+          if (user)
             return done(
-              err,
+              null,
               false,
-              req.flash(
-                'errors',
-                'ثبت نام با موفقیت انجام نشد لطفا دوباره سعی کنید'
-              )
+              req.flash('errors', 'چنین کاربری قبلا در سایت ثبت نام کرده است')
             );
-          done(null, newUser);
-        });
-      });
+
+          const newUser = new User({
+            name: req.body.name,
+            email,
+            password,
+          });
+
+          newUser.save((err) => {
+            if (err)
+              return done(
+                err,
+                false,
+                req.flash(
+                  'errors',
+                  'ثبت نام با موفقیت انجام نشد لطفا دوباره سعی کنید'
+                )
+              );
+            done(null, newUser);
+          });
+        }
+      );
     }
   )
 );
 
 passport.use(
   'local.login',
-  new localStrategy({
+  new localStrategy(
+    {
       usernameField: 'email',
       passwordField: 'password',
-      passReqToCallback: true
+      passReqToCallback: true,
     },
     (req, email, password, done) => {
-      User.findOne({
-        email: email
-      }, (err, user) => {
-        if (err) return done(err);
+      User.findOne(
+        {
+          email: email,
+        },
+        (err, user) => {
+          if (err) return done(err);
 
-        if (!user || !user.comparePassword(password)) {
-          return done(
-            null,
-            false,
-            req.flash('errors', 'اطلاعات وارد شده مطابقت ندارد')
-          );
+          if (!user || !user.comparePassword(password)) {
+            return done(
+              null,
+              false,
+              req.flash('errors', 'اطلاعات وارد شده مطابقت ندارد')
+            );
+          }
+
+          done(null, user);
         }
-
-        done(null, user);
-      });
+      );
     }
   )
 );

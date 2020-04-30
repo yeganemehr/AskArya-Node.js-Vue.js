@@ -1,14 +1,14 @@
-const controller = require("app/http/controllers/api/controller");
-const passport = require("passport");
-const jwt = require("jsonwebtoken");
-const HomeController = require("./homeController");
-const Log = require("app/models/log");
-const User = require("app/models/user");
-const PasswordReset = require("app/models/password-reset");
-const uniqueString = require("unique-string");
-const ActivationCode = require("app/models/activationCode");
+const controller = require('app/http/controllers/api/controller');
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
+const HomeController = require('./homeController');
+const Log = require('app/models/log');
+const User = require('app/models/user');
+const PasswordReset = require('app/models/password-reset');
+const uniqueString = require('unique-string');
+const ActivationCode = require('app/models/activationCode');
 // const mail = require('app/helpers/mail');
-const sgMail = require("@sendgrid/mail");
+const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 class authController extends controller {
@@ -19,26 +19,26 @@ class authController extends controller {
     if (!(await this.validationData(req, res))) return;
 
     passport.authenticate(
-      "local.login",
+      'local.login',
       {
         session: true,
       },
       async (err, user) => {
         if (err) return this.failed(err.message, res);
-        if (!user) return this.failed("چنین کاربری وجود ندارد", res, 404);
+        if (!user) return this.failed('چنین کاربری وجود ندارد', res, 404);
         if (!user.active) {
           const activeCode = await ActivationCode.findOne({
             user: user.id,
           })
-            .gt("expire", new Date())
+            .gt('expire', new Date())
             .sort({
               createdAt: 1,
             })
-            .populate("user")
+            .populate('user')
             .exec();
           if (activeCode) {
             return this.failed(
-              "لینک فعال سازی اکانت به ایمیل شما ارسال شده برای ارسال دوباره لطفا 10 دقیقه صبر کنید و دوباره اقدام به ورود کنید تا لینک جدید به ایمیل شما ارسال شود",
+              'لینک فعال سازی اکانت به ایمیل شما ارسال شده برای ارسال دوباره لطفا 10 دقیقه صبر کنید و دوباره اقدام به ورود کنید تا لینک جدید به ایمیل شما ارسال شود',
               res,
               403
             );
@@ -68,21 +68,21 @@ class authController extends controller {
                 user.setRememberToken(res);
               }
               const ip =
-                req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+                req.headers['x-forwarded-for'] || req.connection.remoteAddress;
               const loginLog = new Log({
                 ip: ip,
                 user: user.id,
-                type: "login",
+                type: 'login',
                 title: ` گزارش ورود به سیستم با آدرس آی پی ${ip} ثبت شده است. در صورتی که فکر میکنید این کار توسط شما انجام نشده هر چه سریع تر با مدیریت اسک آریا تماس بگیرید. `,
               });
               await loginLog.save();
               user = await user
                 .populate({
-                  path: "roles",
-                  select: "name label permissions",
+                  path: 'roles',
+                  select: 'name label permissions',
                   populate: [
                     {
-                      path: "permissions",
+                      path: 'permissions',
                     },
                   ],
                 })
@@ -92,7 +92,7 @@ class authController extends controller {
                   token,
                   user: HomeController.filterUserData(user),
                 },
-                status: "success",
+                status: 'success',
               });
             }
           );
@@ -106,20 +106,20 @@ class authController extends controller {
     // }
     if (!(await this.validationData(req, res))) return;
     passport.authenticate(
-      "local.register",
+      'local.register',
       {
         failWithError: true,
       },
       async (err, user) => {
         if (err) return this.failed(err.message, res);
         if (!user)
-          return this.failed("خطایی در حین ثبت نام بوجود آمده", res, 500);
+          return this.failed('خطایی در حین ثبت نام بوجود آمده', res, 500);
         const ip =
-          req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+          req.headers['x-forwarded-for'] || req.connection.remoteAddress;
         const registerLog = new Log({
           ip: ip,
           user: user.id,
-          type: "register",
+          type: 'register',
           title: `به مجموعه اسک آریا خوش آمدید.`,
         });
         registerLog.save();
@@ -130,7 +130,7 @@ class authController extends controller {
             data: {
               user: HomeController.filterUserData(user),
             },
-            status: "success",
+            status: 'success',
           });
         }
       }
@@ -140,16 +140,16 @@ class authController extends controller {
     const user = req.user;
     user.removeRememberToken(res);
     req.logout();
-    const ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     const logoutLog = new Log({
       ip: ip,
       user: user.id,
-      type: "logout",
+      type: 'logout',
       title: ` گزارش خروج از سیستم با آدرس آی پی ${ip} ثبت شده است. `,
     });
     logoutLog.save();
     res.json({
-      status: "success",
+      status: 'success',
     });
   }
   async sendPasswordResetLink(req, res, next) {
@@ -157,7 +157,7 @@ class authController extends controller {
       email: req.body.email,
     });
     if (!user) {
-      this.failed("چنین کاربری وجود ندارد", res);
+      this.failed('چنین کاربری وجود ندارد', res);
       return this.back(req, res);
     }
 
@@ -171,7 +171,7 @@ class authController extends controller {
     const mailOptions = {
       from: '"اسک آریا" <info@ask-arya.com>',
       to: `${newPasswordReset.email}`,
-      subject: "ریست کردن پسورد",
+      subject: 'ریست کردن پسورد',
       html: `
          <div dir="rtl" class="text-align:right;">
           <h2 class="font-family:Tahoma;">ریست کردن پسورد</h2>
@@ -184,12 +184,12 @@ class authController extends controller {
     sgMail.send(mailOptions, (err) => {
       // mail.sendMail(mailOptions, err => {
       if (err) {
-        this.failed("متاسفانه امکان ارسال ایمیل وجود ندارد.", res, 500);
+        this.failed('متاسفانه امکان ارسال ایمیل وجود ندارد.', res, 500);
         // console.log(err);
         return;
       }
       res.json({
-        status: "success",
+        status: 'success',
       });
     });
   }
@@ -201,12 +201,12 @@ class authController extends controller {
       token: req.params.token,
     });
     if (!field) {
-      return this.failed("اطلاعات وارد شده صحیح نیست لطفا دقت کنید", res, 403);
+      return this.failed('اطلاعات وارد شده صحیح نیست لطفا دقت کنید', res, 403);
     }
 
     if (field.use) {
       return this.failed(
-        "از این لینک برای بازیابی پسورد قبلا استفاده شده است",
+        'از این لینک برای بازیابی پسورد قبلا استفاده شده است',
         res,
         403
       );
@@ -223,13 +223,13 @@ class authController extends controller {
       }
     );
     if (!user) {
-      return this.failed("اپدیت شدن انجام نشد", res, 500);
+      return this.failed('اپدیت شدن انجام نشد', res, 500);
     }
     await field.updateOne({
       use: true,
     });
     res.json({
-      status: "success",
+      status: 'success',
     });
   }
   async sendActivateEmail(res, user) {
@@ -245,7 +245,7 @@ class authController extends controller {
     const mailOptions = {
       from: '"اسک آریا" <info@ask-arya.com>', // sender address
       to: `${user.email}`, // list of receivers
-      subject: "فعال سازی اکانت اسک آریا", // Subject line
+      subject: 'فعال سازی اکانت اسک آریا', // Subject line
       html: `  <div dir="rtl" class="text-align:right;">
                <h2 class="font-family:Tahoma;">فعال سازی اکانت اسک آریا</h2>
                <p class="font-family:Tahoma;">برای فعال شدن اکانت بر روی لینک زیر کلیک کنید</p>
@@ -257,14 +257,14 @@ class authController extends controller {
     sgMail.send(mailOptions, (err, info) => {
       // mail.sendMail(mailOptions, (err, info) => {
       if (err) {
-        this.failed("متاسفانه امکان ارسال ایمیل وجود ندارد.", res, 500);
+        this.failed('متاسفانه امکان ارسال ایمیل وجود ندارد.', res, 500);
         // console.log('sendMail.err', err);
         return;
       }
       // console.log('Message Sent : %s', info.messageId);
       return res.json({
-        data: "ایمیل حاوی لینک فعال سازی به ایمیل شما ارسال شد",
-        status: "success",
+        data: 'ایمیل حاوی لینک فعال سازی به ایمیل شما ارسال شد',
+        status: 'success',
       });
     });
   }

@@ -10,7 +10,7 @@ class resetPasswordController extends controller {
     res.render('home/auth/passwords/reset', {
       recaptcha: this.recaptcha.render(),
       title,
-      token: req.params.token
+      token: req.params.token,
     });
   }
 
@@ -26,7 +26,7 @@ class resetPasswordController extends controller {
 
   async resetPassword(req, res) {
     let field = await PasswordReset.findOne({
-      $and: [{ email: req.body.email }, { token: req.body.token }]
+      $and: [{ email: req.body.email }, { token: req.body.token }],
     });
     if (!field) {
       req.flash('errors', 'اطلاعات وارد شده صحیح نیست لطفا دقت کنید');
