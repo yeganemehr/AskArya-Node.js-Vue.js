@@ -12,7 +12,7 @@
               شما در موثر ترین و کوتاه ترین زمان ممکن صورت گیرد.
             </p>
 
-            <div class="py-2 pr-2 row">
+            <div class="button-section py-2 row">
               <router-link to="dashboard">
                 <base-button
                   native-type="submit"
@@ -81,7 +81,7 @@ export default {};
     font-size: 1.2em;
     line-height: 1.7em;
     font-family: IranSans !important;
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: rgba(255, 255, 255, 0.925) !important;
   }
 
   .btn {
@@ -92,22 +92,31 @@ export default {};
   }
 }
 
+@media screen and (min-width: 769px) {
+  .button-section {
+    padding-right: 1em !important;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .hero-content-homepage {
-    background: linear-gradient(225deg, #d223e9f5, #5e62dff3),
+    // background: linear-gradient(225deg, #d223e9f5, #5e62dff3),
+    //   url(/img/frontend/confused-banner.svg) no-repeat;
+    background: linear-gradient(225deg, #fa6b6bef, #fcb763ee),
       url(/img/frontend/confused-banner.svg) no-repeat;
     background-position: bottom left;
     background-size: cover;
+    text-align: center;
     // background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
     // background-size: cover;
     // background-position: top;
     min-height: 43vh !important;
 
     .hero-title {
-      font-size: 3.6em !important;
+      font-size: 3.65em !important;
       color: #fff !important;
-      text-shadow: 2px 2px #7b149b15;
-      text-align: right !important;
+      text-shadow: 2px 2px #ac6a071a !important;
+      text-align: center !important;
       padding-top: 0.5em;
       margin: 0 0 15px 0;
     }
@@ -115,7 +124,7 @@ export default {};
     .hero-subtitle {
       padding-left: 1.1em;
       font-size: 1.1em;
-      text-align: right !important;
+      text-align: center !important;
     }
 
     .btn {
@@ -130,7 +139,7 @@ export default {};
 
   .button-section {
     -webkit-box-pack: center !important;
-    justify-content: right !important;
+    justify-content: center !important;
   }
 
   .top-courses-section {
