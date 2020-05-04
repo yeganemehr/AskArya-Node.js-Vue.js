@@ -83,14 +83,14 @@ export default {};
 
   .btn {
     border-radius: 14px !important;
-    font-size: 1.2em;
+    font-size: 1.1em;
     padding-left: 15px;
     padding-right: 15px;
   }
 
   .btn-info {
     background: transparent !important;
-    font-family: IranSansBold !important;
+    // font-family: IranSansBold !important;
   }
 
   .btn-info:hover {
@@ -108,7 +108,7 @@ export default {};
 
 @media screen and (max-width: 768px) {
   .hero-content-homepage {
-    background: linear-gradient(#da52fcfa, #6e70fcf6),
+    background: linear-gradient(#da52fcfa, #6e70fcf1),
       url(/img/frontend/confused-banner.svg) no-repeat;
     background-position: bottom left;
     background-size: cover;
@@ -146,10 +146,10 @@ export default {};
       margin-bottom: 2.5em;
     }
 
-    .btn-info {
-      box-shadow: #6a6dff 0px 0px 10px 0px;
-      border: 1px solid rgba(235, 235, 235, 0.1);
-    }
+    // .btn-info {
+    //   box-shadow: #6a6dff 0px 0px 10px 0px;
+    //   border: 1px solid rgba(235, 235, 235, 0.1);
+    // }
   }
 
   .button-section {
