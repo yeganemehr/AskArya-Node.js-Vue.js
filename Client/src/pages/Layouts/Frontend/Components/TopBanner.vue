@@ -23,7 +23,8 @@ export default {};
 .banner-box {
   font-family: IranSansBold;
   padding: 0.2em 0;
-  background-color: rgb(235, 101, 86);
+  // background-color: rgb(235, 101, 86);
+  background-color: #fa6b6bef;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 90 90'%3E%3Ccircle fill-opacity='0.19' fill='%23ffffff' cx='45' cy='45' r='5'/%3E%3Cg fill='%23ffffff' fill-opacity='0.19'%3E%3Ccircle cx='0' cy='90' r='5'/%3E%3Ccircle cx='90' cy='90' r='5'/%3E%3Ccircle cx='90' cy='0' r='5'/%3E%3Ccircle cx='0' cy='0' r='5'/%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -32,14 +33,13 @@ export default {};
   align-items: center;
   padding: 9px 10px !important;
   margin: 0 20% !important;
-
   position: relative;
   font-family: IranSansBold !important;
-  font-size: 1.04em !important;
+  font-size: 1.08em !important;
 
-  @media (max-width: 760px) {
+  @media (max-width: 768px) {
     margin: 0 6% !important;
-    font-size: 0.8rem !important;
+    font-size: 0.85rem !important;
   }
 
   a {
@@ -47,6 +47,12 @@ export default {};
     text-shadow: 1px 1px rgba(117, 165, 209, 0.2);
   }
 }
+
+// @media screen and (max-width: 768px) {
+//   .banner-box {
+//     background-color: #ee756cef;
+//   }
+// }
 
 .banner-card a:hover {
   text-decoration: underline;

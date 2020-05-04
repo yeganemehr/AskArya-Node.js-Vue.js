@@ -7,7 +7,7 @@
             <h1 class="hero-title text-right">
               سریع ترین راه آموزش زبان انگلیسی.
             </h1>
-            <p class="text-right hero-subtitle py-1">
+            <p class="hero-subtitle py-1">
               ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان برای
               شما در موثر ترین و کوتاه ترین زمان ممکن صورت گیرد.
             </p>
@@ -16,8 +16,7 @@
               <router-link to="dashboard">
                 <base-button
                   native-type="submit"
-                  type="warning"
-                  class="btn animation-on-hover"
+                  class="btn btn-primary animation-on-hover"
                 >
                   <i class="far fa-user ml-2"></i>
                   ورود به پنل کاربری
@@ -28,8 +27,7 @@
                 <router-link to="quizzes">
                   <base-button
                     native-type="submit"
-                    type="primary"
-                    class="btn animation-on-hover"
+                    class="btn btn-warning animation-on-hover"
                   >
                     <i class="far fa-check-square ml-2"></i> آزمون های آنلاین
                   </base-button>
@@ -74,14 +72,14 @@ export default {};
     line-height: inherit;
     font-family: IranSansBold !important;
     color: #fff !important;
-    text-shadow: 2px 2px #5256c91f;
   }
 
   .hero-subtitle {
     font-size: 1.2em;
     line-height: 1.7em;
     font-family: IranSans !important;
-    color: rgba(255, 255, 255, 0.925) !important;
+    color: #fff !important;
+    text-align: right;
   }
 
   .btn {
@@ -100,17 +98,19 @@ export default {};
 
 @media screen and (max-width: 768px) {
   .hero-content-homepage {
-    // background: linear-gradient(225deg, #d223e9f5, #5e62dff3),
-    //   url(/img/frontend/confused-banner.svg) no-repeat;
-    background: linear-gradient(225deg, #fa6b6bef, #fcb763ee),
+    background: linear-gradient(#fa6b6bef, #fca863ee),
       url(/img/frontend/confused-banner.svg) no-repeat;
     background-position: bottom left;
     background-size: cover;
     text-align: center;
+    min-height: 42vh !important;
+    // background: linear-gradient(225deg, #d223e9f5, #5e62dff3),
+    //   url(/img/frontend/confused-banner.svg) no-repeat;
+    // background: linear-gradient(#fa6b6bec, #fcb763ec),
+    //   url(/img/frontend/confused-banner.svg) no-repeat;
     // background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
     // background-size: cover;
     // background-position: top;
-    min-height: 43vh !important;
 
     .hero-title {
       font-size: 3.65em !important;
@@ -122,7 +122,6 @@ export default {};
     }
 
     .hero-subtitle {
-      padding-left: 1.1em;
       font-size: 1.1em;
       text-align: center !important;
     }
@@ -134,6 +133,9 @@ export default {};
       font-size: 1.1em;
       font-family: IranSansBold;
       margin-bottom: 2.5em;
+    }
+
+    .btn-primary {
     }
   }
 

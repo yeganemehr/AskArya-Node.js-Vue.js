@@ -179,39 +179,6 @@ export default {
   metaInfo: {
     title: 'اسک آریا | تیکت ها',
     titleTemplate: 'اسک آریا | تیکت ها',
-
-    htmlAttrs: {
-      lang: 'fa',
-      amp: true,
-    },
-
-    meta: [
-      // OpenGraph data (Most widely used)
-      { property: 'og:title', content: 'اسک آریا' },
-      { property: 'og:site_name', content: 'اسک آریا' },
-      { property: 'og:type', content: 'website' },
-      {
-        property: 'og:url',
-        content: 'https://www.ask-arya.com/',
-      },
-      {
-        property: 'og:image',
-        content:
-          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png',
-      },
-      {
-        property: 'og:description',
-        content:
-          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
-      },
-      { itemprop: 'name', content: 'اسک آریا' },
-      {
-        itemprop: 'description',
-        content:
-          'ما از سريع ترین روش و متد آموزشی استفاده میکنیم که با استانداردهای آموزشی اروپا طراحی شده، تا یادگیری برای شما آسانتر و موثر تر واقع شود.',
-      },
-    ],
-    link: [{ rel: 'canonical', href: 'https://www.ask-arya.com/' }],
   },
 };
 </script>
@@ -279,10 +246,6 @@ h1 {
 .ticket-card:focus {
   -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0.6);
   box-shadow: 40px rgba(121, 121, 121, 0.6);
-  // transition: transform 0.6s;
-  // -webkit-transform: translateY(-2px);
-  // transform: translateY(-2px);
-  // cursor: pointer;
 }
 
 @media (max-width: 768px) {

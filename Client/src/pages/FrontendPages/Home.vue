@@ -54,11 +54,6 @@
     <div class="founder-section-homepage py-5">
       <founder-section></founder-section>
     </div>
-
-    <!--Quiz Section-->
-    <!-- <div class="container py-5">
-      <quiz1></quiz1>
-    </div> -->
   </div>
 </template>
 
@@ -69,7 +64,6 @@ import Course from './Components/CourseCard/Course.vue';
 import BlogSection from './Components/Blog/BlogSection.vue';
 import ImprovementBanner1 from './Components/ImprovementBanners/ImprovementBanner1.vue';
 import ImprovementBanner2 from './Components/ImprovementBanners/ImprovementBanner2.vue';
-// import Quiz1 from './Components/Quiz/Quiz1.vue';
 
 export default {
   data: function () {
@@ -95,7 +89,6 @@ export default {
     BlogSection,
     ImprovementBanner1,
     ImprovementBanner2,
-    // Quiz1,
   },
 
   metaInfo: {
