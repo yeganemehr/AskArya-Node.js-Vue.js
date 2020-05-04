@@ -12,27 +12,26 @@
               شما در موثر ترین و کوتاه ترین زمان ممکن صورت گیرد.
             </p>
 
-            <div class="button-section py-2 row">
+            <div class="button-section pt-3 row">
               <router-link to="dashboard">
                 <base-button
                   native-type="submit"
-                  class="btn btn-primary animation-on-hover"
+                  type="warning"
+                  class="btn animation-on-hover"
                 >
                   <i class="far fa-user ml-2"></i>
                   ورود به پنل کاربری
                 </base-button>
               </router-link>
 
-              <div class="pr-1">
-                <router-link to="quizzes">
-                  <base-button
-                    native-type="submit"
-                    class="btn btn-warning animation-on-hover"
-                  >
-                    <i class="far fa-check-square ml-2"></i> آزمون های آنلاین
-                  </base-button>
-                </router-link>
-              </div>
+              <router-link to="quizzes">
+                <base-button
+                  native-type="submit"
+                  class="btn btn-info animation-on-hover mr-2"
+                >
+                  <i class="far fa-check-square ml-2"></i> آزمون های آنلاین
+                </base-button>
+              </router-link>
             </div>
           </div>
         </div>
@@ -61,14 +60,14 @@ export default {};
 
 .hero-content-homepage {
   background-color: #6e72fc;
-  background: linear-gradient(90deg, #c04ceeb6 0%, #6e73fce7 84%);
+  background: linear-gradient(270deg, #da52fc, #6e70fc);
   background-size: cover;
   background-position: bottom;
   min-height: 44vh !important;
   width: 100%;
 
   .hero-title {
-    font-size: 4.2em;
+    font-size: 4.3em;
     line-height: inherit;
     font-family: IranSansBold !important;
     color: #fff !important;
@@ -83,10 +82,21 @@ export default {};
   }
 
   .btn {
-    border-radius: 10px !important;
-    font-size: 1.1em;
-    padding-left: 14px;
-    padding-right: 14px;
+    border-radius: 14px !important;
+    font-size: 1.2em;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .btn-info {
+    background: transparent !important;
+    font-family: IranSansBold !important;
+  }
+
+  .btn-info:hover {
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0), 0 1px 3px rgba(0, 0, 0, 0);
+    transform: translateY(0px);
+    text-decoration: underline !important;
   }
 }
 
@@ -98,12 +108,14 @@ export default {};
 
 @media screen and (max-width: 768px) {
   .hero-content-homepage {
-    background: linear-gradient(#fa6b6bef, #fca863ee),
+    background: linear-gradient(#da52fcfa, #6e70fcf6),
       url(/img/frontend/confused-banner.svg) no-repeat;
     background-position: bottom left;
     background-size: cover;
     text-align: center;
     min-height: 42vh !important;
+    //  background: linear-gradient(#fa6b6bef, #fca863ee),
+    //   url(/img/frontend/confused-banner.svg) no-repeat;
     // background: linear-gradient(225deg, #d223e9f5, #5e62dff3),
     //   url(/img/frontend/confused-banner.svg) no-repeat;
     // background: linear-gradient(#fa6b6bec, #fcb763ec),
@@ -113,9 +125,8 @@ export default {};
     // background-position: top;
 
     .hero-title {
-      font-size: 3.65em !important;
+      font-size: 3.85em !important;
       color: #fff !important;
-      text-shadow: 2px 2px #ac6a071a !important;
       text-align: center !important;
       padding-top: 0.5em;
       margin: 0 0 15px 0;
@@ -135,7 +146,9 @@ export default {};
       margin-bottom: 2.5em;
     }
 
-    .btn-primary {
+    .btn-info {
+      box-shadow: #6a6dff 0px 0px 10px 0px;
+      border: 1px solid rgba(235, 235, 235, 0.1);
     }
   }
 

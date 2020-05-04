@@ -11,25 +11,6 @@
       محتوای جدید هر هفته اضافه می شود!
     </h3> -->
 
-    <!-- <div
-      class="d-flex justify-content-around d-flex align-items-center text-center headerDigits"
-    >
-      <div>
-        <span class="headerStyling">{{ total }}</span>
-        <p>دوره</p>
-      </div>
-      <span class="bullet-point">•</span>
-      <div>
-        <span class="headerStyling">{{ episodes }}</span>
-        <p>درس</p>
-      </div>
-      <span class="bullet-point">•</span>
-      <div>
-        <span class="headerStyling">{{ hours }}</span>
-        <p>ساعت</p>
-      </div>
-    </div> -->
-
     <!-- Courses Section -->
     <div class="row">
       <div
