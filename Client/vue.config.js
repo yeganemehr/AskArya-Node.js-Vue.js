@@ -1,7 +1,4 @@
 const webpack = require('webpack');
-// const PreloadWebpackPlugin = require('preload-webpack-plugin');
-// const HtmlWebpackPlugin = require('vue-html-webpack-plugin');
-// const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
 const path = require('path');
 const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
 const { styles } = require('@ckeditor/ckeditor5-dev-utils');
@@ -52,12 +49,6 @@ module.exports = {
       },
     },
 
-    // optimization: {
-    //   splitChunks: {
-    //     chunks: 'all'
-    //   }
-    // },
-
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({
         maxChunks: 6,
@@ -66,30 +57,6 @@ module.exports = {
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production'),
       }),
-
-      // new CKEditorWebpackPlugin({
-      //   language: 'en',
-      // }),
-
-      // new HtmlWebpackPlugin({
-      //   vue: true
-      // }),
-
-      // new PreloadWebpackPlugin(),
-
-      // new HtmlCriticalWebpackPlugin({
-      //   base: path.resolve(__dirname, '../server/dist'),
-      //   src: 'index.html',
-      //   dest: 'index.html',
-      //   inline: true,
-      //   minify: true,
-      //   extract: true,
-      //   width: 375,
-      //   height: 565,
-      //   penthouse: {
-      //     blockJSRequests: false
-      //   }
-      // })
     ],
   },
 

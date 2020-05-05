@@ -4,7 +4,7 @@ import 'es6-promise/auto';
 export default (function initPollyFills() {
   if (!Array.prototype.find) {
     Object.defineProperty(Array.prototype, 'find', {
-      value: function(predicate) {
+      value: function (predicate) {
         // 1. Let O be ? ToObject(this value).
         if (this == null) {
           throw new TypeError('"this" is null or not defined');
@@ -42,7 +42,7 @@ export default (function initPollyFills() {
 
         // 7. Return undefined.
         return undefined;
-      }
+      },
     });
   }
   if (typeof Object.assign !== 'function') {
@@ -74,16 +74,16 @@ export default (function initPollyFills() {
         return to;
       },
       writable: true,
-      configurable: true
+      configurable: true,
     });
   }
   if (!String.prototype.startsWith) {
-    String.prototype.startsWith = function(search, pos) {
+    String.prototype.startsWith = function (search, pos) {
       return this.substr(!pos || pos < 0 ? 0 : +pos, search.length) === search;
     };
   }
   if (!String.prototype.includes) {
-    String.prototype.includes = function(search, start) {
+    String.prototype.includes = function (search, start) {
       'use strict';
       if (typeof start !== 'number') {
         start = 0;

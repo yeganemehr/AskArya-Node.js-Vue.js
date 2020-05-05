@@ -101,7 +101,6 @@
       <div class="row">
         <div v-if="this.$root.$data.user !== undefined">
           <div class="row">
-            <!-- <ul class="navbar-nav text-right" :class="$rtl.isRTL ? 'mr-auto' : 'ml-auto'"> -->
             <base-dropdown
               tag="li"
               title-tag="a"

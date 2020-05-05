@@ -7,10 +7,10 @@ export default {
   methods: {
     initializeLayout() {
       this.$rtl.enableRTL();
-    }
+    },
   },
   mounted() {
     this.initializeLayout();
-  }
+  },
 };
 </script>

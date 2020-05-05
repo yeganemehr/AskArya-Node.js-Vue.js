@@ -17,5 +17,5 @@ export default {
       seconds += (parseInt(parts[x]) || 0) * Math.pow(60, parts.length - x - 1);
     }
     return seconds;
-  }
+  },
 };

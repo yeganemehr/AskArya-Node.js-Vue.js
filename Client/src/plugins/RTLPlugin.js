@@ -3,7 +3,7 @@ export default {
     let app = new Vue({
       data() {
         return {
-          isRTL: false
+          isRTL: false,
         };
       },
       methods: {
@@ -31,10 +31,10 @@ export default {
               styleSheet.disabled = !value;
             }
           }
-        }
-      }
+        },
+      },
     });
 
     Vue.prototype.$rtl = app;
-  }
+  },
 };

@@ -54,13 +54,9 @@
         <div class="row">
           <div v-if="this.$root.$data.user !== undefined">
             <div class="row">
-              <ul
-                class="navbar-nav text-right"
-                :class="$rtl.isRTL ? 'mr-auto' : 'ml-auto'"
-              >
+              <ul class="navbar-nav text-right">
                 <base-dropdown
                   tag="li"
-                  :menu-on-right="!$rtl.isRTL"
                   title-tag="a"
                   class="nav-item"
                   menu-classes="dropdown-navbar"
