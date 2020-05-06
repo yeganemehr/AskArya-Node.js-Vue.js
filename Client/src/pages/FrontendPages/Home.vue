@@ -50,6 +50,11 @@
       <ImprovementBanner2></ImprovementBanner2>
     </div>
 
+    <!-- News Section-->
+    <div class="container py-5">
+      <news-component></news-component>
+    </div>
+
     <!--Founder Section-->
     <div class="founder-section-homepage py-5">
       <founder-section></founder-section>
@@ -64,6 +69,7 @@ import Course from './Components/CourseCard/Course.vue';
 import BlogSection from './Components/Blog/BlogSection.vue';
 import ImprovementBanner1 from './Components/ImprovementBanners/ImprovementBanner1.vue';
 import ImprovementBanner2 from './Components/ImprovementBanners/ImprovementBanner2.vue';
+import NewsComponent from './Components/NewsComponent/NewsComponent.vue';
 
 export default {
   data: function () {
@@ -89,6 +95,7 @@ export default {
     BlogSection,
     ImprovementBanner1,
     ImprovementBanner2,
+    NewsComponent,
   },
 
   metaInfo: {
