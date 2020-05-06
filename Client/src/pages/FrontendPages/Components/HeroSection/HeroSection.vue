@@ -27,7 +27,7 @@
               <router-link to="quizzes">
                 <base-button
                   native-type="submit"
-                  class="btn btn-info animation-on-hover mr-2"
+                  class="btn btn-simple animation-on-hover mr-2"
                 >
                   <i class="far fa-check-square ml-2"></i> آزمون های آنلاین
                 </base-button>
@@ -88,15 +88,9 @@ export default {};
     padding-right: 15px;
   }
 
-  .btn-info {
-    background: transparent !important;
-    // font-family: IranSansBold !important;
-  }
-
-  .btn-info:hover {
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0), 0 1px 3px rgba(0, 0, 0, 0);
-    transform: translateY(0px);
-    text-decoration: underline !important;
+  .btn.btn-simple {
+    color: #ffffff;
+    border-color: #ffffff79;
   }
 }
 
@@ -114,15 +108,6 @@ export default {};
     background-size: cover;
     text-align: center;
     min-height: 42vh !important;
-    //  background: linear-gradient(#fa6b6bef, #fca863ee),
-    //   url(/img/frontend/confused-banner.svg) no-repeat;
-    // background: linear-gradient(225deg, #d223e9f5, #5e62dff3),
-    //   url(/img/frontend/confused-banner.svg) no-repeat;
-    // background: linear-gradient(#fa6b6bec, #fcb763ec),
-    //   url(/img/frontend/confused-banner.svg) no-repeat;
-    // background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
-    // background-size: cover;
-    // background-position: top;
 
     .hero-title {
       font-size: 3.85em !important;
@@ -145,11 +130,6 @@ export default {};
       font-family: IranSansBold;
       margin-bottom: 2.5em;
     }
-
-    // .btn-info {
-    //   box-shadow: #6a6dff 0px 0px 10px 0px;
-    //   border: 1px solid rgba(235, 235, 235, 0.1);
-    // }
   }
 
   .button-section {

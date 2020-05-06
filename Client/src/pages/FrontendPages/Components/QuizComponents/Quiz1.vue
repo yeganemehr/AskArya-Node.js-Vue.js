@@ -26,7 +26,7 @@
             </p>
           </div>
           <p class="quiz-details-bottom">
-            24
+            24 Mins
           </p>
         </div>
 
@@ -817,6 +817,7 @@ export default {
   font-size: 1.1em !important;
 
   .quiz-details-top p {
+    font-size: 0.9em !important;
     color: #fff !important;
     background-color: #e52e71;
     padding-top: 5px;
@@ -826,8 +827,9 @@ export default {
   }
 
   .quiz-details-bottom {
-    background-color: #fff !important;
+    font-size: 0.9em !important;
     color: #e52e71 !important;
+    background-color: #fff !important;
     border-radius: 10px;
   }
 }
@@ -842,6 +844,9 @@ export default {
   overflow: hidden !important;
   box-shadow: 0 14px 20px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.15) !important;
   border-left: 1.2em solid #e52e71 !important;
+  border-right: 1px solid rgb(230, 230, 230) !important;
+  border-bottom: 1px solid rgb(230, 230, 230) !important;
+  border-top: 1px solid rgb(235, 235, 235) !important;
   overflow: hidden !important;
   font-family: sans-serif, Verdana, Tahoma !important;
   direction: ltr !important;
@@ -915,7 +920,6 @@ export default {
   .question-button:focus,
   .question-button:focus-within,
   .question-button:visited {
-    // cursor: default !important;
     transform: translateY(0px);
     -webkit-transform: translateY(0px);
     background: rgb(197, 197, 197) !important;
@@ -991,7 +995,6 @@ export default {
   }
 
   .btn-simple {
-    // background: rgb(233, 233, 233) !important;
     border-color: transparent !important;
   }
 
@@ -1005,7 +1008,6 @@ export default {
   .grades {
     font-size: 2em !important;
     color: #e52e71 !important;
-    // color: rgb(29, 29, 29) !important;
   }
 
   li {
@@ -1021,9 +1023,27 @@ export default {
 }
 
 @media (max-width: 678px) {
+  .quiz-details-card,
+  .quiz-details-card .quiz-details-top p,
+  .quiz-details-card .quiz-details-bottom {
+    background-color: rgb(245, 245, 245) !important;
+    color: #535353 !important;
+    margin-bottom: 0;
+  }
+
+  .quiz-details-card,
+  .quiz-details-card .quiz-details-top p {
+    border: 1px solid #ffffff96;
+  }
+
+  .quiz-details-card .quiz-details-bottom {
+    color: #e52e71 !important;
+    // font-weight: bolder;
+  }
+
   .quiz-section {
     width: auto !important;
-    border-left: none !important;
+    border: 1px solid rgb(233, 233, 233) !important;
   }
 
   .quiz-header {

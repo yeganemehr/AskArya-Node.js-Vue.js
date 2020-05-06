@@ -89,24 +89,18 @@ export default {
   font-size: 2.9em !important;
   font-family: IranSansBold;
   color: #fd5d93 !important;
-  text-align: right;
+  text-align: center;
 }
 
 .info-text {
   font-size: 1em !important;
-  text-align: right !important;
-  margin-bottom: 2em !important;
   color: #5c5c5c !important;
+  text-align: center !important;
+  margin-bottom: 2em !important;
 }
 
 .card {
   border-radius: 8px !important;
-  // background: #e64971 !important;
-  // color: white !important;
-  // background: #f1f1f1 !important;
-  // text-align: right;
-  // padding: 12px;
-  // box-shadow: 0 14px 20px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1) !important;
 
   h1 {
     font-family: IranSansBold;
