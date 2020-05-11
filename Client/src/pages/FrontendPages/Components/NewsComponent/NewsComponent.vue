@@ -2,28 +2,7 @@
   <section dir="ltr">
     <div class="card">
       <!-- Slide 1 -->
-      <div class="card_part card_part-one row">
-        <!-- News 1 -->
-        <div class="blogPost--small col-12">
-          <div class="media">
-            <span class="pull-left"
-              ><a href="#"
-                ><span class="date"><span>22</span> <small>Mar</small></span></a
-              ></span
-            >
-            <div class="media-body">
-              <h4 class="media-heading pt-1">
-                <a href="#">WebCorpCo Named To Inc. 5000</a>
-              </h4>
-              <p>
-                Inc. magazine today ranked WebCorpCo as the 1,870th fastest
-                growing company on the 34th annual Inc. 5000.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- News 2 -->
+      <div class="card_part card_part-one">
         <div class="blogPost--small col-12">
           <div class="media">
             <span class="pull-left"
@@ -45,8 +24,7 @@
       </div>
 
       <!-- Slide 2 -->
-      <div class="card_part card_part-two row">
-        <!-- News 1 -->
+      <div class="card_part card_part-two">
         <div class="blogPost--small col-12">
           <div class="media">
             <span class="pull-left"
@@ -65,31 +43,10 @@
             </div>
           </div>
         </div>
-
-        <!-- News 2 -->
-        <div class="blogPost--small col-12">
-          <div class="media">
-            <span class="pull-left"
-              ><a href="#"
-                ><span class="date"><span>24</span> <small>Mar</small></span></a
-              ></span
-            >
-            <div class="media-body">
-              <h4 class="media-heading pt-1">
-                <a href="#">WebCorpCo Named To Inc. 5000</a>
-              </h4>
-              <p>
-                Inc. magazine today ranked WebCorpCo as the 1,870th fastest
-                growing company on the 34th annual Inc. 5000.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- Slide 3 -->
-      <div class="card_part card_part-three row">
-        <!-- News 1 -->
+      <div class="card_part card_part-three">
         <div class="blogPost--small col-12">
           <div class="media">
             <span class="pull-left"
@@ -108,56 +65,15 @@
             </div>
           </div>
         </div>
-
-        <!-- News 2 -->
-        <div class="blogPost--small col-12">
-          <div class="media">
-            <span class="pull-left"
-              ><a href="#"
-                ><span class="date"><span>13</span> <small>Mar</small></span></a
-              ></span
-            >
-            <div class="media-body">
-              <h4 class="media-heading pt-1">
-                <a href="#">WebCorpCo Named To Inc. 5000</a>
-              </h4>
-              <p>
-                Inc. magazine today ranked WebCorpCo as the 1,870th fastest
-                growing company on the 34th annual Inc. 5000.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- Slide 4 -->
-      <div class="card_part card_part-four row">
-        <!-- News 1 -->
+      <div class="card_part card_part-four">
         <div class="blogPost--small col-12">
           <div class="media">
             <span class="pull-left"
               ><a href="#"
                 ><span class="date"><span>29</span> <small>Mar</small></span></a
-              ></span
-            >
-            <div class="media-body">
-              <h4 class="media-heading pt-1">
-                <a href="#">WebCorpCo Named To Inc. 5000</a>
-              </h4>
-              <p>
-                Inc. magazine today ranked WebCorpCo as the 1,870th fastest
-                growing company on the 34th annual Inc. 5000.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- News 2 -->
-        <div class="blogPost--small col-12">
-          <div class="media">
-            <span class="pull-left"
-              ><a href="#"
-                ><span class="date"><span>09</span> <small>Mar</small></span></a
               ></span
             >
             <div class="media-body">
@@ -183,7 +99,7 @@ export default {};
 <style scoped lang="scss">
 .blogPost--small {
   color: #7c7b7b;
-  margin: 20px 30px 40px 0;
+  // margin: 20px 30px 40px 0;
 }
 
 .blogPost--small .media > .pull-left {
@@ -227,34 +143,14 @@ export default {};
   text-transform: uppercase;
 }
 
-// *,
-// *::before,
-// *::after {
-//   box-sizing: border-box;
-// }
-
-// html,
-// body {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   align-items: center;
-//   width: 100%;
-//   height: 100%;
-//   margin: 0;
-//   padding: 0;
-//   background-color: #3c3c3c;
-// }
-
 .card {
   position: relative;
   width: 700px;
-  // height: 125px;
-  height: 400px;
+  height: 125px;
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  background-color: rgba(107, 97, 97, 0.774);
+  background-color: rgb(233, 233, 233) !important;
 }
 
 /*Light blue cover above the slide show*/
@@ -283,8 +179,7 @@ export default {};
   align-items: center;
   width: 100%;
   height: 100%;
-  margin-top: 0.7em;
-
+  // margin-top: 0.7em;
   transform: translateX(700px);
   // background-image: url(https://github.com/Flat-Pixels/assets_hosting/blob/master/picture_slides/1.jpg?raw=true);
 

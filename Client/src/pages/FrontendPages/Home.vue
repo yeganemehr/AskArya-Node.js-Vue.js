@@ -51,9 +51,9 @@
     </div>
 
     <!-- News Section-->
-    <div class="container py-5">
+    <!-- <div class="container py-5">
       <news-component></news-component>
-    </div>
+    </div> -->
 
     <!--Founder Section-->
     <div class="founder-section-homepage py-5">
