@@ -30,33 +30,33 @@ export default {
   props: {
     title: {
       type: String,
-      description: 'Card title'
+      description: 'Card title',
     },
     subTitle: {
       type: String,
-      description: 'Card subtitle'
+      description: 'Card subtitle',
     },
     type: {
       type: String,
-      description: 'Card type (e.g primary/danger etc)'
+      description: 'Card type (e.g primary/danger etc)',
     },
     showFooterLine: {
       type: Boolean,
-      default: false
+      default: false,
     },
     headerClasses: {
       type: [String, Object, Array],
-      description: 'Card header css classes'
+      description: 'Card header css classes',
     },
     bodyClasses: {
       type: [String, Object, Array],
-      description: 'Card body css classes'
+      description: 'Card body css classes',
     },
     footerClasses: {
       type: [String, Object, Array],
-      description: 'Card footer css classes'
-    }
-  }
+      description: 'Card footer css classes',
+    },
+  },
 };
 </script>
 <style></style>

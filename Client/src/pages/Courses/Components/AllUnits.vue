@@ -201,7 +201,7 @@ h4 {
   }
   .UnitName {
     cursor: pointer;
-    font-family: IranSansBold;
+    // font-family: IranSansBold;
     text-decoration: underline;
     color: #339afb;
   }
@@ -227,6 +227,7 @@ h4 {
   color: rgb(158, 158, 158);
   margin-top: auto;
 }
+
 .detail-time {
   color: rgb(255, 255, 255) !important;
   font-size: 0.9em;

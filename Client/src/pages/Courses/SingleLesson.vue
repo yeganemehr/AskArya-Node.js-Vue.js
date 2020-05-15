@@ -6,14 +6,16 @@
           <!-- Course Title & Description -->
           <div class="text-center px-3 py-5">
             <h1 class="course-title">{{ title }}</h1>
+
             <!-- Course Image -->
             <img
-              class="course-image rounded-circle img-fluid py-4"
+              class="course-image rounded-circle img-fluid my-4"
               :src="course.image"
             />
             <p class="episode-title" v-if="episode.id">{{ course.title }}</p>
             <div class="body pt-3" v-html="body"></div>
           </div>
+
           <div class="py-3 row">
             <!-- COURSE CREATED AT -->
             <div class="col d-none d-md-block text-center">
@@ -119,6 +121,7 @@
           </video>
         </vue-plyr>
       </div>
+
       <!-- VIDEO BUTTONS -->
       <div class="video-buttons">
         <video-buttons
@@ -134,9 +137,10 @@
           v-on:markAsDone="markAsDone"
         />
       </div>
+
+      <!-- Timeline Unit Section -->
       <div class="all-units py-5">
         <h4 class="text-right pr-3 py-4">سرفصل دوره</h4>
-        <!-- Timeline Unit Section -->
         <AllUnits
           :course="course"
           :episodes="course.episodes"
@@ -153,6 +157,7 @@
         </p>
       </div>
     </div>
+
     <modal
       ref="buymodal"
       v-bind:centered="true"
@@ -550,7 +555,7 @@ export default {
 }
 
 .course-image {
-  width: 150px;
+  width: 150px !important;
 }
 
 .modal-title {

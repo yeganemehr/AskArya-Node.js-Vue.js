@@ -69,7 +69,7 @@ import Course from './Components/CourseCard/Course.vue';
 import BlogSection from './Components/Blog/BlogSection.vue';
 import ImprovementBanner1 from './Components/ImprovementBanners/ImprovementBanner1.vue';
 import ImprovementBanner2 from './Components/ImprovementBanners/ImprovementBanner2.vue';
-import NewsComponent from './Components/NewsComponent/NewsComponent.vue';
+// import NewsComponent from './Components/NewsComponent/NewsComponent.vue';
 
 export default {
   data: function () {
@@ -95,7 +95,7 @@ export default {
     BlogSection,
     ImprovementBanner1,
     ImprovementBanner2,
-    NewsComponent,
+    // NewsComponent,
   },
 
   metaInfo: {
