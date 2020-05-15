@@ -543,12 +543,12 @@ export default {
 .course-explanation {
   font-size: 1.2rem;
   font-family: IranSans;
-  color: rgb(255, 255, 255) !important;
+  color: white !important;
 }
 
 .body {
   /deep/ p {
-    color: rgb(255, 255, 255) !important;
+    color: white !important;
     font-size: 1.2em !important;
     line-height: inherit !important;
   }
@@ -564,22 +564,23 @@ export default {
 
 .icon {
   font-size: 1.8em !important;
-  color: rgba(255, 255, 255, 1) !important;
+  color: white !important;
   padding-bottom: 10px;
 }
 
 .icon-data {
   font-size: 1.2em;
   font-family: IranSansBold;
-  color: rgba(255, 255, 255, 1) !important;
+  color: white !important;
 }
 
 .icon-text {
   font-size: 0.75em;
-  color: rgba(255, 255, 255, 0.568) !important;
+  color: white !important;
   font-family: IranSans !important;
   padding-left: 0;
   display: block;
+  padding-top: 3px;
 }
 
 .pay-text {

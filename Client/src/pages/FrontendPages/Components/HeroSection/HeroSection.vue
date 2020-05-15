@@ -60,7 +60,8 @@ export default {};
 
 .hero-content-homepage {
   background-color: #6e72fc;
-  background: linear-gradient(270deg, #da52fc, #6e70fc);
+  // background: linear-gradient(270deg, #da52fc, #6e70fc);
+  background: linear-gradient(50deg, #6e00ff 0, #bb00ff 100%) !important;
   background-size: cover;
   background-position: bottom;
   min-height: 44vh !important;
@@ -113,13 +114,14 @@ export default {};
       font-size: 3.85em !important;
       color: #fff !important;
       text-align: center !important;
-      padding-top: 0.5em;
-      margin: 0 0 15px 0;
+      // padding-top: 0.5em;
+      margin: 0 0 10px 0;
     }
 
     .hero-subtitle {
       font-size: 1.1em;
       text-align: center !important;
+      margin-bottom: 0 !important;
     }
 
     .btn {
