@@ -59,9 +59,9 @@ export default {};
 }
 
 .hero-content-homepage {
-  background-color: #6e72fc;
+  background-color: #6e00ff;
   // background: linear-gradient(270deg, #da52fc, #6e70fc);
-  background: linear-gradient(50deg, #6e00ff 0, #bb00ff 100%) !important;
+  background: linear-gradient(50deg, #6e00ff 0, #bb00ff 100%);
   background-size: cover;
   background-position: bottom;
   min-height: 44vh !important;
@@ -103,10 +103,8 @@ export default {};
 
 @media screen and (max-width: 768px) {
   .hero-content-homepage {
-    background: linear-gradient(#da52fcfa, #6e70fcf1),
-      url(/img/frontend/confused-banner.svg) no-repeat;
-    background-position: bottom left;
-    background-size: cover;
+    // background: linear-gradient(#bb00fff8, #6f00ffc7) !important,
+    //   url(/img/frontend/confused-banner.svg) no-repeat;
     text-align: center;
     min-height: 42vh !important;
 
@@ -114,7 +112,7 @@ export default {};
       font-size: 3.85em !important;
       color: #fff !important;
       text-align: center !important;
-      // padding-top: 0.5em;
+      padding-top: 0.3em;
       margin: 0 0 10px 0;
     }
 
