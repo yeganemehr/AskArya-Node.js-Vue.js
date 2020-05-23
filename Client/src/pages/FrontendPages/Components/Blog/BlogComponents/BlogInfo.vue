@@ -46,7 +46,7 @@ export default {
 }
 
 .info-items {
-  font-size: 1.3em !important;
+  font-size: 1.15em !important;
   font-family: IranSans;
   padding-top: 3px;
 
@@ -57,7 +57,7 @@ export default {
 }
 
 span {
-  font-size: 1.1em !important;
+  font-size: 1.15em !important;
   color: rgba(255, 255, 255, 0.9) !important;
   font-family: IranSans;
   padding-right: 6px;

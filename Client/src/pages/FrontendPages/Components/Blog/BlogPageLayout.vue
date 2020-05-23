@@ -4,7 +4,7 @@
       <div class="container text-center">
         <h1 class="post-title-top text-center">{{ post.name }}</h1>
         <img class="blog-img" :src="post.image" :alt="post.name" />
-        <div class="pt-5">
+        <div class="pt-5 pb-2">
           <BlogInfo
             :name="post.author.name"
             :createdAt="post.createdAt"
@@ -127,9 +127,9 @@ export default {
 
 .main-blog-text {
   padding: 4%;
-  margin: 0 6% 0 22%;
-  font-size: 1.5em !important;
-  line-height: 2.2em !important;
+  margin: 0 6% 0 14%;
+  font-size: 1.34em !important;
+  line-height: 2.3em !important;
   direction: ltr !important;
   font-family: IranSansBlog !important;
   color: black !important;
@@ -145,6 +145,12 @@ export default {
 
 .small-devices {
   display: none;
+}
+
+@media only screen and (min-width: 1500px) {
+  .main-blog-text {
+    margin: 0 6% 0 8%;
+  }
 }
 
 @media only screen and (max-width: 678px) {
