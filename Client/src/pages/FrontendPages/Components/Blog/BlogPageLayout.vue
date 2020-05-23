@@ -1,10 +1,10 @@
 <template>
-  <div v-if="post.id">
+  <div class="bg" v-if="post.id">
     <div class="heading-section">
       <div class="container text-center">
         <h1 class="post-title-top text-center">{{ post.name }}</h1>
         <img class="blog-img" :src="post.image" :alt="post.name" />
-        <div class="mt-4">
+        <div class="pt-5">
           <BlogInfo
             :name="post.author.name"
             :createdAt="post.createdAt"
@@ -14,18 +14,8 @@
       </div>
     </div>
     <div class="container">
-      <div class="d-flex justify-content-center">
-        <div class="main-blog-section">
-          <!-- <h3 class="post-title">{{ post.name }}</h3> -->
-          <div class="row">
-            <!-- <div class="sticky col-lg-3 col-md-12">
-            <custom-card :class="sticky" />
-          </div> -->
-            <div class="main-blog-text">
-              <div v-html="post.content"></div>
-            </div>
-          </div>
-        </div>
+      <div class="main-blog-text">
+        <div v-html="post.content"></div>
       </div>
       <!-- <div>
       <custom-card :class="SmallDevices" />
@@ -102,24 +92,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.bg {
+  background-color: #fafafa;
+}
+
 .heading-section {
   padding: 2em 0;
   margin-bottom: 1.7em;
-  background-color: #7f53ac;
-  background-image: linear-gradient(to left, #a73ffc 0%, #64a4ee 74%);
-  border-bottom-left-radius: 15%;
-  border-bottom-right-radius: 15%;
+  background-color: #64a4ee;
+  // background-color: #7f53ac;
+  // background-image: linear-gradient(to left, #a73ffc 0%, #64a4ee 74%);
+  // border-bottom-left-radius: 15%;
+  // border-bottom-right-radius: 15%;
 }
 
 .blog-img {
-  width: 250px;
-  height: 250px;
-  border-radius: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
 }
 
 .post-title-top {
   font-size: 2.2em;
-  font-family: IranSansBlog;
+  font-family: IranSansBold;
   line-height: inherit !important;
   color: rgb(255, 255, 255) !important;
 }
@@ -130,15 +125,11 @@ export default {
   padding-bottom: 1em;
 }
 
-.main-blog-section {
-  padding: 2em 0 5em 0;
-}
-
 .main-blog-text {
   padding: 4%;
-  margin: 0 6%;
-  font-size: 1.3em !important;
-  line-height: 2.1em !important;
+  margin: 0 6% 0 22%;
+  font-size: 1.5em !important;
+  line-height: 2.2em !important;
   direction: ltr !important;
   font-family: IranSansBlog !important;
   color: black !important;

@@ -46,21 +46,21 @@ export default {
 }
 
 .info-items {
-  font-size: 1.2em !important;
-  font-family: IranSansBold;
+  font-size: 1.3em !important;
+  font-family: IranSans;
   padding-top: 3px;
 
-  color: rgba(255, 255, 255, 0.925) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
   .icon {
     font-size: 1.1rem;
   }
 }
 
 span {
-  font-size: 1em !important;
-  color: rgb(255, 255, 255) !important;
+  font-size: 1.1em !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   font-family: IranSans;
-  padding-right: 5px;
+  padding-right: 6px;
 }
 
 .item-date {
