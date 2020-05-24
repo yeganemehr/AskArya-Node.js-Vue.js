@@ -12,7 +12,7 @@
         v-for="course in courses"
         :key="course.id"
       >
-        <Course v-bind="course" :purchased="true"></Course>
+        <CourseCard v-bind="course" :purchased="true"></CourseCard>
       </div>
     </div>
 
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import Course from '../../FrontendPages/Components/CourseCard/Course.vue';
+import CourseCard from '../../Courses/CourseCard';
 import backend from '../../../backend';
 
 export default {
@@ -47,7 +47,7 @@ export default {
     this.dataLoad(1);
   },
   components: {
-    Course,
+    CourseCard,
   },
 };
 </script>

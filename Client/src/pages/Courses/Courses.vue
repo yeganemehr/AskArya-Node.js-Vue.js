@@ -18,7 +18,7 @@
         v-for="course in courses"
         v-bind:key="course.id"
       >
-        <Course v-bind="course"></Course>
+        <CourseCard v-bind="course"></CourseCard>
       </div>
 
       <!-- VIP Section -->
@@ -30,7 +30,8 @@
 </template>
 
 <script>
-import Course from '../FrontendPages/Components/CourseCard/Course.vue';
+import CourseCard from './CourseCard';
+// import Course from '../FrontendPages/Components/CourseCard/Course.vue';
 import Vip from './Vip.vue';
 
 import backend from '../../backend';
@@ -104,7 +105,7 @@ export default {
 
   components: {
     Vip,
-    Course,
+    CourseCard,
   },
 };
 </script>

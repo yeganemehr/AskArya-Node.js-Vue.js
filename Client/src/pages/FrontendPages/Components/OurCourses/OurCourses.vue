@@ -15,7 +15,7 @@
           v-for="course in courses"
           v-bind:key="course.id"
         >
-          <Course v-bind="course"></Course>
+          <CourseCard v-bind="course"></CourseCard>
         </div>
       </div>
       <div
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import Course from '../CourseCard/Course.vue';
+import CourseCard from '../CourseCard/Course.vue';
 import { BasePagination } from 'src/components';
 import backend from '../../../../backend';
 
@@ -72,7 +72,7 @@ export default {
   },
   watch() {},
   components: {
-    Course,
+    CourseCard,
     BasePagination
   },
   computed: {

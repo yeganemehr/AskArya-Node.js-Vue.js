@@ -17,7 +17,7 @@
             v-for="course in topCourses"
             v-bind:key="course.id"
           >
-            <Course v-bind="course"></Course>
+            <CourseCard v-bind="course"></CourseCard>
           </div>
         </div>
         <div class="text-center">
@@ -65,7 +65,7 @@
 <script>
 import HeroSection from './Components/HeroSection/HeroSection.vue';
 import FounderSection from './Components/FounderSection/FounderSection.vue';
-import Course from './Components/CourseCard/Course.vue';
+import CourseCard from '../Courses/CourseCard'
 import BlogSection from './Components/Blog/BlogSection.vue';
 import ImprovementBanner1 from './Components/ImprovementBanners/ImprovementBanner1.vue';
 import ImprovementBanner2 from './Components/ImprovementBanners/ImprovementBanner2.vue';
@@ -91,7 +91,7 @@ export default {
   components: {
     HeroSection,
     FounderSection,
-    Course,
+    CourseCard,
     BlogSection,
     ImprovementBanner1,
     ImprovementBanner2,

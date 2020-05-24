@@ -1,7 +1,7 @@
 /* eslint-disable */
-import AuthLayout from 'src/pages/Layouts/Auth/AuthLayout.vue';
-import FrontendLayout from 'src/pages/Layouts/Frontend/FrontendLayout.vue';
-import NotFound from 'src/pages/Layouts/NotFound/NotFoundPage.vue';
+import AuthLayout from 'src/Layouts/AuthLayout.vue';
+import FrontendLayout from 'src/Layouts/FrontendLayout.vue';
+import NotFound from 'src/Layouts/NotFoundPage.vue';
 
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////// FRONTEND PAGES IMPORT ////////////////////////////////////////
@@ -15,7 +15,7 @@ const Home = () =>
 const NotFoundPage = () =>
   import(
     /* webpackChunkName: "notfound" */
-    'src/pages/Layouts/NotFound/NotFoundPage.vue'
+    'src/Layouts/NotFoundPage.vue'
   );
 
 let frontendpages = {
@@ -71,10 +71,10 @@ let frontendpages = {
     },
     {
       path: '/blog/:slug',
-      name: 'BlogPageLayout',
+      name: 'SingleBlogPage',
       component: () =>
         import(
-          /* webpackChunkName: "blogpagelayout" */ 'src/pages/FrontendPages/Components/Blog/BlogPageLayout.vue'
+          /* webpackChunkName: "singleblogpage" */ 'src/pages/FrontendPages/SingleBlogPage.vue'
         ),
     },
     {
