@@ -73,7 +73,7 @@ export default {
   background: url(/img/frontend/SVG-Background-4.svg) no-repeat;
   background-size: cover;
   background-position: center;
-  height: 90vh;
+  height: 100vh;
   position: inherit;
 }
 

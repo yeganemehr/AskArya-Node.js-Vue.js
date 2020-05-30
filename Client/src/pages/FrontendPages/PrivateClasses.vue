@@ -10,15 +10,17 @@
                 <h3 class="text-white titleSize py-3">برنز</h3>
               </div>
               <div class="pricing-field">
-                <span class="price">۱۲۵,۰۰۰ تومان</span>
-                <p class="py-0 my-0 smalltext">هر جلسه</p>
+                <span class="price">70,۰۰۰ تومان</span>
+                <p class="py-0 my-0 smalltext">هر جلسه 
+                  (گروهی)
+                </p>
               </div>
               <div class="pricing-features pt-3">
                 <ul>
                   <li>تمرین مکالمه</li>
                   <li>تمرین لیسنینگ</li>
                   <li>تمرین لغات و تلفظ</li>
-                  <li>برگزاری آزمون تعیین سطح</li>
+                  <li>آمادگی آزمون های هوانوردی و ايلتس</li>
                   <li>گواهی پایان دوره</li>
                 </ul>
               </div>

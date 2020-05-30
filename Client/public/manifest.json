@@ -3,7 +3,7 @@
   "short_name": "Ask Arya",
   "start_url": "./",
   "display": "standalone",
-  "theme_color": "#27408b",
+  "theme_color": "#9500FF",
   "background_color": "#ffffff",
   "icons": [
     {

@@ -185,7 +185,7 @@ export default {
 }
 
 .title {
-  font-size: 2em;
+  font-size: 2.5em;
   font-family: IranSansBold;
   margin-bottom: 1.2em;
   text-align: center;
@@ -222,9 +222,9 @@ export default {
   padding-bottom: 5.6em !important;
 }
 
-// @media (max-width: 680px) {
-//   .custom-margin {
-//     margin-bottom: 0.9em !important;
-//   }
-// }
+@media (max-width: 680px) {
+.title {
+  font-size: 2em;
+}
+}
 </style>

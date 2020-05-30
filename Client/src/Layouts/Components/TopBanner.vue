@@ -4,11 +4,11 @@
       <div class="banner-card">
         <router-link class="d-none d-md-block" to="/courses">
           <i class="fas bell fa-bell"></i>آیندت رو بساز! تخفیف 20٪ ویژه شروع
-          بهار.
+          تابستان.
         </router-link>
         <a class="d-md-none" href="/courses">
           <i class="fas bell fa-bell"></i>آیندت رو بساز! تخفیف 20٪ ویژه شروع
-          بهار.
+          تابستان.
         </a>
       </div>
     </div>

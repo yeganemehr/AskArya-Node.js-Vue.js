@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container pb-5">
     <div class="text-right pb-5">
       <h1 class="title text-danger my-0 pb-3">دوره های در حال یادگیری</h1>
       <span>

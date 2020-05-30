@@ -181,7 +181,7 @@ export default {
 .card-title {
   font-size: 1.1rem;
   font-family: IranSansBold;
-  color: #585858 !important;
+  color: black !important;
   text-align: right;
 }
 span {
