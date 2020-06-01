@@ -83,7 +83,7 @@ export default {};
   }
 
   .btn {
-    border-radius: 14px !important;
+    border-radius: 10px !important;
     font-size: 1.1em;
     padding-left: 15px;
     padding-right: 15px;
@@ -91,7 +91,7 @@ export default {};
 
   .btn.btn-simple {
     color: #ffffff;
-    border-color: #ffffff79;
+    border-color: #ffffff9a;
   }
 }
 

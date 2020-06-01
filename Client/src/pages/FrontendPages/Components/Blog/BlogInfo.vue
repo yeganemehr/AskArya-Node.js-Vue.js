@@ -106,4 +106,13 @@ span {
     padding-right: 2em !important;
   }
 }
+
+@media (min-width: 1300px) {
+  .info-items {
+    font-size: 1.1em !important;
+  }
+  span {
+    font-size: 1em !important;
+  }
+}
 </style>
