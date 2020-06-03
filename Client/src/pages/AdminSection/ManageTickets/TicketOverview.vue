@@ -549,14 +549,7 @@ export default {
   .ticket-card {
     padding: 2em 2.5em;
     margin-bottom: 20px;
-    // background-color: #7f5a83;
-    // background-image: linear-gradient(270deg, #0d324d 0%, #553258 74%);
-    background-color: #6e6e6e;
-    background-image: linear-gradient(
-      270deg,
-      rgb(238, 238, 238) 0%,
-      rgb(231, 231, 231) 70%
-    );
+    background-color: #f7f7f7 !important;
     border-radius: 15px;
     border: 1px solid rgb(216, 216, 216);
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.19),
@@ -572,7 +565,7 @@ export default {
     }
 
     p {
-      font-size: 1em;
+      font-size: 1.1em;
       color: rgba(39, 39, 39, 0.89) !important;
       text-align: right;
       font-family: IranSans;

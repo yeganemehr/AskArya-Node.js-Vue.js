@@ -61,7 +61,7 @@ export default {};
 .hero-content-homepage {
   background-color: #6e00ff;
   // background: linear-gradient(270deg, #da52fc, #6e70fc);
-  background: linear-gradient(50deg, #6e00ff 0, #bb00ff 100%);
+  background: linear-gradient(30deg, #6e00ff 0, #bb00ff 100%);
   background-size: cover;
   background-position: bottom;
   min-height: 44vh !important;
