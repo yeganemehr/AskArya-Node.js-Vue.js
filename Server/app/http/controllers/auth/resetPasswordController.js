@@ -7,7 +7,7 @@ const uniqueString = require('unique-string');
 class resetPasswordController extends controller {
   showResetPassword(req, res) {
     const title = 'بازیابی رمز عبور';
-    res.render('home/auth/passwords/reset', {
+    res.render('home/auth/password/reset', {
       recaptcha: this.recaptcha.render(),
       title,
       token: req.params.token,
@@ -15,16 +15,16 @@ class resetPasswordController extends controller {
   }
 
   async resetPasswordProccess(req, res, next) {
-    await this.recaptchaValidation(req, res);
+    // await this.recaptchaValidation(req, res);
     let result = await this.validationData(req);
     if (result) {
-      return this.resetPassword(req, res);
+      return this.resetPassword(req, res, next);
     }
 
     this.back(req, res);
   }
 
-  async resetPassword(req, res) {
+  async resetPassword(req, res, next) {
     let field = await PasswordReset.findOne({
       $and: [{ email: req.body.email }, { token: req.body.token }],
     });

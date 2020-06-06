@@ -61,6 +61,10 @@ input {
   font-family: IranSansBlog !important;
 }
 
+.white-content .form-control {
+  font-size: 1em !important;
+}
+
 .white-content .el-table table > thead > tr > th {
   font-family: IranSans !important;
   font-weight: normal !important;
