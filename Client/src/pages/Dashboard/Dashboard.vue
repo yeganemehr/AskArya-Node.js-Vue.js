@@ -223,8 +223,8 @@ export default {
 }
 
 @media (max-width: 680px) {
-.title {
-  font-size: 2em;
-}
+  .title {
+    font-size: 2em;
+  }
 }
 </style>

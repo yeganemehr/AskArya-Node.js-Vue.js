@@ -39,4 +39,9 @@ export default {
   },
 };
 </script>
-<style></style>
+
+<style lang="scss" scoped>
+.card-stats {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.07), 0 10px 10px rgba(0, 0, 0, 0.07) !important;
+}
+</style>

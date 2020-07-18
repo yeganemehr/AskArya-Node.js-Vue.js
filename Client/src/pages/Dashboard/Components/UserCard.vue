@@ -216,6 +216,10 @@ export default {
   height: 94% !important;
 }
 
+.card {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.07), 0 10px 10px rgba(0, 0, 0, 0.07) !important;
+}
+
 .card-user .avatar {
   width: 7em !important;
   height: 7em !important;
