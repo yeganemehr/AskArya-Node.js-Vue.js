@@ -35,7 +35,7 @@
         </div>
 
         <!-- My Courses Section -->
-        <div class="col-md-12 my-4 text-center">
+        <div class="col-md-12 mb-5 text-center">
           <MyCourses></MyCourses>
           <hr class="hr d-md-none" />
         </div>
@@ -181,7 +181,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .bg {
-  background-color: #fafbfe;
+  background-color: #f9f9f9 !important;
+  // background-color: #fafbfe;
 }
 
 .title {

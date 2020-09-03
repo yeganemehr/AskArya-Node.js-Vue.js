@@ -4,6 +4,20 @@
       <card class="shadow">
         <form @submit="checkForm" id="register-form">
           <h1 class="auth-title text-primary">ثبت نام</h1>
+
+          <a :href="googleAuthUrl">
+            <base-button
+              block
+              type="primary"
+              class="btn-simple animation-on-hover mt-2"
+            >
+              <i class="fab fa-google icon pl-4"></i>
+              عضویت سریع با حساب گوگل
+            </base-button>
+          </a>
+
+          <hr />
+
           <div class="row">
             <div class="col-12">
               <base-input
@@ -83,16 +97,6 @@
             class="mt-4 animation-on-hover"
             >ثبت نام</base-button
           >
-          <a :href="googleAuthUrl">
-            <base-button
-              block
-              type="primary"
-              class="btn-simple animation-on-hover mb-2"
-            >
-              <i class="fab fa-google icon pl-4"></i>
-              عضویت سریع با حساب گوگل
-            </base-button>
-          </a>
         </form>
       </card>
     </div>

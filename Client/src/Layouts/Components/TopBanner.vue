@@ -3,12 +3,12 @@
     <div class="banner-box d-block text-center">
       <div class="banner-card">
         <router-link class="d-none d-md-block" to="/courses">
-          <i class="fas bell fa-bell"></i>آیندت رو بساز! تخفیف 20٪ ویژه شروع
-          تابستان.
+          <i class="fas bell fa-bell"></i>آیندت رو بساز! تخفیف 10٪ ویژه شروع
+          پاييز.
         </router-link>
         <a class="d-md-none" href="/courses">
-          <i class="fas bell fa-bell"></i>آیندت رو بساز! تخفیف 20٪ ویژه شروع
-          تابستان.
+          <i class="fas bell fa-bell"></i>آیندت رو بساز! تخفیف 10٪ ویژه شروع
+          پاييز.
         </a>
       </div>
     </div>
@@ -40,7 +40,7 @@
 
   a {
     color: rgb(255, 255, 255) !important;
-    text-shadow: 1px 1px rgba(117, 165, 209, 0.2);
+    text-shadow: 1px 1px rgba(117, 165, 209, 0.1);
   }
 }
 

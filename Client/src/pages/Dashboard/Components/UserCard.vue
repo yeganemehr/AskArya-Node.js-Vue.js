@@ -217,7 +217,8 @@ export default {
 }
 
 .card {
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.07), 0 10px 10px rgba(0, 0, 0, 0.07) !important;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgb(240, 240, 240);
 }
 
 .card-user .avatar {

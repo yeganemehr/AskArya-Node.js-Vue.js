@@ -1,5 +1,7 @@
 <template>
-  <div class="container pb-5">
+  <div class="container">
+    <hr class="hr mb-5" />
+
     <div class="text-right pb-5">
       <h1 class="title text-danger my-0 pb-3">دوره های در حال یادگیری</h1>
       <span>
@@ -16,8 +18,9 @@
       </div>
     </div>
 
-    <p class="no-courses-message text-right pt-3 pb-5" v-else>
-      هیچ درسی تهیه نشده است
+    <p class="no-courses-message text-right pb-5" v-else>
+      <i class="fas fa-shopping-basket pl-2"></i>
+      هیچ دوره ی تهیه نشده است...
     </p>
   </div>
 </template>
@@ -61,14 +64,23 @@ export default {
 }
 
 .no-courses-message {
-  font-size: 1.1rem;
-  color: rgb(141, 141, 141);
+  font-size: 1.2rem;
+  color: rgb(102, 102, 102) !important;
+  font-family: IranSansBold;
 }
+
 p {
   font-size: 1.1rem;
   color: rgb(134, 134, 134);
 }
+
 .fadeline2 {
   display: none !important;
+}
+
+.hr {
+  border: 0;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 </style>

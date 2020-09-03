@@ -6,8 +6,10 @@
           <h1 class="auth-title text-primary">ورود</h1>
           <div class="container registration-title text-center">
             اگر در اسک آریا حساب ندارید، ثبت نام کنید:
+            <br />
             <router-link to="/register">
               <base-button size="sm" type="success" class="animation-on-hover">
+                <i class="fas fa-user-plus pl-3"></i>
                 ایجاد حساب کاربری
               </base-button>
             </router-link>
@@ -242,7 +244,8 @@ export default {
 }
 
 .card {
-  width: 470px !important;
+  width: 400px !important;
+  // width: 470px !important;
   margin-right: auto;
   margin-left: auto;
 }
