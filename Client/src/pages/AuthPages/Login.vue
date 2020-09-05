@@ -244,10 +244,11 @@ export default {
 }
 
 .card {
-  width: 400px !important;
+  width: 330px !important;
   // width: 470px !important;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 0;
 }
 
 .auth-title {

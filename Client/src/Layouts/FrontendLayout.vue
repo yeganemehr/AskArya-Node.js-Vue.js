@@ -54,8 +54,8 @@ export default {
 <style scoped lang="scss">
 .content-custom {
   min-height: 90vh !important;
-  // background-color: #f9f9f9;
-  background-color: #fafbfe;
+  background-color: #f9f9f9;
+  // background-color: #fafbfe;
 }
 
 .go-to-top {

@@ -32,7 +32,9 @@
             رایگان
           </div>
           <div class="col-6" v-if="!isVip && !isFree">
-            <p class="oldPrice" v-if="oldPrice > 0">{{ formatedOldPrice }}</p>
+            <p class="oldPrice strike" v-if="oldPrice > 0">
+              {{ formatedOldPrice }}
+            </p>
           </div>
           <div class="col-6 text-center" v-if="!isVip && !isFree">
             <p class="pricehighlight">{{ formatedPrice }}</p>
@@ -185,7 +187,7 @@ export default {
   }
 
   .pricehighlight {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #00b35f !important;
     font-family: IranSansBold !important;
     margin: 0;
@@ -195,8 +197,9 @@ export default {
   .oldPrice {
     font-size: 0.8rem;
     font-family: IranSansBold !important;
-    color: rgba(0, 0, 0, 0.295);
+    color: rgba(0, 0, 0, 0.3);
     text-decoration: line-through;
+    text-decoration-color: rgba(0, 0, 0, 0.4);
     margin: 0;
     padding: 0;
   }

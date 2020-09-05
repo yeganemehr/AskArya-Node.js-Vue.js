@@ -11,9 +11,7 @@
               </div>
               <div class="pricing-field">
                 <p class="price">۳۵۰,۰۰۰ <span class="toman">تومان</span></p>
-                <p class="py-0 my-0 smalltext">
-                  گروهی - ۵ جلسه
-                </p>
+                <p class="py-0 my-0 smalltext">گروهی - ۵ جلسه</p>
               </div>
               <div class="pricing-features pt-3">
                 <ul>
@@ -171,7 +169,7 @@ export default {
 }
 
 .custom-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #fff !important;
   font-family: IranSansBold;
 }

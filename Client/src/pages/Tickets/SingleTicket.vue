@@ -1,15 +1,15 @@
 <template>
-  <section class="container py-5 text-right">
-    <div class="ticket-number mb-2">
+  <section class="container pt-5 text-right">
+    <div class="ticket-number">
       <h1>#{{ ticket.ticket_id }} <span class="subtitle">مشاهده تیکت</span></h1>
     </div>
     <div class="my-5">
-      <h2 class="ticket-desc text-center py-3">{{ ticket.title }}</h2>
+      <h2 class="ticket-desc text-center pb-3">{{ ticket.title }}</h2>
       <div
         v-for="message of messages"
         :key="message.id"
         class="card-custom my-3"
-        :class="message.user.id == ticket.user.id ? 'ml-3' : 'mr-3'"
+        :class="message.user.id == ticket.user.id ? 'ml-4' : 'mr-4'"
       >
         <div class="ticket-meta d-flex justify-content-between row">
           <p class="ticket-user">
@@ -57,49 +57,51 @@
       </div>
 
       <!--------------------------- Ticket Reply --------------------------->
-      <form @submit.prevent="submitFormListener">
-        <h4 class="pt-5">
-          {{ editingMessage ? 'ویرایش پیام' : 'پاسخی ارسال کنید!' }}
-        </h4>
-        <base-input>
-          <ckeditor
-            v-if="isAdmin"
-            @ready="onEditorReady"
-            :editor="ckeditor.editor"
-            v-model="message"
-            :config="ckeditor.editorConfig"
-          ></ckeditor>
-          <textarea
-            v-else
-            class="form-control ticket-typing-box"
-            placeholder="متن تیکت"
-            rows="3"
-            v-model="message"
-          ></textarea>
-        </base-input>
-        <div class="pt-3">
-          <file-upload
-            v-if="isAdmin && !editingMessage"
-            @change="onFileSelect"
-            class="animation-on-hover"
-            :key="uploaderKey"
-          />
-          <image-upload
-            v-else-if="!editingMessage"
-            @change="onFileSelect"
-            select-text="پیوست فایل"
-            class="animation-on-hover mb-0"
-            :key="uploaderKey"
-          />
-          <base-button
-            class="animation-on-hover"
-            type="danger"
-            native-type="Submit"
-            :loading="loading"
-            >{{ editingMessage ? 'ویرایش' : 'ارسال' }}</base-button
-          >
-        </div>
-      </form>
+      <div class="card pb-3 px-3 mt-5">
+        <form @submit.prevent="submitFormListener">
+          <h4 class="pt-5">
+            {{ editingMessage ? 'ویرایش پیام' : 'پاسخی ارسال کنید!' }}
+          </h4>
+          <base-input>
+            <ckeditor
+              v-if="isAdmin"
+              @ready="onEditorReady"
+              :editor="ckeditor.editor"
+              v-model="message"
+              :config="ckeditor.editorConfig"
+            ></ckeditor>
+            <textarea
+              v-else
+              class="form-control ticket-typing-box"
+              placeholder="متن تیکت"
+              rows="3"
+              v-model="message"
+            ></textarea>
+          </base-input>
+          <div class="pt-3">
+            <file-upload
+              v-if="isAdmin && !editingMessage"
+              @change="onFileSelect"
+              class="animation-on-hover"
+              :key="uploaderKey"
+            />
+            <image-upload
+              v-else-if="!editingMessage"
+              @change="onFileSelect"
+              select-text="پیوست فایل"
+              class="animation-on-hover mb-0"
+              :key="uploaderKey"
+            />
+            <base-button
+              class="animation-on-hover mr-2"
+              type="danger"
+              native-type="Submit"
+              :loading="loading"
+              >{{ editingMessage ? 'ویرایش' : 'ارسال' }}</base-button
+            >
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 </template>
@@ -445,10 +447,10 @@ export default {
 }
 
 .card-custom {
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(254, 254, 254);
   border-radius: 25px;
   padding: 2em 3em;
-  border: 1px solid rgba(230, 230, 230, 0.7);
+  border: 1px solid rgba(230, 230, 230, 0.4);
   font-family: IranSansBlog !important;
 
   .ticket-date {
