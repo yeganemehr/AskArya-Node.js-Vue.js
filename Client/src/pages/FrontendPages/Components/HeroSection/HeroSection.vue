@@ -12,8 +12,22 @@
               شما در موثر ترین و کوتاه ترین زمان ممکن صورت گیرد.
             </p>
 
-            <div class="button-section pt-3 row">
-              <router-link to="dashboard">
+            <div class="button-section row">
+              <router-link
+                v-if="this.$root.$data.user !== undefined"
+                to="dashboard"
+              >
+                <base-button
+                  native-type="submit"
+                  type="success"
+                  class="btn-simple btn-success animation-on-hover"
+                >
+                  <i class="far fa-user ml-2"></i>
+                  پنل کاربری
+                </base-button>
+              </router-link>
+
+              <router-link v-else to="dashboard">
                 <base-button
                   native-type="submit"
                   type="warning"
@@ -48,7 +62,15 @@
 </template>
 
 <script>
-export default {};
+import backend from '../../../../backend';
+
+export default {
+  computed: {
+    isAdmin() {
+      return this.$root.$data.user && this.$root.$data.user.admin;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -93,11 +115,16 @@ export default {};
     color: #ffffff;
     border-color: #ffffff9a;
   }
+
+  .btn-success {
+    color: #fdffb6 !important;
+    border-color: #fdffb6 !important;
+  }
 }
 
 @media screen and (min-width: 769px) {
   .button-section {
-    padding-right: 1em !important;
+    padding: 1em !important;
   }
 }
 
@@ -109,10 +136,10 @@ export default {};
     min-height: 42vh !important;
 
     .hero-title {
-      font-size: 3.8em !important;
+      font-size: 3.65em !important;
       color: #fff !important;
       text-align: center !important;
-      padding-top: 0.15em;
+      padding: 0.5em 0;
       margin: 0 0 10px 0;
     }
 
@@ -120,6 +147,7 @@ export default {};
       font-size: 1.1em;
       text-align: center !important;
       margin-bottom: 0 !important;
+      padding: 0 1em;
     }
 
     .btn {
@@ -135,6 +163,7 @@ export default {};
   .button-section {
     -webkit-box-pack: center !important;
     justify-content: center !important;
+    padding-top: 1.2em;
   }
 
   .top-courses-section {

@@ -44,12 +44,12 @@
         </div>
 
         <!-- VIP Section -->
-        <div class="d-none d-md-block col-md-12 vip-section text-center">
+        <div class="d-none d-md-block col-md-12 mb-5 vip-section text-center">
           <VIP></VIP>
         </div>
 
         <!-- Notification Section -->
-        <div class="d-md-none col-lg-6 col-md-12">
+        <div class="d-md-none col-lg-6 col-md-12 mb-5">
           <NotificationCard></NotificationCard>
         </div>
       </div>
@@ -198,11 +198,11 @@ export default {
 }
 
 .title {
-  font-size: 2.5em;
+  font-size: 2.4em;
   font-family: IranSansBold;
   text-align: center;
   color: rgb(44, 44, 44) !important;
-  padding: 1.7rem 0 !important;
+  padding: 1.4rem 0 !important;
 }
 
 .hr {
