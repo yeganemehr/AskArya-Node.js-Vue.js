@@ -88,8 +88,11 @@ export default {
 <style lang="scss" scoped>
 .card {
   height: 94% !important;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.05) !important;
+  // box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.05) !important;
   border: 1px solid rgb(240, 240, 240);
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
+    0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
+    0 32px 16px rgba(0, 0, 0, 0.09);
 }
 
 // .card {

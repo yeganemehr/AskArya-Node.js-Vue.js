@@ -459,10 +459,10 @@ export default {
       this.formErrors = {};
       this.$emit('reset');
     },
-    onReady(editor) {
-      console.log('editor', editor);
-      console.log(editor.plugins);
-    },
+    // onReady(editor) {
+    //   console.log('editor', editor);
+    //   console.log(editor.plugins);
+    // },
   },
   watch: {
     id: function (value) {

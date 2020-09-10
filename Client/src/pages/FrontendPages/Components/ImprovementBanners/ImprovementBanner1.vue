@@ -34,8 +34,7 @@
               y: true,
             }"
             native-type="submit"
-            type="success"
-            class="btn btn-lg btn-round animation-on-hover"
+            class="btn btn-simple btn-round animation-on-hover"
           >
             <i class="fas fa-info-circle ml-2"></i>
             راه حل؟
@@ -60,8 +59,12 @@ export default {
 
 <style lang="scss" scoped>
 .bg {
-  background-color: #2876f9;
-  background: linear-gradient(270deg, #38048de7 50%, #1a54b9c7),
+  // background-color: #2876f9;
+  // background: linear-gradient(270deg, #38048de7 50%, #1a54b9c7),
+  //   url(/img/frontend/confused-banner.svg) no-repeat;
+
+  background-color: #f7b42c;
+  background: linear-gradient(315deg, #f7b32cf5 0%, #fc575fd8 74%),
     url(/img/frontend/confused-banner.svg) no-repeat;
   background-position: bottom left;
   background-size: cover;
@@ -97,10 +100,20 @@ p {
   }
 }
 
-.rtl .btn {
+.btn.btn-simple {
+  font-size: 1.2em;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.164);
   font-family: IranSansBold;
-  font-size: 1em !important;
-  padding: 0.9em 2em;
+  font-size: 1.1em !important;
+  padding: 0.8em 2em;
+}
+
+.btn.btn-simple:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.164);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 680px) {
