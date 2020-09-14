@@ -116,7 +116,7 @@ export default {
     // border-color: #ffffff9a;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.03), 0 1px 3px rgba(0, 0, 0, 0.03);
     color: #fff;
-    border-color: #ffffff5b;
+    border-color: #ffffffc0;
   }
 
   .btn-success {

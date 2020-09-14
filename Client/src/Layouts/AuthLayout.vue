@@ -1,6 +1,5 @@
 <template>
   <div>
-    <TopBanner></TopBanner>
     <base-nav
       v-model="showMenu"
       type="custom"
@@ -242,14 +241,12 @@
 import { BaseNav } from 'src/components';
 import { ZoomCenterTransition } from 'vue2-transitions';
 
-import TopBanner from './Components/TopBanner';
 import backend from '../backend';
 
 export default {
   components: {
     BaseNav,
     ZoomCenterTransition,
-    TopBanner,
   },
   props: {
     backgroundColor: {

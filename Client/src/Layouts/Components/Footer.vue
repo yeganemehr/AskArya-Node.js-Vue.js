@@ -119,7 +119,7 @@ a {
   }
 
   .copyright-text {
-    font-size: 0.8em !important;
+    font-size: 0.7em !important;
   }
 
   .footer-bottom {

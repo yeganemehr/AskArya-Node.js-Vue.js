@@ -37,13 +37,15 @@
         <div class="w-100 d-md-none"></div>
 
         <p
-          class="pt-4 text-break"
+          class="pt-4 text-section-main text-break"
           v-if="message.user.isAdmin"
           v-html="message.message"
         ></p>
-        <p class="pt-4 text-break" v-else>{{ message.message }}</p>
+        <p class="pt-4 text-section-main text-break" v-else>
+          {{ message.message }}
+        </p>
 
-        <div class="text-left pt-2" v-if="isAdmin">
+        <div class="text-left pl-2 pt-2" v-if="isAdmin">
           <i @click="handleEdit(message)" class="fas fa-pencil-alt pl-3"></i>
           <i @click="handleDelete(message)" class="far fa-trash-alt pr-1"></i>
         </div>
@@ -447,10 +449,10 @@ export default {
 }
 
 .card-custom {
-  background-color: rgb(254, 254, 254);
+  background-color: rgb(240, 240, 240);
   border-radius: 25px;
   padding: 2em 3em;
-  border: 1px solid rgba(230, 230, 230, 0.4);
+  border: 1px dotted rgba(230, 230, 230, 1);
   font-family: IranSansBlog !important;
 
   .ticket-date {
@@ -488,6 +490,19 @@ export default {
 .card-reply-left {
   margin-right: 1em;
   margin-left: -1em;
+}
+
+@media (min-width: 1000px) {
+  .ticket-date {
+    padding-left: 20px;
+  }
+  .ticket-user {
+    padding-right: 20px;
+  }
+
+  .text-section-main {
+    padding-right: 40px;
+  }
 }
 
 @media (max-width: 768px) {
