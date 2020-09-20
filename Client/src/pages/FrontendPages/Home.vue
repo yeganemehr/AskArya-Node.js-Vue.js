@@ -71,6 +71,9 @@ import ImprovementBanner1 from './Components/ImprovementBanners/ImprovementBanne
 import ImprovementBanner2 from './Components/ImprovementBanners/ImprovementBanner2.vue';
 // import NewsComponent from './Components/NewsComponent/NewsComponent.vue';
 
+  // layout: 'maintenance',
+
+
 export default {
   data: function () {
     return {
