@@ -65,14 +65,11 @@
 <script>
 import HeroSection from './Components/HeroSection/HeroSection.vue';
 import FounderSection from './Components/FounderSection/FounderSection.vue';
-import CourseCard from '../Courses/CourseCard'
+import CourseCard from '../Courses/CourseCard';
 import BlogSection from './Components/Blog/BlogSection.vue';
 import ImprovementBanner1 from './Components/ImprovementBanners/ImprovementBanner1.vue';
 import ImprovementBanner2 from './Components/ImprovementBanners/ImprovementBanner2.vue';
 // import NewsComponent from './Components/NewsComponent/NewsComponent.vue';
-
-  // layout: 'maintenance',
-
 
 export default {
   data: function () {
