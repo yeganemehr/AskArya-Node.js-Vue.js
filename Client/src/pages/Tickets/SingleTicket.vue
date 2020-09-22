@@ -1,109 +1,107 @@
 <template>
-  <section class="container pt-5 text-right">
-    <div class="ticket-number">
+  <section class="container text-right pb-5">
+    <div class="ticket-number pt-5">
       <h1>#{{ ticket.ticket_id }} <span class="subtitle">مشاهده تیکت</span></h1>
     </div>
-    <div class="my-5">
-      <h2 class="ticket-desc text-center pb-3">{{ ticket.title }}</h2>
-      <div
-        v-for="message of messages"
-        :key="message.id"
-        class="card-custom my-3"
-        :class="message.user.id == ticket.user.id ? 'ml-4' : 'mr-4'"
-      >
-        <div class="ticket-meta d-flex justify-content-between row">
-          <p class="ticket-user">
-            <img
-              :src="message.user.avatar"
-              class="user-avatar avatar"
-              v-if="message.user.avatar"
-            />
+    <h2 class="ticket-desc text-center pb-3">{{ ticket.title }}</h2>
+    <div
+      v-for="message of messages"
+      :key="message.id"
+      class="card-custom my-3"
+      :class="message.user.id == ticket.user.id ? 'ml-4' : 'mr-4'"
+    >
+      <div class="ticket-meta d-flex justify-content-between row">
+        <p class="ticket-user">
+          <img
+            :src="message.user.avatar"
+            class="user-avatar avatar"
+            v-if="message.user.avatar"
+          />
 
-            <!-- ORIGINAL CODE <img
+          <!-- ORIGINAL CODE <img
               :src="message.user.avatar"
               :alt="message.user.name"
               class="user-avatar avatar"
               v-if="message.user.avatar"
             />-->
-            <i class="pl-1 text-danger far fa-user" v-else></i>
-            {{ message.user.name }}
-          </p>
-
-          <p class="ticket-date">
-            <span class="pl-2">{{ getTime(message.createdAt) }}</span>
-            {{ getDate(message.createdAt) }}
-          </p>
-        </div>
-        <div class="w-100 d-md-none"></div>
-
-        <p
-          class="pt-4 text-section-main text-break"
-          v-if="message.user.isAdmin"
-          v-html="message.message"
-        ></p>
-        <p class="pt-4 text-section-main text-break" v-else>
-          {{ message.message }}
+          <i class="pl-1 text-danger far fa-user" v-else></i>
+          {{ message.user.name }}
         </p>
 
-        <div class="text-left pl-2 pt-2" v-if="isAdmin">
-          <i @click="handleEdit(message)" class="fas fa-pencil-alt pl-3"></i>
-          <i @click="handleDelete(message)" class="far fa-trash-alt pr-1"></i>
+        <p class="ticket-date">
+          <span class="pl-2">{{ getTime(message.createdAt) }}</span>
+          {{ getDate(message.createdAt) }}
+        </p>
+      </div>
+      <div class="w-100 d-md-none"></div>
+
+      <p
+        class="pt-4 text-section-main text-break"
+        v-if="message.user.isAdmin"
+        v-html="message.message"
+      ></p>
+      <p class="pt-4 text-section-main text-break" v-else>
+        {{ message.message }}
+      </p>
+
+      <div class="text-left pl-2 pt-2" v-if="isAdmin">
+        <i @click="handleEdit(message)" class="fas fa-pencil-alt pl-3"></i>
+        <i @click="handleDelete(message)" class="far fa-trash-alt pr-1"></i>
+      </div>
+
+      <hr v-if="message.files.length" />
+      <ul v-if="message.files.length">
+        <li v-for="file in message.files" :key="file.name">
+          <a :href="'/api/v1' + file.downloadUrl">{{ file.name }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <!--------------------------- Ticket Reply --------------------------->
+    <div class="card pb-4 px-4 my-5">
+      <form @submit.prevent="submitFormListener">
+        <h4 class="pt-5">
+          {{ editingMessage ? 'ویرایش پیام' : 'پاسخی ارسال کنید!' }}
+        </h4>
+        <base-input>
+          <ckeditor
+            v-if="isAdmin"
+            @ready="onEditorReady"
+            :editor="ckeditor.editor"
+            v-model="message"
+            :config="ckeditor.editorConfig"
+          ></ckeditor>
+          <textarea
+            v-else
+            class="form-control ticket-typing-box"
+            placeholder="متن تیکت"
+            rows="3"
+            v-model="message"
+          ></textarea>
+        </base-input>
+        <div class="pt-3">
+          <file-upload
+            v-if="isAdmin && !editingMessage"
+            @change="onFileSelect"
+            class="animation-on-hover"
+            :key="uploaderKey"
+          />
+          <image-upload
+            v-else-if="!editingMessage"
+            @change="onFileSelect"
+            select-text="پیوست فایل"
+            class="animation-on-hover mb-0"
+            :key="uploaderKey"
+          />
+          <base-button
+            class="animation-on-hover mr-2"
+            type="danger"
+            native-type="Submit"
+            :loading="loading"
+            >{{ editingMessage ? 'ویرایش' : 'ارسال' }}</base-button
+          >
         </div>
-
-        <hr v-if="message.files.length" />
-        <ul v-if="message.files.length">
-          <li v-for="file in message.files" :key="file.name">
-            <a :href="'/api/v1' + file.downloadUrl">{{ file.name }}</a>
-          </li>
-        </ul>
-      </div>
-
-      <!--------------------------- Ticket Reply --------------------------->
-      <div class="card pb-3 px-3 mt-5">
-        <form @submit.prevent="submitFormListener">
-          <h4 class="pt-5">
-            {{ editingMessage ? 'ویرایش پیام' : 'پاسخی ارسال کنید!' }}
-          </h4>
-          <base-input>
-            <ckeditor
-              v-if="isAdmin"
-              @ready="onEditorReady"
-              :editor="ckeditor.editor"
-              v-model="message"
-              :config="ckeditor.editorConfig"
-            ></ckeditor>
-            <textarea
-              v-else
-              class="form-control ticket-typing-box"
-              placeholder="متن تیکت"
-              rows="3"
-              v-model="message"
-            ></textarea>
-          </base-input>
-          <div class="pt-3">
-            <file-upload
-              v-if="isAdmin && !editingMessage"
-              @change="onFileSelect"
-              class="animation-on-hover"
-              :key="uploaderKey"
-            />
-            <image-upload
-              v-else-if="!editingMessage"
-              @change="onFileSelect"
-              select-text="پیوست فایل"
-              class="animation-on-hover mb-0"
-              :key="uploaderKey"
-            />
-            <base-button
-              class="animation-on-hover mr-2"
-              type="danger"
-              native-type="Submit"
-              :loading="loading"
-              >{{ editingMessage ? 'ویرایش' : 'ارسال' }}</base-button
-            >
-          </div>
-        </form>
-      </div>
+      </form>
     </div>
   </section>
 </template>
@@ -420,6 +418,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section {
+  min-height: 90vh !important;
+}
+
 .avatar {
   width: 2.5em;
   height: 2.5em;
@@ -449,10 +451,10 @@ export default {
 }
 
 .card-custom {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(255, 255, 255);
   border-radius: 25px;
   padding: 2em 3em;
-  border: 1px dotted rgba(230, 230, 230, 1);
+  border: 1px dashed rgb(231, 231, 231);
   font-family: IranSansBlog !important;
 
   .ticket-date {

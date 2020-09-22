@@ -1,6 +1,7 @@
 /* eslint-disable */
 import AuthLayout from 'src/Layouts/AuthLayout.vue';
 import FrontendLayout from 'src/Layouts/FrontendLayout.vue';
+// import FrontendLayoutNoAd from 'src/Layouts/FrontendLayoutNoAd.vue';
 import NotFound from 'src/Layouts/NotFoundPage.vue';
 
 //////////////////////////////////////////////////////////////////////////////////////////

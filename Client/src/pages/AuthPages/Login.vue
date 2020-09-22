@@ -239,13 +239,12 @@ export default {
 
 <style lang="scss" scoped>
 .auth-section {
-  height: 90vh;
+  min-height: 83vh;
   background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
 }
 
 .card {
   width: 330px !important;
-  // width: 470px !important;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 0;
@@ -290,15 +289,22 @@ export default {
   color: #cc51e1 !important;
 }
 
-@media (max-width: 680px) {
+@media only screen and (min-width: 1500px) {
   .auth-section {
-    height: 90vh !important;
-  }
-
-  .card {
-    width: auto !important;
+    min-height: 73vh;
   }
 }
+
+// @media (max-width: 680px) {
+//   .auth-section {
+//     min-height: 85vh;
+//   }
+
+//   .card {
+//     width: auto !important;
+//   }
+// }
+
 @media (max-width: 320px) {
   .auth-section {
     height: 100vh !important;

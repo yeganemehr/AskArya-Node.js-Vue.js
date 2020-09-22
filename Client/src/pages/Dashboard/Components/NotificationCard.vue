@@ -87,35 +87,13 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  height: 94% !important;
+  height: 100% !important;
   // box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.05) !important;
   border: 1px solid rgb(240, 240, 240);
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
     0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
     0 32px 16px rgba(0, 0, 0, 0.09);
 }
-
-// .card {
-//   display: inline-block;
-//   border: 2px solid #e6e6e6;
-//   border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-//   text-transform: uppercase;
-
-//   position: relative;
-
-//   &::before {
-//     content: '';
-//     border: 2px solid #e6e6e6;
-//     display: block;
-//     width: 100%;
-//     height: 100%;
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
-//     border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
-//   }
-// }
 
 .title {
   font-size: 1.1rem;

@@ -2,10 +2,7 @@
   <card>
     <div class="text-right pt-2 pr-2 pb-5">
       <h1 class="card-title my-0 pb-3">تاریخچه پرداخت ها</h1>
-      <span>
-        در این بخش گزارشات پرداختی های شما لیست میشود. در صورت مشاهده هر گونه
-        مشکل از طریق تلگرام با پشتیبانی تماس بگیرید.
-      </span>
+      <span> در این بخش گزارشات پرداختی های شما لیست میشود. </span>
     </div>
 
     <div class="container-fluid">
@@ -179,6 +176,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
+  height: 100% !important;
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
     0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
     0 32px 16px rgba(0, 0, 0, 0.09);

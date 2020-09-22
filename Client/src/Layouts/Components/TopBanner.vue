@@ -25,7 +25,7 @@
 .banner-card {
   justify-content: center;
   align-items: center;
-  padding: 9px 10px !important;
+  padding: 13px 10px !important;
   margin: 0 20% !important;
   position: relative;
   font-family: IranSansBold !important;

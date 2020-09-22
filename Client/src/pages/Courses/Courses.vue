@@ -22,7 +22,7 @@
       </div>
 
       <!-- VIP Section -->
-      <div class="col-lg-12 my-5">
+      <div class="col-lg-12 vip-section">
         <Vip></Vip>
       </div>
     </div>
@@ -129,6 +129,10 @@ export default {
   font-size: 1.13em !important;
   font-family: IranSansBold !important;
   color: rgb(17, 207, 144) !important;
+}
+
+.vip-section {
+  margin: 3em 0 6em 0;
 }
 
 @media only screen and (max-width: 768px) {

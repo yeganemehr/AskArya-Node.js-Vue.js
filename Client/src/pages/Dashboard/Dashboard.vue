@@ -7,33 +7,37 @@
 
       <div class="row">
         <!-- User Profile Section -->
-        <div class="custom-margin col-lg-7 col-md-12">
+        <div class="custom-margin col-lg-8 col-md-12">
           <user-card :user="$root.$data.user"></user-card>
         </div>
 
+        <!-- Stats Cards Section -->
+        <div class="col-lg-4 col-md-12">
+          <div class="row">
+            <div
+              class="col-lg-12 col-md-4 ml-auto mr-auto"
+              v-for="card in statsCards"
+              :key="card.title"
+            >
+              <stats-card
+                :title="card.title"
+                :sub-title="card.subTitle"
+                :type="card.type"
+                :icon="card.icon"
+              >
+                <div slot="footer" v-html="card.footer"></div>
+              </stats-card>
+            </div>
+          </div>
+        </div>
+
         <!-- Notification Section -->
-        <div class="d-none d-md-block col-lg-5 col-md-12">
+        <div class="col-lg-5 col-md-12 mb-3">
           <NotificationCard></NotificationCard>
         </div>
 
-        <!-- Stats Cards Section -->
-        <div
-          class="col-lg-4 col-md-4 ml-auto mr-auto"
-          v-for="card in statsCards"
-          :key="card.title"
-        >
-          <stats-card
-            :title="card.title"
-            :sub-title="card.subTitle"
-            :type="card.type"
-            :icon="card.icon"
-          >
-            <div slot="footer" v-html="card.footer"></div>
-          </stats-card>
-        </div>
-
         <!-- Payment History Section -->
-        <div class="col-md-12 mb-4 text-center">
+        <div class="col-md-7 mb-3 text-center">
           <PaymentHistory :payments="payments"></PaymentHistory>
         </div>
 
@@ -44,13 +48,8 @@
         </div>
 
         <!-- VIP Section -->
-        <div class="d-none d-md-block col-md-12 mb-5 vip-section text-center">
+        <div class="col-md-12 mb-5 vip-section">
           <VIP></VIP>
-        </div>
-
-        <!-- Notification Section -->
-        <div class="d-md-none col-lg-6 col-md-12 mb-5">
-          <NotificationCard></NotificationCard>
         </div>
       </div>
     </div>
@@ -184,23 +183,23 @@ export default {
 </script>
 <style lang="scss" scoped>
 .bg {
-  background-color: #f9f9f9 !important;
+  background-color: #f5f5f5 !important;
 }
 
 .card-custom {
-  margin: 2em 0;
-  border-radius: 1.5em;
-  background-color: #fc5296;
-  background-image: linear-gradient(315deg, #fc5296 0%, #f67062 74%);
+  padding: 2em 0;
+  // border-radius: 1.5em;
+  // background-color: #fc5296;
+  // background-image: linear-gradient(315deg, #fc5296 0%, #f67062 74%);
 }
 
 .title {
   font-size: 2.1em;
   font-family: IranSansBold;
   text-align: center;
-  // color: rgb(44, 44, 44) !important;
-  color: white !important;
+  // color: white !important;
   padding: 1rem 0 !important;
+  color: #fc5296 !important;
 }
 
 .hr {
@@ -228,19 +227,8 @@ export default {
 }
 
 .vip-section {
-  padding-bottom: 5.6em !important;
+  padding-bottom: 7em !important;
 }
 
-@media (max-width: 680px) {
-  .title {
-    font-size: 1.8em;
-    padding: 1.7rem 0 !important;
-  }
-
-  .card-custom {
-    margin: 2em 0;
-    border-radius: 2em;
-    background-image: linear-gradient(80deg, #ffd000, #fff203);
-  }
-}
+//
 </style>

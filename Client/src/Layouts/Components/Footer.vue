@@ -98,7 +98,7 @@
   }
 }
 .copyright {
-  padding: 20px 0 !important;
+  padding: 13px 0 !important;
   background: #1c2236 !important;
   color: #fff !important;
 }

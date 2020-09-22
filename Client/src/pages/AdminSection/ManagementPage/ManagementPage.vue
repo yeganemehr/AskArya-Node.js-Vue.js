@@ -39,6 +39,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section {
+  min-height: 80vh !important;
+}
+
 .btn {
   margin-right: 10px;
   font-size: 1.2em;

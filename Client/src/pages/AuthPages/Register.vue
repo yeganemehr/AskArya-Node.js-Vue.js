@@ -1,5 +1,6 @@
 <template>
   <div class="auth-section d-flex align-items-center">
+    <!-- <div class="auth-section pt-4"> -->
     <div class="container">
       <card class="shadow">
         <form @submit="checkForm" id="register-form">
@@ -8,8 +9,8 @@
           <a :href="googleAuthUrl">
             <base-button
               block
-              type="primary"
-              class="btn-simple animation-on-hover mt-2"
+              type="info"
+              class="btn-simple animation-on-hover mt-1"
             >
               <i class="fab fa-google icon pl-4"></i>
               عضویت سریع با حساب گوگل
@@ -52,7 +53,7 @@
               ></base-input>
             </div>
           </div>
-          <div class="text-right pb-2">
+          <div class="text-right">
             <base-checkbox
               v-model="terms"
               class="pb-3"
@@ -239,7 +240,7 @@ export default {
 
 <style lang="scss" scoped>
 .auth-section {
-  height: 93vh;
+  min-height: 88vh;
   background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
 }
 
@@ -262,7 +263,7 @@ export default {
 
 .icon {
   font-size: 1.5rem;
-  color: #d557d9 !important;
+  color: #228ef8 !important;
 }
 
 .icon:hover {
@@ -275,8 +276,13 @@ export default {
 }
 
 .tc {
-  color: rgb(49, 49, 49);
-  font-size: 1.25em;
+  color: rgb(59, 59, 59);
+  font-size: 1.2em;
+}
+
+.tc:hover {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
 }
 
 .footer-link {
@@ -289,15 +295,21 @@ export default {
   color: #cc51e1 !important;
 }
 
-@media (max-width: 680px) {
+@media only screen and (min-width: 1500px) {
   .auth-section {
-    height: 90vh !important;
-  }
-
-  .card {
-    width: auto !important;
+    min-height: 73vh;
   }
 }
+
+// @media (max-width: 680px) {
+//   .auth-section {
+//     height: 90vh !important;
+//   }
+
+//   .card {
+//     width: auto !important;
+//   }
+// }
 
 @media (max-width: 320px) {
   .auth-section {

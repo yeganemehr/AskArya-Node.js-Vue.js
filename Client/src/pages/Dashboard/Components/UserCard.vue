@@ -10,44 +10,46 @@
           <br />
           <span class="emailText px-1">{{ user.email }}</span>
         </h2>
-        <p class="description">
-          <i class="fas fa-check tick px-2"></i>
-          {{ user.admin ? 'مدیر' : 'دانشجو' }} -
-          <span class="description" :class="user.active ? 'tick' : 'cross'">{{
-            user.active ? 'فعال' : 'غیر فعال'
-          }}</span>
-        </p>
-        <p class="description">
-          <i
-            class="fas px-2"
-            :class="isVIP ? 'fa-check tick' : 'fa-times cross'"
-          ></i>
-          {{ 'وضعیت عضویت ویژه' }} -
-          <span class="description" :class="isVIP ? 'tick' : 'cross'">{{
-            isVIP ? 'فعال' : 'غیر فعال'
-          }}</span>
-          <!-- <span class="vip-date"> روز دیگر شارژ دارید </span> -->
-        </p>
-        <div class="row d-flex justify-content-center pb-4">
-          <div class="pt-3 px-2">
-            <base-button
-              @click="showForm = !showForm"
-              native-type="submit"
-              class="btn-fill btn btn-round"
-            >
-              <i class="fas fa-pencil-alt pl-2"></i>
-              {{ 'ویرایش مشخصات' }}
-            </base-button>
-          </div>
-          <div class="pt-3">
-            <router-link to="courses">
+
+        <div v-if="!showForm">
+          <p class="description">
+            <i class="fas fa-check tick px-2"></i>
+            {{ user.admin ? 'مدیر' : 'دانشجو' }} -
+            <span class="description" :class="user.active ? 'tick' : 'cross'">{{
+              user.active ? 'فعال' : 'غیر فعال'
+            }}</span>
+          </p>
+          <p class="description">
+            <i
+              class="fas px-2"
+              :class="isVIP ? 'fa-check tick' : 'fa-times cross'"
+            ></i>
+            {{ 'وضعیت عضویت ویژه' }} -
+            <span class="description" :class="isVIP ? 'tick' : 'cross'">{{
+              isVIP ? 'فعال' : 'غیر فعال'
+            }}</span>
+          </p>
+          <div class="row d-flex justify-content-center pb-4">
+            <div class="pt-3 px-2">
               <base-button
+                @click="showForm = !showForm"
                 native-type="submit"
-                type="primary"
                 class="btn-fill btn btn-round"
-                >{{ 'شارژ VIP' }}</base-button
               >
-            </router-link>
+                <i class="fas fa-pencil-alt pl-2"></i>
+                {{ 'ویرایش مشخصات' }}
+              </base-button>
+            </div>
+            <div class="pt-3">
+              <router-link to="courses">
+                <base-button
+                  native-type="submit"
+                  type="primary"
+                  class="btn-fill btn btn-round"
+                  >{{ 'شارژ VIP' }}</base-button
+                >
+              </router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -60,9 +62,11 @@
               <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
             </ul>
           </div>
-          <div class="row pt-3">
+          <div class="row">
             <div class="col-md-6 text-ltr">
-              <label class="pull-right">نام و نام خانوادگی</label>
+              <label class="pull-right">
+                <span class="red">*</span> نام و نام خانوادگی</label
+              >
               <base-input
                 type="text"
                 placeholder="نام جدید خود را وارد کنید"
@@ -70,17 +74,11 @@
                 :error="fieldErrors.name"
               ></base-input>
             </div>
-            <!-- <div class="col-md-4 text-ltr">
-              <label class="pull-right">پست الکترونیک</label>
-              <base-input
-                type="email"
-                placeholder="info@ask-arya.com"
-                v-model="email"
-                :error="fieldErrors.email"
-              ></base-input>
-            </div>-->
+
             <div class="col-md-6 text-ltr">
-              <label class="pull-right">تغییر رمز عبور</label>
+              <label class="pull-right"
+                ><span class="red">*</span>پسورد جدید</label
+              >
               <base-input
                 type="password"
                 placeholder="پسورد جدید خود را وارد کنید"
@@ -88,19 +86,29 @@
                 :error="fieldErrors.password"
               ></base-input>
             </div>
-            <div v-if="isAdmin" class="col-12">
+
+            <div class="col-md-12 text-ltr">
+              <label class="pull-right">
+                <span class="red">(غیر قابل تغییر)</span> پست الکترونیک</label
+              >
+              <base-input
+                disabled
+                type="email"
+                placeholder="info@ask-arya.com"
+                v-model="email"
+                :error="fieldErrors.email"
+              ></base-input>
+            </div>
+
+            <div v-if="isAdmin" class="col-md-6 text-right">
               <image-upload
                 type="avatar"
                 select-text="+ آپلود عکس"
                 @change="onAvatarChange"
               />
             </div>
-            <div class="col-12 mr-auto">
-              <base-button
-                block
-                native-type="submit"
-                type="info"
-                class="btn btn-danger"
+            <div class="col-12 mb-3">
+              <base-button block native-type="submit" class="btn btn-info"
                 >ثبت تغییرات</base-button
               >
             </div>
@@ -223,6 +231,12 @@ export default {
   border: 1px solid rgb(240, 240, 240);
 }
 
+.custom-width {
+  width: 400px !important;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .card-user .avatar {
   width: 7em !important;
   height: 7em !important;
@@ -245,6 +259,10 @@ export default {
   padding: 10px 15px !important;
 }
 
+.btn-info {
+  background: #3a61b4 !important;
+}
+
 .description {
   font-size: 1.1em !important;
 }
@@ -265,9 +283,11 @@ export default {
 .tick {
   color: #57c09a !important;
 }
-.cross {
+.cross,
+.red {
   color: #ff0000 !important;
 }
+
 .vip-date {
   font-size: 0.8rem !important;
   color: rgb(141, 141, 141) !important;

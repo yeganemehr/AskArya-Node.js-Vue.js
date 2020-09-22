@@ -2,7 +2,7 @@
   <section class="hero-content-homepage">
     <div class="container">
       <div class="row d-flex align-items-center">
-        <div class="col-md-6">
+        <div class="col-lg-6">
           <div class="hero-text-section">
             <h1 class="hero-title text-right">
               سریع ترین راه آموزش زبان انگلیسی.
@@ -49,7 +49,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 d-none d-md-block">
+        <div class="col-lg-6 d-none d-lg-block">
           <img
             class="image img-fluid"
             src="/img/frontend/loginscreenbg.svg"
@@ -90,7 +90,7 @@ export default {
   width: 100%;
 
   .hero-title {
-    font-size: 4.3em;
+    font-size: 4.2em;
     line-height: inherit;
     font-family: IranSansBold !important;
     color: #fff !important;
@@ -100,7 +100,7 @@ export default {
     font-size: 1.2em;
     line-height: 1.7em;
     font-family: IranSans !important;
-    color: #fff !important;
+    color: rgb(240, 240, 240) !important;
     text-align: right;
   }
 
@@ -112,8 +112,6 @@ export default {
   }
 
   .btn.btn-simple {
-    // color: #ffffff;
-    // border-color: #ffffff9a;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.03), 0 1px 3px rgba(0, 0, 0, 0.03);
     color: #fff;
     border-color: #ffffffc0;
@@ -131,7 +129,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .hero-content-homepage {
     // background: linear-gradient(#bb00fff8, #6f00ffc7) !important,
     //   url(/img/frontend/confused-banner.svg) no-repeat;
@@ -139,7 +137,7 @@ export default {
     min-height: 42vh !important;
 
     .hero-title {
-      font-size: 3.65em !important;
+      font-size: 3.5em !important;
       color: #fff !important;
       text-align: center !important;
       padding: 0.5em 0;

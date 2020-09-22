@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <div class="stats" slot="footer" v-if="$slots.footer">
+    <div class="stats pull-right" slot="footer" v-if="$slots.footer">
       <slot name="footer"></slot>
     </div>
   </card>
@@ -43,5 +43,10 @@ export default {
 <style lang="scss" scoped>
 .card-stats {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.07), 0 10px 10px rgba(0, 0, 0, 0.07) !important;
+}
+
+.card-title {
+  font-family: IranSansBold !important;
+  color: rgb(49, 49, 49) !important;
 }
 </style>

@@ -64,7 +64,7 @@ export default {
 }
 
 .no-courses-message {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: rgb(102, 102, 102) !important;
   font-family: IranSansBold;
 }

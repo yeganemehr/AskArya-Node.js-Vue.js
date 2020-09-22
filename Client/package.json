@@ -27,7 +27,7 @@
     "@ckeditor/ckeditor5-paste-from-office": "^22.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^22.0.0",
     "@ckeditor/ckeditor5-ui": "^22.0.0",
-    "@ckeditor/ckeditor5-vue": "^1.0.2",
+    "@ckeditor/ckeditor5-vue": "^1.0.3",
     "@sentry/browser": "^5.24.2",
     "@sentry/integrations": "^5.24.2",
     "axios": "^0.20.0",
