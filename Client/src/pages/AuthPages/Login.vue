@@ -41,9 +41,9 @@
               ></base-input>
             </div>
           </div>
-          <div class="text-right pb-2">
+          <div class="text-right">
             <base-checkbox
-              class="pb-3"
+              class="pb-1"
               name="remember"
               :checked="remember"
               @input="

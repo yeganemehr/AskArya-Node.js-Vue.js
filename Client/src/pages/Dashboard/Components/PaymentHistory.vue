@@ -1,6 +1,6 @@
 <template>
   <card>
-    <div class="text-right pt-2 pr-2 pb-5">
+    <div class="text-right pt-2 pr-2 pb-4">
       <h1 class="card-title my-0 pb-3">تاریخچه پرداخت ها</h1>
       <span> در این بخش گزارشات پرداختی های شما لیست میشود. </span>
     </div>
@@ -30,8 +30,10 @@
       ></base-pagination>
 
       <!-- <div class>
-        <p class="card-category">Showing {{ from + 1 }} to {{ to }} of {{ total }} entries</p>
-      </div>-->
+        <p class="card-category">
+          Showing {{ from + 1 }} to {{ to }} of {{ total }} entries
+        </p>
+      </div> -->
     </div>
   </card>
 </template>

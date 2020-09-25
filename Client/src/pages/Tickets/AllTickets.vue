@@ -1,71 +1,73 @@
 <template>
-  <section class="container text-right pt-5">
-    <!-- SHOULD HAVE PAGINATION -->
-    <h1 class="pb-5 text-danger">تیکت ها</h1>
-    <div class="pb-5">
-      <router-link to="/createticket">
-        <base-button round type="success">
-          <i class="pl-3 fas fa-eye"></i> تیکت جدید
-        </base-button>
-      </router-link>
-    </div>
+  <div class="height">
+    <section class="container text-right py-5">
+      <!-- SHOULD HAVE PAGINATION -->
+      <h1 class="pb-5 text-danger">تیکت ها</h1>
+      <div class="pb-5">
+        <router-link to="/createticket">
+          <base-button round type="success">
+            <i class="pl-3 fas fa-eye"></i> تیکت جدید
+          </base-button>
+        </router-link>
+      </div>
 
-    <!-------------- NEW TICKET -------------->
-    <div
-      class="container single-ticket-row"
-      v-for="ticket in tickets"
-      :key="ticket.id"
-    >
+      <!-------------- NEW TICKET -------------->
       <div
-        class="ticket-card d-flex justify-content-between align-items-center row"
+        class="container single-ticket-row"
+        v-for="ticket in tickets"
+        :key="ticket.id"
       >
-        <div class="ticket-name">
-          <h3>عنوان</h3>
-          <p :title="ticket.title">
-            {{
-              ticket.title.substring(0, 35) +
-              (ticket.title.length > 35 ? ' ...' : '')
-            }}
-          </p>
-        </div>
+        <div
+          class="ticket-card d-flex justify-content-between align-items-center row"
+        >
+          <div class="ticket-name">
+            <h3>عنوان</h3>
+            <p :title="ticket.title">
+              {{
+                ticket.title.substring(0, 35) +
+                (ticket.title.length > 35 ? ' ...' : '')
+              }}
+            </p>
+          </div>
 
-        <div class="ticket-dept">
-          <h3>دپارتمان</h3>
-          <p>{{ ticket.department }}</p>
-        </div>
+          <div class="ticket-dept">
+            <h3>دپارتمان</h3>
+            <p>{{ ticket.department }}</p>
+          </div>
 
-        <div class="ticket-date">
-          <h3>زمان</h3>
-          <p>{{ ticket.date }}</p>
-        </div>
+          <div class="ticket-date">
+            <h3>زمان</h3>
+            <p>{{ ticket.date }}</p>
+          </div>
 
-        <div class="ticket-status">
-          <h3>وضعیت</h3>
-          <span :class="getStatusLabelClasses(ticket.status)">{{
-            getStatusTranslate(ticket.status)
-          }}</span>
-        </div>
-        <div class="w-100 d-md-none pt-3"></div>
-        <div class="view-ticket">
-          <router-link :to="`/tickets/view/${ticket.id}`">
-            <base-button class="px-3" round type="info">
-              <i class="pl-3 fas fa-eye"></i> نمایش
-            </base-button>
-          </router-link>
+          <div class="ticket-status">
+            <h3>وضعیت</h3>
+            <span :class="getStatusLabelClasses(ticket.status)">{{
+              getStatusTranslate(ticket.status)
+            }}</span>
+          </div>
+          <div class="w-100 d-md-none pt-3"></div>
+          <div class="view-ticket">
+            <router-link :to="`/tickets/view/${ticket.id}`">
+              <base-button class="px-3" round type="info">
+                <i class="pl-3 fas fa-eye"></i> نمایش
+              </base-button>
+            </router-link>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="pt-4">
-      <base-pagination
-        :value="pagination.currentPage"
-        :per-page="pagination.perpage"
-        :total="pagination.total"
-        :pageCount="pagination.pages"
-        @input="changePageListener"
-      ></base-pagination>
-    </div>
-  </section>
+      <div class="pt-4">
+        <base-pagination
+          :value="pagination.currentPage"
+          :per-page="pagination.perpage"
+          :total="pagination.total"
+          :pageCount="pagination.pages"
+          @input="changePageListener"
+        ></base-pagination>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -97,6 +99,7 @@ export default {
       if (page == this.pagination.currentPage) return;
       this.dataLoad(page);
     },
+
     dataLoad(page) {
       const query = {
         page: page,
@@ -176,6 +179,7 @@ export default {
   mounted() {
     this.dataLoad(1);
   },
+
   metaInfo: {
     title: 'اسک آریا | تیکت ها',
     titleTemplate: 'اسک آریا | تیکت ها',
@@ -184,6 +188,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.height {
+  min-height: 100vh;
+}
+
 h1 {
   font-family: IranSansBold;
 }
