@@ -65,7 +65,7 @@
           <div class="row">
             <div class="col-md-6 text-ltr">
               <label class="pull-right">
-                <span class="red">*</span> نام و نام خانوادگی</label
+                <span class="red">*</span>نام و نام خانوادگی</label
               >
               <base-input
                 type="text"

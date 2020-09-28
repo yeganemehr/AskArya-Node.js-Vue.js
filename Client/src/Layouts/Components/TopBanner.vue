@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-if="!this.$root.$data.user">
     <div class="banner-box d-block text-center">
       <div class="banner-card">
         <router-link class="d-none d-md-block" to="/courses">
@@ -14,6 +14,18 @@
     </div>
   </section>
 </template>
+
+<script>
+import backend from '../../backend';
+
+export default {
+  computed: {
+    isAdmin() {
+      return this.$root.$data.user && this.$root.$data.user.admin;
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .banner-box {

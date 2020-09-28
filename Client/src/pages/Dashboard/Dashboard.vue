@@ -65,6 +65,7 @@ import MyCourses from './Components/MyCourses.vue';
 import VIP from '../Courses/Vip';
 import backend from '../../backend';
 import moment from 'moment';
+
 export default {
   components: {
     StatsCard,

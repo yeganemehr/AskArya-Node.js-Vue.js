@@ -1,8 +1,7 @@
 <template>
   <div>
-    <!-- Navbar Section -->
-    <TopBanner id="top" />
-    <Navbar />
+    <TopBanner />
+    <Navbar id="top" />
     <div class="wrapper wrapper-full-page">
       <div class="full-page" :class="pageClass">
         <div class="content-custom">

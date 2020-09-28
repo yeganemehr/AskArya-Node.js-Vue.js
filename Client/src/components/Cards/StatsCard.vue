@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 .card-stats {
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
 }
 
 .card-title {
