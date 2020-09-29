@@ -3,6 +3,9 @@ const path = require('path');
 const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
 const { styles } = require('@ckeditor/ckeditor5-dev-utils');
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
+
 function resolveSrc(_path) {
   return path.join(__dirname, _path);
 }
@@ -39,12 +42,12 @@ module.exports = {
             chunks: 'initial',
             reuseExistingChunk: true,
           },
-          element: {
-            name: 'element',
-            test: /[\\/]node_modules[\\/]element-ui[\\/]/,
-            chunks: 'initial',
-            priority: -30,
-          },
+          // element: {
+          //   name: 'element',
+          //   test: /[\\/]node_modules[\\/]element-ui[\\/]/,
+          //   chunks: 'initial',
+          //   priority: -30,
+          // },
         },
       },
     },
@@ -57,6 +60,8 @@ module.exports = {
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production'),
       }),
+
+      new BundleAnalyzerPlugin(),
     ],
   },
 
