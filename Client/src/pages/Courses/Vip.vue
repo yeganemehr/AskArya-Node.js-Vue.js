@@ -1,36 +1,34 @@
 <template>
-  <div class="widget-vip px-2 mb-5">
-    <div class="row">
-      <p class="col-md-2 my-4 vip-title">
-        <i class="fas fa-unlock pl-2 icon"></i>
-        VIP Access
-      </p>
-      <p class="col-md-7 my-auto vip-desc text-center py-3 text-black">
-        با خریداری این پنل کاربری شما میتوانید به ویدیوهای ویژه سایت به بطور
-        کامل دسترسی داشته باشید.
-      </p>
-      <div
-        v-if="this.$root.$data.user !== undefined"
-        class="col-md-2 dropdown-prices my-auto"
+  <div class="widget-vip px-3 mb-5 text-center">
+    <p class="vip-title pt-3">
+      <i class="fas fa-unlock pl-2 icon w-100"></i>
+      عضویت ویژه
+    </p>
+    <p class="vip-desc text-center py-3">
+      با خریداری این پنل کاربری شما میتوانید به ویدیوهای ویژه سایت به بطور کامل
+      دسترسی داشته باشید.
+    </p>
+    <div
+      v-if="this.$root.$data.user !== undefined"
+      class="dropdown-prices pb-3"
+    >
+      <base-dropdown
+        title="عضویت"
+        title-classes="btn btn-success animation-on-hover px-5"
       >
-        <base-dropdown
-          title="عضویت"
-          title-classes="btn btn-default animation-on-hover px-5"
-        >
-          <a class="dropdown-item" href="#" @click.prevent="payment">
-            ماهانه -
-            <span>39</span> هزار تومان
-          </a>
-          <a class="dropdown-item" href="#" @click.prevent="payment(4)">
-            ۴ ماهه -
-            <span>139</span> هزار تومان
-          </a>
-          <a class="dropdown-item" href="#" @click.prevent="payment(12)">
-            یکساله -
-            <span>309</span> هزار تومان
-          </a>
-        </base-dropdown>
-      </div>
+        <a class="dropdown-item" href="#" @click.prevent="payment">
+          ماهانه -
+          <span>39</span> هزار تومان
+        </a>
+        <a class="dropdown-item" href="#" @click.prevent="payment(4)">
+          ۴ ماهه
+          <span>139</span> هزار تومان
+        </a>
+        <a class="dropdown-item" href="#" @click.prevent="payment(12)">
+          یکساله -
+          <span>309</span> هزار تومان
+        </a>
+      </base-dropdown>
     </div>
   </div>
 </template>
@@ -109,6 +107,7 @@ export default {
               icon: 'warning',
             });
           });
+        this.$router.push('/dashboard');
       }
     }
   },
@@ -116,14 +115,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media (max-width: 680px) {
-  .dropdown-prices {
-    text-align: center !important;
-    padding-bottom: 15px;
+.widget-vip {
+  // background-image: linear-gradient(270deg, #e2aa3b, #fcf6ba);
+  background-image: linear-gradient(270deg, #ad1deb, #6e72fc);
+  border-radius: 15px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
+}
+
+.vip-title {
+  font-size: 1.7em !important;
+  color: white !important;
+  text-align: center;
+  font-family: IranSansBold !important;
+  .icon {
+    font-size: 1.7em;
+    padding-bottom: 8px;
   }
-  .vip-title {
-    font-size: 1.8em !important;
-  }
+}
+
+.vip-desc {
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .dropdown-menu .dropdown-item {
@@ -138,28 +150,22 @@ export default {
   }
 }
 
-.widget-vip {
-  background-image: linear-gradient(270deg, #e2aa3b, #fcf6ba);
-  border-radius: 15px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
-}
-
-.vip-title {
-  font-size: 1.3em;
-  color: white;
-  text-align: center;
-  font-family: Helvetica, sans-serif !important;
-  .icon {
-    font-size: 1.2em;
-  }
-}
-
-.vip-desc {
-  font-size: 0.9rem;
-}
-
 .select-danger.el-select .el-input input {
   background-color: #b42e5b !important;
   border-color: transparent !important;
+}
+
+@media (max-width: 680px) {
+  .dropdown-prices {
+    text-align: center !important;
+    padding-bottom: 15px;
+  }
+  .vip-title {
+    font-size: 1.8em !important;
+  }
+
+  .vip-desc {
+    font-size: 1.3em;
+  }
 }
 </style>

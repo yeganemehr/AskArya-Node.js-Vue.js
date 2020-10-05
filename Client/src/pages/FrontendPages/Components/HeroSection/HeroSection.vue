@@ -137,11 +137,11 @@ export default {
     min-height: 42vh !important;
 
     .hero-title {
-      font-size: 3.5em !important;
+      font-size: 3.3em !important;
       color: #fff !important;
       text-align: center !important;
       padding: 0.5em 0;
-      margin: 0 0 10px 0;
+      margin: 0;
     }
 
     .hero-subtitle {

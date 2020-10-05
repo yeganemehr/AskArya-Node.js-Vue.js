@@ -273,6 +273,7 @@ export default {
   font-family: Arial, Helvetica, sans-serif !important;
   font-weight: normal !important;
   letter-spacing: 0 !important;
+  color: #474747;
 }
 
 .card-user {

@@ -195,6 +195,7 @@ export default {
   color: white !important;
   padding: 1rem 0 !important;
 }
+
 .hr {
   border: 0;
   height: 1px;
@@ -220,13 +221,12 @@ export default {
 }
 @media (max-width: 680px) {
   .title {
-    font-size: 1.8em;
-    padding: 1.7rem 0 !important;
+    font-size: 1.7em;
+    padding: 0.7rem 0 !important;
   }
   .card-custom {
-    margin: 2em 0;
+    margin: 2em 0 0.5em 0 !important;
     border-radius: 2em;
-    background-image: linear-gradient(80deg, #ffd000, #fff203);
   }
 }
 </style>

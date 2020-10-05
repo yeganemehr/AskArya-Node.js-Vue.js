@@ -111,11 +111,11 @@ a {
 }
 @media only screen and (max-width: 678px) {
   .footer-bottom .title {
-    font-size: 1.2em !important;
+    font-size: 1.1em !important;
   }
   .custom-text,
   a {
-    font-size: 1.13em !important;
+    font-size: 1.02em !important;
   }
 
   .copyright-text {

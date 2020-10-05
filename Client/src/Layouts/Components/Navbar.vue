@@ -459,9 +459,9 @@ p,
     padding: 22px 0 0 0 !important;
   }
   .navbar-nav li {
-    padding: 6px 0 !important;
+    padding: 4px 0 !important;
     border-bottom: 1px solid #e4e4e463 !important;
-    font-size: 1.16em !important;
+    font-size: 1.05em !important;
   }
 
   li:last-child {

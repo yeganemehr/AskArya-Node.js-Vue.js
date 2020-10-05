@@ -192,7 +192,7 @@ export default {
   text-align: right;
 }
 span {
-  color: #525f7f96 !important;
+  color: #636363 !important;
 }
 
 @media only screen and (max-width: 678px) {

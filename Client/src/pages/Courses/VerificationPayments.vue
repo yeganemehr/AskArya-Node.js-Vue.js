@@ -90,7 +90,7 @@ export default {
             this.pymentStatus.error = true;
           });
       } else {
-        this.$router.push('dashboard');
+        this.$router.push('/dashboard');
       }
     },
   },

@@ -45,8 +45,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .home-blog .card {
-  border-radius: 7px !important;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
+  border-radius: 20px !important;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.07);
   background: #f1f1f1 !important;
 }
 
@@ -66,14 +66,14 @@ export default {
 }
 
 .home-blog .card-img-top {
-  border-radius: 10px 10px 0 0 !important;
+  border-radius: 20px 20px 0 0 !important;
 }
 
 .home-blog .card:hover {
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  transition: transform 0.8s !important;
-  -webkit-transform: translateY(-4px) !important;
-  transform: translateY(-4px) !important;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.12), 0 15px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 1s !important;
+  -webkit-transform: translateY(-2px) !important;
+  transform: translateY(-2px) !important;
   cursor: pointer !important;
 }
 
@@ -86,7 +86,7 @@ export default {
   color: rgb(53, 53, 53) !important;
   background: rgb(241, 241, 241) !important;
   font-family: IranSans !important;
-  font-size: 1em !important;
+  font-size: 0.93em !important;
   text-align: center !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -105,12 +105,12 @@ export default {
 
 .card .card-footer {
   background-color: #f1f1f1 !important;
-  border-top: 1px solid rgba(158, 158, 158, 0.1);
-  padding: 1em 1.2em 0 1.2em;
+  border-top: 1px solid rgba(158, 158, 158, 0.062);
+  padding: 0.7em 1.2em 0 1.2em;
 
   .card-footer-text {
     color: #00000059 !important;
-    font-size: 1em;
+    font-size: 0.9em;
   }
 }
 
@@ -122,8 +122,8 @@ export default {
 
   .home-blog .card-title {
     font-size: 1.2em !important;
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
+    // padding-top: 5px !important;
+    // padding-bottom: 5px !important;
   }
 
   .card .card-footer .card-footer-text {

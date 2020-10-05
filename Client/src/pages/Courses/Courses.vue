@@ -13,17 +13,19 @@
 
     <!-- Courses Section -->
     <div class="row">
-      <div
-        class="col-lg-3 col-md-6"
-        v-for="course in courses"
-        v-bind:key="course.id"
-      >
-        <CourseCard v-bind="course"></CourseCard>
+      <!-- VIP Section -->
+      <div class="col-lg-3 vip-section">
+        <Vip></Vip>
       </div>
 
-      <!-- VIP Section -->
-      <div class="col-lg-12 vip-section">
-        <Vip></Vip>
+      <div class="col-md-9">
+        <div
+          class="col-lg-4 col-md-6"
+          v-for="course in courses"
+          v-bind:key="course.id"
+        >
+          <CourseCard v-bind="course"></CourseCard>
+        </div>
       </div>
     </div>
   </div>
@@ -129,10 +131,6 @@ export default {
   font-size: 1.13em !important;
   font-family: IranSansBold !important;
   color: rgb(17, 207, 144) !important;
-}
-
-.vip-section {
-  margin: 3em 0 6em 0;
 }
 
 @media only screen and (max-width: 768px) {
