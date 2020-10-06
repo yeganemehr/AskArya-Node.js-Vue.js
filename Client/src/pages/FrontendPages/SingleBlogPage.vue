@@ -100,10 +100,6 @@ export default {
   padding: 2em 0;
   margin-bottom: 1.7em;
   background-color: #64a4ee;
-  // background-color: #7f53ac;
-  // background-image: linear-gradient(to left, #a73ffc 0%, #64a4ee 74%);
-  // border-bottom-left-radius: 15%;
-  // border-bottom-right-radius: 15%;
 }
 
 .blog-img {

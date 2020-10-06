@@ -27,11 +27,12 @@
           <i class="pl-1 text-danger far fa-user" v-else></i>
           {{ message.user.name }}
         </p>
-
-        <p class="ticket-date">
-          <span class="pl-2">{{ getTime(message.createdAt) }}</span>
-          {{ getDate(message.createdAt) }}
-        </p>
+        <div class="card-info">
+          <p class="ticket-date">
+            <span class="pl-3">{{ getTime(message.createdAt) }}</span>
+            {{ getDate(message.createdAt) }}
+          </p>
+        </div>
       </div>
       <div class="w-100 d-md-none"></div>
 
@@ -60,7 +61,7 @@
     <!--------------------------- Ticket Reply --------------------------->
     <div class="card pb-4 px-4 my-5">
       <form @submit.prevent="submitFormListener">
-        <h4 class="pt-5">
+        <h4 class="pt-4">
           {{ editingMessage ? 'ویرایش پیام' : 'پاسخی ارسال کنید!' }}
         </h4>
         <base-input>
@@ -187,6 +188,10 @@ export default {
             Direction,
           ],
           fontSize: {
+            options: [9, 11, 13, 'default', 17, 19, 21],
+          },
+
+          fontColor: {
             options: [9, 11, 13, 'default', 17, 19, 21],
           },
           toolbar: [
@@ -451,36 +456,52 @@ section {
 }
 
 .card-custom {
-  background-color: rgb(255, 255, 255);
+  // background-color: rgb(255, 255, 255);
+  background-color: #6e72fc;
   border-radius: 25px;
-  padding: 2em 3em;
-  border: 1px dashed rgb(231, 231, 231);
+  padding: 2em 2em 1em 2em;
+  border: 1px dashed #8a8ce6;
   font-family: IranSansBlog !important;
 
   .ticket-date {
     font-family: IranSans;
-    color: rgba(145, 145, 145, 0.85);
-
-    span {
-      font-family: IranSansBold;
-    }
+    color: rgb(255, 255, 255);
   }
 
   .ticket-user {
     font-family: IranSans;
-    font-size: 1em;
-    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+  }
+
+  a {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+  }
+
+  p {
+    color: white !important;
+    font-family: IranSans;
   }
 
   i {
     font-size: 1.15em;
-    color: rgba(145, 145, 145, 0.788);
+    color: white !important;
   }
 
   i:hover {
     cursor: pointer;
-    color: rgb(174, 0, 255);
+    color: rgb(255, 0, 140);
   }
+
+  .ck-content .text-huge {
+  color: white !important;
+}
+}
+
+.white-content .full-page p {
+  color: white !important;
+  font-family: IranSans;
 }
 
 .send-buttons {
@@ -494,30 +515,27 @@ section {
   margin-left: -1em;
 }
 
-@media (min-width: 1000px) {
-  .ticket-date {
-    padding-left: 20px;
-  }
-  .ticket-user {
-    padding-right: 20px;
-  }
+.ck-editor__editable {
+  min-height: 150px !important;
+}
 
-  .text-section-main {
-    padding-right: 40px;
-  }
+.ck.ck-editor__editable_inline {
+  min-height: 150px !important;
+}
+
+.ticket-main-text {
+  // font-size: 1.2em !important;
+  font-family: IranSans;
 }
 
 @media (max-width: 768px) {
   .ticket-user {
-    font-size: 0.9em !important;
     width: 100%;
   }
   .ticket-date {
     font-size: 0.8em;
     width: 100%;
     display: block;
-    color: rgba(0, 0, 0, 0.4) !important;
-    font-family: IranSansBold !important;
   }
 
   .card-custom {
@@ -538,16 +556,16 @@ section {
   }
 }
 
-.ck-editor__editable {
-  min-height: 150px !important;
-}
+@media (min-width: 1000px) {
+  .ticket-date {
+    padding-left: 20px;
+  }
+  .ticket-user {
+    padding-right: 20px;
+  }
 
-.ck.ck-editor__editable_inline {
-  min-height: 150px !important;
-}
-
-.ticket-main-text {
-  // font-size: 1.2em !important;
-  font-family: IranSans;
+  .text-section-main {
+    padding-right: 40px;
+  }
 }
 </style>

@@ -164,8 +164,6 @@ export default {
     font-size: 1.8em !important;
   }
 
-  .vip-desc {
-    font-size: 1.3em;
-  }
+
 }
 </style>

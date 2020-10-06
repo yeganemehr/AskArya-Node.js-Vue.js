@@ -43,11 +43,6 @@
           <hr class="hr d-md-none" />
         </div>
 
-        <!-- VIP Section -->
-        <div class="d-none d-md-block col-md-12 mb-5 vip-section text-center">
-          <VIP></VIP>
-        </div>
-
         <!-- Notification Section -->
         <div class="d-md-none col-lg-6 col-md-12 mb-5">
           <NotificationCard></NotificationCard>
@@ -62,7 +57,6 @@ import UserCard from './Components/UserCard.vue';
 import NotificationCard from './Components/NotificationCard.vue';
 import PaymentHistory from './Components/PaymentHistory.vue';
 import MyCourses from './Components/MyCourses.vue';
-import VIP from '../Courses/Vip';
 import backend from '../../backend';
 import moment from 'moment';
 

@@ -454,7 +454,7 @@ p,
 
 @media (max-width: 768px) {
   .navbar-nav {
-    font-size: 1rem !important;
+    font-size: 1.06rem !important;
     color: #fff !important;
     padding: 22px 0 0 0 !important;
   }
