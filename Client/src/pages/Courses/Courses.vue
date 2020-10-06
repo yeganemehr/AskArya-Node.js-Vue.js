@@ -7,20 +7,14 @@
       <span class="infoStyling">{{ hours }} ساعت </span> در سایت موجود است.
     </p>
 
-    <!-- <h3 class="headerDigitsText text-danger text-center py-4 text-rtl">
-      محتوای جدید هر هفته اضافه می شود!
-    </h3> -->
-
-    <!-- Courses Section -->
-    <div class="row">
-      <!-- VIP Section -->
-      <div class="col-lg-3 vip-section">
+    <div class="row text-center">
+      <div class="col-lg-3 col-md-12 vip-section">
         <Vip></Vip>
       </div>
 
-      <div class="col-md-9">
+      <div class="col-lg-9 col-md-12">
         <div
-          class="col-lg-4 col-md-6"
+          class="col-lg-4 col-md-6 col-sm-12"
           v-for="course in courses"
           v-bind:key="course.id"
         >

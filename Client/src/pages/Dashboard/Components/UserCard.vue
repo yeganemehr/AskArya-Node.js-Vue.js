@@ -44,10 +44,12 @@
               <router-link to="courses">
                 <base-button
                   native-type="submit"
-                  type="primary"
+                  type="success"
                   class="btn-fill btn btn-round"
-                  >{{ 'شارژ VIP' }}</base-button
                 >
+                  <i class="fas fa-unlock pl-2"></i>
+                  {{ 'شارژ عضویت ویژه' }}
+                </base-button>
               </router-link>
             </div>
           </div>
@@ -222,7 +224,7 @@ export default {
 <style lang="scss" scoped>
 .box {
   height: 100% !important;
-  // height: 94% !important;
+  // height: 95% !important;
 }
 
 .card {
@@ -264,7 +266,8 @@ export default {
   background: #3a61b4 !important;
 }
 
-.description {
+.white-content .full-page .description {
+  color: #5a5a5a;
   font-size: 1.1em !important;
 }
 
@@ -273,7 +276,7 @@ export default {
   font-family: Arial, Helvetica, sans-serif !important;
   font-weight: normal !important;
   letter-spacing: 0 !important;
-  color: #474747;
+  color: #757575;
 }
 
 .card-user {
@@ -288,11 +291,6 @@ export default {
 .cross,
 .red {
   color: #ff0000 !important;
-}
-
-.vip-date {
-  font-size: 0.8rem !important;
-  color: rgb(141, 141, 141) !important;
 }
 
 @media (max-width: 680px) {

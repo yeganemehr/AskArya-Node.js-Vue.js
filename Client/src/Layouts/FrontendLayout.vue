@@ -54,7 +54,7 @@ export default {
 .content-custom {
   // min-height: 90vh !important;
   // background-color: #f9f9f9;
-  background-color: #f1f1f1;
+  background-color: #f5f5f5;
 }
 
 .go-to-top {

@@ -155,7 +155,14 @@ export default {
   border-color: transparent !important;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 880px) {
+  .widget-vip {
+    margin-right: 2.5em;
+    margin-left: 2.5em;
+  }
+}
+
+@media (max-width: 678px) {
   .dropdown-prices {
     text-align: center !important;
     padding-bottom: 15px;
@@ -163,7 +170,5 @@ export default {
   .vip-title {
     font-size: 1.8em !important;
   }
-
-
 }
 </style>

@@ -1,12 +1,18 @@
 <template>
   <card class="card-stats" :show-footer-line="true">
     <div class="row">
-      <div class="col-5" v-if="$slots.icon || icon">
+      <div
+        class="col-lg-5 col-md-5 d-none d-md-block"
+        v-if="$slots.icon || icon"
+      >
         <div class="info-icon text-center" :class="`icon-${type}`">
           <slot name="icon"> <i :class="icon"></i> </slot>
         </div>
       </div>
-      <div class="col-7" v-if="$slots.content || title || subTitle">
+      <div
+        class="col-md-7 col-md-7 col-sm-12"
+        v-if="$slots.content || title || subTitle"
+      >
         <div class="numbers">
           <slot>
             <p v-if="subTitle" class="card-category pb-2">{{ subTitle }}</p>
@@ -15,7 +21,11 @@
         </div>
       </div>
     </div>
-    <div class="stats pull-right" slot="footer" v-if="$slots.footer">
+    <div
+      class="stats custom-size pull-right"
+      slot="footer"
+      v-if="$slots.footer"
+    >
       <slot name="footer"></slot>
     </div>
   </card>
@@ -48,5 +58,21 @@ export default {
 .card-title {
   font-family: IranSansBold !important;
   color: rgb(49, 49, 49) !important;
+}
+
+@media (max-width: 678px) {
+  .white-content .card:not(.card-pricing).card-stats .card-title {
+    padding-top: 5px !important;
+    margin-bottom: 0 !important;
+    color: #61dccf !important;
+  }
+
+  .custom-size {
+    font-size: 0.7em !important;
+  }
+
+  i {
+    color: #7cffcb !important;
+  }
 }
 </style>

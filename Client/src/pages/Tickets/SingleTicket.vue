@@ -456,57 +456,47 @@ section {
 }
 
 .card-custom {
-  // background-color: rgb(255, 255, 255);
-  background-color: #6e72fc;
+  background-color: rgb(255, 255, 255);
   border-radius: 25px;
   padding: 2em 2em 1em 2em;
-  border: 1px dashed #8a8ce6;
+  border: 1px dashed #dbdbdb;
   font-family: IranSansBlog !important;
 
   .ticket-date {
     font-family: IranSans;
-    color: rgb(255, 255, 255);
+    color: rgb(34, 34, 34);
   }
 
   .ticket-user {
     font-family: IranSans;
     font-size: 1.1em;
-    color: rgb(255, 255, 255);
+    color: rgb(34, 34, 34);
   }
 
   a {
-    color: rgb(255, 255, 255);
+    color: rgb(34, 34, 34);
     text-decoration: underline;
   }
 
   p {
-    color: white !important;
+    color: rgb(34, 34, 34);
     font-family: IranSans;
   }
 
   i {
     font-size: 1.15em;
-    color: white !important;
+    color: rgb(34, 34, 34);
   }
 
   i:hover {
     cursor: pointer;
     color: rgb(255, 0, 140);
   }
-
-  .ck-content .text-huge {
-  color: white !important;
-}
-}
-
-.white-content .full-page p {
-  color: white !important;
-  font-family: IranSans;
 }
 
 .send-buttons {
   i {
-    color: white;
+    color: rgb(34, 34, 34);
   }
 }
 

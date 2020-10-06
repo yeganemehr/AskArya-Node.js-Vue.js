@@ -18,7 +18,7 @@
 
         <!-- Stats Cards Section -->
         <div
-          class="col-lg-4 col-md-4 ml-auto mr-auto mt-4"
+          class="col-lg-6 col-xs-6 ml-auto mr-auto mt-lg-4"
           v-for="card in statsCards"
           :key="card.title"
         >
@@ -67,7 +67,6 @@ export default {
     NotificationCard,
     PaymentHistory,
     MyCourses,
-    VIP,
   },
   data() {
     return {
@@ -103,13 +102,13 @@ export default {
           footer:
             '<i class="tim-icons icon-video-66 pl-2"></i> مجموع درس های موجود',
         },
-        {
-          title: 'به زودی',
-          subTitle: 'امتحان های من',
-          type: 'primary',
-          icon: 'far fa-check-square',
-          footer: '<i class="far fa-check-square pl-2"></i> امتحان های شما',
-        },
+        // {
+        //   title: 'به زودی',
+        //   subTitle: 'امتحان های من',
+        //   type: 'primary',
+        //   icon: 'far fa-check-square',
+        //   footer: '<i class="far fa-check-square pl-2"></i> امتحان های شما',
+        // },
         // {
         //   title: '0',
         //   subTitle: 'امتحان ها',

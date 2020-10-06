@@ -1,8 +1,6 @@
 <template>
   <div class="container py-5">
-    <h1 class="title mb-0">
-      آزمون ها
-    </h1>
+    <h1 class="title mb-0">آزمون ها</h1>
     <p class="info-text py-4 pb-5">
       با آزمون های اسک آریا، در کمترین زمان از سطح دقیق زبان خود مطلع شوید!
     </p>
@@ -111,8 +109,5 @@ export default {
   li {
     color: rgb(94, 94, 94) !important;
   }
-}
-
-@media (max-width: 678px) {
 }
 </style>

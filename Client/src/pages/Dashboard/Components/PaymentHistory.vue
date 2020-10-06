@@ -197,7 +197,7 @@ span {
 
 @media only screen and (max-width: 678px) {
   span {
-    font-size: 0.9em !important;
+    font-size: 0.96em !important;
   }
 }
 </style>
