@@ -82,25 +82,25 @@ export default {
   left: 1em;
   border-radius: 15px;
   position: absolute;
-  padding: 4px 10px;
+  padding: 4px 13px;
   color: rgb(53, 53, 53) !important;
   background: rgb(241, 241, 241) !important;
   font-family: IranSans !important;
-  font-size: 0.93em !important;
+  font-size: 0.9em !important;
   text-align: center !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .card:hover .category {
-  background: #00b35f !important;
+  background: #ef476f !important;
   color: white !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .home-blog .card:hover .card-title {
-  color: #00b35f !important;
+  color: #ef476f !important;
 }
 
 .card .card-footer {

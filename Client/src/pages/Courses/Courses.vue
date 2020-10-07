@@ -110,7 +110,7 @@ export default {
 .title {
   font-size: 2.7em !important;
   font-family: IranSansBold;
-  color: #fd5d93 !important;
+  color: #ef476f !important;
   text-align: center;
 }
 

@@ -55,16 +55,24 @@ export default {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
 }
 
+.white-content .card:not(.card-pricing).card-stats .card-category {
+  color: #a1a1a1 !important;
+}
+
 .card-title {
   font-family: IranSansBold !important;
-  color: rgb(49, 49, 49) !important;
+  color: #313131 !important;
+  font-size: 1.8em;
+  padding-top: 5px !important;
+  margin-bottom: 0;
 }
 
 @media (max-width: 678px) {
   .white-content .card:not(.card-pricing).card-stats .card-title {
     padding-top: 5px !important;
     margin-bottom: 0 !important;
-    color: #61dccf !important;
+    color: #ef476f !important;
+    text-align: center !important;
   }
 
   .custom-size {

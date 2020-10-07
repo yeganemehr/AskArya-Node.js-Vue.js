@@ -12,13 +12,13 @@
         </div>
 
         <!-- Notification Section -->
-        <div class="d-none d-md-block col-lg-5 col-md-12">
+        <div class="d-none d-md-block col-lg-5 col-md-12 mt-sm-4 mt-lg-0">
           <NotificationCard></NotificationCard>
         </div>
 
         <!-- Stats Cards Section -->
         <div
-          class="col-lg-6 col-xs-6 ml-auto mr-auto mt-lg-4"
+          class="col-lg-6 col-xs-6 ml-auto mr-auto mt-md-4"
           v-for="card in statsCards"
           :key="card.title"
         >
@@ -178,8 +178,9 @@ export default {
   margin: 2em 0;
   border-radius: 1.5em;
   background-color: #fc5296;
-  background-image: linear-gradient(315deg, #fc5296 0%, #f67062 74%);
+  background-image: linear-gradient(315deg, #fc5296 0%, #ef476f 74%);
 }
+
 .title {
   font-size: 2.1em;
   font-family: IranSansBold;
@@ -215,10 +216,10 @@ export default {
 @media (max-width: 680px) {
   .title {
     font-size: 1.7em;
-    padding: 0.7rem 0 !important;
+    padding: 0.9rem 0 !important;
   }
   .card-custom {
-    margin: 2em 0 0.5em 0 !important;
+    margin: 1em 0 0em 0 !important;
     border-radius: 2em;
   }
 }

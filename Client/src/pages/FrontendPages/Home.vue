@@ -25,7 +25,7 @@
             <base-button
               native-type="submit"
               type="success"
-              class="btn btn-round animation-on-hover mt-4"
+              class="btn btn-courses btn-round animation-on-hover mt-4"
             >
               <i class="fas fa-graduation-cap ml-2"></i>
               مشاهده همه دوره ها</base-button
@@ -162,6 +162,19 @@ export default {
 }
 .btn {
   font-weight: inherit !important;
+}
+
+.btn-courses {
+  color: #fff !important;
+  background: #ef476f !important;
+  border: 1px solid #fff !important;
+}
+
+.btn-courses:hover {
+  color: #ef476f !important;
+  background: #fff !important;
+  border-color: #fff !important;
+  border: 1px solid #fff !important;
 }
 
 .blog-section {

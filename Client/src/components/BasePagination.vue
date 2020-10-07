@@ -35,41 +35,41 @@ export default {
     type: {
       type: String,
       default: 'primary',
-      validator: value => {
+      validator: (value) => {
         return [
           'default',
           'primary',
           'danger',
           'success',
           'warning',
-          'info'
+          'info',
         ].includes(value);
-      }
+      },
     },
     pageCount: {
       type: Number,
-      default: 0
+      default: 0,
     },
     perPage: {
       type: Number,
-      default: 10
+      default: 10,
     },
     showArrows: {
       type: Boolean,
-      default: true
+      default: true,
     },
     total: {
       type: Number,
-      default: 0
+      default: 0,
     },
     value: {
       type: Number,
-      default: 1
+      default: 1,
     },
     pagesToDisplay: {
       type: Number,
-      default: 5
-    }
+      default: 5,
+    },
   },
   computed: {
     paginationClass() {
@@ -112,7 +112,7 @@ export default {
       } else {
         return this.defaultPagesToDisplay;
       }
-    }
+    },
   },
   methods: {
     range(min, max) {
@@ -134,7 +134,7 @@ export default {
       if (this.value > 1) {
         this.$emit('input', this.value - 1);
       }
-    }
+    },
   },
   watch: {
     perPage() {
@@ -142,7 +142,7 @@ export default {
     },
     total() {
       this.$emit('input', 1);
-    }
-  }
+    },
+  },
 };
 </script>

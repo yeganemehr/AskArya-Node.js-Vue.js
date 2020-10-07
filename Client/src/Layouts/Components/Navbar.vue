@@ -332,7 +332,7 @@ export default {
 
 <style scoped lang="scss">
 .text-custom {
-  color: #e6443b !important;
+  color: #ef476f !important;
   font-size: 0.95em !important;
   font-family: IranSansBold !important;
 }
@@ -351,7 +351,7 @@ export default {
   padding-right: 0 !important;
 }
 .dropdown-item.active {
-  color: rgb(255, 0, 98) !important;
+  color: #ef476f !important;
   background-color: transparent !important;
 }
 .user-item {
@@ -425,7 +425,7 @@ p,
 }
 
 .navbar-collapse .navbar-nav .nav-link .dropdown-item:hover {
-  color: #ed5992 !important;
+  color: #ef476f !important;
 }
 
 .navbar-collapse .navbar-nav .nav-link-exit .dropdown-item {

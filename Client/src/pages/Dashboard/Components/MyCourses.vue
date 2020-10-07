@@ -61,6 +61,7 @@ export default {
   font-family: IranSansBold;
   margin-bottom: 1.7em;
   text-align: right;
+  color: #ef476f !important;
 }
 
 .no-courses-message {
