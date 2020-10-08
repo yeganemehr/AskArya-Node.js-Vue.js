@@ -64,11 +64,11 @@
 
 <script>
 import HeroSection from './Components/HeroSection/HeroSection.vue';
-import FounderSection from './Components/FounderSection/FounderSection.vue';
+import FounderSection from './Components/FounderSection.vue';
 import CourseCard from '../Courses/CourseCard';
 import BlogSection from './Components/Blog/BlogSection.vue';
-import ImprovementBanner1 from './Components/ImprovementBanners/ImprovementBanner1.vue';
-import ImprovementBanner2 from './Components/ImprovementBanners/ImprovementBanner2.vue';
+import ImprovementBanner1 from './Components/ImprovementBanner1.vue';
+import ImprovementBanner2 from './Components/ImprovementBanner2.vue';
 // import NewsComponent from './Components/NewsComponent/NewsComponent.vue';
 
 export default {

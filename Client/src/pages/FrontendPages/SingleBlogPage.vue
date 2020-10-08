@@ -4,7 +4,7 @@
       <div class="container text-center">
         <h1 class="post-title-top text-center">{{ post.name }}</h1>
         <img class="blog-img" :src="post.image" :alt="post.name" />
-        <div class="pt-5 pb-2">
+        <div class="pt-5">
           <BlogInfo
             :name="post.author.name"
             :createdAt="post.createdAt"
@@ -13,13 +13,15 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="main-blog-text">
-        <div v-html="post.content"></div>
+    <div class="container-fluid row">
+      <div class="col-lg-9 col-md-8 col-sm-12">
+        <div class="main-blog-text">
+          <div v-html="post.content"></div>
+        </div>
       </div>
-      <!-- <div>
-      <custom-card :class="SmallDevices" />
-    </div> -->
+      <div class="col-lg-3 col-md-4 SmallDevices">
+        <Ads class="sticky" />
+      </div>
     </div>
   </div>
 </template>
@@ -27,12 +29,14 @@
 <script>
 import BlogInfo from '../FrontendPages/Components/Blog/BlogInfo';
 // import CustomCard from '../../../SingleLesson/Components/CustomCard';
+import Ads from '../FrontendPages/Components/Ads';
 
 import backend from '../../backend';
 
 export default {
   components: {
     BlogInfo,
+    Ads,
     // CustomCard
   },
   data() {
@@ -122,9 +126,8 @@ export default {
 }
 
 .main-blog-text {
-  padding: 4%;
-  margin: 0 6% 0 14%;
-  font-size: 1.34em !important;
+  margin-right: 4em;
+  font-size: 1.35em !important;
   line-height: 2.3em !important;
   direction: ltr !important;
   font-family: IranSansBlog !important;
@@ -134,8 +137,10 @@ export default {
 .sticky {
   position: -webkit-sticky;
   position: sticky;
-  margin-top: 1em;
-  top: 6em;
+  margin-top: 90px;
+  // margin-left: 3em;
+  top: 10em;
+  margin-bottom: 7em;
   padding: 0 1.2em;
 }
 
@@ -143,9 +148,32 @@ export default {
   display: none;
 }
 
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 1400px) {
+  .sticky {
+    margin-left: 2.5em;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .sticky {
+    margin-left: 2.5em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
   .main-blog-text {
-    margin: 0 6% 0 8%;
+    margin: 90px 15em 5em 4em !important;
+  }
+}
+
+@media only screen and (min-device-width: 679px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .main-blog-text {
+    margin: 90px 3em 1em 0;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .small-devices {
+    display: block;
   }
 }
 
@@ -163,27 +191,19 @@ export default {
   }
 
   .blog-img {
-    width: 260px;
-    height: 260px;
-  }
-
-  .main-blog-section {
-    padding: 0 3% 8% 3%;
+    width: 240px;
+    height: 240px;
   }
 
   .main-blog-text {
     margin: 0 !important;
-    font-size: 1.2em !important;
+    font-size: 1.25em !important;
     color: black !important;
+    padding: 1em 2em 3em 0.1em !important;
   }
 
   .sticky {
     display: none !important;
-  }
-
-  .small-devices {
-    padding: 15px 20%;
-    display: block;
   }
 }
 </style>

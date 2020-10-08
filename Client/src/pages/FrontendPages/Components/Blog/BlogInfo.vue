@@ -50,7 +50,7 @@ export default {
   font-family: IranSans;
   padding-top: 3px;
 
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   .icon {
     font-size: 1.1rem;
   }
@@ -59,7 +59,7 @@ export default {
 span {
   font-size: 1.15em !important;
   color: white !important;
-  font-family: IranSans;
+  font-family: IranSansBold;
   padding-right: 6px;
 }
 

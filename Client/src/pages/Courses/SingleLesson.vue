@@ -8,10 +8,7 @@
             <h1 class="course-title">{{ title }}</h1>
 
             <!-- Course Image -->
-            <img
-              class="course-image rounded-circle img-fluid my-4"
-              :src="course.image"
-            />
+            <img class="course-image img-fluid my-3" :src="course.image" />
             <p class="episode-title" v-if="episode.id">{{ course.title }}</p>
             <div class="body pt-3" v-html="body"></div>
           </div>
@@ -555,7 +552,9 @@ export default {
 }
 
 .course-image {
-  width: 150px !important;
+  height: 150px !important;
+  width: auto !important;
+  border-radius: 10%;
 }
 
 .modal-title {
@@ -563,24 +562,24 @@ export default {
 }
 
 .icon {
-  font-size: 1.8em !important;
+  font-size: 1.9em !important;
   color: white !important;
-  padding-bottom: 10px;
+  padding-bottom: 15px !important;
 }
 
 .icon-data {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-family: IranSansBold;
   color: white !important;
 }
 
 .icon-text {
   font-size: 0.75em;
-  color: white !important;
+  color: rgba(255, 255, 255, 0.74) !important;
   font-family: IranSans !important;
   padding-left: 0;
   display: block;
-  padding-top: 3px;
+  padding-top: 7px;
 }
 
 .pay-text {

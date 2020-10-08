@@ -219,14 +219,14 @@ export default {
   cursor: pointer;
 
   .buyCourseTitle {
-    color: rgb(81, 202, 206);
+    color: #ef476f;
     font-family: IranSansBold;
   }
   .course-title,
   .courseTime,
   .unitsAvailable,
   .pricehighlight {
-    color: #00b35f;
+    color: #ef476f;
   }
 }
 

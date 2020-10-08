@@ -193,12 +193,16 @@
               <base-button
                 native-type="submit"
                 type="danger"
-                class="btn-simple btn"
+                class="btn-simple btn btn-signin"
                 >ثبت نام</base-button
               >
             </router-link>
             <a class="d-md-none" href="/register">
-              <base-button native-type="submit" type="warning" class="btn">
+              <base-button
+                native-type="submit"
+                type="warning"
+                class="btn btn-signin"
+              >
                 <i class="far fa-user ml-2"></i>
                 ثبت نام</base-button
               >
@@ -393,12 +397,18 @@ export default {
 }
 
 .navbar-nav li a {
-  padding: 9px 0 9px 10px !important;
+  padding: 10px 0 10px 10px !important;
   font-size: 0.95em;
 }
 .navbar-collapse .navbar-nav .nav-link .dropdown-item {
   font-size: 0.95em !important;
 }
+
+.btn-signin {
+  color: #ef476f;
+  border: 1px solid #ef476f !important;
+}
+
 .btn {
   font-weight: inherit !important;
 }

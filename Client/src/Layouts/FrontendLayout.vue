@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopBanner />
+    <!-- <TopBanner /> -->
     <Navbar id="top" />
     <div class="wrapper wrapper-full-page">
       <div class="full-page" :class="pageClass">
@@ -17,7 +17,7 @@
             el: '#top',
             duration: 900,
             easing: 'linear',
-            offset: -1000,
+            offset: -5000,
             force: true,
             cancelable: true,
             onStart: onStart,
@@ -36,13 +36,13 @@
 </template>
 <script>
 import { ZoomCenterTransition } from 'vue2-transitions';
-import TopBanner from './Components/TopBanner.vue';
+// import TopBanner from './Components/TopBanner.vue';
 import Navbar from './Components/Navbar.vue';
 import Footer from './Components/Footer.vue';
 
 export default {
   components: {
-    TopBanner,
+    // TopBanner,
     Navbar,
     ZoomCenterTransition,
     Footer,
@@ -53,7 +53,7 @@ export default {
 <style scoped lang="scss">
 .content-custom {
   // min-height: 90vh !important;
-  // background-color: #f9f9f9;
+
   background-color: #f5f5f5;
 }
 

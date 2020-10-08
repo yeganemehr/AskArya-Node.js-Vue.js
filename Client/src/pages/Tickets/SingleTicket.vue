@@ -4,58 +4,65 @@
       <h1>#{{ ticket.ticket_id }} <span class="subtitle">مشاهده تیکت</span></h1>
     </div>
     <h2 class="ticket-desc text-center pb-3">{{ ticket.title }}</h2>
-    <div
-      v-for="message of messages"
-      :key="message.id"
-      class="card-custom my-3"
-      :class="message.user.id == ticket.user.id ? 'ml-4' : 'mr-4'"
-    >
-      <div class="ticket-meta d-flex justify-content-between row">
-        <p class="ticket-user">
-          <img
-            :src="message.user.avatar"
-            class="user-avatar avatar"
-            v-if="message.user.avatar"
-          />
+    <div class="row">
+      <div class="col-lg-8 mr-5">
+        <div
+          v-for="message of messages"
+          :key="message.id"
+          class="card-custom my-3"
+          :class="message.user.id == ticket.user.id ? 'mr-5' : 'ml-5'"
+        >
+          <div class="ticket-meta d-flex justify-content-between row">
+            <p class="ticket-user">
+              <img
+                :src="message.user.avatar"
+                class="user-avatar avatar"
+                v-if="message.user.avatar"
+              />
 
-          <!-- ORIGINAL CODE <img
+              <!-- ORIGINAL CODE <img
               :src="message.user.avatar"
               :alt="message.user.name"
               class="user-avatar avatar"
               v-if="message.user.avatar"
             />-->
-          <i class="pl-1 text-danger far fa-user" v-else></i>
-          {{ message.user.name }}
-        </p>
-        <div class="card-info">
-          <p class="ticket-date">
-            <span class="pl-3">{{ getTime(message.createdAt) }}</span>
-            {{ getDate(message.createdAt) }}
+              <i class="pl-1 text-info far fa-user" v-else></i>
+              {{ message.user.name }}
+            </p>
+            <div class="card-info">
+              <p class="ticket-date">
+                {{ getDate(message.createdAt) }}
+                <span class="pr-3">{{ getTime(message.createdAt) }}</span>
+              </p>
+            </div>
+          </div>
+          <div class="w-100 d-md-none"></div>
+
+          <p
+            class="pt-4 text-section-main text-break"
+            v-if="message.user.isAdmin"
+            v-html="message.message"
+          ></p>
+          <p class="pt-4 text-section-main text-break" v-else>
+            {{ message.message }}
           </p>
+
+          <div class="text-left pl-2 pt-2" v-if="isAdmin">
+            <i @click="handleEdit(message)" class="fas fa-pencil-alt pl-3"></i>
+            <i @click="handleDelete(message)" class="far fa-trash-alt pr-1"></i>
+          </div>
+
+          <hr v-if="message.files.length" />
+          <ul v-if="message.files.length">
+            <li v-for="file in message.files" :key="file.name">
+              <a :href="'/api/v1' + file.downloadUrl">{{ file.name }}</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="w-100 d-md-none"></div>
-
-      <p
-        class="pt-4 text-section-main text-break"
-        v-if="message.user.isAdmin"
-        v-html="message.message"
-      ></p>
-      <p class="pt-4 text-section-main text-break" v-else>
-        {{ message.message }}
-      </p>
-
-      <div class="text-left pl-2 pt-2" v-if="isAdmin">
-        <i @click="handleEdit(message)" class="fas fa-pencil-alt pl-3"></i>
-        <i @click="handleDelete(message)" class="far fa-trash-alt pr-1"></i>
+      <div class="col-lg-3">
+        <Ads class="sticky" />
       </div>
-
-      <hr v-if="message.files.length" />
-      <ul v-if="message.files.length">
-        <li v-for="file in message.files" :key="file.name">
-          <a :href="'/api/v1' + file.downloadUrl">{{ file.name }}</a>
-        </li>
-      </ul>
     </div>
 
     <!--------------------------- Ticket Reply --------------------------->
@@ -108,6 +115,8 @@
 </template>
 
 <script>
+import Ads from '../../pages/FrontendPages/Components/Ads';
+
 import backend from '../../backend';
 import * as moment from 'moment';
 import { ImageUpload } from 'src/components/index';
@@ -147,6 +156,7 @@ export default {
   components: {
     fileUpload,
     ImageUpload,
+    Ads,
   },
   data() {
     return {
@@ -455,6 +465,15 @@ section {
   font-family: IranSansBlog !important;
 }
 
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 20px;
+  top: 7em;
+  margin-bottom: 1em;
+  padding: 0 1em;
+}
+
 .card-custom {
   background-color: rgb(255, 255, 255);
   border-radius: 25px;
@@ -543,6 +562,12 @@ section {
     width: 1.8em;
     height: 1.8em;
     margin-left: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sticky {
+    display: none !important;
   }
 }
 

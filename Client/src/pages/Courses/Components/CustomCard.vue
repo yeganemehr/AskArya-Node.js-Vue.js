@@ -1,12 +1,11 @@
 <template>
   <section>
-    <!-- CARD 1 -->
     <div class="card card-1 text-center" v-if="enrolled">
       <div class="py-3 px-2">
         <h2 class="title">درصد تکمیل دوره</h2>
         <div>
           <pie-chart
-            style="height: 100%;"
+            style="height: 100%"
             :chart-data="pieChart1.chartData"
             :extra-options="pieChart1.extraOptions"
             :height="120"
@@ -17,39 +16,6 @@
             {{ Number(done) }} %
           </p>
         </div>
-      </div>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="card card-2 text-center">
-      <div class="py-3 px-3">
-        <h2 class="title">يادگيری فعال</h2>
-        <p class="subtitle">
-          در حین انجام تکالیف روزمره خود زبان را بیاموزید، تا سریع تر و بهتر یاد
-          بگیرید.
-        </p>
-      </div>
-    </div>
-
-    <!-- CARD 4 -->
-    <div class="card card-4 text-center">
-      <div class="py-3 px-3">
-        <h2 class="title">استاندارد های اروپا</h2>
-        <p class="subtitle">
-          سبک و متد های آموزشی اسک آریا متناسب با استاندارد های اروپا طراحی شده
-          است.
-        </p>
-      </div>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="card card-3 text-center">
-      <div class="py-3 px-3">
-        <h2 class="title">یادگیری سریع</h2>
-        <p class="subtitle">
-          ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان آموزان
-          در موثر ترین و کوتاه ترین زمان ممکن صورت بگیرد.
-        </p>
       </div>
     </div>
   </section>
@@ -169,21 +135,6 @@ pie-chart {
 
 .card-1 {
   background: linear-gradient(180deg, #f44881, #ec454f) !important;
-}
-
-.card-2 {
-  background-image: linear-gradient(180deg, #21c8f6f8, #637afff6),
-    url(/img/frontend/london-seemless-bg.svg) !important;
-}
-
-.card-3 {
-  background-image: linear-gradient(180deg, #62d1b9fa, #20b897f3),
-    url(/img/frontend/london-seemless-bg.svg) !important;
-}
-
-.card-4 {
-  background-image: linear-gradient(180deg, #7f57dbfa, #b372bdf3),
-    url(/img/frontend/london-seemless-bg.svg) !important;
 }
 
 .title {

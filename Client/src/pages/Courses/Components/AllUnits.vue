@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div
-      class="col-md-9 UnitSection mb-5"
+      class="col-lg-9 col-md-10 UnitSection mb-5"
       v-if="episodes.length"
       :style="scrollable ? { 'overflow-y': 'auto' } : ''"
     >
@@ -60,12 +60,13 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-lg-3 col-md-2">
       <custom-card
         :enrolled="purchased"
         :done="courseDonePercentage"
         :remain="courseRemainPercentage"
       />
+      <Ads class="sticky" />
     </div>
   </div>
 </template>
@@ -73,10 +74,12 @@
 <script>
 import timeUtil from '../../../util/time';
 import CustomCard from './CustomCard.vue';
+import Ads from '../../FrontendPages/Components/Ads';
 
 export default {
   components: {
     CustomCard,
+    Ads,
   },
   props: [
     'course',
@@ -186,6 +189,15 @@ h4 {
   font-family: IranSansBold !important;
 }
 
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 0px;
+  top: 10em;
+  margin-bottom: 3.4em;
+  padding: 0 1.2em;
+}
+
 .UnitBox:hover,
 .active {
   background: #339afb2c !important;
@@ -254,23 +266,30 @@ h4 {
   padding: 8px 15px;
 }
 
+@media screen and (max-width: 990px) {
+  .sticky {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .UnitBox {
-    padding: 16px 7px;
+    padding: 16px 7px 13px 7px;
+    margin-bottom: 5px;
   }
 
   .UnitName {
-    font-size: 1em;
+    font-size: 1.05em;
   }
 
   .detail-time {
-    font-size: 0.9em;
+    font-size: 0.95em;
     align-self: center;
     padding: 6px 8px;
   }
 
   .detail-price {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     align-self: center;
     padding: 7px;
   }
