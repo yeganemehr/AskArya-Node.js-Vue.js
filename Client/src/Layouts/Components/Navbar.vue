@@ -97,7 +97,7 @@
       </li>
     </ul>
 
-    <ul class="navbar-nav mr-auto d-none d-md-block ipad-fix dropdown-box">
+    <ul class="navbar-nav mr-auto ipad-fix dropdown-box">
       <div class="row">
         <div v-if="this.$root.$data.user !== undefined">
           <div class="row">
