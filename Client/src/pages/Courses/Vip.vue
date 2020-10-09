@@ -12,10 +12,7 @@
       v-if="this.$root.$data.user !== undefined"
       class="dropdown-prices pb-3"
     >
-      <base-dropdown
-        title="عضویت"
-        title-classes="btn btn-success animation-on-hover px-5"
-      >
+      <base-dropdown title="عضویت" title-classes="btn btn-success px-5">
         <a class="dropdown-item" href="#" @click.prevent="payment">
           ماهانه -
           <span>39</span> هزار تومان
@@ -144,7 +141,7 @@ export default {
   font-family: IranSans;
 
   span {
-    color: #260574;
+    color: #ef476f;
     font-family: IranSansBold;
     font-size: 1.2em;
   }

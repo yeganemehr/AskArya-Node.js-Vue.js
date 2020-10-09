@@ -1,6 +1,6 @@
 <template>
   <div class="bg">
-    <div class="container">
+    <div class="container pt-4">
       <div class="card-custom">
         <h1 class="title">پنل کاربری</h1>
       </div>
@@ -51,6 +51,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import StatsCard from 'src/components/Cards/StatsCard';
 import UserCard from './Components/UserCard.vue';
@@ -170,12 +171,14 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 .bg {
   background-color: #f9f9f9 !important;
 }
+
 .card-custom {
-  margin: 2em 0;
+  // padding: 2em 0;
   border-radius: 1.5em;
   background-color: #fc5296;
   background-image: linear-gradient(315deg, #fc5296 0%, #ef476f 74%);

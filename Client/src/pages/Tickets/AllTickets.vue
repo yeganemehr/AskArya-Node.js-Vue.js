@@ -2,14 +2,16 @@
   <div class="height">
     <section class="container text-right py-5">
       <!-- SHOULD HAVE PAGINATION -->
-      <h1 class="pb-5 text-danger">تیکت ها</h1>
-      <div class="pb-5">
+      <h1 class="pb-5 text-black">تیکت ها</h1>
+      <div class="mb-5">
         <router-link to="/createticket">
-          <base-button round type="success">
+          <base-button type="info">
             <i class="pl-3 fas fa-eye"></i> تیکت جدید
           </base-button>
         </router-link>
       </div>
+
+      <hr class="my-5" />
 
       <!-------------- NEW TICKET -------------->
       <div
@@ -49,7 +51,7 @@
           <div class="w-100 d-md-none pt-3"></div>
           <div class="view-ticket">
             <router-link :to="`/tickets/view/${ticket.id}`">
-              <base-button class="px-3" round type="info">
+              <base-button class="px-3 custom-button" round type="info">
                 <i class="pl-3 fas fa-eye"></i> نمایش
               </base-button>
             </router-link>
@@ -57,7 +59,7 @@
         </div>
       </div>
 
-      <div class="pt-4">
+      <div class="mt-5">
         <base-pagination
           :value="pagination.currentPage"
           :per-page="pagination.perpage"
@@ -250,6 +252,10 @@ h1 {
   box-shadow: 40px rgba(121, 121, 121, 0.6);
 }
 
+.custom-button {
+  background: #ef476f !important;
+}
+
 @media (max-width: 768px) {
   .single-ticket-row {
     .ticket-card {
@@ -266,7 +272,7 @@ h1 {
       }
 
       p {
-        font-size: 0.9em;
+        font-size: 1.1em;
         font-family: IranSans;
         padding-top: 10px;
       }
@@ -279,15 +285,15 @@ h1 {
         width: 100%;
       }
       .ticket-dept {
-        padding-top: 1.1em;
+        padding-top: 1.2em;
         // width: 100%;
       }
       .ticket-date {
-        padding-top: 1.1em;
+        padding-top: 1.2em;
         // width: 100%;
       }
       .ticket-status {
-        padding-top: 1.1em;
+        padding-top: 1.2em;
       }
     }
   }

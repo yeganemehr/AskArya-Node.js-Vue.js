@@ -20,20 +20,20 @@ class courseController extends controller {
           {
             page,
             sort: {
-              createdAt: 1
+              createdAt: 1,
             },
             // limit: 4,
             populate: [
               {
-                path: 'categories'
+                path: 'categories',
               },
               {
-                path: 'user'
+                path: 'user',
               },
               {
-                path: 'episodesCount'
-              }
-            ]
+                path: 'episodesCount',
+              },
+            ],
           }
         )
       );
@@ -49,7 +49,7 @@ class courseController extends controller {
         ...courses,
         docs: courses.docs.map(this.filterCourse),
         episodes: episodes.length,
-        seconds
+        seconds,
       };
       res.json(data);
     } catch (err) {
@@ -65,22 +65,22 @@ class courseController extends controller {
       body: course.body,
       thumb: course.thumb,
       type: course.type,
-      categories: course.categories.map(cate => {
+      categories: course.categories.map((cate) => {
         return {
           name: cate.name,
-          slug: cate.slug
+          slug: cate.slug,
         };
       }),
       user: {
         id: course.user.id,
-        name: course.user.name
+        name: course.user.name,
       },
       price: course.price,
       oldPrice: course.oldPrice,
       createdAt: course.createdAt,
       time: course.time,
       tags: course.tags || '',
-      episodes: course.episodesCount
+      episodes: course.episodesCount,
     };
   }
 
@@ -88,33 +88,33 @@ class courseController extends controller {
     try {
       const course = await Course.findOneAndUpdate(
         {
-          slug: req.params.slug
+          slug: req.params.slug,
         },
         {
           $inc: {
-            viewCount: 1
-          }
+            viewCount: 1,
+          },
         }
       ).populate([
         {
           path: 'user',
-          select: 'name'
+          select: 'name',
         },
         {
           path: 'episodes',
           options: {
             sort: {
-              number: 1
-            }
-          }
+              number: 1,
+            },
+          },
         },
         {
           path: 'categories',
-          select: 'name slug'
+          select: 'name slug',
         },
         {
-          path: 'usersCount'
-        }
+          path: 'usersCount',
+        },
       ]);
       if (!course) return this.failed('چنین دوره ای یافت نشد', res, 404);
       const user = req.user ? await User.findById(req.user.id) : undefined;
@@ -122,9 +122,9 @@ class courseController extends controller {
         data: {
           course: await this.filterCourseData(course, user, true),
           enrolled: user && (user.admin || user.checkLearning(course.id)),
-          enrolledCount: course.usersCount
+          enrolledCount: course.usersCount,
         },
-        status: 'success'
+        status: 'success',
       });
     } catch (err) {
       this.failed(err.message, res);
@@ -144,20 +144,20 @@ class courseController extends controller {
       image: course.thumb,
       type: course.type,
       time: course.time,
-      categories: course.categories.map(cate => {
+      categories: course.categories.map((cate) => {
         return {
           name: cate.name,
-          slug: cate.slug
+          slug: cate.slug,
         };
       }),
       user: {
         id: course.user.id,
-        name: course.user.name
+        name: course.user.name,
       },
       episodes: episodes,
       price: course.price,
       oldPrice: course.oldPrice,
-      createdAt: course.createdAt
+      createdAt: course.createdAt,
     };
     if (videoURL) {
       data.download = course.download(!!user, user);
@@ -180,33 +180,33 @@ class courseController extends controller {
       number: episode.number,
       createdAt: episode.createdAt,
       download: episode.download(!!user, user),
-      done: await this.hasDoneEpisode(episode, user)
+      done: await this.hasDoneEpisode(episode, user),
     };
   }
   async singleEpisode(req, res) {
     try {
       const course = await Course.findOne({
-        slug: req.params.slug
+        slug: req.params.slug,
       }).populate([
         {
           path: 'user',
-          select: 'name'
+          select: 'name',
         },
         {
           path: 'episodes',
           options: {
             sort: {
-              number: 1
-            }
-          }
+              number: 1,
+            },
+          },
         },
         {
           path: 'categories',
-          select: 'name slug'
+          select: 'name slug',
         },
         {
-          path: 'usersCount'
-        }
+          path: 'usersCount',
+        },
       ]);
       let episode = undefined;
       for (let x = 0; x < course.episodes.length; x++) {
@@ -218,8 +218,8 @@ class courseController extends controller {
       if (!episode) return this.failed('چنین درسی یافت نشد', res, 404);
       episode.updateOne({
         $inc: {
-          viewCount: 1
-        }
+          viewCount: 1,
+        },
       });
       const user = req.user ? await User.findById(req.user.id) : undefined;
       res.json({
@@ -228,9 +228,9 @@ class courseController extends controller {
           course: await this.filterCourseData(course, user),
           enrolled:
             user && (user.admin || user.checkLearning(episode.course.id)),
-          enrolledCount: episode.course.usersCount
+          enrolledCount: episode.course.usersCount,
         },
-        status: 'success'
+        status: 'success',
       });
     } catch (err) {
       this.failed(err.message, res);
@@ -247,7 +247,7 @@ class courseController extends controller {
       if (!course || !course.id || !course.validateDownload(mac, t)) {
         return this.failed('چنین دوره ای یافت نشد', res, 404);
       }
-      const reqo = request(course.videoUrl).on('error', error => {
+      const reqo = request(course.videoUrl).on('error', (error) => {
         this.failed(error.message, res);
       });
 
@@ -271,13 +271,13 @@ class courseController extends controller {
       } else {
         episode = await Episode.find({
           type: 'free',
-          id: req.params.id
+          id: req.params.id,
         }).exec();
       }
       if (!episode || !episode.id || !episode.validateDownload(mac, t)) {
         return this.failed('چنین درسی یافت نشد', res, 404);
       }
-      const reqo = request(episode.videoUrl).on('error', error => {
+      const reqo = request(episode.videoUrl).on('error', (error) => {
         this.failed(error.message, res);
       });
       req.pipe(reqo);
@@ -291,22 +291,22 @@ class courseController extends controller {
       let comments = await Comment.find({
         course: req.params.course,
         parent: null,
-        approved: true
+        approved: true,
       }).populate([
         {
           path: 'user',
-          select: 'name'
+          select: 'name',
         },
         {
           path: 'comments',
           match: {
-            approved: true
+            approved: true,
           },
           populate: {
             path: 'user',
-            select: 'name'
-          }
-        }
+            select: 'name',
+          },
+        },
       ]);
       return res.json(comments);
     } catch (err) {
@@ -344,9 +344,9 @@ class courseController extends controller {
       .PaymentRequest({
         Amount: price,
         CallbackURL: `${config.siteurl}/courses/payments/verification`,
-        Description: 'خرید دوره ' + course.title
+        Description: 'خرید دوره ' + course.title,
       })
-      .then(response => {
+      .then((response) => {
         if (timeout) {
           clearTimeout(timeout);
         }
@@ -355,20 +355,20 @@ class courseController extends controller {
             user: req.user.id,
             course: course.id,
             resnumber: response.authority,
-            price: price
+            price: price,
           });
-          payment.save(err => {
+          payment.save((err) => {
             if (err) {
               return this.failed(err, res, 500);
             }
             return res.json({
               redirect: response.url,
-              status: 'success'
+              status: 'success',
             });
           });
         }
       })
-      .catch(err => {
+      .catch((err) => {
         if (timeout) {
           clearTimeout(timeout);
         }
@@ -380,15 +380,15 @@ class courseController extends controller {
       return this.failed('پرداخت شما با موفقیت انجام نشد', res, 500);
     }
     const payment = await Payment.findOne({
-      resnumber: req.body.authority
+      resnumber: req.body.authority,
     })
       .populate([
         {
-          path: 'course'
+          path: 'course',
         },
         {
-          path: 'user'
-        }
+          path: 'user',
+        },
       ])
       .exec();
 
@@ -410,9 +410,9 @@ class courseController extends controller {
       .PaymentVerification({
         Amount: payment.price,
         Authority: payment.resnumber,
-        timeout: 30000
+        timeout: 30000,
       })
-      .then(response => {
+      .then((response) => {
         if (timeout) {
           clearTimeout(timeout);
         }
@@ -427,22 +427,22 @@ class courseController extends controller {
             ip: ip,
             user: payment.user.id,
             type: 'buy_course',
-            title: ` با تشکر از حسن انتخاب شما, خرید دوره ${payment.course.title} با موفقیت انجام شد و هم اکنون می توانید بصورت کامل از این دوره استفاده کنید. `
+            title: ` با تشکر از حسن انتخاب شما, خرید دوره ${payment.course.title} با موفقیت انجام شد و هم اکنون می توانید بصورت کامل از این دوره استفاده کنید. `,
           });
           buyCourseLog.save();
           return res.json({
             course: {
               id: payment.course.id,
-              slug: payment.course.slug
+              slug: payment.course.slug,
             },
             message: 'پرداخت شما با موفقیت انجام شد',
-            status: true
+            status: true,
           });
         } else {
           return this.failed('پرداخت شما با موفقیت انجام نشد', res, 500);
         }
       })
-      .catch(err => {
+      .catch((err) => {
         if (timeout) {
           clearTimeout(timeout);
         }
@@ -459,42 +459,42 @@ class courseController extends controller {
         $or: [
           {
             _id: {
-              $in: user.learning
-            }
+              $in: user.learning,
+            },
           },
           {
-            type: 'VIP'
-          }
-        ]
+            type: 'VIP',
+          },
+        ],
       };
     } else {
       condition = {
         _id: {
-          $in: user.learning
-        }
+          $in: user.learning,
+        },
       };
     }
     const courses = await Course.paginate(condition, {
       page,
       sort: {
-        createdAt: 1
+        createdAt: 1,
       },
       limit: 24,
       populate: [
         {
-          path: 'categories'
+          path: 'categories',
         },
         {
-          path: 'user'
+          path: 'user',
         },
         {
-          path: 'episodesCount'
-        }
-      ]
+          path: 'episodesCount',
+        },
+      ],
     });
     res.json({
       ...courses,
-      docs: courses.docs.map(this.filterCourse)
+      docs: courses.docs.map(this.filterCourse),
     });
   }
   async getCourseDonePercentage(course, user) {
@@ -508,8 +508,8 @@ class courseController extends controller {
     const donedEpisodes = await DoneEpisode.countDocuments({
       user: user.id,
       episode: {
-        $in: items
-      }
+        $in: items,
+      },
     }).exec();
     return ((donedEpisodes * 100) / items.length).toFixed(2);
   }
@@ -524,11 +524,11 @@ class courseController extends controller {
           path: 'episodes',
           options: {
             sort: {
-              number: 1
-            }
-          }
-        }
-      ]
+              number: 1,
+            },
+          },
+        },
+      ],
     });
     if (
       !episode ||
@@ -540,14 +540,14 @@ class courseController extends controller {
     if (!has) {
       const model = new DoneEpisode({
         user: req.user.id,
-        episode: episode.id
+        episode: episode.id,
       });
       await model.save();
     }
     const done = await this.getCourseDonePercentage(episode.course, req.user);
     return res.json({
       done: done,
-      status: 'success'
+      status: 'success',
     });
   }
   async markAsNotDoneEpisode(req, res) {
@@ -561,11 +561,11 @@ class courseController extends controller {
           path: 'episodes',
           options: {
             sort: {
-              number: 1
-            }
-          }
-        }
-      ]
+              number: 1,
+            },
+          },
+        },
+      ],
     });
     if (
       !episode ||
@@ -577,13 +577,13 @@ class courseController extends controller {
     if (has) {
       await DoneEpisode.deleteOne({
         user: req.user.id,
-        episode: episode.id
+        episode: episode.id,
       });
     }
     const done = await this.getCourseDonePercentage(episode.course, req.user);
     return res.json({
       done: done,
-      status: 'success'
+      status: 'success',
     });
   }
   async hasDoneEpisode(episode, user) {
@@ -592,7 +592,7 @@ class courseController extends controller {
     }
     const has = await DoneEpisode.findOne({
       user: user.id,
-      episode: episode.id
+      episode: episode.id,
     }).exec();
     return !!has;
   }

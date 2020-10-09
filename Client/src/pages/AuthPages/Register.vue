@@ -240,7 +240,7 @@ export default {
 
 <style lang="scss" scoped>
 .auth-section {
-  min-height: 88vh;
+  height: 90vh !important;
   background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
 }
 

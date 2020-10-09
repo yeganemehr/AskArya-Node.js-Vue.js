@@ -24,14 +24,14 @@
                 </ul>
               </div>
               <div class="pricing-action">
-                <router-link to="contact">
+                <a href="https://t.me/AskAryaSomething">
                   <base-button
                     block
                     native-type="submit"
                     class="btn btn-info animation-on-hover"
                     >رزرو کلاس</base-button
                   >
-                </router-link>
+                </a>
               </div>
             </div>
           </div>
@@ -58,14 +58,14 @@
                 </ul>
               </div>
               <div class="pricing-action">
-                <router-link to="contact">
+                <a href="https://t.me/AskAryaSomething">
                   <base-button
                     block
                     native-type="submit"
                     class="btn btn-info animation-on-hover"
                     >رزرو کلاس</base-button
                   >
-                </router-link>
+                </a>
               </div>
             </div>
           </div>
@@ -97,14 +97,14 @@
                 </ul>
               </div>
               <div class="pricing-action">
-                <router-link to="contact">
+                <a href="https://t.me/AskAryaSomething">
                   <base-button
                     block
                     native-type="submit"
                     class="btn btn-info animation-on-hover"
                     >رزرو کلاس</base-button
                   >
-                </router-link>
+                </a>
               </div>
             </div>
           </div>
@@ -181,6 +181,10 @@ export default {
 
 .bold {
   font-family: IranSansBold;
+}
+
+.btn-info {
+  background: #ef476f !important;
 }
 
 li,
@@ -273,7 +277,7 @@ ul {
 
   .pricing-features li {
     padding: 6px 0;
-    font-size: 1.16em;
+    font-size: 1.1em;
   }
 
   .pricing-action {

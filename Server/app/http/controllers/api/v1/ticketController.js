@@ -15,18 +15,18 @@ class ticketController extends controller {
       const tickets = await Ticket.paginate(condition, {
         page,
         sort: {
-          answerAt: -1
+          answerAt: -1,
         },
         limit: 4,
         populate: [
           {
-            path: 'user'
-          }
-        ]
+            path: 'user',
+          },
+        ],
       });
       res.json({
         ...tickets,
-        docs: tickets.docs.map(this.filterTicket)
+        docs: tickets.docs.map(this.filterTicket),
       });
     } catch (err) {
       this.failed(err.message, res);
@@ -40,26 +40,26 @@ class ticketController extends controller {
       title: ticket.title,
       user: {
         id: ticket.user.id,
-        name: ticket.user.name
+        name: ticket.user.name,
       },
       department: ticket.department,
       priority: ticket.priority,
       date: ticket.createdAt,
       isHighlight: ticket.isHighlight,
       answerAt: ticket.answerAt,
-      status: ticket.status
+      status: ticket.status,
     };
   }
   filterMessage(message) {
     const files = [];
-    message.files.map(file => {
+    message.files.map((file) => {
       if (!file) {
         return;
       }
       const name = file.split('/').pop();
       files.push({
         name: name,
-        downloadUrl: `/tickets/view/${message.id}/${name}`
+        downloadUrl: `/tickets/view/${message.id}/${name}`,
       });
     });
     return {
@@ -68,42 +68,40 @@ class ticketController extends controller {
         id: message.user.id,
         name: message.user.name,
         isAdmin: message.user.admin,
-        avatar: message.user.avatar
+        avatar: message.user.avatar,
       },
       message: message.message,
       createdAt: message.createdAt,
-      files: files
+      files: files,
     };
   }
 
   async singleTicket(req, res) {
     try {
       const condition = {
-        _id: req.params.ticket
+        _id: req.params.ticket,
       };
       if (!req.user.admin) {
         condition.user = req.user.id;
       }
-      const ticket = await Ticket.findOne(condition)
-        .populate('user')
-        .exec();
+      const ticket = await Ticket.findOne(condition).populate('user').exec();
       if (!ticket) return this.failed('چنین تیکتی یافت نشد', res, 404);
 
       const messages = await ticketMessage
         .find({
-          ticket: ticket.id
+          ticket: ticket.id,
         })
         .populate('user')
         .sort({
-          createdAt: 1
+          createdAt: 1,
         })
         .exec();
       res.json({
         ticket: await this.filterTicket(ticket),
-        messages: messages.map(message => {
+        messages: messages.map((message) => {
           return this.filterMessage(message);
         }),
-        status: 'success'
+        status: 'success',
       });
     } catch (err) {
       this.failed(err.message, res);
@@ -123,7 +121,7 @@ class ticketController extends controller {
       user: req.user.id,
       priority,
       department,
-      status: 1
+      status: 1,
     });
     await ticket.save();
 
@@ -131,7 +129,7 @@ class ticketController extends controller {
       message,
       ticket: ticket.id,
       user: req.user.id,
-      files: [file]
+      files: [file],
     });
     await ticketmessage.save();
 
@@ -139,7 +137,7 @@ class ticketController extends controller {
 
     res.json({
       ticket: this.filterTicketData(ticket),
-      status: 'success'
+      status: 'success',
     });
   }
 
@@ -156,12 +154,12 @@ class ticketController extends controller {
       message: req.body.message,
       ticket: ticket.id,
       user: req.user.id,
-      files: [file]
+      files: [file],
     });
     await ticketmessage.save();
 
     const update = {
-      answerAt: Date.now()
+      answerAt: Date.now(),
     };
     if (ticket.user.id == req.user.id) {
       update.status = 1;
@@ -170,7 +168,7 @@ class ticketController extends controller {
     }
 
     await Ticket.findByIdAndUpdate(req.body.ticket, {
-      $set: update
+      $set: update,
     }).exec();
 
     ticketmessage.user = req.user;
@@ -178,7 +176,7 @@ class ticketController extends controller {
     res.json({
       ticket: this.filterTicket(ticket),
       message: this.filterMessage(ticketmessage),
-      status: 'success'
+      status: 'success',
     });
   }
 
@@ -186,8 +184,8 @@ class ticketController extends controller {
     const message = await ticketMessage.findById(req.params.message).populate({
       path: 'ticket',
       populate: {
-        path: 'user'
-      }
+        path: 'user',
+      },
     });
     if (!req.user.admin && message.ticket.user.id != req.user.id) {
       return this.failed('چنین تیکتی یافت نشد', res, 404);

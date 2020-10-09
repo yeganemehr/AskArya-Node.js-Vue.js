@@ -97,7 +97,7 @@
       </li>
     </ul>
 
-    <ul class="navbar-nav mr-auto ipad-fix dropdown-box">
+    <ul class="navbar-nav mr-auto d-none d-md-block ipad-fix dropdown-box">
       <div class="row">
         <div v-if="this.$root.$data.user !== undefined">
           <div class="row">
@@ -201,7 +201,7 @@
               <base-button
                 native-type="submit"
                 type="warning"
-                class="btn btn-signin"
+                class="btn-simple btn btn-signin"
               >
                 <i class="far fa-user ml-2"></i>
                 ثبت نام</base-button
@@ -464,9 +464,9 @@ p,
 
 @media (max-width: 768px) {
   .navbar-nav {
-    font-size: 1.06rem !important;
+    font-size: 1.08rem !important;
     color: #fff !important;
-    padding: 22px 0 0 0 !important;
+    padding: 24px 0 0 0 !important;
   }
   .navbar-nav li {
     padding: 4px 0 !important;

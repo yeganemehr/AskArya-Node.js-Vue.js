@@ -5,12 +5,12 @@
     </div>
     <h2 class="ticket-desc text-center pb-3">{{ ticket.title }}</h2>
     <div class="row">
-      <div class="col-lg-8 mr-5">
+      <div class="col-lg-8 col-md-12 mr-lg-5">
         <div
           v-for="message of messages"
           :key="message.id"
           class="card-custom my-3"
-          :class="message.user.id == ticket.user.id ? 'mr-5' : 'ml-5'"
+          :class="message.user.id == ticket.user.id ? 'ml-5' : 'mr-5'"
         >
           <div class="ticket-meta d-flex justify-content-between row">
             <p class="ticket-user">
@@ -26,7 +26,7 @@
               class="user-avatar avatar"
               v-if="message.user.avatar"
             />-->
-              <i class="pl-1 text-info far fa-user" v-else></i>
+              <i class="pl-2 text-info far fa-user" v-else></i>
               {{ message.user.name }}
             </p>
             <div class="card-info">
@@ -60,7 +60,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-md-12 d-none d-md-block">
         <Ads class="sticky" />
       </div>
     </div>
@@ -482,14 +482,18 @@ section {
   font-family: IranSansBlog !important;
 
   .ticket-date {
+    font-size: 14px;
     font-family: IranSans;
-    color: rgb(34, 34, 34);
+    color: rgb(53, 53, 53);
+    // background-color: #ef476f;
+    // padding: 3px 8px;
+    // border-radius: 10px;
   }
 
   .ticket-user {
     font-family: IranSans;
     font-size: 1.1em;
-    color: rgb(34, 34, 34);
+    color: rgb(0, 0, 0);
   }
 
   a {
