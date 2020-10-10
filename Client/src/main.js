@@ -7,7 +7,7 @@ import App from './App.vue';
 // router setup
 import backend from './backend';
 import router from './routes/router';
-// import Element from 'element-ui';
+import Element from 'element-ui';
 import './registerServiceWorker';
 import CKEditor from '@ckeditor/ckeditor5-vue';
 import VuePlyr from 'vue-plyr';
@@ -31,7 +31,7 @@ var VueScrollTo = require('vue-scrollto');
 // plugin setup
 Vue.use(RouterPrefetch);
 Vue.use(VueRouter);
-// Vue.use(Element);
+Vue.use(Element);
 Vue.use(DashboardPlugin);
 Vue.use(VueScrollTo);
 Vue.use(CKEditor);

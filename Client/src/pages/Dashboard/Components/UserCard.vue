@@ -224,7 +224,6 @@ export default {
 <style lang="scss" scoped>
 .box {
   height: 100% !important;
-  // height: 95% !important;
 }
 
 .card {

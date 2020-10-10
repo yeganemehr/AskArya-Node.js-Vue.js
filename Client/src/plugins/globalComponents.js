@@ -19,7 +19,7 @@ const GlobalComponents = {
     Vue.component(InputNumber.name, InputNumber);
     Vue.use(Tooltip);
     Vue.use(Popover);
-  }
+  },
 };
 
 export default GlobalComponents;

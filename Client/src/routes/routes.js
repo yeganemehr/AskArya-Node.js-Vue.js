@@ -1,7 +1,5 @@
 /* eslint-disable */
-import AuthLayout from 'src/Layouts/AuthLayout.vue';
 import FrontendLayout from 'src/Layouts/FrontendLayout.vue';
-// import FrontendLayoutNoAd from 'src/Layouts/FrontendLayoutNoAd.vue';
 import NotFound from 'src/Layouts/NotFoundPage.vue';
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -9,9 +7,6 @@ import NotFound from 'src/Layouts/NotFoundPage.vue';
 
 const Home = () =>
   import(/* webpackChunkName: "home" */ 'src/pages/FrontendPages/Home.vue');
-
-// const Lock = () =>
-//   import( /* webpackChunkName: "lock" */ 'src/pages/Layouts/Lock/Lock.vue');
 
 const NotFoundPage = () =>
   import(
@@ -266,7 +261,7 @@ const routes = [
   },
   {
     path: '/',
-    component: AuthLayout,
+    component: NotFound,
     children: [
       {
         path: '*',
