@@ -568,13 +568,13 @@ export default {
 }
 
 .icon-data {
-  font-size: 1.4em;
+  font-size: 1.35em;
   font-family: IranSansBold;
   color: white !important;
 }
 
 .icon-text {
-  font-size: 0.75em;
+  font-size: 0.68em;
   color: rgba(255, 255, 255, 0.74) !important;
   font-family: IranSans !important;
   padding-left: 0;

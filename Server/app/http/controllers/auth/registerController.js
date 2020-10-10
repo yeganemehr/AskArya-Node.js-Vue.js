@@ -6,7 +6,7 @@ class registerController extends controller {
     const title = 'صفحه عضویت';
     res.render('home/auth/register', {
       recaptcha: this.recaptcha.render(),
-      title
+      title,
     });
   }
 
@@ -25,7 +25,7 @@ class registerController extends controller {
     passport.authenticate('local.register', {
       successRedirect: '/',
       failureRedirect: '/auth/register',
-      failureFlash: true
+      failureFlash: true,
     })(req, res, next);
   }
 }

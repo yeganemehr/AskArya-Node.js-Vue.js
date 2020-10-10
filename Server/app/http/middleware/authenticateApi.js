@@ -7,7 +7,7 @@ class authenticateApi extends middleware {
     if (!req.isAuthenticated()) {
       return res.status(401).json({
         data: 'اجازه دسترسی ندارید',
-        status: 'error'
+        status: 'error',
       });
     }
     next();

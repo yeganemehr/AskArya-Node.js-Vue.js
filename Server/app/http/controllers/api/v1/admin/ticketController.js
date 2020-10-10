@@ -14,16 +14,16 @@ class ticketController extends controller {
           {
             title: {
               $regex: req.query.filter,
-              $options: 'i'
-            }
+              $options: 'i',
+            },
           },
           {
             department: {
               $regex: req.query.filter,
-              $options: 'i'
-            }
-          }
-        ]
+              $options: 'i',
+            },
+          },
+        ],
       };
       const users = await User.find(
         {
@@ -31,26 +31,26 @@ class ticketController extends controller {
             {
               name: {
                 $regex: req.query.filter,
-                $options: 'i'
-              }
+                $options: 'i',
+              },
             },
             {
               email: {
                 $regex: req.query.filter,
-                $options: 'i'
-              }
-            }
-          ]
+                $options: 'i',
+              },
+            },
+          ],
         },
         '_id'
       ).exec();
       if (users.length) {
         filter.$or.push({
           user: {
-            $in: users.map(user => {
+            $in: users.map((user) => {
               return user.id;
-            })
-          }
+            }),
+          },
         });
       }
     }
@@ -60,19 +60,19 @@ class ticketController extends controller {
           $group: {
             _id: '$status',
             count: {
-              $sum: 1
-            }
-          }
-        }
+              $sum: 1,
+            },
+          },
+        },
       ]).exec(),
       Ticket.paginate(filter, {
         page,
         sort: {
-          answerAt: -1
+          answerAt: -1,
         },
         limit: parseInt(limit, 10),
-        populate: 'user'
-      })
+        populate: 'user',
+      }),
     ];
     const result = await Promise.all(promises);
     const tickets = result[1];
@@ -80,12 +80,12 @@ class ticketController extends controller {
     res.json({
       ...tickets,
       docs: docs,
-      tickets: result[0].map(item => {
+      tickets: result[0].map((item) => {
         return {
           status: item._id,
-          count: item.count
+          count: item.count,
         };
-      })
+      }),
     });
   }
   filterTicketData(ticket) {
@@ -98,19 +98,19 @@ class ticketController extends controller {
       title: ticket.title,
       user: {
         id: ticket.user.id,
-        name: ticket.user.name
+        name: ticket.user.name,
       },
       department: ticket.department,
       priority: ticket.priority,
       date: ticket.createdAt,
       isHighlight: ticket.isHighlight,
       answerAt: ticket.answerAt,
-      status: ticket.status
+      status: ticket.status,
     };
   }
   async highlight(req, res) {
     res.json({
-      status: 'success'
+      status: 'success',
     });
   }
   async store(req, res) {
@@ -126,7 +126,7 @@ class ticketController extends controller {
       user: user.id,
       priority,
       department,
-      status: 1
+      status: 1,
     });
     await ticket.save();
 
@@ -134,7 +134,7 @@ class ticketController extends controller {
       message,
       ticket: ticket.id,
       user: req.user.id,
-      files: [file]
+      files: [file],
     });
     await ticketmessage.save();
 
@@ -142,7 +142,7 @@ class ticketController extends controller {
 
     res.json({
       ticket: this.filterTicketData(ticket),
-      status: 'success'
+      status: 'success',
     });
   }
   async toggleHighLight(req, res) {
@@ -152,21 +152,21 @@ class ticketController extends controller {
       return this.failed('چنین تیکتی وجود ندارد', res, 404);
     }
     await Ticket.findByIdAndUpdate(req.params.ticket, {
-      isHighlight: !ticket.isHighlight
+      isHighlight: !ticket.isHighlight,
     });
 
     res.json({
-      status: 'success'
+      status: 'success',
     });
   }
   async destroy(req, res) {
     this.isMongoId(res, req.params.ticket);
     await Ticket.findByIdAndDelete(req.params.ticket);
     await ticketMessage.deleteMany({
-      ticket: req.params.ticket
+      ticket: req.params.ticket,
     });
     res.json({
-      status: 'success'
+      status: 'success',
     });
   }
 
@@ -179,22 +179,22 @@ class ticketController extends controller {
     }
     ticket = await Ticket.findByIdAndUpdate(
       {
-        _id: req.params.ticket
+        _id: req.params.ticket,
       },
       {
         $set: {
-          ...req.body
-        }
+          ...req.body,
+        },
       },
       {
-        new: true
+        new: true,
       }
     );
     ticket.user = await User.findById(req.body.user);
 
     res.json({
       ticket: this.filterTicketData(ticket),
-      status: 'success'
+      status: 'success',
     });
   }
 
@@ -202,7 +202,7 @@ class ticketController extends controller {
     this.isMongoId(res, req.params.message);
     await ticketMessage.findByIdAndDelete(req.params.message);
     res.json({
-      status: 'success'
+      status: 'success',
     });
   }
 
@@ -211,12 +211,12 @@ class ticketController extends controller {
     if (req.body.message) {
       await ticketMessage.findByIdAndUpdate(req.params.message, {
         $set: {
-          message: req.body.message
-        }
+          message: req.body.message,
+        },
       });
     }
     res.json({
-      status: 'success'
+      status: 'success',
     });
   }
   getUrlFile(dir) {

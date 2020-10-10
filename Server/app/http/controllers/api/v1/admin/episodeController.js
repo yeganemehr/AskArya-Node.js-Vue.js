@@ -16,15 +16,15 @@ class episodeController extends controller {
           page,
           sort: {
             course: 1,
-            number: 1
+            number: 1,
           },
           limit: parseInt(limit, 10),
-          populate: 'course'
+          populate: 'course',
         }
       );
       const data = {
         ...episodes,
-        docs: episodes.docs.map(this.filterEpisodeData)
+        docs: episodes.docs.map(this.filterEpisodeData),
       };
       res.json(data);
     } catch (err) {
@@ -42,13 +42,13 @@ class episodeController extends controller {
       videoUrl: episode.videoUrl,
       course: {
         id: episode.course.id,
-        title: episode.course.title
+        title: episode.course.title,
       },
       courseName: episode.course.title,
       type: episode.type,
       body: episode.body,
       createdAt: episode.createdAt,
-      xp: episode.xp ? episode.xp : 0
+      xp: episode.xp ? episode.xp : 0,
     };
   }
 
@@ -65,7 +65,7 @@ class episodeController extends controller {
       videoUrl,
       course,
       number,
-      xp
+      xp,
     });
 
     await newEpisode.save();
@@ -74,29 +74,29 @@ class episodeController extends controller {
         $and: [
           {
             _id: {
-              $ne: newEpisode.id
-            }
+              $ne: newEpisode.id,
+            },
           },
           {
-            course: newEpisode.course
+            course: newEpisode.course,
           },
           {
             number: {
-              $gte: newEpisode.number
-            }
-          }
-        ]
+              $gte: newEpisode.number,
+            },
+          },
+        ],
       },
       {
         $inc: {
-          number: +1
-        }
+          number: +1,
+        },
       }
     );
     newEpisode.course = await Course.findById(course);
     return res.json({
       episode: this.filterEpisodeData(newEpisode),
-      status: 'success'
+      status: 'success',
     });
   }
   async update(req, res, next) {
@@ -121,11 +121,11 @@ class episodeController extends controller {
       {
         $set: {
           ...req.body,
-          ...newData
-        }
+          ...newData,
+        },
       },
       {
-        new: true
+        new: true,
       }
     );
     if (episode.number != newEpisode.number) {
@@ -135,32 +135,32 @@ class episodeController extends controller {
             $and: [
               {
                 _id: {
-                  $ne: newEpisode.id
-                }
+                  $ne: newEpisode.id,
+                },
               },
               {
-                course: newEpisode.course
+                course: newEpisode.course,
               },
               {
                 $and: [
                   {
                     number: {
-                      $lte: newEpisode.number
-                    }
+                      $lte: newEpisode.number,
+                    },
                   },
                   {
                     number: {
-                      $gt: episode.number
-                    }
-                  }
-                ]
-              }
-            ]
+                      $gt: episode.number,
+                    },
+                  },
+                ],
+              },
+            ],
           },
           {
             $inc: {
-              number: -1
-            }
+              number: -1,
+            },
           }
         );
       } else {
@@ -169,32 +169,32 @@ class episodeController extends controller {
             $and: [
               {
                 _id: {
-                  $ne: newEpisode.id
-                }
+                  $ne: newEpisode.id,
+                },
               },
               {
-                course: newEpisode.course
+                course: newEpisode.course,
               },
               {
                 $and: [
                   {
                     number: {
-                      $gte: newEpisode.number
-                    }
+                      $gte: newEpisode.number,
+                    },
                   },
                   {
                     number: {
-                      $lt: episode.number
-                    }
-                  }
-                ]
-              }
-            ]
+                      $lt: episode.number,
+                    },
+                  },
+                ],
+              },
+            ],
           },
           {
             $inc: {
-              number: 1
-            }
+              number: 1,
+            },
           }
         );
       }
@@ -204,13 +204,13 @@ class episodeController extends controller {
     const etime = this.timeToSeconds(newEpisode.time);
     await Course.findByIdAndUpdate(episode.course.id, {
       $set: {
-        time: this.secondsToTime(ctime - petime + etime)
-      }
+        time: this.secondsToTime(ctime - petime + etime),
+      },
     });
     newEpisode.course = episode.course;
     return res.json({
       episode: this.filterEpisodeData(newEpisode),
-      status: 'success'
+      status: 'success',
     });
   }
   async destroy(req, res) {
@@ -225,34 +225,34 @@ class episodeController extends controller {
       {
         $and: [
           {
-            course: episode.course
+            course: episode.course,
           },
           {
             number: {
-              $gt: episode.number
-            }
-          }
-        ]
+              $gt: episode.number,
+            },
+          },
+        ],
       },
       {
         $inc: {
-          number: -1
-        }
+          number: -1,
+        },
       }
     );
     episode.remove();
     return res.json({
-      status: 'success'
+      status: 'success',
     });
   }
   async getLastNumber(course) {
     const episode = await Episode.findOne(
       {
-        course: course
+        course: course,
       },
       'number'
     ).sort({
-      number: -1
+      number: -1,
     });
     let number = 1;
     if (episode) {
@@ -268,7 +268,7 @@ class episodeController extends controller {
       `${image.destination}/${image.filename}`
     );
 
-    const resize = size => {
+    const resize = (size) => {
       let imageName = `${imageInfo.name}-${size}${imageInfo.ext}`;
 
       addresImages[size] = this.getUrlImage(

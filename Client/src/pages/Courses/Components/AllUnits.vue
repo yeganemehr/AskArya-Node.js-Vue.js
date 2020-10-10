@@ -195,7 +195,7 @@ h4 {
   margin-top: 0px;
   top: 10em;
   margin-bottom: 3.4em;
-  padding: 0 1.2em;
+  // padding: 0 1.2em;
 }
 
 .UnitBox:hover,

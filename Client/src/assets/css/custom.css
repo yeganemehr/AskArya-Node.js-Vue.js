@@ -93,11 +93,6 @@ input {
   font-family: IranSansBlog !important;
 }
 
-.badge {
-  padding: 0.3rem 0.9rem;
-  font-size: 0.8rem !important;
-}
-
 
 @media (max-width: 678px) {
   .white-content .el-table table > thead > tr > th {

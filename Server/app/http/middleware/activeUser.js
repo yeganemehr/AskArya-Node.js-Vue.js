@@ -11,13 +11,13 @@ class activeUser extends middleware {
         message:
           'دقت کنید اکانت شما فعال نیست برای فعال کردن اکانت خود لطفا از طریق فرم ورود اقدام به ورود کنید',
         type: 'error',
-        button: 'بسیار خوب'
+        button: 'بسیار خوب',
       });
 
       req.logout();
       // Custom Code - Arya
       res.clearCookie('remember_token');
-      req.session.destroy(function(err) {
+      req.session.destroy(function (err) {
         res.redirect('/');
       });
       // Custom Code End

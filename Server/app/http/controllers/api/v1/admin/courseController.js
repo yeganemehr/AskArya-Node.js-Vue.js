@@ -15,34 +15,34 @@ class courseController extends controller {
         filter = {
           title: {
             $regex: req.query.filter,
-            $options: 'i'
-          }
+            $options: 'i',
+          },
         };
       }
       const courses = await Course.paginate(filter, {
         page,
         sort: {
-          createdAt: 1
+          createdAt: 1,
         },
         limit: parseInt(limit, 10),
         populate: [
           {
-            path: 'user'
+            path: 'user',
           },
           {
-            path: 'commentsCount'
+            path: 'commentsCount',
           },
           {
-            path: 'usersCount'
+            path: 'usersCount',
           },
           {
-            path: 'Category'
-          }
-        ]
+            path: 'Category',
+          },
+        ],
       });
       const data = {
         ...courses,
-        docs: courses.docs.map(this.filterCourseData)
+        docs: courses.docs.map(this.filterCourseData),
       };
       res.json(data);
     } catch (err) {
@@ -59,15 +59,15 @@ class courseController extends controller {
       thumb: course.thumb,
       type: course.type,
       tags: course.tags.split(' '),
-      categories: course.categories.map(cate => {
+      categories: course.categories.map((cate) => {
         return {
           name: cate.name,
-          slug: cate.slug
+          slug: cate.slug,
         };
       }),
       user: {
         id: course.user.id,
-        name: course.user.name
+        name: course.user.name,
       },
       price: course.price,
       createdAt: course.createdAt,
@@ -76,7 +76,7 @@ class courseController extends controller {
       comments: course.commentsCount ? course.commentsCount : 0,
       users: course.usersCount ? course.usersCount : 0,
       oldPrice: course.oldPrice ? course.oldPrice : 0,
-      xp: course.xp ? course.xp : 0
+      xp: course.xp ? course.xp : 0,
     };
   }
 
@@ -93,7 +93,7 @@ class courseController extends controller {
       lang,
       xp,
       oldPrice,
-      videoUrl
+      videoUrl,
     } = req.body;
 
     let newCourse = new Course({
@@ -108,15 +108,15 @@ class courseController extends controller {
       lang,
       xp,
       oldPrice,
-      videoUrl
+      videoUrl,
     });
 
     await newCourse.save();
     return res.json({
       data: {
-        course: this.filterCourseData(newCourse)
+        course: this.filterCourseData(newCourse),
       },
-      status: 'success'
+      status: 'success',
     });
   }
   async update(req, res, next) {
@@ -138,18 +138,18 @@ class courseController extends controller {
       {
         $set: {
           ...req.body,
-          ...objForUpdate
-        }
+          ...objForUpdate,
+        },
       },
       {
-        new: true
+        new: true,
       }
     );
     return res.json({
       data: {
-        course: this.filterCourseData(newCourse)
+        course: this.filterCourseData(newCourse),
       },
-      status: 'success'
+      status: 'success',
     });
   }
   async destroy(req, res) {
@@ -164,11 +164,11 @@ class courseController extends controller {
     }
 
     // delete episodes
-    course.episodes.forEach(episode => episode.remove());
+    course.episodes.forEach((episode) => episode.remove());
 
     if (course.images !== undefined) {
       // delete Images
-      Object.values(course.images).forEach(image =>
+      Object.values(course.images).forEach((image) =>
         fs.unlinkSync(`./public${image}`)
       );
     }
@@ -177,18 +177,18 @@ class courseController extends controller {
     course.remove();
 
     return res.json({
-      status: 'success'
+      status: 'success',
     });
   }
   async getInsertEpisodeNumber(req, res) {
     this.isMongoId(req, req.params.course);
     const episode = await Episode.findOne(
       {
-        course: req.params.course
+        course: req.params.course,
       },
       'number'
     ).sort({
-      number: -1
+      number: -1,
     });
     let number = 1;
     if (episode) {
@@ -196,7 +196,7 @@ class courseController extends controller {
     }
     return res.json({
       number: number,
-      status: 'success'
+      status: 'success',
     });
   }
   getUrlImage(dir) {

@@ -12,7 +12,7 @@ module.exports = class controller {
   failed(msg, res, statusCode = 500) {
     res.status(statusCode).json({
       data: msg,
-      status: 'error'
+      status: 'error',
     });
   }
   // recaptchaConfig() {
@@ -46,7 +46,7 @@ module.exports = class controller {
       const errors = result.array();
       const messages = [];
 
-      errors.forEach(err => messages.push(err.msg));
+      errors.forEach((err) => messages.push(err.msg));
 
       this.failed(messages, res, 403);
 

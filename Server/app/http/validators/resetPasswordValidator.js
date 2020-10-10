@@ -10,9 +10,9 @@ class forgotPasswordValidator extends validator {
 
       check('password')
         .isLength({
-          min: 6,
+          min: 5,
         })
-        .withMessage('فیلد پسورد نمیتواند کمتر از 6 کاراکتر باشد'),
+        .withMessage('فیلد پسورد نمیتواند کمتر از 5 کاراکتر باشد'),
     ];
   }
 }

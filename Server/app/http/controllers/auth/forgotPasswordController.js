@@ -1,16 +1,16 @@
-const controller = require("app/http/controllers/controller");
-const passport = require("passport");
-const PasswordReset = require("app/models/password-reset");
-const User = require("app/models/user");
-const uniqueString = require("unique-string");
+const controller = require('app/http/controllers/controller');
+const passport = require('passport');
+const PasswordReset = require('app/models/password-reset');
+const User = require('app/models/user');
+const uniqueString = require('unique-string');
 // const mail = require('app/helpers/mail');
-const sgMail = require("@sendgrid/mail");
+const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 class forgotPasswordController extends controller {
   showForgotPassword(req, res) {
-    const title = "فراموشی رمز عبور";
-    res.render("home/auth/passwords/email", {
+    const title = 'فراموشی رمز عبور';
+    res.render('home/auth/passwords/email', {
       recaptcha: this.recaptcha.render(),
       title,
     });
@@ -31,7 +31,7 @@ class forgotPasswordController extends controller {
       email: req.body.email,
     });
     if (!user) {
-      req.flash("errors", "چنین کاربری وجود ندارد");
+      req.flash('errors', 'چنین کاربری وجود ندارد');
       return this.back(req, res);
     }
 
@@ -45,7 +45,7 @@ class forgotPasswordController extends controller {
     let mailOptions = {
       from: '"اسک آریا " <info@ask-arya.com>', // sender address
       to: `${newPasswordReset.email}`, // list of receivers
-      subject: "ریست کردن پسورد", // Subject line
+      subject: 'ریست کردن پسورد', // Subject line
       html: `  
             <div dir="rtl" class="text-align:right;" >
               <h2 class="font-family:Tahoma;">ریست کردن پسورد</h2>
@@ -60,19 +60,19 @@ class forgotPasswordController extends controller {
 
       if (err) return console.log(err);
 
-      console.log("Message Sent : %s", info.messageId);
+      console.log('Message Sent : %s', info.messageId);
 
       this.alert(req, {
-        title: "دقت کنید",
-        message: "ایمیل حاوی لینک پسورد به ایمیل شما ارسال شد",
-        type: "success",
+        title: 'دقت کنید',
+        message: 'ایمیل حاوی لینک پسورد به ایمیل شما ارسال شد',
+        type: 'success',
       });
 
-      return res.redirect("/");
+      return res.redirect('/');
     });
 
     // req.flash('success' , 'ایمیل بازیابی رمز عبور با موفقیت انجام شد');
-    res.redirect("/");
+    res.redirect('/');
   }
 }
 
