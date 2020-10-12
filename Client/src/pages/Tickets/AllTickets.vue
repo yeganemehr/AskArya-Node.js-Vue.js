@@ -202,7 +202,7 @@ h1 {
   .ticket-card {
     padding: 1.8em 2.5em;
     margin-bottom: 20px;
-    background-color: #f7f7f7 !important;
+    background-color: #fff !important;
     border-radius: 15px;
     border: 1px solid rgb(228, 228, 228);
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.19),
@@ -261,7 +261,7 @@ h1 {
     .ticket-card {
       margin-top: 10px;
       padding: 0.8em 2em;
-      background-color: rgb(226, 226, 226);
+      // background-color: rgb(226, 226, 226);
       border-radius: 15px;
       color: rgb(41, 41, 41);
 

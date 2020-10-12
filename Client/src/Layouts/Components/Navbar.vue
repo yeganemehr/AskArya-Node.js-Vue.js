@@ -341,6 +341,10 @@ export default {
   font-family: IranSansBold !important;
 }
 
+.navbar-collapse .navbar-nav .nav-link:hover {
+  color: #ef476f !important;
+}
+
 .dropdown-menu .dropdown-item:hover {
   color: #a053ee !important;
 }
@@ -381,6 +385,7 @@ export default {
   margin-left: 4px !important;
   align-content: right !important;
 }
+
 .i-custom {
   margin-right: 8px !important;
 }
@@ -466,10 +471,10 @@ p,
   .navbar-nav {
     font-size: 1.08rem !important;
     color: #fff !important;
-    padding: 24px 0 0 0 !important;
+    padding: 22px 0 0 0 !important;
   }
   .navbar-nav li {
-    padding: 4px 0 !important;
+    padding: 5px 0 !important;
     border-bottom: 1px solid #e4e4e463 !important;
     font-size: 1.05em !important;
   }
@@ -481,6 +486,14 @@ p,
   .login-register-buttons {
     padding-bottom: 7px !important;
   }
+
+  // .navbar.auth-navbar {
+  //   padding-top: 15px !important;
+  // }
+
+  // .navbar.bg-custom {
+  //   height: 60px !important;
+  // }
 
   .auth-button-mobile {
     font-size: 1em !important;

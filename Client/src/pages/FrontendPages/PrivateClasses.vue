@@ -1,8 +1,8 @@
 <template>
   <div class="private-classes-background">
     <div class="container pb-5">
-      <h1 class="text-center custom-title pt-5">کلاس های خصوصی ما</h1>
-      <div class="private-classes pb-4">
+      <h1 class="text-center custom-title pt-5 pb-3">کلاس های خصوصی ما</h1>
+      <div class="private-classes pb-5">
         <div class="row pricing">
           <div class="col-lg-4 col-sm-12 px-3">
             <div class="pricing-box hover">
@@ -169,7 +169,7 @@ export default {
 }
 
 .custom-title {
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   color: #fff !important;
   font-family: IranSansBold;
 }

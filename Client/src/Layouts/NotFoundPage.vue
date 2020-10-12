@@ -26,7 +26,7 @@
 .center {
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -40,7 +40,7 @@ h1 {
 
 .subtitle {
   font-size: 1.4em;
-  color: rgb(163, 163, 163) !important;
+  color: rgb(102, 102, 102) !important;
   font-family: IranSans !important;
   padding-top: 15px;
 }

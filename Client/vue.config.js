@@ -39,12 +39,12 @@ module.exports = {
             chunks: 'initial',
             reuseExistingChunk: true,
           },
-          // element: {
-          //   name: 'element',
-          //   test: /[\\/]node_modules[\\/]element-ui[\\/]/,
-          //   chunks: 'initial',
-          //   priority: -30,
-          // },
+          element: {
+            name: 'element',
+            test: /[\\/]node_modules[\\/]element-ui[\\/]/,
+            chunks: 'initial',
+            priority: -30,
+          },
         },
       },
     },

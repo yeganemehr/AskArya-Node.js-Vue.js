@@ -9,7 +9,9 @@
       :closedTickets="closedTickets"
     ></ticket-data>
     <!-- <card card-body-classes="table-full-width"> -->
-    <div class="container my-5 text-center d-flex justify-content-center">
+    <div
+      class="container my-5 px-md-5 text-center d-flex justify-content-between"
+    >
       <el-select
         class="select-primary pagination-select"
         v-model="pagination.perPage"
@@ -169,6 +171,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { Table, TableColumn, Select, Option } from 'element-ui';
 import { BasePagination } from 'src/components';
@@ -549,11 +552,11 @@ export default {
   .ticket-card {
     padding: 2em 2.5em;
     margin-bottom: 20px;
-    background-color: #f7f7f7 !important;
+    background-color: #fff !important;
     border-radius: 15px;
-    border: 1px solid rgb(216, 216, 216);
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.19),
-      0 6px 6px rgba(158, 158, 158, 0.23) !important;
+    border: 1px solid rgb(230, 230, 230);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.09),
+      0 6px 6px rgba(158, 158, 158, 0.13) !important;
 
     h3 {
       font-size: 0.9em;

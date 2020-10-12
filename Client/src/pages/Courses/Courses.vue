@@ -108,9 +108,9 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-  font-size: 2.7em !important;
+  font-size: 2.6em !important;
   font-family: IranSansBold;
-  color: #ef476f !important;
+  color: black !important;
   text-align: center;
 }
 
@@ -124,7 +124,7 @@ export default {
 .infoStyling {
   font-size: 1.13em !important;
   font-family: IranSansBold !important;
-  color: rgb(17, 207, 144) !important;
+  color: #ef476f !important;
 }
 
 @media only screen and (max-width: 768px) {

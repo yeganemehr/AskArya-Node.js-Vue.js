@@ -1,6 +1,6 @@
 <template>
   <div class="container text-ltr">
-    <div class="row text-center">
+    <div class="row text-center px-3">
       <div class="col pb-3">
         <h2 class="headerStyling1">{{ openTickets }}</h2>
         <p class="subheader">Open</p>
@@ -58,49 +58,49 @@ export default {
 
 <style lang="scss" scoped>
 .headerStyling1 {
-  color: #f5b435;
+  color: #f5b435 !important;
   font-family: IranSansBold;
   margin: 0;
   padding: 0;
 }
 
 .headerStyling2 {
-  color: #21c8f6;
+  color: #21c8f6 !important;
   font-family: IranSansBold;
   margin: 0;
   padding: 0;
 }
 
 .headerStyling3 {
-  color: #6edcc4;
+  color: #6edcc4 !important;
   font-family: IranSansBold;
   margin: 0;
   padding: 0;
 }
 
 .headerStyling4 {
-  color: #ff0080;
+  color: #ff0080 !important;
   font-family: IranSansBold;
   margin: 0;
   padding: 0;
 }
 
 .headerStyling5 {
-  color: #37e771;
+  color: #37e771 !important;
   font-family: IranSansBold;
   margin: 0;
   padding: 0;
 }
 
 .subheader {
-  font-size: 0.8rem;
-  color: rgb(82, 82, 82);
+  font-size: 0.7rem;
+  color: rgb(104, 104, 104) !important;
   padding-top: 8px;
 }
 
 @media (max-width: 767px) {
   .subheader {
-    font-size: 0.5em;
+    font-size: 0.45em;
     color: rgb(129, 129, 129);
     padding-top: 8px;
   }

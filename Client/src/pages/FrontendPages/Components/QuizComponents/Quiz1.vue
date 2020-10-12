@@ -1,9 +1,7 @@
 <template>
   <section class="quiz-section container">
     <div class="row d-flex justify-content-between mb-3">
-      <h1 class="quiz-header text-underline">
-        Placement Test
-      </h1>
+      <h1 class="quiz-header text-underline">Placement Test</h1>
 
       <div class="row my-3 quiz-details-section">
         <div class="quiz-details-card">
@@ -13,9 +11,7 @@
               Questions
             </p>
           </div>
-          <p class="quiz-details-bottom">
-            30
-          </p>
+          <p class="quiz-details-bottom">30</p>
         </div>
 
         <div class="quiz-details-card mx-3">
@@ -25,9 +21,7 @@
               Time
             </p>
           </div>
-          <p class="quiz-details-bottom">
-            24 Mins
-          </p>
+          <p class="quiz-details-bottom">24 Mins</p>
         </div>
 
         <div class="quiz-details-card custom-margin">
@@ -37,9 +31,7 @@
               Difficulty
             </p>
           </div>
-          <p class="quiz-details-bottom">
-            N/A
-          </p>
+          <p class="quiz-details-bottom">N/A</p>
         </div>
       </div>
     </div>
@@ -796,7 +788,7 @@ export default {
   font-size: 2em !important;
   margin: 0;
   padding: 1.3em 1em 1em 1em !important;
-  color: #e52e71 !important;
+  color: #ef476f !important;
   direction: rtl !important;
   font-family: sans-serif, Verdana, Tahoma !important;
   font-weight: bolder !important;
@@ -819,7 +811,7 @@ export default {
   .quiz-details-top p {
     font-size: 0.9em !important;
     color: #fff !important;
-    background-color: #e52e71;
+    background-color: #ef476f;
     padding-top: 5px;
     padding-bottom: 5px;
     border-top-left-radius: 10px;
@@ -828,7 +820,7 @@ export default {
 
   .quiz-details-bottom {
     font-size: 0.9em !important;
-    color: #e52e71 !important;
+    color: #ef476f !important;
     background-color: #fff !important;
     border-radius: 10px;
   }
@@ -843,7 +835,7 @@ export default {
   border-radius: 8px !important;
   overflow: hidden !important;
   box-shadow: 0 14px 20px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.15) !important;
-  border-left: 1.2em solid #e52e71 !important;
+  border-left: 1.2em solid #ef476f !important;
   border-right: 1px solid rgb(230, 230, 230) !important;
   border-bottom: 1px solid rgb(230, 230, 230) !important;
   border-top: 1px solid rgb(235, 235, 235) !important;
@@ -973,7 +965,7 @@ export default {
   .wrong-answer:active,
   .wrong-answer:focus,
   .wrong-answer:focus-within {
-    background: #d54f42 !important;
+    background: #ff3672 !important;
     color: rgba(255, 255, 255, 0.8) !important;
   }
 
@@ -983,7 +975,7 @@ export default {
   .correct-answer:active,
   .correct-answer:focus,
   .correct-answer:focus-within {
-    background: #78b437 !important;
+    background: #2ea33e !important;
     color: white !important;
   }
 
@@ -999,7 +991,7 @@ export default {
   }
 
   .restart-btn {
-    background-color: #e52e71 !important;
+    background-color: #ef476f !important;
     color: white !important;
     padding: 11px 20px !important;
     border-radius: 20px;
@@ -1007,7 +999,7 @@ export default {
 
   .grades {
     font-size: 2em !important;
-    color: #e52e71 !important;
+    color: #ef476f !important;
   }
 
   li {
@@ -1018,7 +1010,7 @@ export default {
     margin-bottom: 2em !important;
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, #e52e71, #e9e9e9);
+    background-image: linear-gradient(to right, #ef476f, #e9e9e9);
   }
 }
 
