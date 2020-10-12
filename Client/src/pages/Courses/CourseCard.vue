@@ -71,9 +71,9 @@ export default {
   ],
   methods: {
     onClick() {
-      // if (!this.tags) {
-      //   this.tags = '';
-      // }
+      if (!this.tags) {
+        this.tags = '';
+      }
       if (this.tags.toLowerCase().search('coming soon') >= 0) {
         Swal({
           title: 'وضعیت دوره: در حال برگزاری',
