@@ -7,7 +7,7 @@
           <div class="col-lg-4 col-sm-12 px-3">
             <div class="pricing-box hover">
               <div class="pricing-title bg-bronze">
-                <h3 class="text-white titleSize py-3">برنز</h3>
+                <h3 class="text-black titleSize py-3">برنز</h3>
               </div>
               <div class="pricing-field">
                 <p class="price">۳۵۰,۰۰۰ <span class="toman">تومان</span></p>
@@ -39,7 +39,7 @@
           <div class="col-lg-4 col-sm-12 px-3">
             <div class="pricing-box hover">
               <div class="pricing-title bg-silver">
-                <h3 class="text-white titleSize py-3">سيلور</h3>
+                <h3 class="text-black titleSize py-3">سيلور</h3>
               </div>
               <div class="pricing-field">
                 <p class="price">۲,۵۰۰,۰۰۰ <span class="toman">تومان</span></p>
@@ -305,8 +305,8 @@ ul {
     padding-top: 13px;
   }
   .smalltext {
-    font-size: 19px;
-    color: rgb(68, 68, 68);
+    font-size: 17px;
+    color: rgb(134, 134, 134);
   }
 
   .bg-gold {

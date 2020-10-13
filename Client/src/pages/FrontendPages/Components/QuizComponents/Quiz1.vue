@@ -965,7 +965,7 @@ export default {
   .wrong-answer:active,
   .wrong-answer:focus,
   .wrong-answer:focus-within {
-    background: #ff3672 !important;
+    background: #d54f42 !important;
     color: rgba(255, 255, 255, 0.8) !important;
   }
 

@@ -57,9 +57,8 @@
         <p class="copyright-text">
           <!-- &copy;  -->
           طراحی و تولید شده توسط
-          <router-link to="/terms">اسک آریا</router-link>، با افتخار در ایران
-          <i class="tim-icons icon-heart-2 text-primary"></i>
-          سال ١٣٩۹
+          <router-link to="/contact">اسک آریا</router-link>، با افتخار در ایران
+          <i class="far fa-heart"></i> سال ١٣٩۹
         </p>
       </div>
     </footer>
@@ -103,8 +102,9 @@
   color: #fff !important;
 }
 .copyright,
-a {
-  color: #cd57e0;
+a,
+.far {
+  color: #ef476f !important;
 }
 .copyright-text {
   color: rgba(255, 255, 255, 0.6) !important;

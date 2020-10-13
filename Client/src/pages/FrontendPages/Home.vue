@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import HeroSection from './Components/HeroSection/HeroSection.vue';
+import HeroSection from './Components/HeroSection.vue';
 import FounderSection from './Components/FounderSection.vue';
 import CourseCard from '../Courses/CourseCard';
 import BlogSection from './Components/Blog/BlogSection.vue';
