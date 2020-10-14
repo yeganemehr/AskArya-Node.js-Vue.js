@@ -8,7 +8,11 @@
             اگر در اسک آریا حساب ندارید، ثبت نام کنید:
             <br />
             <router-link to="/register">
-              <base-button size="sm" type="success" class="animation-on-hover">
+              <base-button
+                size="sm"
+                type="success"
+                class="animation-on-hover mt-2"
+              >
                 <i class="fas fa-user-plus pl-3"></i>
                 ایجاد حساب کاربری
               </base-button>
@@ -41,7 +45,7 @@
               ></base-input>
             </div>
           </div>
-          <div class="text-right">
+          <div class="text-right mb-1">
             <base-checkbox
               class="pb-1"
               name="remember"
@@ -239,7 +243,7 @@ export default {
 
 <style lang="scss" scoped>
 .auth-section {
-  height: 90vh !important;
+  height: 92vh !important;
   background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
 }
 
@@ -280,7 +284,7 @@ export default {
 }
 
 .footer-link {
-  font-size: 0.9rem !important;
+  font-size: 0.85rem !important;
   color: rgba(0, 0, 0, 0.5) !important;
   font-family: IranSans !important;
 }

@@ -433,9 +433,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
-  min-height: 90vh !important;
-}
+// section {
+//   min-height: 90vh !important;
+// }
 
 .avatar {
   width: 2.5em;
@@ -478,7 +478,7 @@ section {
   background-color: rgb(255, 255, 255);
   border-radius: 25px;
   padding: 2em 2em 1em 2em;
-  border: 1px dashed #dbdbdb;
+  border: 1px dashed #ececec;
   font-family: IranSansBlog !important;
 
   .ticket-date {

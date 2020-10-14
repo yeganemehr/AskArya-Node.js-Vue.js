@@ -88,6 +88,11 @@
     color: #fff !important;
     font-family: IranSans !important;
   }
+
+  a:hover {
+    color: #ef476f !important;
+  }
+
   .telegram {
     direction: ltr !important;
   }

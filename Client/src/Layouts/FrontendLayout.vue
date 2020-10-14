@@ -58,16 +58,19 @@ export default {
 
 .go-to-top {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  bottom: 0;
+  // bottom: 20px;
+  left: 33px;
   z-index: 99;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 10px;
-  border-radius: 5px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
   font-size: 2em;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #ef476f;
+  // background-color: rgba(0, 0, 0, 0.2);
 }
 .fa-chevron-up:before {
   content: '\f077';
@@ -75,12 +78,12 @@ export default {
 }
 @media (max-width: 768px) {
   .go-to-top {
-    bottom: 20px;
-    left: 20px;
+    bottom: 15px;
+    left: 15px;
     z-index: 99;
     padding: 0.3em;
     font-size: 1.7em;
-    background-color: rgba(0, 0, 0, 0.02);
+    background-color: rgba(0, 0, 0, 0.05);
     color: rgba(15, 15, 15, 0.13) !important;
   }
 
