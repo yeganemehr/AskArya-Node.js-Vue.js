@@ -153,15 +153,10 @@ export default {
     margin-left: 2.5em;
   }
 }
-@media only screen and (min-width: 1400px) {
-  .sticky {
-    margin-left: 2.5em;
-  }
-}
 
 @media only screen and (min-width: 1200px) {
   .main-blog-text {
-    margin: 90px 15em 5em 4em !important;
+    margin: 90px 19em 5em 4em !important;
   }
 }
 

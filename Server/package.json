@@ -8,7 +8,7 @@
   },
   "author": "Arya Doroudian",
   "dependencies": {
-    "@sendgrid/mail": "^7.2.6",
+    "@sendgrid/mail": "^7.3.0",
     "app-module-path": "^2.2.0",
     "auto-bind": "^4.0.0",
     "bcrypt": "^5.0.0",
@@ -43,7 +43,7 @@
     "passport-local": "^1.0.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
-    "sharp": "^0.26.1",
+    "sharp": "^0.26.2",
     "sprintf-js": "^1.1.2",
     "striptags": "^3.1.1",
     "unique-string": "^2.0.0",

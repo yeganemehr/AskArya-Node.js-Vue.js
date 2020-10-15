@@ -138,7 +138,7 @@
       font-size: 1.1em;
       text-align: center !important;
       margin-bottom: 0 !important;
-      padding: 2em 1.1em !important;
+      padding: 2em 1em 0.2em 1em !important;
     }
 
     .btn {
