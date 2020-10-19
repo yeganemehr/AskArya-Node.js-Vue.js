@@ -99,7 +99,7 @@
 }
 
 .image {
-  width: 390px !important;
+  width: 380px !important;
   padding-top: 3em;
   padding-bottom: 2em;
 }
@@ -167,7 +167,7 @@
 
 @media only screen and (min-width: 1500px) {
   .hero-content-homepage {
-    height: 45vh !important;
+    min-height: 45vh !important;
   }
 }
 </style>
