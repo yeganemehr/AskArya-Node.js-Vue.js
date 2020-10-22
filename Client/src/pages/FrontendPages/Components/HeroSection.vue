@@ -127,10 +127,10 @@
 @media screen and (max-width: 1000px) {
   .hero-content-homepage {
     .hero-title {
-      font-size: 3.7em !important;
+      font-size: 3.8em !important;
       color: #fff !important;
       text-align: center !important;
-      padding-top: 0.5em;
+      padding-top: 0.43em !important;
       margin: 0;
     }
 
@@ -138,16 +138,16 @@
       font-size: 1.1em;
       text-align: center !important;
       margin-bottom: 0 !important;
-      padding: 2em 1em 0.2em 1em !important;
+      padding: 1.6em 1.3em 0.2em 1.3em !important;
     }
 
     .btn {
       font-weight: inherit;
       border-radius: 30px;
-      padding: 12px 10px;
+      padding: 12px 14px;
       font-size: 1.1em;
       font-family: IranSansBold;
-      margin-bottom: 2.5em;
+      margin-bottom: 2em !important;
     }
   }
 

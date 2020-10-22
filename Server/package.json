@@ -51,6 +51,6 @@
     "zarinpal-checkout": "^0.2.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.5"
+    "nodemon": "^2.0.6"
   }
 }

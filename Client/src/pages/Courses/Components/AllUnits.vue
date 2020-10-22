@@ -50,7 +50,7 @@
             </p>
           </div>
 
-          <div class="pl-2" v-else>
+          <div v-else>
             <p class="detail-price">{{ getEpisodeType(episode.type) }}</p>
           </div>
 
@@ -177,12 +177,15 @@ export default {
   background: rgb(248, 248, 248) !important;
   padding: 19px 15px;
   align-items: center;
-  border-top: 0.5px solid rgba(133, 133, 133, 0.199);
-  border-bottom: 0.5px solid rgba(133, 133, 133, 0.199);
-  border-left: 1px solid rgba(133, 133, 133, 0.199);
-  border-right: 11px solid rgba(156, 156, 156, 0.377);
-  border-radius: 0 10px 10px 0;
+  border-top: 1.5px dashed rgba(133, 133, 133, 0.2);
+  border-left: 1px dashed rgba(133, 133, 133, 0.2);
+  border-right: 11px solid #33415c;
+  border-radius: 0 15px 15px 0;
   transition: all 0.2s ease 0s;
+}
+
+.UnitBox:last-child {
+  border-bottom: 1.5px dashed rgba(133, 133, 133, 0.2);
 }
 
 h4 {
@@ -200,7 +203,7 @@ h4 {
 
 .UnitBox:hover,
 .active {
-  background: #339afb2c !important;
+  background: #e1eaff !important;
   border-right-color: #339afb;
   .UnitBadgeUnlocked {
     color: #339afb;
@@ -243,19 +246,22 @@ h4 {
 .detail-time {
   color: rgb(255, 255, 255) !important;
   font-size: 0.9em;
+  font-family: IranSansBold;
   align-self: center;
   background: rgb(29, 35, 83) !important;
-  padding: 8px 13px;
-  border-radius: 8px;
+  padding: 7px 13px;
+  border-radius: 5px;
 }
 
 .detail-price {
   color: rgb(255, 255, 255) !important;
   font-size: 0.9em;
   align-self: center;
-  background: rgba(70, 110, 218, 0.788) !important;
-  padding: 8px 15px;
-  border-radius: 8px;
+  // background: rgba(70, 110, 218, 0.788) !important;
+  background: #415a77;
+  padding: 7px 15px;
+  border-radius: 5px;
+  margin-left: 6px;
 }
 
 .detail-price-purchased {
@@ -263,7 +269,7 @@ h4 {
   margin: 0;
   align-self: center;
   background: transparent !important;
-  padding: 8px 15px;
+  padding: 7px 15px;
 }
 
 @media screen and (max-width: 990px) {
@@ -275,15 +281,15 @@ h4 {
 @media (max-width: 768px) {
   .UnitBox {
     padding: 16px 7px 13px 7px;
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
   }
 
   .UnitName {
-    font-size: 1.05em;
+    font-size: 1em;
   }
 
   .detail-time {
-    font-size: 0.95em;
+    font-size: 0.9em !important;
     align-self: center;
     padding: 6px 8px;
   }
@@ -292,6 +298,7 @@ h4 {
     font-size: 0.65rem;
     align-self: center;
     padding: 7px;
+    margin-left: 3px;
   }
   .UnitBadgeUnlocked,
   .UnitBadgeVIP,

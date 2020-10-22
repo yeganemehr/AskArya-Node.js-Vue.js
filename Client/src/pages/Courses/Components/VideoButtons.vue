@@ -22,7 +22,7 @@
           @click="markAsDoneListener"
           :loading="loadingMarkAsDone"
           v-if="canMarkAsDone"
-          :class="(isDoneEpisode ? 'btn-success ' : 'btn-danger ')"
+          :class="isDoneEpisode ? 'btn-success ' : 'btn-danger '"
         >
           {{ isDoneEpisode ? 'این بخش را ندیدم' : 'این بخش را دیدم' }}
           <i

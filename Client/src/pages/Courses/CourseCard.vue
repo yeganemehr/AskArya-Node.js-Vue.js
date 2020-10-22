@@ -179,8 +179,9 @@ export default {
   .buyCourseTitle {
     font-size: 1.05em !important;
     font-family: IranSansBold !important;
-    color: rgb(86, 173, 223);
-    background: #ebebeb;
+    // color: rgb(86, 173, 223);
+    color: #979dac;
+    background: #f1f1f1;
     margin-bottom: auto;
     padding-top: 0.7em;
     padding-bottom: 0.9em;

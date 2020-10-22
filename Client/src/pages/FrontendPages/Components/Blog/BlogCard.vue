@@ -45,7 +45,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .home-blog .card {
-  border-radius: 20px !important;
+  border-radius: 13px !important;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.07);
   background: #f1f1f1 !important;
 }
@@ -66,7 +66,7 @@ export default {
 }
 
 .home-blog .card-img-top {
-  border-radius: 20px 20px 0 0 !important;
+  border-radius: 13px 13px 0 0 !important;
 }
 
 .home-blog .card:hover {
@@ -109,8 +109,8 @@ export default {
   padding: 0.7em 1.2em 0 1.2em;
 
   .card-footer-text {
-    color: #00000059 !important;
-    font-size: 0.9em;
+    color: #7d8597 !important;
+    font-size: 0.93em;
   }
 }
 
