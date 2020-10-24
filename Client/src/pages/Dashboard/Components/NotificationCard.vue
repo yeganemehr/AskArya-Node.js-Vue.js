@@ -97,12 +97,13 @@ export default {
 .title {
   font-size: 1.1rem;
   font-family: IranSansBold;
+  padding-bottom: 2em !important;
   color: black !important;
   text-align: right;
 }
 
 .log p {
-  font-size: 1em !important;
+  font-size: 0.9em !important;
   padding-bottom: 1.4em !important;
   color: rgb(66, 66, 66) !important;
 }

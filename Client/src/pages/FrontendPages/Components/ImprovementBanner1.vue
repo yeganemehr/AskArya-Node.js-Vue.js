@@ -18,8 +18,8 @@
           کلافه کننده ای هست و بیشتر از آن نا امید کننده.
         </p>
 
-        <div class="text-left mt-4">
-          <base-button
+        <div class="text-center mt-4">
+          <b-button
             v-scroll-to="{
               el: '#element',
               duration: 900,
@@ -34,11 +34,11 @@
               y: true,
             }"
             native-type="submit"
-            class="btn btn-simple btn-round animation-on-hover"
+            class="btn"
           >
             <i class="fas fa-info-circle ml-2"></i>
             راه حل؟
-          </base-button>
+          </b-button>
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@ p {
   padding: 4em 0em 3em 0;
 
   h2 {
-    font-size: 2em;
+    font-size: 1.7em;
     color: #fff !important;
     line-height: inherit !important;
     font-family: IranSansBold;
@@ -95,22 +95,24 @@ p {
   .main-text {
     font-family: IranSans !important;
     color: #fff !important;
-    font-size: 1.3em;
+    font-size: 1.15em;
     line-height: 1.7em !important;
   }
 }
 
-.btn.btn-simple {
-  font-size: 1.2em;
+.btn {
+  font-size: 1.1em;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2);
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.164);
+  border-color: rgba(255, 255, 255, 0.2);
   font-family: IranSansBold;
   font-size: 1.1em !important;
-  padding: 0.8em 2em;
+  padding: 0.6em 2em;
+  background: transparent;
+  border-radius: 10px;
 }
 
-.btn.btn-simple:hover {
+.btn:hover {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.164);
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.3);

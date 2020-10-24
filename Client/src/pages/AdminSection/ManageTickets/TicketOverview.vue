@@ -96,42 +96,39 @@
           }}</span>
         </div>
 
-        <div class="ticket-actions">
+        <div dir="ltr" class="ticket-actions">
           <h3>اقدامات</h3>
-          <div class="icon-group">
-            <base-button
-              @click.native="handleHighlight(ticket)"
+
+          <b-button-group size="sm">
+            <b-button
+              @click="handleHighlight(ticket)"
               class="like btn-link"
-              type="info"
-              size="sm"
               icon
+              variant="success"
             >
               <i
-                class="pr-2"
                 :class="ticket.isHighlight ? 'fas fa-heart' : 'far fa-heart'"
-              ></i>
-            </base-button>
+              ></i
+            ></b-button>
 
-            <base-button
-              @click.native="handleEdit(ticket)"
+            <b-button
+              @click="handleEdit(ticket)"
               class="edit btn-link"
-              type="warning"
-              size="sm"
               icon
+              variant="warning"
             >
               <i class="fas fa-pencil-alt"></i>
-            </base-button>
+            </b-button>
 
-            <base-button
-              @click.native="handleDelete(ticket)"
+            <b-button
+              @click="handleDelete(ticket)"
               class="remove btn-link"
-              type="danger"
-              size="sm"
               icon
+              variant="danger"
             >
               <i class="fas fa-times"></i>
-            </base-button>
-          </div>
+            </b-button>
+          </b-button-group>
         </div>
 
         <div class="w-100 d-md-none pt-3"></div>

@@ -4,34 +4,49 @@
       <i class="fas fa-unlock pl-2 icon w-100"></i>
       عضویت ویژه
     </p>
-    <p class="vip-desc text-center py-3">
+    <p class="vip-desc text-center pb-3">
       با خریداری این پنل کاربری شما میتوانید به ویدیوهای ویژه سایت به بطور کامل
       دسترسی داشته باشید.
     </p>
-    <div
+
+    <b-dropdown
       v-if="this.$root.$data.user !== undefined"
-      class="dropdown-prices pb-3"
+      block
+      offset="50px"
+      no-flip
+      text="عضویت"
+      class="custom-dropdown pb-3"
     >
-      <base-dropdown title="عضویت" title-classes="btn btn-success px-5">
-        <a class="dropdown-item" href="#" @click.prevent="payment">
-          ماهانه -
-          <span>39</span> هزار تومان
-        </a>
-        <a class="dropdown-item" href="#" @click.prevent="payment(4)">
-          ۴ ماهه
-          <span>139</span> هزار تومان
-        </a>
-        <a class="dropdown-item" href="#" @click.prevent="payment(12)">
-          یکساله -
-          <span>309</span> هزار تومان
-        </a>
-      </base-dropdown>
-    </div>
+      <b-dropdown-item class="dropdown-item" href="#" @click.prevent="payment">
+        <i class="far fa-star pl-2"></i>
+        ماهانه -
+        <span>39</span> هزار تومان
+      </b-dropdown-item>
+      <hr />
+      <b-dropdown-item
+        class="dropdown-item"
+        href="#"
+        @click.prevent="payment(4)"
+      >
+        <i class="far fa-star pl-2"></i>
+        ۴ ماهه
+        <span>139</span> هزار تومان
+      </b-dropdown-item>
+      <hr />
+      <b-dropdown-item
+        class="dropdown-item"
+        href="#"
+        @click.prevent="payment(12)"
+      >
+        <i class="far fa-star pl-2"></i>
+        یکساله -
+        <span>309</span> هزار تومان
+      </b-dropdown-item>
+    </b-dropdown>
   </div>
 </template>
 
 <script>
-import { BaseDropdown } from 'src/components';
 import { Select, Option } from 'element-ui';
 import backend from '../../backend';
 import moment from 'jalali-moment';
@@ -39,7 +54,6 @@ import Swal from 'sweetalert';
 
 export default {
   components: {
-    BaseDropdown,
     [Select.name]: Select,
     [Option.name]: Option,
   },
@@ -113,38 +127,56 @@ export default {
 
 <style lang="scss" scoped>
 .widget-vip {
-  // background-image: linear-gradient(270deg, #e2aa3b, #fcf6ba);
   background-image: linear-gradient(270deg, #ad1deb, #6e72fc);
   border-radius: 15px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
 }
 
 .vip-title {
-  font-size: 1.7em !important;
+  font-size: 1.6em !important;
   color: white !important;
   text-align: center;
   font-family: IranSansBold !important;
+
   .icon {
-    font-size: 1.7em;
+    font-size: 1.5em;
     padding-bottom: 8px;
   }
 }
 
 .vip-desc {
-  font-size: 1.1em;
+  font-size: 1em;
   color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/deep/ .dropdown-toggle {
+  color: #fff !important;
+  background-color: #ef476f !important;
+  border: #ef476f !important;
+  border-radius: 10px;
 }
 
 .dropdown-menu .dropdown-item {
   color: #181818;
   font-size: 1em;
   font-family: IranSans;
+  padding: 4px 0 !important;
 
   span {
     color: #ef476f;
-    font-family: IranSansBold;
+    font-family: IranSansBold !important;
     font-size: 1.2em;
   }
+
+  i {
+    color: #7600ca6e;
+  }
+}
+
+hr {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .select-danger.el-select .el-input input {

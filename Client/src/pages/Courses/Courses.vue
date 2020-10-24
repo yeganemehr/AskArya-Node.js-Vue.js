@@ -12,7 +12,7 @@
         <Vip></Vip>
       </div>
 
-      <div class="col-lg-9 col-md-12">
+      <div class="col-lg-9 col-md-12 row">
         <div
           class="col-lg-4 col-md-6 col-sm-12"
           v-for="course in courses"
@@ -108,21 +108,21 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-  font-size: 2.6em !important;
+  font-size: 2.3em !important;
   font-family: IranSansBold;
-  color: black !important;
+  color: #ef476f !important;
   text-align: center;
 }
 
 .info-text {
-  font-size: 1.13em !important;
+  font-size: 1.03em !important;
   text-align: center !important;
   margin-bottom: 4.5em !important;
   color: #444444 !important;
 }
 
 .infoStyling {
-  font-size: 1.13em !important;
+  font-size: 1.03em !important;
   font-family: IranSansBold !important;
   color: #ef476f !important;
 }

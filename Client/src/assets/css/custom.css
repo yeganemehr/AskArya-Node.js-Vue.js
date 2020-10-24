@@ -40,6 +40,10 @@ h3,
 h4,
 h5,
 h6,
+p,
+li,
+span,
+button,
 .swal-title,
 .swal-button {
   font-weight: normal !important;
@@ -49,13 +53,58 @@ h6,
   text-rendering: optimizeLegibility !important;
 }
 
+p,
+li,
+span,
+button,
+.btn,
+tr {
+  font-family: IranSans !important;
+}
+
+th {
+  font-family: IranSansBold !important;
+}
+
 .swal-title {
-  color: black;
+  color: black !important;
 }
 
 /*------------------------
 	base class definition
 -------------------------*/
+
+.navbar-light .navbar-nav .dropdown .nav-link {
+  color: rgb(31, 31, 31) !important;
+}
+
+.dropdown.show .dropdown-menu,
+.navbar .dropdown.show .dropdown-menu {
+  padding-bottom: 0 !important;
+}
+
+.dropdown-toggle::after {
+  vertical-align: 0em !important;
+  margin-right: 9px !important;
+}
+
+.dropdown-item {
+  text-align: right !important;
+  font-size: 0.93em !important;
+  padding: 10px 13px !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:hover i {
+  background-color: transparent !important;
+  color: #ef476f !important;
+}
+
+.dropdown-item.active,
+.dropdown-item.active i {
+  color: #ef476f !important;
+  background: transparent !important;
+}
 
 input {
   font-family: IranSansBlog !important;

@@ -33,7 +33,7 @@
         </div>
 
         <!-- Payment History Section -->
-        <div class="col-md-12 mb-4 text-center">
+        <div class="col-md-12 my-4 text-center">
           <PaymentHistory :payments="payments"></PaymentHistory>
         </div>
 
@@ -178,19 +178,19 @@ export default {
 }
 
 .card-custom {
-  // padding: 2em 0;
   border-radius: 1.5em;
   background-color: #fc5296;
   background-image: linear-gradient(315deg, #fc5296 0%, #ef476f 74%);
+  margin-bottom: 1.5em;
 }
 
 .title {
-  font-size: 2.1em;
+  font-size: 1.8em;
   font-family: IranSansBold;
   text-align: center;
   // color: rgb(44, 44, 44) !important;
   color: white !important;
-  padding: 1rem 0 !important;
+  padding: 0.8rem 0 !important;
 }
 
 .hr {
@@ -219,7 +219,7 @@ export default {
 @media (max-width: 680px) {
   .title {
     font-size: 1.7em;
-    padding: 0.9rem 0 !important;
+    // padding: 0.9rem 0 !important;
   }
   .card-custom {
     margin: 1em 0 0em 0 !important;

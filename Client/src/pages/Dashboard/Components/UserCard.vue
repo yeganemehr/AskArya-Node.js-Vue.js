@@ -3,7 +3,7 @@
     <card class="card-user">
       <h1 class="card-title pt-2">مشخصات کاربری</h1>
       <p class="card-text"></p>
-      <div class="author">
+      <div class="author text-center">
         <img class="avatar" :src="userAvatar" alt="Users Profile Image" />
         <h2 class="title">
           {{ user.name }}
@@ -120,6 +120,7 @@
     </card>
   </section>
 </template>
+
 <script>
 import backend from '../../../backend';
 import { ImageUpload } from 'src/components/index';
@@ -242,6 +243,8 @@ export default {
 .card-user .avatar {
   width: 7em !important;
   height: 7em !important;
+  border-radius: 50%;
+  margin-bottom: 1em;
 }
 
 .card-title {
