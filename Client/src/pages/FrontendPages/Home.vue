@@ -169,8 +169,7 @@ export default {
 .btn-courses:hover {
   color: #ef476f !important;
   background: #fff !important;
-  border-color: #fff !important;
-  border: 1px solid #fff !important;
+  border: 1px dashed #c84dae !important;
 }
 
 .blog-section {

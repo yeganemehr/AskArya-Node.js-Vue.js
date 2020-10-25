@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="light">
-    <b-navbar-brand class="mr-5" to="/">
+    <b-navbar-brand class="mr-3" to="/">
       <img src="/img/askarya-logo.png" width="100" alt="Ask Arya Logo" />
     </b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -10,32 +10,43 @@
         <b-nav-item exact active-class="text-custom" to="/">خانه</b-nav-item>
         <hr />
 
-        <b-nav-item active-class="text-custom" to="courses"
+        <b-nav-item active-class="text-custom" to="/courses"
           >دوره‌ های غیر حضوری</b-nav-item
         >
 
         <hr />
-        <b-nav-item active-class="text-custom" to="privateclasses"
+        <b-nav-item active-class="text-custom" to="/privateclasses"
           >کلاس های حضوری</b-nav-item
         >
 
         <hr />
 
-        <b-nav-item active-class="text-custom" to="contact"
+        <b-nav-item active-class="text-custom" to="/contact"
           >تماس با ما</b-nav-item
+        >
+
+        <b-nav-item
+          v-if="!this.$root.$data.user"
+          block
+          class="btn-login my-3 d-lg-none"
+          type="submit"
+          to="/login"
+        >
+          <i class="far fa-user pl-2"></i>
+          ورود کاربر</b-nav-item
         >
 
         <div v-if="this.$root.$data.user !== undefined">
           <b-nav-item
             active-class="text-custom"
-            to="dashboard"
+            to="/dashboard"
             class="mr-4 d-lg-none"
             ><i class="far fa-user pl-3"></i> پنل کاربری</b-nav-item
           >
 
           <b-nav-item
             active-class="text-custom"
-            to="courses"
+            to="/courses"
             class="mr-4 d-lg-none"
             ><i class="fas fa-university pl-3"></i> دوره های آموزشی</b-nav-item
           >
@@ -43,7 +54,7 @@
           <b-nav-item
             active-class="text-custom"
             v-if="isAdmin"
-            to="ticketoverview"
+            to="/ticketoverview"
             class="mr-4 d-lg-none"
           >
             <i class="fas fa-headset pl-3"></i> پشتیبانی</b-nav-item
@@ -52,7 +63,7 @@
           <b-nav-item
             active-class="text-custom"
             v-else
-            to="tickets"
+            to="/tickets"
             class="mr-4 d-lg-none"
           >
             <i class="fas fa-headset pl-3"></i>
@@ -80,22 +91,22 @@
             <img class="avatar" :src="userAvatar" />
           </div>
           <b-nav-item-dropdown text="پروفایل من" left>
-            <b-dropdown-item to="dashboard">
+            <b-dropdown-item to="/dashboard">
               <i class="far fa-user pl-3"></i>
               پنل کاربری
             </b-dropdown-item>
             <hr />
-            <b-dropdown-item to="courses">
+            <b-dropdown-item to="/courses">
               <i class="fas fa-university pl-3"></i>
               دوره های آموزشی
             </b-dropdown-item>
             <hr />
-            <b-dropdown-item v-if="isAdmin" to="ticketoverview">
+            <b-dropdown-item v-if="isAdmin" to="/ticketoverview">
               <i class="fas fa-headset pl-3"></i>
               پشتیبانی
             </b-dropdown-item>
 
-            <b-dropdown-item v-else to="tickets">
+            <b-dropdown-item v-else to="/tickets">
               <i class="fas fa-headset pl-3"></i>
               پشتیبانی
             </b-dropdown-item>
@@ -110,13 +121,18 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav v-else class="mr-auto">
           <b-button
-            class="my-1 my-sm-0 ml-3 btn btn-reg"
+            class="my-1 my-sm-0 ml-2 btn-login"
             type="submit"
-            to="register"
-            >ثبت نام</b-button
-          >
-          <b-button class="my-1 my-sm-0 ml-5 btn-login" type="submit" to="login"
+            to="/login"
             >ورود کاربر</b-button
+          >
+
+          <b-button
+            class="my-1 my-sm-0 ml-5 btn btn-reg"
+            type="submit"
+            to="/register"
+          >
+            ثبت نام</b-button
           >
         </b-navbar-nav>
       </div>
@@ -168,7 +184,7 @@ export default {
 }
 
 .nav-link {
-  padding-right: 2.5em;
+  padding-right: 2.5em !important;
 }
 
 .nav-link:hover {
@@ -206,7 +222,6 @@ i {
 }
 
 .btn {
-  background: transparent;
   padding: 7px 19px;
   font-size: 0.9em;
   border-radius: 8px;
@@ -220,20 +235,30 @@ i {
 
 .btn-reg:hover {
   background: #fff;
-  border: 1px solid #ed5786 !important;
   color: #ed5786 !important;
+  border: 1px dashed #ed5786 !important;
 }
 
 .btn-login {
-  background: transparent;
-  border: 1px solid #ed5786;
+  background: transparent !important;
+  border: 1px dashed #ed5786 !important;
   color: #ed5786 !important;
 }
 
 .btn-login:hover {
-  background: #ed5786;
-  border: 1px solid #ed5786;
+  background: #ed5786 !important;
   color: #fff !important;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active {
+  background: #fff !important;
+  border: 1px dashed #ed5786 !important;
+  color: #ed5786 !important;
+}
+
+.btn-secondary:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0) !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0) !important;
 }
 
 hr {
@@ -244,12 +269,27 @@ hr {
 
 @media (max-width: 1000px) {
   .navbar-nav {
-    padding-right: 0;
+    padding-right: 0 !important;
   }
 
   .nav-link {
     font-size: 1.2em;
-    padding: 1em;
+    padding: 1em !important;
+  }
+
+  .btn-login {
+    .nav-link {
+      padding: 0.7em !important;
+    }
+    background: #ed5786 !important;
+    border: 1px solid #ffe0ea !important;
+    color: #fff !important;
+    text-align: center;
+    border-radius: 10px;
+    a,
+    .far {
+      color: #fff !important;
+    }
   }
 }
 </style>

@@ -81,7 +81,7 @@ p {
 
 .text-section {
   text-align: right;
-  padding: 4em 0em 3em 0;
+  padding: 2em 0;
 
   h2 {
     font-size: 1.7em;
@@ -101,12 +101,11 @@ p {
 }
 
 .btn {
-  font-size: 1.1em;
+  font-size: 1em;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2);
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.2);
+  border: 1px dashed rgba(255, 96, 22, 0.651);
   font-family: IranSansBold;
-  font-size: 1.1em !important;
   padding: 0.6em 2em;
   background: transparent;
   border-radius: 10px;
@@ -114,7 +113,7 @@ p {
 
 .btn:hover {
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.164);
+  border: 1px dashed #fff !important;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 

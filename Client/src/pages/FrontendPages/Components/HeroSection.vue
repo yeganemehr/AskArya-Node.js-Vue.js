@@ -83,12 +83,11 @@
   .btn-signin:hover {
     color: #fff !important;
     background: #c84dae !important;
-    border: 1px solid #fff !important;
   }
 
   .btn-quiz {
     color: #fff !important;
-    border: 1px solid #fff !important;
+    border: 1px dashed #fff !important;
     background: transparent !important;
   }
 

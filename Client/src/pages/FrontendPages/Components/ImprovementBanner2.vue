@@ -74,12 +74,11 @@ export default {};
 }
 
 .btn {
-  font-size: 1.1em;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2);
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.2);
+  border: 1px dashed rgba(255, 255, 255, 1) !important;
   font-family: IranSansBold;
-  font-size: 1.1em !important;
+  font-size: 1em;
   padding: 0.6em 2em;
   background: transparent;
   border-radius: 10px;
@@ -87,7 +86,7 @@ export default {};
 
 .btn:hover {
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.164);
+  border: 1px dashed rgb(1, 139, 19) !important;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
