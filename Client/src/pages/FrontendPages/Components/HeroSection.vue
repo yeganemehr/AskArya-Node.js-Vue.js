@@ -77,7 +77,7 @@
     color: #c84dae;
     background: #fff !important;
     border-color: #fff !important;
-    border: 1px solid #fff !important;
+    border: 1px dashed #fff !important;
   }
 
   .btn-signin:hover {
@@ -186,7 +186,7 @@
 
 @media only screen and (min-width: 1500px) {
   .hero-content-homepage {
-    min-height: 45vh !important;
+    min-height: 40vh !important;
   }
 }
 </style>

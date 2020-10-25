@@ -128,7 +128,7 @@
           >
 
           <b-button
-            class="my-1 my-sm-0 ml-5 btn btn-reg"
+            class="my-1 my-sm-0 ml-5 btn-reg"
             type="submit"
             to="/register"
           >
@@ -252,8 +252,8 @@ i {
 
 .btn-secondary:not(:disabled):not(.disabled).active {
   background: #fff !important;
-  border: 1px dashed #ed5786 !important;
-  color: #ed5786 !important;
+  border: 1px dashed #047afb !important;
+  color: #047afb !important;
 }
 
 .btn-secondary:focus {

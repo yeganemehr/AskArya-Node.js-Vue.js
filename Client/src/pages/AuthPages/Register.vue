@@ -4,45 +4,32 @@
     <div class="container">
       <card class="shadow">
         <form @submit="checkForm" id="register-form">
-          <h1 class="auth-title text-primary">ثبت نام</h1>
-
-          <a :href="googleAuthUrl">
-            <base-button
-              block
-              type="info"
-              class="btn-simple animation-on-hover mt-1"
-            >
-              <i class="fab fa-google icon pl-4"></i>
-              عضویت سریع با حساب گوگل
-            </base-button>
-          </a>
-
-          <hr />
+          <h1 class="auth-title mb-4">ثبت نام</h1>
 
           <div class="row">
-            <div class="col-12">
-              <base-input
+            <div class="col-12 mb-3">
+              <b-input
                 class="text-rtl pb-1"
                 placeholder="نام و نام خانوادگی"
                 v-model="name"
                 :required="true"
                 :error="fieldErrors.name"
-              ></base-input>
+              ></b-input>
             </div>
 
-            <div class="col-12 text-rtl">
-              <base-input
+            <div class="col-12 text-rtl mb-3">
+              <b-input
                 class="text-rtl pb-1"
                 placeholder="پست الکترونیک"
                 v-model="email"
                 autocomplete="username"
                 :required="true"
                 :error="fieldErrors.email"
-              ></base-input>
+              ></b-input>
             </div>
 
             <div class="col-12 text-rtl">
-              <base-input
+              <b-input
                 class="text-rtl"
                 placeholder="کلمه عبور"
                 autocomplete="new-password"
@@ -50,23 +37,23 @@
                 v-model="password"
                 :required="true"
                 :error="fieldErrors.password"
-              ></base-input>
+              ></b-input>
             </div>
           </div>
           <div class="text-right">
-            <base-checkbox
+            <b-form-checkbox
               v-model="terms"
-              class="pb-3"
+              class="py-3"
               :class="{
                 'has-danger': fieldErrors.terms !== undefined,
                 'terms-checkbox': true,
               }"
             >
               <router-link class="tc" to="/terms">
-                <!-- <i class="fas fa-info-circle pl-1"></i> -->
+                <i class="fas fa-info-circle pl-1"></i>
                 شرایط را قبول دارم
               </router-link>
-            </base-checkbox>
+            </b-form-checkbox>
           </div>
 
           <!-- <div class="text-center pt-3">
@@ -84,28 +71,32 @@
               @verify="verifyRecaptcha"
             ></vue-recaptcha>
           </div>
-          <div class="text-right pt-2" v-if="formErrors.length">
-            <p class="pb-1 text-danger font-weight-bold">
-              لطفا اشتباهات زیر را تصحیح کنید:
-            </p>
+          <div class="text-right error-section pt-1" v-if="formErrors.length">
+            <p class="error-title">لطفا اشتباهات زیر را تصحیح کنید:</p>
             <ul>
-              <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
+              <li class="error" v-for="(error, key) in formErrors" :key="key">
+                {{ error }}
+              </li>
             </ul>
           </div>
+
           <base-button
             nativeType="submit"
-            type="primary"
             :loading="loading"
             block
-            size="lg"
-            class="mt-3 animation-on-hover"
+            class="mt-3 btn btn-reg"
             >ثبت نام</base-button
           >
+          <b-button :href="googleAuthUrl" block class="btn-google">
+            <i class="fab fa-google pl-2"></i>
+            عضویت سریع با حساب گوگل
+          </b-button>
         </form>
       </card>
     </div>
   </div>
 </template>
+
 <script>
 import backend from '../../backend';
 import { BaseCheckbox } from 'src/components';
@@ -249,25 +240,68 @@ export default {
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 0;
+  border-radius: 10px;
+}
+
+.error-section {
+  .error-title {
+    font-family: IranSansBold !important;
+    color: #c5003e;
+    font-size: 0.9em;
+    padding: 8px 0 0 0 !important;
+  }
+
+  .error {
+    font-size: 0.8em;
+    padding: 0 !important;
+  }
 }
 
 .auth-title {
-  font-size: 2.8em;
+  font-size: 2em;
   font-family: IranSansBold;
   text-align: center;
+  color: #ed5786;
 }
 
-.card-title {
-  font-size: 2em !important;
+.btn {
+  background: #ed5786;
+  border: 1px dashed #ed5786 !important;
+  border-radius: 8px;
+  font-size: 0.9em;
+  padding: 7px;
+  color: #fff;
 }
 
-.icon {
-  font-size: 1.5rem;
-  color: #228ef8 !important;
+.btn:hover {
+  background: #c40743;
 }
 
-.icon:hover {
-  color: #d957b2 !important;
+.btn-google {
+  background: #047afb;
+  border: 1px dashed #047afb !important;
+  color: #fff;
+
+  .icon {
+    font-size: 1em;
+    color: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.btn-google:hover {
+  background: #0063c5;
+  color: #fff;
+  text-decoration: none !important;
+
+  a {
+    text-decoration: none !important;
+  }
+
+  .icon {
+    color: #0063c5 !important;
+  }
 }
 
 .google-text {
@@ -276,13 +310,13 @@ export default {
 }
 
 .tc {
-  color: rgb(59, 59, 59);
-  font-size: 1.2em;
+  color: rgb(39, 39, 39);
+  font-size: 0.9em !important;
 }
 
 .tc:hover {
-  color: rgb(0, 0, 0);
-  text-decoration: underline;
+  color: #555 !important;
+  text-decoration: none;
 }
 
 .footer-link {
@@ -292,7 +326,7 @@ export default {
 }
 
 .footer-link:hover {
-  color: #cc51e1 !important;
+  color: #ed5786 !important;
 }
 
 @media only screen and (min-width: 1500px) {
@@ -300,16 +334,6 @@ export default {
     min-height: 73vh;
   }
 }
-
-// @media (max-width: 680px) {
-//   .auth-section {
-//     height: 90vh !important;
-//   }
-
-//   .card {
-//     width: auto !important;
-//   }
-// }
 
 @media (max-width: 320px) {
   .auth-section {
