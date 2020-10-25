@@ -1,33 +1,29 @@
 <template>
   <card class="card-stats" :show-footer-line="true">
     <div class="row">
-      <div
+      <!-- <div
         class="col-lg-5 col-md-5 d-none d-md-block"
         v-if="$slots.icon || icon"
       >
         <div class="info-icon text-center" :class="`icon-${type}`">
           <slot name="icon"> <i :class="icon"></i> </slot>
         </div>
-      </div>
+      </div> -->
       <div
-        class="col-md-7 col-md-7 col-sm-12"
+        class="col-md-7 col-md-7 col-sm-12 text-right"
         v-if="$slots.content || title || subTitle"
       >
         <div class="numbers">
           <slot>
-            <p v-if="subTitle" class="card-category pb-2">{{ subTitle }}</p>
+            <p v-if="subTitle" class="card-category">{{ subTitle }}</p>
             <h3 v-if="title" class="card-title">{{ title }}</h3>
           </slot>
         </div>
       </div>
     </div>
-    <div
-      class="stats custom-size pull-right"
-      slot="footer"
-      v-if="$slots.footer"
-    >
+    <!-- <div class="stats pull-right" slot="footer" v-if="$slots.footer">
       <slot name="footer"></slot>
-    </div>
+    </div> -->
   </card>
 </template>
 <script>
@@ -53,16 +49,20 @@ export default {
 <style lang="scss" scoped>
 .card-stats {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+  border: transparent !important;
 }
 
 .white-content .card:not(.card-pricing).card-stats .card-category {
-  color: #a1a1a1 !important;
+  color: #a7a7a7 !important;
+  font-size: 1em;
+  margin: 0 !important;
+  padding-bottom: 5px !important;
 }
 
 .card-title {
   font-family: IranSansBold !important;
   color: #313131 !important;
-  font-size: 1.8em;
+  font-size: 1.4em !important;
   padding-top: 5px !important;
   margin-bottom: 0;
 }

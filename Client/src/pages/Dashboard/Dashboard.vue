@@ -18,7 +18,7 @@
 
         <!-- Stats Cards Section -->
         <div
-          class="col-lg-6 col-xs-6 ml-auto mr-auto mt-md-4"
+          class="col-lg-4 col-xs-4 ml-auto mr-auto mt-md-4"
           v-for="card in statsCards"
           :key="card.title"
         >
@@ -96,20 +96,20 @@ export default {
         },
         {
           title: totalEpisodes + ' / ' + myEpisodes,
-          subTitle: 'درس های من',
-          // subTitle: 'درس های ثبت نام شده',
+          // subTitle: 'درس های من',
+          subTitle: 'درس های ثبت نام شده',
           type: 'danger',
           icon: 'tim-icons icon-molecule-40',
           footer:
             '<i class="tim-icons icon-video-66 pl-2"></i> مجموع درس های موجود',
         },
-        // {
-        //   title: 'به زودی',
-        //   subTitle: 'امتحان های من',
-        //   type: 'primary',
-        //   icon: 'far fa-check-square',
-        //   footer: '<i class="far fa-check-square pl-2"></i> امتحان های شما',
-        // },
+        {
+          title: 'به زودی',
+          subTitle: 'امتحان های من',
+          type: 'primary',
+          icon: 'far fa-check-square',
+          footer: '<i class="far fa-check-square pl-2"></i> امتحان های شما',
+        },
         // {
         //   title: '0',
         //   subTitle: 'امتحان ها',
@@ -175,12 +175,11 @@ export default {
 <style lang="scss" scoped>
 .bg {
   background-color: #f9f9f9 !important;
+  // background-color: #fbf6f0 !important;
 }
 
 .card-custom {
   border-radius: 1.5em;
-  background-color: #fc5296;
-  background-image: linear-gradient(315deg, #fc5296 0%, #ef476f 74%);
   margin-bottom: 1.5em;
 }
 
@@ -188,8 +187,7 @@ export default {
   font-size: 1.8em;
   font-family: IranSansBold;
   text-align: center;
-  // color: rgb(44, 44, 44) !important;
-  color: white !important;
+  color: rgb(44, 44, 44) !important;
   padding: 0.8rem 0 !important;
 }
 

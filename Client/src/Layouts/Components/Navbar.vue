@@ -72,6 +72,16 @@
 
           <b-nav-item
             active-class="text-custom"
+            v-if="isAdmin"
+            to="/managementpage"
+            class="mr-4 d-lg-none"
+          >
+            <i class="fas fa-tools pl-3"></i>
+            پنل مدیریت</b-nav-item
+          >
+
+          <b-nav-item
+            active-class="text-custom"
             @click="logoutListener"
             href="#"
             class="mr-4 d-lg-none"
@@ -111,6 +121,12 @@
               پشتیبانی
             </b-dropdown-item>
             <hr />
+
+            <b-dropdown-item v-if="isAdmin" to="/managementpage">
+              <i class="fas fa-tools pl-3"></i>
+              پنل مدیریت
+            </b-dropdown-item>
+
             <b-dropdown-item @click.native="logoutListener" href="#">
               <i class="fas fa-sign-out-alt pl-3"></i>
               خروج
@@ -264,7 +280,7 @@ i {
 hr {
   padding: 0 !important;
   margin: 0 !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 @media (max-width: 1000px) {

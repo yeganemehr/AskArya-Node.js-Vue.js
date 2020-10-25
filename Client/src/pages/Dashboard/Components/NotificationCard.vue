@@ -13,7 +13,7 @@
       </div>
     </div>
     <base-pagination
-      class="pagination-no-border ml-auto mt-auto px-2 text-rtl"
+      class="ml-auto mt-auto"
       v-model="pagination.currentPage"
       :value="pagination.currentPage"
       :per-page="pagination.perpage"
@@ -24,6 +24,7 @@
     ></base-pagination>
   </div>
 </template>
+
 <script>
 import { BasePagination } from 'src/components';
 import backend from '../../../backend';
@@ -88,10 +89,8 @@ export default {
 <style lang="scss" scoped>
 .card {
   height: 100% !important;
-  border: 1px solid rgb(240, 240, 240);
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
-    0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
-    0 32px 16px rgba(0, 0, 0, 0.09);
+  border: 1px solid transparent !important;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
 }
 
 .title {

@@ -12,9 +12,9 @@
           class="card-custom my-3"
           :class="message.user.id == ticket.user.id ? 'ml-5' : 'mr-5'"
         >
-          <div class="ticket-meta d-flex justify-content-between row">
+          <div class="ticket-meta pt-3 d-flex justify-content-between row">
             <p class="ticket-user">
-              <img
+              <b-avatar
                 :src="message.user.avatar"
                 class="user-avatar avatar"
                 v-if="message.user.avatar"
@@ -26,10 +26,11 @@
               class="user-avatar avatar"
               v-if="message.user.avatar"
             />-->
-              <i class="pl-2 text-info far fa-user" v-else></i>
+              <b-avatar class="ml-2" v-else></b-avatar>
+              <!-- <i class="pl-2 text-info far fa-user" v-else></i> -->
               {{ message.user.name }}
             </p>
-            <div class="card-info">
+            <div class="card-info pt-2">
               <p class="ticket-date">
                 {{ getDate(message.createdAt) }}
                 <span class="pr-3">{{ getTime(message.createdAt) }}</span>
@@ -47,9 +48,15 @@
             {{ message.message }}
           </p>
 
-          <div class="text-left pl-2 pt-2" v-if="isAdmin">
-            <i @click="handleEdit(message)" class="fas fa-pencil-alt pl-3"></i>
-            <i @click="handleDelete(message)" class="far fa-trash-alt pr-1"></i>
+          <div class="text-left pl-2 pb-2" v-if="isAdmin">
+            <i
+              @click="handleEdit(message)"
+              class="icon fas fa-pencil-alt pl-3"
+            ></i>
+            <i
+              @click="handleDelete(message)"
+              class="icon far fa-trash-alt pr-1"
+            ></i>
           </div>
 
           <hr v-if="message.files.length" />
@@ -477,7 +484,7 @@ export default {
 .card-custom {
   background-color: rgb(255, 255, 255);
   border-radius: 25px;
-  padding: 2em 2em 1em 2em;
+  padding: 0.5em 2em;
   border: 1px dashed #ececec;
   font-family: IranSansBlog !important;
 
@@ -507,7 +514,7 @@ export default {
   }
 
   i {
-    font-size: 1.15em;
+    font-size: 0.9em;
     color: rgb(34, 34, 34);
   }
 
@@ -556,10 +563,6 @@ export default {
     .main-ticket-text {
       font-size: 0.94em;
     }
-  }
-
-  .ticket-meta {
-    padding-right: 1em;
   }
 
   .avatar {

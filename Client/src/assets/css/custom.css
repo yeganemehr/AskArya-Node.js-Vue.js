@@ -70,11 +70,21 @@ th {
 
 .swal-title {
   color: black !important;
+  direction: ltr !important;
+}
+
+.swal-text,
+.swal-button {
+  direction: ltr !important;
 }
 
 /*------------------------
 	base class definition
 -------------------------*/
+
+.card {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+}
 
 .navbar-light .navbar-nav .dropdown .nav-link {
   color: rgb(31, 31, 31) !important;
@@ -83,6 +93,7 @@ th {
 .dropdown.show .dropdown-menu,
 .navbar .dropdown.show .dropdown-menu {
   padding-bottom: 0 !important;
+  border: 1px solid rgb(241, 241, 241) !important;
 }
 
 .dropdown-toggle::after {
@@ -92,8 +103,9 @@ th {
 
 .dropdown-item {
   text-align: right !important;
-  font-size: 0.93em !important;
-  padding: 10px 13px !important;
+  font-size: 0.87em !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 
 .dropdown-item:hover,
@@ -120,7 +132,7 @@ input {
 
 .card {
   border-radius: 10px !important;
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.06), 0 10px 10px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: none !important;
 }
 
 ::placeholder {
@@ -130,8 +142,7 @@ input {
 }
 
 label {
-  direction: rtl !important;
-  text-align: right !important;
+  float: right !important;
 }
 
 table > thead > tr > th {
