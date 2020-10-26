@@ -17,10 +17,10 @@
             <!-- COURSE CREATED AT -->
             <div class="col d-none d-md-block text-center">
               <i class="icon far fa-calendar-alt"></i>
-              <p class="icon-data">
+              <h5 class="icon-data">
                 {{ getEpisodeCreateDate() }}
                 <span class="icon-text pr-1">ایجاد شده در</span>
-              </p>
+              </h5>
             </div>
 
             <!-- COURSE LENGTH -->
@@ -546,7 +546,7 @@ export default {
 .body {
   /deep/ p {
     color: white !important;
-    font-size: 1.2em !important;
+    font-size: 1.1em !important;
     line-height: inherit !important;
   }
 }
@@ -562,13 +562,13 @@ export default {
 }
 
 .icon {
-  font-size: 1.9em !important;
+  font-size: 1.75em !important;
   color: white !important;
   padding-bottom: 15px !important;
 }
 
 .icon-data {
-  font-size: 1.35em;
+  font-size: 1.2em;
   font-family: IranSansBold;
   color: white !important;
 }

@@ -123,11 +123,11 @@
 
 <script>
 import backend from '../../../backend';
-import { ImageUpload } from 'src/components/index';
+// import { ImageUpload } from 'src/components/index';
 
 export default {
   components: {
-    ImageUpload,
+    // ImageUpload,
   },
   props: ['user'],
   data() {

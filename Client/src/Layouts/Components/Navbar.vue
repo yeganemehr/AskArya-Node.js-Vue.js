@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="light">
+  <b-navbar sticky="true" toggleable="lg" type="light">
     <b-navbar-brand class="mr-3" to="/">
       <img src="/img/askarya-logo.png" width="100" alt="Ask Arya Logo" />
     </b-navbar-brand>
@@ -195,12 +195,22 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.navbar {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+  background: white !important;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+
 .navbar-nav {
   text-align: right;
 }
 
 .nav-link {
   padding-right: 2.5em !important;
+  font-size: 1.1em !important;
 }
 
 .nav-link:hover {
