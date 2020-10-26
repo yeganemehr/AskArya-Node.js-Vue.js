@@ -182,6 +182,7 @@ export default {
   color: black !important;
   text-align: right;
 }
+
 span {
   color: #636363 !important;
 }

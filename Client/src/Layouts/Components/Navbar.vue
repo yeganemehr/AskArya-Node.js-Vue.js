@@ -126,9 +126,10 @@
               <i class="fas fa-tools pl-3"></i>
               پنل مدیریت
             </b-dropdown-item>
+            <hr />
 
             <b-dropdown-item @click.native="logoutListener" href="#">
-              <i class="fas fa-sign-out-alt pl-3"></i>
+              <i class="fas fa-sign-out-alt pl-3 pb-2"></i>
               خروج
             </b-dropdown-item>
           </b-nav-item-dropdown>
@@ -196,7 +197,7 @@ export default {
 
 <style scoped lang="scss">
 .navbar {
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 5px 2px -2px rgba(0, 0, 0, 0.04) !important;
   background: white !important;
 }
 
