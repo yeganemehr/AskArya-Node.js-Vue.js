@@ -350,14 +350,20 @@ export default {
 }
 
 .dropdown-box {
-  padding-left: 3.5rem !important;
+  padding-left: 7rem !important;
+}
+
+.nav-item .dropdown-item {
+  text-align: right !important;
 }
 
 .navbar-collapse .navbar-nav .nav-link {
   color: #000;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  text-align: right !important;
 }
+
 .dropdown-item.active {
   color: #ef476f !important;
   background-color: transparent !important;

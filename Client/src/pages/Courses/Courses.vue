@@ -12,7 +12,7 @@
         <Vip></Vip>
       </div>
 
-      <div class="col-lg-9 col-md-12">
+      <div class="col-lg-9 col-md-12 row">
         <div
           class="col-lg-4 col-md-6 col-sm-12"
           v-for="course in courses"

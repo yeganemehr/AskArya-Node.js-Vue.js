@@ -4,7 +4,7 @@ import Notifications from 'src/components/NotificationPlugin';
 import VeeValidate from 'vee-validate';
 import GlobalComponents from './globalComponents';
 import GlobalDirectives from './globalDirectives';
-import RTLPlugin from './RTLPlugin';
+// import RTLPlugin from './RTLPlugin';
 
 // Element ui language configuration
 import lang from 'element-ui/lib/locale/lang/en';
@@ -21,7 +21,7 @@ export default {
   install(Vue) {
     Vue.use(GlobalComponents);
     Vue.use(GlobalDirectives);
-    Vue.use(RTLPlugin);
+    // Vue.use(RTLPlugin);
     Vue.use(Notifications);
     Vue.use(VeeValidate, { fieldsBagName: 'veeFields' });
     Vue.use(require('jalali-moment'));

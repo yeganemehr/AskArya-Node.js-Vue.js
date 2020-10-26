@@ -40,6 +40,10 @@ h3,
 h4,
 h5,
 h6,
+p,
+li,
+span,
+button,
 .swal-title,
 .swal-button {
   font-weight: normal !important;
@@ -49,8 +53,29 @@ h6,
   text-rendering: optimizeLegibility !important;
 }
 
+a,
+p,
+li,
+span,
+button,
+.btn,
+tr,
+label {
+  font-family: IranSans !important;
+}
+
+th {
+  font-family: IranSansBold !important;
+}
+
 .swal-title {
-  color: black;
+  color: black !important;
+  direction: ltr !important;
+}
+
+.swal-text,
+.swal-button {
+  direction: ltr !important;
 }
 
 /*------------------------
@@ -187,4 +212,5 @@ input {
 .navbar .dropdown.show .dropdown-menu {
   margin-top: 9px !important;
   border-radius: 10px !important;
+  margin-left: 5em !important;
 }
