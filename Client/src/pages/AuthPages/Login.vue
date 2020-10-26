@@ -75,7 +75,11 @@
             </ul>
           </div>
 
-          <base-button nativeType="submit" class="btn" :loading="loading" block
+          <base-button
+            nativeType="submit"
+            class="btn mt-3"
+            :loading="loading"
+            block
             >ورود</base-button
           >
 

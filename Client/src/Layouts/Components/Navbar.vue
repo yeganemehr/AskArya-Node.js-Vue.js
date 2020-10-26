@@ -256,20 +256,20 @@ i {
 }
 
 .btn-login {
-  background: transparent !important;
-  border: 1px dashed #ed5786 !important;
-  color: #ed5786 !important;
+  background: #047afb !important;
+  border: 1px dashed #047afb !important;
+  color: #fff !important;
 }
 
 .btn-login:hover {
-  background: #ed5786 !important;
-  color: #fff !important;
+  background: transparent !important;
+  color: #047afb !important;
 }
 
 .btn-secondary:not(:disabled):not(.disabled).active {
   background: #fff !important;
-  border: 1px dashed #047afb !important;
-  color: #047afb !important;
+  border: 1px dashed #06d6a0 !important;
+  color: #06d6a0 !important;
 }
 
 .btn-secondary:focus {
