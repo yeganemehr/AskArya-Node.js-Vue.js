@@ -260,8 +260,9 @@ i {
   color: #fff !important;
 }
 
-.btn-reg:hover {
-  background: #fff;
+.btn-reg:hover,
+.btn-reg:focus {
+  background: #fff !important;
   color: #ed5786 !important;
   border: 1px dashed #ed5786 !important;
 }
@@ -308,11 +309,12 @@ hr {
     .nav-link {
       padding: 0.7em !important;
     }
-    background: #ed5786 !important;
+    background-color: #ed5786 !important;
     border: 1px solid #ffe0ea !important;
     color: #fff !important;
     text-align: center;
     border-radius: 10px;
+    margin-bottom: 1.5em !important;
     a,
     .far {
       color: #fff !important;

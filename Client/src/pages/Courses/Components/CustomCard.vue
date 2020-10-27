@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="card card-1 text-center" v-if="enrolled">
-      <div class="py-3 px-2">
+      <div class="py-3 px-2 mb-3">
         <h2 class="title">درصد تکمیل دوره</h2>
         <div>
           <pie-chart

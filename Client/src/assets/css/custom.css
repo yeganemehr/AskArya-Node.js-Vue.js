@@ -60,7 +60,9 @@ span,
 button,
 .btn,
 tr,
-label {
+label,
+.swal-text,
+.swal-button {
   font-family: IranSans !important;
 }
 
@@ -70,11 +72,6 @@ th {
 
 .swal-title {
   color: black !important;
-  direction: ltr !important;
-}
-
-.swal-text,
-.swal-button {
   direction: ltr !important;
 }
 
@@ -112,7 +109,7 @@ th {
 }
 
 .navbar-light .navbar-nav .dropdown .nav-link {
-  color: rgb(31, 31, 31) !important;
+  color: rgb(27, 27, 27) !important;
 }
 
 .dropdown.show .dropdown-menu,

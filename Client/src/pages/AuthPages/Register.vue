@@ -43,7 +43,7 @@
           <div class="text-right">
             <b-form-checkbox
               v-model="terms"
-              class="py-3"
+              class="my-3"
               :class="{
                 'has-danger': fieldErrors.terms !== undefined,
                 'terms-checkbox': true,
@@ -65,7 +65,7 @@
             <p class="google-text">شما میتوانید بدون ثبت نام با اکانت گوگل وارد سایت شوید.</p>
           </div>-->
 
-          <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center container">
             <vue-recaptcha
               :sitekey="sitekey"
               @verify="verifyRecaptcha"

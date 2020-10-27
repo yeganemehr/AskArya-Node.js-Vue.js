@@ -49,8 +49,12 @@
   min-height: 45vh !important;
   width: 100%;
 
+  .hero-text-section {
+    padding-top: 1em;
+  }
+
   .hero-title {
-    font-size: 3.7em;
+    font-size: 3.6em;
     line-height: inherit;
     font-family: IranSansBold !important;
     color: #fff !important;
@@ -67,7 +71,7 @@
 
   .btn {
     border-radius: 7px;
-    font-size: 1.1em;
+    font-size: 1em;
     padding-left: 1.4em;
     padding-right: 1.4em;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.03), 0 1px 3px rgba(0, 0, 0, 0.03);
@@ -186,7 +190,7 @@
 
 @media only screen and (min-width: 1500px) {
   .hero-content-homepage {
-    min-height: 40vh !important;
+    min-height: 39vh !important;
   }
 }
 </style>
