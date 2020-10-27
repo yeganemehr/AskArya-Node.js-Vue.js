@@ -102,20 +102,18 @@
               ></b-form-input>
             </div>
 
-            <div v-if="isAdmin" class="col-md-5 mb-3">
+            <div v-if="isAdmin" class="col-12 px-3 mb-2">
               <!-- <b-form-file
                 @change="onAvatarChange"
                 placeholder="+ آپلود عکس"
                 drop-placeholder="+ آپلود عکس"
               /> -->
 
-              <div v-if="isAdmin" class="col-md-5 mb-3">
-                <image-upload
-                  type="avatar"
-                  select-text="+ آپلود عکس"
-                  @change="onAvatarChange"
-                />
-              </div>
+              <image-upload
+                type="avatar"
+                select-text="+ آپلود عکس"
+                @change="onAvatarChange"
+              />
             </div>
 
             <div class="col-12 mb-3">

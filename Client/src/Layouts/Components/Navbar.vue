@@ -7,10 +7,12 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item exact active-class="text-custom" to="/">خانه</b-nav-item>
+        <b-nav-item exact active-class="text-custom custom-top" to="/"
+          >خانه</b-nav-item
+        >
         <hr />
 
-        <b-nav-item active-class="text-custom" to="/courses"
+        <b-nav-item active-class="text-custom " to="/courses"
           >دوره‌ های غیر حضوری</b-nav-item
         >
 
@@ -302,7 +304,7 @@ hr {
 
   .nav-link {
     font-size: 1.15em !important;
-    padding: 0.8em 1em !important;
+    padding: 0.65em 1em !important;
   }
 
   .btn-login-mobile {
@@ -320,6 +322,10 @@ hr {
     .far {
       color: #fff !important;
     }
+  }
+
+  .custom-top {
+    padding-top: 2em !important;
   }
 
   .btn-login-mobile:active {
