@@ -785,7 +785,7 @@ export default {
 
 <style lang="scss" scoped>
 .quiz-header {
-  font-size: 2em !important;
+  font-size: 1.8em !important;
   margin: 0;
   padding: 1.3em 1em 1em 1em !important;
   color: #ef476f !important;
@@ -849,13 +849,13 @@ export default {
     font-family: sans-serif, Verdana, Tahoma !important;
     color: rgb(27, 27, 27) !important;
     text-align: left !important;
-    padding-top: 15px;
+    padding-bottom: 1.3em;
   }
 
   .next-btn {
     background: #6600da !important;
     color: #fff;
-    font-size: 1.2em !important;
+    font-size: 1.1em !important;
     padding: 10px 28px !important;
     margin-left: 1em;
     font-family: sans-serif, Verdana, Tahoma !important;
@@ -898,8 +898,8 @@ export default {
     background: rgb(226, 226, 226);
     font-family: sans-serif, Verdana, Tahoma !important;
     color: rgb(44, 44, 44) !important;
-    font-size: 1.3em !important;
-    padding: 15px 28px !important;
+    font-size: 1.1em !important;
+    padding: 12px 28px !important;
     margin-bottom: 10px !important;
     display: block !important;
     width: 100% !important;
@@ -928,8 +928,8 @@ export default {
     background: rgb(226, 226, 226);
     font-family: sans-serif, Verdana, Tahoma !important;
     color: #a7a7a7 !important;
-    font-size: 1.3em !important;
-    padding: 15px 28px !important;
+    font-size: 1.1em !important;
+    padding: 12px 28px !important;
     margin-bottom: 10px !important;
     display: block !important;
     width: 100% !important;

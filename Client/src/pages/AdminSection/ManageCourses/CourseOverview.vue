@@ -10,80 +10,78 @@
     </div>
     <div class="mt-5">
       <div>
-        <card card-body-classes="table-full-width">
-          <div>
-            <div
-              class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
-            >
-              <el-select
-                class="select-primary mb-3 pagination-select"
-                v-model="pagination.perPage"
-                placeholder="Per page"
-                v-on:change="changeLimitListener"
-              >
-                <el-option
-                  class="select-primary"
-                  v-for="item in pagination.perPageOptions"
-                  :key="item"
-                  :label="item"
-                  :value="item"
-                ></el-option>
-              </el-select>
-            </div>
-
-            <el-table :data="tableData">
-              <el-table-column
-                v-for="column in tableColumns"
-                :key="column.label"
-                :min-width="column.minWidth"
-                :prop="column.prop"
-                :label="column.label"
-              ></el-table-column>
-              <el-table-column :min-width="85" align="center" label="Settings">
-                <div slot-scope="props">
-                  <base-button
-                    @click.native="handleEdit(props.$index, props.row)"
-                    class="edit btn-link"
-                    type="warning"
-                    size="sm"
-                    icon
-                  >
-                    <i class="fas fa-pencil-alt"></i>
-                  </base-button>
-                  <base-button
-                    @click.native="handleDelete(props.$index, props.row)"
-                    class="remove btn-link"
-                    type="danger"
-                    size="sm"
-                    icon
-                  >
-                    <i class="fas fa-times"></i>
-                  </base-button>
-                </div>
-              </el-table-column>
-            </el-table>
-          </div>
+        <div class="card">
           <div
-            v-if="tableData.length"
-            slot="footer"
             class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
           >
-            <div class>
-              <p class="card-category">
-                Showing {{ from + 1 }} to {{ to }} of
-                {{ pagination.total }} entries
-              </p>
-            </div>
-            <base-pagination
-              v-model="pagination.currentPage"
-              :value="pagination.currentPage"
-              :per-page="pagination.perpage"
-              :total="pagination.total"
-              :pageCount="pagination.pages"
-              v-on:input="changePageListener"
-            ></base-pagination>
+            <el-select
+              class="select-primary mb-3 pagination-select"
+              v-model="pagination.perPage"
+              placeholder="Per page"
+              v-on:change="changeLimitListener"
+            >
+              <el-option
+                class="select-primary"
+                v-for="item in pagination.perPageOptions"
+                :key="item"
+                :label="item"
+                :value="item"
+              ></el-option>
+            </el-select>
           </div>
-        </card>
+
+          <el-table class="my-5" :data="tableData">
+            <el-table-column
+              v-for="column in tableColumns"
+              :key="column.label"
+              :min-width="column.minWidth"
+              :prop="column.prop"
+              :label="column.label"
+            ></el-table-column>
+            <el-table-column :min-width="85" align="center" label="Settings">
+              <div slot-scope="props">
+                <base-button
+                  @click.native="handleEdit(props.$index, props.row)"
+                  class="edit btn-link"
+                  type="warning"
+                  size="sm"
+                  icon
+                >
+                  <i class="fas fa-pencil-alt"></i>
+                </base-button>
+                <base-button
+                  @click.native="handleDelete(props.$index, props.row)"
+                  class="remove btn-link"
+                  type="danger"
+                  size="sm"
+                  icon
+                >
+                  <i class="fas fa-times"></i>
+                </base-button>
+              </div>
+            </el-table-column>
+          </el-table>
+        </div>
+        <div
+          v-if="tableData.length"
+          slot="footer"
+          class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
+        >
+          <div class>
+            <p class="card-category">
+              Showing {{ from + 1 }} to {{ to }} of
+              {{ pagination.total }} entries
+            </p>
+          </div>
+          <base-pagination
+            v-model="pagination.currentPage"
+            :value="pagination.currentPage"
+            :per-page="pagination.perpage"
+            :total="pagination.total"
+            :pageCount="pagination.pages"
+            v-on:input="changePageListener"
+          ></base-pagination>
+        </div>
       </div>
     </div>
     <div class="pt-3">

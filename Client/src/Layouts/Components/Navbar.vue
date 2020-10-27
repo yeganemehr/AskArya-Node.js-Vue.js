@@ -302,7 +302,7 @@ hr {
 
   .nav-link {
     font-size: 1.15em !important;
-    padding: 1.1em 1em !important;
+    padding: 0.8em 1em !important;
   }
 
   .btn-login-mobile {

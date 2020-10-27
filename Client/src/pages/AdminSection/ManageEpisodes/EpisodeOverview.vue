@@ -5,7 +5,7 @@
     </div>
     <div class="mt-5">
       <div>
-        <card card-body-classes="table-full-width">
+        <div clas="card">
           <div>
             <div
               class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
@@ -25,7 +25,7 @@
                 ></el-option>
               </el-select>
             </div>
-            <el-table :data="tableData">
+            <el-table class="my-5" :data="tableData">
               <el-table-column
                 align="center"
                 v-for="column in tableColumns"
@@ -77,7 +77,7 @@
               v-on:input="changePageListener"
             ></base-pagination>
           </div>
-        </card>
+        </div>
       </div>
     </div>
     <div class="pt-3">

@@ -5,14 +5,14 @@
     </div>
     <h2 class="ticket-desc text-center pb-3">{{ ticket.title }}</h2>
     <div class="row">
-      <div class="col-lg-8 col-md-12 mr-lg-5">
+      <div class="col-lg-8 col-md-12">
         <div
           v-for="message of messages"
           :key="message.id"
           class="card-custom my-3"
           :class="message.user.id == ticket.user.id ? 'ml-5' : 'mr-5'"
         >
-          <div class="ticket-meta pt-3 d-flex justify-content-between row">
+          <div class="pt-3 px-3 d-flex justify-content-between row">
             <p class="ticket-user">
               <b-avatar
                 :src="message.user.avatar"
@@ -73,7 +73,7 @@
     </div>
 
     <!--------------------------- Ticket Reply --------------------------->
-    <div class="card pb-4 px-4 my-5">
+    <div class="card pb-4 px-4 my-5 container">
       <form @submit.prevent="submitFormListener">
         <h4 class="pt-4">
           {{ editingMessage ? 'ویرایش پیام' : 'پاسخی ارسال کنید!' }}
@@ -546,6 +546,7 @@ export default {
 .ticket-main-text {
   // font-size: 1.2em !important;
   font-family: IranSans;
+  padding: 0 !important;
 }
 
 @media (max-width: 768px) {

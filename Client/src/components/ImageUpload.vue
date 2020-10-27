@@ -35,32 +35,32 @@ export default {
     type: {
       type: String,
       default: '',
-      description: 'Image upload type (""|avatar)'
+      description: 'Image upload type (""|avatar)',
     },
     src: {
       type: String,
       default: '',
-      description: 'Initial image to display'
+      description: 'Initial image to display',
     },
     selectText: {
       type: String,
-      default: 'Select image'
+      default: 'Select image',
     },
     changeText: {
       type: String,
-      default: 'Change'
+      default: 'Change',
     },
     removeText: {
       type: String,
-      default: 'Remove'
-    }
+      default: 'Remove',
+    },
   },
   data() {
     let avatarPlaceholder = 'img/placeholder.jpg';
     let imgPlaceholder = 'img/image_placeholder.jpg';
     return {
       placeholder: this.type === 'avatar' ? avatarPlaceholder : imgPlaceholder,
-      imagePreview: null
+      imagePreview: null,
     };
   },
   computed: {
@@ -69,7 +69,7 @@ export default {
     },
     image() {
       return this.imagePreview || this.src || this.placeholder;
-    }
+    },
   },
   methods: {
     handlePreview(event) {
@@ -80,8 +80,8 @@ export default {
     removeFile() {
       this.imagePreview = null;
       this.$emit('change', null);
-    }
-  }
+    },
+  },
 };
 </script>
 <style></style>

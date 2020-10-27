@@ -3,9 +3,9 @@
     <div>
       <h2 class="text-center pb-3">Manage Users</h2>
     </div>
-    <card card-body-classes="table-full-width">
+    <div clas="card">
       <div
-        class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
+        class="d-flex justify-content-center justify-content-sm-between flex-wrap"
       >
         <el-select
           class="select-primary mb-3 pagination-select"
@@ -35,7 +35,7 @@
           ></el-input>
         </base-input>
       </div>
-      <el-table :data="this.tableData">
+      <el-table class="my-4" :data="this.tableData">
         <el-table-column
           align="center"
           v-for="column in tableColumns"
@@ -85,7 +85,7 @@
           @input="changePageListener"
         ></base-pagination>
       </div>
-    </card>
+    </div>
     <div class="pt-2">
       <CreateEditUser
         v-bind="user"
@@ -95,6 +95,7 @@
     </div>
   </section>
 </template>
+
 <script>
 import CreateEditUser from './CreateEditUser';
 import { Table, TableColumn, Select, Option } from 'element-ui';
@@ -277,6 +278,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 .pagination-select,
 .search-input {

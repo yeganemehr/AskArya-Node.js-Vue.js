@@ -1,6 +1,6 @@
 <template>
   <div class="container py-5">
-    <h2 class="text-center pb-2">Manage Tickets</h2>
+    <h2 class="text-center pb-5">Manage Tickets</h2>
     <ticket-data
       :openTickets="openTickets"
       :answeredTickets="answeredTickets"
@@ -10,10 +10,10 @@
     ></ticket-data>
     <!-- <card card-body-classes="table-full-width"> -->
     <div
-      class="container my-5 px-md-5 text-center d-flex justify-content-between"
+      class="container mb-3 mt-5 d-flex justify-content-center justify-content-sm-between flex-wrap"
     >
       <el-select
-        class="select-primary pagination-select"
+        class="select-primary pagination-select mt-2"
         v-model="pagination.perPage"
         placeholder="Per page"
         @change="changeLimitListener"
@@ -27,7 +27,7 @@
         ></el-option>
       </el-select>
 
-      <base-input>
+      <base-input class="mt-2">
         <el-input
           type="search"
           class="search-input"
@@ -131,7 +131,7 @@
           </b-button-group>
         </div>
 
-        <div class="w-100 d-md-none pt-3"></div>
+        <div class="w-100 d-md-none"></div>
         <div class="view-ticket">
           <router-link :to="`/tickets/view/${ticket.id}`">
             <base-button class="px-3" round type="info">
@@ -144,7 +144,7 @@
     <div
       v-if="tickets.length"
       slot="footer"
-      class="col-12 pt-5 d-flex justify-content-center justify-content-sm-between flex-wrap"
+      class="col-12 mt-5 d-flex justify-content-center justify-content-sm-between flex-wrap"
     >
       <div class>
         <p class="card-category">
@@ -213,9 +213,9 @@ export default {
   data() {
     return {
       pagination: {
-        perPage: 10,
+        perPage: 15,
         currentPage: 1,
-        perPageOptions: [5, 10, 15, 20, 30, 50],
+        perPageOptions: [5, 10, 20, 30, 60, 200],
         total: 0,
         pages: 0,
       },
@@ -547,16 +547,15 @@ export default {
 
 .single-ticket-row {
   .ticket-card {
-    padding: 2em 2.5em;
+    padding: 1.5em 2.5em 0.9em 2.5em !important;
     margin-bottom: 20px;
     background-color: #fff !important;
-    border-radius: 15px;
-    border: 1px solid rgb(230, 230, 230);
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.09),
-      0 6px 6px rgba(158, 158, 158, 0.13) !important;
+    border-radius: 10px;
+    border: 1px solid rgb(233, 233, 233);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(158, 158, 158, 0.1) !important;
 
     h3 {
-      font-size: 0.9em;
+      font-size: 0.85em !important;
       color: rgba(65, 65, 65, 0.5) !important;
       text-align: right;
       font-family: IranSansBold;
@@ -565,11 +564,11 @@ export default {
     }
 
     p {
-      font-size: 1.1em;
+      font-size: 1em;
       color: rgba(39, 39, 39, 0.89) !important;
       text-align: right;
       font-family: IranSans;
-      padding-top: 5px;
+      padding-top: 13px !important;
     }
 
     .badge {
@@ -597,10 +596,12 @@ export default {
 .ticket-card:focus {
   -webkit-box-shadow: 0 10px 30px -5px rgba(117, 117, 117, 0.6);
   box-shadow: 40px rgba(121, 121, 121, 0.6);
-  // transition: transform 0.6s;
-  // -webkit-transform: translateY(-2px);
-  // transform: translateY(-2px);
-  // cursor: pointer;
+}
+
+.btn-link {
+  background: transparent !important;
+  border: transparent !important;
+  font-size: 1em !important;
 }
 
 @media (max-width: 768px) {
@@ -630,16 +631,8 @@ export default {
         margin-top: 10px;
       }
 
-      // .ticket-username {
-      //   margin-right: 0 !important;
-      // }
-
-      // .ticket-title {
-      //   width: 100%;
-      // }
       .ticket-dept {
         padding-top: 1.1em;
-        // width: 100%;
       }
 
       .ticket-priority {
@@ -648,7 +641,6 @@ export default {
 
       .ticket-date {
         padding-top: 1.1em;
-        // width: 100%;
       }
     }
   }

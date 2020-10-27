@@ -70,6 +70,18 @@ th {
   font-family: IranSansBold !important;
 }
 
+td {
+  border: 1px solid rgb(150, 150, 150) !important;
+  padding: 5px !important;
+  text-align: right !important;
+}
+
+table .btn {
+  background: transparent !important;
+  border: transparent !important;
+  font-size: 1em !important;
+}
+
 .swal-title {
   color: black !important;
   direction: ltr !important;
@@ -151,9 +163,25 @@ input {
   direction: ltr !important;
 }
 
-.card {
+.el-select-dropdown__item {
+  background: #fff !important;
+  color: blue !important;
+  padding: 8px 10px !important;
+  font-size: 1em !important;
+  font-family: IranSansBold !important;
+  text-align: right !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid grey !important;
+  border-left: 1px solid grey !important;
+  border-right: 1px solid grey !important;
+}
+
+.card,
+.card-body {
+  background: white !important;
   border-radius: 10px !important;
   box-shadow: none !important;
+  border: 1px solid rgb(245, 245, 245) !important;
 }
 
 ::placeholder {
@@ -175,12 +203,6 @@ table > tbody > tr > td {
   border-color: rgba(0, 0, 0, 0.062) !important;
   font-family: IranSans !important;
 }
-
-/* th > .cell {
-  font-family: IranSansBold !important;
-  color: rgb(49, 49, 49) !important;
-  font-size: 1.1em !important;
-} */
 
 th {
   font-size: 1em !important;

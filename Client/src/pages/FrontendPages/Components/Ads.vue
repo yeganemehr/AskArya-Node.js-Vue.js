@@ -69,14 +69,14 @@
 
 .title {
   font-family: IranSansBold;
-  font-size: 1.3em !important;
+  font-size: 1.2em !important;
   padding: 0;
   margin: 0 0 20px 0;
   color: white !important;
 }
 
 .subtitle {
-  font-size: 1em;
+  font-size: 0.95em !important;
   color: white !important;
 }
 

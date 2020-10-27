@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-3">
+  <section class="pt-3 container">
     <h4 v-if="isAdmin" slot="header" class="card-title">Send Ticket</h4>
     <card>
       <form class="text-rtl pt-2" @submit="submitFormListener">
