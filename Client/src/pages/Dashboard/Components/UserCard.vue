@@ -103,12 +103,21 @@
             </div>
 
             <div v-if="isAdmin" class="col-md-5 mb-3">
-              <b-form-file
+              <!-- <b-form-file
+                @change="onAvatarChange"
                 placeholder="+ آپلود عکس"
                 drop-placeholder="+ آپلود عکس"
-                @change="onAvatarChange"
-              />
+              /> -->
+
+              <div v-if="isAdmin" class="col-md-5 mb-3">
+                <image-upload
+                  type="avatar"
+                  select-text="+ آپلود عکس"
+                  @change="onAvatarChange"
+                />
+              </div>
             </div>
+
             <div class="col-12 mb-3">
               <base-button block native-type="submit" class="btn btn-info"
                 >ثبت تغییرات</base-button
@@ -123,11 +132,11 @@
 
 <script>
 import backend from '../../../backend';
-// import { ImageUpload } from 'src/components/index';
+import { ImageUpload } from 'src/components/index';
 
 export default {
   components: {
-    // ImageUpload,
+    ImageUpload,
   },
   props: ['user'],
   data() {

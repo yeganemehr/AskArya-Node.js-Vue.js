@@ -211,7 +211,7 @@ export default {
 
 .nav-link {
   padding-right: 2.5em !important;
-  font-size: 1.1em !important;
+  font-size: 1em !important;
 }
 
 .nav-link:hover {

@@ -179,22 +179,27 @@ table > tbody > tr > td {
   font-family: IranSans !important;
 }
 
-th > .cell {
+/* th > .cell {
   font-family: IranSansBold !important;
   color: rgb(49, 49, 49) !important;
   font-size: 1.1em !important;
+} */
+
+th {
+  font-size: 1em !important;
+  text-align: center !important;
+  font-family: IranSansBlog !important;
 }
 
 td {
-  font-size: 1em !important;
+  font-size: 0.95em !important;
   text-align: center !important;
   font-family: IranSansBlog !important;
   color: rgb(51, 51, 51) !important;
 }
 
-th {
-  text-align: center !important;
-  font-family: IranSansBlog !important;
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 0, 200, 0.075) !important;
 }
 
 @media (max-width: 678px) {

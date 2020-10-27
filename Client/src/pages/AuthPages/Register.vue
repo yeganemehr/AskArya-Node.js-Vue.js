@@ -99,7 +99,7 @@
 
 <script>
 import backend from '../../backend';
-import { BaseCheckbox } from 'src/components';
+// import { BaseCheckbox } from 'src/components';
 import Swal from 'sweetalert';
 
 import config from '../../config';
@@ -107,7 +107,7 @@ import VueRecaptcha from 'vue-recaptcha';
 
 export default {
   components: {
-    BaseCheckbox,
+    // BaseCheckbox,
     VueRecaptcha,
   },
   data() {

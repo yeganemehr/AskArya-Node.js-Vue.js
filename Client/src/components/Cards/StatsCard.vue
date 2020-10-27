@@ -61,7 +61,8 @@ export default {
 
 .card-title {
   font-family: IranSansBold !important;
-  color: #313131 !important;
+  // color: #313131 !important;
+  color: #ef476f !important;
   font-size: 1.4em !important;
   padding-top: 5px !important;
   margin-bottom: 0;
