@@ -91,10 +91,12 @@ span {
     margin-left: auto !important;
   }
   .info-items {
-    font-size: 1.1em !important;
+    font-size: 1.03em !important;
+    padding: 0 !important;
+    margin: 0 0 11px 0 !important;
   }
   span {
-    font-size: 1em !important;
+    font-size: 0.98em !important;
     padding-right: 7px !important;
   }
 }

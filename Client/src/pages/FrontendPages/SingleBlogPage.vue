@@ -181,19 +181,23 @@ export default {
     color: black !important;
   }
 
+  .post-title-top {
+    font-size: 1.5em !important;
+  }
+
   .heading-section {
     border-bottom-left-radius: 1%;
     border-bottom-right-radius: 1%;
   }
 
   .blog-img {
-    width: 240px;
-    height: 240px;
+    width: 200px !important;
+    height: 200px !important;
   }
 
   .main-blog-text {
     margin: 0 !important;
-    font-size: 1.15em !important;
+    font-size: 1.12em !important;
     color: black !important;
     padding: 1em 2em 3em 0.1em !important;
   }

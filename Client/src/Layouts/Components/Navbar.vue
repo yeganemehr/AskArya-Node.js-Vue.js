@@ -30,7 +30,7 @@
           block
           class="btn-login-mobile my-3 d-lg-none"
           type="submit"
-          to="/login"
+          href="/login"
         >
           <i class="far fa-user pl-2"></i>
           ورود کاربر</b-button
@@ -320,6 +320,10 @@ hr {
     .far {
       color: #fff !important;
     }
+  }
+
+  .btn-login-mobile:active {
+    color: #fff !important;
   }
 }
 </style>

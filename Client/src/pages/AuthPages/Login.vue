@@ -228,7 +228,7 @@ export default {
 
 <style lang="scss" scoped>
 .auth-section {
-  height: 92vh !important;
+  height: 9vh !important;
   background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
 }
 

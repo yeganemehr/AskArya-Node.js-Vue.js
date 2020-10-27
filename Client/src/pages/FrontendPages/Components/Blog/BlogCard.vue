@@ -127,17 +127,17 @@ a:hover {
   }
 
   .home-blog .card-title {
-    font-size: 1.1em !important;
+    font-size: 1em !important;
     // padding-top: 5px !important;
     // padding-bottom: 5px !important;
   }
 
   .card .card-footer .card-footer-text {
-    font-size: 1.05em !important;
+    font-size: 0.9em !important;
   }
 
   .home-blog .category {
-    font-size: 1.1em !important;
+    font-size: 0.9em !important;
   }
 }
 </style>

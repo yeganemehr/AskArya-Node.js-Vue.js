@@ -65,12 +65,12 @@
             <p class="google-text">شما میتوانید بدون ثبت نام با اکانت گوگل وارد سایت شوید.</p>
           </div>-->
 
-          <div class="d-flex justify-content-center">
+          <!-- <div class="d-flex justify-content-center">
             <vue-recaptcha
               :sitekey="sitekey"
               @verify="verifyRecaptcha"
             ></vue-recaptcha>
-          </div>
+          </div> -->
           <div class="text-right error-section pt-1" v-if="formErrors.length">
             <p class="error-title">لطفا اشتباهات زیر را تصحیح کنید:</p>
             <ul>
@@ -102,11 +102,11 @@ import backend from '../../backend';
 import Swal from 'sweetalert';
 
 import config from '../../config';
-import VueRecaptcha from 'vue-recaptcha';
+// import VueRecaptcha from 'vue-recaptcha';
 
 export default {
   components: {
-    VueRecaptcha,
+    // VueRecaptcha,
   },
   data() {
     return {
@@ -118,23 +118,23 @@ export default {
       loading: false,
       terms: false,
       googleAuthUrl: '/auth/google',
-      sitekey: config.recaptcha.sitekey,
-      recaptcha: '',
+      // sitekey: config.recaptcha.sitekey,
+      // recaptcha: '',
     };
   },
   methods: {
-    verifyRecaptcha(response) {
-      this.recaptcha = response;
-    },
-    createRecaptcha() {
-      const script = document.createElement('script');
-      script.setAttribute('async', '');
-      script.setAttribute('defer', '');
-      script.id = 'recaptchaScript';
-      script.src =
-        'https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit';
-      document.getElementsByTagName('head')[0].appendChild(script);
-    },
+    // verifyRecaptcha(response) {
+    //   this.recaptcha = response;
+    // },
+    // createRecaptcha() {
+    //   const script = document.createElement('script');
+    //   script.setAttribute('async', '');
+    //   script.setAttribute('defer', '');
+    //   script.id = 'recaptchaScript';
+    //   script.src =
+    //     'https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit';
+    //   document.getElementsByTagName('head')[0].appendChild(script);
+    // },
     checkForm(e) {
       e.preventDefault();
       this.fieldErrors = {};
@@ -175,7 +175,7 @@ export default {
           name: this.name,
           email: this.email,
           password: this.password,
-          'g-recaptcha-response': this.recaptcha,
+          // 'g-recaptcha-response': this.recaptcha,
         })
         .then((response) => {
           this.loading = false;
@@ -205,7 +205,6 @@ export default {
               text: '',
               button: 'بسیار خوب',
             });
-            // this.$router.push(this.$route.query.backTo || '/');
             this.$router.push(this.$route.query.backTo || '/dashboard');
           }
         })
@@ -221,15 +220,15 @@ export default {
       this.googleAuthUrl += `?backTo=${this.$route.query.backTo}`;
     }
   },
-  destroyed() {
-    document.getElementById('recaptchaScript').remove();
-  },
+  // destroyed() {
+  //   document.getElementById('recaptchaScript').remove();
+  // },
 };
 </script>
 
 <style lang="scss" scoped>
 .auth-section {
-  height: 92vh !important;
+  height: 90vh !important;
   background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
 }
 
@@ -327,12 +326,6 @@ export default {
   color: #ed5786 !important;
 }
 
-@media only screen and (min-width: 1500px) {
-  .auth-section {
-    min-height: 73vh;
-  }
-}
-
 @media (max-width: 320px) {
   .auth-section {
     height: 100vh !important;
@@ -340,6 +333,12 @@ export default {
 
   .registration-title {
     font-size: 0.9em !important;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .auth-section {
+    min-height: 73vh;
   }
 }
 </style>

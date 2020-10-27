@@ -117,14 +117,14 @@
 @media screen and (max-width: 1000px) {
   .hero-content-homepage {
     .hero-title {
-      font-size: 2.4em;
+      font-size: 2.45em;
       color: #fff !important;
       padding-top: 0.8em !important;
       margin: 0;
     }
 
     .hero-subtitle {
-      font-size: 1.05em;
+      font-size: 1em !important;
       margin-bottom: 0 !important;
       padding: 1.2em 0em 2em 0.83em !important;
     }
