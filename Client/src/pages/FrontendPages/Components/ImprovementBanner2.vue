@@ -21,15 +21,14 @@
           </p>
 
           <div class="text-left pt-3">
-            <router-link to="courses">
-              <base-button
-                native-type="submit"
-                class="btn btn-simple btn-round"
-              >
-                <i class="fas fa-graduation-cap ml-2"></i>
-                مشاهده همه دوره ها
-              </base-button>
-            </router-link>
+            <b-button
+              to="courses"
+              native-type="submit"
+              class="btn btn-simple btn-round"
+            >
+              <i class="fas fa-graduation-cap ml-2"></i>
+              مشاهده همه دوره ها
+            </b-button>
           </div>
         </div>
       </div>
@@ -58,7 +57,7 @@ export default {};
   padding: 3em 2.5em 2em 2.5em;
 
   h2 {
-    font-size: 2em;
+    font-size: 1.7em;
     color: #fff !important;
     line-height: inherit !important;
     font-family: IranSansBold;
@@ -67,22 +66,27 @@ export default {};
   }
 
   .main-text {
+    font-family: IranSans !important;
     color: #fff !important;
-    font-size: 1.3em;
+    font-size: 1.15em;
     line-height: 1.7em !important;
   }
 }
 
-.btn.btn-simple {
-  font-size: 1.2em;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.13), 0 1px 3px rgba(0, 0, 0, 0.1);
+.btn {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2);
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.164);
+  border: 1px dashed rgba(255, 255, 255, 1) !important;
+  font-family: IranSansBold;
+  font-size: 1em;
+  padding: 0.6em 2em;
+  background: transparent;
+  border-radius: 10px;
 }
 
-.btn.btn-simple:hover {
+.btn:hover {
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.164);
+  border: 1px dashed rgb(1, 139, 19) !important;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 

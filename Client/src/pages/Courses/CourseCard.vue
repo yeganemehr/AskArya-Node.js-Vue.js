@@ -8,17 +8,17 @@
         class="CourseInfoSection d-flex justify-content-between text-center pt-1"
       >
         <div>
-          <p class="courseTime">
+          <p class="courseData">
             {{ minutes }}
             <br />
-            <span class="courseTimeSpan">دقیقه ویدیو</span>
+            <span class="courseTitle">دقیقه ویدیو</span>
           </p>
         </div>
         <div>
-          <p class="unitsAvailable">
+          <p class="courseData">
             {{ episodes }}
             <br />
-            <span class="unitsAvailableSpan">درس گفتار</span>
+            <span class="courseTitle">درس گفتار</span>
           </p>
         </div>
       </div>
@@ -131,7 +131,7 @@ export default {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
 
   .course-title {
-    font-size: 1.05em !important;
+    font-size: 0.93em;
     font-family: IranSansBold;
     color: rgb(48, 48, 48);
   }
@@ -150,36 +150,22 @@ export default {
     margin: 0 14%;
   }
 
-  .courseTime {
+  .courseData {
     color: rgb(85, 85, 85);
-    padding-right: 0.5rem;
-    padding-top: 0.2rem;
-    font-size: 1.3em !important;
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0;
+    font-size: 1.2em !important;
     font-family: IranSansBold !important;
   }
 
-  .courseTimeSpan {
-    font-size: 0.73rem;
-    color: #00000059;
-  }
-
-  .unitsAvailable {
-    color: rgb(85, 85, 85);
-    padding-left: 0.5rem;
-    padding-top: 0.2rem;
-    font-size: 1.3em !important;
-    font-family: IranSansBold !important;
-  }
-
-  .unitsAvailableSpan {
-    font-size: 0.73rem;
-    color: #00000059;
+  .courseTitle {
+    font-size: 0.78rem;
+    color: #a7a7a7;
   }
 
   .buyCourseTitle {
-    font-size: 1.05em !important;
+    font-size: 0.9em !important;
     font-family: IranSansBold !important;
-    // color: rgb(86, 173, 223);
     color: #979dac;
     background: #f1f1f1;
     margin-bottom: auto;
@@ -244,7 +230,7 @@ export default {
   }
 
   .course-title {
-    font-size: 1.1em !important;
+    font-size: 1em !important;
   }
 
   .CourseCard__course__info {
@@ -259,13 +245,11 @@ export default {
     font-size: 0.8rem !important;
   }
 
-  .courseTimeSpan,
-  .unitsAvailableSpan {
+  .courseTitle {
     font-size: 0.7rem;
   }
 
-  .courseTime,
-  .unitsAvailable {
+  .courseData {
     font-size: 1.1rem;
   }
 

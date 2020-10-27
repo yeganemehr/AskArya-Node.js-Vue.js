@@ -5,22 +5,17 @@
       <span> در این بخش گزارشات پرداختی های شما لیست میشود. </span>
     </div>
 
-    <div class="container-fluid">
-      <el-table :data="tableData">
-        <el-table-column
-          v-for="column in tableColumns"
-          :key="column.label"
-          :min-width="column.minWidth"
-          :prop="column.prop"
-          :label="column.label"
-        ></el-table-column>
-      </el-table>
-    </div>
-
-    <div
-      slot="footer"
-      class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
+    <b-table
+      hover
+      :items="tableData"
+      :fields="fields"
+      :sort-by.sync="sortBy"
+      :sort-desc.sync="sortDesc"
+      responsive="sm"
     >
+    </b-table>
+
+    <div class="col-12">
       <base-pagination
         class="pagination-no-border"
         v-model="pagination.currentPage"
@@ -37,8 +32,8 @@
     </div>
   </card>
 </template>
+
 <script>
-import { Table, TableColumn, Select, Option } from 'element-ui';
 import { BasePagination } from 'src/components';
 import moment from 'jalali-moment';
 import Fuse from 'fuse.js';
@@ -47,11 +42,8 @@ import backend from '../../../backend';
 export default {
   components: {
     BasePagination,
-    [Select.name]: Select,
-    [Option.name]: Option,
-    [Table.name]: Table,
-    [TableColumn.name]: TableColumn,
   },
+
   computed: {
     /***
      * Returns a page from the searched data or the whole data. Search is performed in the watch section below
@@ -104,27 +96,28 @@ export default {
   },
   data() {
     return {
-      tableColumns: [
+      sortBy: 'price',
+      sortDesc: false,
+      fields: [
         {
-          prop: 'product',
+          key: 'product',
           label: 'عنوان دوره',
-          minWidth: 80,
+          sortable: true,
         },
         {
-          prop: 'date',
-          label: 'تاریخ',
-          // label: 'تاریخ پرداخت',
-          minWidth: 40,
+          key: 'date',
+          label: 'تاریخ پرداخت',
+          sortable: true,
         },
         {
-          prop: 'price',
+          key: 'price',
           label: 'مقدار پرداختی',
-          minWidth: 50,
+          sortable: true,
         },
         {
-          prop: 'status',
+          key: 'status',
           label: 'وضعیت پرداخت',
-          minWidth: 50,
+          sortable: true,
         },
       ],
       searchedData: [],
@@ -179,10 +172,8 @@ export default {
 <style lang="scss" scoped>
 .card {
   height: 100% !important;
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
-    0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
-    0 32px 16px rgba(0, 0, 0, 0.09);
-  border: 1px solid rgb(240, 240, 240);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid transparent;
 }
 
 .card-title {
@@ -191,6 +182,7 @@ export default {
   color: black !important;
   text-align: right;
 }
+
 span {
   color: #636363 !important;
 }

@@ -82,58 +82,137 @@ th {
 	base class definition
 -------------------------*/
 
+.card {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+}
+
+.page-link {
+  margin: 0 3px !important;
+  border-radius: 50% !important;
+  width: 35px !important;
+  font-size: 0.75em !important;
+  color: #ef476f !important;
+  /* background-color: #ef476f !important; */
+}
+
+.page-link:hover {
+  cursor: pointer !important;
+}
+
+.page-item.active .page-link {
+  border-radius: 50% !important;
+  border: 1px solid #ef476f !important;
+  background-color: #ef476f !important;
+  color: #fff !important;
+  width: 35px !important;
+}
+
+.custom-file-label {
+  cursor: pointer !important;
+}
+
+.navbar-light .navbar-nav .dropdown .nav-link {
+  color: rgb(31, 31, 31) !important;
+}
+
+.dropdown.show .dropdown-menu,
+.navbar .dropdown.show .dropdown-menu {
+  padding-bottom: 0 !important;
+  border: 1px solid rgb(241, 241, 241) !important;
+}
+
+.dropdown-toggle::after {
+  vertical-align: 0em !important;
+  margin-right: 9px !important;
+}
+
+.dropdown-item {
+  text-align: right !important;
+  font-size: 0.9em !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:hover i {
+  background-color: transparent !important;
+  color: #ef476f !important;
+}
+
+.dropdown-item.active,
+.dropdown-item.active i {
+  color: #ef476f !important;
+  background: transparent !important;
+}
+
 input {
   font-family: IranSansBlog !important;
 }
 
-.white-content .form-control {
-  font-size: 1em !important;
+.form-control {
+  color: #252525 !important;
+  direction: ltr !important;
 }
 
-.white-content .el-table table > thead > tr > th {
+.card {
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+::placeholder {
+  color: rgb(194, 194, 194) !important;
+  font-size: 0.85em !important;
+  direction: rtl !important;
+}
+
+label {
+  float: right !important;
+}
+
+table > thead > tr > th {
   font-family: IranSans !important;
   font-weight: normal !important;
 }
 
-.white-content .el-table table > tbody > tr > td {
+table > tbody > tr > td {
   border-color: rgba(0, 0, 0, 0.062) !important;
   font-family: IranSans !important;
 }
 
-.el-table th > .cell {
+/* th > .cell {
   font-family: IranSansBold !important;
   color: rgb(49, 49, 49) !important;
   font-size: 1.1em !important;
+} */
+
+th {
+  font-size: 1em !important;
+  text-align: center !important;
+  font-family: IranSansBlog !important;
 }
 
-.white-content .el-table table > tbody > tr > td {
-  font-size: 1em !important;
+td {
+  font-size: 0.95em !important;
   text-align: center !important;
   font-family: IranSansBlog !important;
   color: rgb(51, 51, 51) !important;
 }
 
-.white-content .el-table table > thead > tr > th {
-  text-align: center !important;
-  font-family: IranSansBlog !important;
-}
-
-.badge {
-  padding-top: 4px !important;
-  padding-bottom: 1px !important;
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 0, 200, 0.075) !important;
 }
 
 @media (max-width: 678px) {
-  .white-content .el-table table > thead > tr > th {
+  th {
     font-size: 0.7em !important;
   }
 
-  .white-content .el-table table > tbody > tr > td {
+  td {
     font-size: 0.7em !important;
     font-weight: normal !important;
   }
 
-  .el-table th > .cell {
+  th > .cell {
     font-size: 0.77em !important;
   }
 

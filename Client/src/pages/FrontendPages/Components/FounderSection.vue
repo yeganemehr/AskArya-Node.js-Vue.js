@@ -38,7 +38,7 @@
 }
 
 .section-header {
-  font-size: 2em;
+  font-size: 1.4em;
   font-family: IranSansBold;
   margin: 0 0 7px 0;
 }

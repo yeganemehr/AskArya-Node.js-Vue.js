@@ -7,6 +7,7 @@ import App from './App.vue';
 // router setup
 import backend from './backend';
 import router from './routes/router';
+import BootstrapVue from 'bootstrap-vue';
 import Element from 'element-ui';
 import './registerServiceWorker';
 import CKEditor from '@ckeditor/ckeditor5-vue';
@@ -29,6 +30,7 @@ Sentry.init({
 var VueScrollTo = require('vue-scrollto');
 
 // plugin setup
+Vue.use(BootstrapVue);
 Vue.use(RouterPrefetch);
 Vue.use(VueRouter);
 Vue.use(Element);
@@ -39,7 +41,9 @@ Vue.use(VuePlyr);
 Vue.use(NProgress);
 Vue.use(VueMeta);
 
-import 'src/assets/sass/black-dashboard-pro.scss';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+// import 'src/assets/sass/black-dashboard-pro.scss';
 import 'nprogress/nprogress.css';
 import './assets/sass/nprogress.scss';
 

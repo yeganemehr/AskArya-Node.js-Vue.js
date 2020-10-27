@@ -1,9 +1,9 @@
 <template>
   <section class="container text-center py-5">
     <div class="top-section">
-      <h1 class="title text-danger">قوانین و مقررات سایت</h1>
+      <h1 class="title py-2">قوانین و مقررات سایت</h1>
       <p class="header-subtitle pb-5">
-        در این صفحه شرایط استفاده از وبسایت اسک آریا را مشاهده میکنید
+        در این صفحه شرایط استفاده از وبسایت اسک آریا را مشاهده میکنید.
       </p>
     </div>
     <h3 class="notice text-right text-danger container py-3">
@@ -286,7 +286,7 @@ export default {
 <style lang="scss" scoped>
 .title {
   font-family: IranSansBold !important;
-  font-size: 3em;
+  font-size: 2.8em;
 }
 
 .header-subtitle {
@@ -296,7 +296,8 @@ export default {
 
 p,
 li {
-  font-size: 1.2em;
+  font-size: 1.1em;
+  line-height: 1.9em;
 }
 
 .notice {
@@ -307,6 +308,7 @@ li {
 .subtitle {
   font-size: 1.7em;
   font-family: IranSansBold;
+  padding-bottom: 0.8em;
 }
 
 .bold {

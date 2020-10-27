@@ -1,5 +1,5 @@
 <template>
-  <div class="blogBox pb-2">
+  <div class="blogBox mb-4">
     <router-link :to="`/blog/${slug}`">
       <div class="card">
         <img class="card-img-top" :src="image" :alt="name" />
@@ -48,10 +48,12 @@ export default {
   border-radius: 13px !important;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.07);
   background: #f1f1f1 !important;
+  border: 1px solid rgb(223, 223, 223);
 }
 
 .card-body {
   border-radius: 0 0 15px 15px !important;
+  padding-bottom: 0.8em;
 }
 
 .home-blog .card-title {
@@ -77,6 +79,10 @@ export default {
   cursor: pointer !important;
 }
 
+a:hover {
+  text-decoration: none !important;
+}
+
 .home-blog .category {
   top: 1em;
   left: 1em;
@@ -86,7 +92,7 @@ export default {
   color: rgb(53, 53, 53) !important;
   background: rgb(241, 241, 241) !important;
   font-family: IranSans !important;
-  font-size: 0.9em !important;
+  font-size: 0.8em !important;
   text-align: center !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -105,12 +111,12 @@ export default {
 
 .card .card-footer {
   background-color: #f1f1f1 !important;
-  border-top: 1px solid rgba(158, 158, 158, 0.062);
+  border-top: 1px solid rgba(255, 5, 5, 0.062);
   padding: 0.7em 1.2em 0 1.2em;
 
   .card-footer-text {
     color: #7d8597 !important;
-    font-size: 0.93em;
+    font-size: 0.9em;
   }
 }
 

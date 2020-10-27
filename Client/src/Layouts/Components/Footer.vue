@@ -72,7 +72,8 @@
   color: #fff !important;
   line-height: 2 !important;
   clear: both !important;
-  font-size: 1em !important;
+  font-size: 0.94em !important;
+
   .fadeline3 {
     background-color: #777777c2 !important;
   }
@@ -102,9 +103,10 @@
   }
 }
 .copyright {
-  padding: 13px 0 !important;
+  padding: 15px 0 1px 0 !important;
   background: #1c2236 !important;
   color: #fff !important;
+  font-size: 0.9em;
 }
 .copyright,
 a,
@@ -114,6 +116,7 @@ a,
 .copyright-text {
   color: rgba(255, 255, 255, 0.6) !important;
 }
+
 @media only screen and (max-width: 678px) {
   .footer-bottom .title {
     font-size: 1.1em !important;

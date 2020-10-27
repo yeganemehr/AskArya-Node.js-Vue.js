@@ -3,38 +3,35 @@
     <div class="container">
       <card class="shadow">
         <form @submit="checkForm">
-          <h1 class="auth-title text-primary">ورود</h1>
-          <div class="container registration-title text-center">
-            اگر در اسک آریا حساب ندارید، ثبت نام کنید:
-            <br />
+          <h1 class="auth-title">ورود</h1>
+          <div class="container text-center">
+            <p class="registration-title">
+              اگر در اسک آریا حساب ندارید، ثبت نام کنید:
+            </p>
             <router-link to="/register">
-              <base-button
-                size="sm"
-                type="success"
-                class="animation-on-hover mt-2"
-              >
-                <i class="fas fa-user-plus pl-3"></i>
+              <b-button size="sm" class="btn-create">
+                <i class="fas fa-user-plus pl-2"></i>
                 ایجاد حساب کاربری
-              </base-button>
+              </b-button>
             </router-link>
           </div>
 
           <hr />
 
           <div class="row">
-            <div class="col-12">
-              <base-input
+            <div class="col-12 mb-3">
+              <b-input
                 class="text-rtl pb-2"
                 placeholder="پست الکترونیک"
                 autocomplete="username"
                 v-model="email"
                 :required="true"
                 :error="fieldErrors.email"
-              ></base-input>
+              ></b-input>
             </div>
 
             <div class="col-12">
-              <base-input
+              <b-input
                 class="text-rtl"
                 placeholder="کلمه عبور"
                 type="password"
@@ -42,23 +39,21 @@
                 v-model="password"
                 :required="true"
                 :error="fieldErrors.password"
-              ></base-input>
+              ></b-input>
             </div>
           </div>
-          <div class="text-right mb-1">
-            <base-checkbox
-              class="pb-1"
-              name="remember"
-              :checked="remember"
-              @input="
-                () => {
-                  remember = !remember;
-                }
-              "
-            >
-              <p>یادآوری ورود</p>
-            </base-checkbox>
-          </div>
+          <b-form-checkbox
+            class="py-3 text-right label"
+            name="remember"
+            :checked="remember"
+            @input="
+              () => {
+                remember = !remember;
+              }
+            "
+          >
+            یادآوری ورود
+          </b-form-checkbox>
 
           <!-- <div class="text-center pb-2">
             <a :href="googleAuthUrl">
@@ -71,37 +66,27 @@
           <!-- <div class="py-2 d-flex justify-content-center">
             <vue-recaptcha :sitekey="sitekey" @verify="verifyRecaptcha"></vue-recaptcha>
           </div>-->
-          <div class="text-right pt-2" v-if="formErrors.length">
-            <p class="pb-1 text-danger font-weight-bold">
-              لطفا اشتباهات زیر را تصحیح کنید:
-            </p>
+          <div class="text-right error-section" v-if="formErrors.length">
+            <p class="error-title">لطفا اشتباهات زیر را تصحیح کنید:</p>
             <ul>
-              <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
+              <li class="error" v-for="(error, key) in formErrors" :key="key">
+                {{ error }}
+              </li>
             </ul>
           </div>
 
-          <div slot="footer">
-            <base-button
-              type="primary"
-              nativeType="submit"
-              class="animation-on-hover"
-              size="lg"
-              :loading="loading"
-              block
-              >ورود</base-button
-            >
-          </div>
+          <base-button
+            nativeType="submit"
+            class="btn mt-3"
+            :loading="loading"
+            block
+            >ورود</base-button
+          >
 
-          <a :href="googleAuthUrl">
-            <base-button
-              block
-              type="primary"
-              class="btn-simple animation-on-hover"
-            >
-              <i class="fab fa-google icon pl-4"></i>
-              ورود سریع با حساب گوگل
-            </base-button>
-          </a>
+          <b-button :href="googleAuthUrl" block class="btn-google mt-2">
+            <i class="fab fa-google pl-3"></i>
+            عضویت سریع با حساب گوگل
+          </b-button>
 
           <!-- <h6 class="pull-left pt-3">
             <router-link class="footer-link" :to="registerUrl"
@@ -252,16 +237,34 @@ export default {
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 0;
+  border-radius: 10px;
 }
 
 .auth-title {
-  font-size: 2.8em;
+  font-size: 2em;
   font-family: IranSansBold;
   text-align: center;
+  color: #ed5786;
 }
 
-.card-title {
-  font-size: 2em !important;
+.registration-title {
+  font-size: 0.85em;
+  color: #616161;
+  margin: 2em 0 0.5em 0;
+}
+
+.error-section {
+  .error-title {
+    font-family: IranSansBold !important;
+    color: #c5003e;
+    font-size: 0.9em;
+    padding: 8px 0 0 0 !important;
+  }
+
+  .error {
+    font-size: 0.8em;
+    padding: 0 !important;
+  }
 }
 
 .icon {
@@ -283,10 +286,66 @@ export default {
   font-size: 1.15em;
 }
 
+.btn {
+  background: #ed5786;
+  border: 1px dashed #ed5786;
+  border-radius: 8px;
+  font-size: 0.9em;
+  padding: 7px;
+  color: #fff;
+}
+
+.btn:hover {
+  background: #c40743;
+}
+
+.btn-create {
+  background: #06d6a0;
+  border: #06d6a0 !important;
+  padding: 4px 8px;
+  font-size: 0.8em;
+}
+
+.btn-create:hover {
+  background: #00aa7d;
+  border: #00aa7d !important;
+}
+
+.btn-google {
+  background: #047afb;
+  border: 1px dashed #047afb !important;
+  color: #fff;
+
+  .icon {
+    font-size: 1em !important;
+    color: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.btn-google:hover {
+  background: #0063c5;
+  color: #fff;
+  text-decoration: none !important;
+
+  a {
+    text-decoration: none !important;
+  }
+
+  .icon {
+    color: #0063c5 !important;
+  }
+}
+
 .footer-link {
   font-size: 0.85rem !important;
   color: rgba(0, 0, 0, 0.5) !important;
   font-family: IranSans !important;
+}
+
+.label {
+  font-size: 0.9em !important;
 }
 
 .footer-link:hover {
@@ -298,16 +357,6 @@ export default {
     min-height: 73vh;
   }
 }
-
-// @media (max-width: 680px) {
-//   .auth-section {
-//     min-height: 85vh;
-//   }
-
-//   .card {
-//     width: auto !important;
-//   }
-// }
 
 @media (max-width: 320px) {
   .auth-section {

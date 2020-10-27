@@ -21,16 +21,10 @@
           </div>
         </div>
         <div class="text-center">
-          <router-link to="courses">
-            <base-button
-              native-type="submit"
-              type="success"
-              class="btn btn-courses btn-round animation-on-hover mt-4"
-            >
-              <i class="fas fa-graduation-cap ml-2"></i>
-              مشاهده همه دوره ها</base-button
-            >
-          </router-link>
+          <b-button to="courses" type="success" class="btn btn-courses mt-4">
+            <i class="fas fa-graduation-cap ml-2"></i>
+            مشاهده همه دوره ها</b-button
+          >
         </div>
       </div>
     </div>
@@ -139,7 +133,7 @@ export default {
 
 <style lang="scss" scoped>
 .section-header {
-  font-size: 1.6em;
+  font-size: 1.3em;
   font-family: IranSansBold;
   letter-spacing: -0.02em !important;
   margin: 0 0 10px 0;
@@ -168,13 +162,14 @@ export default {
   color: #fff !important;
   background: #ef476f !important;
   border: 1px solid #fff !important;
+  border-radius: 10px;
+  padding: 9px 15px;
 }
 
 .btn-courses:hover {
   color: #ef476f !important;
   background: #fff !important;
-  border-color: #fff !important;
-  border: 1px solid #fff !important;
+  border: 1px dashed #c84dae !important;
 }
 
 .blog-section {

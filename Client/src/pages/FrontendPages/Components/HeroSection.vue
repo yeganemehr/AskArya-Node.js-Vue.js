@@ -12,7 +12,7 @@
               شما در موثر ترین و کوتاه ترین زمان ممکن صورت گیرد.
             </p>
 
-            <div class="button-section row">
+            <div class="button-section text-right row">
               <router-link to="dashboard">
                 <button native-type="submit" class="btn btn-signin">
                   <i class="far fa-user ml-2"></i>
@@ -21,7 +21,7 @@
               </router-link>
 
               <router-link to="quizzes">
-                <button native-type="submit" class="btn btn-quiz mr-2">
+                <button native-type="submit" class="btn btn-quiz mr-3">
                   <i class="far fa-check-square ml-2"></i> آزمون های آنلاین
                 </button>
               </router-link>
@@ -50,63 +50,112 @@
   width: 100%;
 
   .hero-title {
-    font-size: 4.2em;
+    font-size: 3.7em;
     line-height: inherit;
     font-family: IranSansBold !important;
     color: #fff !important;
   }
 
   .hero-subtitle {
-    font-size: 1.2em;
+    font-size: 1.1em;
     line-height: 1.7em;
+    padding-top: 1em !important;
     font-family: IranSans !important;
     color: white !important;
     text-align: right;
   }
 
   .btn {
-    border-radius: 7px !important;
-    font-size: 1.15em;
+    border-radius: 7px;
+    font-size: 1.1em;
     padding-left: 1.4em;
     padding-right: 1.4em;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.03), 0 1px 3px rgba(0, 0, 0, 0.03);
   }
 
   .btn-signin {
-    color: #ef476f;
+    color: #c84dae;
     background: #fff !important;
     border-color: #fff !important;
-    border: 1px solid #fff !important;
+    border: 1px dashed #fff !important;
   }
 
   .btn-signin:hover {
     color: #fff !important;
-    background: #ef476f !important;
-    border: 1px solid #ef476f !important;
+    background: #c84dae !important;
   }
 
   .btn-quiz {
     color: #fff !important;
-    border: 1px solid #fff !important;
+    border: 1px dashed #fff !important;
     background: transparent !important;
   }
 
   .btn-quiz:hover {
-    color: #ef476f !important;
+    color: #c84dae !important;
     background-color: #fff !important;
     border-color: #fff !important;
   }
 }
 
 .image {
-  width: 380px !important;
-  padding-top: 3em;
+  width: 340px !important;
+  padding-top: 2em;
   padding-bottom: 2em;
 }
 
 @media screen and (min-width: 769px) {
   .button-section {
-    padding: 1em !important;
+    padding-bottom: 1em !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .hero-content-homepage {
+    .hero-title {
+      font-size: 2.4em;
+      color: #fff !important;
+      padding-top: 0.8em !important;
+      margin: 0;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05em;
+      margin-bottom: 0 !important;
+      padding: 1.2em 0em 2em 0.83em !important;
+    }
+
+    .btn {
+      padding: 10px 14px;
+      font-size: 1em;
+      font-family: IranSansBold;
+      margin-bottom: 2em !important;
+    }
+  }
+
+  .button-section {
+    -webkit-box-pack: right !important;
+    justify-content: right !important;
+    // padding-top: 1.2em;
+    padding-right: 0.8em;
+  }
+
+  .hero-text-section {
+    padding-right: 1em;
+  }
+
+  .top-courses-section {
+    .top-section-header {
+      font-size: 1em !important;
+      text-align: right !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .btn {
+    padding: 10px 14px;
+    font-size: 0.9em;
   }
 }
 
@@ -120,54 +169,24 @@
   }
 
   .hero-title {
+    font-size: 3em !important;
     padding: 0 2em 0.7em 2em;
+    text-align: center !important;
   }
-}
 
-@media screen and (max-width: 1000px) {
-  .hero-content-homepage {
-    .hero-title {
-      font-size: 3.8em !important;
-      color: #fff !important;
-      text-align: center !important;
-      padding-top: 0.43em !important;
-      margin: 0;
-    }
-
-    .hero-subtitle {
-      font-size: 1.1em;
-      text-align: center !important;
-      margin-bottom: 0 !important;
-      padding: 1.6em 1.3em 0.2em 1.3em !important;
-    }
-
-    .btn {
-      font-weight: inherit;
-      border-radius: 30px;
-      padding: 12px 14px;
-      font-size: 1.1em;
-      font-family: IranSansBold;
-      margin-bottom: 2em !important;
-    }
+  .hero-subtitle {
+    text-align: center !important;
   }
 
   .button-section {
     -webkit-box-pack: center !important;
     justify-content: center !important;
-    padding-top: 1.2em;
-  }
-
-  .top-courses-section {
-    .top-section-header {
-      font-size: 1em !important;
-      text-align: right !important;
-    }
   }
 }
 
 @media only screen and (min-width: 1500px) {
   .hero-content-homepage {
-    min-height: 45vh !important;
+    min-height: 40vh !important;
   }
 }
 </style>

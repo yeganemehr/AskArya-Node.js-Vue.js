@@ -20,7 +20,7 @@
               :to="'/courses/' + course.slug + '/unit-' + episode.number"
               v-if="!mustBuy(episode.type)"
             >
-              <p class="UnitName text-right">{{ episode.title }}</p>
+              <p class="text-right">{{ episode.title }}</p>
             </router-link>
             <p
               @click="throwClickEvent"
@@ -175,21 +175,55 @@ export default {
 .UnitBox {
   -webkit-box-align: center;
   background: rgb(248, 248, 248) !important;
-  padding: 19px 15px;
-  align-items: center;
-  border-top: 1.5px dashed rgba(133, 133, 133, 0.2);
-  border-left: 1px dashed rgba(133, 133, 133, 0.2);
+  padding: 15px;
+  border-top: 1.5px dashed rgba(102, 102, 102, 0.4);
+  border-left: 1px dashed rgba(102, 102, 102, 0.3);
   border-right: 11px solid #33415c;
   border-radius: 0 15px 15px 0;
   transition: all 0.2s ease 0s;
+
+  .UnitName {
+    font-size: 1rem;
+    color: rgb(59, 59, 59);
+    margin: 0 !important;
+    padding-top: 3px !important;
+    // margin-top: auto;
+  }
+
+  .detail-time {
+    color: rgb(255, 255, 255) !important;
+    font-size: 0.9em;
+    font-family: IranSansBold;
+    // align-self: center;
+    background: rgb(29, 35, 83) !important;
+    padding: 7px 13px;
+    border-radius: 5px;
+    margin: 0 !important;
+  }
+
+  .detail-price {
+    color: rgb(255, 255, 255) !important;
+    font-size: 0.9em;
+    // align-self: center;
+    // background: rgba(70, 110, 218, 0.788) !important;
+    background: #415a77;
+    padding: 7px 15px;
+    border-radius: 5px;
+    margin: 0 !important;
+    margin-left: 6px !important;
+  }
+
+  .detail-price-purchased {
+    font-size: 1.1em;
+    // align-self: center;
+    background: transparent !important;
+    padding: 7px 15px;
+    margin: 0 !important;
+  }
 }
 
 .UnitBox:last-child {
-  border-bottom: 1.5px dashed rgba(133, 133, 133, 0.2);
-}
-
-h4 {
-  font-family: IranSansBold !important;
+  border-bottom: 1.5px dashed rgba(102, 102, 102, 0.4) !important;
 }
 
 .sticky {
@@ -235,41 +269,6 @@ h4 {
 .UnitBadgeVIP {
   font-size: 1.3rem;
   color: #e7d800;
-}
-
-.UnitName {
-  font-size: 1rem;
-  color: rgb(158, 158, 158);
-  margin-top: auto;
-}
-
-.detail-time {
-  color: rgb(255, 255, 255) !important;
-  font-size: 0.9em;
-  font-family: IranSansBold;
-  align-self: center;
-  background: rgb(29, 35, 83) !important;
-  padding: 7px 13px;
-  border-radius: 5px;
-}
-
-.detail-price {
-  color: rgb(255, 255, 255) !important;
-  font-size: 0.9em;
-  align-self: center;
-  // background: rgba(70, 110, 218, 0.788) !important;
-  background: #415a77;
-  padding: 7px 15px;
-  border-radius: 5px;
-  margin-left: 6px;
-}
-
-.detail-price-purchased {
-  font-size: 1.1em;
-  margin: 0;
-  align-self: center;
-  background: transparent !important;
-  padding: 7px 15px;
 }
 
 @media screen and (max-width: 990px) {
