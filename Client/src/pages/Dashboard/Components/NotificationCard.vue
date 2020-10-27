@@ -12,16 +12,18 @@
         </div>
       </div>
     </div>
-    <base-pagination
-      class="ml-auto mt-auto"
-      v-model="pagination.currentPage"
-      :value="pagination.currentPage"
-      :per-page="pagination.perpage"
-      :total="pagination.total"
-      :pageCount="pagination.pages"
-      type="danger"
-      @input="changePageListener"
-    ></base-pagination>
+    <div class="d-flex justify-content-center justify-content-sm-between">
+      <base-pagination
+        class="ml-auto mt-auto"
+        v-model="pagination.currentPage"
+        :value="pagination.currentPage"
+        :per-page="pagination.perpage"
+        :total="pagination.total"
+        :pageCount="pagination.pages"
+        type="danger"
+        @input="changePageListener"
+      ></base-pagination>
+    </div>
   </div>
 </template>
 

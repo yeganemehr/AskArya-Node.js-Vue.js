@@ -48,7 +48,7 @@ export default {
   border-radius: 13px !important;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.07);
   background: #f1f1f1 !important;
-  border: 1px solid rgb(223, 223, 223);
+  border: 1px solid rgb(233, 233, 233) !important;
 }
 
 .card-body {
@@ -116,7 +116,7 @@ a:hover {
 
   .card-footer-text {
     color: #7d8597 !important;
-    font-size: 0.9em;
+    font-size: 0.83em !important;
   }
 }
 
@@ -127,7 +127,7 @@ a:hover {
   }
 
   .home-blog .card-title {
-    font-size: 1.2em !important;
+    font-size: 1.1em !important;
     // padding-top: 5px !important;
     // padding-bottom: 5px !important;
   }

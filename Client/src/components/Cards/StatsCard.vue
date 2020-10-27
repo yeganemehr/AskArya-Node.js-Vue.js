@@ -1,5 +1,5 @@
 <template>
-  <card class="card-stats" :show-footer-line="true">
+  <card class="card-stats mb-3" :show-footer-line="true">
     <div class="row">
       <!-- <div
         class="col-lg-5 col-md-5 d-none d-md-block"

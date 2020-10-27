@@ -30,7 +30,7 @@
             }}</span>
           </p>
           <div class="row d-flex justify-content-center pb-4">
-            <div class="pt-3 px-2">
+            <div class="pt-3 pl-2">
               <b-button
                 @click="showForm = !showForm"
                 native-type="submit"

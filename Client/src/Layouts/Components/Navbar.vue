@@ -28,7 +28,7 @@
         <b-nav-item
           v-if="!this.$root.$data.user"
           block
-          class="btn-login my-3 d-lg-none"
+          class="btn-login-mobile my-3 d-lg-none"
           type="submit"
           to="/login"
         >
@@ -305,11 +305,12 @@ hr {
     padding: 1em !important;
   }
 
-  .btn-login {
+  .btn-login-mobile {
     .nav-link {
       padding: 0.7em !important;
     }
     background-color: #ed5786 !important;
+    background: #ed5786 !important;
     border: 1px solid #ffe0ea !important;
     color: #fff !important;
     text-align: center;

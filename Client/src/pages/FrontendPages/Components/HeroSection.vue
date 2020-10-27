@@ -130,8 +130,8 @@
     }
 
     .btn {
-      padding: 10px 14px;
-      font-size: 1em;
+      // padding: 10px 14px !important;
+      font-size: 0.93em !important;
       font-family: IranSansBold;
       margin-bottom: 2em !important;
     }

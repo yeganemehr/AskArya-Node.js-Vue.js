@@ -15,7 +15,9 @@
     >
     </b-table>
 
-    <div class="col-12">
+    <div
+      class="col-12 d-flex justify-content-center justify-content-sm-between"
+    >
       <base-pagination
         class="pagination-no-border"
         v-model="pagination.currentPage"

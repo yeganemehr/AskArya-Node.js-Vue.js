@@ -33,12 +33,12 @@
         </div>
 
         <!-- Payment History Section -->
-        <div class="col-md-12 my-4 text-center">
+        <div class="col-md-12 mb-4 mt-2 text-center">
           <PaymentHistory :payments="payments"></PaymentHistory>
         </div>
 
         <!-- My Courses Section -->
-        <div class="col-md-12 mb-5 text-center">
+        <div class="col-md-12 mb-4 text-center">
           <MyCourses></MyCourses>
           <hr class="hr d-md-none" />
         </div>
@@ -187,7 +187,9 @@ export default {
   font-size: 1.8em;
   font-family: IranSansBold;
   text-align: center;
-  color: rgb(44, 44, 44) !important;
+  // color: rgb(44, 44, 44) !important;
+  color: #ef476f !important;
+
   padding: 0.8rem 0 !important;
 }
 
@@ -217,10 +219,10 @@ export default {
 @media (max-width: 680px) {
   .title {
     font-size: 1.7em;
-    // padding: 0.9rem 0 !important;
+    padding: 0.9rem 0 !important;
   }
   .card-custom {
-    margin: 1em 0 0em 0 !important;
+    // margin: 1em 0 0em 0 !important;
     border-radius: 2em;
   }
 }
