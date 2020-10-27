@@ -103,7 +103,7 @@ export default {};
       padding-top: 15px;
     }
     .main-text {
-      font-size: 1em !important;
+      font-size: 1.07em !important;
     }
   }
 }

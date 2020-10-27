@@ -4,7 +4,7 @@
       <div class="container text-center">
         <h1 class="post-title-top text-center">{{ post.name }}</h1>
         <img class="blog-img" :src="post.image" :alt="post.name" />
-        <div class="pt-5">
+        <div class="pt-4">
           <BlogInfo
             :name="post.author.name"
             :createdAt="post.createdAt"
@@ -107,27 +107,28 @@ export default {
 }
 
 .blog-img {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: 15px;
 }
 
 .post-title-top {
-  font-size: 2.2em;
+  font-size: 2em !important;
   font-family: IranSansBold;
   line-height: inherit !important;
   color: rgb(255, 255, 255) !important;
+  padding-bottom: 0.7em !important;
 }
 
 .post-title {
   text-align: center;
   font-family: IranSansBold;
-  padding-bottom: 1em;
+  padding-bottom: 1em !important;
 }
 
 .main-blog-text {
   margin-right: 4em;
-  font-size: 1.35em !important;
+  font-size: 1.2em !important;
   line-height: 2.3em !important;
   direction: ltr !important;
   font-family: IranSansBlog !important;
@@ -192,7 +193,7 @@ export default {
 
   .main-blog-text {
     margin: 0 !important;
-    font-size: 1.25em !important;
+    font-size: 1.15em !important;
     color: black !important;
     padding: 1em 2em 3em 0.1em !important;
   }

@@ -175,7 +175,7 @@ export default {
 .UnitBox {
   -webkit-box-align: center;
   background: rgb(248, 248, 248) !important;
-  padding: 15px;
+  padding: 15px 15px 5px 15px;
   border-top: 1.5px dashed rgba(102, 102, 102, 0.4);
   border-left: 1px dashed rgba(102, 102, 102, 0.3);
   border-right: 11px solid #33415c;
@@ -186,7 +186,7 @@ export default {
     font-size: 1rem;
     color: rgb(59, 59, 59);
     margin: 0 !important;
-    padding-top: 3px !important;
+    padding-top: 8px !important;
     // margin-top: auto;
   }
 
@@ -217,7 +217,7 @@ export default {
     font-size: 1.1em;
     // align-self: center;
     background: transparent !important;
-    padding: 7px 15px;
+    padding: 5px 15px 11px 15px;
     margin: 0 !important;
   }
 }

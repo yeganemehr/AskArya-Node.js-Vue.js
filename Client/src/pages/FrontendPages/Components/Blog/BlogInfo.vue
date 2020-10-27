@@ -87,8 +87,6 @@ span {
 
 @media (max-width: 678px) {
   .item-section {
-    // padding-right: 0;
-    // width: 100% !important;
     margin-right: auto !important;
     margin-left: auto !important;
   }

@@ -65,7 +65,7 @@
             <p class="google-text">شما میتوانید بدون ثبت نام با اکانت گوگل وارد سایت شوید.</p>
           </div>-->
 
-          <div class="d-flex justify-content-center container">
+          <div class="d-flex justify-content-center">
             <vue-recaptcha
               :sitekey="sitekey"
               @verify="verifyRecaptcha"
@@ -99,7 +99,6 @@
 
 <script>
 import backend from '../../backend';
-// import { BaseCheckbox } from 'src/components';
 import Swal from 'sweetalert';
 
 import config from '../../config';
@@ -107,7 +106,6 @@ import VueRecaptcha from 'vue-recaptcha';
 
 export default {
   components: {
-    // BaseCheckbox,
     VueRecaptcha,
   },
   data() {

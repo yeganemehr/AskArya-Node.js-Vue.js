@@ -25,7 +25,7 @@
           >تماس با ما</b-nav-item
         >
 
-        <b-nav-item
+        <b-button
           v-if="!this.$root.$data.user"
           block
           class="btn-login-mobile my-3 d-lg-none"
@@ -33,7 +33,7 @@
           to="/login"
         >
           <i class="far fa-user pl-2"></i>
-          ورود کاربر</b-nav-item
+          ورود کاربر</b-button
         >
 
         <div v-if="this.$root.$data.user !== undefined">
@@ -301,8 +301,8 @@ hr {
   }
 
   .nav-link {
-    font-size: 1.2em;
-    padding: 1em !important;
+    font-size: 1.15em !important;
+    padding: 1.1em 1em !important;
   }
 
   .btn-login-mobile {
@@ -315,7 +315,7 @@ hr {
     color: #fff !important;
     text-align: center;
     border-radius: 10px;
-    margin-bottom: 1.5em !important;
+    padding: 13px 10px !important;
     a,
     .far {
       color: #fff !important;

@@ -125,7 +125,7 @@ p {
       font-size: 1.6em;
     }
     .main-text {
-      font-size: 1em !important;
+      font-size: 1.07em !important;
     }
     .rtl .btn {
       font-family: IranSansBold;
