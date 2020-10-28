@@ -106,7 +106,7 @@ p {
   color: #fff;
   border: 1px dashed rgba(255, 176, 139, 0.651);
   font-family: IranSansBold;
-  padding: 0.5em 1.8em !important;
+  padding: 0.4em 1.6em !important;
   background: transparent;
   border-radius: 10px;
 }
@@ -125,13 +125,17 @@ p {
       font-size: 1.6em;
     }
     .main-text {
-      font-size: 1.07em !important;
+      font-size: 1em !important;
     }
     .rtl .btn {
       font-family: IranSansBold;
       font-weight: inherit;
       padding: 0.6em 1.5em;
     }
+  }
+
+  .btn {
+    font-size: 0.95em !important;
   }
 }
 

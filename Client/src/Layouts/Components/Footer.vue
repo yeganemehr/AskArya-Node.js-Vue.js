@@ -106,7 +106,7 @@
   padding: 15px 0 1px 0 !important;
   background: #1c2236 !important;
   color: #fff !important;
-  font-size: 0.9em;
+  font-size: 0.95em;
 }
 .copyright,
 a,

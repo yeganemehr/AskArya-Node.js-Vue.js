@@ -79,7 +79,7 @@ export default {};
   border: 1px dashed rgb(168, 255, 142) !important;
   font-family: IranSansBold;
   font-size: 1em;
-  padding: 0.5em 1.8em !important;
+  padding: 0.4em 1.6em !important;
   background: transparent;
   border-radius: 10px;
 }
@@ -103,8 +103,12 @@ export default {};
       padding-top: 15px;
     }
     .main-text {
-      font-size: 1.07em !important;
+      font-size: 1em !important;
     }
+  }
+
+  .btn {
+    font-size: 0.95em !important;
   }
 }
 

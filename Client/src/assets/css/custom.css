@@ -124,10 +124,22 @@ table .btn {
   color: rgb(27, 27, 27) !important;
 }
 
+.dropdown-menu.dropdown-navbar:before {
+  right: 45px !important;
+}
+
+.dropdown-menu:before {
+  left: auto !important;
+  right: 80px !important;
+}
+
 .dropdown.show .dropdown-menu,
 .navbar .dropdown.show .dropdown-menu {
   padding-bottom: 0 !important;
   border: 1px solid rgb(241, 241, 241) !important;
+  margin-top: 9px !important;
+  border-radius: 10px !important;
+  /* margin-left: 5em !important; */
 }
 
 .dropdown-toggle::after {
@@ -174,14 +186,6 @@ input {
   border-bottom: 1px solid grey !important;
   border-left: 1px solid grey !important;
   border-right: 1px solid grey !important;
-}
-
-.card,
-.card-body {
-  background: white !important;
-  border-radius: 10px !important;
-  box-shadow: none !important;
-  border: 1px solid rgb(245, 245, 245) !important;
 }
 
 ::placeholder {
@@ -295,20 +299,4 @@ td {
 
 .btn {
   font-weight: normal !important;
-}
-
-.dropdown-menu.dropdown-navbar:before {
-  right: 45px !important;
-}
-
-.dropdown-menu:before {
-  left: auto !important;
-  right: 80px !important;
-}
-
-.dropdown.show .dropdown-menu,
-.navbar .dropdown.show .dropdown-menu {
-  margin-top: 9px !important;
-  border-radius: 10px !important;
-  margin-left: 5em !important;
 }

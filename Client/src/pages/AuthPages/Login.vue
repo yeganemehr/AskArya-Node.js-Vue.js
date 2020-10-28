@@ -84,8 +84,8 @@
           >
 
           <b-button :href="googleAuthUrl" block class="btn-google mt-2">
-            <i class="fab fa-google pl-3"></i>
-            عضویت سریع با حساب گوگل
+            <i class="fab fa-google pl-2"></i>
+            ورود سریع با حساب گوگل
           </b-button>
 
           <!-- <h6 class="pull-left pt-3">

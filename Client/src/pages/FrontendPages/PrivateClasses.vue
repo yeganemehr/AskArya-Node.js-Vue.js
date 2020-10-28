@@ -4,7 +4,7 @@
       <h1 class="text-center custom-title pt-5 pb-3">کلاس های خصوصی ما</h1>
       <div class="private-classes pb-5">
         <div class="row pricing">
-          <div class="col-lg-4 col-sm-12 px-3">
+          <div class="col-lg-4 col-sm-12 px-2">
             <div class="pricing-box hover">
               <div class="pricing-title bg-bronze">
                 <h3 class="titleSize">برنز</h3>
@@ -31,7 +31,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-sm-12 px-3">
+          <div class="col-lg-4 col-sm-12 px-2">
             <div class="pricing-box hover">
               <div class="pricing-title bg-silver">
                 <h3 class="titleSize">سيلور</h3>
@@ -60,7 +60,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-sm-12 px-3">
+          <div class="col-lg-4 col-sm-12 px-2">
             <div class="pricing-box hover">
               <div class="pricing-title bg-gold">
                 <h3 class="titleSize">گلد</h3>

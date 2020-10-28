@@ -65,7 +65,7 @@
     line-height: 1.7em;
     padding-top: 1em !important;
     font-family: IranSans !important;
-    color: white !important;
+    color: rgba(255, 255, 255, 0.85) !important;
     text-align: right;
   }
 
@@ -91,7 +91,7 @@
 
   .btn-quiz {
     color: #fff !important;
-    border: 1px dashed #fff !important;
+    border: 1px dashed rgba(255, 255, 255, 0.6) !important;
     background: transparent !important;
   }
 
@@ -119,7 +119,7 @@
     .hero-title {
       font-size: 2.45em;
       color: #fff !important;
-      padding-top: 0.8em !important;
+      padding-top: 0.5em !important;
       margin: 0;
     }
 
@@ -131,7 +131,7 @@
 
     .btn {
       // padding: 10px 14px !important;
-      font-size: 0.93em !important;
+      font-size: 1em !important;
       font-family: IranSansBold;
       margin-bottom: 2em !important;
     }
@@ -157,9 +157,12 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .btn {
-    padding: 10px 14px;
-    font-size: 0.9em;
+  .btn-quiz {
+    padding: 8px 10px !important;
+  }
+
+  .btn-signin {
+    padding: 8px 26px !important;
   }
 }
 
