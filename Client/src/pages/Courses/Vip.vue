@@ -145,7 +145,7 @@ export default {
 }
 
 .vip-desc {
-  font-size: 1em;
+  font-size: 0.95em;
   color: rgba(255, 255, 255, 0.9) !important;
 }
 

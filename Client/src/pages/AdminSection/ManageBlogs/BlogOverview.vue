@@ -266,7 +266,19 @@ export default {
   },
 };
 </script>
-<style>
+
+<style lang="scss" scoped>
+/deep/ th {
+  font-size: 1.05em !important;
+  padding-bottom: 8px !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/deep/ td {
+  border: 1px solid rgb(218, 218, 218) !important;
+  padding: 9px !important;
+}
+
 .pagination-select,
 .search-input {
   width: 200px;

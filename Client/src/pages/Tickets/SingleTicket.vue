@@ -15,6 +15,7 @@
           <div class="pt-3 px-3 d-flex justify-content-between row">
             <p class="ticket-user">
               <b-avatar
+                size="sm"
                 :src="message.user.avatar"
                 class="user-avatar avatar"
                 v-if="message.user.avatar"
@@ -26,12 +27,17 @@
               class="user-avatar avatar"
               v-if="message.user.avatar"
             />-->
-              <b-avatar class="ml-2" v-else></b-avatar>
+              <b-avatar
+                size="sm"
+                variant="primary"
+                class="ml-2"
+                v-else
+              ></b-avatar>
               <!-- <i class="pl-2 text-info far fa-user" v-else></i> -->
               {{ message.user.name }}
             </p>
             <div class="card-info pt-2">
-              <p class="ticket-date">
+              <p class="card-time">
                 {{ getDate(message.createdAt) }}
                 <span class="pr-3">{{ getTime(message.createdAt) }}</span>
               </p>
@@ -441,7 +447,7 @@ export default {
 
 <style lang="scss" scoped>
 // section {
-//   min-height: 90vh !important;
+//   min-height: 50vh !important;
 // }
 
 .avatar {
@@ -489,17 +495,18 @@ export default {
   font-family: IranSansBlog !important;
 
   .ticket-date {
-    font-size: 14px;
+    font-size: 14px !important;
     font-family: IranSans;
     color: rgb(53, 53, 53);
-    // background-color: #ef476f;
-    // padding: 3px 8px;
-    // border-radius: 10px;
+  }
+
+  .card-time {
+    font-size: 14px !important;
   }
 
   .ticket-user {
     font-family: IranSans;
-    font-size: 1.1em;
+    font-size: 15px !important;
     color: rgb(0, 0, 0);
   }
 
@@ -530,6 +537,10 @@ export default {
   }
 }
 
+// /deep/ .text-section-main {
+//   font-size: 1em !important;
+// }
+
 .card-reply-left {
   margin-right: 1em;
   margin-left: -1em;
@@ -544,7 +555,6 @@ export default {
 }
 
 .ticket-main-text {
-  // font-size: 1.2em !important;
   font-family: IranSans;
   padding: 0 !important;
 }

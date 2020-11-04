@@ -76,7 +76,7 @@
 }
 
 .subtitle {
-  font-size: 0.95em !important;
+  font-size: 0.9em !important;
   color: white !important;
 }
 

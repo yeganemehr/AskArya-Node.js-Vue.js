@@ -270,9 +270,9 @@ export default {
 }
 
 .btn-vip {
-  background: #06d6a0;
+  background: #57c09a;
   border-radius: 10px;
-  border: #06d6a0;
+  border: #57c09a;
   padding: 0 !important;
 }
 

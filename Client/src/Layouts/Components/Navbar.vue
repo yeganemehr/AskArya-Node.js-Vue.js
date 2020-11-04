@@ -99,8 +99,8 @@
           v-if="this.$root.$data.user !== undefined"
           class="mr-auto ml-5"
         >
-          <div class="row pl-4">
-            <img class="avatar" :src="userAvatar" />
+          <div class="row pt-1 pl-4">
+            <b-avatar size="2em" to="/dashboard" :src="userAvatar" />
           </div>
           <b-nav-item-dropdown text="پروفایل من" left>
             <b-dropdown-item to="/dashboard">
@@ -213,7 +213,7 @@ export default {
 
 .nav-link {
   padding-right: 2.5em !important;
-  font-size: 1em !important;
+  font-size: 0.95em !important;
 }
 
 .nav-link:hover {
