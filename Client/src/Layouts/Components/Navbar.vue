@@ -100,7 +100,12 @@
           class="mr-auto ml-5"
         >
           <div class="row pt-1 pl-4">
-            <b-avatar size="2em" to="/dashboard" :src="userAvatar" />
+            <b-avatar
+              size="1.8em"
+              variant="light"
+              to="/dashboard"
+              :src="userAvatar"
+            />
           </div>
           <b-nav-item-dropdown text="پروفایل من" left>
             <b-dropdown-item to="/dashboard">

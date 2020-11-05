@@ -2,23 +2,24 @@
   <section class="container">
     <div class="d-flex justify-content-between py-2">
       <div class="next-episode" v-if="next">
-        <base-button
+        <b-button
           native-type="submit"
-          type="info"
-          class="btn animation-on-hover custom-button"
+          variant="info"
+          class="btn custom-button"
           @click.prevent="nextEpisodeListener"
           :loading="loadingNext"
         >
           <i class="fas fa-caret-right pl-2"></i>
           پخش بعدی
-        </base-button>
+        </b-button>
       </div>
 
       <div class="unit-complete">
-        <base-button
+        <b-button
           native-type="submit"
-          type="default"
-          class="btn btn-round animation-on-hover custom-button"
+          variant="default"
+          pill
+          class="btn btn-round custom-button"
           @click="markAsDoneListener"
           :loading="loadingMarkAsDone"
           v-if="canMarkAsDone"
@@ -32,20 +33,20 @@
               'pr-2'
             "
           ></i>
-        </base-button>
+        </b-button>
       </div>
 
       <div class="previous-episode" v-if="prev">
-        <base-button
+        <b-button
           native-type="submit"
-          type="info"
-          class="btn animation-on-hover custom-button"
+          variant="info"
+          class="btn custom-button"
           @click.prevent="prevEpisodeListener"
           :loading="loadingPrev"
         >
           پخش قبلی
           <i class="fas fa-caret-left pr-2"></i>
-        </base-button>
+        </b-button>
       </div>
     </div>
   </section>

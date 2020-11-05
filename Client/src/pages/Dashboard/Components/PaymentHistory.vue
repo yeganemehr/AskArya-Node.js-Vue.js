@@ -16,7 +16,7 @@
     </b-table>
 
     <div
-      class="col-12 d-flex justify-content-center justify-content-sm-between"
+      class="col-12 d-flex justify-content-center justify-content-sm-between mt-auto"
     >
       <base-pagination
         class="pagination-no-border"

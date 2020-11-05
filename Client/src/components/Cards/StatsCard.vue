@@ -49,22 +49,22 @@ export default {
 <style lang="scss" scoped>
 .card-stats {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
-  border: transparent !important;
+  // border: transparent !important;
+  border: 1px dashed #eee !important;
 }
 
 .white-content .card:not(.card-pricing).card-stats .card-category {
-  color: #a7a7a7 !important;
-  font-size: 1em;
+  color: #b8b8b8 !important;
+  font-size: 0.94em;
   margin: 0 !important;
   padding-bottom: 5px !important;
 }
 
 .card-title {
   font-family: IranSansBold !important;
-  // color: #313131 !important;
   color: #ef476f !important;
-  font-size: 1.4em !important;
-  padding-top: 5px !important;
+  font-size: 1.45em !important;
+  padding-top: 6px !important;
   margin-bottom: 0;
 }
 

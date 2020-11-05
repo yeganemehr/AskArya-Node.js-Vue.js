@@ -12,9 +12,11 @@
         </div>
       </div>
     </div>
-    <div class="d-flex justify-content-center justify-content-sm-between">
+    <div
+      class="d-flex justify-content-center justify-content-sm-between mt-auto"
+    >
       <base-pagination
-        class="ml-auto mt-auto"
+        class="pagination-no-border"
         v-model="pagination.currentPage"
         :value="pagination.currentPage"
         :per-page="pagination.perpage"
@@ -91,7 +93,7 @@ export default {
 <style lang="scss" scoped>
 .card {
   height: 100% !important;
-  border: 1px solid transparent !important;
+  border: 1px dashed #eee !important;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
 }
 
@@ -112,27 +114,6 @@ export default {
 .iconSize {
   font-size: 1.1em;
   padding-left: 10px;
-}
-
-.pagination {
-  .page-pre {
-    &.next-page {
-      .page-link {
-        .icon-double-right {
-          &::before {
-            content: '\EA23';
-          }
-        }
-      }
-    }
-  }
-  .page-link {
-    .icon-double-left {
-      &::before {
-        content: '\EA24';
-      }
-    }
-  }
 }
 
 @media (max-width: 680px) {

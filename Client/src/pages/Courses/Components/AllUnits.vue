@@ -172,11 +172,12 @@ export default {
   background: transparent !important;
   height: 100%;
 }
+
 .UnitBox {
   -webkit-box-align: center;
   background: rgb(248, 248, 248) !important;
-  padding: 15px 15px 5px 15px;
-  border-top: 1.5px dashed rgba(102, 102, 102, 0.4);
+  padding: 14px !important;
+  border-top: 1.5px dashed rgba(102, 102, 102, 0.3);
   border-left: 1px dashed rgba(102, 102, 102, 0.3);
   border-right: 11px solid #33415c;
   border-radius: 0 15px 15px 0;
@@ -184,10 +185,9 @@ export default {
 
   .UnitName {
     font-size: 1rem;
-    color: rgb(59, 59, 59);
+    color: rgb(39, 39, 39);
     margin: 0 !important;
-    padding-top: 8px !important;
-    // margin-top: auto;
+    padding-top: 3px !important;
   }
 
   .detail-time {
@@ -217,7 +217,7 @@ export default {
     font-size: 1.1em;
     // align-self: center;
     background: transparent !important;
-    padding: 5px 15px 11px 15px;
+    padding: 5px 15px;
     margin: 0 !important;
   }
 }
@@ -250,7 +250,6 @@ export default {
   }
   .UnitName {
     cursor: pointer;
-    // font-family: IranSansBold;
     text-decoration: underline;
     color: #339afb;
   }
@@ -279,12 +278,12 @@ export default {
 
 @media (max-width: 768px) {
   .UnitBox {
-    padding: 16px 7px 13px 7px;
+    padding: 17px 7px;
     // margin-bottom: 5px;
   }
 
   .UnitName {
-    font-size: 1em;
+    font-size: 0.98em !important;
   }
 
   .detail-time {
@@ -298,15 +297,11 @@ export default {
     align-self: center;
     padding: 7px;
     margin-left: 3px;
-  }
-  .UnitBadgeUnlocked,
-  .UnitBadgeVIP,
-  .UnitBadgelocked {
-    font-size: 0.9rem;
+    display: none !important;
   }
 
   .UnitBox:active {
-    background: #b1cfee73 !important;
+    background: #eeb1ee73 !important;
   }
 
   .UnitBox:hover {

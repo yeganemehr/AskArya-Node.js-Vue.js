@@ -113,7 +113,8 @@
     <div class="container">
       <div class="pt-5">
         <vue-plyr class="plyr--video" :key="id">
-          <video>
+          <!-- <vue-plyr class="plyr--video"> -->
+          <video controls crossorigin playsinline>
             <source :src="`/api/v1/${download}`" type="video/mp4" size="720" />
           </video>
         </vue-plyr>
@@ -191,6 +192,7 @@
     </modal>
   </div>
 </template>
+
 <script>
 import AllUnits from './Components/AllUnits.vue';
 import VideoButtons from './Components/VideoButtons.vue';

@@ -15,7 +15,7 @@
           <div class="pt-3 px-3 d-flex justify-content-between row">
             <p class="ticket-user">
               <b-avatar
-                size="sm"
+                size="1.9em"
                 :src="message.user.avatar"
                 class="user-avatar avatar"
                 v-if="message.user.avatar"
@@ -28,12 +28,11 @@
               v-if="message.user.avatar"
             />-->
               <b-avatar
-                size="sm"
+                v-else
+                size="1.9em"
                 variant="primary"
                 class="ml-2"
-                v-else
               ></b-avatar>
-              <!-- <i class="pl-2 text-info far fa-user" v-else></i> -->
               {{ message.user.name }}
             </p>
             <div class="card-info pt-2">
@@ -81,9 +80,9 @@
     <!--------------------------- Ticket Reply --------------------------->
     <div class="card pb-4 px-4 my-5 container">
       <form @submit.prevent="submitFormListener">
-        <h4 class="pt-4">
+        <h6 class="pt-4 pb-2">
           {{ editingMessage ? 'ویرایش پیام' : 'پاسخی ارسال کنید!' }}
-        </h4>
+        </h6>
         <base-input>
           <ckeditor
             v-if="isAdmin"
@@ -100,7 +99,7 @@
             v-model="message"
           ></textarea>
         </base-input>
-        <div class="pt-3">
+        <div class="pt-3" v-if="isAdmin">
           <file-upload
             v-if="isAdmin && !editingMessage"
             @change="onFileSelect"
@@ -114,14 +113,15 @@
             class="animation-on-hover mb-0"
             :key="uploaderKey"
           />
-          <base-button
-            class="animation-on-hover mr-2"
-            type="danger"
-            native-type="Submit"
-            :loading="loading"
-            >{{ editingMessage ? 'ویرایش' : 'ارسال' }}</base-button
-          >
         </div>
+        <b-button
+          class="mr-2 px-5"
+          pill
+          variant="primary"
+          native-type="Submit"
+          :loading="loading"
+          >{{ editingMessage ? 'ویرایش' : 'ارسال' }}</b-button
+        >
       </form>
     </div>
   </section>
@@ -497,11 +497,11 @@ export default {
   .ticket-date {
     font-size: 14px !important;
     font-family: IranSans;
-    color: rgb(53, 53, 53);
   }
 
   .card-time {
     font-size: 14px !important;
+    color: rgb(66, 66, 66) !important;
   }
 
   .ticket-user {
@@ -536,10 +536,6 @@ export default {
     color: rgb(34, 34, 34);
   }
 }
-
-// /deep/ .text-section-main {
-//   font-size: 1em !important;
-// }
 
 .card-reply-left {
   margin-right: 1em;

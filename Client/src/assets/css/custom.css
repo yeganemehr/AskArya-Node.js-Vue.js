@@ -46,6 +46,7 @@ span,
 button,
 .swal-title,
 .swal-button {
+  font-family: IranSans;
   font-weight: normal !important;
   letter-spacing: -0.03em !important;
   -webkit-font-smoothing: antialiased !important;
@@ -71,8 +72,6 @@ th {
 }
 
 td {
-  /* border: 1px solid rgb(150, 150, 150) !important; */
-  /* padding: 5px !important; */
   text-align: right !important;
 }
 
@@ -87,6 +86,10 @@ table .btn {
   direction: ltr !important;
 }
 
+.badge {
+  padding: 0.5em 0.8em !important;
+}
+
 /*------------------------
 	base class definition
 -------------------------*/
@@ -94,14 +97,12 @@ table .btn {
 .card {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.02), 0 10px 10px rgba(0, 0, 0, 0.02) !important;
   border-radius: 15px !important;
+  border: 1px dashed rgb(236, 236, 236) !important;
 }
 
 .page-link {
-  margin: 0 3px !important;
-  border-radius: 50% !important;
-  font-size: 0.75em !important;
+  font-size: 0.8em !important;
   color: #ef476f !important;
-  /* background-color: #ef476f !important; */
 }
 
 .page-link:hover {
@@ -109,11 +110,25 @@ table .btn {
 }
 
 .page-item.active .page-link {
-  border-radius: 50% !important;
-  border: 1px solid #ef476f !important;
+  font-family: IranSansBold !important;
+  border-color: #ef476f !important;
   background-color: #ef476f !important;
   color: #fff !important;
-  width: 35px !important;
+}
+
+.page-item:first-child .page-link {
+  border-top-right-radius: 0.25rem !important;
+  border-bottom-right-radius: 0.25rem !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-left: 0 !important;
+}
+
+.page-item:last-child .page-link {
+  border-top-left-radius: 0.25rem !important;
+  border-bottom-left-radius: 0.25rem !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 
 .custom-file-label {

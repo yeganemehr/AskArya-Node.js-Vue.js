@@ -134,9 +134,9 @@
         <div class="w-100 d-md-none"></div>
         <div class="view-ticket">
           <router-link :to="`/tickets/view/${ticket.id}`">
-            <base-button class="px-3" round type="info">
+            <b-button class="px-4" pill variant="primary">
               <i class="pl-3 fas fa-eye"></i> نمایش
-            </base-button>
+            </b-button>
           </router-link>
         </div>
       </div>

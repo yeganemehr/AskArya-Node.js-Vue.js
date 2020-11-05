@@ -1,25 +1,35 @@
 <template>
   <section class="container pt-5">
     <h1 class="text-center text-default">Management Page</h1>
-    <div class="pt-3 text-ltr text-left d-flex justify-content-center row">
+    <div class="pt-5 text-ltr d-flex justify-content-center row">
       <router-link to="/courseoverview">
-        <base-button size="lg" type="info">Courses</base-button>
+        <b-button pill variant="primary" size="lg" class="px-5 mb-3"
+          >Courses</b-button
+        >
       </router-link>
 
       <router-link to="/episodeoverview">
-        <base-button size="lg" type="info">Episodes</base-button>
+        <b-button pill variant="primary" size="lg" class="px-5 mb-3"
+          >Episodes</b-button
+        >
       </router-link>
 
       <router-link to="/manageusers">
-        <base-button size="lg" type="info">Users</base-button>
+        <b-button pill variant="primary" size="lg" class="px-5 mb-3"
+          >Users</b-button
+        >
       </router-link>
 
       <router-link to="/blogoverview">
-        <base-button size="lg" type="info">Blogs</base-button>
+        <b-button pill variant="primary" size="lg" class="px-5 mb-3"
+          >Blogs</b-button
+        >
       </router-link>
 
       <router-link to="/ticketoverview">
-        <base-button size="lg" type="info">Tickets</base-button>
+        <b-button pill variant="primary" size="lg" class="px-5 mb-3"
+          >Tickets</b-button
+        >
       </router-link>
     </div>
   </section>

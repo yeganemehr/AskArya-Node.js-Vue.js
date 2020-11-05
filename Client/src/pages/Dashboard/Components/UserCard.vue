@@ -4,8 +4,15 @@
       <h1 class="card-title pt-2">مشخصات کاربری</h1>
       <p class="card-text"></p>
       <div class="author text-center">
-        <img class="avatar" :src="userAvatar" alt="Users Profile Image" />
-        <h2 class="title">
+        <!-- <img class="avatar" :src="userAvatar" alt="Users Profile Image" /> -->
+        <b-avatar
+          :src="userAvatar"
+          alt="Users Profile Image"
+          size="7rem"
+          variant="light"
+        />
+
+        <h2 class="title pt-3">
           {{ user.name }}
           <br />
           <span class="emailText px-1">{{ user.email }}</span>
@@ -251,12 +258,12 @@ export default {
   margin-left: auto;
 }
 
-.card-user .avatar {
-  width: 7em !important;
-  height: 7em !important;
-  border-radius: 50%;
-  margin-bottom: 1em;
-}
+// .card-user .avatar {
+//   width: 7em !important;
+//   height: 7em !important;
+//   border-radius: 50%;
+//   margin-bottom: 1em;
+// }
 
 .btn-edit {
   background: #d62828;

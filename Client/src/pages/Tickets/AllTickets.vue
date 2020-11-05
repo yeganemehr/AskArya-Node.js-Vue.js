@@ -5,9 +5,9 @@
       <h1 class="pb-5 text-black">تیکت ها</h1>
       <div class="mb-5">
         <router-link to="/createticket">
-          <base-button type="info">
+          <b-button pill variant="warning">
             <i class="pl-3 fas fa-eye"></i> تیکت جدید
-          </base-button>
+          </b-button>
         </router-link>
       </div>
 
@@ -51,9 +51,9 @@
           <div class="w-100 d-md-none pt-3"></div>
           <div class="view-ticket">
             <router-link :to="`/tickets/view/${ticket.id}`">
-              <base-button class="px-3 custom-button" round type="info">
+              <b-button class="px-4" pill variant="primary">
                 <i class="pl-3 fas fa-eye"></i> نمایش
-              </base-button>
+              </b-button>
             </router-link>
           </div>
         </div>

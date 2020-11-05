@@ -4,7 +4,6 @@ import RouterPrefetch from 'vue-router-prefetch';
 import DashboardPlugin from './plugins/dashboard-plugin';
 import App from './App.vue';
 
-// router setup
 import backend from './backend';
 import router from './routes/router';
 import BootstrapVue from 'bootstrap-vue';
@@ -37,10 +36,11 @@ Vue.use(Element);
 Vue.use(DashboardPlugin);
 Vue.use(VueScrollTo);
 Vue.use(CKEditor);
-Vue.use(VuePlyr);
 Vue.use(NProgress);
 Vue.use(VueMeta);
+Vue.use(VuePlyr);
 
+// import 'vue-plyr/dist/vue-plyr.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 // import 'src/assets/sass/black-dashboard-pro.scss';
