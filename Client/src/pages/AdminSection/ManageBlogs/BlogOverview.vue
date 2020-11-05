@@ -268,6 +268,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h2 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: bolder !important;
+}
+
 /deep/ th {
   font-size: 1.05em !important;
   padding-bottom: 8px !important;
@@ -277,6 +283,17 @@ export default {
 /deep/ td {
   border: 1px solid rgb(218, 218, 218) !important;
   padding: 9px !important;
+}
+
+/deep/ ::placeholder {
+  font-family: Arial, Helvetica, sans-serif !important;
+  text-align: left !important;
+  color: #919191 !important;
+  direction: ltr !important;
+}
+
+/deep/ label {
+  float: left !important;
 }
 
 .pagination-select,

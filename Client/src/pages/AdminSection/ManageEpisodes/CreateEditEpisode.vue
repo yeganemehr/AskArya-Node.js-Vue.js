@@ -9,7 +9,7 @@
           </span>
           Episode
         </h4>
-        <form @submit="submitFormListener">
+        <form @submit="submitFormListener" dir="ltr">
           <div>
             <div class="row py-4">
               <div class="col-md-3">
@@ -76,7 +76,7 @@
                   ></el-option>
                 </el-select>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-5">
                 <div class="form-group has-label">
                   <label>Related Course</label>
                   <autocomplete
@@ -86,7 +86,9 @@
                     :initialDisplay="data.courseName"
                     resultsDisplay="title"
                     v-model="data.course"
-                    :placeholder="data.courseName || 'Search'"
+                    :placeholder="
+                      data.courseName || 'Related Course - Search...'
+                    "
                     @selected="onSelectCourse"
                     input-class="form-control"
                   ></autocomplete>
@@ -502,24 +504,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.autocomplete {
-  background: transparent;
-  .autocomplete__box {
-    background: transparent;
-    border-color: #2b3553;
-    border-radius: 0.4285rem;
-    font-size: 0.75rem;
-    -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out,
-      background-color 0.3s ease-in-out;
-    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out,
-      background-color 0.3s ease-in-out;
-  }
-  .autocomplete__results {
-    .autocomplete__results__item {
-      color: #333;
-    }
-  }
+// .autocomplete {
+//   background: transparent;
+//   .autocomplete__box {
+//     background: transparent !important;
+//     border-color: #2b3553 !important;
+//     border-radius: 0.4285rem !important;
+//     font-size: 0.75rem;
+//     -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+//       background-color 0.3s ease-in-out;
+//     transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+//       background-color 0.3s ease-in-out;
+//   }
+//   .autocomplete__results {
+//     .autocomplete__results__item {
+//       color: #333 !important;
+//     }
+//   }
+// }
+
+/deep/ ::placeholder {
+  font-family: Arial, Helvetica, sans-serif !important;
+  text-align: left !important;
+  color: #919191 !important;
+  direction: ltr !important;
 }
+
+/deep/ label {
+  float: left !important;
+  font-size: 0.9rem !important;
+}
+
 .ck-editor__editable {
   min-height: 200px;
 }

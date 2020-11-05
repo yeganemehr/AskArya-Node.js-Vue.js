@@ -529,6 +529,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h2 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: bolder !important;
+}
+
 .pagination-select,
 .search-input {
   width: 200px;
@@ -558,17 +564,16 @@ export default {
       font-size: 0.85em !important;
       color: rgba(65, 65, 65, 0.5) !important;
       text-align: right;
-      font-family: IranSansBold;
       padding: 0;
       margin: 0;
     }
 
     p {
-      font-size: 1em;
+      font-size: 1rem !important;
       color: rgba(39, 39, 39, 0.89) !important;
       text-align: right;
       font-family: IranSans;
-      padding-top: 13px !important;
+      padding-top: 10px !important;
     }
 
     .badge {

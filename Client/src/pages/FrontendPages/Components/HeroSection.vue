@@ -112,6 +112,10 @@
   .button-section {
     padding-bottom: 1em !important;
   }
+
+  .hero-text-section {
+    padding-bottom: 0.9em !important;
+  }
 }
 
 @media screen and (max-width: 1000px) {

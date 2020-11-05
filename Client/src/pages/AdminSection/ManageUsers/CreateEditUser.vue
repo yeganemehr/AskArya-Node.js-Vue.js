@@ -9,17 +9,24 @@
           </span>
           User
         </h4>
-        <form @submit="checkForm" autocomplete="off">
+        <form @submit="checkForm" autocomplete="off" dir="ltr">
           <div>
             <div class="row pt-2">
               <div class="col-md-12">
                 <div class="row">
                   <div class="text-center col-md-12">
                     <div class="pb-4">
-                      <img
+                      <!-- <img
                         class="avatar"
                         :src="data.avatar || 'img/default-avatar.png'"
                         alt="Users Profile Image"
+                      /> -->
+
+                      <b-avatar
+                        :src="data.avatar || 'img/default-avatar.png'"
+                        alt="Users Profile Image"
+                        size="9rem"
+                        variant="light"
                       />
                     </div>
                     <div class="py-4">
@@ -40,7 +47,7 @@
                       :error="fieldErrors.name"
                     ></base-input>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                     <base-input
                       label="Edit User Email"
                       placeholder="User Email"
@@ -49,7 +56,7 @@
                       :error="fieldErrors.email"
                     ></base-input>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                     <base-input
                       label="Edit User Password"
                       placeholder="User Password"
@@ -59,7 +66,7 @@
                       :error="fieldErrors.password"
                     ></base-input>
                   </div>
-                  <div class="col-md-2">
+                  <!-- <div class="col-md-2">
                     <base-input
                       label="Edit User xP Points"
                       placeholder="xP"
@@ -67,7 +74,7 @@
                       v-model="data.xp"
                       :error="fieldErrors.xp"
                     ></base-input>
-                  </div>
+                  </div> -->
 
                   <div class="col-md-2">
                     <base-input
@@ -87,9 +94,9 @@
                     ></base-input>
                   </div>
 
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <div class="form-group has-label">
-                      <label>Enroll Student on ... Course:</label>
+                      <!-- <label>Enroll Student on ... Course:</label> -->
                       <autocomplete
                         source="/api/v1/admin/courses?filter="
                         results-property="docs"
@@ -113,8 +120,8 @@
                   </div>
 
                   <div class="col-md-2">
-                    <base-checkbox class="mb-3" v-model="data.active"
-                      >Activate User Account</base-checkbox
+                    <b-checkbox class="mb-3" v-model="data.active"
+                      >Activate User</b-checkbox
                     >
                   </div>
 
@@ -168,7 +175,7 @@
                 User
               </base-button>
               <base-button
-                class="ml-1 px-5"
+                class="ml-1 px-5 btn-dark"
                 native-type="button"
                 type="default"
                 v-if="data.id"
@@ -495,6 +502,7 @@ export default {
     height: 9em;
   }
 }
+
 .autocomplete {
   background: transparent;
   .autocomplete__box {

@@ -1,6 +1,6 @@
 <template>
   <div class="container text-ltr">
-    <div class="row text-center px-3">
+    <div class="row text-center px-lg-5">
       <div class="col pb-3">
         <h2 class="headerStyling1">{{ openTickets }}</h2>
         <p class="subheader">Open</p>
@@ -57,6 +57,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h2 {
+  font-size: 2.2rem !important;
+  padding-top: 2rem !important;
+}
+
 .headerStyling1 {
   color: #f5b435 !important;
   font-family: IranSansBold;
@@ -93,14 +98,18 @@ export default {
 }
 
 .subheader {
-  font-size: 0.7rem;
+  font-size: 0.9rem !important;
   color: rgb(104, 104, 104) !important;
   padding-top: 8px;
 }
 
 @media (max-width: 767px) {
+  h2 {
+    padding-top: 1rem !important;
+  }
+
   .subheader {
-    font-size: 0.45em;
+    font-size: 0.45em !important;
     color: rgb(129, 129, 129);
     padding-top: 8px;
   }

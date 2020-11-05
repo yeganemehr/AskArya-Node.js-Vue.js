@@ -174,6 +174,11 @@ export default {
 }
 
 .UnitBox {
+  p {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   -webkit-box-align: center;
   background: rgb(248, 248, 248) !important;
   padding: 14px !important;
@@ -187,7 +192,7 @@ export default {
     font-size: 1rem;
     color: rgb(39, 39, 39);
     margin: 0 !important;
-    padding-top: 3px !important;
+    padding-top: 4px !important;
   }
 
   .detail-time {
@@ -196,7 +201,7 @@ export default {
     font-family: IranSansBold;
     // align-self: center;
     background: rgb(29, 35, 83) !important;
-    padding: 7px 13px;
+    padding: 7px 13px !important;
     border-radius: 5px;
     margin: 0 !important;
   }
@@ -204,10 +209,8 @@ export default {
   .detail-price {
     color: rgb(255, 255, 255) !important;
     font-size: 0.9em;
-    // align-self: center;
-    // background: rgba(70, 110, 218, 0.788) !important;
     background: #415a77;
-    padding: 7px 15px;
+    padding: 7px 15px !important;
     border-radius: 5px;
     margin: 0 !important;
     margin-left: 6px !important;
@@ -215,7 +218,6 @@ export default {
 
   .detail-price-purchased {
     font-size: 1.1em;
-    // align-self: center;
     background: transparent !important;
     padding: 5px 15px;
     margin: 0 !important;

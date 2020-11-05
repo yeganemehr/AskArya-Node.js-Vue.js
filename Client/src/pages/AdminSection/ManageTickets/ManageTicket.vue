@@ -1,128 +1,134 @@
 <template>
-  <section class="pt-3 container">
-    <h4 v-if="isAdmin" slot="header" class="card-title">Send Ticket</h4>
-    <card>
-      <form class="text-rtl pt-2" @submit="submitFormListener">
-        <div class="form-row">
-          <div class="col-md-4">
-            <label class="pull-right">عنوان</label>
-            <base-input
-              v-model="data.title"
-              :error="fieldErrors.title"
-            ></base-input>
-          </div>
+  <section class="pt-3 bg">
+    <div class="container">
+      <h4 v-if="isAdmin" slot="header" class="card-title">Send Ticket</h4>
+      <card>
+        <form class="text-rtl pt-2" @submit="submitFormListener">
+          <div class="form-row">
+            <div class="col-md-4">
+              <label class="pull-right">عنوان</label>
+              <base-input
+                v-model="data.title"
+                :error="fieldErrors.title"
+              ></base-input>
+            </div>
 
-          <div class="col-md-2" v-if="isAdmin">
-            <label class="pull-right">مربوط به</label>
-            <autocomplete
-              class="d-flex"
-              source="/api/v1/admin/users?filter="
-              results-property="docs"
-              :initialValue="data.user"
-              :initialDisplay="data.userName"
-              v-model="data.user"
-              @selected="onSelectUser"
-              :error="fieldErrors.user"
-              input-class="form-control"
-            ></autocomplete>
-          </div>
+            <div class="col-md-2" v-if="isAdmin">
+              <label class="pull-right">مربوط به</label>
+              <autocomplete
+                class="d-flex"
+                source="/api/v1/admin/users?filter="
+                results-property="docs"
+                :initialValue="data.user"
+                :initialDisplay="data.userName"
+                v-model="data.user"
+                @selected="onSelectUser"
+                :error="fieldErrors.user"
+                input-class="form-control"
+              ></autocomplete>
+            </div>
 
-          <div class="col-md-2">
-            <label class="pull-right">اهمیت</label>
-            <base-input>
-              <select
-                class="form-control"
-                v-model="data.priority"
-                :error="fieldErrors.priority"
-              >
-                <option selected>عادی</option>
-                <option>مهم</option>
-                <option>فوری</option>
-              </select>
-            </base-input>
-          </div>
+            <div class="col-md-2">
+              <label class="pull-right">اهمیت</label>
+              <base-input>
+                <select
+                  class="form-control"
+                  v-model="data.priority"
+                  :error="fieldErrors.priority"
+                >
+                  <option selected>عادی</option>
+                  <option>مهم</option>
+                  <option>فوری</option>
+                </select>
+              </base-input>
+            </div>
 
-          <div class="col-md-2">
-            <label class="pull-right">دپارتمان</label>
-            <base-input>
-              <select
-                class="form-control"
-                v-model="data.department"
-                :error="fieldErrors.department"
-              >
-                <option selected>پشتیبانی</option>
-                <option>فروش و مالی</option>
-                <option>آموزش</option>
-              </select>
-            </base-input>
+            <div class="col-md-2">
+              <label class="pull-right">دپارتمان</label>
+              <base-input>
+                <select
+                  class="form-control"
+                  v-model="data.department"
+                  :error="fieldErrors.department"
+                >
+                  <option selected>پشتیبانی</option>
+                  <option>فروش و مالی</option>
+                  <option>آموزش</option>
+                </select>
+              </base-input>
+            </div>
+            <div class="col-md-2" v-if="data.status">
+              <label class="pull-right">وضعیت</label>
+              <base-input>
+                <select
+                  class="form-control"
+                  v-model="data.status"
+                  :error="fieldErrors.status"
+                >
+                  <option value="1">Open</option>
+                  <option value="2">Answered</option>
+                  <option value="3">In Progress</option>
+                  <option value="4">On Hold</option>
+                  <option value="5">Closed</option>
+                </select>
+              </base-input>
+            </div>
           </div>
-          <div class="col-md-2" v-if="data.status">
-            <label class="pull-right">وضعیت</label>
-            <base-input>
-              <select
-                class="form-control"
-                v-model="data.status"
-                :error="fieldErrors.status"
-              >
-                <option value="1">Open</option>
-                <option value="2">Answered</option>
-                <option value="3">In Progress</option>
-                <option value="4">On Hold</option>
-                <option value="5">Closed</option>
-              </select>
-            </base-input>
+          <div class="row">
+            <div
+              class="col-md-12 text-right text-rtl pt-5"
+              v-if="formErrors.length"
+            >
+              <b class="errors-title">لطفا اشتباهات زیر را تصحیح کنید:</b>
+              <ul>
+                <li v-for="(error, key) in formErrors" :key="key">
+                  {{ error }}
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div
-            class="col-md-12 text-right text-rtl pt-5"
-            v-if="formErrors.length"
-          >
-            <b class="errors-title">لطفا اشتباهات زیر را تصحیح کنید:</b>
-            <ul>
-              <li v-for="(error, key) in formErrors" :key="key">{{ error }}</li>
-            </ul>
+          <base-input v-if="!data.id">
+            <ckeditor
+              v-if="isAdmin"
+              @ready="onEditorReady"
+              :editor="ckeditor.editor"
+              v-model="data.message"
+              :config="ckeditor.editorConfig"
+            ></ckeditor>
+            <textarea
+              class="form-control"
+              placeholder="متن تیکت"
+              rows="3"
+              v-model="data.message"
+              :error="fieldErrors.message"
+              v-else
+            ></textarea>
+          </base-input>
+          <div class="pt-3">
+            <div v-if="isAdmin">
+              <file-upload
+                v-if="isAdmin && !data.id"
+                @change="onFileSelect"
+                class="animation-on-hover"
+              />
+              <image-upload
+                v-else-if="!data.id"
+                @change="onFileSelect"
+                select-text="پیوست فایل"
+                class="animation-on-hover mb-0"
+              />
+            </div>
+            <base-button
+              class="animation-on-hover mr-3"
+              type="danger"
+              native-type="Submit"
+              :loading="loading"
+              >{{ data.id ? 'ویرایش' : 'ارسال' }}</base-button
+            >
           </div>
-        </div>
-        <base-input v-if="!data.id">
-          <ckeditor
-            v-if="isAdmin"
-            @ready="onEditorReady"
-            :editor="ckeditor.editor"
-            v-model="data.message"
-            :config="ckeditor.editorConfig"
-          ></ckeditor>
-          <textarea
-            class="form-control"
-            placeholder="متن تیکت"
-            rows="3"
-            v-model="data.message"
-            :error="fieldErrors.message"
-            v-else
-          ></textarea>
-        </base-input>
-        <div class="pt-3">
-          <file-upload
-            v-if="isAdmin && !data.id"
-            @change="onFileSelect"
-            class="animation-on-hover"
-          />
-          <image-upload
-            v-else-if="!data.id"
-            @change="onFileSelect"
-            select-text="پیوست فایل"
-            class="animation-on-hover mb-0"
-          />
-          <base-button
-            class="animation-on-hover mr-3"
-            type="danger"
-            native-type="Submit"
-            :loading="loading"
-            >{{ data.id ? 'ویرایش' : 'ارسال' }}</base-button
-          >
-        </div>
-      </form>
-    </card>
+        </form>
+      </card>
+    </div>
   </section>
 </template>
 
@@ -529,6 +535,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.bg {
+  min-height: 70vh !important;
+}
 .errors-title {
   font-family: IranSansBold;
 }
@@ -544,4 +553,11 @@ export default {
 // .ck-editor__editable {
 //     height: 300px !important;
 // }
+
+/deep/ .form-control {
+  font-family: IranSans !important;
+  direction: rtl !important;
+  font-size: 0.9em !important;
+  padding: 0 15px !important;
+}
 </style>

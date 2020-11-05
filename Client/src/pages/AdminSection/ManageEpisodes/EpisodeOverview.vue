@@ -308,6 +308,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h2 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: bolder !important;
+}
+
 /deep/ th {
   font-size: 1.05em !important;
   padding-bottom: 8px !important;

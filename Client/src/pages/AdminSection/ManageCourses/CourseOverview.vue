@@ -3,9 +3,9 @@
     <div>
       <h2 class="text-center">
         Courses Overview
-        <h5 class="pt-2">
-          <a href="/courses" target="_blank">ALL COURSES</a>
-        </h5>
+        <!-- <h5 class="pt-2">
+          <a href="/managementpage">Management Page</a>
+        </h5> -->
       </h2>
     </div>
     <div class="mt-5">
@@ -258,6 +258,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h2 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: bolder !important;
+}
+
 /deep/ th {
   font-size: 1.05em !important;
   padding-bottom: 8px !important;
@@ -267,6 +273,18 @@ export default {
 /deep/ td {
   border: 1px solid rgb(218, 218, 218) !important;
   padding: 9px !important;
+}
+
+/deep/ ::placeholder {
+  font-family: Arial, Helvetica, sans-serif !important;
+  text-align: left !important;
+  color: #919191 !important;
+  direction: ltr !important;
+}
+
+/deep/ label {
+  float: left !important;
+  font-size: 0.9rem !important;
 }
 
 .pagination-select,

@@ -106,6 +106,7 @@
             class="animation-on-hover"
             :key="uploaderKey"
           />
+
           <image-upload
             v-else-if="!editingMessage"
             @change="onFileSelect"
@@ -114,13 +115,11 @@
             :key="uploaderKey"
           />
         </div>
-        <b-button
-          class="mr-2 px-5"
-          pill
-          variant="primary"
+        <base-button
+          class="px-5 btn-success"
           native-type="Submit"
           :loading="loading"
-          >{{ editingMessage ? 'ویرایش' : 'ارسال' }}</b-button
+          >{{ editingMessage ? 'ویرایش' : 'ارسال' }}</base-button
         >
       </form>
     </div>
@@ -494,20 +493,20 @@ export default {
   border: 1px dashed #ececec;
   font-family: IranSansBlog !important;
 
-  .ticket-date {
-    font-size: 14px !important;
-    font-family: IranSans;
-  }
+  // .ticket-date {
+  //   font-size: 14px !important;
+  //   font-family: IranSans;
+  // }
 
   .card-time {
     font-size: 14px !important;
-    color: rgb(66, 66, 66) !important;
+    color: rgb(112, 112, 112) !important;
   }
 
   .ticket-user {
     font-family: IranSans;
-    font-size: 15px !important;
-    color: rgb(0, 0, 0);
+    font-size: 14px !important;
+    color: rgb(43, 43, 43) !important;
   }
 
   a {

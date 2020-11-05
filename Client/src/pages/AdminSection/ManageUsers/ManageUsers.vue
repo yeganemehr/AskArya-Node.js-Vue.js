@@ -280,6 +280,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pagination-select,
+.search-input {
+  width: 200px;
+}
+
+.swal-title:first-child {
+  margin-top: 26px !important;
+  margin-bottom: 26px !important;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: bolder !important;
+}
+
 /deep/ th {
   font-size: 1.05em !important;
   padding-bottom: 8px !important;
@@ -291,13 +307,15 @@ export default {
   padding: 9px !important;
 }
 
-.pagination-select,
-.search-input {
-  width: 200px;
+/deep/ ::placeholder {
+  font-family: Arial, Helvetica, sans-serif !important;
+  text-align: left !important;
+  color: #919191 !important;
+  direction: ltr !important;
 }
 
-.swal-title:first-child {
-  margin-top: 26px !important;
-  margin-bottom: 26px !important;
+/deep/ label {
+  float: left !important;
+  font-size: 0.9rem !important;
 }
 </style>

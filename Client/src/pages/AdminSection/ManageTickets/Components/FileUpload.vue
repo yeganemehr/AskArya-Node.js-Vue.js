@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       file: null,
-      fileExists: false
+      fileExists: false,
     };
   },
   methods: {
@@ -43,8 +43,8 @@ export default {
       this.fileExists = false;
       this.file = null;
       this.$emit('change', null);
-    }
-  }
+    },
+  },
 };
 </script>
 <style></style>
