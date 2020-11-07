@@ -95,13 +95,13 @@ p {
   .main-text {
     font-family: IranSans !important;
     color: #fff !important;
-    font-size: 1.15em;
+    font-size: 1.1em;
     line-height: 1.7em !important;
   }
 }
 
 .btn {
-  font-size: 1em !important;
+  font-size: 0.94em !important;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2);
   color: #fff;
   border: 1px dashed rgba(255, 176, 139, 0.651);

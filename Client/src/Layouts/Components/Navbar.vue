@@ -287,8 +287,8 @@ i {
 
 .btn-secondary:not(:disabled):not(.disabled).active {
   background: #fff !important;
-  border: 1px dashed #06d6a0 !important;
-  color: #06d6a0 !important;
+  border: 1px dashed #00d39b !important;
+  color: #00d39b !important;
 }
 
 .btn-secondary:focus {

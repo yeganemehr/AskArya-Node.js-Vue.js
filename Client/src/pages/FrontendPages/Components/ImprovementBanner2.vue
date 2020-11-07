@@ -68,7 +68,7 @@ export default {};
   .main-text {
     font-family: IranSans !important;
     color: #fff !important;
-    font-size: 1.15em;
+    font-size: 1.1em;
     line-height: 1.7em !important;
   }
 }
@@ -78,7 +78,7 @@ export default {};
   color: #fff;
   border: 1px dashed rgb(168, 255, 142) !important;
   font-family: IranSansBold;
-  font-size: 1em;
+  font-size: 0.94em !important;
   padding: 0.4em 1.6em !important;
   background: transparent;
   border-radius: 10px;

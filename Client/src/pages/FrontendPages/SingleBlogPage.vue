@@ -101,7 +101,7 @@ export default {
 }
 
 .heading-section {
-  padding: 2em 0;
+  padding: 1.4em 0;
   margin-bottom: 1.7em;
   background-color: #64a4ee;
 }

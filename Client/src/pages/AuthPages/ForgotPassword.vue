@@ -3,19 +3,19 @@
     <div class="container">
       <card class="shadow">
         <form @submit="checkForm">
-          <h1 class="auth-title text-primary py-4">بازیابی پسورد</h1>
+          <h1 class="auth-title py-2">بازیابی پسورد</h1>
           <p class="subtitle text-center">
             با استفاده از این فرم میتوانید پسورد خود را بازیابی کنید.
           </p>
           <div class="pt-4">
             <label class="pull-right">پست الکترونیک</label>
-            <base-input
+            <b-input
               class="text-ltr"
               autocomplete="username"
               v-model="email"
               :required="true"
               :error="fieldErrors.email"
-            ></base-input>
+            ></b-input>
           </div>
 
           <div class="text-right" v-if="formErrors.length">
@@ -26,17 +26,13 @@
               </li>
             </ul>
           </div>
-          <div slot="footer">
-            <base-button
-              type="primary"
-              nativeType="submit"
-              class="mb-3"
-              size="lg"
-              :loading="loading"
-              block
-              >بازیابی پسورد</base-button
-            >
-          </div>
+          <base-button
+            nativeType="submit"
+            class="btn-warning my-3"
+            :loading="loading"
+            block
+            >بازیابی پسورد</base-button
+          >
         </form>
       </card>
     </div>
@@ -115,21 +111,23 @@ export default {
 }
 
 .card {
-  width: 330px !important;
+  width: 350px !important;
   margin-right: auto;
   margin-left: auto;
 }
 
 .auth-title {
-  font-size: 2.4em;
+  font-size: 1.8em;
   font-family: IranSansBold;
   text-align: center;
   margin: 0;
+  color: #ed5786;
 }
 
 .subtitle {
-  color: #696969f6 !important;
+  color: #a5a5a5 !important;
   font-size: 0.9em !important;
+  padding-top: 0.4em;
 }
 
 @media only screen and (max-width: 768px) {

@@ -14,7 +14,7 @@
   src: url('../fonts/IranSansBold/IranSansBold.eot') format('embedded-opentype'),
     url('../fonts/IranSansBold/IranSansBold.woff') format('woff'),
     url('../fonts/IranSansBold/IranSansBold.ttf') format('truetype');
-  font-weight: bold !important;
+  font-weight: normal !important;
   font-style: normal !important;
 }
 

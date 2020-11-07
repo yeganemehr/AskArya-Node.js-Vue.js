@@ -95,7 +95,7 @@
           </h6> -->
 
           <h6 class="text-center mt-3">
-            <router-link to="/contact" class="footer-link"
+            <router-link to="/forgotpassword" class="footer-link"
               >رمز عبور را فراموش کرده ام</router-link
             >
           </h6>
@@ -228,7 +228,7 @@ export default {
 
 <style lang="scss" scoped>
 .auth-section {
-  height: 90vh !important;
+  height: 84vh !important;
   background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
 }
 
@@ -303,7 +303,7 @@ export default {
   background: #06d6a0;
   border: #06d6a0 !important;
   padding: 4px 8px;
-  font-size: 0.8em;
+  font-size: 0.85em;
 }
 
 .btn-create:hover {
