@@ -546,8 +546,8 @@ export default {
 .body {
   /deep/ p {
     color: white !important;
-    font-size: 1.1em !important;
-    line-height: inherit !important;
+    font-size: 1.2em !important;
+    line-height: 2em !important;
   }
 }
 
@@ -593,6 +593,12 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .body {
+    /deep/ p {
+      font-size: 1em !important;
+    }
+  }
+
   .custom-button {
     font-size: 0.9em;
     font-weight: 0;
@@ -600,26 +606,18 @@ export default {
   }
 
   .icon {
-    font-size: 1.6em;
+    font-size: 1.5em !important;
     display: block;
     padding-bottom: 10px;
   }
 
   .icon-data {
-    font-size: 1em;
+    font-size: 1em !important;
   }
 
   .icon-text {
     font-size: 0.7rem;
     padding-left: 0;
-  }
-
-  .body {
-    /deep/ p {
-      color: #fff !important;
-      font-size: 1.1em !important;
-      line-height: inherit !important;
-    }
   }
 }
 

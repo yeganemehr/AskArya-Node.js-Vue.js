@@ -32,12 +32,6 @@
           </div>
         </div>
         <div class="left d-flex justify-content-between">
-          <!-- <div class="pl-2 d-flex align-self-center" v-if="purchased">
-            <i
-              :class="episode.done ? 'fas fa-eye text-success fas-2x' : 'fas fa-eye-slash text-danger fas-2x'"
-            ></i>
-          </div>-->
-
           <div class="pl-2 d-flex align-self-center" v-if="purchased">
             <p class="detail-price-purchased">
               <i
@@ -181,9 +175,9 @@ export default {
 
   -webkit-box-align: center;
   background: rgb(248, 248, 248) !important;
-  padding: 14px !important;
-  border-top: 1.5px dashed rgba(102, 102, 102, 0.3);
-  border-left: 1px dashed rgba(102, 102, 102, 0.3);
+  padding: 15px !important;
+  border-top: 1px dashed rgba(102, 102, 102, 0.2);
+  border-left: 1px dashed rgba(102, 102, 102, 0.2);
   border-right: 11px solid #33415c;
   border-radius: 0 15px 15px 0;
   transition: all 0.2s ease 0s;
@@ -199,7 +193,6 @@ export default {
     color: rgb(255, 255, 255) !important;
     font-size: 0.9em;
     font-family: IranSansBold;
-    // align-self: center;
     background: rgb(29, 35, 83) !important;
     padding: 7px 13px !important;
     border-radius: 5px;
@@ -234,7 +227,6 @@ export default {
   margin-top: 0px;
   top: 10em;
   margin-bottom: 3.4em;
-  // padding: 0 1.2em;
 }
 
 .UnitBox:hover,
@@ -280,18 +272,17 @@ export default {
 
 @media (max-width: 768px) {
   .UnitBox {
-    padding: 17px 7px;
-    // margin-bottom: 5px;
+    padding: 14px 10px !important;
+
+    .detail-time {
+      font-size: 0.8em !important;
+      align-self: center;
+      padding: 4px 8px !important;
+    }
   }
 
   .UnitName {
     font-size: 0.98em !important;
-  }
-
-  .detail-time {
-    font-size: 0.9em !important;
-    align-self: center;
-    padding: 6px 8px;
   }
 
   .detail-price {
@@ -308,6 +299,10 @@ export default {
 
   .UnitBox:hover {
     background: transparent !important;
+  }
+
+  i {
+    font-size: 1rem !important;
   }
 }
 </style>

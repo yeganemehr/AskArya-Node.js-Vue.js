@@ -123,7 +123,7 @@
     .hero-title {
       font-size: 2.45em;
       color: #fff !important;
-      padding-top: 0.5em !important;
+      padding-top: 0.4em !important;
       margin: 0;
     }
 
@@ -134,17 +134,15 @@
     }
 
     .btn {
-      // padding: 10px 14px !important;
       font-size: 1em !important;
       font-family: IranSansBold;
-      margin-bottom: 2em !important;
+      margin-bottom: 1.9em !important;
     }
   }
 
   .button-section {
     -webkit-box-pack: right !important;
     justify-content: right !important;
-    // padding-top: 1.2em;
     padding-right: 0.8em;
   }
 

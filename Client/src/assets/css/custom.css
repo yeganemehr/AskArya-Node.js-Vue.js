@@ -231,7 +231,7 @@ table > tbody > tr > td {
 th {
   font-size: 0.93em !important;
   text-align: center !important;
-  font-family: IranSansBlog !important;
+  /* font-family: IranSansBlog !important; */
 }
 
 td {
@@ -247,16 +247,16 @@ td {
 
 @media (max-width: 678px) {
   th {
-    font-size: 0.7em !important;
+    font-size: 0.75em !important;
   }
 
   td {
-    font-size: 0.7em !important;
+    font-size: 0.75em !important;
     font-weight: normal !important;
   }
 
   th > .cell {
-    font-size: 0.77em !important;
+    font-size: 0.75em !important;
   }
 
   .dropdown-menu:before {

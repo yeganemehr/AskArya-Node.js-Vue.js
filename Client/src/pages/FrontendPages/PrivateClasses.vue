@@ -211,6 +211,7 @@ ul {
     text-align: center;
     box-shadow: 0 10px 19px 6px rgba(0, 0, 0, 0.199);
     background-color: rgb(238, 238, 238);
+    margin-bottom: 1em;
   }
 
   .pricing-title {

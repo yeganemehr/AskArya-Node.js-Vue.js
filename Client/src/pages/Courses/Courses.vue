@@ -12,13 +12,15 @@
         <Vip></Vip>
       </div>
 
-      <div class="col-lg-9 col-md-12 row">
-        <div
-          class="col-lg-4 col-md-6 col-sm-12"
-          v-for="course in courses"
-          v-bind:key="course.id"
-        >
-          <CourseCard v-bind="course"></CourseCard>
+      <div class="col-lg-9 col-md-12">
+        <div class="row custom-padding">
+          <div
+            class="col-lg-4 col-md-6 col-sm-12"
+            v-for="course in courses"
+            v-bind:key="course.id"
+          >
+            <CourseCard v-bind="course"></CourseCard>
+          </div>
         </div>
       </div>
     </div>
@@ -139,6 +141,11 @@ export default {
     font-size: 1.2em !important;
     font-family: IranSansBold !important;
     color: rgb(17, 207, 144) !important;
+  }
+
+  .custom-padding {
+    padding-left: 1.05em;
+    padding-right: 1.05em;
   }
 }
 </style>
