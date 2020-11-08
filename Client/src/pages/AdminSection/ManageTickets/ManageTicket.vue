@@ -104,7 +104,7 @@
               v-else
             ></textarea>
           </base-input>
-          <div class="pt-3">
+          <div class="pt-3 container px-5">
             <div v-if="isAdmin">
               <file-upload
                 v-if="isAdmin && !data.id"

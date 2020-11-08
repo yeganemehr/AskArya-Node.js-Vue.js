@@ -1,5 +1,5 @@
 <template>
-  <div class="fileinput text-center">
+  <div class="fileinput">
     <div
       class="fileinput-new thumbnail"
       :class="{ 'img-circle': type === 'avatar' }"
@@ -7,10 +7,10 @@
       <!-- <img :src="image" alt="preview" /> -->
     </div>
     <div>
-      <span class="btn btn-primary btn-simple btn-file">
-        <span class="fileinput-new">{{
+      <span class="btn btn-primary btn-sm flex btn-simple btn-file">
+        <!-- <span class="fileinput-new">{{
           fileExists ? changeText : selectText
-        }}</span>
+        }}</span> -->
         <input type="hidden" value="" name="" />
         <input
           accept="image/*"
@@ -84,4 +84,5 @@ export default {
   },
 };
 </script>
-<style></style>
+
+<style lang="scss" scoped></style>

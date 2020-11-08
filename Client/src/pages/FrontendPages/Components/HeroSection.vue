@@ -62,10 +62,10 @@
 
   .hero-subtitle {
     font-size: 1.1em;
-    line-height: 1.7em;
+    line-height: 1.8em;
     padding-top: 1em !important;
     font-family: IranSans !important;
-    color: rgba(255, 255, 255, 0.85) !important;
+    color: #fff !important;
     text-align: right;
   }
 

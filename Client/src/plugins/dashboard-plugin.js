@@ -20,7 +20,6 @@ export default {
   install(Vue) {
     Vue.use(GlobalComponents);
     Vue.use(GlobalDirectives);
-    // Vue.use(RTLPlugin);
     Vue.use(Notifications);
     Vue.use(VeeValidate, { fieldsBagName: 'veeFields' });
     Vue.use(require('jalali-moment'));

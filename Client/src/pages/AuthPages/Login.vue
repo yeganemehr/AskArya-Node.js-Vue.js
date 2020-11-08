@@ -84,7 +84,7 @@
           >
 
           <b-button :href="googleAuthUrl" block class="btn-google mt-2">
-            <i class="fab fa-google pl-2"></i>
+            <i class="fab fa-google"></i>
             ورود سریع با حساب گوگل
           </b-button>
 
@@ -228,7 +228,7 @@ export default {
 
 <style lang="scss" scoped>
 .auth-section {
-  height: 84vh !important;
+  height: 82vh !important;
   background: linear-gradient(225deg, #d223e9f6, #5e62dff1);
 }
 
@@ -279,6 +279,12 @@ export default {
 .google-text {
   font-size: 0.8rem;
   color: rgb(167, 167, 167) !important;
+}
+
+.fab {
+  margin: 0 !important;
+  padding: 0 0 0 5px !important;
+  font-size: 0.8rem;
 }
 
 .tc {
@@ -365,6 +371,12 @@ export default {
 
   .registration-title {
     font-size: 0.9em !important;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .auth-section {
+    min-height: 92vh !important;
   }
 }
 </style>

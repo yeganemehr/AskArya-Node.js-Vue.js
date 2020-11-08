@@ -135,4 +135,10 @@ export default {
     font-size: 0.9em !important;
   }
 }
+
+@media only screen and (min-width: 1300px) {
+  .auth-section {
+    min-height: 92vh !important;
+  }
+}
 </style>

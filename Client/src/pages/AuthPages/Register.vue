@@ -88,7 +88,7 @@
             >ثبت نام</base-button
           >
           <b-button :href="googleAuthUrl" block class="btn-google">
-            <i class="fab fa-google pl-2"></i>
+            <i class="fab fa-google"></i>
             عضویت سریع با حساب گوگل
           </b-button>
         </form>
@@ -301,6 +301,12 @@ export default {
   }
 }
 
+.fab {
+  margin: 0 !important;
+  padding: 0 0 0 5px !important;
+  font-size: 0.8rem;
+}
+
 .google-text {
   font-size: 0.8rem;
   color: rgb(167, 167, 167) !important;
@@ -336,9 +342,9 @@ export default {
   }
 }
 
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 1300px) {
   .auth-section {
-    min-height: 73vh;
+    min-height: 92vh !important;
   }
 }
 </style>

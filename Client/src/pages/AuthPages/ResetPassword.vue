@@ -48,6 +48,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import backend from '../../backend';
 
@@ -110,6 +111,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .auth-section {
   height: 90vh !important;

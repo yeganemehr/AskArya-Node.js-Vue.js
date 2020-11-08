@@ -10,25 +10,25 @@ export default {
     tag: {
       type: String,
       default: 'span',
-      description: 'Badge tag'
+      description: 'Badge tag',
     },
     type: {
       type: String,
       default: 'default',
-      validator: value => {
+      validator: (value) => {
         let acceptedValues = [
           'primary',
           'info',
           'success',
           'warning',
           'danger',
-          'default'
+          'default',
         ];
         return acceptedValues.indexOf(value) !== -1;
       },
-      description: 'Badge type (primary|info|success|warning|danger|default)'
-    }
-  }
+      description: 'Badge type (primary|info|success|warning|danger|default)',
+    },
+  },
 };
 </script>
 <style></style>

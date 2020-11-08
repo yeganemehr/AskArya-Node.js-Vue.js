@@ -134,7 +134,11 @@
         <div class="w-100 d-md-none"></div>
         <div class="view-ticket">
           <router-link :to="`/tickets/view/${ticket.id}`">
-            <b-button class="px-4" pill variant="primary">
+            <b-button
+              class="px-4 mobile-button text-center"
+              pill
+              variant="primary"
+            >
               <i class="pl-3 fas fa-eye"></i> نمایش
             </b-button>
           </router-link>
@@ -624,6 +628,12 @@ h2 {
         color: rgb(129, 129, 129);
         padding: 0;
         margin: 0;
+      }
+
+      .mobile-button {
+        margin-top: 1em;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
       }
 
       p {

@@ -1,5 +1,5 @@
 <template>
-  <div class="CourseCard hover mb-4" @click="onClick">
+  <div class="CourseCard shadow hover mb-4" @click="onClick">
     <img class="Course_Image" alt="askarya-coursecard-image" :src="thumb" />
     <div class="bottom-section">
       <h4 class="course-title text-center pt-3">{{ title }}</h4>
@@ -128,7 +128,6 @@ export default {
 .CourseCard {
   background-color: #f7f7f7;
   border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17), 0 10px 10px rgba(0, 0, 0, 0.14);
 
   .course-title {
     font-size: 0.93em;
@@ -201,7 +200,7 @@ export default {
 
 .hover:hover,
 .hover:focus {
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 15px 12px rgba(0, 0, 0, 0.23) !important;
   transition: transform 0.7s !important;
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);

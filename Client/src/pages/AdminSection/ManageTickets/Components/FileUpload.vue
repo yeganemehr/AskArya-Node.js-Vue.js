@@ -1,11 +1,11 @@
 <template>
-  <div class="fileinput text-center mb-0">
+  <div class="fileinput text-center">
     <div>
       <span class="btn btn-primary btn-simple btn-file">
-        <span class="fileinput-new">
+        <!-- <span class="fileinput-new">
           <i class="pl-2 fas fa-cloud-upload-alt"></i>
           پیوست فایل
-        </span>
+        </span> -->
         <input type="hidden" value name />
         <input
           @change="selectFile"
@@ -17,7 +17,13 @@
           :key="this.file"
         />
       </span>
-      <base-button v-if="fileExists" @click="removeFile" round type="danger">
+      <base-button
+        class="mr-2"
+        v-if="fileExists"
+        @click="removeFile"
+        round
+        type="danger"
+      >
         <i class="fas fa-times"></i>
         حذف فایل
       </base-button>
@@ -47,4 +53,4 @@ export default {
   },
 };
 </script>
-<style></style>
+<style lang="scss" scoped></style>

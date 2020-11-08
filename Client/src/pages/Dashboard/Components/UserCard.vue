@@ -116,11 +116,7 @@
                 drop-placeholder="+ آپلود عکس"
               /> -->
 
-              <image-upload
-                type="avatar"
-                select-text="+ آپلود عکس"
-                @change="onAvatarChange"
-              />
+              <image-upload type="avatar" @change="onAvatarChange" />
             </div>
 
             <div class="col-12 mb-3">

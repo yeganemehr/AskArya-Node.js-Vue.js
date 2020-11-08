@@ -148,21 +148,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .pagination {
-//   .page-item .page-link {
-//     user-select: none;
-//     border: 0;
-//     outline: none;
-//     border-radius: 30px !important;
-//     transition: all 0.3s;
-//     margin: 0 3px;
-//     min-width: 30px;
-//     text-align: center;
-//     height: 30px;
-//     line-height: 30px;
-//     cursor: pointer;
-//     text-transform: uppercase;
-//     outline: none;
-//   }
-// }
+
 </style>

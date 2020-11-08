@@ -40,9 +40,9 @@ Vue.use(NProgress);
 Vue.use(VueMeta);
 Vue.use(VuePlyr);
 
-// import 'vue-plyr/dist/vue-plyr.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+// import 'vue-plyr/dist/vue-plyr.css';
 // import 'src/assets/sass/black-dashboard-pro.scss';
 import 'nprogress/nprogress.css';
 import './assets/sass/nprogress.scss';

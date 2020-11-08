@@ -530,8 +530,6 @@ export default {
   font-family: IranSansBold;
   color: rgb(255, 255, 255) !important;
   line-height: inherit;
-  // margin: 0;
-  // padding: 0;
 }
 
 .episode-title {
@@ -588,6 +586,10 @@ export default {
   font-size: 0.7em !important;
   color: rgba(255, 255, 255, 0.5) !important;
   font-family: IranSans;
+}
+
+.video-buttons {
+  margin-top: 1em;
 }
 
 @media (max-width: 768px) {
