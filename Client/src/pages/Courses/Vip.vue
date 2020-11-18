@@ -9,12 +9,121 @@
       دسترسی داشته باشید.
     </p>
 
-    <b-button native-type="submit" to="/dashboard" class="btn-vip">
-      <i class="fas fa-shopping-basket pl-1"></i>
-      شارژ عضویت ویژه
-    </b-button>
+    <b-dropdown
+      v-if="this.$root.$data.user !== undefined"
+      block
+      offset="15px"
+      no-flip
+      text="عضویت"
+      class="custom-dropdown pb-3"
+    >
+      <b-dropdown-item class="dropdown-item" href="#" @click.prevent="payment">
+        <i class="fa fa-star pl-2"></i>
+        ماهانه -
+        <span>39</span> هزار تومان
+      </b-dropdown-item>
+      <hr />
+      <b-dropdown-item
+        class="dropdown-item"
+        href="#"
+        @click.prevent="payment(4)"
+      >
+        <i class="fa fa-star pl-2"></i>
+        ۴ ماهه
+        <span>139</span> هزار تومان
+      </b-dropdown-item>
+      <hr />
+      <b-dropdown-item
+        class="dropdown-item"
+        href="#"
+        @click.prevent="payment(12)"
+      >
+        <i class="fa fa-star pl-2"></i>
+        یکساله -
+        <span>309</span> هزار تومان
+      </b-dropdown-item>
+    </b-dropdown>
   </div>
 </template>
+
+<script>
+import { Select, Option } from 'element-ui';
+import backend from '../../backend';
+import moment from 'jalali-moment';
+import Swal from 'sweetalert';
+
+export default {
+  components: {
+    [Select.name]: Select,
+    [Option.name]: Option,
+  },
+  data() {
+    return {
+      selects: {
+        simple: '',
+        vip: [
+          { value: 'vip1', label: 'ماهانه - 39 هزار تومان' },
+          { value: 'vip2', label: '۴ ماهه - 139 هزار تومان' },
+          { value: 'vip3', label: 'یکساله - 309 هزار تومان' },
+        ],
+      },
+    };
+  },
+  methods: {
+    payment(plan = 1) {
+      backend.post('/vip/payment', { plan }).then((response) => {
+        if (response.data.status == 'success') {
+          window.location.href = response.data.redirect;
+        } else {
+          Swal({
+            title: 'خطا',
+            text: `در حال حاضر امکان ارتباط با درگاه پرداخت وجود ندارد.`,
+            icon: 'warning',
+          });
+        }
+      });
+    },
+  },
+  mounted() {
+    if (
+      this.$route.query.hasOwnProperty('Authority') &&
+      this.$route.query.hasOwnProperty('Status')
+    ) {
+      const authority = this.$route.query.Authority;
+      const status = this.$route.query.Status;
+      if (status !== 'OK') {
+        Swal({
+          title: 'تراکنش ناموفق',
+          text: `تراکنش شما با موفقیت پرداخت نشد. درصورتی که مبلغی از حساب بانکی شما کسر شده، توسط سیستم بانکی طی 48 ساعت آینده مرجوع خواهد شد.`,
+          icon: 'warning',
+          button: 'بسیار خوب',
+        });
+      } else {
+        backend
+          .post(`vip/payment/verification`, { status, authority })
+          .then((response) => {
+            this.$root.$data.user.vipTime = response.data.vipTime;
+            Swal({
+              title: 'تراکنش موفق',
+              text: `اکانت شما تا ${moment(response.data.vipTime)
+                .locale('fa')
+                .format('YYYY/MM/DD')} تمدید شد.`,
+              icon: 'success',
+            });
+          })
+          .catch((response) => {
+            Swal({
+              title: 'تراکنش ناموفق',
+              text: `تراکنش شما با موفقیت پرداخت نشد.\nدرصورتی که مبلغی از حساب بانکی شما کسر شده، توسط سیستم بانکی طی 48 ساعت آینده مرجوع خواهد شد.`,
+              icon: 'warning',
+            });
+          });
+        this.$router.push('/dashboard');
+      }
+    }
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .widget-vip {
@@ -40,14 +149,47 @@
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
-.btn-vip {
+/deep/ .dropdown-toggle {
   color: #fff !important;
   background-color: #ef476f !important;
   border: #ef476f !important;
   border-radius: 10px;
-  width: 100%;
-  margin-bottom: 15px;
-  font-size: 0.95em;
+}
+
+/deep/ .dropdown.show .dropdown-menu {
+  border: 1px dashed #d8d8d8 !important;
+}
+
+/deep/ .dropdown-menu .dropdown-item {
+  color: #181818;
+  font-size: 1em;
+  font-family: IranSans;
+  padding: 10px 11px 7px 11px !important;
+
+  span {
+    color: #ef476f;
+    font-family: IranSansBold !important;
+    font-size: 1.2em;
+  }
+
+  i {
+    color: #ff00802c;
+  }
+}
+
+/deep/ .dropdown-menu .dropdown-item:first-child {
+  padding-top: 3px !important;
+}
+
+hr {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-top: 1px dashed #d1d1d1 !important;
+}
+
+.select-danger.el-select .el-input input {
+  background-color: #b42e5b !important;
+  border-color: transparent !important;
 }
 
 @media (max-width: 880px) {

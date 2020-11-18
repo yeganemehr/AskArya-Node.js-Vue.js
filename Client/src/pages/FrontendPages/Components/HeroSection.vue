@@ -2,14 +2,16 @@
   <section class="hero-content-homepage">
     <div class="container">
       <div class="row pt-2">
-        <div class="col-lg-7">
+        <div class="col-lg-6">
           <div class="hero-text-section">
-            <h1 class="hero-title text-right">
-              سریع ترین راه آموزش زبان انگلیسی.
+            <h1 class="hero-title">
+              سریع ترین راه آموزش <br />
+              زبان انگلیسی.
             </h1>
             <p class="hero-subtitle py-3">
-              ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان برای
-              شما در موثر ترین و کوتاه ترین زمان ممکن صورت گیرد.
+              ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری
+              <br class="display-desktop" />
+              زبان برای شما در موثر ترین و کوتاه ترین زمان ممکن صورت گیرد.
             </p>
 
             <div class="button-section text-right pb-4 row">
@@ -28,7 +30,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-5 d-none d-lg-block">
+        <div class="col-lg-6 d-none d-lg-block">
           <img
             class="image img-fluid"
             src="/img/frontend/loginscreenbg.svg"
@@ -58,12 +60,12 @@
     line-height: inherit;
     font-family: IranSansBold !important;
     color: #fff !important;
+    text-align: right;
   }
 
   .hero-subtitle {
     font-size: 1.1em;
     line-height: 1.8em;
-    // padding-top: 1em !important;
     font-family: IranSans !important;
     color: #fff !important;
     text-align: right;
@@ -108,16 +110,6 @@
   padding-bottom: 2em;
 }
 
-@media screen and (min-width: 1200px) {
-  .hero-title {
-    padding-left: 2em !important;
-  }
-
-  .hero-subtitle {
-    padding-left: 8em !important;
-  }
-}
-
 @media screen and (max-width: 650px) {
   .hero-content-homepage {
     .hero-title {
@@ -128,6 +120,8 @@
 
     .hero-subtitle {
       font-size: 1em !important;
+      padding-top: 20px !important;
+      color: rgba(255, 255, 255, 0.9) !important;
       margin-bottom: 0 !important;
     }
 
@@ -162,6 +156,18 @@
       font-size: 1em !important;
       text-align: right !important;
     }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .hero-title {
+    font-size: 2.1em !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .display-desktop {
+    display: none !important;
   }
 }
 
