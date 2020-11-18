@@ -7,12 +7,12 @@
             <h1 class="hero-title text-right">
               سریع ترین راه آموزش زبان انگلیسی.
             </h1>
-            <p class="hero-subtitle pt-4">
+            <p class="hero-subtitle py-3">
               ما از سریع ترین روش های آموزشی استفاده میکنیم تا یادگیری زبان برای
               شما در موثر ترین و کوتاه ترین زمان ممکن صورت گیرد.
             </p>
 
-            <div class="button-section text-right py-4 row">
+            <div class="button-section text-right pb-4 row">
               <router-link to="dashboard">
                 <button native-type="submit" class="btn btn-signin">
                   <i class="far fa-user ml-2"></i>
@@ -63,7 +63,7 @@
   .hero-subtitle {
     font-size: 1.1em;
     line-height: 1.8em;
-    padding-top: 1em !important;
+    // padding-top: 1em !important;
     font-family: IranSans !important;
     color: #fff !important;
     text-align: right;
@@ -103,7 +103,7 @@
 }
 
 .image {
-  width: 340px !important;
+  width: 350px !important;
   padding-top: 2em;
   padding-bottom: 2em;
 }
@@ -121,7 +121,7 @@
 @media screen and (max-width: 650px) {
   .hero-content-homepage {
     .hero-title {
-      font-size: 2.6em;
+      font-size: 2.4em;
       color: #fff !important;
       margin: 0;
     }

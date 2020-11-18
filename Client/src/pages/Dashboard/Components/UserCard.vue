@@ -49,7 +49,7 @@
               </b-button>
             </div>
             <div class="pt-3">
-              <b-button
+              <!-- <b-button
                 native-type="submit"
                 to="/courses"
                 size="sm"
@@ -57,7 +57,46 @@
               >
                 <i class="fas fa-unlock pl-2"></i>
                 {{ 'شارژ عضویت ویژه' }}
-              </b-button>
+              </b-button> -->
+
+              <b-dropdown
+                v-if="this.$root.$data.user !== undefined"
+                block
+                offset="50px"
+                no-flip
+                text="عضویت"
+                class="custom-dropdown pb-3"
+              >
+                <b-dropdown-item
+                  class="dropdown-item"
+                  href="#"
+                  @click.prevent="payment"
+                >
+                  <i class="fa fa-star pl-2"></i>
+                  ماهانه -
+                  <span>39</span> هزار تومان
+                </b-dropdown-item>
+                <hr />
+                <b-dropdown-item
+                  class="dropdown-item"
+                  href="#"
+                  @click.prevent="payment(4)"
+                >
+                  <i class="fa fa-star pl-2"></i>
+                  ۴ ماهه
+                  <span>139</span> هزار تومان
+                </b-dropdown-item>
+                <hr />
+                <b-dropdown-item
+                  class="dropdown-item"
+                  href="#"
+                  @click.prevent="payment(12)"
+                >
+                  <i class="fa fa-star pl-2"></i>
+                  یکساله -
+                  <span>309</span> هزار تومان
+                </b-dropdown-item>
+              </b-dropdown>
             </div>
           </div>
         </div>
@@ -151,6 +190,15 @@ export default {
       lang: this.$root.$data.user.lang,
       avatar: null,
       password: '',
+
+      selects: {
+        simple: '',
+        vip: [
+          { value: 'vip1', label: 'ماهانه - 39 هزار تومان' },
+          { value: 'vip2', label: '۴ ماهه - 139 هزار تومان' },
+          { value: 'vip3', label: 'یکساله - 309 هزار تومان' },
+        ],
+      },
     };
   },
   computed: {
@@ -225,9 +273,63 @@ export default {
           errorHandler(error.response);
         });
     },
+
     onAvatarChange(file) {
       this.avatar = file;
     },
+
+    payment(plan = 1) {
+      backend.post('/vip/payment', { plan }).then((response) => {
+        if (response.data.status == 'success') {
+          window.location.href = response.data.redirect;
+        } else {
+          Swal({
+            title: 'خطا',
+            text: `در حال حاضر امکان ارتباط با درگاه پرداخت وجود ندارد.`,
+            icon: 'warning',
+          });
+        }
+      });
+    },
+  },
+
+  mounted() {
+    if (
+      this.$route.query.hasOwnProperty('Authority') &&
+      this.$route.query.hasOwnProperty('Status')
+    ) {
+      const authority = this.$route.query.Authority;
+      const status = this.$route.query.Status;
+      if (status !== 'OK') {
+        Swal({
+          title: 'تراکنش ناموفق',
+          text: `تراکنش شما با موفقیت پرداخت نشد. درصورتی که مبلغی از حساب بانکی شما کسر شده، توسط سیستم بانکی طی 48 ساعت آینده مرجوع خواهد شد.`,
+          icon: 'warning',
+          button: 'بسیار خوب',
+        });
+      } else {
+        backend
+          .post(`vip/payment/verification`, { status, authority })
+          .then((response) => {
+            this.$root.$data.user.vipTime = response.data.vipTime;
+            Swal({
+              title: 'تراکنش موفق',
+              text: `اکانت شما تا ${moment(response.data.vipTime)
+                .locale('fa')
+                .format('YYYY/MM/DD')} تمدید شد.`,
+              icon: 'success',
+            });
+          })
+          .catch((response) => {
+            Swal({
+              title: 'تراکنش ناموفق',
+              text: `تراکنش شما با موفقیت پرداخت نشد.\nدرصورتی که مبلغی از حساب بانکی شما کسر شده، توسط سیستم بانکی طی 48 ساعت آینده مرجوع خواهد شد.`,
+              icon: 'warning',
+            });
+          });
+        this.$router.push('/dashboard');
+      }
+    }
   },
 };
 </script>
@@ -254,12 +356,50 @@ export default {
   margin-left: auto;
 }
 
-// .card-user .avatar {
-//   width: 7em !important;
-//   height: 7em !important;
-//   border-radius: 50%;
-//   margin-bottom: 1em;
-// }
+/deep/ .dropdown-toggle {
+  background: #57c09a;
+  border-radius: 10px;
+  border: #57c09a;
+  height: 41px !important;
+}
+
+/deep/ .dropdown.show .dropdown-menu {
+  margin-top: 1em !important;
+  margin-left: -5em !important;
+  border: 1px dashed #c4c4c4 !important;
+}
+
+/deep/ .dropdown-menu .dropdown-item {
+  color: #181818;
+  font-size: 0.95em !important;
+  font-family: IranSans;
+  padding: 7px !important;
+
+  span {
+    color: #ef476f;
+    font-family: IranSansBold !important;
+    font-size: 1.2em;
+  }
+
+  i {
+    color: #ef476e42;
+  }
+}
+
+/deep/ .dropdown-menu .dropdown-item:first-child {
+  padding-top: 3px !important;
+}
+
+hr {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.select-danger.el-select .el-input input {
+  background-color: #b42e5b !important;
+  border-color: transparent !important;
+}
 
 .btn-edit {
   background: #d62828;
@@ -270,18 +410,6 @@ export default {
 .btn-edit:hover {
   background: #9c0d0d;
   border: #9c0d0d;
-}
-
-.btn-vip {
-  background: #57c09a;
-  border-radius: 10px;
-  border: #57c09a;
-  padding: 0 !important;
-}
-
-.btn-vip:hover {
-  background: #00946c;
-  border: #00946c;
 }
 
 .card-title {
