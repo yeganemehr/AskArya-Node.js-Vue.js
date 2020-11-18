@@ -173,6 +173,8 @@
 <script>
 import backend from '../../../backend';
 import { ImageUpload } from 'src/components/index';
+import moment from 'jalali-moment';
+import Swal from 'sweetalert';
 
 export default {
   components: {
