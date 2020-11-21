@@ -13,9 +13,9 @@ import CKEditor from '@ckeditor/ckeditor5-vue';
 import VuePlyr from 'vue-plyr';
 import NProgress from 'nprogress';
 import VueMeta from 'vue-meta';
-import * as Sentry from '@sentry/browser';
-import * as Integrations from '@sentry/integrations';
 import VueGtag from 'vue-gtag';
+import * as Sentry from '@sentry/browser';
+import { Vue as VueIntegration } from '@sentry/integrations';
 
 Vue.use(VueGtag, {
   config: { id: 'UA-156899433-1' },
@@ -23,7 +23,7 @@ Vue.use(VueGtag, {
 
 Sentry.init({
   dsn: 'https://e46a63f841914aa59158d01f88e1cf85@sentry.io/1869694',
-  integrations: [new Integrations.Vue({ Vue, attachProps: true })],
+  integrations: [new VueIntegration({ Vue, attachProps: true })],
 });
 
 var VueScrollTo = require('vue-scrollto');
