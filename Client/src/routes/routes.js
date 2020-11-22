@@ -1,6 +1,6 @@
 /* eslint-disable */
-import FrontendLayout from 'src/Layouts/FrontendLayout.vue';
-import NotFound from 'src/Layouts/NotFoundPage.vue';
+import FrontendLayout from 'src/layouts/FrontendLayout.vue';
+import NotFound from 'src/layouts/NotFoundPage.vue';
 
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////// FRONTEND PAGES IMPORT ////////////////////////////////////////
@@ -11,7 +11,7 @@ const Home = () =>
 const NotFoundPage = () =>
   import(
     /* webpackChunkName: "notfound" */
-    'src/Layouts/NotFoundPage.vue'
+    'src/layouts/NotFoundPage.vue'
   );
 
 let frontendpages = {

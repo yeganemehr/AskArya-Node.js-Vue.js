@@ -96,7 +96,7 @@
 
                   <div class="col-md-6">
                     <div class="form-group has-label">
-                      <!-- <label>Enroll Student on ... Course:</label> -->
+                      <label class="w-100">Enroll Student on ... Course:</label>
                       <autocomplete
                         source="/api/v1/admin/courses?filter="
                         results-property="docs"
@@ -120,7 +120,7 @@
                   </div>
 
                   <div class="col-md-2">
-                    <b-checkbox class="mb-3" v-model="data.active"
+                    <b-checkbox class="mt-4" v-model="data.active"
                       >Activate User</b-checkbox
                     >
                   </div>
@@ -168,7 +168,7 @@
             </div>
             <div class="mt-5 pull-right">
               <base-button class="px-5" native-type="submit" type="primary">
-                <span class="mr-1">
+                <span class="pr-1">
                   <span v-if="data.id">Edit</span>
                   <span v-else>Create</span>
                 </span>

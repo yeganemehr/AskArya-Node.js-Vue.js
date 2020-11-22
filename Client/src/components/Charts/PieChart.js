@@ -11,23 +11,23 @@ export default {
       default: () => [
         'rgba(72,72,176,0.2)',
         'rgba(72,72,176,0.0)',
-        'rgba(119,52,169,0)'
+        'rgba(119,52,169,0)',
       ],
-      validator: val => {
+      validator: (val) => {
         return val.length > 1;
-      }
+      },
     },
     gradientStops: {
       type: Array,
       default: () => [1, 0.4, 0],
-      validator: val => {
+      validator: (val) => {
         return val.length > 1;
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      ctx: null
+      ctx: null,
     };
   },
   methods: {
@@ -41,12 +41,12 @@ export default {
         gradientStroke.addColorStop(stop, this.gradientColors[index]);
       });
 
-      chartData.datasets.forEach(set => {
+      chartData.datasets.forEach((set) => {
         if (!set.backgroundColor) {
           set.backgroundColor = gradientStroke;
         }
       });
-    }
+    },
   },
   mounted() {
     this.$watch(
@@ -59,5 +59,5 @@ export default {
       },
       { immediate: true }
     );
-  }
+  },
 };

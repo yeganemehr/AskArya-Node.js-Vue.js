@@ -52,15 +52,12 @@ export default {
 
 <style scoped lang="scss">
 .content-custom {
-  // min-height: 90vh !important;
   background-color: #f8f8f8 !important;
-  // background-color: #fbf6f0 !important;
 }
 
 .go-to-top {
   position: fixed;
   bottom: 0;
-  // bottom: 20px;
   left: 33px;
   z-index: 99;
   border: none;
@@ -71,7 +68,6 @@ export default {
   border-top-right-radius: 6px;
   font-size: 1.8em;
   background-color: #ef476f;
-  // background-color: rgba(0, 0, 0, 0.2);
 }
 .fa-chevron-up:before {
   content: '\f077';

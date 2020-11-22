@@ -46,9 +46,9 @@
               </div>
 
               <div class="col-md-12 py-5">
+                <label class="w-100">Course Text</label>
                 <base-input
                   class="coursetext"
-                  label="Course Text"
                   placeholder="Course Text"
                   :required="true"
                   :error="fieldErrors.body"
@@ -60,7 +60,8 @@
                   ></ckeditor>
                 </base-input>
               </div>
-              <div class="col-md-3 pt-4">
+              <div class="col-md-3">
+                <label class="w-100">Course Type</label>
                 <el-select
                   class="select-primary"
                   size="large"
@@ -88,7 +89,7 @@
                 ></base-input>
               </div>
               <div class="col-md-4">
-                <h4 class="lead">Tags</h4>
+                <label class="w-100">Course Tags</label>
                 <tags-input v-model="data.tags"></tags-input>
               </div>
               <div class="col-md-3 pt-4">
@@ -512,10 +513,4 @@ export default {
 .ck-editor__editable {
   min-height: 200px;
 }
-// .ck.ck-editor__main > .ck-content  {
-// 	background: transparent;
-// 	* {
-// 		color: #fff;
-// 	}
-// }
 </style>

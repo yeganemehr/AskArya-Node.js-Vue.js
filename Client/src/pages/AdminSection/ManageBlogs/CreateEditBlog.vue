@@ -39,7 +39,7 @@
                   </div>
                   <div class="col-md-3">
                     <div class="form-group has-label">
-                      <label>Blog Author</label>
+                      <label class="w-100">Blog Author</label>
                       <autocomplete
                         source="/api/v1/admin/users?filter="
                         results-property="docs"
@@ -53,9 +53,9 @@
                   </div>
 
                   <div class="col-md-12 py-4">
+                    <label class="w-100">Blog Content</label>
                     <base-input
                       class="blogtext"
-                      label="Blog Content"
                       placeholder="Blog Content Goes Here..."
                       :error="fieldErrors.content"
                     >
@@ -102,7 +102,7 @@
               >
                 <span v-if="data.id">Edit</span>
                 <span v-else>Create</span>
-                <span class="pl-1">Blog</span>
+                <span class="pr-1">Blog</span>
               </base-button>
               <base-button
                 class="ml-1 px-5"

@@ -6,7 +6,7 @@
       :class="{ disabled: value === 1 }"
     >
       <a class="page-link" aria-label="Previous" @click="prevPage">
-        <i class="tim-icons icon-double-right" aria-hidden="true"></i>
+        <i class="fas fa-angle-double-right" aria-hidden="true"></i>
       </a>
     </li>
     <li
@@ -23,7 +23,7 @@
       :class="{ disabled: value === totalPages }"
     >
       <a class="page-link" aria-label="Next" @click="nextPage">
-        <i class="tim-icons icon-double-left" aria-hidden="true"></i>
+        <i class="fas fa-angle-double-left" aria-hidden="true"></i>
       </a>
     </li>
   </ul>
@@ -148,5 +148,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+/deep/ .page-link {
+  padding: 0.6rem 0.75rem 0.3rem 0.75rem !important;
+}
 </style>

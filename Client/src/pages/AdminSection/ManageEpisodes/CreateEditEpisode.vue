@@ -45,8 +45,8 @@
                 ></base-input>
               </div>
               <div class="col-md-12 py-3">
+                <label class="w-100">Unit Description</label>
                 <base-input
-                  label="Unit Description"
                   placeholder="Unit Description"
                   v-model="data.body"
                   :error="fieldErrors.body"
@@ -59,7 +59,8 @@
                   ></ckeditor>
                 </base-input>
               </div>
-              <div class="col-md-5 pt-4">
+              <div class="col-md-4">
+                <label class="w-100">Unit Type</label>
                 <el-select
                   class="select-primary"
                   size="large"
@@ -78,7 +79,7 @@
               </div>
               <div class="col-md-5">
                 <div class="form-group has-label">
-                  <label>Related Course</label>
+                  <label class="w-100">Related Course</label>
                   <autocomplete
                     source="/api/v1/admin/courses?filter="
                     results-property="docs"
