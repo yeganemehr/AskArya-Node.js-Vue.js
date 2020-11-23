@@ -1,9 +1,5 @@
 <template>
-  <div class="home-blog container pt-5">
-    <h1 class="section-header text-right">آخرین مقالات</h1>
-    <p class="subtitle text-right mb-5">
-      مقالات به‌روز و کاربردی برای افزایش سطح دانش شما
-    </p>
+  <div class="home-blog container">
     <div class="row">
       <div
         class="col-lg-3 col-md-6 col-sm-12"

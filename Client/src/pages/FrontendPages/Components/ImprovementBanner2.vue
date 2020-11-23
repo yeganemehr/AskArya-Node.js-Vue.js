@@ -76,7 +76,7 @@ export default {};
 .btn {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2);
   color: #fff;
-  border: 1px dashed rgb(168, 255, 142) !important;
+  border: 1px dashed rgba(98, 221, 61, 0.253) !important;
   font-family: IranSansBold;
   font-size: 0.94em !important;
   padding: 0.4em 1.6em !important;

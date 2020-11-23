@@ -10,6 +10,7 @@
         <b-nav-item exact active-class="text-custom custom-top" to="/"
           >خانه</b-nav-item
         >
+
         <hr />
 
         <b-nav-item active-class="text-custom " to="/courses"
@@ -20,6 +21,10 @@
         <b-nav-item active-class="text-custom" to="/privateclasses"
           >کلاس های حضوری</b-nav-item
         >
+
+        <hr />
+
+        <b-nav-item active-class="text-custom " to="/blogs">مقالات</b-nav-item>
 
         <hr />
 

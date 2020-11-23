@@ -23,6 +23,15 @@ let frontendpages = {
       name: 'Frontend',
       component: Home,
     },
+
+    {
+      path: '/blogs',
+      name: 'Blogs',
+      component: () =>
+        import(
+          /* webpackChunkName: "blogs" */ 'src/pages/FrontendPages/Blogs.vue'
+        ),
+    },
     {
       path: '/privateclasses',
       name: 'PrivateClasses',
@@ -103,6 +112,15 @@ let frontendpages = {
           /* webpackChunkName: "register" */ 'src/pages/AuthPages/Register.vue'
         ),
     },
+
+    {
+      path: '/demo-quiz',
+      name: 'demo-quiz',
+      component: () =>
+        import(
+          /* webpackChunkName: "register" */ 'src/pages/AdminSection/ManageQuizzes/demo-quiz.vue'
+        ),
+    },
     // {
     //   path: '/lock',
     //   name: 'Lock',
@@ -166,6 +184,17 @@ const routes = [
             'src/pages/AdminSection/ManageCourses/CourseOverview.vue'
           ),
       },
+
+      {
+        path: 'quizoverview',
+        name: 'QuizOverview',
+        component: () =>
+          import(
+            /* webpackChunkName: "quizoverview" */
+            'src/pages/AdminSection/ManageQuizzes/QuizOverview.vue'
+          ),
+      },
+
       {
         path: 'episodeoverview',
         name: 'EpisodeOverview',
@@ -193,6 +222,16 @@ const routes = [
           import(
             /* webpackChunkName: "blogoverview" */
             'src/pages/AdminSection/ManageBlogs/BlogOverview.vue'
+          ),
+      },
+
+      {
+        path: 'commentoverview',
+        name: 'Comment Overview',
+        component: () =>
+          import(
+            /* webpackChunkName: "commentoverview" */
+            'src/pages/AdminSection/ManageComments/CommentOverview.vue'
           ),
       },
 

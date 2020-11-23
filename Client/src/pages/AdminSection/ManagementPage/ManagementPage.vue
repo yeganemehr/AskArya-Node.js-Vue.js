@@ -1,10 +1,16 @@
 <template>
-  <section class="container pt-5">
+  <section dir="ltr" class="container pt-5">
     <h1 class="text-center text-default">Management Page</h1>
     <div class="pt-5 text-ltr d-flex justify-content-center row">
       <router-link to="/courseoverview">
         <b-button pill variant="primary" size="lg" class="px-5 mb-3"
           >Courses</b-button
+        >
+      </router-link>
+
+      <router-link to="/quizoverview">
+        <b-button pill variant="primary" size="lg" class="px-5 mb-3"
+          >Quizzes</b-button
         >
       </router-link>
 
@@ -17,6 +23,12 @@
       <router-link to="/manageusers">
         <b-button pill variant="primary" size="lg" class="px-5 mb-3"
           >Users</b-button
+        >
+      </router-link>
+
+      <router-link to="/commentoverview">
+        <b-button pill variant="primary" size="lg" class="px-5 mb-3"
+          >Comments</b-button
         >
       </router-link>
 

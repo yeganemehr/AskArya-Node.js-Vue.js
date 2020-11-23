@@ -23,13 +23,15 @@
         <Ads class="sticky" />
       </div>
     </div>
+
+    <!-- <Comments /> -->
   </div>
 </template>
 
 <script>
 import BlogInfo from '../FrontendPages/Components/Blog/BlogInfo';
-// import CustomCard from '../../../SingleLesson/Components/CustomCard';
 import Ads from '../FrontendPages/Components/Ads';
+// import Comments from '../../components/Comments/Comments';
 
 import backend from '../../backend';
 
@@ -37,7 +39,7 @@ export default {
   components: {
     BlogInfo,
     Ads,
-    // CustomCard
+    // Comments,
   },
   data() {
     return {

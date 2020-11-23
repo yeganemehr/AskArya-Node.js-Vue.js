@@ -43,6 +43,12 @@
           <hr class="hr d-md-none" />
         </div>
 
+        <!-- My Quizzes Section -->
+        <div class="col-md-12 mb-4 text-center">
+          <MyQuizzes></MyQuizzes>
+          <hr class="hr d-md-none" />
+        </div>
+
         <!-- Notification Section -->
         <div class="d-md-none col-lg-6 col-md-12 mb-5">
           <NotificationCard></NotificationCard>
@@ -58,6 +64,7 @@ import UserCard from './Components/UserCard.vue';
 import NotificationCard from './Components/NotificationCard.vue';
 import PaymentHistory from './Components/PaymentHistory.vue';
 import MyCourses from './Components/MyCourses.vue';
+import MyQuizzes from './Components/MyQuizzes.vue';
 import backend from '../../backend';
 import moment from 'moment';
 
@@ -68,6 +75,7 @@ export default {
     NotificationCard,
     PaymentHistory,
     MyCourses,
+    MyQuizzes,
   },
   data() {
     return {

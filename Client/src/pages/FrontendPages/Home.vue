@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="text-center">
-          <b-button to="courses" type="success" class="btn btn-courses mt-4">
+          <b-button to="courses" class="btn btn-courses mt-4">
             <i class="fas fa-graduation-cap ml-2"></i>
             مشاهده همه دوره ها</b-button
           >
@@ -35,7 +35,14 @@
     </div>
 
     <!-- Blog Section-->
-    <div id="blog" class="blog-section pb-2">
+
+    <div id="blog" class="blog-section py-2">
+      <div class="container">
+        <h1 class="section-header text-right">آخرین مقالات</h1>
+        <p class="subtitle text-right pb-2">
+          مقالات به‌روز و کاربردی برای افزایش سطح دانش شما
+        </p>
+      </div>
       <blog-section v-bind="{ posts: topPosts }"></blog-section>
     </div>
 
@@ -169,7 +176,7 @@ export default {
 .btn-courses:hover {
   color: #ef476f !important;
   background: #fff !important;
-  border: 1px dashed #c84dae !important;
+  border: 1px dashed #ef476f !important;
 }
 
 .blog-section {

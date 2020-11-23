@@ -104,7 +104,7 @@ p {
   font-size: 0.94em !important;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2);
   color: #fff;
-  border: 1px dashed rgba(255, 176, 139, 0.651);
+  border: 1px dashed rgba(255, 176, 139, 0.3);
   font-family: IranSansBold;
   padding: 0.4em 1.6em !important;
   background: transparent;
