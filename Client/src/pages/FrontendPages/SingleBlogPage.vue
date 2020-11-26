@@ -44,8 +44,6 @@ export default {
   data() {
     return {
       post: {},
-      // sticky: 'sticky',
-      // SmallDevices: 'small-devices'
     };
   },
   methods: {

@@ -1,7 +1,7 @@
 <template>
   <div class="widget-vip px-3 mb-5 text-center">
     <p class="vip-title pt-3">
-      <i class="fas fa-unlock pl-2 icon w-100"></i>
+      <i class="fas fa-star icon w-100"></i>
       عضویت ویژه
     </p>
     <p class="vip-desc text-center pb-3">

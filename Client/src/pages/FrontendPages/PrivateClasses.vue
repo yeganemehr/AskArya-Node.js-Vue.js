@@ -67,7 +67,7 @@
               </div>
               <div class="pricing-field">
                 <p class="price">۳,۰۰۰,۰۰۰ <span class="toman">تومان</span></p>
-                <p class="smalltext">۱۶ جلسه</p>
+                <p class="smalltext">۱۳ جلسه</p>
               </div>
               <div class="pricing-features pt-3">
                 <ul>

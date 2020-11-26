@@ -27,6 +27,7 @@
                 v-model="email"
                 :required="true"
                 :error="fieldErrors.email"
+                :formatter="formatter"
               ></b-input>
             </div>
 
@@ -95,9 +96,10 @@
           </h6> -->
 
           <h6 class="text-center mt-3">
-            <router-link to="/forgotpassword" class="footer-link"
-              >رمز عبور را فراموش کرده ام</router-link
-            >
+            <router-link to="/forgotpassword" class="footer-link">
+              <i class="fas fa-key pl-1 key-icon"></i>
+              رمز عبور را فراموش کرده ام
+            </router-link>
           </h6>
         </form>
       </card>
@@ -129,6 +131,10 @@ export default {
     };
   },
   methods: {
+    formatter(value) {
+      return value.toLowerCase();
+    },
+
     // verifyRecaptcha(response) {
     //   this.recaptcha = response;
     // },
@@ -348,6 +354,11 @@ export default {
   font-size: 0.85rem !important;
   color: rgba(0, 0, 0, 0.5) !important;
   font-family: IranSans !important;
+}
+
+.key-icon {
+  font-size: 0.9em !important;
+  color: rgba(0, 0, 0, 0.3) !important;
 }
 
 .label {

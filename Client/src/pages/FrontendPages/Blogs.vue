@@ -1,16 +1,28 @@
 <template>
-  <div class="container py-5">
+  <div class="container-fluid p-5">
     <h1 class="title mb-0 pb-4">مقالات آموزشی</h1>
     <p class="info-text">مقالات به‌روز و کاربردی برای افزایش سطح دانش شما.</p>
-    <!-- Blog Section-->
-    <div id="blog" class="blog-section pb-2">
-      <blog-section v-bind="{ posts: topPosts }"></blog-section>
+
+    <div class="row">
+      <!-- Filter Section -->
+      <div class="col-md-3">
+        <blog-filter></blog-filter>
+      </div>
+
+      <!-- Blog Section-->
+
+      <div class="col-md-9">
+        <div id="blog " class="blog-section pb-2">
+          <blog-section v-bind="{ posts: topPosts }"></blog-section>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import BlogSection from './Components/Blog/BlogSection.vue';
+import BlogFilter from './Components/Blog/BlogFilter.vue';
 
 export default {
   data: function () {
@@ -21,6 +33,7 @@ export default {
 
   components: {
     BlogSection,
+    BlogFilter,
   },
 
   methods: {

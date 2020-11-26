@@ -162,6 +162,14 @@
                       </p>
                       <p class="text-light" v-else>-</p>
                     </div>
+
+                    <!-- User Notifications   -->
+                    <div class="pt-4">
+                      USER NOTIFICATIONS COMPONENT GOES HERE
+                    </div>
+
+                    <!-- Quiz Table   -->
+                    <div class="pt-4">USER Quiz COMPONENT GOES HERE</div>
                   </div>
                 </div>
               </div>

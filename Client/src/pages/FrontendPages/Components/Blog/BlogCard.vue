@@ -57,7 +57,7 @@ export default {
 
 .home-blog .card-title {
   color: #292929;
-  font-size: 15px !important;
+  font-size: 1em !important;
   font-family: IranSansBold;
   text-align: center !important;
 }
@@ -91,7 +91,7 @@ a:hover {
   color: rgb(53, 53, 53) !important;
   background: rgb(241, 241, 241) !important;
   font-family: IranSans !important;
-  font-size: 0.8em !important;
+  font-size: 0.7em !important;
   text-align: center !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -111,32 +111,29 @@ a:hover {
 .card .card-footer {
   background-color: #f1f1f1 !important;
   border-top: 1px solid rgba(255, 5, 5, 0.062);
-  padding: 0.7em 1.2em 0 1.2em;
+  padding: 0.7em 0 0 0;
 
   .card-footer-text {
     color: #7d8597 !important;
-    font-size: 0.83em !important;
+    font-size: 0.8em !important;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .blogBox {
-    margin-left: 1.5em !important;
-    margin-right: 1.5em !important;
-  }
+// @media only screen and (max-width: 768px) {
+//   .blogBox {
+//     margin-left: 1.5em !important;
+//     margin-right: 1.5em !important;
+//   }
 
-  .home-blog .card-title {
-    font-size: 1em !important;
-    // padding-top: 5px !important;
-    // padding-bottom: 5px !important;
-  }
+.home-blog .card-title {
+  font-size: 1em !important;
+}
 
-  .card .card-footer .card-footer-text {
-    font-size: 0.9em !important;
-  }
+.card .card-footer .card-footer-text {
+  font-size: 0.9em !important;
+}
 
-  .home-blog .category {
-    font-size: 0.9em !important;
-  }
+.home-blog .category {
+  font-size: 0.9em !important;
 }
 </style>

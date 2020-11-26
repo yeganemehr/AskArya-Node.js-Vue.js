@@ -48,6 +48,8 @@
           </div>
         </div>
         <hr class="hr" />
+
+        <!-- Quiz Progress goes here -->
         <b-progress
           show-progress
           animated
@@ -58,6 +60,7 @@
         >
         </b-progress>
 
+        <!-- Navigation for questions - Pinned questions should turn question number orange -->
         <div class="overflow-auto">
           <b-pagination
             v-model="currentPage"

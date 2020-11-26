@@ -55,7 +55,7 @@
                 size="sm"
                 class="btn-vip"
               >
-                <i class="fas fa-unlock pl-2"></i>
+                <i class="fas fa-star pl-2"></i>
                 {{ 'شارژ عضویت ویژه' }}
               </b-button>
             </div>

@@ -1,6 +1,5 @@
 <template>
   <div class="auth-section d-flex align-items-center">
-    <!-- <div class="auth-section pt-4"> -->
     <div class="container">
       <card class="shadow">
         <form @submit="checkForm" id="register-form">
@@ -25,6 +24,7 @@
                 autocomplete="username"
                 :required="true"
                 :error="fieldErrors.email"
+                :formatter="formatter"
               ></b-input>
             </div>
 
@@ -123,6 +123,9 @@ export default {
     };
   },
   methods: {
+    formatter(value) {
+      return value.toLowerCase();
+    },
     // verifyRecaptcha(response) {
     //   this.recaptcha = response;
     // },
