@@ -3,15 +3,26 @@
     <h1 class="title mb-0 pb-4">مقالات آموزشی</h1>
     <p class="info-text">مقالات به‌روز و کاربردی برای افزایش سطح دانش شما.</p>
 
-    <div class="row">
+    <div class="row desktop">
       <!-- Filter Section -->
-      <div class="col-md-3">
+      <div class="col-xl-3 col-lg-4 col-sm-12 mb-4 d-none d-lg-block">
         <blog-filter></blog-filter>
+      </div>
+      <!-- Filter Section (Mobile) -->
+      <div class="d-lg-none">
+        <b-button variant="warning" v-b-toggle.sidebar-1 class="mb-4 mr-4">
+          <i class="fas fa-align-right pl-2"></i>
+          دسته مقاله
+        </b-button>
+        <b-sidebar id="sidebar-1" shadow>
+          <div class="p-2 mt-4">
+            <blog-filter></blog-filter>
+          </div>
+        </b-sidebar>
       </div>
 
       <!-- Blog Section-->
-
-      <div class="col-md-9">
+      <div class="col-xl-9 col-lg-6 col-sm-12">
         <div id="blog " class="blog-section pb-2">
           <blog-section v-bind="{ posts: topPosts }"></blog-section>
         </div>
@@ -98,6 +109,13 @@ export default {
   text-align: center !important;
   margin-bottom: 4.5em !important;
   color: #444444 !important;
+}
+
+@media only screen and (min-width: 1500px) {
+  .desktop {
+    margin-right: 3em;
+    margin-left: 3em;
+  }
 }
 
 @media only screen and (max-width: 768px) {

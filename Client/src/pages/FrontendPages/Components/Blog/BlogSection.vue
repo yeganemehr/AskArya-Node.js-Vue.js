@@ -2,7 +2,7 @@
   <div class="home-blog container">
     <div class="row">
       <div
-        class="col-lg-3 col-md-6 col-sm-12"
+        class="col-xl-3 col-lg-6 col-md-6 col-sm-12"
         v-for="post in posts"
         v-bind:key="post.id"
       >

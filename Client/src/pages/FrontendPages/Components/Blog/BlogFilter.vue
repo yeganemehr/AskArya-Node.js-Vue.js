@@ -9,34 +9,42 @@
           ><input type="checkbox" /> ایلتس
           <b-badge class="float-left" variant="light">4</b-badge>
         </label>
-        <label class="item"
-          ><input type="checkbox" /> واژگان
-          <b-badge class="float-left" variant="light">3</b-badge>
-        </label>
-        <label class="item"
-          ><input type="checkbox" /> اﺻﻄﻼح
-          <b-badge class="float-left" variant="light">10</b-badge>
-        </label>
-        <label class="item"
-          ><input type="checkbox" /> مهارت شنیداری
-          <b-badge class="float-left" variant="light">8</b-badge>
-        </label>
-        <label class="item"
-          ><input type="checkbox" /> مهارت گفتاری
-          <b-badge class="float-left" variant="light">12</b-badge>
-        </label>
-        <label class="item"
-          ><input type="checkbox" /> مهارت خواندن
-          <b-badge class="float-left" variant="light">9</b-badge>
-        </label>
-        <label class="item"
-          ><input type="checkbox" /> مهارت نوشتن
-          <b-badge class="float-left" variant="light">2</b-badge>
-        </label>
+
         <label class="item"
           ><input type="checkbox" /> گرامر
           <b-badge class="float-left" variant="light">4</b-badge>
         </label>
+
+        <label class="item"
+          ><input type="checkbox" /> واژگان
+          <b-badge class="float-left" variant="light">3</b-badge>
+        </label>
+
+        <label class="item"
+          ><input type="checkbox" /> اﺻﻄﻼح
+          <b-badge class="float-left" variant="light">10</b-badge>
+        </label>
+
+        <label class="item"
+          ><input type="checkbox" /> مهارت شنیداری
+          <b-badge class="float-left" variant="light">8</b-badge>
+        </label>
+
+        <label class="item"
+          ><input type="checkbox" /> مهارت گفتاری
+          <b-badge class="float-left" variant="light">12</b-badge>
+        </label>
+
+        <label class="item"
+          ><input type="checkbox" /> مهارت خواندن
+          <b-badge class="float-left" variant="light">9</b-badge>
+        </label>
+
+        <label class="item"
+          ><input type="checkbox" /> مهارت نوشتن
+          <b-badge class="float-left" variant="light">2</b-badge>
+        </label>
+
         <!-- <label class="item"><input type="checkbox" /> اﺻﻄﻼح</label>
         <label class="item"><input type="checkbox" /> اﺻﻄﻼح</label>
         <label class="item"><input type="checkbox" /> اﺻﻄﻼح</label>
@@ -63,7 +71,7 @@ h2 {
 }
 
 .item {
-  font-size: 0.95em;
+  font-size: 0.9em;
   width: 100%;
   padding-bottom: 8px;
   padding-right: 0.4em;
@@ -169,4 +177,17 @@ h2 {
   font-family: IranSans !important;
   border-radius: 10px;
 }
+
+// @media all and (max-width: 1000px) and (min-width: 678px) {
+//   .card {
+//     margin-left: 1.4em !important;
+//     margin-right: 1.4em !important;
+//   }
+// }
+
+// @media (max-width: 680px) {
+//   .item {
+//     font-size: 0.8em;
+//   }
+// }
 </style>

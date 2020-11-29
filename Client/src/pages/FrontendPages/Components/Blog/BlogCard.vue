@@ -55,9 +55,9 @@ export default {
   padding-bottom: 0.8em;
 }
 
-.home-blog .card-title {
+.card-title {
   color: #292929;
-  font-size: 1em !important;
+  font-size: 0.9em !important;
   font-family: IranSansBold;
   text-align: center !important;
 }
@@ -71,7 +71,7 @@ export default {
 }
 
 .home-blog .card:hover {
-  box-shadow: 0 15px 12px rgba(0, 0, 0, 0.23) !important;
+  box-shadow: 0 15px 12px rgba(0, 0, 0, 0.1) !important;
   transition: transform 1s !important;
   -webkit-transform: translateY(-2px) !important;
   transform: translateY(-2px) !important;
@@ -91,7 +91,7 @@ a:hover {
   color: rgb(53, 53, 53) !important;
   background: rgb(241, 241, 241) !important;
   font-family: IranSans !important;
-  font-size: 0.7em !important;
+  font-size: 0.8em !important;
   text-align: center !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -115,25 +115,13 @@ a:hover {
 
   .card-footer-text {
     color: #7d8597 !important;
-    font-size: 0.8em !important;
+    font-size: 0.75em !important;
   }
 }
 
-// @media only screen and (max-width: 768px) {
-//   .blogBox {
-//     margin-left: 1.5em !important;
-//     margin-right: 1.5em !important;
-//   }
-
-.home-blog .card-title {
-  font-size: 1em !important;
-}
-
-.card .card-footer .card-footer-text {
-  font-size: 0.9em !important;
-}
-
-.home-blog .category {
-  font-size: 0.9em !important;
+@media all and (max-width: 1400px) and (min-width: 1199px) {
+  .card-title {
+    font-size: 0.7em !important;
+  }
 }
 </style>

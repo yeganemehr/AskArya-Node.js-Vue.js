@@ -181,10 +181,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg {
-  background-color: #f9f9f9 !important;
-  // background-color: #fbf6f0 !important;
-}
+// .bg {
+//   background-color: #fffefd !important;
+// }
 
 .card-custom {
   border-radius: 1.5em;
