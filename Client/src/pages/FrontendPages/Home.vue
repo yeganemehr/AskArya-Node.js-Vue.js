@@ -35,7 +35,6 @@
     </div>
 
     <!-- Blog Section-->
-
     <div id="blog" class="blog-section py-2">
       <div class="container">
         <h1 class="section-header text-right">آخرین مقالات</h1>
@@ -43,7 +42,9 @@
           مقالات به‌روز و کاربردی برای افزایش سطح دانش شما
         </p>
       </div>
-      <blog-section v-bind="{ posts: topPosts }"></blog-section>
+      <div class="blog-padding">
+        <blog-section v-bind="{ posts: topPosts }"></blog-section>
+      </div>
     </div>
 
     <!--Improvement Banner 2-->
@@ -149,6 +150,13 @@ export default {
 .subtitle {
   font-size: 0.95rem;
   color: rgba(0, 0, 0, 0.3) !important;
+}
+
+@media (max-width: 900px) {
+  .blog-padding {
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+  }
 }
 
 .fadeline2 {

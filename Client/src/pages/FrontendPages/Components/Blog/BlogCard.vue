@@ -57,7 +57,7 @@ export default {
 
 .card-title {
   color: #292929;
-  font-size: 0.9em !important;
+  font-size: 0.94em !important;
   font-family: IranSansBold;
   text-align: center !important;
 }
@@ -110,12 +110,12 @@ a:hover {
 
 .card .card-footer {
   background-color: #f1f1f1 !important;
-  border-top: 1px solid rgba(255, 5, 5, 0.062);
+  border-top: 1px solid rgba(116, 116, 116, 0.1);
   padding: 0.7em 0 0 0;
 
   .card-footer-text {
     color: #7d8597 !important;
-    font-size: 0.75em !important;
+    font-size: 0.88em !important;
   }
 }
 
