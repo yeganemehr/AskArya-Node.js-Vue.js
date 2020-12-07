@@ -1,51 +1,49 @@
 <template>
-  <section>
-    <div class="card">
-      <h2>دسته مقاله</h2>
+  <section class="card">
+    <h2>دسته مقاله</h2>
 
-      <hr class="mt-0 py-2" />
-      <form class="text-right">
-        <label class="item"
-          ><input type="checkbox" /> ایلتس
-          <b-badge class="float-left" variant="light">4</b-badge>
-        </label>
+    <hr class="mt-0 py-2" />
+    <form class="text-right">
+      <label class="item"
+        ><input type="checkbox" /> ایلتس
+        <b-badge class="float-left" variant="light">4</b-badge>
+      </label>
 
-        <label class="item"
-          ><input type="checkbox" /> گرامر
-          <b-badge class="float-left" variant="light">4</b-badge>
-        </label>
+      <label class="item"
+        ><input type="checkbox" /> گرامر
+        <b-badge class="float-left" variant="light">4</b-badge>
+      </label>
 
-        <label class="item"
-          ><input type="checkbox" /> واژگان
-          <b-badge class="float-left" variant="light">3</b-badge>
-        </label>
+      <label class="item"
+        ><input type="checkbox" /> واژگان
+        <b-badge class="float-left" variant="light">3</b-badge>
+      </label>
 
-        <label class="item"
-          ><input type="checkbox" /> اﺻﻄﻼح
-          <b-badge class="float-left" variant="light">10</b-badge>
-        </label>
+      <label class="item"
+        ><input type="checkbox" /> اﺻﻄﻼح
+        <b-badge class="float-left" variant="light">10</b-badge>
+      </label>
 
-        <label class="item"
-          ><input type="checkbox" /> مهارت شنیداری
-          <b-badge class="float-left" variant="light">8</b-badge>
-        </label>
+      <label class="item"
+        ><input type="checkbox" /> مهارت شنیداری
+        <b-badge class="float-left" variant="light">8</b-badge>
+      </label>
 
-        <label class="item"
-          ><input type="checkbox" /> مهارت گفتاری
-          <b-badge class="float-left" variant="light">12</b-badge>
-        </label>
+      <label class="item"
+        ><input type="checkbox" /> مهارت گفتاری
+        <b-badge class="float-left" variant="light">12</b-badge>
+      </label>
 
-        <label class="item"
-          ><input type="checkbox" /> مهارت خواندن
-          <b-badge class="float-left" variant="light">9</b-badge>
-        </label>
+      <label class="item"
+        ><input type="checkbox" /> مهارت خواندن
+        <b-badge class="float-left" variant="light">9</b-badge>
+      </label>
 
-        <label class="item"
-          ><input type="checkbox" /> مهارت نوشتن
-          <b-badge class="float-left" variant="light">2</b-badge>
-        </label>
-      </form>
-    </div>
+      <label class="item"
+        ><input type="checkbox" /> مهارت نوشتن
+        <b-badge class="float-left" variant="light">2</b-badge>
+      </label>
+    </form>
   </section>
 </template>
 

@@ -1,27 +1,21 @@
 <template>
-  <section>
-    <div class="card">
-      <h2>مرتب‌سازی بر اساس</h2>
+  <section class="card">
+    <h2>مرتب‌سازی بر اساس</h2>
 
-      <hr class="mt-0 py-2" />
-      <form class="text-right">
-        <label class="item d-flex align-items-center"
-          ><input type="radio" class="radio" /> جدید‌ترین
-        </label>
+    <hr class="mt-0 py-2" />
+    <form class="text-right">
+      <label class="item d-flex align-items-center"
+        ><input type="radio" class="radio" /> جدید‌ترین
+      </label>
 
-        <label class="item d-flex align-items-center"
-          ><input type="radio" /> قدیمی‌ترین
-        </label>
+      <label class="item d-flex align-items-center"
+        ><input type="radio" /> قدیمی‌ترین
+      </label>
 
-        <label class="item d-flex align-items-center"
-          ><input type="radio" /> بیشترین‌ لایک
-        </label>
-
-        <label class="item d-flex align-items-center"
-          ><input type="radio" /> پربازدیدترین
-        </label>
-      </form>
-    </div>
+      <label class="item d-flex align-items-center"
+        ><input type="radio" /> پربازدیدترین
+      </label>
+    </form>
   </section>
 </template>
 
