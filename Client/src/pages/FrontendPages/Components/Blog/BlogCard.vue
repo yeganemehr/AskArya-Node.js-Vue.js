@@ -119,9 +119,9 @@ a:hover {
   }
 }
 
-@media all and (max-width: 1400px) and (min-width: 1199px) {
-  .card-title {
-    font-size: 0.7em !important;
-  }
-}
+// @media all and (max-width: 1400px) and (min-width: 1199px) {
+//   .card-title {
+//     font-size: 0.7em !important;
+//   }
+// }
 </style>

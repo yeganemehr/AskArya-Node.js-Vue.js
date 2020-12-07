@@ -6,7 +6,8 @@
     <div class="row desktop">
       <!-- Filter Section -->
       <div class="col-xl-3 col-lg-4 col-sm-12 mb-4 d-none d-lg-block">
-        <blog-filter></blog-filter>
+        <blog-filter-category></blog-filter-category>
+        <blog-filter-sort class="mt-3"></blog-filter-sort>
       </div>
       <!-- Filter Section (Mobile) -->
       <div class="d-lg-none">
@@ -16,13 +17,14 @@
         </b-button>
         <b-sidebar id="sidebar-1" shadow>
           <div class="p-2 mt-4">
-            <blog-filter></blog-filter>
+            <blog-filter-category></blog-filter-category>
+            <blog-filter-sort class="mt-2"></blog-filter-sort>
           </div>
         </b-sidebar>
       </div>
 
       <!-- Blog Section-->
-      <div class="col-xl-9 col-lg-6 col-sm-12">
+      <div class="col-xl-9 col-lg-8 col-sm-12">
         <div id="blog " class="blog-section pb-2">
           <blog-section v-bind="{ posts: topPosts }"></blog-section>
         </div>
@@ -33,7 +35,8 @@
 
 <script>
 import BlogSection from './Components/Blog/BlogSection.vue';
-import BlogFilter from './Components/Blog/BlogFilter.vue';
+import BlogFilterCategory from './Components/Blog/BlogFilterCategory.vue';
+import BlogFilterSort from './Components/Blog/BlogFilterSort.vue';
 
 export default {
   data: function () {
@@ -44,7 +47,8 @@ export default {
 
   components: {
     BlogSection,
-    BlogFilter,
+    BlogFilterCategory,
+    BlogFilterSort,
   },
 
   methods: {
