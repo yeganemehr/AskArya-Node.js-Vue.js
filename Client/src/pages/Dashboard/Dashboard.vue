@@ -194,7 +194,6 @@ export default {
   font-size: 1.8em;
   font-family: IranSansBold;
   text-align: center;
-  // color: rgb(44, 44, 44) !important;
   color: #ef476f !important;
 
   padding: 0.8rem 0 !important;
@@ -223,6 +222,7 @@ export default {
 .vip-section {
   padding-bottom: 5.6em !important;
 }
+
 @media (max-width: 680px) {
   .title {
     font-size: 1.7em;

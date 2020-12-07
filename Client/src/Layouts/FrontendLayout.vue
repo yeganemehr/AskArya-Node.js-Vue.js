@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <TopBanner /> -->
+    <TopBanner />
     <Navbar id="top" />
     <div class="wrapper wrapper-full-page">
       <div class="full-page" :class="pageClass">
@@ -36,13 +36,13 @@
 </template>
 <script>
 import { ZoomCenterTransition } from 'vue2-transitions';
-// import TopBanner from './Components/TopBanner.vue';
+import TopBanner from './Components/TopBanner.vue';
 import Navbar from './Components/Navbar.vue';
 import Footer from './Components/Footer.vue';
 
 export default {
   components: {
-    // TopBanner,
+    TopBanner,
     Navbar,
     ZoomCenterTransition,
     Footer,

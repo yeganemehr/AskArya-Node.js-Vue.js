@@ -82,6 +82,11 @@
           >
             Edit Quiz
           </b-button>
+
+          <b-button class="mr-1" size="sm" @click="row.toggleDetails">
+            View Quiz
+          </b-button>
+
           <b-button size="sm" @click="row.toggleDetails">
             Delete Quiz
           </b-button>

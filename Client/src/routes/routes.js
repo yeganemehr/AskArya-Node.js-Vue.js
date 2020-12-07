@@ -25,11 +25,11 @@ let frontendpages = {
     },
 
     {
-      path: '/blogs',
-      name: 'Blogs',
+      path: '/articles',
+      name: 'Articles',
       component: () =>
         import(
-          /* webpackChunkName: "blogs" */ 'src/pages/FrontendPages/Blogs.vue'
+          /* webpackChunkName: "blogs" */ 'src/pages/FrontendPages/Articles.vue'
         ),
     },
     {
@@ -75,11 +75,11 @@ let frontendpages = {
         ),
     },
     {
-      path: '/blog/:slug',
-      name: 'SingleBlogPage',
+      path: '/article/:slug',
+      name: 'SingleArticlesPage',
       component: () =>
         import(
-          /* webpackChunkName: "singleblogpage" */ 'src/pages/FrontendPages/SingleBlogPage.vue'
+          /* webpackChunkName: "singleblogpage" */ 'src/pages/FrontendPages/SingleArticlePage.vue'
         ),
     },
     {
@@ -216,12 +216,12 @@ const routes = [
       },
 
       {
-        path: 'blogoverview',
-        name: 'Blog Overview',
+        path: 'articleoverview',
+        name: 'Articles Overview',
         component: () =>
           import(
-            /* webpackChunkName: "blogoverview" */
-            'src/pages/AdminSection/ManageBlogs/BlogOverview.vue'
+            /* webpackChunkName: "articleoverview" */
+            'src/pages/AdminSection/ManageArticles/ArticleOverview.vue'
           ),
       },
 

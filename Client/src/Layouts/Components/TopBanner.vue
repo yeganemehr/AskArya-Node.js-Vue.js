@@ -1,5 +1,6 @@
 <template>
-  <section v-if="!this.$root.$data.user">
+  <!-- <section v-if="!this.$root.$data.user"> -->
+  <section>
     <div class="banner-box d-block text-center">
       <div class="banner-card">
         <router-link class="d-none d-md-block" to="/courses">
@@ -37,11 +38,11 @@ export default {
 .banner-card {
   justify-content: center;
   align-items: center;
-  padding: 13px 10px !important;
+  padding: 10px !important;
   margin: 0 20% !important;
   position: relative;
   font-family: IranSansBold !important;
-  font-size: 1em !important;
+  font-size: 0.9em !important;
 
   @media (max-width: 768px) {
     margin: 0 6% !important;

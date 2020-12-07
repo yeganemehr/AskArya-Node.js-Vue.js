@@ -24,7 +24,9 @@
 
         <hr />
 
-        <b-nav-item active-class="text-custom " to="/blogs">مقالات</b-nav-item>
+        <b-nav-item active-class="text-custom " to="/articles"
+          >مقالات</b-nav-item
+        >
 
         <hr />
 

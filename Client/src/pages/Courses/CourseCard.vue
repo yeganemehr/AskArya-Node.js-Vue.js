@@ -45,7 +45,10 @@
 
     <div class="buyCourse text-center" v-if="!purchased">
       <hr class="fadeline" />
-      <p class="buyCourseTitle">تهیه دوره‌</p>
+      <p class="buyCourseTitle">
+        <i class="fas fa-shopping-basket"></i>
+        تهیه دوره‌
+      </p>
     </div>
   </div>
 </template>
@@ -165,13 +168,18 @@ export default {
   .buyCourseTitle {
     font-size: 0.9em !important;
     font-family: IranSansBold !important;
-    color: #979dac;
+    color: #8d8d8d;
     background: #f1f1f1;
     margin-bottom: auto;
     padding-top: 0.7em;
     padding-bottom: 0.9em;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+
+    i {
+      padding-left: 4px;
+      font-size: 0.85em !important;
+    }
   }
 
   .pricehighlight {

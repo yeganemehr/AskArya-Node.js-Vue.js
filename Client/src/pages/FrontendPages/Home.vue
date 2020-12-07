@@ -34,7 +34,7 @@
       <ImprovementBanner1></ImprovementBanner1>
     </div>
 
-    <!-- Blog Section-->
+    <!-- Articles Section-->
     <div id="blog" class="blog-section py-2">
       <div class="container">
         <h1 class="section-header text-right">آخرین مقالات</h1>
@@ -43,7 +43,7 @@
         </p>
       </div>
       <div class="blog-padding">
-        <blog-section v-bind="{ posts: topPosts }"></blog-section>
+        <articles-section v-bind="{ posts: topPosts }"></articles-section>
       </div>
     </div>
 
@@ -68,7 +68,7 @@
 import HeroSection from './Components/HeroSection.vue';
 import FounderSection from './Components/FounderSection.vue';
 import CourseCard from '../Courses/CourseCard';
-import BlogSection from './Components/Blog/BlogSection.vue';
+import ArticlesSection from './Components/Articles/ArticlesSection.vue';
 import ImprovementBanner1 from './Components/ImprovementBanner1.vue';
 import ImprovementBanner2 from './Components/ImprovementBanner2.vue';
 // import NewsComponent from './Components/NewsComponent/NewsComponent.vue';
@@ -94,7 +94,7 @@ export default {
     HeroSection,
     FounderSection,
     CourseCard,
-    BlogSection,
+    ArticlesSection,
     ImprovementBanner1,
     ImprovementBanner2,
     // NewsComponent,
@@ -119,8 +119,7 @@ export default {
       },
       {
         property: 'og:image',
-        content:
-          'https://www.ask-arya.com/img/Ask Arya LOGO 2019 - 200x200 - OPT.png',
+        content: 'https://ask-arya.com/img/askarya-logo.png',
       },
       {
         property: 'og:description',

@@ -131,7 +131,7 @@ export default {
           status: 'Approved',
         },
         {
-          relatedPost: 'Blog 1',
+          relatedPost: 'Article 1',
           user: 'Shima Doe',
           date: '15/08/2020',
           status: 'Rejected',

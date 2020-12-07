@@ -32,9 +32,9 @@
         >
       </router-link>
 
-      <router-link to="/blogoverview">
+      <router-link to="/articleoverview">
         <b-button pill variant="primary" size="lg" class="px-5 mb-3"
-          >Blogs</b-button
+          >Articles</b-button
         >
       </router-link>
 
