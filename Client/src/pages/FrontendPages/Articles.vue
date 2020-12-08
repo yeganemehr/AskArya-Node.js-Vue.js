@@ -14,7 +14,7 @@
         <b-button
           variant="warning"
           v-b-toggle.sidebar-backdrop
-          class="mb-4 mr-5"
+          class="mb-4 mr-4"
         >
           <i class="fas fa-align-right pl-2"></i>
           دسته مقاله
@@ -25,9 +25,11 @@
           backdrop
           shadow
         >
-          <div class="p-2 mt-4">
+          <div>
             <articles-filter-category></articles-filter-category>
-            <articles-filter-sort class="mt-2 mb-5"></articles-filter-sort>
+            <articles-filter-sort
+              class="custom-margin-filter"
+            ></articles-filter-sort>
           </div>
         </b-sidebar>
       </div>
@@ -122,6 +124,11 @@ export default {
   text-align: center !important;
   margin-bottom: 4.5em !important;
   color: #444444 !important;
+}
+
+.custom-margin-filter {
+  margin-top: 1.2em;
+  margin-bottom: 6em;
 }
 
 @media only screen and (min-width: 1500px) {

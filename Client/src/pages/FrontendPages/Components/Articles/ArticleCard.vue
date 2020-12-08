@@ -1,5 +1,5 @@
 <template>
-  <div class="blogBox mb-4 shadow">
+  <div class="blogBox mb-4">
     <router-link :to="`/article/${slug}`">
       <div class="card">
         <img class="card-img-top" :src="image" :alt="name" />
@@ -45,9 +45,16 @@ export default {
 </script>
 <style lang="scss" scoped>
 .home-blog .card {
-  border-radius: 13px !important;
+  border-radius: 10px !important;
   background: #f1f1f1 !important;
   border: none !important;
+}
+
+.blogBox {
+  border-radius: 10px !important;
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .card-body {
@@ -62,12 +69,8 @@ export default {
   text-align: center !important;
 }
 
-.blogBox {
-  border-radius: 10px !important;
-}
-
 .home-blog .card-img-top {
-  border-radius: 13px 13px 0 0 !important;
+  border-radius: 10px 10px 0 0 !important;
 }
 
 .home-blog .card:hover {
@@ -115,7 +118,7 @@ a:hover {
 
   .card-footer-text {
     color: #7d8597 !important;
-    font-size: 0.88em !important;
+    font-size: 0.8em !important;
   }
 }
 

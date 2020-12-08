@@ -592,6 +592,24 @@ export default {
   margin-top: 1em;
 }
 
+/deep/ a {
+  background-color: #fff !important;
+  border: 1px solid white !important;
+  border-radius: 10px !important;
+  color: #ef7173 !important;
+  padding: 4px 25px 2px 25px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  font-size: 0.9em !important;
+}
+
+/deep/ a:hover {
+  background-color: #ef7173 !important;
+  border: 1px dotted rgba(255, 255, 255, 0.3) !important;
+  color: #fff !important;
+}
+
 @media (max-width: 768px) {
   .body {
     /deep/ p {

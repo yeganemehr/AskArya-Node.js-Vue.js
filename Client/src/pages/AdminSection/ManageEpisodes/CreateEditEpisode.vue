@@ -203,6 +203,11 @@ export default {
             ParagraphButtonUI,
             Direction,
           ],
+
+          link: {
+            addTargetToExternalLinks: true,
+          },
+
           fontSize: {
             options: [9, 11, 13, 'default', 17, 19, 21],
           },
@@ -253,6 +258,7 @@ export default {
               // ...
             ],
           },
+
           fontBackgroundColor: {
             colors: [
               {

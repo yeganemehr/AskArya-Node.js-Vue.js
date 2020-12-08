@@ -35,7 +35,7 @@ export default {
 .section-header {
   font-size: 1.6em;
   font-family: IranSansBold;
-  margin: 0 0 7px 0;
+  margin-bottom: 7px;
 }
 
 .subtitle {
