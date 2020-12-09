@@ -71,7 +71,19 @@ module.exports = {
     },
   },
 
-  pluginOptions: {},
+  pluginOptions: {
+    sitemap: {
+      urls: [
+        'https://ask-arya.com/',
+        'https://ask-arya.com/about',
+        'https://ask-arya.com/courses',
+        'https://ask-arya.com/privateclasses',
+        'https://ask-arya.com/articles',
+        'https://ask-arya.com/contact',
+        'https://ask-arya.com/terms',
+      ],
+    },
+  },
 
   css: {
     sourceMap: process.env.NODE_ENV !== 'production',

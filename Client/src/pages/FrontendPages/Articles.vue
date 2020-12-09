@@ -25,7 +25,7 @@
           backdrop
           shadow
         >
-          <div>
+          <div class="p-2">
             <articles-filter-category></articles-filter-category>
             <articles-filter-sort
               class="custom-margin-filter"

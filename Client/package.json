@@ -51,6 +51,7 @@
     "vee-validate": "^2.2.15",
     "vue": "^2.6.12",
     "vue-chartjs": "^3.5.1",
+    "vue-cli-plugin-sitemap": "^2.3.0",
     "vue-google-login": "^2.0.5",
     "vue-gtag": "^1.10.0",
     "vue-meta": "^2.3.4",
