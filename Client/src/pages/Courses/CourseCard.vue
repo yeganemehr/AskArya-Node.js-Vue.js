@@ -133,7 +133,7 @@ export default {
   border-radius: 10px;
 
   .course-title {
-    font-size: 0.93em;
+    font-size: 0.9em;
     font-family: IranSansBold;
     color: rgb(48, 48, 48);
   }

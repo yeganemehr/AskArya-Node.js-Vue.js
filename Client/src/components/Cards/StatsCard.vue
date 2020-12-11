@@ -10,7 +10,7 @@
         </div>
       </div> -->
       <div
-        class="col-md-7 col-md-7 col-sm-12 text-right"
+        class="col-md-12 text-right"
         v-if="$slots.content || title || subTitle"
       >
         <div class="numbers">

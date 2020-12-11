@@ -1,36 +1,39 @@
 <template>
   <card>
-    <div class="text-right pt-2 pr-2 pb-4">
-      <h1 class="card-title my-0 pb-3">تاریخچه پرداخت ها</h1>
-      <span> در این بخش گزارشات پرداختی های شما لیست میشود. </span>
-    </div>
+    <div class="container">
+      <div class="text-right pt-2 pb-5">
+        <h1 class="card-title my-0 pb-3">تاریخچه پرداخت ها</h1>
+        <span> در این بخش گزارشات پرداختی های شما لیست میشود. </span>
+      </div>
 
-    <b-table
-      hover
-      :items="tableData"
-      :fields="fields"
-      :sort-by.sync="sortBy"
-      :sort-desc.sync="sortDesc"
-      responsive="sm"
-    >
-    </b-table>
+      <b-table
+        hover
+        :items="tableData"
+        :fields="fields"
+        :sort-by.sync="sortBy"
+        :sort-desc.sync="sortDesc"
+        responsive="sm"
+        class="mb-5"
+      >
+      </b-table>
 
-    <div
-      class="col-12 d-flex justify-content-center justify-content-sm-between mt-auto"
-    >
-      <base-pagination
-        class="pagination-no-border"
-        v-model="pagination.currentPage"
-        :per-page="pagination.perPage"
-        :total="pagination.total"
-        @input="changePageListener"
-      ></base-pagination>
+      <div
+        class="d-flex justify-content-right justify-content-sm-between mt-auto"
+      >
+        <base-pagination
+          class="pagination-no-border"
+          v-model="pagination.currentPage"
+          :per-page="pagination.perPage"
+          :total="pagination.total"
+          @input="changePageListener"
+        ></base-pagination>
 
-      <!-- <div class>
+        <!-- <div class>
         <p class="card-category">
           Showing {{ from + 1 }} to {{ to }} of {{ total }} entries
         </p>
       </div> -->
+      </div>
     </div>
   </card>
 </template>
@@ -174,19 +177,28 @@ export default {
 <style lang="scss" scoped>
 .card {
   height: 100% !important;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
-  border: 1px solid transparent;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 680px) {
+  .card {
+    border: 1px solid white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+  }
 }
 
 .card-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-family: IranSansBold;
-  color: black !important;
+  color: #ed4b6f !important;
   text-align: right;
+  padding: 0 0 6px 0 !important;
 }
 
 span {
-  color: #636363 !important;
+  color: #7a7a7a !important;
+  font-size: 0.88rem;
 }
 
 @media only screen and (max-width: 678px) {

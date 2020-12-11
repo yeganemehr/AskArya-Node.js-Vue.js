@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="container">
-      <h1 class="title pt-4 pb-3">آخرین فعالیت های شما</h1>
+      <h1 class="title pt-4">آخرین فعالیت های شما</h1>
       <div class="text-right" v-if="logs.length">
         <div class="log px-2" v-for="log of logs" :key="log.id">
           <p>
@@ -11,20 +11,21 @@
           </p>
         </div>
       </div>
-    </div>
-    <div
-      class="d-flex justify-content-center justify-content-sm-between mt-auto"
-    >
-      <base-pagination
-        class="pagination-no-border"
-        v-model="pagination.currentPage"
-        :value="pagination.currentPage"
-        :per-page="pagination.perpage"
-        :total="pagination.total"
-        :pageCount="pagination.pages"
-        type="danger"
-        @input="changePageListener"
-      ></base-pagination>
+
+      <div
+        class="d-flex justify-content-right justify-content-sm-between mt-auto"
+      >
+        <base-pagination
+          class="pagination-no-border"
+          v-model="pagination.currentPage"
+          :value="pagination.currentPage"
+          :per-page="pagination.perpage"
+          :total="pagination.total"
+          :pageCount="pagination.pages"
+          type="danger"
+          @input="changePageListener"
+        ></base-pagination>
+      </div>
     </div>
   </div>
 </template>
@@ -93,15 +94,22 @@ export default {
 <style lang="scss" scoped>
 .card {
   height: 100% !important;
-  border: 1px dashed #eee !important;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 680px) {
+  .card {
+    border: 1px solid white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+  }
 }
 
 .title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-family: IranSansBold;
   padding-bottom: 2em !important;
-  color: black !important;
+  color: #ed4b6f !important;
   text-align: right;
 }
 

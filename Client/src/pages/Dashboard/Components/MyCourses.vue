@@ -1,16 +1,14 @@
 <template>
   <div class="container">
-    <hr class="hr mb-5" />
-
-    <div class="text-right pb-5">
-      <h1 class="title text-danger my-0 pb-3">دوره های در حال یادگیری</h1>
+    <div class="text-right pt-2">
+      <h1 class="card-title text-danger my-0 pb-3">دوره های در حال یادگیری</h1>
       <span>
         در این بخش دور های نقدی که در آن ثبت نام کرده اید لیست میشود.
       </span>
     </div>
-    <div class="row pt-3" v-if="courses.length">
+    <div class="row pt-5 custom-margin" v-if="courses.length">
       <div
-        class="col-lg-3 col-md-6 mb-4"
+        class="col-lg-6 col-md-12 col-sm-12 mb-4"
         v-for="course in courses"
         :key="course.id"
       >
@@ -56,12 +54,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title {
-  font-size: 1.6em;
+.card-title {
+  font-size: 1.2rem;
   font-family: IranSansBold;
-  margin-bottom: 1.7em;
+  color: #ed4b6f !important;
   text-align: right;
-  color: #ef476f !important;
+  padding: 0 0 6px 0 !important;
+}
+
+span {
+  color: #7a7a7a !important;
+  font-size: 0.88rem;
 }
 
 .no-courses-message {
@@ -84,4 +87,10 @@ p {
   height: 1px;
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+// @media (max-width: 680px) {
+//   .custom-margin {
+//     margin: 0 1em;
+//   }
+// }
 </style>

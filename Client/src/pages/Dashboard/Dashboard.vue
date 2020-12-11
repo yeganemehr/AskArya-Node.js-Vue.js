@@ -5,20 +5,87 @@
         <h1 class="title">پنل کاربری</h1>
       </div>
 
+      <div class="row custom-card-margin">
+        <div class="d-none d-md-block col-lg-9 col-md-12 pb-3">
+          <b-card no-body>
+            <b-tabs pills card vertical>
+              <!-- TAB 1 -->
+              <b-tab class="p-0 m-0" active>
+                <template #title>
+                  <i class="fas fa-user-graduate icon"></i>
+                  اطلاعات کاربری
+                </template>
+                <user-card :user="$root.$data.user"></user-card>
+              </b-tab>
+
+              <!-- TAB 2 -->
+              <b-tab>
+                <template #title>
+                  <i class="fas fa-bullhorn icon"></i>
+                  اعلانات
+                </template>
+                <NotificationCard></NotificationCard>
+              </b-tab>
+
+              <!-- TAB 3 -->
+              <b-tab>
+                <template #title>
+                  <i class="fas fa-dollar-sign icon"></i>
+                  بخش مالی
+                </template>
+                <PaymentHistory :payments="payments"></PaymentHistory>
+              </b-tab>
+
+              <!-- TAB 4 -->
+              <b-tab>
+                <template #title>
+                  <i class="fas fa-graduation-cap icon"></i>
+                  دوره های من
+                </template>
+                <MyCourses></MyCourses>
+              </b-tab>
+
+              <!-- TAB 5 -->
+              <!-- <b-tab active>
+              <template #title>
+                <i class="far fa-user pl-3"></i>
+                My Quizzes
+              </template>
+              <p class="p-3">Tab contents 5</p>
+            </b-tab> -->
+            </b-tabs>
+          </b-card>
+        </div>
+
+        <!-- Stats Cards Section -->
+        <div class="col-lg-3 col-md-12 d-none d-md-block">
+          <div class="w-100" v-for="card in statsCards" :key="card.title">
+            <stats-card
+              :title="card.title"
+              :sub-title="card.subTitle"
+              :type="card.type"
+              :icon="card.icon"
+            >
+              <div slot="footer" v-html="card.footer"></div>
+            </stats-card>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <!-- User Profile Section -->
-        <div class="custom-margin col-lg-7 col-md-12">
+        <div class="d-md-none custom-margin col-lg-7 col-md-12">
           <user-card :user="$root.$data.user"></user-card>
         </div>
 
         <!-- Notification Section -->
-        <div class="d-none d-md-block col-lg-5 col-md-12 mt-sm-4 mt-lg-0">
+        <div class="d-md-none col-lg-5 col-md-12 mt-sm-4 mt-lg-0">
           <NotificationCard></NotificationCard>
         </div>
 
         <!-- Stats Cards Section -->
         <div
-          class="col-lg-4 col-xs-4 ml-auto mr-auto mt-md-4"
+          class="d-md-none col-lg-4 col-xs-4 ml-auto mr-auto mt-4"
           v-for="card in statsCards"
           :key="card.title"
         >
@@ -33,21 +100,21 @@
         </div>
 
         <!-- Payment History Section -->
-        <div class="col-md-12 mb-4 mt-2 text-center">
+        <div class="d-md-none col-md-12 mb-4 mt-2 text-center">
           <PaymentHistory :payments="payments"></PaymentHistory>
         </div>
 
         <!-- My Courses Section -->
-        <div class="col-md-12 mb-4 text-center">
+        <div class="d-md-none col-md-12 mb-4 text-center">
           <MyCourses></MyCourses>
           <hr class="hr d-md-none" />
         </div>
 
         <!-- My Quizzes Section -->
-        <div class="col-md-12 mb-4 text-center">
+        <!-- <div class="col-md-12 mb-4 text-center">
           <MyQuizzes></MyQuizzes>
           <hr class="hr d-md-none" />
-        </div>
+        </div> -->
 
         <!-- Notification Section -->
         <div class="d-md-none col-lg-6 col-md-12 mb-5">
@@ -64,7 +131,7 @@ import UserCard from './Components/UserCard.vue';
 import NotificationCard from './Components/NotificationCard.vue';
 import PaymentHistory from './Components/PaymentHistory.vue';
 import MyCourses from './Components/MyCourses.vue';
-import MyQuizzes from './Components/MyQuizzes.vue';
+// import MyQuizzes from './Components/MyQuizzes.vue';
 import backend from '../../backend';
 import moment from 'moment';
 
@@ -75,7 +142,7 @@ export default {
     NotificationCard,
     PaymentHistory,
     MyCourses,
-    MyQuizzes,
+    // MyQuizzes,
   },
   data() {
     return {
@@ -181,9 +248,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .bg {
-//   background-color: #fffefd !important;
-// }
+/deep/ .tab-content {
+  min-height: 47vh !important;
+}
+
+/deep/ .card-header:first-child {
+  text-align: center !important;
+  background: #ed4b6f;
+  border-radius: 15px !important;
+
+  a {
+    color: #ffffff !important;
+  }
+  i {
+    font-size: 1.6em !important;
+    // color: #fff !important;
+    width: 100% !important;
+    padding-bottom: 9px !important;
+  }
+
+  a.active {
+    color: #ed4b6f !important;
+  }
+}
+
+/deep/ .nav-pills .nav-link {
+  margin-top: 1.1em !important;
+  margin-bottom: 1.1em !important;
+}
+
+/deep/ .nav-pills .nav-link.hover {
+  background-color: #f3f6f9 !important;
+}
+
+/deep/ .nav-pills .nav-link.active {
+  background-color: #fff !important;
+}
 
 .card-custom {
   border-radius: 1.5em;
@@ -191,12 +291,11 @@ export default {
 }
 
 .title {
-  font-size: 1.8em;
+  font-size: 2em;
   font-family: IranSansBold;
   text-align: center;
   color: #ef476f !important;
-
-  padding: 0.8rem 0 !important;
+  padding-top: 1.2rem !important;
 }
 
 .hr {
@@ -221,6 +320,13 @@ export default {
 }
 .vip-section {
   padding-bottom: 5.6em !important;
+}
+
+@media (min-width: 680px) {
+  .custom-card-margin {
+    margin-top: 3.5em !important;
+    margin-bottom: 7em !important;
+  }
 }
 
 @media (max-width: 680px) {
