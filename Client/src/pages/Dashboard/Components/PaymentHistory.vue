@@ -1,7 +1,7 @@
 <template>
   <card>
     <div class="container">
-      <div class="text-right pt-2 pb-5">
+      <div class="text-right pt-3 pb-5">
         <h1 class="card-title my-0 pb-3">تاریخچه پرداخت ها</h1>
         <span> در این بخش گزارشات پرداختی های شما لیست میشود. </span>
       </div>

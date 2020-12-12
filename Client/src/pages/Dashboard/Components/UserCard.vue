@@ -1,8 +1,7 @@
 <template>
   <section class="box">
     <card class="card-user">
-      <h1 class="card-title pt-2 pr-4">مشخصات کاربری</h1>
-      <p class="card-text"></p>
+      <h1 class="card-title py-4 pr-4">مشخصات کاربری</h1>
       <div class="author text-center">
         <!-- <img class="avatar" :src="userAvatar" alt="Users Profile Image" /> -->
         <b-avatar
@@ -63,7 +62,7 @@
         </div>
       </div>
       <!-- Edit Profile Section -->
-      <div v-if="showForm" class="editUserForm">
+      <div v-if="showForm" class="pt-4">
         <form @submit.prevent="updateProfile">
           <div v-if="formErrors.length">
             <b>لطفا اشتباهات زیر را تصحیح کنید:</b>
@@ -119,15 +118,15 @@
               <image-upload type="avatar" @change="onAvatarChange" />
             </div>
 
-            <div class="col-md-12 text-center pt-3 pb-5">
-              <base-button native-type="submit" class="btn-success col-9"
+            <div class="col-md-12 d-flex justify-content-between pt-3 pb-5">
+              <base-button native-type="submit" class="btn-info col-9"
                 >ثبت تغییرات</base-button
               >
 
               <base-button
                 @click.prevent="showForm = !showForm"
                 native-type="submit"
-                class="btn-warning col-2 mr-4"
+                class="btn-warning col-2 mr-2"
               >
                 لغو
               </base-button>

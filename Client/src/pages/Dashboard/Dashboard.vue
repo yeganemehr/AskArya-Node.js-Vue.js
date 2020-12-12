@@ -79,13 +79,13 @@
         </div>
 
         <!-- Notification Section -->
-        <div class="d-md-none col-lg-5 col-md-12 mt-sm-4 mt-lg-0">
+        <div class="d-md-none col-lg-5 col-md-12 mt-sm-4 mt-lg-0 mb-4">
           <NotificationCard></NotificationCard>
         </div>
 
         <!-- Stats Cards Section -->
         <div
-          class="d-md-none col-lg-4 col-xs-4 ml-auto mr-auto mt-4"
+          class="d-md-none col-lg-4 col-xs-4 ml-auto mr-auto"
           v-for="card in statsCards"
           :key="card.title"
         >
@@ -249,7 +249,7 @@ export default {
 
 <style lang="scss" scoped>
 /deep/ .tab-content {
-  min-height: 47vh !important;
+  min-height: 525px !important;
 }
 
 /deep/ .card-header:first-child {
@@ -273,8 +273,8 @@ export default {
 }
 
 /deep/ .nav-pills .nav-link {
-  margin-top: 1.1em !important;
-  margin-bottom: 1.1em !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 1.5em !important;
 }
 
 /deep/ .nav-pills .nav-link.hover {

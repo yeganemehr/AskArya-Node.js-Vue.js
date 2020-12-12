@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="text-right pt-2">
+    <div class="text-right pt-4">
       <h1 class="card-title text-danger my-0 pb-3">دوره های در حال یادگیری</h1>
       <span>
         در این بخش دور های نقدی که در آن ثبت نام کرده اید لیست میشود.

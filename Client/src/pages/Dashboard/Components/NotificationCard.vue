@@ -124,6 +124,12 @@ export default {
   padding-left: 10px;
 }
 
+@media (min-width: 680px) {
+  .log p {
+    font-size: 1em !important;
+  }
+}
+
 @media (max-width: 680px) {
   .card {
     height: 100% !important;

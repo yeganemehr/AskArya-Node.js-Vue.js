@@ -39,6 +39,15 @@
         <div id="blog " class="blog-section pb-2">
           <articles-section v-bind="{ posts: topPosts }"></articles-section>
         </div>
+        <!-- Article Pagination goes here -->
+        <div class="overflow-auto">
+          <b-pagination
+            v-model="currentPage"
+            :total-rows="rows"
+            :per-page="perPage"
+            aria-controls="my-table"
+          ></b-pagination>
+        </div>
       </div>
     </div>
   </div>

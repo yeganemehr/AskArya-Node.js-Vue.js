@@ -71,14 +71,6 @@ label,
   font-family: IranSans !important;
 }
 
-th {
-  font-family: IranSansBold !important;
-}
-
-td {
-  text-align: right !important;
-}
-
 table .btn {
   background: transparent !important;
   border: transparent !important;
@@ -229,30 +221,27 @@ label {
   float: right !important;
 }
 
-table > thead > tr > th {
-  font-family: IranSans !important;
-  font-weight: normal !important;
-}
-
-table > tbody > tr > td {
-  border-color: rgba(0, 0, 0, 0.06) !important;
-  font-family: IranSans !important;
+td {
+  text-align: right !important;
 }
 
 th {
-  font-size: 0.93em !important;
+  font-size: 0.8em !important;
+  font-family: IranSansBold !important;
+  font-weight: normal !important;
   text-align: center !important;
 }
 
 td {
-  font-size: 0.93em !important;
+  font-size: 0.85em !important;
   text-align: center !important;
   font-family: IranSansBlog !important;
   color: rgb(51, 51, 51) !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
 }
 
 .table-hover tbody tr:hover {
-  background-color: rgba(255, 0, 200, 0.075) !important;
+  background-color: rgba(218, 218, 218, 0.075) !important;
 }
 
 @media (max-width: 678px) {
