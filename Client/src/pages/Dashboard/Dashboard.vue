@@ -59,7 +59,7 @@
 
         <!-- Stats Cards Section -->
         <div class="col-lg-3 col-md-12 d-none d-md-block">
-          <div class="w-100" v-for="card in statsCards" :key="card.title">
+          <div class="w-100 pb-2" v-for="card in statsCards" :key="card.title">
             <stats-card
               :title="card.title"
               :sub-title="card.subTitle"
@@ -69,6 +69,11 @@
               <div slot="footer" v-html="card.footer"></div>
             </stats-card>
           </div>
+
+          <!-- <div class="article-card">
+            <h5>تیکت ها</h5>
+            <p>سوالی دارید؟ <span>ایجاد تیکت جدید</span></p>
+          </div> -->
         </div>
       </div>
 
@@ -76,11 +81,6 @@
         <!-- User Profile Section -->
         <div class="d-md-none custom-margin col-lg-7 col-md-12">
           <user-card :user="$root.$data.user"></user-card>
-        </div>
-
-        <!-- Notification Section -->
-        <div class="d-md-none col-lg-5 col-md-12 mt-sm-4 mt-lg-0 mb-4">
-          <NotificationCard></NotificationCard>
         </div>
 
         <!-- Stats Cards Section -->
@@ -99,15 +99,15 @@
           </stats-card>
         </div>
 
-        <!-- Payment History Section -->
-        <div class="d-md-none col-md-12 mb-4 mt-2 text-center">
-          <PaymentHistory :payments="payments"></PaymentHistory>
-        </div>
-
         <!-- My Courses Section -->
         <div class="d-md-none col-md-12 mb-4 text-center">
           <MyCourses></MyCourses>
           <hr class="hr d-md-none" />
+        </div>
+
+        <!-- Payment History Section -->
+        <div class="d-md-none col-md-12 mb-4 mt-2 text-center">
+          <PaymentHistory :payments="payments"></PaymentHistory>
         </div>
 
         <!-- My Quizzes Section -->
@@ -248,8 +248,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.article-card {
+  padding: 20px 10px 10px 10px;
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 15px !important;
+  background-color: #d9d9d9;
+  background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
+  text-align: center;
+
+  h5 {
+    font-family: IranSansBold;
+    color: #ed4b6f;
+  }
+  span {
+    font-size: 0.95em;
+    font-family: IranSansBold;
+  }
+}
+
 /deep/ .tab-content {
-  min-height: 525px !important;
+  min-height: 500px !important;
 }
 
 /deep/ .card-header:first-child {
@@ -262,7 +282,6 @@ export default {
   }
   i {
     font-size: 1.6em !important;
-    // color: #fff !important;
     width: 100% !important;
     padding-bottom: 9px !important;
   }
@@ -273,8 +292,8 @@ export default {
 }
 
 /deep/ .nav-pills .nav-link {
-  margin-top: 1.5em !important;
-  margin-bottom: 1.5em !important;
+  margin-top: 1.4em !important;
+  margin-bottom: 1.4em !important;
 }
 
 /deep/ .nav-pills .nav-link.hover {

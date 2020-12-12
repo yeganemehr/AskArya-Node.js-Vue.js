@@ -8,7 +8,7 @@
     </div>
     <div class="row pt-5 custom-margin" v-if="courses.length">
       <div
-        class="col-lg-6 col-md-12 col-sm-12 mb-4"
+        class="col-lg-6 col-md-12 col-sm-12"
         v-for="course in courses"
         :key="course.id"
       >

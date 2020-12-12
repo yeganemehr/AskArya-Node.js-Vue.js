@@ -66,7 +66,7 @@
     font-size: 1.1em;
     line-height: 1.8em;
     font-family: IranSans !important;
-    color: #fff !important;
+    color: rgba(255, 255, 255, 0.8) !important;
     text-align: right;
   }
 

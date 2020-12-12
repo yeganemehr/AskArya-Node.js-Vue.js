@@ -4,18 +4,28 @@
       <i class="fas fa-star icon w-100"></i>
       عضویت ویژه
     </p>
-    <p class="vip-desc text-center pb-3">
+    <p class="vip-desc text-center">
       با خریداری این پنل کاربری شما میتوانید به ویدیوهای ویژه سایت به بطور کامل
       دسترسی داشته باشید.
     </p>
 
+    <div class="pb-3">
+      <b-button
+        v-if="this.$root.$data.user == undefined"
+        to="/dashboard"
+        class="custom-button"
+      >
+        <i class="fas fa-shopping-basket pl-1"></i>
+        افزایش اعتبار عضویت ویژه
+      </b-button>
+    </div>
     <b-dropdown
       v-if="this.$root.$data.user !== undefined"
       block
       offset="15px"
       no-flip
-      text="عضویت"
-      class="custom-dropdown pb-3"
+      text="افزایش اعتبار عضویت ویژه"
+      class="pb-3"
     >
       <b-dropdown-item class="dropdown-item" href="#" @click.prevent="payment">
         <i class="fa fa-star pl-2"></i>
@@ -149,11 +159,22 @@ export default {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
+.custom-button {
+  font-size: 0.9em;
+  color: #fff !important;
+  background-color: #ef476f !important;
+  border: #ef476f !important;
+  border-radius: 10px !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
 /deep/ .dropdown-toggle {
   color: #fff !important;
   background-color: #ef476f !important;
   border: #ef476f !important;
   border-radius: 10px;
+  font-size: 0.93em !important;
 }
 
 /deep/ .dropdown.show .dropdown-menu {
