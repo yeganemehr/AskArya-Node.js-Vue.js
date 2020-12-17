@@ -12,9 +12,7 @@
         </div>
       </div>
 
-      <div
-        class="d-flex justify-content-right justify-content-sm-between mt-auto"
-      >
+      <div class="pagination">
         <base-pagination
           class="pagination-no-border"
           v-model="pagination.currentPage"
@@ -114,19 +112,28 @@ export default {
 }
 
 .log p {
-  font-size: 0.9em !important;
-  padding-bottom: 1.4em !important;
+  font-size: 0.83em !important;
+  padding-top: 1.1em !important;
   color: rgb(66, 66, 66) !important;
 }
 
 .iconSize {
   font-size: 1.1em;
-  padding-left: 10px;
+  padding-left: 7px;
+}
+
+.pagination {
+  margin-right: auto !important;
 }
 
 @media (min-width: 680px) {
   .log p {
-    font-size: 1em !important;
+    font-size: 0.95em !important;
+    padding: 0 2em;
+  }
+
+  .pagination {
+    padding-top: 1em;
   }
 }
 

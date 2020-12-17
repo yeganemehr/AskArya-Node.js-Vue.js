@@ -275,10 +275,19 @@ i {
 }
 
 .btn-reg:hover,
+.btn-reg:active,
 .btn-reg:focus {
+  background: #ed5786 !important;
+  border: 1px solid #f3598a !important;
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+.btn-reg:not(:disabled):not(.disabled).active {
   background: #fff !important;
   color: #ed5786 !important;
   border: 1px dashed #ed5786 !important;
+  text-decoration: none;
 }
 
 .btn-login {
@@ -288,14 +297,15 @@ i {
 }
 
 .btn-login:hover {
-  background: transparent !important;
-  color: #047afb !important;
+  background: #047afb !important;
+  border: 1px dashed #047afb !important;
+  color: #fff !important;
+  text-decoration: underline;
 }
 
-.btn-secondary:not(:disabled):not(.disabled).active {
-  background: #fff !important;
-  border: 1px dashed #00d39b !important;
-  color: #00d39b !important;
+.btn-login:not(:disabled):not(.disabled).active {
+  background: transparent !important;
+  color: #047afb !important;
 }
 
 .btn-secondary:focus {

@@ -1,6 +1,6 @@
 <template>
   <card>
-    <div class="container">
+    <div class="conta">
       <div class="text-right pt-3 pb-5">
         <h1 class="card-title my-0 pb-3">تاریخچه پرداخت ها</h1>
         <span> در این بخش گزارشات پرداختی های شما لیست میشود. </span>
@@ -17,9 +17,7 @@
       >
       </b-table>
 
-      <div
-        class="d-flex justify-content-right justify-content-sm-between mt-auto"
-      >
+      <div class="pagination">
         <base-pagination
           class="pagination-no-border"
           v-model="pagination.currentPage"
@@ -199,6 +197,12 @@ export default {
 span {
   color: #7a7a7a !important;
   font-size: 0.88rem;
+}
+
+.pagination {
+  margin-right: auto !important;
+  margin-bottom: 0 !important;
+  padding-top: 1em !important;
 }
 
 @media only screen and (max-width: 678px) {
